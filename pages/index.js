@@ -1,303 +1,543 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 
 const SUPABASE_URL = "https://ssyljhtganuaanczxeep.supabase.co";
-const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzeWxqaHRnYW51YWFuY3p4ZWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5MzA2MDcsImV4cCI6MjA5MjUwNjYwN30.kY5rw5BFXqdMze0IMQmbDQNfh5uXhaI35e4LfMYNOjE";
+const ANON_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzeWxqaHRnYW51YWFuY3p4ZWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5MzA2MDcsImV4cCI6MjA5MjUwNjYwN30.kY5rw5BFXqdMze0IMQmbDQNfh5uXhaI35e4LfMYNOjE";
 
-const PAISES = ["España","Portugal","Francia","Alemania","Italia","Reino Unido","Países Bajos","Bélgica","Suiza","Austria","Estados Unidos","México","Colombia","Argentina","Chile","Brasil"];
-const CCAA = ["Andalucía","Aragón","Asturias","Baleares","Canarias","Cantabria","Castilla-La Mancha","Castilla y León","Cataluña","Ceuta","Comunidad Valenciana","Extremadura","Galicia","La Rioja","Madrid","Melilla","Murcia","Navarra","País Vasco"];
+const CCAA = [
+  "Andalucía","Aragón","Asturias","Baleares","Canarias","Cantabria",
+  "Castilla-La Mancha","Castilla y León","Cataluña","Ceuta",
+  "Comunidad Valenciana","Extremadura","Galicia","La Rioja",
+  "Madrid","Melilla","Murcia","Navarra","País Vasco",
+];
+
 const MODALIDADES = [
-  { id:"run",   label:"Running",                   icon:"🏃" },
-  { id:"tri",   label:"Triatlón",                  icon:"🏊" },
-  { id:"dua",   label:"Duatlón",                   icon:"🚴" },
-  { id:"swim",  label:"Natación / Aguas abiertas", icon:"🌊" },
-  { id:"mtb",   label:"Ciclismo / MTB",            icon:"🚵" },
-  { id:"trail", label:"Trail running",             icon:"⛰️" },
-  { id:"ocr",   label:"OCR / Obstáculos",          icon:"🔥" },
-  { id:"hyrox", label:"HYROX / Funcional",         icon:"💪" },
-  { id:"marat", label:"Maratón",                   icon:"🎽" },
-  { id:"xterra",label:"XTERRA / Offroad",          icon:"🌲" },
+  {
+    id: "running", label: "Running", icon: "🏃",
+    color: "#6EE7B7", bg: "#064E3B",
+    subs: [
+      { id: "running-road",  label: "Road running" },
+      { id: "running-trail", label: "Trail" },
+      { id: "running-mont",  label: "Montaña" },
+    ],
+  },
+  {
+    id: "ciclismo", label: "Ciclismo", icon: "🚴",
+    color: "#FCD34D", bg: "#451A03",
+    subs: [
+      { id: "cicl-carretera", label: "Carretera" },
+      { id: "cicl-gravel",    label: "Gravel" },
+      { id: "cicl-mtb",       label: "MTB" },
+    ],
+  },
+  {
+    id: "natacion", label: "Natación", icon: "🌊",
+    color: "#5EEAD4", bg: "#134E4A",
+    subs: [
+      { id: "nat-piscina",  label: "Piscina" },
+      { id: "nat-abiertas", label: "Aguas abiertas" },
+    ],
+  },
+  {
+    id: "triatlon", label: "Triatlón", icon: "🏊",
+    color: "#93C5FD", bg: "#1E3A5F",
+    subs: [
+      { id: "tri-triatlon", label: "Triatlón" },
+      { id: "tri-duatlon",  label: "Duatlón" },
+      { id: "tri-xterra",   label: "XTERRA" },
+      { id: "tri-aquatlon", label: "Aquatlón" },
+    ],
+  },
+  {
+    id: "funcional", label: "Funcional", icon: "💪",
+    color: "#86EFAC", bg: "#14532D",
+    subs: [
+      { id: "func-hyrox",   label: "HYROX" },
+      { id: "func-crossfit",label: "CrossFit" },
+      { id: "func-fitness", label: "Fitness funcional" },
+    ],
+  },
+  {
+    id: "ocr", label: "OCR", icon: "🔥",
+    color: "#F9A8D4", bg: "#500724",
+    subs: [
+      { id: "ocr-spartan", label: "Spartan Race" },
+      { id: "ocr-mudder",  label: "Tough Mudder" },
+      { id: "ocr-general", label: "Obstáculos" },
+    ],
+  },
 ];
+
 const DISTANCIAS = [
-  { id:"sprint", label:"Sprint", sub:"< 5 km" },
-  { id:"5k",     label:"5K",     sub:"5 km" },
-  { id:"10k",    label:"10K",    sub:"10 km" },
-  { id:"media",  label:"Media",  sub:"21 km" },
-  { id:"marat",  label:"Maratón",sub:"42 km" },
-  { id:"larga",  label:"Larga",  sub:"50 km+" },
-  { id:"ultra",  label:"Ultra",  sub:"80 km+" },
+  { id: "sprint", label: "Sprint",  sub: "< 5 km" },
+  { id: "5k",     label: "5K",      sub: "5 km" },
+  { id: "10k",    label: "10K",     sub: "10 km" },
+  { id: "15k",    label: "15K",     sub: "15 km" },
+  { id: "media",  label: "Media",   sub: "21 km" },
+  { id: "marat",  label: "Maratón", sub: "42 km" },
+  { id: "ultra1", label: "50K+",    sub: "50 km+" },
+  { id: "ultra2", label: "80K+",    sub: "80 km+" },
 ];
+
 const MESES = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
-const MODAL_COLOR = { run:"#6EE7B7",tri:"#93C5FD",dua:"#C4B5FD",swim:"#5EEAD4",mtb:"#FCD34D",trail:"#FCA5A5",ocr:"#F9A8D4",hyrox:"#86EFAC",marat:"#A5B4FC",xterra:"#BEF264" };
-const MODAL_BG    = { run:"#064E3B",tri:"#1E3A5F",dua:"#3B1F6E",swim:"#134E4A",mtb:"#451A03",trail:"#4C0519",ocr:"#500724",hyrox:"#14532D",marat:"#1E1B4B",xterra:"#1A2E05" };
 
 const C = {
-  bg:"#0E0F13", card:"#16181F", card2:"#1C1E27",
-  border:"rgba(255,255,255,0.08)", border2:"rgba(255,255,255,0.14)",
-  text:"#F0F0F5", muted:"#6B6D7A", hint:"#3A3C47",
-  accent:"#7C6FFF", accentBg:"#1E1B3A",
+  bg: "#0E0F13", card: "#16181F", card2: "#1C1E27",
+  border: "rgba(255,255,255,0.07)", border2: "rgba(255,255,255,0.16)",
+  text: "#F0F0F5", muted: "#6B6D7A", hint: "#2E3040",
+  accent: "#7C6FFF", accentBg: "#1E1B3A", accentMid: "#C4B5FD",
 };
 
-function toggle(arr, setArr, val) { setArr(arr.includes(val) ? arr.filter(x => x !== val) : [...arr, val]); }
+// Build color lookups from parent modality
+const SUB_COLOR = {};
+const SUB_BG = {};
+MODALIDADES.forEach(m => {
+  m.subs.forEach(s => { SUB_COLOR[s.id] = m.color; SUB_BG[s.id] = m.bg; });
+});
 
-function SectionCard({ step, stepColor, title, count, children }) {
-  return (
-    <div style={{ background:C.card, border:`0.5px solid ${C.border}`, borderRadius:16, padding:"1.1rem 1.25rem", marginBottom:10 }}>
-      <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:12 }}>
-        <div style={{ width:22, height:22, borderRadius:"50%", background:stepColor, fontSize:11, fontWeight:600, display:"flex", alignItems:"center", justifyContent:"center", color:"#fff", flexShrink:0 }}>{step}</div>
-        <p style={{ fontSize:11, fontWeight:600, color:C.muted, letterSpacing:"0.08em", textTransform:"uppercase", margin:0 }}>{title}</p>
-        {count > 0 && <span style={{ fontSize:11, color:C.accent, marginLeft:"auto", background:C.accentBg, padding:"2px 8px", borderRadius:20 }}>{count} sel.</span>}
-      </div>
-      {children}
-    </div>
-  );
+function toggle(arr, setArr, val) {
+  setArr(arr.includes(val) ? arr.filter(x => x !== val) : [...arr, val]);
 }
 
+// ── RaceCard ──────────────────────────────────────────────────────────────────
 function RaceCard({ race }) {
   const [open, setOpen] = useState(false);
-  const mId = race.modalidad_id || "run";
-  const col = MODAL_COLOR[mId] || "#C4B5FD";
-  const bg  = MODAL_BG[mId]  || C.accentBg;
+  const col = SUB_COLOR[race.modalidad_id] || C.accentMid;
+  const bg  = SUB_BG[race.modalidad_id]   || C.accentBg;
+
   return (
-    <div onClick={() => setOpen(!open)} style={{ background:C.card, border:`0.5px solid ${open ? C.border2 : C.border}`, borderRadius:14, padding:"1rem 1.1rem", cursor:"pointer", transition:"border-color .15s" }}>
-      <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", gap:12 }}>
-        <div style={{ flex:1, minWidth:0 }}>
-          <div style={{ display:"flex", gap:6, flexWrap:"wrap", marginBottom:6 }}>
-            <span style={{ fontSize:11, fontWeight:500, padding:"2px 9px", borderRadius:100, background:bg, color:col }}>{race.modalidad}</span>
+    <div
+      onClick={() => setOpen(o => !o)}
+      style={{
+        background: C.card,
+        border: `0.5px solid ${open ? C.border2 : C.border}`,
+        borderRadius: 12,
+        padding: "0.8rem 1rem",
+        cursor: "pointer",
+        transition: "border-color .15s",
+      }}
+    >
+      <div style={{ display: "flex", justifyContent: "space-between", gap: 10 }}>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: "flex", gap: 5, flexWrap: "wrap", marginBottom: 5 }}>
+            <span style={{ fontSize: 10, fontWeight: 500, padding: "2px 8px", borderRadius: 100, background: bg, color: col }}>
+              {race.modalidad}
+            </span>
             {race.estado && (
-              <span style={{ fontSize:11, padding:"2px 9px", borderRadius:100,
-                background: race.estado==="Abierta"?"#064E3B":race.estado==="Cerrada"?"#4C0519":"#451A03",
-                color: race.estado==="Abierta"?"#6EE7B7":race.estado==="Cerrada"?"#FCA5A5":"#FCD34D"
-              }}>{race.estado}</span>
+              <span style={{
+                fontSize: 10, padding: "2px 8px", borderRadius: 100,
+                background: race.estado === "Abierta" ? "#064E3B" : race.estado === "Cerrada" ? "#4C0519" : "#451A03",
+                color:      race.estado === "Abierta" ? "#6EE7B7" : race.estado === "Cerrada" ? "#FCA5A5" : "#FCD34D",
+              }}>
+                {race.estado}
+              </span>
             )}
           </div>
-          <p style={{ fontSize:14, fontWeight:500, margin:"0 0 4px", color:C.text, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{race.nombre}</p>
-          <p style={{ fontSize:12, color:C.muted, margin:0 }}>{race.fecha} · {race.ubicacion}</p>
+          <p style={{ fontSize: 13, fontWeight: 500, margin: "0 0 3px", color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+            {race.nombre}
+          </p>
+          <p style={{ fontSize: 11, color: C.muted, margin: 0 }}>
+            {race.fecha}{race.ubicacion ? ` · ${race.ubicacion}` : ""}
+          </p>
         </div>
-        <div style={{ textAlign:"right", flexShrink:0 }}>
-          <p style={{ fontSize:13, fontWeight:500, color:col, margin:"0 0 4px" }}>{race.precio || "—"}</p>
-          <p style={{ fontSize:11, color:C.muted, margin:0 }}>{open ? "▲" : "▼"}</p>
+        <div style={{ textAlign: "right", flexShrink: 0 }}>
+          <p style={{ fontSize: 12, fontWeight: 500, color: col, margin: "0 0 2px" }}>{race.precio || "—"}</p>
+          <p style={{ fontSize: 10, color: C.muted, margin: 0 }}>{open ? "▲" : "▼"}</p>
         </div>
       </div>
+
       {open && (
-        <div style={{ marginTop:12, paddingTop:12, borderTop:`0.5px solid ${C.border}` }}>
-          {race.distancia && <p style={{ fontSize:12, color:C.muted, margin:"0 0 6px" }}>Distancia: <span style={{ color:C.text }}>{race.distancia}</span></p>}
-          {race.comunidad && <p style={{ fontSize:12, color:C.muted, margin:"0 0 6px" }}>Comunidad: <span style={{ color:C.text }}>{race.comunidad}</span></p>}
-          {race.notas     && <p style={{ fontSize:12, color:C.muted, margin:"0 0 6px" }}>Notas: <span style={{ color:C.text }}>{race.notas}</span></p>}
-          {race.url       && <a href={race.url} target="_blank" rel="noreferrer" style={{ fontSize:12, color:col, textDecoration:"none", border:`0.5px solid ${col}`, padding:"5px 12px", borderRadius:6, display:"inline-block", marginTop:4 }}>Ver inscripción →</a>}
+        <div style={{ marginTop: 10, paddingTop: 10, borderTop: `0.5px solid ${C.border}` }}>
+          {race.distancia && (
+            <p style={{ fontSize: 11, color: C.muted, margin: "0 0 4px" }}>
+              Distancia: <span style={{ color: C.text }}>{race.distancia}</span>
+            </p>
+          )}
+          {race.comunidad && (
+            <p style={{ fontSize: 11, color: C.muted, margin: "0 0 4px" }}>
+              Comunidad: <span style={{ color: C.text }}>{race.comunidad}</span>
+            </p>
+          )}
+          {race.notas && (
+            <p style={{ fontSize: 11, color: C.muted, margin: "0 0 4px" }}>
+              Notas: <span style={{ color: C.text }}>{race.notas}</span>
+            </p>
+          )}
+          {race.url && (
+            <a
+              href={race.url}
+              target="_blank"
+              rel="noreferrer"
+              onClick={e => e.stopPropagation()}
+              style={{ fontSize: 11, color: col, textDecoration: "none", border: `0.5px solid ${col}`, padding: "4px 10px", borderRadius: 6, display: "inline-block", marginTop: 4 }}
+            >
+              Ver inscripción →
+            </a>
+          )}
         </div>
       )}
     </div>
   );
 }
 
+// ── FilterSection ─────────────────────────────────────────────────────────────
+function FilterSection({ title, count, children }) {
+  return (
+    <div style={{ marginBottom: 20 }}>
+      <p style={{ fontSize: 10, fontWeight: 600, color: C.muted, letterSpacing: "0.08em", textTransform: "uppercase", margin: "0 0 8px", display: "flex", alignItems: "center", gap: 6 }}>
+        {title}
+        {count > 0 && <span style={{ fontWeight: 700, color: C.accent }}>{count}</span>}
+      </p>
+      {children}
+    </div>
+  );
+}
+
+// ── Home ──────────────────────────────────────────────────────────────────────
 export default function Home() {
-  const [paises, setPaises]           = useState([]);
   const [ccaa, setCcaa]               = useState([]);
-  const [modalidades, setModalidades] = useState([]);
+  const [modalParents, setModalParents] = useState([]);
+  const [modalSubs, setModalSubs]     = useState([]);
   const [distancias, setDistancias]   = useState([]);
   const [mesDesde, setMesDesde]       = useState(null);
   const [mesHasta, setMesHasta]       = useState(null);
-  const [showMasPaises, setShowMasPaises] = useState(false);
   const [results, setResults]         = useState(null);
   const [loading, setLoading]         = useState(false);
   const [error, setError]             = useState(null);
   const [totalPruebas, setTotalPruebas] = useState(null);
 
-  const espana = paises.includes("España");
-  const anyFilter = paises.length || modalidades.length || distancias.length || mesDesde !== null || mesHasta !== null;
+  const anyFilter =
+    ccaa.length || modalParents.length || modalSubs.length ||
+    distancias.length || mesDesde !== null || mesHasta !== null;
+
+  function toggleParent(id) {
+    if (modalParents.includes(id)) {
+      setModalParents(p => p.filter(x => x !== id));
+      const subIds = MODALIDADES.find(m => m.id === id)?.subs.map(s => s.id) || [];
+      setModalSubs(s => s.filter(x => !subIds.includes(x)));
+    } else {
+      setModalParents(p => [...p, id]);
+    }
+  }
 
   useEffect(() => {
     fetch(`${SUPABASE_URL}/rest/v1/races?select=count`, {
-      headers: { "apikey": ANON_KEY, "Authorization": `Bearer ${ANON_KEY}`, "Prefer": "count=exact" }
-    }).then(r => {
-      const count = r.headers.get("content-range");
-      if (count) setTotalPruebas(count.split("/")[1]);
-    }).catch(() => {});
+      headers: { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}`, Prefer: "count=exact" },
+    })
+      .then(r => { const c = r.headers.get("content-range"); if (c) setTotalPruebas(c.split("/")[1]); })
+      .catch(() => {});
   }, []);
-
-  const summary = useMemo(() => {
-    const parts = [];
-    if (paises.length) parts.push(paises.join(", "));
-    if (ccaa.length) parts.push(ccaa.length > 2 ? `${ccaa.length} comunidades` : ccaa.join(", "));
-    if (modalidades.length) parts.push(MODALIDADES.filter(m => modalidades.includes(m.id)).map(m => m.label).join(", "));
-    if (mesDesde !== null || mesHasta !== null) parts.push(`${mesDesde !== null ? MESES[mesDesde] : "—"} → ${mesHasta !== null ? MESES[mesHasta] : "—"}`);
-    return parts.join(" · ") || null;
-  }, [paises, ccaa, modalidades, distancias, mesDesde, mesHasta]);
 
   async function handleSearch() {
     if (!anyFilter) return;
     setLoading(true); setError(null); setResults(null);
     try {
-      const params = new URLSearchParams();
-      params.append("select", "*");
-      params.append("order", "fecha_iso.asc");
-      if (paises.length === 1) params.append("pais", `eq.${paises[0]}`);
-      if (paises.length > 1)  params.append("pais", `in.(${paises.join(",")})`);
-      if (ccaa.length === 1)  params.append("comunidad", `eq.${ccaa[0]}`);
-      if (ccaa.length > 1)    params.append("comunidad", `in.(${ccaa.join(",")})`);
-      if (modalidades.length === 1) params.append("modalidad_id", `eq.${modalidades[0]}`);
-      if (modalidades.length > 1)   params.append("modalidad_id", `in.(${modalidades.join(",")})`);
-      if (mesDesde !== null) params.append("fecha_iso", `gte.2026-${String(mesDesde+1).padStart(2,"0")}-01`);
-      if (mesHasta !== null) params.append("fecha_iso", `lte.${new Date(2026, mesHasta+1, 0).toISOString().split("T")[0]}`);
+      const p = new URLSearchParams();
+      p.append("select", "*");
+      p.append("order", "fecha_iso.asc");
+      p.append("pais", "eq.España");
 
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/races?${params.toString()}`, {
-        headers: { "apikey": ANON_KEY, "Authorization": `Bearer ${ANON_KEY}` },
+      if (ccaa.length === 1) p.append("comunidad", `eq.${ccaa[0]}`);
+      if (ccaa.length > 1)   p.append("comunidad", `in.(${ccaa.join(",")})`);
+
+      if (modalSubs.length > 0) {
+        if (modalSubs.length === 1) p.append("modalidad_id", `eq.${modalSubs[0]}`);
+        else p.append("modalidad_id", `in.(${modalSubs.join(",")})`);
+      } else if (modalParents.length > 0) {
+        if (modalParents.length === 1) p.append("modalidad_parent", `eq.${modalParents[0]}`);
+        else p.append("modalidad_parent", `in.(${modalParents.join(",")})`);
+      }
+
+      if (distancias.length === 1) p.append("distancia_id", `eq.${distancias[0]}`);
+      if (distancias.length > 1)   p.append("distancia_id", `in.(${distancias.join(",")})`);
+
+      if (mesDesde !== null)
+        p.append("fecha_iso", `gte.2026-${String(mesDesde + 1).padStart(2, "0")}-01`);
+      if (mesHasta !== null)
+        p.append("fecha_iso", `lte.${new Date(2026, mesHasta + 1, 0).toISOString().split("T")[0]}`);
+
+      const res  = await fetch(`${SUPABASE_URL}/rest/v1/races?${p}`, {
+        headers: { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}` },
       });
       const data = await res.json();
       if (!Array.isArray(data)) throw new Error(data.message || "Error");
       setResults(data);
-    } catch (e) {
-      setError("Error al conectar. Inténtalo de nuevo.");
+    } catch {
+      setError("Error al conectar con la base de datos. Inténtalo de nuevo.");
     } finally {
       setLoading(false);
     }
   }
 
   function handleReset() {
-    setPaises([]); setCcaa([]); setModalidades([]); setDistancias([]);
-    setMesDesde(null); setMesHasta(null); setResults(null); setError(null);
+    setCcaa([]); setModalParents([]); setModalSubs([]);
+    setDistancias([]); setMesDesde(null); setMesHasta(null);
+    setResults(null); setError(null);
   }
-
-  const stepColors = ["#2563EB","#7C3AED","#059669","#B45309","#1D4ED8"];
 
   return (
     <>
       <Head>
-        <title>Hibrid Sport Calendar — Pruebas deportivas 2026</title>
-        <meta name="description" content="Calendario de pruebas deportivas 2026 en España y Europa. Running, triatlón, trail, HYROX, OCR, natación y más." />
+        <title>Hibrid Sport Calendar — Pruebas España 2026</title>
+        <meta name="description" content="Calendario de pruebas deportivas 2026 en España. Running, triatlón, trail, HYROX, OCR, natación y más." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Hibrid Sport Calendar" />
-        <meta property="og:description" content="Encuentra tu próxima prueba deportiva en España y Europa." />
       </Head>
 
-      <div style={{ background:C.bg, minHeight:"100vh", fontFamily:"system-ui,-apple-system,sans-serif", color:C.text }}>
-        <div style={{ maxWidth:860, margin:"0 auto", padding:"0 1rem 3rem" }}>
+      <style>{`
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; background: #0E0F13; color: #F0F0F5; font-family: system-ui, -apple-system, sans-serif; overflow: hidden; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #2E3040; border-radius: 4px; }
+        @media (max-width: 768px) {
+          html, body { overflow: auto; }
+          #sidebar { width: 100% !important; min-width: unset !important; height: auto !important; border-right: none !important; border-bottom: 0.5px solid rgba(255,255,255,0.07); }
+          #layout { flex-direction: column !important; }
+          #main { height: auto !important; }
+        }
+      `}</style>
 
-          {/* Header */}
-          <div style={{ padding:"2rem 0 1.5rem", borderBottom:`0.5px solid ${C.border}`, marginBottom:24, display:"flex", alignItems:"center", justifyContent:"space-between" }}>
-            <div style={{ display:"flex", alignItems:"center", gap:12 }}>
-              <div style={{ width:40, height:40, borderRadius:12, background:C.accentBg, border:`0.5px solid ${C.accent}`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:20 }}>🏅</div>
-              <div>
-                <h1 style={{ fontSize:20, fontWeight:600, margin:0, letterSpacing:"-0.3px" }}>Hibrid Sport Calendar</h1>
-                <p style={{ fontSize:12, color:C.muted, margin:"2px 0 0" }}>
-                  Pruebas deportivas 2026
-                  {totalPruebas && <span style={{ marginLeft:8, color:C.accent, background:C.accentBg, padding:"1px 7px", borderRadius:20, fontSize:11 }}>{totalPruebas} indexadas</span>}
-                </p>
-              </div>
+      <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+
+        {/* ── Header ── */}
+        <div style={{ height: 52, flexShrink: 0, background: C.card, borderBottom: `0.5px solid ${C.border}`, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 1.25rem", zIndex: 10 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ width: 30, height: 30, borderRadius: 8, background: C.accentBg, border: `0.5px solid ${C.accent}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15 }}>
+              🏅
             </div>
-            {(anyFilter || results) && (
-              <button onClick={handleReset} style={{ fontSize:12, color:C.muted, background:"none", border:`0.5px solid ${C.border}`, borderRadius:8, padding:"6px 14px", cursor:"pointer" }}>Limpiar filtros</button>
-            )}
-          </div>
-
-          {/* Hero */}
-          <div style={{ marginBottom:24, padding:"1.25rem 1.5rem", background:C.card, borderRadius:16, border:`0.5px solid ${C.border}` }}>
-            <p style={{ fontSize:22, fontWeight:600, margin:"0 0 6px", letterSpacing:"-0.4px" }}>Encuentra tu próxima carrera</p>
-            <p style={{ fontSize:14, color:C.muted, margin:0, lineHeight:1.6 }}>Running, triatlón, trail, HYROX, OCR, natación y más — en España y Europa. Actualizado diariamente.</p>
-          </div>
-
-          {/* 1 — País */}
-          <SectionCard step="1" stepColor={stepColors[0]} title="País" count={paises.length}>
-            <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
-              {(showMasPaises ? PAISES : PAISES.slice(0,9)).map(p => (
-                <button key={p} onClick={() => toggle(paises, setPaises, p)} style={{ padding:"5px 13px", fontSize:12, borderRadius:100, cursor:"pointer", fontWeight: paises.includes(p)?500:400, border: paises.includes(p)?`1.5px solid #93C5FD`:`0.5px solid ${C.border}`, background: paises.includes(p)?"#1E3A5F":C.card2, color: paises.includes(p)?"#93C5FD":C.muted, transition:"all .1s" }}>{p}</button>
-              ))}
-              <button onClick={() => setShowMasPaises(!showMasPaises)} style={{ fontSize:12, color:C.muted, background:"none", border:"none", cursor:"pointer", padding:"5px 4px" }}>{showMasPaises ? "Menos ▲" : `+${PAISES.length-9} más ▼`}</button>
+            <div>
+              <p style={{ fontSize: 14, fontWeight: 600, margin: 0, letterSpacing: "-0.2px" }}>Hibrid Sport Calendar</p>
+              <p style={{ fontSize: 10, color: C.muted, margin: 0 }}>
+                Pruebas España 2026
+                {totalPruebas && (
+                  <span style={{ marginLeft: 6, color: C.accent, background: C.accentBg, padding: "1px 6px", borderRadius: 20, fontSize: 10 }}>
+                    {totalPruebas} indexadas
+                  </span>
+                )}
+              </p>
             </div>
-          </SectionCard>
+          </div>
+          {(anyFilter || results) && (
+            <button onClick={handleReset} style={{ fontSize: 12, color: C.muted, background: "none", border: `0.5px solid ${C.border}`, borderRadius: 8, padding: "5px 12px", cursor: "pointer" }}>
+              Limpiar
+            </button>
+          )}
+        </div>
 
-          {/* 2 — CCAA */}
-          {espana && (
-            <SectionCard step="2" stepColor={stepColors[1]} title="Comunidad autónoma (opcional)" count={ccaa.length}>
-              <div style={{ display:"flex", flexWrap:"wrap", gap:5 }}>
+        {/* ── Body ── */}
+        <div id="layout" style={{ display: "flex", flex: 1, overflow: "hidden" }}>
+
+          {/* ── Sidebar ── */}
+          <div
+            id="sidebar"
+            style={{
+              width: 282, minWidth: 282,
+              background: C.card,
+              borderRight: `0.5px solid ${C.border}`,
+              overflowY: "auto",
+              padding: "1rem",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            {/* CCAA */}
+            <FilterSection title="Comunidad autónoma" count={ccaa.length}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
                 {CCAA.map(c => (
-                  <button key={c} onClick={() => toggle(ccaa, setCcaa, c)} style={{ padding:"4px 11px", fontSize:12, borderRadius:100, cursor:"pointer", fontWeight: ccaa.includes(c)?500:400, border: ccaa.includes(c)?`1.5px solid ${C.accent}`:`0.5px solid ${C.border}`, background: ccaa.includes(c)?C.accentBg:C.card2, color: ccaa.includes(c)?"#C4B5FD":C.muted, transition:"all .1s" }}>{c}</button>
+                  <button
+                    key={c}
+                    onClick={() => toggle(ccaa, setCcaa, c)}
+                    style={{
+                      padding: "3px 9px", fontSize: 11, borderRadius: 100, cursor: "pointer",
+                      fontWeight: ccaa.includes(c) ? 500 : 400,
+                      border:      ccaa.includes(c) ? `1.5px solid ${C.accent}` : `0.5px solid ${C.border}`,
+                      background:  ccaa.includes(c) ? C.accentBg : C.card2,
+                      color:       ccaa.includes(c) ? C.accentMid : C.muted,
+                    }}
+                  >
+                    {c}
+                  </button>
                 ))}
               </div>
-            </SectionCard>
-          )}
+            </FilterSection>
 
-          {/* 3 — Modalidad */}
-          <SectionCard step={espana?3:2} stepColor={stepColors[2]} title="Modalidad deportiva (opcional)" count={modalidades.length}>
-            <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
-              {MODALIDADES.map(m => (
-                <button key={m.id} onClick={() => toggle(modalidades, setModalidades, m.id)} style={{ display:"inline-flex", alignItems:"center", gap:6, padding:"7px 14px", fontSize:13, borderRadius:100, cursor:"pointer", fontWeight: modalidades.includes(m.id)?500:400, border: modalidades.includes(m.id)?`1.5px solid ${MODAL_COLOR[m.id]}`:`0.5px solid ${C.border}`, background: modalidades.includes(m.id)?MODAL_BG[m.id]:C.card2, color: modalidades.includes(m.id)?MODAL_COLOR[m.id]:C.muted, transition:"all .1s" }}>
-                  <span style={{ fontSize:14 }}>{m.icon}</span>{m.label}
-                </button>
-              ))}
-            </div>
-          </SectionCard>
+            {/* Modalidades jerárquicas */}
+            <FilterSection title="Modalidad" count={modalParents.length + modalSubs.length}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+                {MODALIDADES.map(m => (
+                  <div key={m.id}>
+                    <button
+                      onClick={() => toggleParent(m.id)}
+                      style={{
+                        display: "inline-flex", alignItems: "center", gap: 5,
+                        padding: "5px 11px", fontSize: 12, borderRadius: 100, cursor: "pointer",
+                        fontWeight:  modalParents.includes(m.id) ? 500 : 400,
+                        border:      modalParents.includes(m.id) ? `1.5px solid ${m.color}` : `0.5px solid ${C.border}`,
+                        background:  modalParents.includes(m.id) ? m.bg : C.card2,
+                        color:       modalParents.includes(m.id) ? m.color : C.muted,
+                        marginBottom: modalParents.includes(m.id) ? 5 : 0,
+                      }}
+                    >
+                      <span style={{ fontSize: 12 }}>{m.icon}</span>
+                      {m.label}
+                      <span style={{ fontSize: 9, opacity: 0.5 }}>{modalParents.includes(m.id) ? "▲" : "▼"}</span>
+                    </button>
 
-          {/* 4 — Distancia */}
-          <SectionCard step={espana?4:3} stepColor={stepColors[3]} title="Distancia (opcional)" count={distancias.length}>
-            <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
-              {DISTANCIAS.map(d => (
-                <button key={d.id} onClick={() => toggle(distancias, setDistancias, d.id)} style={{ display:"inline-flex", flexDirection:"column", alignItems:"center", padding:"8px 14px", borderRadius:10, cursor:"pointer", fontWeight: distancias.includes(d.id)?500:400, fontSize:13, border: distancias.includes(d.id)?`1.5px solid #FCD34D`:`0.5px solid ${C.border}`, background: distancias.includes(d.id)?"#451A03":C.card2, color: distancias.includes(d.id)?"#FCD34D":C.muted, transition:"all .1s" }}>
-                  {d.label}<span style={{ fontSize:10, opacity:0.6, marginTop:2 }}>{d.sub}</span>
-                </button>
-              ))}
-            </div>
-          </SectionCard>
+                    {modalParents.includes(m.id) && (
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: 4, paddingLeft: 10, borderLeft: `2px solid ${m.color}33` }}>
+                        {m.subs.map(s => (
+                          <button
+                            key={s.id}
+                            onClick={() => toggle(modalSubs, setModalSubs, s.id)}
+                            style={{
+                              padding: "3px 9px", fontSize: 11, borderRadius: 100, cursor: "pointer",
+                              fontWeight: modalSubs.includes(s.id) ? 500 : 400,
+                              border:     modalSubs.includes(s.id) ? `1.5px solid ${m.color}` : `0.5px solid ${C.border}`,
+                              background: modalSubs.includes(s.id) ? m.bg : C.card2,
+                              color:      modalSubs.includes(s.id) ? m.color : C.muted,
+                            }}
+                          >
+                            {s.label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </FilterSection>
 
-          {/* 5 — Fechas */}
-          <SectionCard step={espana?5:4} stepColor={stepColors[4]} title="Rango de fechas — 2026 (opcional)">
-            <div style={{ display:"flex", gap:20, flexWrap:"wrap" }}>
-              {["Desde","Hasta"].map((lbl, li) => (
-                <div key={lbl} style={{ flex:1, minWidth:200 }}>
-                  <p style={{ fontSize:11, color:C.muted, margin:"0 0 8px" }}>{lbl}</p>
-                  <div style={{ display:"flex", flexWrap:"wrap", gap:4 }}>
-                    {MESES.map((m, i) => {
-                      const sel = li===0 ? mesDesde===i : mesHasta===i;
-                      const faded = li===0 ? (mesDesde!==null&&i<mesDesde) : (mesHasta!==null&&i>mesHasta);
+            {/* Distancias */}
+            <FilterSection title="Distancia" count={distancias.length}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
+                {DISTANCIAS.map(d => (
+                  <button
+                    key={d.id}
+                    onClick={() => toggle(distancias, setDistancias, d.id)}
+                    style={{
+                      display: "inline-flex", flexDirection: "column", alignItems: "center",
+                      padding: "5px 9px", fontSize: 11, borderRadius: 8, cursor: "pointer",
+                      fontWeight:  distancias.includes(d.id) ? 500 : 400,
+                      border:      distancias.includes(d.id) ? "1.5px solid #FCD34D" : `0.5px solid ${C.border}`,
+                      background:  distancias.includes(d.id) ? "#451A03" : C.card2,
+                      color:       distancias.includes(d.id) ? "#FCD34D" : C.muted,
+                    }}
+                  >
+                    {d.label}
+                    <span style={{ fontSize: 9, opacity: 0.55 }}>{d.sub}</span>
+                  </button>
+                ))}
+              </div>
+            </FilterSection>
+
+            {/* Fechas */}
+            <FilterSection title="Fechas 2026">
+              {["Desde", "Hasta"].map((lbl, li) => (
+                <div key={lbl} style={{ marginBottom: 10 }}>
+                  <p style={{ fontSize: 10, color: C.muted, margin: "0 0 5px" }}>{lbl}</p>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
+                    {MESES.map((mes, i) => {
+                      const sel   = li === 0 ? mesDesde === i : mesHasta === i;
+                      const faded = li === 0
+                        ? mesDesde !== null && i < mesDesde
+                        : mesHasta !== null && i > mesHasta;
                       return (
-                        <button key={i} onClick={() => li===0 ? setMesDesde(mesDesde===i?null:i) : setMesHasta(mesHasta===i?null:i)} style={{ padding:"5px 9px", fontSize:12, borderRadius:6, cursor:"pointer", fontWeight:sel?500:400, border: sel?`1.5px solid ${C.accent}`:`0.5px solid ${C.border}`, background: sel?C.accentBg:C.card2, color: sel?"#C4B5FD":C.muted, opacity:faded?0.3:1, transition:"all .1s" }}>{m}</button>
+                        <button
+                          key={i}
+                          onClick={() =>
+                            li === 0
+                              ? setMesDesde(mesDesde === i ? null : i)
+                              : setMesHasta(mesHasta === i ? null : i)
+                          }
+                          style={{
+                            padding: "4px 7px", fontSize: 10, borderRadius: 5, cursor: "pointer",
+                            border:     sel ? `1.5px solid ${C.accent}` : `0.5px solid ${C.border}`,
+                            background: sel ? C.accentBg : C.card2,
+                            color:      sel ? C.accentMid : C.muted,
+                            opacity: faded ? 0.28 : 1,
+                          }}
+                        >
+                          {mes}
+                        </button>
                       );
                     })}
                   </div>
                 </div>
               ))}
-            </div>
-          </SectionCard>
+            </FilterSection>
 
-          {/* CTA */}
-          <div style={{ background: anyFilter?C.accentBg:C.card, border:`0.5px solid ${anyFilter?C.accent:C.border}`, borderRadius:16, padding:"1.1rem 1.25rem", display:"flex", alignItems:"center", justifyContent:"space-between", gap:12, flexWrap:"wrap", marginBottom:24 }}>
-            <p style={{ fontSize:13, color: anyFilter?"#C4B5FD":C.muted, margin:0, flex:1, lineHeight:1.6 }}>
-              {summary || "Selecciona al menos un filtro para buscar pruebas"}
-            </p>
-            <button onClick={handleSearch} disabled={!anyFilter||loading} style={{ padding:"10px 24px", borderRadius:10, background: anyFilter?"#7C6FFF":C.hint, color: anyFilter?"#fff":C.muted, border:"none", fontSize:14, fontWeight:500, cursor: anyFilter&&!loading?"pointer":"default", opacity:loading?0.7:1, transition:"opacity .15s" }}>
-              {loading ? "Buscando..." : "Buscar pruebas"}
-            </button>
+            {/* Spacer + Botón */}
+            <div style={{ marginTop: "auto", paddingTop: 8 }}>
+              <button
+                onClick={handleSearch}
+                disabled={!anyFilter || loading}
+                style={{
+                  width: "100%", padding: "10px 0", borderRadius: 10,
+                  background: anyFilter ? C.accent : C.hint,
+                  color:      anyFilter ? "#fff"    : C.muted,
+                  border: "none", fontSize: 13, fontWeight: 500,
+                  cursor:  anyFilter && !loading ? "pointer" : "default",
+                  opacity: loading ? 0.65 : 1,
+                  transition: "background .15s, opacity .15s",
+                }}
+              >
+                {loading ? "Buscando…" : "Buscar pruebas"}
+              </button>
+            </div>
           </div>
 
-          {/* Loading */}
-          {loading && (
-            <div style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:12, padding:"3rem 0", color:C.muted }}>
-              <div style={{ width:36, height:36, border:`2px solid ${C.hint}`, borderTop:`2px solid ${C.accent}`, borderRadius:"50%", animation:"spin 0.8s linear infinite" }} />
-              <p style={{ fontSize:13, margin:0 }}>Buscando pruebas...</p>
-              <style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style>
-            </div>
-          )}
+          {/* ── Main ── */}
+          <div id="main" style={{ flex: 1, overflowY: "auto", padding: "1.25rem", background: C.bg }}>
 
-          {/* Error */}
-          {error && <p style={{ fontSize:13, color:"#FCA5A5", textAlign:"center", padding:"1.5rem 0" }}>{error}</p>}
-
-          {/* Resultados */}
-          {results && !loading && (
-            <div>
-              <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:16 }}>
-                <p style={{ fontSize:14, fontWeight:500, color:C.text, margin:0 }}>{results.length} prueba{results.length!==1?"s":""} encontrada{results.length!==1?"s":""}</p>
-                <p style={{ fontSize:11, color:C.muted, margin:0 }}>Pulsa para ver más info</p>
+            {/* Empty state */}
+            {!results && !loading && !error && (
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", minHeight: 320, color: C.muted, textAlign: "center", gap: 14 }}>
+                <span style={{ fontSize: 56 }}>🏅</span>
+                <p style={{ fontSize: 18, fontWeight: 600, color: C.text, letterSpacing: "-0.3px" }}>Encuentra tu próxima prueba</p>
+                <p style={{ fontSize: 13, maxWidth: 300, lineHeight: 1.7 }}>
+                  Usa los filtros del panel izquierdo para buscar entre todas las pruebas deportivas de España 2026.
+                </p>
               </div>
-              {results.length === 0
-                ? <p style={{ textAlign:"center", color:C.muted, padding:"3rem 0", fontSize:14 }}>Sin resultados con estos filtros.</p>
-                : <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(340px, 1fr))", gap:10 }}>
+            )}
+
+            {/* Loading */}
+            {loading && (
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", minHeight: 320, gap: 14, color: C.muted }}>
+                <div style={{ width: 36, height: 36, border: `2.5px solid ${C.hint}`, borderTop: `2.5px solid ${C.accent}`, borderRadius: "50%", animation: "spin 0.75s linear infinite" }} />
+                <p style={{ fontSize: 13 }}>Buscando pruebas…</p>
+              </div>
+            )}
+
+            {/* Error */}
+            {error && (
+              <p style={{ fontSize: 13, color: "#FCA5A5", textAlign: "center", padding: "3rem 0" }}>{error}</p>
+            )}
+
+            {/* Results */}
+            {results && !loading && (
+              <>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
+                  <p style={{ fontSize: 13, fontWeight: 500, color: C.text }}>
+                    {results.length} prueba{results.length !== 1 ? "s" : ""} encontrada{results.length !== 1 ? "s" : ""}
+                  </p>
+                  <p style={{ fontSize: 11, color: C.muted }}>Pulsa para ver más info</p>
+                </div>
+
+                {results.length === 0 ? (
+                  <div style={{ textAlign: "center", padding: "4rem 0" }}>
+                    <p style={{ fontSize: 14, color: C.muted }}>Sin resultados con estos filtros.</p>
+                    <p style={{ fontSize: 12, color: C.hint, marginTop: 6 }}>Prueba a ampliar el rango de fechas o cambiar la modalidad.</p>
+                  </div>
+                ) : (
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(270px, 1fr))", gap: 8 }}>
                     {results.map((r, i) => <RaceCard key={i} race={r} />)}
                   </div>
-              }
-            </div>
-          )}
-
+                )}
+              </>
+            )}
+          </div>
         </div>
       </div>
     </>
