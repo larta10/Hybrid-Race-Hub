@@ -7,6 +7,273 @@ const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsI
 const PAISES = ["España","Portugal","Francia","Alemania","Italia","Reino Unido","Países Bajos","Bélgica","Suiza","Austria","Estados Unidos","México","Colombia","Argentina","Chile","Brasil"];
 const CCAA = ["Andalucía","Aragón","Asturias","Baleares","Canarias","Cantabria","Castilla-La Mancha","Castilla y León","Cataluña","Ceuta","Comunidad Valenciana","Extremadura","Galicia","La Rioja","Madrid","Melilla","Murcia","Navarra","País Vasco"];
 const MODALIDADES = [
+  { id:"run",   label:"Running",          icon:"🏃" },
+  { id:"tri",   label:"Triatlón",         icon:"🏊" },
+  { id:"dua",   label:"Duatlón",          icon:"🚴" },
+  { id:"swim",  label:"Aguas abiertas",   icon:"🌊" },
+  { id:"mtb",   label:"Ciclismo / MTB",   icon:"🚵" },
+  { id:"trail", label:"Trail",            icon:"⛰️" },
+  { id:"ocr",   label:"OCR",             icon:"🔥" },
+  { id:"hyrox", label:"HYROX",           icon:"💪" },
+  { id:"marat", label:"Maratón",         icon:"🎽" },
+  { id:"xterra",label:"XTERRA",          icon:"🌲" },
+];
+const DISTANCIAS = [
+  { id:"sprint", label:"Sprint", sub:"<5km" },
+  { id:"5k",     label:"5K",     sub:"5km" },
+  { id:"10k",    label:"10K",    sub:"10km" },
+  { id:"media",  label:"Media",  sub:"21km" },
+  { id:"marat",  label:"Maratón",sub:"42km" },
+  { id:"larga",  label:"Larga",  sub:"50km+" },
+  { id:"ultra",  label:"Ultra",  sub:"80km+" },
+];
+const MESES = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
+const MODAL_COLOR = { run:"#6EE7B7",tri:"#93C5FD",dua:"#C4B5FD",swim:"#5EEAD4",mtb:"#FCD34D",trail:"#FCA5A5",ocr:"#F9A8D4",hyrox:"#86EFAC",marat:"#A5B4FC",xterra:"#BEF264" };
+const MODAL_BG    = { run:"#064E3B",tri:"#1E3A5F",dua:"#3B1F6E",swim:"#134E4A",mtb:"#451A03",trail:"#4C0519",ocr:"#500724",hyrox:"#14532D",marat:"#1E1B4B",xterra:"#1A2E05" };
+const C = { bg:"#0E0F13",card:"#16181F",card2:"#1C1E27",border:"rgba(255,255,255,0.08)",border2:"rgba(255,255,255,0.15)",text:"#F0F0F5",muted:"#6B6D7A",hint:"#3A3C47",accent:"#7C6FFF",accentBg:"#1E1B3A" };
+
+function toggle(arr, setArr, val) { setArr(arr.includes(val) ? arr.filter(x => x !== val) : [...arr, val]); }
+
+function Label({ children }) {
+  return <p style={{ fontSize:10, fontWeight:600, color:C.muted, letterSpacing:"0.08em", textTransform:"uppercase", margin:"0 0 8px" }}>{children}</p>;
+}
+
+function RaceCard({ race }) {
+  const [open, setOpen] = useState(false);
+  const mId = race.modalidad_id || "run";
+  const col = MODAL_COLOR[mId] || "#C4B5FD";
+  const bg  = MODAL_BG[mId] || C.accentBg;
+  return (
+    <div onClick={() => setOpen(!open)} style={{ background:C.card, border:`0.5px solid ${open?C.border2:C.border}`, borderRadius:12, padding:"0.85rem 1rem", cursor:"pointer", transition:"border-color .15s" }}>
+      <div style={{ display:"flex", justifyContent:"space-between", gap:10 }}>
+        <div style={{ flex:1, minWidth:0 }}>
+          <div style={{ display:"flex", gap:5, flexWrap:"wrap", marginBottom:5 }}>
+            <span style={{ fontSize:10, fontWeight:500, padding:"2px 8px", borderRadius:100, background:bg, color:col }}>{race.modalidad}</span>
+            {race.estado && <span style={{ fontSize:10, padding:"2px 8px", borderRadius:100, background:race.estado==="Abierta"?"#064E3B":race.estado==="Cerrada"?"#4C0519":"#451A03", color:race.estado==="Abierta"?"#6EE7B7":race.estado==="Cerrada"?"#FCA5A5":"#FCD34D" }}>{race.estado}</span>}
+          </div>
+          <p style={{ fontSize:13, fontWeight:500, margin:"0 0 3px", color:C.text, overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{race.nombre}</p>
+          <p style={{ fontSize:11, color:C.muted, margin:0 }}>{race.fecha} · {race.ubicacion}</p>
+        </div>
+        <div style={{ textAlign:"right", flexShrink:0 }}>
+          <p style={{ fontSize:12, fontWeight:500, color:col, margin:"0 0 2px" }}>{race.precio||"—"}</p>
+          <p style={{ fontSize:10, color:C.muted, margin:0 }}>{open?"▲":"▼"}</p>
+        </div>
+      </div>
+      {open && (
+        <div style={{ marginTop:10, paddingTop:10, borderTop:`0.5px solid ${C.border}` }}>
+          {race.distancia && <p style={{ fontSize:11, color:C.muted, margin:"0 0 4px" }}>Distancia: <span style={{color:C.text}}>{race.distancia}</span></p>}
+          {race.comunidad && <p style={{ fontSize:11, color:C.muted, margin:"0 0 4px" }}>Comunidad: <span style={{color:C.text}}>{race.comunidad}</span></p>}
+          {race.notas     && <p style={{ fontSize:11, color:C.muted, margin:"0 0 4px" }}>Notas: <span style={{color:C.text}}>{race.notas}</span></p>}
+          {race.url       && <a href={race.url} target="_blank" rel="noreferrer" style={{ fontSize:11, color:col, textDecoration:"none", border:`0.5px solid ${col}`, padding:"4px 10px", borderRadius:6, display:"inline-block", marginTop:4 }}>Ver inscripción →</a>}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function Home() {
+  const [paises, setPaises]           = useState([]);
+  const [ccaa, setCcaa]               = useState([]);
+  const [modalidades, setModalidades] = useState([]);
+  const [distancias, setDistancias]   = useState([]);
+  const [mesDesde, setMesDesde]       = useState(null);
+  const [mesHasta, setMesHasta]       = useState(null);
+  const [showMasPaises, setShowMasPaises] = useState(false);
+  const [results, setResults]         = useState(null);
+  const [loading, setLoading]         = useState(false);
+  const [error, setError]             = useState(null);
+  const [totalPruebas, setTotalPruebas] = useState(null);
+
+  const espana = paises.includes("España");
+  const anyFilter = paises.length || modalidades.length || distancias.length || mesDesde !== null || mesHasta !== null;
+
+  useEffect(() => {
+    fetch(`${SUPABASE_URL}/rest/v1/races?select=count`, {
+      headers: { "apikey":ANON_KEY, "Authorization":`Bearer ${ANON_KEY}`, "Prefer":"count=exact" }
+    }).then(r => { const c = r.headers.get("content-range"); if(c) setTotalPruebas(c.split("/")[1]); }).catch(()=>{});
+  }, []);
+
+  async function handleSearch() {
+    if (!anyFilter) return;
+    setLoading(true); setError(null); setResults(null);
+    try {
+      const params = new URLSearchParams();
+      params.append("select","*"); params.append("order","fecha_iso.asc");
+      if (paises.length===1)      params.append("pais",`eq.${paises[0]}`);
+      if (paises.length>1)        params.append("pais",`in.(${paises.join(",")})`);
+      if (ccaa.length===1)        params.append("comunidad",`eq.${ccaa[0]}`);
+      if (ccaa.length>1)          params.append("comunidad",`in.(${ccaa.join(",")})`);
+      if (modalidades.length===1) params.append("modalidad_id",`eq.${modalidades[0]}`);
+      if (modalidades.length>1)   params.append("modalidad_id",`in.(${modalidades.join(",")})`);
+      if (mesDesde!==null) params.append("fecha_iso",`gte.2026-${String(mesDesde+1).padStart(2,"0")}-01`);
+      if (mesHasta!==null) params.append("fecha_iso",`lte.${new Date(2026,mesHasta+1,0).toISOString().split("T")[0]}`);
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/races?${params}`, { headers:{"apikey":ANON_KEY,"Authorization":`Bearer ${ANON_KEY}`} });
+      const data = await res.json();
+      if (!Array.isArray(data)) throw new Error(data.message||"Error");
+      setResults(data);
+    } catch(e) { setError("Error al conectar. Inténtalo de nuevo."); }
+    finally { setLoading(false); }
+  }
+
+  function handleReset() { setPaises([]); setCcaa([]); setModalidades([]); setDistancias([]); setMesDesde(null); setMesHasta(null); setResults(null); setError(null); }
+
+  const pill = (label, selected, onClick, selColor="#93C5FD", selBg="#1E3A5F") => (
+    <button key={label} onClick={onClick} style={{ padding:"4px 11px", fontSize:12, borderRadius:100, cursor:"pointer", fontWeight:selected?500:400, border:selected?`1.5px solid ${selColor}`:`0.5px solid ${C.border}`, background:selected?selBg:C.card2, color:selected?selColor:C.muted, transition:"all .1s", whiteSpace:"nowrap" }}>{label}</button>
+  );
+
+  return (
+    <>
+      <Head>
+        <title>Hibrid Sport Calendar — Pruebas deportivas 2026</title>
+        <meta name="description" content="Calendario de pruebas deportivas 2026. Running, triatlón, trail, HYROX, OCR, natación y más en España y Europa." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <style>{`
+        * { box-sizing: border-box; margin:0; padding:0; }
+        body { background:#0E0F13; color:#F0F0F5; font-family:system-ui,-apple-system,sans-serif; }
+        @keyframes spin { to { transform:rotate(360deg); } }
+        .layout { display:flex; min-height:100vh; }
+        .sidebar { width:300px; min-width:300px; background:#16181F; border-right:0.5px solid rgba(255,255,255,0.08); padding:1rem; overflow-y:auto; position:sticky; top:0; height:100vh; }
+        .main { flex:1; padding:1rem; overflow-y:auto; }
+        @media(max-width:768px) {
+          .layout { flex-direction:column; }
+          .sidebar { width:100%; min-width:unset; height:auto; position:static; border-right:none; border-bottom:0.5px solid rgba(255,255,255,0.08); }
+        }
+      `}</style>
+
+      <div>
+        {/* Header */}
+        <div style={{ background:C.card, borderBottom:`0.5px solid ${C.border}`, padding:"0.75rem 1.25rem", display:"flex", alignItems:"center", justifyContent:"space-between", position:"sticky", top:0, zIndex:10 }}>
+          <div style={{ display:"flex", alignItems:"center", gap:10 }}>
+            <div style={{ width:32, height:32, borderRadius:8, background:C.accentBg, border:`0.5px solid ${C.accent}`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:16 }}>🏅</div>
+            <div>
+              <p style={{ fontSize:15, fontWeight:600, margin:0 }}>Hibrid Sport Calendar</p>
+              <p style={{ fontSize:11, color:C.muted, margin:0 }}>
+                Pruebas 2026
+                {totalPruebas && <span style={{ marginLeft:6, color:C.accent, background:C.accentBg, padding:"1px 6px", borderRadius:20, fontSize:10 }}>{totalPruebas} indexadas</span>}
+              </p>
+            </div>
+          </div>
+          {(anyFilter||results) && <button onClick={handleReset} style={{ fontSize:12, color:C.muted, background:"none", border:`0.5px solid ${C.border}`, borderRadius:8, padding:"5px 12px", cursor:"pointer" }}>Limpiar</button>}
+        </div>
+
+        <div className="layout">
+          {/* Sidebar — filtros */}
+          <div className="sidebar">
+
+            {/* País */}
+            <div style={{ marginBottom:20 }}>
+              <Label>País {paises.length>0 && <span style={{color:C.accent}}>· {paises.length}</span>}</Label>
+              <div style={{ display:"flex", flexWrap:"wrap", gap:5 }}>
+                {(showMasPaises?PAISES:PAISES.slice(0,8)).map(p => pill(p, paises.includes(p), ()=>toggle(paises,setPaises,p)))}
+                <button onClick={()=>setShowMasPaises(!showMasPaises)} style={{ fontSize:11, color:C.muted, background:"none", border:"none", cursor:"pointer", padding:"4px 2px" }}>{showMasPaises?"▲ menos":`+${PAISES.length-8} más ▼`}</button>
+              </div>
+            </div>
+
+            {/* CCAA */}
+            {espana && (
+              <div style={{ marginBottom:20 }}>
+                <Label>Comunidad autónoma {ccaa.length>0 && <span style={{color:C.accent}}>· {ccaa.length}</span>}</Label>
+                <div style={{ display:"flex", flexWrap:"wrap", gap:5 }}>
+                  {CCAA.map(c => pill(c, ccaa.includes(c), ()=>toggle(ccaa,setCcaa,c), C.accent, C.accentBg))}
+                </div>
+              </div>
+            )}
+
+            {/* Modalidad */}
+            <div style={{ marginBottom:20 }}>
+              <Label>Modalidad {modalidades.length>0 && <span style={{color:C.accent}}>· {modalidades.length}</span>}</Label>
+              <div style={{ display:"flex", flexWrap:"wrap", gap:5 }}>
+                {MODALIDADES.map(m => (
+                  <button key={m.id} onClick={()=>toggle(modalidades,setModalidades,m.id)} style={{ display:"inline-flex", alignItems:"center", gap:4, padding:"4px 10px", fontSize:12, borderRadius:100, cursor:"pointer", fontWeight:modalidades.includes(m.id)?500:400, border:modalidades.includes(m.id)?`1.5px solid ${MODAL_COLOR[m.id]}`:`0.5px solid ${C.border}`, background:modalidades.includes(m.id)?MODAL_BG[m.id]:C.card2, color:modalidades.includes(m.id)?MODAL_COLOR[m.id]:C.muted }}>
+                    <span style={{fontSize:12}}>{m.icon}</span>{m.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Distancia */}
+            <div style={{ marginBottom:20 }}>
+              <Label>Distancia {distancias.length>0 && <span style={{color:C.accent}}>· {distancias.length}</span>}</Label>
+              <div style={{ display:"flex", flexWrap:"wrap", gap:5 }}>
+                {DISTANCIAS.map(d => (
+                  <button key={d.id} onClick={()=>toggle(distancias,setDistancias,d.id)} style={{ display:"inline-flex", flexDirection:"column", alignItems:"center", padding:"5px 10px", fontSize:11, borderRadius:8, cursor:"pointer", border:distancias.includes(d.id)?`1.5px solid #FCD34D`:`0.5px solid ${C.border}`, background:distancias.includes(d.id)?"#451A03":C.card2, color:distancias.includes(d.id)?"#FCD34D":C.muted, fontWeight:distancias.includes(d.id)?500:400 }}>
+                    {d.label}<span style={{fontSize:9,opacity:0.6}}>{d.sub}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Fechas */}
+            <div style={{ marginBottom:20 }}>
+              <Label>Fechas 2026</Label>
+              {["Desde","Hasta"].map((lbl,li) => (
+                <div key={lbl} style={{ marginBottom:10 }}>
+                  <p style={{ fontSize:10, color:C.muted, margin:"0 0 5px" }}>{lbl}</p>
+                  <div style={{ display:"flex", flexWrap:"wrap", gap:3 }}>
+                    {MESES.map((m,i) => {
+                      const sel = li===0?mesDesde===i:mesHasta===i;
+                      const faded = li===0?(mesDesde!==null&&i<mesDesde):(mesHasta!==null&&i>mesHasta);
+                      return <button key={i} onClick={()=>li===0?setMesDesde(mesDesde===i?null:i):setMesHasta(mesHasta===i?null:i)} style={{ padding:"4px 7px", fontSize:11, borderRadius:5, cursor:"pointer", border:sel?`1.5px solid ${C.accent}`:`0.5px solid ${C.border}`, background:sel?C.accentBg:C.card2, color:sel?"#C4B5FD":C.muted, opacity:faded?0.3:1 }}>{m}</button>;
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Botón buscar */}
+            <button onClick={handleSearch} disabled={!anyFilter||loading} style={{ width:"100%", padding:"11px", borderRadius:10, background:anyFilter?"#7C6FFF":C.hint, color:anyFilter?"#fff":C.muted, border:"none", fontSize:14, fontWeight:500, cursor:anyFilter&&!loading?"pointer":"default", opacity:loading?0.7:1 }}>
+              {loading?"Buscando...":"Buscar pruebas"}
+            </button>
+          </div>
+
+          {/* Main — resultados */}
+          <div className="main">
+            {!results && !loading && !error && (
+              <div style={{ display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", height:"60vh", color:C.muted, textAlign:"center", gap:12 }}>
+                <span style={{ fontSize:48 }}>🏅</span>
+                <p style={{ fontSize:16, fontWeight:500, color:C.text }}>Encuentra tu próxima carrera</p>
+                <p style={{ fontSize:13, maxWidth:300 }}>Selecciona filtros en el panel izquierdo y pulsa "Buscar pruebas".</p>
+              </div>
+            )}
+
+            {loading && (
+              <div style={{ display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", height:"60vh", gap:12, color:C.muted }}>
+                <div style={{ width:36, height:36, border:`2px solid ${C.hint}`, borderTop:`2px solid ${C.accent}`, borderRadius:"50%", animation:"spin 0.8s linear infinite" }} />
+                <p style={{ fontSize:13 }}>Buscando pruebas...</p>
+              </div>
+            )}
+
+            {error && <p style={{ fontSize:13, color:"#FCA5A5", textAlign:"center", padding:"2rem" }}>{error}</p>}
+
+            {results && !loading && (
+              <div>
+                <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:14 }}>
+                  <p style={{ fontSize:13, fontWeight:500, color:C.text }}>{results.length} prueba{results.length!==1?"s":""} encontrada{results.length!==1?"s":""}</p>
+                  <p style={{ fontSize:11, color:C.muted }}>Pulsa para ver más info</p>
+                </div>
+                {results.length===0
+                  ? <p style={{ textAlign:"center", color:C.muted, padding:"3rem 0", fontSize:14 }}>Sin resultados con estos filtros.</p>
+                  : <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(280px,1fr))", gap:8 }}>
+                      {results.map((r,i) => <RaceCard key={i} race={r} />)}
+                    </div>
+                }
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+
+const SUPABASE_URL = "https://ssyljhtganuaanczxeep.supabase.co";
+const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzeWxqaHRnYW51YWFuY3p4ZWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5MzA2MDcsImV4cCI6MjA5MjUwNjYwN30.kY5rw5BFXqdMze0IMQmbDQNfh5uXhaI35e4LfMYNOjE";
+
+const PAISES = ["España","Portugal","Francia","Alemania","Italia","Reino Unido","Países Bajos","Bélgica","Suiza","Austria","Estados Unidos","México","Colombia","Argentina","Chile","Brasil"];
+const CCAA = ["Andalucía","Aragón","Asturias","Baleares","Canarias","Cantabria","Castilla-La Mancha","Castilla y León","Cataluña","Ceuta","Comunidad Valenciana","Extremadura","Galicia","La Rioja","Madrid","Melilla","Murcia","Navarra","País Vasco"];
+const MODALIDADES = [
   { id:"run",   label:"Running",                   icon:"🏃" },
   { id:"tri",   label:"Triatlón",                  icon:"🏊" },
   { id:"dua",   label:"Duatlón",                   icon:"🚴" },
