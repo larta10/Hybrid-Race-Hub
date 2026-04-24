@@ -289,7 +289,10 @@ function RaceCard({ race, featured, onClick }) {
 
       {/* Footer */}
       <div className="card-footer">
-        <span className="card-format">{race.formato || (race.distancia||"")}</span>
+        <div className="card-info">
+          {race.distancia && <span className="card-distancia">{race.distancia}</span>}
+          {race.formato && <span className="card-formato">{race.formato}</span>}
+        </div>
         <div style={{display:"flex",alignItems:"center",gap:8}}>
           <span className="card-price" style={{color:col}}>{race.precio || ""}</span>
           {race.fecha_iso && (
@@ -933,6 +936,9 @@ export default function Home() {
           font-family:var(--font-mono); font-size:10px; font-weight:500;
           text-transform:uppercase; letter-spacing:0.08em; color:var(--muted2);
         }
+        .card-info { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+        .card-distancia { font-family:var(--font-mono); font-size:10px; font-weight:600; color:var(--text); }
+        .card-formato { font-family:var(--font-mono); font-size:9px; font-weight:500; color:var(--muted); padding:2px 6px; background:var(--surface2); border-radius:4px; }
         .card-price {
           font-family:var(--font-display); font-size:18px; font-weight:700;
           text-transform:uppercase;
