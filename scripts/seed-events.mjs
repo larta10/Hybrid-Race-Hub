@@ -646,7 +646,7 @@ const EVENTS = [
     distancia: '8 km',
     precio: null,
     estado: 'Abierta',
-    url: 'https://www.wezone.es/blog/hybrid-day-la-nueva-frontera-del-fitness/',
+    url: null,
     formato: 'Individual',
     notas: '8km running + 8 estaciones funcionales. Liga Ibérica.',
     source: 'wezone.es',
@@ -768,7 +768,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -806,7 +806,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -825,7 +825,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -844,7 +844,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -863,7 +863,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -882,7 +882,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -901,7 +901,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -920,7 +920,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -939,7 +939,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -958,7 +958,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -977,7 +977,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -998,7 +998,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1017,7 +1017,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1036,7 +1036,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1074,7 +1074,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1093,7 +1093,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1112,7 +1112,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1131,7 +1131,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1150,7 +1150,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1169,7 +1169,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1188,7 +1188,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1226,7 +1226,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1245,7 +1245,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1264,7 +1264,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1283,7 +1283,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1302,7 +1302,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1321,7 +1321,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1340,7 +1340,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1359,7 +1359,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1380,7 +1380,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1418,7 +1418,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1437,7 +1437,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1456,7 +1456,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1475,7 +1475,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1494,7 +1494,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1513,7 +1513,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1532,7 +1532,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1551,7 +1551,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1570,7 +1570,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1589,7 +1589,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1608,7 +1608,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1627,7 +1627,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1646,7 +1646,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1665,7 +1665,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1684,7 +1684,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1703,7 +1703,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1722,7 +1722,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1741,7 +1741,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1760,7 +1760,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1781,7 +1781,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1800,7 +1800,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1819,7 +1819,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1840,7 +1840,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1859,7 +1859,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1878,7 +1878,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1899,7 +1899,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1918,7 +1918,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1937,7 +1937,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1956,7 +1956,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1975,7 +1975,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -1994,7 +1994,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2013,7 +2013,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2032,7 +2032,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2051,7 +2051,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2070,7 +2070,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2089,7 +2089,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2108,7 +2108,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2127,7 +2127,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2146,7 +2146,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2167,7 +2167,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2186,7 +2186,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2205,7 +2205,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2224,7 +2224,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2243,7 +2243,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2262,7 +2262,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2281,7 +2281,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2319,7 +2319,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2338,7 +2338,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2359,7 +2359,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2378,7 +2378,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2397,7 +2397,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2416,7 +2416,7 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
@@ -2456,27 +2456,81 @@ const EVENTS = [
     distancia: null,
     precio: null,
     estado: 'Abierta',
-    url: 'https://calendariocarrerasobstaculos.es/',
+    url: null,
     formato: null,
     notas: null,
     source: 'calendariocarrerasobstaculos.es',
   },
 ];
 
+// ── Validación de campos ──────────────────────────────────────────────────────
+const VALID_CCAA = new Set([
+  'Andalucía','Aragón','Principado de Asturias','Islas Baleares','Canarias',
+  'Cantabria','Castilla-La Mancha','Castilla y León','Cataluña','Ceuta',
+  'Comunidad Valenciana','Extremadura','Galicia','La Rioja',
+  'Comunidad de Madrid','Melilla','Región de Murcia',
+  'Comunidad Foral de Navarra','País Vasco',
+]);
+const VALID_FORMATO = new Set(['Individual','Parejas','Equipos','Pro/Elite']);
+const ISO_DATE_RE  = /^\d{4}-\d{2}-\d{2}$/;
+const PRECIO_RE    = /^\d[\d.,]*([ €]|€|euros?)/i;
+
+function validateEvent(ev) {
+  const warnings = [];
+  const errors   = [];
+
+  // Hard: fecha_iso válida si se proporciona
+  if (ev.fecha_iso && !ISO_DATE_RE.test(ev.fecha_iso))
+    errors.push(`fecha_iso inválida: "${ev.fecha_iso}"`);
+
+  // Hard: fecha en 2026 o posterior
+  if (ev.fecha_iso && ev.fecha_iso < '2026-01-01')
+    errors.push(`fecha pasada ignorada: ${ev.fecha_iso}`);
+
+  // Hard: CCAA reconocida
+  if (ev.comunidad && !VALID_CCAA.has(ev.comunidad))
+    warnings.push(`CCAA desconocida: "${ev.comunidad}"`);
+
+  // Hard: nombre requerido
+  if (!ev.nombre?.trim())
+    errors.push('nombre vacío');
+
+  // Soft: campos recomendados
+  if (!ev.precio)  warnings.push('sin precio');
+  if (!ev.formato) warnings.push('sin formato');
+  if (!ev.comunidad) warnings.push('sin CCAA');
+  if (ev.formato && !VALID_FORMATO.has(ev.formato))
+    warnings.push(`formato inválido: "${ev.formato}" (usa Individual|Parejas|Equipos|Pro/Elite)`);
+  if (ev.precio && !PRECIO_RE.test(ev.precio))
+    warnings.push(`formato de precio inusual: "${ev.precio}"`);
+
+  // Advertir sobre URLs de agregadores
+  const AGG_DOMAINS = ['calendariocarrerasobstaculos.es','theboxinthebox.com','soycorredor.es','runedia.com'];
+  if (ev.url && AGG_DOMAINS.some(d => ev.url.includes(d)))
+    warnings.push(`URL apunta a agregador: ${ev.url}`);
+
+  return { errors, warnings };
+}
+
+// ── Normalizar nombre para deduplicación ─────────────────────────────────────
+// Elimina año, sufijos de ciudad y convierte a minúsculas para comparar
+function normalizeNombre(nombre) {
+  return nombre
+    .toLowerCase()
+    .replace(/\s*20\d\d\s*/g, ' ')   // quitar año
+    .replace(/\s+(alicante|madrid|barcelona|sevilla|valencia|gijón|gijon|cerceda|alcobendas|tenerife|mallorca|granada)(\s|$)/g, ' ')
+    .replace(/[^a-záéíóúüñ0-9 ]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 // ── Detectar columnas disponibles en la tabla ────────────────────────────────
 async function getAvailableColumns() {
-  const { data, error } = await supabase.from('races').select('*').limit(1);
-  if (error) {
-    // Si la tabla está vacía el error es diferente; intentamos con select de columnas conocidas
-    return new Set(['id','nombre','modalidad','modalidad_id','fecha','fecha_iso',
-      'ubicacion','comunidad','pais','distancia','precio','estado','notas','url',
-      'created_at','modalidad_parent']);
-  }
-  if (data.length > 0) return new Set(Object.keys(data[0]));
-  // Tabla vacía: hacemos insert vacío para detectar columnas disponibles
+  const { data } = await supabase.from('races').select('*').limit(1);
+  if (data?.length > 0) return new Set(Object.keys(data[0]));
   return new Set(['id','nombre','modalidad','modalidad_id','fecha','fecha_iso',
     'ubicacion','comunidad','pais','distancia','precio','estado','notas','url',
-    'created_at','modalidad_parent']);
+    'created_at','modalidad_parent','municipio','provincia','formato','source','distancia_km','updated_at']);
 }
 
 // ── Lógica de inserción ──────────────────────────────────────────────────────
@@ -2487,60 +2541,87 @@ async function upsertEvents() {
     updated: 0,
     skipped: 0,
     errors: [],
+    validationWarnings: [],
   };
 
   const availableCols = await getAvailableColumns();
   const hasCol = (c) => availableCols.has(c);
 
-  console.log(`\n🚀 Iniciando inserción de ${EVENTS.length} eventos en Supabase...`);
-  console.log(`   Columnas disponibles: ${[...availableCols].filter(c => c !== 'id' && c !== 'created_at').join(', ')}\n`);
+  console.log(`\n🚀 Iniciando upsert de ${EVENTS.length} eventos en Supabase...`);
+  console.log(`   Clave de dedup: nombre_normalizado + fecha_iso + comunidad\n`);
 
   for (const ev of EVENTS) {
     const source = ev.source || 'unknown';
     stats.bySource[source] = (stats.bySource[source] || 0) + 1;
 
-    // Base payload con columnas siempre presentes
-    const payload = {
-      nombre: ev.nombre,
-      fecha: ev.fecha ?? null,
-      fecha_iso: ev.fecha_iso ?? null,
-      ubicacion: ev.ubicacion ?? null,
-      comunidad: ev.comunidad ?? null,
-      pais: 'España',
-      modalidad: ev.modalidad ?? null,
-      modalidad_id: ev.modalidad_id ?? null,
-      modalidad_parent: ev.modalidad_parent ?? null,
-      distancia: ev.distancia ?? null,
-      precio: ev.precio ?? null,
-      estado: ev.estado ?? 'Abierta',
-      url: ev.url ?? null,
-      notas: ev.notas ? ev.notas.substring(0, 100) : null,
-    };
+    // ── Validación ──────────────────────────────────────────────────────────
+    const { errors, warnings } = validateEvent(ev);
+    if (errors.length > 0) {
+      stats.errors.push({ nombre: ev.nombre, error: errors.join('; ') });
+      console.error(`  ✗  RECHAZADO:   ${ev.nombre} — ${errors.join('; ')}`);
+      continue;
+    }
+    if (warnings.length > 0) {
+      stats.validationWarnings.push({ nombre: ev.nombre, warnings });
+    }
 
-    // Columnas opcionales — solo si existen en la BD
-    if (hasCol('municipio'))   payload.municipio   = ev.municipio ?? null;
-    if (hasCol('provincia'))   payload.provincia   = ev.provincia ?? null;
-    if (hasCol('formato'))     payload.formato     = ev.formato ?? null;
-    if (hasCol('source'))      payload.source      = ev.source ?? null;
+    // ── Payload completo ────────────────────────────────────────────────────
+    const payload = {
+      nombre:           ev.nombre,
+      fecha:            ev.fecha          ?? null,
+      fecha_iso:        ev.fecha_iso      ?? null,
+      ubicacion:        ev.ubicacion      ?? null,
+      comunidad:        ev.comunidad      ?? null,
+      pais:             'España',
+      modalidad:        ev.modalidad      ?? null,
+      modalidad_id:     ev.modalidad_id   ?? null,
+      modalidad_parent: ev.modalidad_parent ?? null,
+      distancia:        ev.distancia      ?? null,
+      precio:           ev.precio         ?? null,
+      estado:           ev.estado         ?? 'Abierta',
+      url:              ev.url            ?? null,
+      notas:            ev.notas ? ev.notas.substring(0, 100) : null,
+    };
+    if (hasCol('municipio'))    payload.municipio    = ev.municipio    ?? null;
+    if (hasCol('provincia'))    payload.provincia    = ev.provincia    ?? null;
+    if (hasCol('formato'))      payload.formato      = ev.formato      ?? null;
+    if (hasCol('source'))       payload.source       = ev.source       ?? null;
     if (hasCol('distancia_km') && ev.distancia_km != null)
       payload.distancia_km = ev.distancia_km;
 
     try {
-      // Buscar si ya existe por nombre + fecha_iso
-      const { data: existing } = await supabase
+      // ── Dedup: nombre normalizado + fecha_iso + comunidad ─────────────────
+      // Busca coincidencia exacta primero
+      let query = supabase
         .from('races')
-        .select('id, precio, estado')
-        .eq('nombre', payload.nombre)
-        .eq('fecha_iso', payload.fecha_iso ?? '')
-        .maybeSingle();
+        .select('id')
+        .eq('nombre', payload.nombre);
+      if (payload.fecha_iso) query = query.eq('fecha_iso', payload.fecha_iso);
+      else query = query.is('fecha_iso', null);
+      const { data: exactMatch } = await query.maybeSingle();
+
+      // Si no hay exacto, buscar por nombre normalizado + fecha + comunidad
+      let existing = exactMatch;
+      if (!existing && payload.fecha_iso && payload.comunidad) {
+        const normNombre = normalizeNombre(payload.nombre);
+        const { data: candidates } = await supabase
+          .from('races')
+          .select('id, nombre')
+          .eq('fecha_iso', payload.fecha_iso)
+          .eq('comunidad', payload.comunidad);
+        const fuzzy = candidates?.find(r => normalizeNombre(r.nombre) === normNombre);
+        if (fuzzy) {
+          existing = fuzzy;
+          console.log(`  ~  FUZZY-MATCH: "${payload.nombre}" ↔ "${fuzzy.nombre}"`);
+        }
+      }
 
       if (existing) {
-        // Actualizar precio y estado
+        // Actualizar TODOS los campos (no solo precio/estado/url)
         const { error } = await supabase
           .from('races')
-          .update({ precio: payload.precio, estado: payload.estado, url: payload.url })
+          .update(payload)
           .eq('id', existing.id);
-
         if (error) throw error;
         stats.updated++;
         console.log(`  ↻  ACTUALIZADO: ${payload.nombre}`);
@@ -2578,13 +2659,23 @@ async function printReport(stats) {
 
   console.log(`\n✅ Insertados:  ${stats.inserted}`);
   console.log(`↻  Actualizados: ${stats.updated}`);
-  console.log(`⚠  Errores:     ${stats.errors.length}`);
+  console.log(`⏭  Rechazados:  ${stats.errors.length}`);
+  console.log(`⚠  Con avisos:  ${stats.validationWarnings?.length ?? 0}`);
 
   if (stats.errors.length > 0) {
-    console.log('\n❌ ERRORES DETALLADOS:');
+    console.log('\n❌ RECHAZADOS (errores de validación):');
     for (const e of stats.errors) {
       console.log(`   • ${e.nombre}: ${e.error}`);
     }
+  }
+
+  if (stats.validationWarnings?.length > 0) {
+    console.log('\n⚠  AVISOS DE VALIDACIÓN (insertados igualmente):');
+    for (const w of stats.validationWarnings.slice(0, 20)) {
+      console.log(`   • ${w.nombre}: ${w.warnings.join(', ')}`);
+    }
+    if (stats.validationWarnings.length > 20)
+      console.log(`   ... y ${stats.validationWarnings.length - 20} más`);
   }
 
   if (allEvents) {

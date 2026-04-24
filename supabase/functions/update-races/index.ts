@@ -453,21 +453,62 @@ async function scrapeItra(): Promise<Race[]> {
   return races;
 }
 
+// ── Validación ───────────────────────────────────────────────────────────────
+
+const VALID_CCAA = new Set([
+  "Andalucía","Aragón","Principado de Asturias","Islas Baleares","Canarias",
+  "Cantabria","Castilla-La Mancha","Castilla y León","Cataluña","Ceuta",
+  "Comunidad Valenciana","Extremadura","Galicia","La Rioja",
+  "Comunidad de Madrid","Melilla","Región de Murcia",
+  "Comunidad Foral de Navarra","País Vasco",
+]);
+
+const AGG_DOMAINS = [
+  "calendariocarrerasobstaculos.es","theboxinthebox.com",
+  "soycorredor.es","runedia.com","buscametas.com",
+];
+
+function validateRace(r: Race): { valid: boolean; warnings: string[] } {
+  const warnings: string[] = [];
+
+  if (!r.nombre?.trim())           return { valid: false, warnings: ["nombre vacío"] };
+  if (!r.fecha_iso)                warnings.push("sin fecha_iso");
+  if (r.fecha_iso && r.fecha_iso < "2026-01-01")
+    return { valid: false, warnings: [`fecha pasada: ${r.fecha_iso}`] };
+  if (!r.comunidad)                warnings.push("sin comunidad");
+  if (r.comunidad && !VALID_CCAA.has(r.comunidad))
+    warnings.push(`CCAA desconocida: "${r.comunidad}"`);
+  if (!r.precio)                   warnings.push("sin precio");
+  if (r.url && AGG_DOMAINS.some(d => r.url.includes(d)))
+    warnings.push(`URL apunta a agregador: ${r.url} — se nullifica`);
+
+  return { valid: true, warnings };
+}
+
+/** Normaliza nombre para comparación fuzzy (elimina año y sufijos de ciudad) */
+function normalizeNombre(nombre: string): string {
+  return nombre
+    .toLowerCase()
+    .replace(/\s*20\d\d\s*/g, " ")
+    .replace(/[^a-záéíóúüñ0-9 ]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 // ── Main handler ──────────────────────────────────────────────────────────────
 
 serve(async (req) => {
-  // Permite invocación desde cron (GET) y desde webhook (POST)
   if (req.method !== "GET" && req.method !== "POST") {
     return new Response("Method not allowed", { status: 405 });
   }
 
-  const supabaseUrl  = Deno.env.get("SUPABASE_URL")!;
-  const supabaseKey  = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-  const supabase     = createClient(supabaseUrl, supabaseKey);
+  const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+  const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+  const supabase    = createClient(supabaseUrl, supabaseKey);
 
   const log: string[] = [];
+  let inserted = 0, updated = 0, rejected = 0;
 
-  // Ejecuta todos los scrapers en paralelo; errores individuales no paran los demás
   const results = await Promise.allSettled([
     scrapeRunedia(),
     scrapeSoyCorredor(),
@@ -484,36 +525,61 @@ serve(async (req) => {
     else log.push(`Scraper error: ${r.reason}`);
   });
 
-  log.push(`Total scraped: ${allRaces.length} pruebas`);
+  log.push(`Total scraped: ${allRaces.length}`);
 
-  // Deduplicar por URL antes de upsert
+  // Deduplicar en memoria por (nombre_normalizado + fecha_iso + comunidad)
   const seen = new Set<string>();
   const unique = allRaces.filter(r => {
-    const key = r.url || `${r.nombre}|${r.fecha_iso}`;
+    const key = `${normalizeNombre(r.nombre)}|${r.fecha_iso ?? ""}|${r.comunidad ?? ""}`;
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
   });
+  log.push(`Unique (after dedup): ${unique.length}`);
 
-  log.push(`Unique: ${unique.length}`);
+  // Upsert uno a uno con validación y dedup contra BD
+  for (const race of unique) {
+    const { valid, warnings } = validateRace(race);
+    if (!valid) { rejected++; log.push(`REJECTED: ${race.nombre} — ${warnings.join("; ")}`); continue; }
 
-  // Upsert en lotes de 100 (límite seguro de Supabase)
-  const BATCH = 100;
-  let inserted = 0;
-  for (let i = 0; i < unique.length; i += BATCH) {
-    const batch = unique.slice(i, i + BATCH);
-    const { error, count } = await supabase
-      .from("races")
-      .upsert(batch, { onConflict: "url", ignoreDuplicates: false });
+    // Nullificar URLs de agregadores
+    if (race.url && AGG_DOMAINS.some(d => race.url.includes(d))) race.url = "";
 
-    if (error) log.push(`Upsert error (batch ${i}): ${error.message}`);
-    else inserted += count || batch.length;
+    // Dedup contra BD: buscar por nombre exacto + fecha_iso primero
+    let query = supabase.from("races").select("id").eq("nombre", race.nombre);
+    if (race.fecha_iso) query = query.eq("fecha_iso", race.fecha_iso);
+    else query = query.is("fecha_iso", null);
+    const { data: exact } = await query.maybeSingle();
+
+    let existingId = exact?.id ?? null;
+
+    // Si no hay exacto, buscar por nombre normalizado + fecha + comunidad
+    if (!existingId && race.fecha_iso && race.comunidad) {
+      const { data: candidates } = await supabase
+        .from("races").select("id, nombre")
+        .eq("fecha_iso", race.fecha_iso).eq("comunidad", race.comunidad);
+      const norm = normalizeNombre(race.nombre);
+      const fuzzy = candidates?.find(c => normalizeNombre(c.nombre) === norm);
+      if (fuzzy) existingId = fuzzy.id;
+    }
+
+    const payload = { ...race, url: race.url || null };
+
+    if (existingId) {
+      const { error } = await supabase.from("races").update(payload).eq("id", existingId);
+      if (error) log.push(`UPDATE ERROR: ${race.nombre} — ${error.message}`);
+      else updated++;
+    } else {
+      const { error } = await supabase.from("races").insert(payload);
+      if (error) log.push(`INSERT ERROR: ${race.nombre} — ${error.message}`);
+      else inserted++;
+    }
   }
 
-  log.push(`Upserted: ${inserted}`);
+  log.push(`Inserted: ${inserted}, Updated: ${updated}, Rejected: ${rejected}`);
   console.log(log.join("\n"));
 
-  return new Response(JSON.stringify({ ok: true, log }), {
+  return new Response(JSON.stringify({ ok: true, log, inserted, updated, rejected }), {
     headers: { "Content-Type": "application/json" },
     status: 200,
   });
