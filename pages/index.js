@@ -62,6 +62,28 @@ function toggle(arr, setArr, val) {
   setArr(arr.includes(val) ? arr.filter(x=>x!==val) : [...arr,val]);
 }
 
+function buildGCalUrl(race) {
+  const p = new URLSearchParams({ action: "TEMPLATE" });
+  p.set("text", race.nombre || "");
+  if (race.fecha_iso) {
+    const start = race.fecha_iso.replace(/-/g, "");
+    const next  = new Date(race.fecha_iso + "T12:00:00");
+    next.setDate(next.getDate() + 1);
+    const end = next.toISOString().split("T")[0].replace(/-/g, "");
+    p.set("dates", `${start}/${end}`);
+  }
+  if (race.ubicacion) p.set("location", race.ubicacion);
+  const details = [
+    race.modalidad  && `Modalidad: ${race.modalidad}`,
+    race.formato    && `Formato: ${race.formato}`,
+    race.precio     && `Precio: ${race.precio}`,
+    race.notas,
+    race.url        && `Inscripción: ${race.url}`,
+  ].filter(Boolean).join("\n");
+  if (details) p.set("details", details);
+  return `https://calendar.google.com/calendar/render?${p}`;
+}
+
 /* ─── OCR icon SVG ─────────────────────────────────────────────────────────── */
 const OcrIcon = () => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -75,6 +97,15 @@ const FuncIcon = () => (
     <circle cx="3" cy="11" r="2" stroke="currentColor" strokeWidth="1.5"/>
     <circle cx="11" cy="11" r="2" stroke="currentColor" strokeWidth="1.5"/>
     <path d="M5 11h4M7 11V4M5 6h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
+const CalIcon = () => (
+  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+    <rect x="1" y="2" width="11" height="10" rx="2" stroke="currentColor" strokeWidth="1.3"/>
+    <line x1="1" y1="5.5" x2="12" y2="5.5" stroke="currentColor" strokeWidth="1.3"/>
+    <line x1="4" y1="1" x2="4" y2="3.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+    <line x1="9" y1="1" x2="9" y2="3.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
   </svg>
 );
 
@@ -255,7 +286,16 @@ function RaceCard({ race, featured, onClick }) {
       {/* Footer */}
       <div className="card-footer">
         <span className="card-format">{race.formato || (race.distancia||"")}</span>
-        <span className="card-price" style={{color:col}}>{race.precio||"—"}</span>
+        <div style={{display:"flex",alignItems:"center",gap:8}}>
+          <span className="card-price" style={{color:col}}>{race.precio||"—"}</span>
+          {race.fecha_iso && (
+            <a href={buildGCalUrl(race)} target="_blank" rel="noreferrer"
+              className="card-gcal" onClick={e=>e.stopPropagation()}
+              title="Añadir a Google Calendar" aria-label="Añadir a Google Calendar">
+              <CalIcon/>
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -333,6 +373,81 @@ function HeroStats({ totalCount, ccaaCount, formatsCount }) {
         </div>
       ))}
     </div>
+  );
+}
+
+/* ─── NewsletterSignup ─────────────────────────────────────────────────────── */
+function NewsletterSignup() {
+  const [email, setEmail]   = useState("");
+  const [status, setStatus] = useState("idle");
+  const [errMsg, setErrMsg] = useState("");
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (!email || !email.includes("@")) return;
+    setStatus("loading");
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/subscribers`, {
+        method: "POST",
+        headers: {
+          apikey: ANON_KEY,
+          Authorization: `Bearer ${ANON_KEY}`,
+          "Content-Type": "application/json",
+          Prefer: "return=minimal",
+        },
+        body: JSON.stringify({ email: email.toLowerCase().trim(), active: true }),
+      });
+      if (res.ok || res.status === 201) {
+        setStatus("success");
+      } else {
+        const body = await res.json().catch(() => ({}));
+        if (body?.code === "23505") {
+          setStatus("success");
+        } else {
+          throw new Error(body?.message || "Error");
+        }
+      }
+    } catch {
+      setStatus("error");
+      setErrMsg("No se pudo completar. Inténtalo de nuevo.");
+    }
+  }
+
+  return (
+    <section className="nl">
+      <div className="nl-inner">
+        <div className="nl-text">
+          <p className="nl-eyebrow">NEWSLETTER</p>
+          <h2 className="nl-title">¿Sin perderte<br/>una carrera?</h2>
+          <p className="nl-sub">
+            Te avisamos cuando añadamos nuevas carreras OCR, HYROX o
+            competiciones funcionales en España.
+          </p>
+        </div>
+        {status === "success" ? (
+          <div className="nl-success">
+            <span className="nl-check">✓</span>
+            ¡Apuntado! Te avisaremos de nuevas pruebas.
+          </div>
+        ) : (
+          <form className="nl-form" onSubmit={handleSubmit}>
+            <input
+              type="email"
+              className="nl-input"
+              placeholder="tu@email.com"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              required
+              disabled={status === "loading"}
+            />
+            <button type="submit" className="nl-btn" disabled={status === "loading"}>
+              {status === "loading" ? "…" : "QUIERO AVISOS →"}
+            </button>
+            {status === "error" && <p className="nl-error">{errMsg}</p>}
+          </form>
+        )}
+      </div>
+    </section>
   );
 }
 
@@ -898,6 +1013,90 @@ export default function Home() {
           .results-head { flex-direction:column; gap:10px; }
           .main-inner { padding:1rem 1rem 5rem; }
         }
+
+        /* ── GOOGLE CALENDAR BUTTON ── */
+        .card-gcal {
+          display:inline-flex; align-items:center; justify-content:center;
+          width:26px; height:26px; border-radius:6px;
+          border:0.5px solid var(--border); background:var(--surface2);
+          color:var(--muted); text-decoration:none; flex-shrink:0;
+          transition:color .12s, border-color .12s, background .12s;
+        }
+        .card-gcal:hover {
+          color:var(--accent-mid); border-color:rgba(251,146,60,0.35);
+          background:var(--accent-bg);
+        }
+
+        /* ── NEWSLETTER ── */
+        .nl {
+          background:var(--surface); border-top:1px solid var(--border);
+          border-bottom:1px solid var(--border); padding:4rem 2rem;
+        }
+        .nl-inner {
+          max-width:900px; margin:0 auto;
+          display:flex; align-items:center; justify-content:space-between;
+          gap:3rem; flex-wrap:wrap;
+        }
+        .nl-text { flex:1; min-width:220px; }
+        .nl-eyebrow {
+          font-family:var(--font-mono); font-size:10px; font-weight:600;
+          text-transform:uppercase; letter-spacing:0.16em; color:var(--accent-mid);
+          margin-bottom:8px;
+        }
+        .nl-title {
+          font-family:var(--font-display); font-size:clamp(26px,4vw,40px);
+          font-weight:800; text-transform:uppercase; letter-spacing:-0.01em;
+          color:var(--text); line-height:1.05; margin-bottom:12px;
+        }
+        .nl-sub {
+          font-family:var(--font-body); font-size:14px; color:var(--muted);
+          line-height:1.65; max-width:380px;
+        }
+        .nl-form {
+          display:flex; flex-direction:column; gap:8px; flex-shrink:0;
+        }
+        .nl-input {
+          font-family:var(--font-body); font-size:14px;
+          background:var(--bg2); color:var(--text);
+          border:1px solid var(--border2); border-radius:var(--radius-sm);
+          padding:12px 16px; min-width:280px; outline:none;
+          transition:border-color .15s;
+        }
+        .nl-input::placeholder { color:var(--muted2); }
+        .nl-input:focus { border-color:var(--accent); }
+        .nl-input:disabled { opacity:.5; }
+        .nl-btn {
+          font-family:var(--font-display); font-size:14px; font-weight:800;
+          text-transform:uppercase; letter-spacing:0.06em;
+          background:var(--accent); color:#08090C;
+          border:none; border-radius:var(--radius-sm);
+          padding:12px 22px; cursor:pointer; white-space:nowrap;
+          transition:transform .12s, box-shadow .12s, opacity .12s;
+        }
+        .nl-btn:hover:not(:disabled) {
+          transform:translateY(-1px); box-shadow:0 6px 20px rgba(251,146,60,0.35);
+        }
+        .nl-btn:disabled { opacity:.5; cursor:not-allowed; }
+        .nl-error {
+          font-family:var(--font-body); font-size:12px; color:var(--red);
+        }
+        .nl-success {
+          display:flex; align-items:center; gap:14px;
+          font-family:var(--font-display); font-size:20px; font-weight:700;
+          text-transform:uppercase; letter-spacing:0.02em; color:var(--text);
+        }
+        .nl-check {
+          width:38px; height:38px; border-radius:50%; flex-shrink:0;
+          background:var(--green-bg); color:var(--green);
+          display:flex; align-items:center; justify-content:center; font-size:18px;
+        }
+        @media (max-width:720px) {
+          .nl { padding:2.5rem 1rem; }
+          .nl-inner { flex-direction:column; gap:1.5rem; }
+          .nl-form { width:100%; }
+          .nl-input { min-width:0; width:100%; }
+          .nl-btn { width:100%; text-align:center; }
+        }
       `}</style>
 
       {/* ── HERO ────────────────────────────────────────────────────────── */}
@@ -1085,6 +1284,9 @@ export default function Home() {
           </div>
         </main>
       </div>
+
+      {/* Newsletter */}
+      <NewsletterSignup/>
 
       {/* Mobile filter button */}
       <button className="mobile-filter-btn" onClick={()=>setSidebarOpen(o=>!o)}>
