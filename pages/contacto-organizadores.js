@@ -4,9 +4,9 @@ import Head from "next/head";
 const PRICING_PLANS = [
   {
     name: "Destacado básico",
-    price: "49€",
+    price: "20€",
     period: "/mes",
-    description: " visibility esencial para tu evento",
+    description: " visibilidad esencial para tu evento",
     features: [
       "Badge 'Destacado' en el calendario",
       "Posición preferente en el grid",
@@ -17,7 +17,7 @@ const PRICING_PLANS = [
   },
   {
     name: "Destacado premium",
-    price: "99€",
+    price: "30€",
     period: "/mes",
     description: "máxima visibilidad y exposición",
     features: [
@@ -115,6 +115,22 @@ export default function ContactOrganizers() {
           max-width: 1200px;
           margin: 0 auto;
           padding: 2rem;
+        }
+        .back-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-family: var(--font-mono);
+          font-size: 11px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--muted);
+          margin-bottom: 1rem;
+        }
+        .back-link:hover {
+          color: var(--accent);
+          text-decoration: none;
         }
 
         /* Hero */
@@ -398,6 +414,8 @@ export default function ContactOrganizers() {
       `}</style>
 
       <div className="contact-page">
+        <a href="/" className="back-link">← Volver al calendario</a>
+        
         <header className="contact-hero">
           <p className="contact-eyebrow">Colaboraciones</p>
           <h1 className="contact-title">Contacto organizadores</h1>
@@ -487,8 +505,8 @@ export default function ContactOrganizers() {
                     onChange={e => setForm(f => ({ ...f, plan: e.target.value }))}
                   >
                     <option value="">Selecciona un plan</option>
-                    <option value="basico">Destacado básico (49€/mes)</option>
-                    <option value="premium">Destacado premium (99€/mes)</option>
+                    <option value="basico">Destacado básico (20€/mes)</option>
+                    <option value="premium">Destacado premium (30€/mes)</option>
                   </select>
                 </div>
               </div>
