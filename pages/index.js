@@ -235,15 +235,21 @@ function RaceModal({ race, onClose }) {
         {/* CTAs */}
         <div className="modal-ctas">
           {race.url
-            const hasValidUrl = race.url && !race.url.includes('google.com') && !race.url.includes('carrerasocr.com');
+            const hasRealUrl = race.url && 
+  (race.url.includes('spartan.com') || 
+   race.url.includes('toughmudder.com') || 
+   race.url.includes('hyrox.com') || 
+   race.url.includes('crossfit.com') ||
+   race.url.includes('dekor') ||
+   race.url.includes('deka'));
 
-            {hasValidUrl ? (
-              <a href={race.url} target="_blank" rel="noreferrer" className="btn-primary">
-                IR A INSCRIPCIÓN →
-              </a>
-            ) : (
-              <span className="btn-primary btn-primary--off">INSCRIPCIÓN CERRADA</span>
-            )}
+{hasRealUrl ? (
+  <a href={race.url} target="_blank" rel="noreferrer" className="btn-primary">
+    INSCRIBIRSE →
+  </a>
+) : (
+  <span className="btn-primary btn-primary--off">PRÓXIMAMENTE</span>
+)}
           {race.fecha_iso && (
             <a href={buildGCalUrl(race)} target="_blank" rel="noreferrer" className="btn-ghost">
               AÑADIR A CALENDARIO 📅
