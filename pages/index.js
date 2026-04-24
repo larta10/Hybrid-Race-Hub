@@ -240,7 +240,11 @@ function RaceModal({ race, onClose }) {
               </a>
             : <span className="btn-primary btn-primary--off">SIN ENLACE</span>
           }
-          <button className="btn-ghost">GUARDAR ★</button>
+          {race.fecha_iso && (
+            <a href={buildGCalUrl(race)} target="_blank" rel="noreferrer" className="btn-ghost">
+              AÑADIR A CALENDARIO 📅
+            </a>
+          )}
         </div>
       </div>
     </div>
@@ -1005,14 +1009,14 @@ export default function Home() {
           box-shadow:0 6px 20px rgba(251,146,60,0.35);
         }
         .btn-primary--off { opacity:.45; cursor:not-allowed; background:var(--hint); color:var(--muted); }
-        .btn-ghost {
+        .btn-ghost { text-decoration: none;
           font-family:var(--font-display); font-size:14px; font-weight:700;
           text-transform:uppercase; letter-spacing:0.04em;
           background:none; color:var(--muted);
           border:0.5px solid var(--border); border-radius:var(--radius-sm);
           padding:11px 22px; cursor:pointer; transition:color .12s, border-color .12s;
         }
-        .btn-ghost:hover { color:var(--text); border-color:var(--border2); }
+        .btn-ghost:hover { color:var(--text); border-color:var(--border2); text-decoration: none; }
 
         /* ── Mobile filters drawer trigger ── */
         .mobile-filter-btn {
