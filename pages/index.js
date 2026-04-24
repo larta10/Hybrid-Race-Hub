@@ -235,11 +235,15 @@ function RaceModal({ race, onClose }) {
         {/* CTAs */}
         <div className="modal-ctas">
           {race.url
-            ? <a href={race.url} target="_blank" rel="noreferrer" className="btn-primary">
+            const hasValidUrl = race.url && !race.url.includes('google.com') && !race.url.includes('carrerasocr.com');
+
+            {hasValidUrl ? (
+              <a href={race.url} target="_blank" rel="noreferrer" className="btn-primary">
                 IR A INSCRIPCIÓN →
               </a>
-            : <span className="btn-primary btn-primary--off">SIN ENLACE</span>
-          }
+            ) : (
+              <span className="btn-primary btn-primary--off">INSCRIPCIÓN CERRADA</span>
+            )}
           {race.fecha_iso && (
             <a href={buildGCalUrl(race)} target="_blank" rel="noreferrer" className="btn-ghost">
               AÑADIR A CALENDARIO 📅
