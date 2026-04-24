@@ -2463,6 +2463,22 @@ const EVENTS = [
   },
 ];
 
+// ── Detectar columnas disponibles en la tabla ────────────────────────────────
+async function getAvailableColumns() {
+  const { data, error } = await supabase.from('races').select('*').limit(1);
+  if (error) {
+    // Si la tabla está vacía el error es diferente; intentamos con select de columnas conocidas
+    return new Set(['id','nombre','modalidad','modalidad_id','fecha','fecha_iso',
+      'ubicacion','comunidad','pais','distancia','precio','estado','notas','url',
+      'created_at','modalidad_parent']);
+  }
+  if (data.length > 0) return new Set(Object.keys(data[0]));
+  // Tabla vacía: hacemos insert vacío para detectar columnas disponibles
+  return new Set(['id','nombre','modalidad','modalidad_id','fecha','fecha_iso',
+    'ubicacion','comunidad','pais','distancia','precio','estado','notas','url',
+    'created_at','modalidad_parent']);
+}
+
 // ── Lógica de inserción ──────────────────────────────────────────────────────
 async function upsertEvents() {
   const stats = {
@@ -2473,20 +2489,22 @@ async function upsertEvents() {
     errors: [],
   };
 
-  console.log(`\n🚀 Iniciando inserción de ${EVENTS.length} eventos en Supabase...\n`);
+  const availableCols = await getAvailableColumns();
+  const hasCol = (c) => availableCols.has(c);
+
+  console.log(`\n🚀 Iniciando inserción de ${EVENTS.length} eventos en Supabase...`);
+  console.log(`   Columnas disponibles: ${[...availableCols].filter(c => c !== 'id' && c !== 'created_at').join(', ')}\n`);
 
   for (const ev of EVENTS) {
     const source = ev.source || 'unknown';
     stats.bySource[source] = (stats.bySource[source] || 0) + 1;
 
-    // Normalizar: añadir pais y asegurar que formato sea capitalizado
+    // Base payload con columnas siempre presentes
     const payload = {
       nombre: ev.nombre,
       fecha: ev.fecha ?? null,
       fecha_iso: ev.fecha_iso ?? null,
       ubicacion: ev.ubicacion ?? null,
-      municipio: ev.municipio ?? null,
-      provincia: ev.provincia ?? null,
       comunidad: ev.comunidad ?? null,
       pais: 'España',
       modalidad: ev.modalidad ?? null,
@@ -2496,10 +2514,16 @@ async function upsertEvents() {
       precio: ev.precio ?? null,
       estado: ev.estado ?? 'Abierta',
       url: ev.url ?? null,
-      formato: ev.formato ?? null,
       notas: ev.notas ? ev.notas.substring(0, 100) : null,
-      source: ev.source ?? null,
     };
+
+    // Columnas opcionales — solo si existen en la BD
+    if (hasCol('municipio'))   payload.municipio   = ev.municipio ?? null;
+    if (hasCol('provincia'))   payload.provincia   = ev.provincia ?? null;
+    if (hasCol('formato'))     payload.formato     = ev.formato ?? null;
+    if (hasCol('source'))      payload.source      = ev.source ?? null;
+    if (hasCol('distancia_km') && ev.distancia_km != null)
+      payload.distancia_km = ev.distancia_km;
 
     try {
       // Buscar si ya existe por nombre + fecha_iso
