@@ -1226,8 +1226,8 @@ export default function Home() {
             OCR<span className="slash">/</span><span className="hy">HYROX</span><span className="slash">/</span>CROSSFIT.
           </h1>
           <p className="hero-sub">
-            Un solo hub para las <strong>carreras híbridas, OCR y competiciones funcionales</strong> en España.
-            Filtra por formato, comunidad y mes. Actualizado a diario desde las fuentes oficiales.
+            El calendario más completo de <strong>carreras híbridas, OCR y competiciones funcionales</strong> en España.
+            Encuentra todas las pruebas, filtra por formato, comunidad y fecha. Actualizado a diario.
           </p>
           <HeroStats totalCount={totalCount} ccaaCount={CCAA.length} formatsCount={FORMATS.length}/>
         </div>
