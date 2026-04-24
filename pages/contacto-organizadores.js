@@ -49,23 +49,12 @@ export default function ContactOrganizers() {
   async function handleSubmit(e) {
     e.preventDefault();
     if (!validate()) return;
-    setStatus("loading");
     
-    try {
-      const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          service_id: "hybridracehub",
-          template_id: "contact_organizers",
-          user_id: "YOUR_PUBLIC_KEY",
-          template_params: form
-        })
-      });
-      setStatus("success");
-    } catch {
-      setStatus("error");
-    }
+    const mailto = `mailto:info@hybridracehub.es?subject=Contacto organizador - ${form.name}&body=${encodeURIComponent(
+      `Nombre: ${form.name}\nEmail: ${form.email}\nEmpresa: ${form.empresa}\nPlan: ${form.plan}\n\nMensaje:\n${form.message}`
+    )}`;
+    window.location.href = mailto;
+    setStatus("success");
   }
 
   return (
@@ -164,6 +153,17 @@ export default function ContactOrganizers() {
           line-height: 1.7;
         }
         .contact-sub strong { color: var(--text); font-weight: 600; }
+        .contact-email {
+          margin-top: 1.5rem;
+        }
+        .contact-email a {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-family: var(--font-mono);
+          font-size: 13px;
+          color: var(--accent);
+        }
 
         /* Pricing Grid */
         .pricing-section {
@@ -422,6 +422,9 @@ export default function ContactOrganizers() {
           <p className="contact-sub">
             <strong>Hybrid Race Hub</strong> es el calendario de referencia para carreras híbridas, OCR y competiciones funcionales en España. 
             Promociona tu evento y llega a miles de atletas interesados.
+          </p>
+          <p className="contact-email">
+            <a href="mailto:info@hybridracehub.es">info@hybridracehub.es</a>
           </p>
         </header>
 
