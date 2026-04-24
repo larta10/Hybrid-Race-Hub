@@ -225,7 +225,7 @@ function RaceModal({ race, onClose }) {
           </div>
           <div className="stat-cell">
             <span className="stat-label">PRECIO</span>
-            <span className="stat-val" style={{color:col}}>{race.precio||"—"}</span>
+            <span className="stat-val" style={{color:col}}>{race.precio || ""}</span>
           </div>
         </div>
 
@@ -287,7 +287,7 @@ function RaceCard({ race, featured, onClick }) {
       <div className="card-footer">
         <span className="card-format">{race.formato || (race.distancia||"")}</span>
         <div style={{display:"flex",alignItems:"center",gap:8}}>
-          <span className="card-price" style={{color:col}}>{race.precio||"—"}</span>
+          <span className="card-price" style={{color:col}}>{race.precio || ""}</span>
           {race.fecha_iso && (
             <a href={buildGCalUrl(race)} target="_blank" rel="noreferrer"
               className="card-gcal" onClick={e=>e.stopPropagation()}
@@ -933,6 +933,7 @@ export default function Home() {
           font-family:var(--font-display); font-size:18px; font-weight:700;
           text-transform:uppercase;
         }
+        .card-price:empty, .card-price[style=""] { display: none; }
         .sep { color:var(--hint); }
 
         /* ── MODAL ── */
