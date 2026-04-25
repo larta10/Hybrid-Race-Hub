@@ -1550,10 +1550,7 @@ export default function Home() {
             </div>
           </div>
           <nav className="nav" aria-label="Navegación principal">
-            <a href="#">Calendario</a>
-            <a href="#">Mapa</a>
-            <a href="#">Rankings</a>
-            <a href="#">Comunidad</a>
+            <a href="/blog">Blog</a>
           </nav>
         </div>
 
