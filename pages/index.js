@@ -62,6 +62,12 @@ function toggle(arr, setArr, val) {
   setArr(arr.includes(val) ? arr.filter(x=>x!==val) : [...arr,val]);
 }
 
+function formatDate(iso) {
+  if(!iso) return "";
+  const [y,m,d] = iso.split("-");
+  return `${d} ${MONTH_NAMES[parseInt(m,10)-1]} ${y}`;
+}
+
 function buildGCalUrl(race) {
   const p = new URLSearchParams({ action: "TEMPLATE" });
   p.set("text", race.nombre || "");
@@ -126,65 +132,62 @@ const CalIcon = () => (
   </svg>
 );
 
-/* ─── MonthRangePicker (logic unchanged, visual updated) ────────────────────── */
-function MonthRangePicker({ from, to, onChange }) {
-  const [viewYear, setViewYear] = useState(TODAY_YEAR);
-  const ymInt = (y,m) => y*12+m;
+/* ─── DateRangePicker ──────────────────────────────────────────────────────── */
+const DrpCalIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+    <rect x="1" y="2" width="12" height="11" rx="2" stroke="#FB923C" strokeWidth="1.3"/>
+    <line x1="1" y1="6" x2="13" y2="6" stroke="#FB923C" strokeWidth="1.3"/>
+    <line x1="4" y1="1" x2="4" y2="3.5" stroke="#FB923C" strokeWidth="1.3" strokeLinecap="round"/>
+    <line x1="10" y1="1" x2="10" y2="3.5" stroke="#FB923C" strokeWidth="1.3" strokeLinecap="round"/>
+  </svg>
+);
 
-  function isDisabled(y,m) {
-    return ymInt(y,m)<ymInt(TODAY_YEAR,TODAY_MONTH) || ymInt(y,m)>ymInt(MAX_YEAR,11);
-  }
-
-  function getStatus(y,m) {
-    if(!from) return "none";
-    const ym=ymInt(y,m), fym=ymInt(from.year,from.month), tym=to?ymInt(to.year,to.month):null;
-    if(ym===fym) return "from";
-    if(tym!==null && ym===tym) return "to";
-    if(tym!==null && ym>fym && ym<tym) return "range";
-    return "none";
-  }
-
-  function handleClick(m) {
-    if(isDisabled(viewYear,m)) return;
-    const clicked={year:viewYear,month:m};
-    if(!from||(from&&to)) { onChange({from:clicked,to:null}); return; }
-    const cym=ymInt(viewYear,m), fym=ymInt(from.year,from.month);
-    if(cym===fym) onChange({from:null,to:null});
-    else if(cym<fym) onChange({from:clicked,to:from});
-    else onChange({from,to:clicked});
-  }
-
-  const canPrev = viewYear>TODAY_YEAR;
-  const canNext = viewYear<MAX_YEAR;
+function DateRangePicker({ from, to, onChange }) {
+  const [fromFocused, setFromFocused] = useState(false);
+  const [toFocused,   setToFocused]   = useState(false);
 
   return (
-    <div>
-      <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
-        <button onClick={()=>canPrev&&setViewYear(y=>y-1)} className={`mp-nav${canPrev?"":" mp-nav--off"}`}>‹</button>
-        <span className="mp-year">{viewYear}</span>
-        <button onClick={()=>canNext&&setViewYear(y=>y+1)} className={`mp-nav${canNext?"":" mp-nav--off"}`}>›</button>
+    <div className="drp-wrap">
+      {/* Fecha Desde */}
+      <div className="drp-field">
+        <label className={`drp-label${from||fromFocused?" drp-label--float":""}`}>FECHA DESDE</label>
+        <div className="drp-input-wrap">
+          <input
+            type="date"
+            className="drp-input"
+            value={from||""}
+            min={TODAY_ISO}
+            style={{color:!from&&!fromFocused?"transparent":undefined}}
+            onFocus={()=>setFromFocused(true)}
+            onBlur={()=>setFromFocused(false)}
+            onChange={e=>{
+              const val=e.target.value||null;
+              onChange({from:val, to:(val&&to&&val>to)?null:to});
+            }}
+          />
+          <span className="drp-icon"><DrpCalIcon/></span>
+          {from&&<button className="drp-clear" onClick={()=>onChange({from:null,to})} aria-label="Limpiar fecha desde">×</button>}
+        </div>
       </div>
-      <div className="mp-grid">
-        {MONTH_NAMES.map((name,m)=>{
-          const dis=isDisabled(viewYear,m);
-          const st=getStatus(viewYear,m);
-          const edge=st==="from"||st==="to";
-          const inR=st==="range";
-          return (
-            <button key={m} onClick={()=>handleClick(m)}
-              className={`mp-cell${edge?" mp-cell--edge":inR?" mp-cell--range":dis?" mp-cell--dis":""}`}>
-              {name}
-            </button>
-          );
-        })}
+
+      {/* Fecha Hasta */}
+      <div className="drp-field">
+        <label className={`drp-label${to||toFocused?" drp-label--float":""}`}>FECHA HASTA</label>
+        <div className="drp-input-wrap">
+          <input
+            type="date"
+            className="drp-input"
+            value={to||""}
+            min={from||TODAY_ISO}
+            style={{color:!to&&!toFocused?"transparent":undefined}}
+            onFocus={()=>setToFocused(true)}
+            onBlur={()=>setToFocused(false)}
+            onChange={e=>onChange({from, to:e.target.value||null})}
+          />
+          <span className="drp-icon"><DrpCalIcon/></span>
+          {to&&<button className="drp-clear" onClick={()=>onChange({from,to:null})} aria-label="Limpiar fecha hasta">×</button>}
+        </div>
       </div>
-      {from && (
-        <p className="mp-label">
-          {MONTH_NAMES[from.month]} {from.year}
-          {" → "}
-          {to ? `${MONTH_NAMES[to.month]} ${to.year}` : <span style={{color:"var(--hint)"}}>selecciona fin</span>}
-        </p>
-      )}
     </div>
   );
 }
@@ -363,10 +366,12 @@ function ActiveFiltersRow({ ccaa, modalParents, modalSubs, formats, dateRange,
   ccaa.forEach(c=>{
     pills.push({ label:c, onRemove:()=>setCcaa(p=>p.filter(x=>x!==c)) });
   });
-  if(dateRange.from) {
-    const label = dateRange.to
-      ? `${MONTH_NAMES[dateRange.from.month]} ${dateRange.from.year} → ${MONTH_NAMES[dateRange.to.month]} ${dateRange.to.year}`
-      : `Desde ${MONTH_NAMES[dateRange.from.month]} ${dateRange.from.year}`;
+  if(dateRange.from || dateRange.to) {
+    const label = (dateRange.from && dateRange.to)
+      ? `${formatDate(dateRange.from)} → ${formatDate(dateRange.to)}`
+      : dateRange.from
+      ? `Desde ${formatDate(dateRange.from)}`
+      : `Hasta ${formatDate(dateRange.to)}`;
     pills.push({ label, onRemove:()=>setDateRange({from:null,to:null}) });
   }
 
@@ -757,13 +762,12 @@ export default function Home() {
       }
 
       if(dateRange.from) {
-        p.append("fecha_iso",`gte.${dateRange.from.year}-${String(dateRange.from.month+1).padStart(2,"0")}-01`);
+        p.append("fecha_iso",`gte.${dateRange.from}`);
       } else {
         p.append("fecha_iso",`gte.${TODAY_ISO}`);
       }
       if(dateRange.to) {
-        const last=new Date(dateRange.to.year,dateRange.to.month+1,0);
-        p.append("fecha_iso",`lte.${last.toISOString().split("T")[0]}`);
+        p.append("fecha_iso",`lte.${dateRange.to}`);
       }
 
       if(ccaa.length===1) p.append("comunidad",`eq.${ccaa[0]}`);
@@ -802,7 +806,7 @@ export default function Home() {
     setFormats([]); setDateRange({from:null,to:null});
   }
 
-  const anyFilter = ccaa.length||modalParents.length||modalSubs.length||formats.length||dateRange.from;
+  const anyFilter = ccaa.length||modalParents.length||modalSubs.length||formats.length||dateRange.from||dateRange.to;
 
   /* ── Sort results ──────────────────────────────────────────────────────── */
   const sorted = results ? [...results].sort((a,b)=>{
@@ -816,9 +820,13 @@ export default function Home() {
 
   /* ── Active filter subtitle ────────────────────────────────────────────── */
   const subtitle = [
-    dateRange.from && (dateRange.to
-      ? `${MONTH_NAMES[dateRange.from.month]}→${MONTH_NAMES[dateRange.to.month]}`
-      : `Desde ${MONTH_NAMES[dateRange.from.month]}`),
+    (dateRange.from||dateRange.to) && (
+      dateRange.from&&dateRange.to
+        ? `${formatDate(dateRange.from)}→${formatDate(dateRange.to)}`
+        : dateRange.from
+        ? `Desde ${formatDate(dateRange.from)}`
+        : `Hasta ${formatDate(dateRange.to)}`
+    ),
     ...ccaa.slice(0,2),
     ccaa.length>2 && `+${ccaa.length-2} CCAA`,
     modalParents.length>0 && modalParents.map(p=>MODALITIES.find(m=>m.id===p)?.label||p).join(" + "),
@@ -997,41 +1005,37 @@ export default function Home() {
           margin-top:4px;
         }
 
-        /* MonthPicker */
-        .mp-nav {
-          width:28px; height:28px; border-radius:7px;
-          border:0.5px solid var(--border2); background:var(--surface2);
-          color:var(--text); cursor:pointer; font-size:15px; line-height:1;
-          display:flex; align-items:center; justify-content:center; transition:opacity .1s;
+        /* DateRangePicker */
+        .drp-wrap { display:flex; flex-direction:column; gap:10px; }
+        .drp-field { position:relative; }
+        .drp-label {
+          position:absolute; left:12px; top:50%; transform:translateY(-50%);
+          font-family:var(--font-mono); font-size:10px; font-weight:600;
+          text-transform:uppercase; letter-spacing:0.14em; color:#8C8E9A;
+          pointer-events:none; transition:top .15s,font-size .15s,transform .15s;
+          z-index:2; white-space:nowrap;
         }
-        .mp-nav--off { opacity:.25; cursor:not-allowed; }
-        .mp-year {
-          font-family:var(--font-display); font-size:14px; font-weight:700;
-          text-transform:uppercase; color:var(--text);
+        .drp-label--float { top:9px; transform:none; font-size:9px; }
+        .drp-input-wrap { position:relative; }
+        .drp-input {
+          width:100%; height:52px; padding:20px 56px 8px 12px;
+          background:#13151C; border:1px solid #272932; border-radius:8px;
+          color:#F5F5F7; font-family:var(--font-mono); font-size:12px;
+          cursor:pointer; box-sizing:border-box; transition:border-color .15s;
+          color-scheme:dark; -webkit-appearance:none; appearance:none;
         }
-        .mp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; }
-        .mp-cell {
-          padding:10px 2px; border-radius:8px; cursor:pointer;
-          font-family:var(--font-mono); font-size:10px; font-weight:500;
-          text-transform:uppercase; letter-spacing:0.06em;
-          border:0.5px solid var(--border); background:var(--surface2);
-          color:var(--muted); transition:all .1s;
-          min-height:44px;
+        .drp-input:focus { outline:none; border-color:#FB923C; }
+        .drp-input::-webkit-calendar-picker-indicator { display:none; }
+        .drp-icon {
+          position:absolute; right:32px; top:50%; transform:translateY(-50%);
+          pointer-events:none; display:flex; align-items:center;
         }
-        .mp-cell--edge {
-          background:var(--accent); border-color:var(--accent);
-          color:#08090C; font-weight:700;
+        .drp-clear {
+          position:absolute; right:8px; top:50%; transform:translateY(-50%);
+          background:none; border:none; color:#8C8E9A; cursor:pointer;
+          font-size:15px; padding:4px 5px; line-height:1; transition:color .1s;
         }
-        .mp-cell--range {
-          background:var(--accent-bg); border-color:rgba(251,146,60,0.25);
-          color:var(--accent-mid);
-        }
-        .mp-cell--dis { opacity:.2; cursor:not-allowed; }
-        .mp-label {
-          margin-top:8px; font-family:var(--font-mono); font-size:10px;
-          font-weight:500; text-align:center; color:var(--muted);
-          letter-spacing:0.06em; text-transform:uppercase;
-        }
+        .drp-clear:hover { color:#F5F5F7; }
 
         /* ── MAIN ── */
         .main { background:var(--bg2); min-height:100%; }
@@ -1662,8 +1666,8 @@ export default function Home() {
             </FilterSection>
 
             {/* Fechas */}
-            <FilterSection title="Fechas" active={!!dateRange.from}>
-              <MonthRangePicker
+            <FilterSection title="Fechas" active={!!(dateRange.from||dateRange.to)}>
+              <DateRangePicker
                 from={dateRange.from} to={dateRange.to}
                 onChange={({from,to})=>setDateRange({from,to})}
               />
@@ -1759,7 +1763,7 @@ export default function Home() {
 
       {/* Mobile filter button */}
       <button className="mobile-filter-btn" onClick={()=>setSidebarOpen(o=>!o)}>
-        {sidebarOpen ? "Cerrar ×" : `Filtros${anyFilter?` (${[ccaa.length,modalParents.length,modalSubs.length,formats.length,dateRange.from?1:0].reduce((a,b)=>a+b,0)})`:"" }`}
+        {sidebarOpen ? "Cerrar ×" : `Filtros${anyFilter?` (${[ccaa.length,modalParents.length,modalSubs.length,formats.length,(dateRange.from||dateRange.to)?1:0].reduce((a,b)=>a+b,0)})`:"" }`}
       </button>
 
       {/* Race modal */}
