@@ -1551,6 +1551,7 @@ export default function Home() {
           </div>
           <nav className="nav" aria-label="Navegación principal">
             <a href="/blog">Blog</a>
+            <a href="/productos">Productos</a>
           </nav>
         </div>
 

@@ -213,6 +213,7 @@ export default function BlogPost({ post }) {
         <nav className="topbar-nav">
           <Link href="/">Calendario</Link>
           <Link href="/blog">Blog</Link>
+          <Link href="/productos">Productos</Link>
         </nav>
       </div>
 

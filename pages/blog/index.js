@@ -203,6 +203,7 @@ export default function BlogIndex() {
         <nav className="topbar-nav">
           <Link href="/">Calendario</Link>
           <Link href="/blog" className="active">Blog</Link>
+          <Link href="/productos">Productos</Link>
         </nav>
       </div>
 
