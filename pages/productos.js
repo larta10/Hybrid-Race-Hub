@@ -131,6 +131,12 @@ export default function Productos() {
         <title>Productos Recomendados — Hybrid Race Hub | OCR, HYROX y Fitness Híbrido</title>
         <meta name="description" content="Los mejores productos para OCR, HYROX y running híbrido: zapatillas trail, guantes, GPS, hidratación y recuperación. Selección honesta con precios en Amazon España." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://hybridracehub.com/productos" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://hybridracehub.com/productos" />
+        <meta property="og:title" content="Productos Recomendados — Hybrid Race Hub" />
+        <meta property="og:description" content="Los mejores productos para OCR, HYROX y running híbrido: zapatillas trail, guantes, GPS, hidratación y recuperación." />
+        <meta property="og:site_name" content="Hybrid Race Hub" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />

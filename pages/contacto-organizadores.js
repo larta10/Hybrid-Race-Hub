@@ -50,7 +50,7 @@ export default function ContactOrganizers() {
     e.preventDefault();
     if (!validate()) return;
     
-    const mailto = `mailto:info@hybridracehub.es?subject=Contacto organizador - ${form.name}&body=${encodeURIComponent(
+    const mailto = `mailto:hola@hybridracehub.com?subject=Contacto organizador - ${form.name}&body=${encodeURIComponent(
       `Nombre: ${form.name}\nEmail: ${form.email}\nEmpresa: ${form.empresa}\nPlan: ${form.plan}\n\nMensaje:\n${form.message}`
     )}`;
     window.location.href = mailto;
@@ -63,6 +63,12 @@ export default function ContactOrganizers() {
         <title>Contacto Organizadores — Hybrid Race Hub</title>
         <meta name="description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub. Planes de destacado básico y premium." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://hybridracehub.com/contacto-organizadores" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://hybridracehub.com/contacto-organizadores" />
+        <meta property="og:title" content="Contacto Organizadores — Hybrid Race Hub" />
+        <meta property="og:description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub." />
+        <meta property="og:site_name" content="Hybrid Race Hub" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -424,7 +430,7 @@ export default function ContactOrganizers() {
             Promociona tu evento y llega a miles de atletas interesados.
           </p>
           <p className="contact-email">
-            <a href="mailto:info@hybridracehub.es">info@hybridracehub.es</a>
+            <a href="mailto:hola@hybridracehub.com">hola@hybridracehub.com</a>
           </p>
         </header>
 

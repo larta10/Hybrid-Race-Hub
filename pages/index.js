@@ -109,6 +109,14 @@ const InstagramIcon = ({ size = 14 }) => (
   </svg>
 );
 
+const EnvelopeIcon = ({ size = 14 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="2" y="4" width="20" height="16" rx="3"/>
+    <path d="M2 7l10 7 10-7"/>
+  </svg>
+);
+
 const CalIcon = () => (
   <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
     <rect x="1" y="2" width="11" height="10" rx="2" stroke="currentColor" strokeWidth="1.3"/>
@@ -566,9 +574,13 @@ function OrganizerContact() {
             Cuéntanos tu evento y negociamos — una inscripción para mis seguidores
             o para mí a cambio de aparecer en el calendario.
           </p>
+          <a href="mailto:hola@hybridracehub.com" className="oc-ig-link">
+            <EnvelopeIcon size={14}/>
+            <span>hola@hybridracehub.com</span>
+          </a>
           <a href="https://www.instagram.com/hybridracehub_spain" target="_blank" rel="noreferrer" className="oc-ig-link">
             <InstagramIcon size={14}/>
-            <span>O escríbenos un DM · @hybridracehub_spain</span>
+            <span>O DM · @hybridracehub_spain</span>
           </a>
         </div>
 
@@ -632,10 +644,16 @@ function SiteFooter() {
               <div className="brand-sub">OCR · HYROX · Functional</div>
             </div>
           </div>
-          <a href="https://www.instagram.com/hybridracehub_spain" target="_blank" rel="noreferrer" className="sf-ig">
-            <InstagramIcon size={15}/>
-            <span>@hybridracehub_spain</span>
-          </a>
+          <div style={{display:"flex",alignItems:"center",gap:16,flexWrap:"wrap"}}>
+            <a href="mailto:hola@hybridracehub.com" className="sf-ig">
+              <EnvelopeIcon size={15}/>
+              <span>hola@hybridracehub.com</span>
+            </a>
+            <a href="https://www.instagram.com/hybridracehub_spain" target="_blank" rel="noreferrer" className="sf-ig">
+              <InstagramIcon size={15}/>
+              <span>@hybridracehub_spain</span>
+            </a>
+          </div>
         </div>
 
         <div className="sf-divider"/>
@@ -647,8 +665,8 @@ function SiteFooter() {
             <strong>Finalidad:</strong> gestión de consultas de organizadores y envío de alertas de nuevas carreras ·{" "}
             <strong>Base legal:</strong> consentimiento del interesado (Art. 6.1.a RGPD) ·{" "}
             <strong>Destinatarios:</strong> no se ceden datos a terceros ·{" "}
-            <strong>Derechos:</strong> acceso, rectificación, supresión, portabilidad y oposición mediante el formulario de contacto ·{" "}
-            <strong>Contacto DPD:</strong> a través del formulario de la sección &quot;Para Organizadores&quot;.
+            <strong>Derechos:</strong> acceso, rectificación, supresión, portabilidad y oposición dirigiéndose a <a href="mailto:hola@hybridracehub.com" style={{color:"var(--muted)"}}>hola@hybridracehub.com</a> ·{" "}
+            <strong>Contacto DPD:</strong> <a href="mailto:hola@hybridracehub.com" style={{color:"var(--muted)"}}>hola@hybridracehub.com</a>
           </p>
           <p className="sf-legal-text">
             Este sitio web utiliza únicamente cookies técnicas esenciales necesarias para su funcionamiento
@@ -812,8 +830,12 @@ export default function Home() {
         <title>Hybrid Race Hub — Calendario OCR, HYROX y CrossFit en España</title>
         <meta name="description" content="El calendario de referencia para carreras OCR, HYROX y competiciones funcionales en España. Filtra por formato, comunidad y fecha." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://hybridracehub.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://hybridracehub.com/" />
         <meta property="og:title" content="Hybrid Race Hub" />
         <meta property="og:description" content="OCR · HYROX · Functional — Calendario de competiciones híbridas en España" />
+        <meta property="og:site_name" content="Hybrid Race Hub" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
