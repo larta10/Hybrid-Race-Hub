@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <!-- Background -->
+  <rect width="400" height="200" fill="#13151C" rx="12"/>
+
+  <!-- HRH letters -->
+  <text
+    x="200" y="108"
+    font-family="Arial Black, Arial, sans-serif"
+    font-weight="900"
+    font-size="88"
+    letter-spacing="-2"
+    fill="#F5F5F7"
+    text-anchor="middle"
+    font-style="normal"
+  >HRH</text>
+
+  <!-- Orange bar under R (center letter) — approx x center ±28px, full accent -->
+  <rect x="155" y="116" width="90" height="5" fill="#FB923C" rx="2"/>
+
+  <!-- Thin orange line under all three letters at 40% opacity -->
+  <rect x="52" y="124" width="296" height="1.5" fill="#FB923C" fill-opacity="0.4" rx="1"/>
+
+  <!-- "HYBRID RACE HUB" subtitle -->
+  <text
+    x="200" y="152"
+    font-family="Arial Narrow, Arial, sans-serif"
+    font-weight="700"
+    font-size="17"
+    letter-spacing="6"
+    fill="#F5F5F7"
+    text-anchor="middle"
+    text-transform="uppercase"
+  >HYBRID RACE HUB</text>
+
+  <!-- "ESPAÑA · OCR · HYROX" tagline -->
+  <text
+    x="200" y="174"
+    font-family="Arial Narrow, Arial, sans-serif"
+    font-weight="400"
+    font-size="12"
+    letter-spacing="3"
+    fill="#8C8E9A"
+    text-anchor="middle"
+  >ESPAÑA · OCR · HYROX</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Background with rounded corners -->
+  <rect width="32" height="32" fill="#13151C" rx="6"/>
+
+  <!-- HRH letters centered -->
+  <text
+    x="16" y="21"
+    font-family="Arial Black, Arial, sans-serif"
+    font-weight="900"
+    font-size="13"
+    letter-spacing="-0.5"
+    fill="#F5F5F7"
+    text-anchor="middle"
+  >HRH</text>
+
+  <!-- Orange accent bar -->
+  <rect x="4" y="24" width="24" height="3" fill="#FB923C" rx="1.5"/>
+</svg>
