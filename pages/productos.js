@@ -1,141 +1,451 @@
 import Head from "next/head";
 import Link from "next/link";
 
-const PRODUCTS = [
+const TAG = "hybridracehub-21";
+const AZ = (asin) => `https://www.amazon.es/dp/${asin}/?tag=${TAG}`;
+
+/* ─── DATA ─────────────────────────────────────────────────────────────────── */
+
+const RANKINGS = [
   {
-    id: 1,
-    category: "Zapatillas Trail / OCR",
-    name: "Salomon Speedcross 6",
-    desc: "El clásico de la OCR. Suela agresiva con chevrones que clavan en barro, drenaje rápido y ajuste seguro. Perfecta para Spartan, Farinato y cualquier carrera de obstáculos.",
-    price: "desde ~120 €",
-    asin: "B0CGJHZGPV",
-    emoji: "👟",
+    id: "relojes",
+    letter: "A",
+    title: "Relojes deportivos para OCR + HYROX",
+    eyebrow: "GPS · AUTONOMÍA · MÉTRICAS",
+    intro: [
+      "Un reloj GPS es la inversión que más impacto tiene en la calidad del entrenamiento híbrido. No se trata de presumir de pulsera — se trata de tener datos reales de carga, recuperación y rendimiento que te permitan tomar decisiones de entrenamiento en vez de adivinar. Para OCR y HYROX, los criterios que más importan son GPS preciso en multibanda (fundamental en zonas de montaña y bajo edificios), autonomía suficiente para carreras largas, métricas de carga de entrenamiento (HRV, Training Readiness, carga aguda/crónica) y mapa de rutas para navegar en terreno desconocido.",
+      "El mercado se ha sofisticado mucho. Garmin sigue liderando en el ecosistema de datos, pero Suunto, Polar y COROS ofrecen alternativas sólidas con puntos fuertes distintos. Apple Watch Ultra 2 entra en la ecuación para quien está ya en el ecosistema Apple. Aquí el ranking de los 6 mejores para deporte híbrido, de mayor a más asequible.",
+    ],
+    table: {
+      headers: ["Reloj", "GPS", "Autonomía GPS", "HRV/Carga", "Precio aprox.", "Nota /10"],
+      rows: [
+        ["Garmin Forerunner 965", "Multibanda", "31 h", "Sí (avanzado)", "~600 €", "9.5"],
+        ["Garmin Fenix 8", "Multibanda", "29 h (AMOLED)", "Sí (avanzado)", "~850 €", "9.4"],
+        ["Suunto Race", "Multibanda", "40 h", "Sí", "~450 €", "8.8"],
+        ["Polar Vantage V3", "Multibanda", "43 h", "Sí (avanzado)", "~490 €", "8.6"],
+        ["COROS PACE 3", "Multibanda", "38 h", "Sí", "~220 €", "8.5"],
+        ["Apple Watch Ultra 2", "Multibanda", "36 h", "Básico", "~900 €", "8.0"],
+      ],
+    },
+    products: [
+      {
+        rank: 1,
+        name: "Garmin Forerunner 965",
+        asin: "B0CFQ1NQPG",
+        price: "~600 €",
+        desc: "La referencia de los atletas de OCR y triatlón. Pantalla AMOLED brillante, GPS multibanda preciso incluso bajo árboles y montaña, métricas de carga avanzadas (HRV Status, Training Readiness, Race Predictor), mapas TopoCom precargados y 31 h de autonomía con GPS activo. El ecosistema Garmin Connect es el más completo del mercado.",
+        pros: ["GPS multibanda más preciso del mercado para trail", "Métricas de carga y recuperación muy avanzadas", "Mapas topo integrados — navegación sin teléfono"],
+        cons: ["Precio elevado", "Pantalla AMOLED afecta autonomía vs modelos anteriores"],
+      },
+      {
+        rank: 2,
+        name: "Garmin Fenix 8",
+        asin: "B0D1PZBYF2",
+        price: "~850 €",
+        desc: "El tope de gama de Garmin. Construcción en titanio o acero, pantalla AMOLED o MIP según modelo, altavoz y micrófono integrados, GPS multibanda. Todo lo del Forerunner 965 más materiales premium y mayor resistencia a golpes. Para atletas que compiten en condiciones extremas o quieren el reloj definitivo.",
+        pros: ["Materiales de construcción premium", "Altavoz/micrófono para responder llamadas", "Compatible con todas las aplicaciones Garmin"],
+        cons: ["El más caro del ranking", "Muy similar al FR965 en métricas deportivas"],
+      },
+      {
+        rank: 3,
+        name: "Suunto Race",
+        asin: "B0C6T5BD9H",
+        price: "~450 €",
+        desc: "Suunto ha vuelto con fuerza con el Race. GPS multibanda preciso, pantalla AMOLED de alta resolución, 40 h de autonomía con GPS, y Suunto App que facilita la planificación de rutas en montaña. Especialmente bueno para OCR en trail — la interfaz de mapas es más limpia que la de Garmin.",
+        pros: ["40 h GPS multibanda — autonomía líder en su precio", "Pantalla AMOLED excelente bajo sol directo", "Diseño más compacto y ligero que el Fenix"],
+        cons: ["Ecosistema de datos menos completo que Garmin", "Menos métricas avanzadas de recuperación"],
+      },
+      {
+        rank: 4,
+        name: "Polar Vantage V3",
+        asin: "B0CFMXF3NH",
+        price: "~490 €",
+        desc: "Polar sigue siendo el rey de las métricas fisiológicas. El Vantage V3 tiene el mejor sensor de FC óptica del mercado, HRV nocturno más preciso que Garmin, y métricas de carga (Training Load Pro) especialmente útiles para atletas con volumen alto. GPS multibanda y 43 h de autonomía.",
+        pros: ["Mejor sensor óptico de FC del mercado", "HRV nocturno más fiable", "43 h de autonomía GPS — líder absoluto"],
+        cons: ["Mapas menos intuitivos que Garmin/Suunto", "Ecosistema de apps limitado"],
+      },
+      {
+        rank: 5,
+        name: "COROS PACE 3",
+        asin: "B0CFQQ9FDL",
+        price: "~220 €",
+        desc: "La mejor relación calidad/precio por debajo de 250 €. GPS multibanda, 38 h de autonomía, sensor óptico de FC preciso y la app COROS que mejora versión a versión. Lo que pierde frente a Garmin es profundidad de análisis de datos — pero para la mayoría de atletas no de élite es más que suficiente.",
+        pros: ["Precio muy competitivo", "38 h GPS multibanda — excepcional para su precio", "Ligero (39 g) — ideal para running rápido"],
+        cons: ["Métricas avanzadas menos desarrolladas que Garmin", "Ecosistema de apps más limitado"],
+      },
+      {
+        rank: 6,
+        name: "Apple Watch Ultra 2",
+        asin: "B0CHX8B914",
+        price: "~900 €",
+        desc: "El más caro y el más potente tecnológicamente, pero no el mejor para rendimiento deportivo puro. GPS de doble chip preciso, 36 h de autonomía, integración total con iPhone y apps del ecosistema Apple. Si ya estás en el ecosistema Apple y usas muchas apps de salud, es una opción válida — pero para métricas deportivas avanzadas, Garmin gana.",
+        pros: ["Integración total ecosistema Apple/iPhone", "Titanio de aviación — muy robusto", "GPS de doble chip muy preciso"],
+        cons: ["El más caro del ranking", "Ecosistema de entrenamiento deportivo inferior a Garmin", "Autonomía limitada frente a su precio"],
+      },
+    ],
+    conclusion: "Para OCR y HYROX, el Garmin Forerunner 965 es el referente indiscutible si el presupuesto lo permite. Si buscas la mejor relación calidad/precio, el COROS PACE 3 a ~220 € es difícil de superar. Para principiantes: el COROS. Para atletas de rendimiento: el FR965 o el Polar Vantage V3.",
   },
+
   {
-    id: 2,
-    category: "Zapatillas Trail / OCR",
-    name: "New Balance Fresh Foam X Hierro v8",
-    desc: "La opción más cómoda para debutantes. Amortiguación generosa con suela Vibram de alta tracción. Ideal para carreras Open donde el tiempo no es lo primero.",
-    price: "desde ~85 €",
-    asin: "B0CXK38JZN",
-    emoji: "👟",
+    id: "trail-gtx",
+    letter: "B",
+    title: "Zapatillas trail running para OCR — con Gore-Tex",
+    eyebrow: "AGARRE · IMPERMEABILIDAD · DURABILIDAD",
+    intro: [
+      "En OCR, la zapatilla es la decisión de equipamiento que más afecta al rendimiento. El terreno cambia cada kilómetro — barro, agua, roca, hierba mojada, obstáculos con madera — y la zapatilla tiene que aguantar todo eso durante horas. La versión Gore-Tex (GTX) añade impermeabilidad, lo que en carreras de primavera y otoño en España puede ser la diferencia entre llegar con los pies en condiciones o con ampollas desde el km 5.",
+      "El debate trail GTX vs trail estándar en OCR: la impermeabilidad ayuda cuando el agua es escasa o moderada. En obstáculos donde te metes de lleno en el agua (zanjas, cruces de río), la GTX puede llenarse y tardar más en drenar que una trail estándar con buenas aberturas de drenaje. Para OCR de temporada húmeda sin agua profunda: GTX. Para OCR veraniego con obstáculos de agua: considera la versión estándar.",
+    ],
+    table: {
+      headers: ["Zapatilla", "Impermeabilidad", "Agarre barro", "Peso aprox.", "Precio aprox.", "Nota /10"],
+      rows: [
+        ["Salomon Speedcross 6 GTX", "Gore-Tex", "Excelente", "320 g", "~150 €", "9.3"],
+        ["Salomon XA Pro 3D v9 GTX", "Gore-Tex", "Muy bueno", "340 g", "~160 €", "8.8"],
+        ["Hoka Speedgoat 6 GTX", "Gore-Tex", "Bueno", "310 g", "~180 €", "8.5"],
+        ["Brooks Cascadia 17 GTX", "Gore-Tex", "Bueno", "330 g", "~160 €", "8.3"],
+        ["Inov-8 Mudclaw G 260", "No (grip extremo)", "Excepcional", "260 g", "~130 €", "8.6"],
+      ],
+    },
+    products: [
+      {
+        rank: 1,
+        name: "Salomon Speedcross 6 GTX",
+        asin: "B0CGJHZGPV",
+        price: "~150 €",
+        desc: "La referencia del OCR con impermeabilidad. Los chevrones agresivos de la Speedcross clavan en barro con precisión, el sistema Quicklace garantiza un ajuste perfecto bajo presión y la membrana Gore-Tex mantiene el pie seco en terrenos húmedos. Usada por la mayoría de atletas de Spartan en categorías de rendimiento cuando el terreno es barro y roca.",
+        pros: ["Agarre en barro sin competencia en su gama", "Gore-Tex ExtendedComfort — impermeabilidad real en prolongado", "Sistema Quicklace rápido y seguro en carrera"],
+        cons: ["Más pesada que la versión sin GTX", "Drenaje más lento si se llena de agua"],
+      },
+      {
+        rank: 2,
+        name: "Salomon XA Pro 3D v9 GTX",
+        asin: "B0C9THPXGB",
+        price: "~160 €",
+        desc: "Más versátil que la Speedcross — la suela Contagrip MA está diseñada para una gama más amplia de terrenos (no solo barro) y el sistema 3D Advanced Chassis protege el pie de impactos en roca. Ideal para OCR con terreno mixto o para atletas que van a usarlas también en trail entrenamiento.",
+        pros: ["Más versátil en terreno mixto que la Speedcross", "Protección lateral excelente para rocas y raíces", "Diseño más conservador — sirve también para trail recreativo"],
+        cons: ["Menos agarre específico en barro profundo que la Speedcross", "Más pesada que otras opciones de la gama"],
+      },
+      {
+        rank: 3,
+        name: "Hoka Speedgoat 6 GTX",
+        asin: "B0CS5LBMHV",
+        price: "~180 €",
+        desc: "Si tu punto fuerte es el running y los obstáculos no son tu preocupación principal, la Speedgoat 6 GTX te da el amortiguamiento más generoso del ranking. La suela Vibram® Megagrip ofrece agarre sólido incluso en roca mojada, y el stack de espuma Meta-Rocker hace que los kilómetros pasen con menos fatiga de pies y tobillos.",
+        pros: ["Amortiguamiento líder — ideal para OCR de larga distancia", "Vibram Megagrip — agarre excepcional en roca mojada", "Muy estable en descensos técnicos"],
+        cons: ["La más cara del ranking", "Menos drenaje que zapatillas trail sin GTX"],
+      },
+      {
+        rank: 4,
+        name: "Brooks Cascadia 17 GTX",
+        asin: "B0CPN3B9PP",
+        price: "~160 €",
+        desc: "La Cascadia lleva décadas siendo referente en trail y la versión 17 mantiene ese equilibrio entre protección, agarre y confort. La GTX añade impermeabilidad sin sacrificar demasiado transpirabilidad. Especialmente buena para atletas con pie ancho o que hacen OCR de más de 15 km.",
+        pros: ["Horma amplia — cómoda en distancias largas", "Muy resistente y duradera", "Buen equilibrio protección/peso"],
+        cons: ["Agarre en barro menos agresivo que la Speedcross", "La versión GTX es significativamente más cara que la estándar"],
+      },
+      {
+        rank: 5,
+        name: "Inov-8 Mudclaw G 260",
+        asin: "B07DWRBMQL",
+        price: "~130 €",
+        desc: "La única del ranking sin Gore-Tex — pero la incluimos porque su agarre en barro es tan excepcional que merece mención especial. Los clavos de grafeno de 8 mm penetran en barro blando mejor que cualquier otra zapatilla del mercado. La usan prácticamente todos los atletas de élite de Spartan Race World Championship. Sin impermeabilidad pero con drenaje superior.",
+        pros: ["El mejor agarre en barro del mercado — sin discusión", "Más ligera que las GTX (260 g)", "Drenaje superior cuando hay agua"],
+        cons: ["Sin impermeabilidad", "Clavos muy agresivos — incómodos en roca y asfalto"],
+      },
+    ],
+    conclusion: "Para OCR de temporada húmeda en España (otoño-invierno-primavera): Salomon Speedcross 6 GTX. Para OCR de verano con agua o para atletas de élite que priorizan agarre sobre impermeabilidad: Inov-8 Mudclaw G 260. Para distancias largas (Spartan Beast, OCR ultra): Hoka Speedgoat 6 GTX.",
   },
+
   {
-    id: 3,
-    category: "Zapatillas HYROX / Funcional",
-    name: "Nike Metcon 9",
-    desc: "La reina de HYROX. Suela plana estable para sled y wall balls, con amortiguación suficiente para los 8 km de carrera. La más vista en el podio.",
-    price: "desde ~130 €",
-    asin: "B0CZF9KMPZ",
-    emoji: "👟",
+    id: "hibridas",
+    letter: "C",
+    title: "Zapatillas para pruebas híbridas tipo HYROX",
+    eyebrow: "VERSATILIDAD · AMORTIGUACIÓN · PESO",
+    intro: [
+      "HYROX plantea un reto específico para el calzado: necesitas una zapatilla que sea rápida en los 8 km de carrera pero que también aguante el sled push, los wall balls y las sandbag lunges sin destrozarte las rodillas ni resbalar en el suelo de la arena cubierta. Esto descarta tanto las zapatillas ultraminimalistas (duras en los ejercicios de fuerza) como las maximalistas de running (inestables en el trabajo funcional).",
+      "El punto dulce está en el medio: stack moderado de 20–30 mm, drop de 8–10 mm, suela plana en el talón para los ejercicios y suficiente amortiguamiento para los km de carrera. Hay vida más allá de la Nike Metcon — aunque la Metcon sigue siendo la referencia.",
+    ],
+    table: {
+      headers: ["Zapatilla", "Versatilidad gym", "Running km", "Peso aprox.", "Precio aprox.", "Nota /10"],
+      rows: [
+        ["Nike Metcon 9", "Excelente", "Bueno", "288 g", "~140 €", "9.2"],
+        ["Reebok Nano X4", "Excelente", "Bueno", "310 g", "~120 €", "8.8"],
+        ["New Balance FuelCell SC Trainer", "Bueno", "Muy bueno", "250 g", "~170 €", "8.6"],
+        ["On Cloudsurfer", "Bueno", "Excelente", "270 g", "~180 €", "8.4"],
+        ["Saucony Kinvara Pro", "Regular", "Excelente", "220 g", "~150 €", "8.0"],
+      ],
+    },
+    products: [
+      {
+        rank: 1,
+        name: "Nike Metcon 9",
+        asin: "B0CZF9KMPZ",
+        price: "~140 €",
+        desc: "La reina indiscutida de HYROX. Suela plana y estable para sled push y wall balls, amortiguamiento suficiente para los 8 km de carrera, y la confianza de ser la zapatilla más vista en el podio de HYROX a nivel mundial. La versión 9 es la más ligera hasta la fecha (288 g) sin perder estabilidad.",
+        pros: ["La más versátil entre running y trabajo funcional", "Muy estable en sled push y ejercicios de fuerza", "La más probada en competición HYROX"],
+        cons: ["No es la más rápida en la parte de running puro", "Precio elevado para su nivel de amortiguamiento"],
+      },
+      {
+        rank: 2,
+        name: "Reebok Nano X4",
+        asin: "B0DHPWRSM5",
+        price: "~120 €",
+        desc: "La alternativa directa a la Metcon con un punto más de amortiguamiento en el talón — ventaja real en las sandbag lunges de 100 m y el farmer's carry de 200 m. Muchos atletas la prefieren para HYROX si vienen del CrossFit donde ya la tienen y conocen su comportamiento.",
+        pros: ["Más amortiguamiento que la Metcon — mejor en ejercicios de impacto", "Precio más competitivo", "Muy durable — aguanta mucho entrenamiento"],
+        cons: ["Ligeramente más pesada que la Metcon 9", "Suela un poco menos plana en los ejercicios de halterofilia"],
+      },
+      {
+        rank: 3,
+        name: "New Balance FuelCell SuperComp Trainer",
+        asin: "B0BHR41ML4",
+        price: "~170 €",
+        desc: "Si tu punto fuerte es el running y los ejercicios los controlas bien, la FuelCell SC Trainer te da una ventaja real en los km de carrera. La placa de carbono hace que los 8 km de HYROX pasen más rápido, y la suela tiene suficiente base para no ser inestable en los ejercicios de fuerza.",
+        pros: ["Placa de carbono — ventaja en running", "Ligera (250 g) — reduce fatiga en carrera", "Buen equilibrio running/gym"],
+        cons: ["La más cara del ranking", "La placa de carbono puede ser incómoda en ejercicios muy estáticos"],
+      },
+      {
+        rank: 4,
+        name: "On Cloudsurfer",
+        asin: "B0B9VB86FQ",
+        price: "~180 €",
+        desc: "On ha entrado con fuerza en el mundo HYROX. La tecnología CloudTec absorbe impactos en running y sorprende en los ejercicios de fuerza — más estable de lo que su aspecto sugiere. Para atletas que priorizan la parte de running del HYROX y quieren algo por encima del nivel de la Metcon en ese componente.",
+        pros: ["Excelente en running — entre las más cómodas del ranking", "Diseño premium", "Buena respuesta en ejercicios de impacto (burpee broad jump)"],
+        cons: ["La más cara de las de running dominante", "Menos estable que la Metcon en sled push"],
+      },
+      {
+        rank: 5,
+        name: "Saucony Kinvara Pro",
+        asin: "B0BJVWJGXB",
+        price: "~150 €",
+        desc: "La más ligera del ranking (220 g) y la más orientada al running puro. Una placa de nylon la hace propulsiva sin el coste de la placa de carbono completa. Válida para HYROX si tu running es tu ventaja competitiva y los ejercicios de fuerza no son tu punto débil. Para atletas que se acercan a HYROX desde el running de competición.",
+        pros: ["La más ligera del ranking", "Muy propulsiva en running", "Precio competitivo para su nivel"],
+        cons: ["La menos estable en ejercicios de fuerza", "No recomendable si el sled push o los wall balls son tu punto débil"],
+      },
+    ],
+    conclusion: "Para la mayoría de atletas: Nike Metcon 9. Para los que vienen del CrossFit: Reebok Nano X4. Para runners que se pasan a HYROX: New Balance FuelCell SC Trainer. Para debutantes con presupuesto ajustado: Reebok Nano X4.",
   },
+
   {
-    id: 4,
-    category: "Zapatillas HYROX / Funcional",
-    name: "Reebok Nano X4",
-    desc: "Alternativa directa a la Metcon con un punto más de amortiguación. Ideal para atletas que hacen muchas sandbag lunges y farmer's carry. Precio generalmente más competitivo.",
-    price: "desde ~110 €",
-    asin: "B0DHPWRSM5",
-    emoji: "👟",
+    id: "crossfit",
+    letter: "D",
+    title: "Zapatillas crossfit / halterofilia",
+    eyebrow: "ESTABILIDAD · SUELA PLANA · AGARRE LATERAL",
+    intro: [
+      "Las zapatillas de CrossFit tienen requerimientos muy distintos a las de running o trail. Necesitas suela plana y dura para levantamientos (un stack de espuma blanda hace que el talón se hunda en un clean o una sentadilla pesada, comprometiendo la mecánica), excelente agarre lateral para los movimientos en cuerda y los cambios de dirección, y suficiente flexibilidad en el antepié para los movimientos de gimnasia.",
+      "El peso importa menos aquí que en running — 300–350 g es completamente normal y aceptable. Lo que no es aceptable es una zapatilla que no te dé base en un snatch de competición o que resbale en la rope climb. Estas son las cinco mejores para entrenamiento funcional y competición de CrossFit.",
+    ],
+    table: {
+      headers: ["Zapatilla", "Estabilidad lift", "Rope climb", "Lateral", "Precio aprox.", "Nota /10"],
+      rows: [
+        ["Nike Metcon 9", "Muy alta", "Excelente", "Muy bueno", "~140 €", "9.3"],
+        ["Reebok Nano X4", "Alta", "Muy bueno", "Bueno", "~120 €", "8.9"],
+        ["NoBull Trainer+", "Alta", "Bueno", "Muy bueno", "~140 €", "8.6"],
+        ["Under Armour TriBase Reign 6", "Alta", "Bueno", "Bueno", "~110 €", "8.3"],
+        ["Inov-8 FastLift 360", "Muy alta", "Regular", "Bueno", "~130 €", "8.5"],
+      ],
+    },
+    products: [
+      {
+        rank: 1,
+        name: "Nike Metcon 9",
+        asin: "B0CZF9KMPZ",
+        price: "~140 €",
+        desc: "La doble función de la Metcon: es la mejor zapatilla para HYROX Y la mejor para CrossFit, lo que la convierte en la más versátil del mercado. Para CrossFit específicamente, el heel clip de plástico duro proporciona una estabilidad en levantamientos que pocas zapatillas igualan, y el agarre lateral en rope climb es excepcional.",
+        pros: ["Heel clip — máxima estabilidad en sentadilla y clean", "El mejor agarre en rope climb del mercado", "Doble uso: CrossFit + HYROX"],
+        cons: ["No es la más cómoda para volúmenes altos de running dentro del WOD", "Precio elevado"],
+      },
+      {
+        rank: 2,
+        name: "Reebok Nano X4",
+        asin: "B0DHPWRSM5",
+        price: "~120 €",
+        desc: "La alternativa de referencia a la Metcon en el mundo CrossFit. Suela NanoWeave resistente, estabilidad lateral en movimientos explosivos y una durabilidad legendaria — las Nano aguantan más volumen de entrenamiento semanal que casi cualquier otra zapatilla de CrossFit. La opción preferida de muchos atletas de box que entrenan 5–6 veces por semana.",
+        pros: ["Durabilidad muy superior a la competencia", "Precio más competitivo que la Metcon", "Buena para volúmenes altos de entrenamiento"],
+        cons: ["Menos estabilidad en levantamientos pesados que la Metcon", "Menos agarre en rope climb"],
+      },
+      {
+        rank: 3,
+        name: "NoBull Trainer+",
+        asin: "B08JQLW47K",
+        price: "~140 €",
+        desc: "La favorita de la comunidad CrossFit independiente. El SuperFabric que recubre la parte exterior es prácticamente indestructible — especialmente en rope climb donde otras zapatillas se deterioran en pocas semanas. Suela plana, estabilidad alta en levantamientos y un diseño discreto que no grita 'crossfitter' si también la usas en la calle.",
+        pros: ["SuperFabric — el más resistente en rope climb", "Diseño más discreto y versátil para uso diario", "Muy buena estabilidad lateral"],
+        cons: ["Running dentro del WOD es su punto débil", "Menos conocida — difícil de encontrar en tiendas físicas en España"],
+      },
+      {
+        rank: 4,
+        name: "Under Armour TriBase Reign 6",
+        asin: "B0CLDM2H9F",
+        price: "~110 €",
+        desc: "La opción de mejor precio del ranking. El sistema TriBase de tres puntos de apoyo maximiza la base de contacto con el suelo en sentadillas y peso muerto, y la goma de la parte exterior aguanta bien el rope climb. Para atletas que buscan una zapatilla de CrossFit sólida sin gastar 140 €.",
+        pros: ["La mejor relación calidad/precio del ranking", "Sistema TriBase — buena distribución de carga en levantamientos", "Buena para sentadilla y peso muerto"],
+        cons: ["Menos durable que Metcon/Nano en rope climb intenso", "Opciones de talla limitadas en España"],
+      },
+      {
+        rank: 5,
+        name: "Inov-8 FastLift 360",
+        asin: "B07MR2R97N",
+        price: "~130 €",
+        desc: "La más especializada en levantamiento de potencia del ranking. El tacón de 4 mm optimizado para sentadilla y cargadas, combinado con la suela de grafeno de Inov-8, crea una zapatilla excepcionalmente estable bajo carga máxima. Para atletas que priorizan los levantamientos sobre los movimientos de gimnasia y running.",
+        pros: ["Tacón específico para sentadilla olímpica y cargadas", "Grafeno en suela — agarre excepcional en plataformas", "Muy buena para WODs con carga pesada"],
+        cons: ["Rope climb no es su punto fuerte", "Menos versatilidad para WODs mixtos con running"],
+      },
+    ],
+    conclusion: "Para la mayoría de atletas de CrossFit: Nike Metcon 9 (si el presupuesto lo permite) o Reebok Nano X4. Para rope climb intenso: NoBull Trainer+. Para levantamiento de potencia puro: Inov-8 FastLift 360. Para presupuesto ajustado: Under Armour TriBase Reign 6.",
   },
+
   {
-    id: 5,
-    category: "Guantes / Protección",
-    name: "Mechanix Wear FastFit",
-    desc: "El guante no oficial de la élite OCR. Fino como una segunda piel, material resistente al barro y cierre de velcro para ajuste rápido. El más visto en la salida de Spartan Elite.",
-    price: "desde ~18 €",
-    asin: "B08CPC6ZLZ",
-    emoji: "🧤",
+    id: "pulsometros",
+    letter: "E",
+    title: "Pulsómetros / bandas de frecuencia cardíaca",
+    eyebrow: "PRECISIÓN · CONECTIVIDAD · MEMORIA INTERNA",
+    intro: [
+      "Los relojes con sensor óptico en muñeca son suficientemente precisos para running suave y entrenamiento de fuerza ligero. Pero en ejercicios de alta intensidad con movimiento de brazos — burpees, sled push, wall balls, rope climb — la señal óptica pierde precisión porque el movimiento del brazo crea artefactos en la señal. Un sensor de pecho o de brazo (óptico en posición fija) elimina ese problema y te da datos de FC fiables en los momentos que más importan.",
+      "Para HYROX y OCR, tener datos de FC precisos durante las estaciones de fuerza es lo que te permite calibrar el esfuerzo en carrera y evitar salir demasiado rápido. El sensor de pecho comunica con el reloj por ANT+ o Bluetooth — asegúrate de que tu reloj es compatible antes de comprar.",
+    ],
+    table: {
+      headers: ["Sensor", "Precisión", "Memoria int.", "Conectividad", "Precio aprox.", "Nota /10"],
+      rows: [
+        ["Garmin HRM-Pro Plus", "Excelente", "Sí", "ANT+/BT", "~110 €", "9.4"],
+        ["Polar H10", "Excelente", "Sí (1 sesión)", "ANT+/BT", "~80 €", "9.2"],
+        ["Wahoo TICKR X", "Muy bueno", "Sí", "ANT+/BT", "~80 €", "8.8"],
+        ["Polar Verity Sense", "Muy bueno", "Sí", "BT/ANT+", "~90 €", "8.5"],
+        ["Garmin HRM-Fit", "Bueno", "No", "ANT+/BT", "~80 €", "8.0"],
+      ],
+    },
+    products: [
+      {
+        rank: 1,
+        name: "Garmin HRM-Pro Plus",
+        asin: "B0B3PNFK9H",
+        price: "~110 €",
+        desc: "El referente para atletas de triatlón y HYROX. Mide FC con precisión excepcional, registra métricas de running dinámico (cadencia, longitud de zancada, oscillación vertical, tiempo de contacto con el suelo), tiene memoria interna para guardar sesiones sin reloj, y se sincroniza con dispositivos Garmin, Zwift y Wahoo.",
+        pros: ["Métricas de running dinámico — nivel élite", "Compatible con todo el ecosistema Garmin", "Memoria interna — funciona sin reloj"],
+        cons: ["El más caro del ranking", "Algunas métricas avanzadas solo funcionan con relojes Garmin"],
+      },
+      {
+        rank: 2,
+        name: "Polar H10",
+        asin: "B07WHLR63Y",
+        price: "~80 €",
+        desc: "El estándar de oro en precisión de FC de pecho. Los estudios clínicos independientes lo colocan sistemáticamente como el más preciso del mercado — es el sensor de referencia en investigación de ciencias del deporte. Dual ANT+/Bluetooth, memoria de 1 sesión interna, banda cómoda que no se desplaza ni con barro.",
+        pros: ["Precisión de FC líder según estudios independientes", "Muy buena sujeción — no se mueve en OCR con barro", "Precio muy competitivo para su nivel"],
+        cons: ["Memoria solo de 1 sesión (no acumula historial)", "Sin métricas adicionales de running"],
+      },
+      {
+        rank: 3,
+        name: "Wahoo TICKR X",
+        asin: "B07T64LZMB",
+        price: "~80 €",
+        desc: "El favorito de los ciclistas y triatletas que también compiten en HYROX. El TICKR X añade a la FC básica métricas de running (cadencia, oscillación vertical) y acelerómetro integrado para métricas de entrenamiento de fuerza. Excelente compatibilidad con todas las apps (Wahoo, Garmin, Zwift, TrainingPeaks).",
+        pros: ["Métricas de running + fuerza — el más completo por su precio", "Compatibilidad universal con todas las apps", "Memoria interna extendida"],
+        cons: ["Métricas de running menos precisas que el HRM-Pro Plus", "La app Wahoo requiere configuración inicial"],
+      },
+      {
+        rank: 4,
+        name: "Polar Verity Sense",
+        asin: "B08T1WV9BJ",
+        price: "~90 €",
+        desc: "El único sensor óptico de brazo del ranking — se lleva en el antebrazo o la sien, no en el pecho. Ideal para deportes donde la banda de pecho resulta incómoda (natación, remo, escalada en OCR). Precisión muy alta para ser óptico en posición fija — sin los artefactos que genera el sensor de muñeca del reloj.",
+        pros: ["Sensor de brazo — más cómodo que el pecho para algunos deportes", "Muy buena precisión para sensor óptico", "Apto para natación (inmersión)"],
+        cons: ["Precio elevado para un sensor óptico", "Puede desplazarse en movimientos de brazos muy intensos"],
+      },
+      {
+        rank: 5,
+        name: "Garmin HRM-Fit",
+        asin: "B09XL58BSY",
+        price: "~80 €",
+        desc: "Diseñado específicamente para mujeres — se engancha al sujetador deportivo sin necesidad de banda de pecho adicional. FC precisa con compatibilidad total con el ecosistema Garmin. La solución más cómoda para atletas femeninas que encuentran la banda de pecho incómoda durante el ejercicio intenso.",
+        pros: ["Sin banda — máxima comodidad para atletas femeninas", "Compatible con todos los relojes Garmin", "Buena precisión de FC"],
+        cons: ["Solo para atletas femeninas", "Sin memoria interna ni métricas adicionales"],
+      },
+    ],
+    conclusion: "Para atletas HYROX que quieren el máximo de datos: Garmin HRM-Pro Plus (especialmente si tienes reloj Garmin). Para la mejor precisión de FC al mejor precio: Polar H10. Para mujeres: Garmin HRM-Fit. Para compatibilidad máxima entre apps: Wahoo TICKR X.",
   },
+
   {
-    id: 6,
-    category: "Guantes / Protección",
-    name: "Calleras Unbroken Grips 2.0",
-    desc: "Para obstáculos de cuerda y barra, el cuero doble es insustituible. Protege las palmas del barro y las rozaduras, manteniendo el agarre. El complemento perfecto del corredor de obstáculos.",
-    price: "desde ~18 €",
-    asin: "B072YJCWRT",
-    emoji: "🧤",
-  },
-  {
-    id: 7,
-    category: "Hidratación",
-    name: "Salomon Active Skin 8",
-    desc: "El chaleco de hidratación favorito del mid-distance. 8 L de capacidad, botellas frontales de acceso inmediato, sin rebotes. Funciona igual de bien en OCR que en trail running.",
-    price: "desde ~90 €",
-    asin: "B0B4VZLHRN",
-    emoji: "🎒",
-  },
-  {
-    id: 8,
-    category: "Compresión",
-    name: "2XU Core Compression Tights",
-    desc: "Mallas de compresión graduada que protegen de arañazos en alambradas y muros, y ayudan a la recuperación muscular. Imprescindibles para OCR con obstáculos de suelo.",
-    price: "desde ~55 €",
-    asin: "B01IFKR5FY",
-    emoji: "🩱",
-  },
-  {
-    id: 9,
-    category: "Tecnología / GPS",
-    name: "Garmin Forerunner 265",
-    desc: "El reloj GPS con mejor relación calidad/precio para atletas de HYROX y OCR. Pantalla AMOLED, GPS multibanda, HRV y hasta 13 días de batería. El ecosistema Garmin Connect es el más completo del mercado.",
-    price: "desde ~350 €",
-    asin: "B0BS1T9J4Y",
-    emoji: "⌚",
-  },
-  {
-    id: 10,
-    category: "Tecnología / GPS",
-    name: "COROS PACE 3",
-    desc: "La mejor alternativa por debajo de 250 €. GPS multibanda, 38 h de batería con GPS activo, frecuencia cardíaca óptica precisa. Para atletas que no necesitan todos los análisis avanzados de Garmin.",
-    price: "desde ~200 €",
-    asin: "B0CFQQ9FDL",
-    emoji: "⌚",
-  },
-  {
-    id: 11,
-    category: "Recuperación",
-    name: "Theragun Prime (5ª Gen)",
-    desc: "La pistola de masaje percusiva de referencia. Penetra en el músculo profundo para acelerar la recuperación tras competición. Con app Therabody y Bluetooth para rutinas guiadas.",
-    price: "desde ~250 €",
-    asin: "B0C4M811HS",
-    emoji: "💆",
-  },
-  {
-    id: 12,
-    category: "Recuperación",
-    name: "TriggerPoint GRID Foam Roller",
-    desc: "El rodillo de espuma de alta densidad más recomendado por fisioterapeutas deportivos. Superficie multi-densidad que replica la presión de una mano de masajista. El mejor ROI en recuperación.",
-    price: "desde ~35 €",
-    asin: "B0040EGNIU",
-    emoji: "🔵",
+    id: "ropa",
+    letter: "F",
+    title: "Ropa deportiva funcional (pantalones, shorts y mallas)",
+    eyebrow: "LIBERTAD DE MOVIMIENTO · COMPRESIÓN · BOLSILLOS",
+    intro: [
+      "La ropa en OCR y HYROX no es solo estética — tiene un impacto real en el rendimiento. En OCR, las mallas largas protegen de arañazos en alambradas, muros y vegetación, y reducen la fricción del barro en la piel. En HYROX, los shorts ligeros y los pantalones de compresión reducen la oscilación muscular durante los km de carrera y el farmer's carry.",
+      "Los criterios que más importan: libertad de movimiento total en sentadilla y saltos (ningún tirón en la ingle ni en las corvas), compresión suficiente sin restricción, bolsillos seguros para el chip de cronometraje y un gel, y materiales que sequen rápido y no retangan el barro en OCR. Aquí el top 5.",
+    ],
+    table: {
+      headers: ["Prenda", "Compresión", "Libertad mov.", "Bolsillos", "Precio aprox.", "Nota /10"],
+      rows: [
+        ["2XU Core Compression Tights", "Alta", "Muy buena", "No", "~60 €", "9.0"],
+        ["Compressport Trail shorts", "Media", "Excelente", "Sí (4)", "~70 €", "8.8"],
+        ["Saysky Combat Tights", "Media-alta", "Excelente", "Sí (2)", "~90 €", "8.7"],
+        ["Salomon Cross shorts", "Baja", "Excelente", "Sí (3)", "~55 €", "8.4"],
+        ["Hoka Performance shorts", "Baja", "Muy buena", "Sí (2)", "~50 €", "8.0"],
+      ],
+    },
+    products: [
+      {
+        rank: 1,
+        name: "2XU Core Compression Tights",
+        asin: "B01IFKR5FY",
+        price: "~60 €",
+        desc: "El estándar de compresión para OCR. Compresión graduada que protege de arañazos en alambradas, muros y vegetación, y mejora el retorno venoso durante las horas de carrera. Resisten el barro sin perder forma y secan más rápido que la mayoría de mallas del mercado. Imprescindibles para Spartan Beast y cualquier OCR de larga distancia.",
+        pros: ["Compresión graduada real — no solo estética", "Resistencia al barro excepcional", "Protección de piel en obstáculos con alambre y madera"],
+        cons: ["Sin bolsillos — necesitas cinturón o chaleco para geles", "Precio elevado para malla de compresión básica"],
+      },
+      {
+        rank: 2,
+        name: "Compressport Trail shorts",
+        asin: "B0B9VR9NKS",
+        price: "~70 €",
+        desc: "El short de trail más completo del ranking. Cuatro bolsillos (dos laterales + dos en la parte trasera) para chips de cronometraje, geles y llaves, malla interior de compresión integrada, y tejido trail-specific que repele el agua y el barro sin absorberlo. El complemento ideal para HYROX y OCR estaciones intermedias.",
+        pros: ["4 bolsillos — el más completo para carreras autosuficientes", "Malla interior integrada — sin roces ni arrastres", "Tejido que no retiene barro"],
+        cons: ["El más caro del ranking", "El short interior puede ser incómodo para algunos atletas"],
+      },
+      {
+        rank: 3,
+        name: "Saysky Combat Tights",
+        asin: "B07YQW6KGH",
+        price: "~90 €",
+        desc: "La opción premium para atletas que no quieren comprometer en nada. Tejido de alta elasticidad con compresión media-alta, bolsillos laterales para geles, y un acabado que hace que la malla mantenga su forma sesión tras sesión. Especialmente buenas para HYROX donde el aspecto también tiene su importancia en la arena.",
+        pros: ["Calidad de materiales premium", "Bolsillos integrados bien posicionados", "Muy buena gestión de la humedad"],
+        cons: ["El más caro del ranking", "La marca es menos conocida — difícil de encontrar en España"],
+      },
+      {
+        rank: 4,
+        name: "Salomon Cross shorts",
+        asin: "B0B4L8B75Z",
+        price: "~55 €",
+        desc: "El short ligero de Salomon para trail y OCR. Tejido Dryfit que evacúa la humedad rápidamente, tres bolsillos bien distribuidos, y la libertad de movimiento total que caracteriza a Salomon en sus prendas de trail. Sin compresión alta — para atletas que prefieren libertad sobre sujeción muscular.",
+        pros: ["Libertad de movimiento total", "Secado muy rápido", "Precio muy competitivo"],
+        cons: ["Compresión baja — no aporta recuperación muscular", "Sin malla interior en algunos modelos"],
+      },
+      {
+        rank: 5,
+        name: "Hoka Performance shorts",
+        asin: "B0C9THXXT2",
+        price: "~50 €",
+        desc: "El short más ligero y asequible del ranking. Tejido ultraligero y fluido que no molesta en ningún movimiento, dos bolsillos laterales con cremallera y una malla interior que minimiza los roces en los km de running. El complemento ideal para un atleta que empieza y quiere algo funcional sin gastar mucho.",
+        pros: ["El más asequible del ranking", "Muy ligero — apenas se nota en carrera", "Buena relación calidad/precio"],
+        cons: ["Compresión casi inexistente", "Menos bolsillos que la competencia"],
+      },
+    ],
+    conclusion: "Para OCR (protección + compresión): 2XU Core Compression Tights. Para HYROX (versatilidad + bolsillos): Compressport Trail shorts. Para principiantes con presupuesto ajustado: Salomon Cross shorts o Hoka Performance shorts. Para el que no quiere comprometer en nada: Saysky Combat Tights.",
   },
 ];
 
-const CATEGORY_COLORS = {
-  "Zapatillas Trail / OCR":     { color: "#FB923C", bg: "rgba(251,146,60,0.14)" },
-  "Zapatillas HYROX / Funcional": { color: "#FACC15", bg: "rgba(250,204,21,0.12)" },
-  "Guantes / Protección":       { color: "#34D399", bg: "rgba(52,211,153,0.14)" },
-  "Hidratación":                { color: "#60A5FA", bg: "rgba(96,165,250,0.14)" },
-  "Compresión":                 { color: "#C084FC", bg: "rgba(192,132,252,0.14)" },
-  "Tecnología / GPS":           { color: "#FACC15", bg: "rgba(250,204,21,0.12)" },
-  "Recuperación":               { color: "#34D399", bg: "rgba(52,211,153,0.14)" },
-};
+/* ─── COMPONENT ─────────────────────────────────────────────────────────────── */
 
 export default function Productos() {
-  const categories = [...new Set(PRODUCTS.map((p) => p.category))];
-
   return (
     <>
       <Head>
         <title>Productos Recomendados — Hybrid Race Hub | OCR, HYROX y Fitness Híbrido</title>
-        <meta name="description" content="Los mejores productos para OCR, HYROX y running híbrido: zapatillas trail, guantes, GPS, hidratación y recuperación. Selección honesta con precios en Amazon España." />
+        <meta name="description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX. Con precios y enlaces a Amazon España." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://hybridracehub.com/productos" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hybridracehub.com/productos" />
         <meta property="og:title" content="Productos Recomendados — Hybrid Race Hub" />
-        <meta property="og:description" content="Los mejores productos para OCR, HYROX y running híbrido: zapatillas trail, guantes, GPS, hidratación y recuperación." />
+        <meta property="og:description" content="Rankings de relojes GPS, zapatillas trail, pulsómetros y ropa para OCR e HYROX." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
         <meta property="og:image" content="https://hybridracehub.com/logo.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -161,21 +471,14 @@ export default function Productos() {
         body { background: var(--bg); color: var(--text); font-family: var(--font-body); }
         a { color: inherit; text-decoration: none; }
 
-        /* ── NAV ── */
+        /* NAV */
         .topbar {
           background: var(--bg); border-bottom: 1px solid var(--border);
           height: 64px; display: flex; align-items: center;
           justify-content: space-between; padding: 0 2rem;
         }
         .brand { display: flex; align-items: center; gap: 14px; }
-        .brand-logo {
-          width: 36px; height: 36px;
-          clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
-          background: linear-gradient(135deg, var(--ocr) 0%, var(--hyrox) 100%);
-          display: flex; align-items: center; justify-content: center;
-          font-family: var(--font-display); font-size: 18px; font-weight: 900;
-          color: #08090C; flex-shrink: 0;
-        }
+        .brand-logo-img { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; display: block; }
         .brand-name {
           font-family: var(--font-display); font-size: 17px; font-weight: 800;
           text-transform: uppercase; letter-spacing: -0.01em; color: var(--text);
@@ -194,139 +497,181 @@ export default function Productos() {
         .topbar-nav a:hover { color: var(--text); border-color: var(--border2); }
         .topbar-nav a.active { color: var(--accent-mid); border-color: rgba(251,146,60,0.3); }
 
-        /* ── HERO ── */
-        .page-hero {
-          background: var(--bg); border-bottom: 1px solid var(--border);
-          padding: 3rem 2rem 2.5rem;
-        }
+        /* HERO */
+        .page-hero { background: var(--bg); border-bottom: 1px solid var(--border); padding: 3rem 2rem 2.5rem; }
         .page-hero-inner { max-width: 1100px; margin: 0 auto; }
         .page-eyebrow {
           font-family: var(--font-mono); font-size: 10px; font-weight: 600;
-          text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent-mid);
-          margin-bottom: 10px;
+          text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent-mid); margin-bottom: 10px;
         }
         .page-title {
           font-family: var(--font-display); font-size: clamp(40px, 6vw, 72px);
           font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em;
           line-height: 0.95; color: var(--text); margin-bottom: 14px;
         }
-        .page-sub {
-          font-family: var(--font-body); font-size: 15px; color: var(--muted);
-          max-width: 560px; line-height: 1.65;
-        }
+        .page-sub { font-family: var(--font-body); font-size: 15px; color: var(--muted); max-width: 580px; line-height: 1.65; }
         .affiliate-notice {
-          margin-top: 1.25rem;
-          font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+          margin-top: 1.25rem; font-family: var(--font-mono); font-size: 10px; font-weight: 500;
           text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted2);
           background: var(--surface); border: 0.5px solid var(--border);
-          border-radius: var(--radius-sm); padding: 8px 14px;
-          display: inline-block;
+          border-radius: var(--radius-sm); padding: 8px 14px; display: inline-block;
         }
 
-        /* ── CONTENT ── */
-        .page-body { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
-
-        .category-section { margin-bottom: 3rem; }
-        .category-heading {
-          display: flex; align-items: center; gap: 10px;
-          margin-bottom: 1.25rem;
+        /* NAV INTERNA RANKINGS */
+        .rankings-nav {
+          background: var(--surface); border-bottom: 1px solid var(--border);
+          padding: 0 2rem; display: flex; gap: 0; overflow-x: auto;
         }
-        .category-label {
-          font-family: var(--font-display); font-size: 11px; font-weight: 700;
+        .rankings-nav a {
+          font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+          text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);
+          padding: 12px 16px; border-bottom: 2px solid transparent;
+          white-space: nowrap; transition: color .15s, border-color .15s;
+        }
+        .rankings-nav a:hover { color: var(--text); border-bottom-color: var(--border2); }
+
+        /* CONTENT */
+        .page-body { max-width: 1100px; margin: 0 auto; padding: 0 2rem 4rem; }
+
+        /* RANKING SECTION */
+        .ranking-section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
+        .ranking-section:last-child { border-bottom: none; }
+        .ranking-header { margin-bottom: 1.5rem; }
+        .ranking-letter {
+          display: inline-block; font-family: var(--font-display); font-size: 11px; font-weight: 800;
+          text-transform: uppercase; letter-spacing: 0.14em;
+          background: var(--accent-bg); color: var(--accent);
+          padding: 3px 10px; border-radius: 999px; margin-bottom: 8px;
+        }
+        .ranking-eyebrow {
+          font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+          text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted2); margin-bottom: 6px;
+        }
+        .ranking-title {
+          font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px);
+          font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em;
+          color: var(--text); line-height: 1.05;
+        }
+        .ranking-intro { margin: 1.25rem 0; }
+        .ranking-intro p {
+          font-family: var(--font-body); font-size: 14px; color: var(--muted);
+          line-height: 1.7; margin-bottom: 0.75rem;
+        }
+
+        /* COMPARISON TABLE */
+        .comp-table-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: var(--radius); border: 0.5px solid var(--border); }
+        .comp-table { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 11px; }
+        .comp-table th {
+          background: var(--surface2); color: var(--muted); font-weight: 600;
           text-transform: uppercase; letter-spacing: 0.08em;
-          padding: 3px 10px; border-radius: 999px;
+          padding: 10px 14px; text-align: left; border-bottom: 0.5px solid var(--border);
+          white-space: nowrap;
         }
-        .category-line {
-          flex: 1; height: 0.5px; background: var(--border);
+        .comp-table td {
+          padding: 9px 14px; border-bottom: 0.5px solid var(--border);
+          color: var(--text); vertical-align: middle;
         }
+        .comp-table tr:last-child td { border-bottom: none; }
+        .comp-table tr:hover td { background: rgba(251,146,60,0.04); }
+        .comp-table td:first-child { font-family: var(--font-display); font-weight: 700; font-size: 13px; }
 
+        /* PRODUCT CARDS */
         .products-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-          gap: 16px;
+          display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px;
+          margin: 1.5rem 0;
         }
-
         .product-card {
           background: var(--surface); border: 0.5px solid var(--border);
-          border-radius: var(--radius-lg);
-          display: flex; flex-direction: column;
-          transition: border-color .15s, box-shadow .15s, transform .15s;
-          overflow: hidden;
+          border-radius: var(--radius-lg); display: flex; flex-direction: column;
+          transition: border-color .15s, box-shadow .15s, transform .15s; overflow: hidden;
         }
         .product-card:hover {
-          border-color: var(--border2);
-          box-shadow: 0 8px 28px rgba(0,0,0,0.4);
-          transform: translateY(-2px);
+          border-color: var(--border2); box-shadow: 0 8px 28px rgba(0,0,0,0.4); transform: translateY(-2px);
         }
-
-        .product-emoji {
-          background: var(--surface2);
-          display: flex; align-items: center; justify-content: center;
-          font-size: 52px; padding: 1.5rem 1rem;
-          border-bottom: 0.5px solid var(--border);
-          user-select: none;
+        .product-card-head {
+          background: var(--surface2); padding: 1.25rem 1.25rem 1rem;
+          border-bottom: 0.5px solid var(--border); display: flex; align-items: center; gap: 12px;
         }
-
-        .product-body {
-          padding: 1.25rem; flex: 1;
-          display: flex; flex-direction: column; gap: 8px;
+        .product-rank {
+          font-family: var(--font-display); font-size: 32px; font-weight: 900;
+          color: var(--accent); line-height: 1; flex-shrink: 0; width: 32px;
         }
-
         .product-name {
-          font-family: var(--font-display); font-size: 19px; font-weight: 800;
-          text-transform: uppercase; letter-spacing: -0.01em; color: var(--text);
-          line-height: 1.15;
+          font-family: var(--font-display); font-size: 18px; font-weight: 800;
+          text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); line-height: 1.15;
         }
-        .product-desc {
-          font-family: var(--font-body); font-size: 13px; color: var(--muted);
-          line-height: 1.6; flex: 1;
+        .product-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+        .product-desc { font-family: var(--font-body); font-size: 13px; color: var(--muted); line-height: 1.6; flex: 1; }
+        .product-pc { display: flex; flex-direction: column; gap: 6px; }
+        .product-pc-label {
+          font-family: var(--font-mono); font-size: 9px; font-weight: 600;
+          text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted2);
         }
+        .product-pc-list { display: flex; flex-direction: column; gap: 3px; }
+        .product-pc-item {
+          font-family: var(--font-body); font-size: 12px; color: var(--muted);
+          display: flex; align-items: flex-start; gap: 6px; line-height: 1.4;
+        }
+        .product-pc-item::before { content: ""; flex-shrink: 0; margin-top: 5px; }
+        .pros .product-pc-item::before { content: "✓"; color: var(--green); font-size: 10px; margin-top: 2px; }
+        .cons .product-pc-item::before { content: "✗"; color: var(--muted2); font-size: 10px; margin-top: 2px; }
         .product-price {
-          font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+          font-family: var(--font-mono); font-size: 12px; font-weight: 600;
           text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent-mid);
         }
-
         .product-cta {
-          display: block;
-          background: var(--accent); color: #08090C;
+          display: block; background: var(--accent); color: #08090C;
           font-family: var(--font-display); font-size: 13px; font-weight: 800;
           text-transform: uppercase; letter-spacing: 0.06em;
-          text-align: center; padding: 10px 16px;
-          border-top: 0.5px solid var(--border);
-          transition: background .15s, opacity .15s;
+          text-align: center; padding: 11px 16px;
+          border-top: 0.5px solid var(--border); transition: opacity .15s;
         }
         .product-cta:hover { opacity: 0.88; }
 
-        /* ── FOOTER LEGAL ── */
+        /* CONCLUSION */
+        .ranking-conclusion {
+          background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius);
+          padding: 1.25rem 1.5rem; margin-top: 1.5rem;
+        }
+        .ranking-conclusion-label {
+          font-family: var(--font-mono); font-size: 9px; font-weight: 600;
+          text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent-mid); margin-bottom: 8px;
+        }
+        .ranking-conclusion p { font-family: var(--font-body); font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+        /* LEGAL FOOTER */
         .legal-footer {
           border-top: 0.5px solid var(--border); padding: 2rem;
           max-width: 1100px; margin: 0 auto;
         }
         .legal-text {
           font-family: var(--font-mono); font-size: 10px; font-weight: 500;
-          text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted2);
-          line-height: 1.6;
+          text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted2); line-height: 1.6;
         }
 
         @media (max-width: 720px) {
           .topbar { padding: 0 1rem; }
           .page-hero { padding: 2rem 1rem 1.5rem; }
-          .page-body { padding: 1.5rem 1rem 3rem; }
+          .page-body { padding: 0 1rem 3rem; }
           .products-grid { grid-template-columns: 1fr; }
+          .comp-table { font-size: 10px; }
+          .comp-table td, .comp-table th { padding: 8px 10px; }
+          .rankings-nav { padding: 0 1rem; }
         }
       `}</style>
 
       {/* Topbar */}
       <div className="topbar">
         <Link href="/" className="brand">
-          <div className="brand-logo">H</div>
+          <img src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width="36" height="36"/>
           <div>
             <div className="brand-name">Hybrid Race Hub</div>
             <div className="brand-sub">OCR · HYROX · Functional</div>
           </div>
         </Link>
         <nav className="topbar-nav">
-          <Link href="/">Calendario</Link>
+          <Link href="/">Inicio</Link>
+          <Link href="/calendario">Calendario</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/productos" className="active">Productos</Link>
         </nav>
@@ -336,9 +681,9 @@ export default function Productos() {
       <div className="page-hero">
         <div className="page-hero-inner">
           <p className="page-eyebrow">Hybrid Race Hub · Equipamiento</p>
-          <h1 className="page-title">Productos<br/>Recomendados</h1>
+          <h1 className="page-title">Rankings<br/>de Equipamiento</h1>
           <p className="page-sub">
-            Selección honesta de zapatillas, guantes, hidratación, GPS y recuperación
+            Selección honesta de relojes GPS, zapatillas, pulsómetros y ropa deportiva
             para OCR y HYROX — solo lo que vale la pena, con precio en Amazon España.
           </p>
           <span className="affiliate-notice">
@@ -347,53 +692,95 @@ export default function Productos() {
         </div>
       </div>
 
-      {/* Products by category */}
-      <div className="page-body">
-        {categories.map((cat) => {
-          const catProducts = PRODUCTS.filter((p) => p.category === cat);
-          const colors = CATEGORY_COLORS[cat] || { color: "var(--accent)", bg: "var(--accent-bg)" };
-          return (
-            <div key={cat} className="category-section">
-              <div className="category-heading">
-                <span
-                  className="category-label"
-                  style={{ background: colors.bg, color: colors.color }}
-                >
-                  {cat}
-                </span>
-                <div className="category-line" />
-              </div>
+      {/* Nav interna */}
+      <nav className="rankings-nav">
+        {RANKINGS.map(r => (
+          <a key={r.id} href={`#${r.id}`}>{r.letter}. {r.title.split("—")[0].trim()}</a>
+        ))}
+      </nav>
 
-              <div className="products-grid">
-                {catProducts.map((product) => (
-                  <div key={product.id} className="product-card">
-                    <div className="product-emoji">{product.emoji}</div>
-                    <div className="product-body">
-                      <p className="product-name">{product.name}</p>
-                      <p className="product-desc">{product.desc}</p>
-                      <p className="product-price">{product.price}</p>
-                    </div>
-                    <a
-                      href={`https://www.amazon.es/dp/${product.asin}?tag=hybridracehub-21`}
-                      target="_blank"
-                      rel="nofollow sponsored noopener noreferrer"
-                      className="product-cta"
-                    >
-                      Ver en Amazon →
-                    </a>
-                  </div>
-                ))}
-              </div>
+      {/* Rankings */}
+      <div className="page-body">
+        {RANKINGS.map(ranking => (
+          <section key={ranking.id} id={ranking.id} className="ranking-section">
+            <div className="ranking-header">
+              <div className="ranking-letter">Ranking {ranking.letter}</div>
+              <div className="ranking-eyebrow">{ranking.eyebrow}</div>
+              <h2 className="ranking-title">{ranking.title}</h2>
             </div>
-          );
-        })}
+
+            <div className="ranking-intro">
+              {ranking.intro.map((p, i) => <p key={i}>{p}</p>)}
+            </div>
+
+            {/* Tabla comparativa */}
+            <div className="comp-table-wrap">
+              <table className="comp-table">
+                <thead>
+                  <tr>{ranking.table.headers.map(h => <th key={h}>{h}</th>)}</tr>
+                </thead>
+                <tbody>
+                  {ranking.table.rows.map((row, i) => (
+                    <tr key={i}>{row.map((cell, j) => <td key={j}>{cell}</td>)}</tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Fichas */}
+            <div className="products-grid">
+              {ranking.products.map(product => (
+                <div key={product.rank} className="product-card">
+                  <div className="product-card-head">
+                    <div className="product-rank">#{product.rank}</div>
+                    <div className="product-name">{product.name}</div>
+                  </div>
+                  <div className="product-body">
+                    <p className="product-desc">{product.desc}</p>
+                    <div className="product-pc pros">
+                      <div className="product-pc-label">Pros</div>
+                      <div className="product-pc-list">
+                        {product.pros.map((p, i) => (
+                          <div key={i} className="product-pc-item">{p}</div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="product-pc cons">
+                      <div className="product-pc-label">Contras</div>
+                      <div className="product-pc-list">
+                        {product.cons.map((c, i) => (
+                          <div key={i} className="product-pc-item">{c}</div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="product-price">{product.price}</div>
+                  </div>
+                  <a
+                    href={AZ(product.asin)}
+                    target="_blank"
+                    rel="nofollow sponsored noopener noreferrer"
+                    className="product-cta"
+                  >
+                    Ver en Amazon →
+                  </a>
+                </div>
+              ))}
+            </div>
+
+            {/* Conclusión */}
+            <div className="ranking-conclusion">
+              <div className="ranking-conclusion-label">Recomendación según perfil</div>
+              <p>{ranking.conclusion}</p>
+            </div>
+          </section>
+        ))}
 
         <div className="legal-footer">
           <p className="legal-text">
-            Como afiliado de Amazon, Hybrid Race Hub obtiene ingresos por las compras adscritas
-            que cumplen los requisitos aplicables. Los precios indicados son orientativos y pueden
-            variar. Los enlaces llevan a Amazon.es donde podrás ver el precio actualizado,
-            disponibilidad y opiniones de otros compradores.
+            Como afiliado de Amazon, Hybrid Race Hub obtiene ingresos por las compras adscritas que cumplen los
+            requisitos aplicables. Los precios indicados son orientativos y pueden variar. Los enlaces llevan a
+            Amazon.es donde podrás ver el precio actualizado, disponibilidad y opiniones de otros compradores.
+            Los ASINs pueden cambiar — si un enlace no funciona, busca el producto directamente en Amazon.es.
           </p>
         </div>
       </div>

@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import {
   SUPABASE_URL, ANON_KEY, TODAY_ISO, TODAY_YEAR, NICHE_PARENTS, CCAA, FORMATS,
-  formatDate, InstagramIcon, EnvelopeIcon, HeroStats, SiteFooter, CookieBanner,
+  formatDate, InstagramIcon, EnvelopeIcon, HeroStats, SiteFooter, CookieBanner, CalIcon,
 } from "../lib/shared";
 
 /* ─── Hero Search ──────────────────────────────────────────────────────────── */
@@ -270,6 +270,68 @@ function OrganizerContact() {
   );
 }
 
+/* ─── HomeSections ─────────────────────────────────────────────────────────── */
+const BlogIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <rect x="4" y="4" width="24" height="28" rx="3" stroke="#FB923C" strokeWidth="1.8"/>
+    <line x1="9" y1="11" x2="23" y2="11" stroke="#FB923C" strokeWidth="1.8" strokeLinecap="round"/>
+    <line x1="9" y1="16" x2="23" y2="16" stroke="#FB923C" strokeWidth="1.8" strokeLinecap="round"/>
+    <line x1="9" y1="21" x2="17" y2="21" stroke="#FB923C" strokeWidth="1.8" strokeLinecap="round"/>
+  </svg>
+);
+
+const ShopIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <path d="M6 8h20l-2 14H8L6 8z" stroke="#FB923C" strokeWidth="1.8" strokeLinejoin="round"/>
+    <path d="M12 8c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="#FB923C" strokeWidth="1.8" strokeLinecap="round"/>
+    <circle cx="12" cy="26" r="1.5" fill="#FB923C"/>
+    <circle cx="20" cy="26" r="1.5" fill="#FB923C"/>
+  </svg>
+);
+
+function HomeSections() {
+  const sections = [
+    {
+      href: "/calendario",
+      icon: <CalIcon/>,
+      title: "Calendario",
+      desc: "Más de 140 eventos OCR, HYROX y fitness funcional en España. Filtra por comunidad, formato y fecha.",
+      cta: "→ Ver eventos",
+      iconBg: "var(--accent-bg)",
+    },
+    {
+      href: "/blog",
+      icon: <BlogIcon/>,
+      title: "Blog",
+      desc: "Guías técnicas, análisis de equipamiento y estrategias de competición escritas por atletas.",
+      cta: "→ Leer artículos",
+      iconBg: "rgba(250,204,21,0.14)",
+    },
+    {
+      href: "/productos",
+      icon: <ShopIcon/>,
+      title: "Productos",
+      desc: "Rankings de zapatillas, relojes GPS, pulsómetros y equipamiento para OCR e HYROX.",
+      cta: "→ Ver rankings",
+      iconBg: "rgba(52,211,153,0.14)",
+    },
+  ];
+  return (
+    <section className="home-sections">
+      <div className="home-sections-inner">
+        {sections.map((s,i)=>(
+          <a key={i} href={s.href} className="home-card">
+            <div className="home-card-icon" style={{background:s.iconBg}}>{s.icon}</div>
+            <h2 className="home-card-title">{s.title}</h2>
+            <p className="home-card-desc">{s.desc}</p>
+            <span className="home-card-cta">{s.cta}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 /* ─── Home ─────────────────────────────────────────────────────────────────── */
 export default function Home() {
   const [totalCount, setTotalCount] = useState(null);
@@ -303,7 +365,7 @@ export default function Home() {
       <header className="hero">
         <div className="hero-inner">
           <div className="brand">
-            <div className="brand-logo">H</div>
+            <img src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width="40" height="40"/>
             <div>
               <div className="brand-name">Hybrid Race Hub</div>
               <div className="brand-sub">
@@ -342,6 +404,7 @@ export default function Home() {
         </div>
       </header>
 
+      <HomeSections/>
       <NewsletterSignup/>
       <FAQSection/>
       <OrganizerContact/>

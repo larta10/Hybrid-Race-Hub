@@ -56,11 +56,9 @@ export default function BlogIndex() {
           justify-content: space-between; padding: 0 2rem;
         }
         .brand { display: flex; align-items: center; gap: 14px; }
-        .brand-logo {
+        .brand-logo-img {
           width: 36px; height: 36px;
-          clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
-          background: linear-gradient(135deg, var(--ocr) 0%, var(--hyrox) 100%);
-          display: flex; align-items: center; justify-content: center;
+          object-fit: contain; flex-shrink: 0; display: block;
           font-family: var(--font-display); font-size: 18px; font-weight: 900;
           color: #08090C; flex-shrink: 0;
         }
@@ -201,7 +199,7 @@ export default function BlogIndex() {
       {/* Topbar */}
       <div className="topbar">
         <Link href="/" className="brand">
-          <div className="brand-logo">H</div>
+          <img src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width="36" height="36"/>
           <div>
             <div className="brand-name">Hybrid Race Hub</div>
             <div className="brand-sub">OCR · HYROX · Functional</div>

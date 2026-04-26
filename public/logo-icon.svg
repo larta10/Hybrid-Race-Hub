@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 76" fill="none">
+  <defs>
+    <linearGradient id="m" x1="0" y1="0" x2="120" y2="76" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#FDE68A"/>
+      <stop offset="30%"  stop-color="#F97316"/>
+      <stop offset="70%"  stop-color="#EA580C"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="s" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="rgba(255,255,255,0.28)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- BARBELL LEFT: outer plate + inner plate + bar connecting to H -->
+  <rect x="2"  y="24" width="8"  height="28" rx="2.5" fill="url(#m)"/>
+  <rect x="10" y="29" width="5"  height="18" rx="1.5" fill="url(#m)"/>
+  <rect x="14" y="34" width="25" height="8"  rx="2"   fill="url(#m)"/>
+
+  <!-- H LETTER -->
+  <rect x="39" y="12" width="13" height="52" rx="3" fill="url(#m)"/>
+  <rect x="68" y="12" width="13" height="52" rx="3" fill="url(#m)"/>
+  <rect x="39" y="30" width="42" height="16" rx="3" fill="url(#m)"/>
+  <!-- metallic highlight -->
+  <rect x="39" y="12" width="13" height="52" rx="3" fill="url(#s)"/>
+  <rect x="68" y="12" width="13" height="52" rx="3" fill="url(#s)"/>
+  <rect x="39" y="30" width="42" height="8"  rx="3" fill="url(#s)"/>
+
+  <!-- RUNNER RIGHT -->
+  <circle cx="100" cy="13" r="7" fill="url(#m)"/>
+  <circle cx="100" cy="13" r="7" fill="url(#s)"/>
+  <rect x="96" y="21" width="9" height="17" rx="3" fill="url(#m)"/>
+  <!-- forward arm (upper-right) -->
+  <line x1="103" y1="26" x2="114" y2="19" stroke="url(#m)" stroke-width="5"   stroke-linecap="round"/>
+  <!-- back arm (lower-left toward H) -->
+  <line x1="97"  y1="27" x2="88"  y2="36" stroke="url(#m)" stroke-width="5"   stroke-linecap="round"/>
+  <!-- forward leg (two segments) -->
+  <line x1="103" y1="38" x2="112" y2="55" stroke="url(#m)" stroke-width="5.5" stroke-linecap="round"/>
+  <line x1="112" y1="55" x2="118" y2="64" stroke="url(#m)" stroke-width="5"   stroke-linecap="round"/>
+  <!-- back leg (two segments) -->
+  <line x1="98"  y1="38" x2="90"  y2="53" stroke="url(#m)" stroke-width="5.5" stroke-linecap="round"/>
+  <line x1="90"  y1="53" x2="87"  y2="64" stroke="url(#m)" stroke-width="5"   stroke-linecap="round"/>
+</svg>
