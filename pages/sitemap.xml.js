@@ -54,6 +54,7 @@ export async function getServerSideProps({ res }) {
     { loc: `${BASE}/contacto-organizadores`,    lastmod: today, changefreq: "monthly", priority: "0.5" },
     { loc: `${BASE}/centros-entrenamiento`,     lastmod: today, changefreq: "monthly", priority: "0.7" },
     { loc: `${BASE}/calculadora-hyrox`,         lastmod: today, changefreq: "monthly", priority: "0.7" },
+    { loc: `${BASE}/plan-entrenamiento`,        lastmod: today, changefreq: "monthly", priority: "0.8" },
 
     ...PRODUCT_SLUGS.map((slug) => ({
       loc: `${BASE}/productos/${slug}`,

@@ -255,6 +255,15 @@ const BoxIcon = () => (
   </svg>
 );
 
+const PlanIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <rect x="4" y="4" width="24" height="24" rx="3" stroke="#34D399" strokeWidth="1.8"/>
+    <path d="M9 12h14M9 17h10M9 22h6" stroke="#34D399" strokeWidth="1.8" strokeLinecap="round"/>
+    <circle cx="24" cy="22" r="5" fill="#08090C" stroke="#34D399" strokeWidth="1.8"/>
+    <path d="M22 22l1.5 1.5L26 20" stroke="#34D399" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
 function HomeSections() {
   const sections = [
     {
@@ -264,6 +273,14 @@ function HomeSections() {
       desc: "Más de 140 eventos OCR, HYROX y fitness funcional en España. Filtra por comunidad, formato y fecha.",
       cta: "→ Ver eventos",
       iconBg: "var(--accent-bg)",
+    },
+    {
+      href: "/plan-entrenamiento",
+      icon: <PlanIcon/>,
+      title: "Plan de entrenamiento",
+      desc: "Crea tu plan personalizado para OCR, HYROX o CrossFit en 5 preguntas. Adaptado a tu nivel y días disponibles.",
+      cta: "→ Crear mi plan",
+      iconBg: "rgba(52,211,153,0.14)",
     },
     {
       href: "/blog",
@@ -400,10 +417,10 @@ export default function Home() {
           </div>
           <nav className="nav" aria-label="Navegación principal">
             <a href="/calendario">Calendario</a>
-            <a href="/blog">Blog</a>
-            <a href="/productos">Productos</a>
-            <a href="/calculadora-hyrox">Calculadora</a>
+            <a href="/plan-entrenamiento">Plan</a>
             <a href="/centros-entrenamiento">Centros</a>
+            <a href="/calculadora-hyrox">Calculadora</a>
+            <a href="/blog">Blog</a>
           </nav>
         </div>
 
