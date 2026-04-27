@@ -233,6 +233,28 @@ const ShopIcon = () => (
   </svg>
 );
 
+const CalcIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <rect x="5" y="4" width="22" height="26" rx="3" stroke="#FACC15" strokeWidth="1.8"/>
+    <rect x="9" y="8" width="14" height="6" rx="1.5" stroke="#FACC15" strokeWidth="1.5"/>
+    <circle cx="10" cy="20" r="1.5" fill="#FACC15"/>
+    <circle cx="16" cy="20" r="1.5" fill="#FACC15"/>
+    <circle cx="22" cy="20" r="1.5" fill="#FACC15"/>
+    <circle cx="10" cy="26" r="1.5" fill="#FACC15"/>
+    <circle cx="16" cy="26" r="1.5" fill="#FACC15"/>
+    <circle cx="22" cy="26" r="1.5" fill="#FACC15"/>
+  </svg>
+);
+
+const BoxIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <rect x="4" y="10" width="24" height="18" rx="2" stroke="#A78BFA" strokeWidth="1.8"/>
+    <path d="M4 15h24" stroke="#A78BFA" strokeWidth="1.5"/>
+    <path d="M13 10V6a3 3 0 0 1 6 0v4" stroke="#A78BFA" strokeWidth="1.8" strokeLinecap="round"/>
+    <path d="M12 22h8" stroke="#A78BFA" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
 function HomeSections() {
   const sections = [
     {
@@ -258,6 +280,22 @@ function HomeSections() {
       desc: "Rankings de zapatillas, relojes GPS, pulsómetros y equipamiento para OCR e HYROX.",
       cta: "→ Ver rankings",
       iconBg: "rgba(52,211,153,0.14)",
+    },
+    {
+      href: "/calculadora-hyrox",
+      icon: <CalcIcon/>,
+      title: "Calculadora HYROX",
+      desc: "Calcula tu ritmo por estación y estima tu tiempo final. Con categorías de referencia para planificar tu carrera.",
+      cta: "→ Calcular tiempo",
+      iconBg: "rgba(250,204,21,0.14)",
+    },
+    {
+      href: "/centros-entrenamiento",
+      icon: <BoxIcon/>,
+      title: "Boxes CrossFit",
+      desc: "Directorio de más de 356 boxes CrossFit en España. Busca por ciudad o código postal.",
+      cta: "→ Buscar box",
+      iconBg: "rgba(139,92,246,0.14)",
     },
   ];
   return (
@@ -356,6 +394,8 @@ export default function Home() {
             <a href="/calendario">Calendario</a>
             <a href="/blog">Blog</a>
             <a href="/productos">Productos</a>
+            <a href="/calculadora-hyrox">Calculadora</a>
+            <a href="/centros-entrenamiento">Centros</a>
           </nav>
         </div>
 

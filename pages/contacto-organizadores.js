@@ -1,36 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
 
-const PRICING_PLANS = [
-  {
-    name: "Destacado básico",
-    price: "20€",
-    period: "/mes",
-    description: " visibilidad esencial para tu evento",
-    features: [
-      "Badge 'Destacado' en el calendario",
-      "Posición preferente en el grid",
-      "Logo en la tarjeta del evento",
-      "Enlace prioritario a inscripción",
-      "Soporte por email"
-    ]
-  },
-  {
-    name: "Destacado premium",
-    price: "30€",
-    period: "/mes",
-    description: "máxima visibilidad y exposición",
-    features: [
-      "Todo lo incluido en Básico",
-      "Banner superior en homepage",
-      "Destacado en newsletter",
-      "Posición top en búsquedas",
-      "Soporte prioritario 24/7",
-      "Analíticas básicas del evento"
-    ],
-    popular: true
-  }
-];
 
 export default function ContactOrganizers() {
   const [form, setForm] = useState({ name: "", email: "", empresa: "", plan: "", message: "" });
@@ -61,7 +31,7 @@ export default function ContactOrganizers() {
     <>
       <Head>
         <title>Contacto Organizadores de Carreras OCR y HYROX | Hybrid Race Hub</title>
-        <meta name="description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub, el calendario de referencia en España. Planes de destacado básico y premium." />
+        <meta name="description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub, el calendario de referencia en España. Contacta con nosotros para estudiar tu colaboración." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://hybridracehub.com/contacto-organizadores" />
@@ -177,130 +147,10 @@ export default function ContactOrganizers() {
           color: var(--accent);
         }
 
-        /* Pricing Grid */
-        .pricing-section {
-          padding: 2rem 0 4rem;
-        }
-        .pricing-title {
-          font-family: var(--font-display);
-          font-size: 28px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.04em;
-          text-align: center;
-          margin-bottom: 2rem;
-        }
-        .pricing-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 1.5rem;
-          max-width: 800px;
-          margin: 0 auto;
-        }
-        .pricing-card {
-          background: var(--surface);
-          border: 1px solid var(--border);
-          border-radius: var(--radius);
-          padding: 2rem;
-          position: relative;
-          transition: transform 0.2s, border-color 0.2s;
-        }
-        .pricing-card:hover {
-          transform: translateY(-4px);
-          border-color: var(--border2);
-        }
-        .pricing-card.popular {
-          border-color: var(--accent);
-          box-shadow: 0 0 0 1px var(--accent), 0 8px 32px rgba(251,146,60,0.15);
-        }
+        /* Pricing Grid (removed) */
         .pricing-badge {
-          position: absolute;
-          top: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-          background: var(--accent);
-          color: #08090C;
-          font-family: var(--font-display);
-          font-size: 10px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          padding: 4px 16px;
-          border-radius: 999px;
+          display: none;
         }
-        .pricing-name {
-          font-family: var(--font-display);
-          font-size: 20px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.02em;
-          margin-bottom: 0.5rem;
-        }
-        .pricing-desc {
-          font-size: 13px;
-          color: var(--muted);
-          margin-bottom: 1.5rem;
-        }
-        .pricing-price {
-          display: flex;
-          align-items: baseline;
-          gap: 4px;
-          margin-bottom: 1.5rem;
-        }
-        .pricing-amount {
-          font-family: var(--font-display);
-          font-size: 48px;
-          font-weight: 800;
-          text-transform: uppercase;
-          color: var(--text);
-        }
-        .pricing-period {
-          font-family: var(--font-mono);
-          font-size: 12px;
-          color: var(--muted);
-        }
-        .pricing-features {
-          list-style: none;
-          margin-bottom: 1.5rem;
-        }
-        .pricing-features li {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 13px;
-          color: var(--muted);
-          padding: 6px 0;
-          border-bottom: 1px solid var(--border);
-        }
-        .pricing-features li:last-child { border-bottom: none; }
-        .pricing-features li::before {
-          content: "✓";
-          color: var(--accent);
-          font-weight: 700;
-        }
-        .pricing-cta {
-          width: 100%;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          padding: 12px 24px;
-          background: var(--accent);
-          color: #08090C;
-          font-family: var(--font-display);
-          font-size: 14px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
-          border: none;
-          border-radius: var(--radius-sm);
-          cursor: pointer;
-          transition: transform 0.15s, box-shadow 0.15s;
-        }
-        .pricing-cta:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(251,146,60,0.35);
-        }
-
         /* Form */
         .form-section {
           max-width: 600px;
@@ -440,31 +290,6 @@ export default function ContactOrganizers() {
           </p>
         </header>
 
-        <section className="pricing-section">
-          <h2 className="pricing-title">Planes de promoción</h2>
-          <div className="pricing-grid">
-            {PRICING_PLANS.map((plan, i) => (
-              <div key={i} className={`pricing-card${plan.popular ? ' popular' : ''}`}>
-                {plan.popular && <span className="pricing-badge">Popular</span>}
-                <h3 className="pricing-name">{plan.name}</h3>
-                <p className="pricing-desc">{plan.description}</p>
-                <div className="pricing-price">
-                  <span className="pricing-amount">{plan.price}</span>
-                  <span className="pricing-period">{plan.period}</span>
-                </div>
-                <ul className="pricing-features">
-                  {plan.features.map((feat, j) => (
-                    <li key={j}>{feat}</li>
-                  ))}
-                </ul>
-                <button className="pricing-cta" onClick={() => document.getElementById("contact-form").scrollIntoView({ behavior: "smooth" })}>
-                  Contratar
-                </button>
-              </div>
-            ))}
-          </div>
-        </section>
-
         <section className="form-section" id="contact-form">
           <h2 className="form-title">Solicita información</h2>
           
@@ -513,15 +338,15 @@ export default function ContactOrganizers() {
                   />
                 </div>
                 <div className="form-group">
-                  <label className="form-label">Plan de interés</label>
+                  <label className="form-label">Tipo de colaboración</label>
                   <select
                     className="form-select"
                     value={form.plan}
                     onChange={e => setForm(f => ({ ...f, plan: e.target.value }))}
                   >
-                    <option value="">Selecciona un plan</option>
-                    <option value="basico">Destacado básico (20€/mes)</option>
-                    <option value="premium">Destacado premium (30€/mes)</option>
+                    <option value="">Selecciona una opción</option>
+                    <option value="basico">Visibilidad básica</option>
+                    <option value="premium">Máxima visibilidad</option>
                   </select>
                 </div>
               </div>
