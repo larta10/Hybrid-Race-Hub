@@ -86,6 +86,10 @@ export default function PlanEntrenamiento() {
   const [plan, setPlan]               = useState(null);
   const [expandedWeeks, setExpWeeks]  = useState(new Set([1]));
   const [expandedDays,  setExpDays]   = useState(new Set());
+  const [buyEmail,   setBuyEmail]   = useState("");
+  const [emailStep,  setEmailStep]  = useState(false);
+  const [buying,     setBuying]     = useState(false);
+  const [buyError,   setBuyError]   = useState("");
 
   function pick(key, val) { setAnswers(p => ({ ...p, [key]: val })); }
 
@@ -122,6 +126,10 @@ export default function PlanEntrenamiento() {
     setPlan(null);
     setExpWeeks(new Set([1]));
     setExpDays(new Set());
+    setBuyEmail("");
+    setEmailStep(false);
+    setBuying(false);
+    setBuyError("");
     window.scrollTo(0, 0);
   }
 
@@ -142,6 +150,28 @@ export default function PlanEntrenamiento() {
   }
   function toggleDay(k) {
     setExpDays(p => { const s = new Set(p); s.has(k) ? s.delete(k) : s.add(k); return s; });
+  }
+
+  async function handleCheckout() {
+    setBuying(true);
+    setBuyError("");
+    try {
+      const res = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ answers, email: buyEmail }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        setBuyError(data.error || "Error al iniciar el pago. Inténtalo de nuevo.");
+        setBuying(false);
+      }
+    } catch {
+      setBuyError("Error de conexión. Inténtalo de nuevo.");
+      setBuying(false);
+    }
   }
 
   function calcLoads(pesoKg, level, weekNum) {
@@ -321,6 +351,28 @@ export default function PlanEntrenamiento() {
     .load-item-name{font-family:var(--font-mono);font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted2);}
     .load-item-val{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--accent);line-height:1;}
 
+    /* ── Excel CTA ── */
+    .excel-cta{background:var(--surface);border:1.5px solid rgba(251,146,60,.25);border-radius:var(--radius);padding:2rem;margin-top:1.5rem;}
+    .excel-cta-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1.25rem;margin-bottom:1rem;}
+    .excel-eyebrow{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);display:block;margin-bottom:.5rem;}
+    .excel-title{font-family:var(--font-display);font-size:clamp(20px,4vw,28px);font-weight:800;text-transform:uppercase;color:var(--text);line-height:1.1;}
+    .excel-price-block{text-align:right;flex-shrink:0;}
+    .excel-price{font-family:var(--font-display);font-size:46px;font-weight:900;color:var(--accent);line-height:1;display:block;}
+    .excel-price-label{font-family:var(--font-mono);font-size:9px;color:var(--muted2);text-transform:uppercase;letter-spacing:.08em;margin-top:2px;display:block;}
+    .excel-desc{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:1.25rem;}
+    .excel-pay-row{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem;}
+    .pay-secure{font-family:var(--font-mono);font-size:9px;color:var(--muted2);letter-spacing:.06em;display:flex;align-items:center;gap:4px;}
+    .pay-badge{font-family:var(--font-mono);font-size:9px;font-weight:600;color:var(--muted2);background:var(--bg2,#0F1015);border:1px solid var(--border);border-radius:4px;padding:.2rem .55rem;text-transform:uppercase;letter-spacing:.05em;}
+    .excel-email-row{display:flex;gap:.6rem;}
+    .excel-email-input{flex:1;min-width:0;background:var(--bg);border:1.5px solid var(--border2);border-radius:var(--radius-sm);padding:.75rem 1rem;font-family:var(--font-body);font-size:14px;color:var(--text);outline:none;transition:border-color .18s;}
+    .excel-email-input:focus{border-color:var(--accent);}
+    .excel-email-input::placeholder{color:var(--muted2);}
+    .btn-excel{padding:12px 22px;background:var(--accent);color:#08090C;border:none;border-radius:var(--radius-sm);font-family:var(--font-display);font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;transition:transform .15s,box-shadow .15s,opacity .15s;white-space:nowrap;}
+    .btn-excel:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 6px 20px rgba(251,146,60,.35);}
+    .btn-excel:disabled{opacity:.35;cursor:not-allowed;}
+    .excel-hint{font-size:11px;color:var(--muted2);margin-top:.6rem;font-family:var(--font-mono);}
+    .excel-error{color:#F87171;font-size:12px;margin-bottom:.5rem;font-family:var(--font-mono);}
+
     @media(max-width:600px){
       .plan-page{padding:1rem 1rem 3rem;}
       .card-grid{grid-template-columns:1fr 1fr;}
@@ -329,6 +381,10 @@ export default function PlanEntrenamiento() {
       .plan-ctas{flex-direction:column;}
       .cta-btn{width:100%;justify-content:center;}
       .profile-grid{grid-template-columns:1fr;}
+      .excel-cta-top{flex-direction:column;}
+      .excel-price-block{text-align:left;}
+      .excel-email-row{flex-direction:column;}
+      .btn-excel{width:100%;text-align:center;}
     }
   `;
 
@@ -718,6 +774,66 @@ export default function PlanEntrenamiento() {
               </div>
             );
           })}
+        </div>
+
+        {/* Excel CTA */}
+        <div className="excel-cta">
+          <div className="excel-cta-top">
+            <div>
+              <span className="excel-eyebrow">Descarga tu plan en Excel</span>
+              <div className="excel-title">Excel personalizado<br/>con seguimiento</div>
+            </div>
+            <div className="excel-price-block">
+              <span className="excel-price">2,99€</span>
+              <span className="excel-price-label">pago único</span>
+            </div>
+          </div>
+
+          <p className="excel-desc">
+            Recibe tu rutina completa en Excel personalizado con seguimiento de pesos,
+            progreso semanal y registro corporal. Una sola vez, sin suscripción.
+          </p>
+
+          <div className="excel-pay-row">
+            <span className="pay-secure">
+              <svg width="10" height="11" viewBox="0 0 10 11" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round">
+                <rect x="1" y="5" width="8" height="5.5" rx="1.2"/><path d="M3 5V3.5a2 2 0 0 1 4 0V5"/>
+              </svg>
+              PAGO SEGURO
+            </span>
+            {["VISA", "MASTERCARD", "GOOGLE PAY", "APPLE PAY"].map(m => (
+              <span key={m} className="pay-badge">{m}</span>
+            ))}
+          </div>
+
+          {!emailStep ? (
+            <button className="btn-excel" onClick={() => setEmailStep(true)}>
+              OBTENER MI EXCEL →
+            </button>
+          ) : (
+            <>
+              {buyError && <p className="excel-error">{buyError}</p>}
+              <div className="excel-email-row">
+                <input
+                  className="excel-email-input"
+                  type="email"
+                  placeholder="tu@email.com"
+                  value={buyEmail}
+                  onChange={e => setBuyEmail(e.target.value)}
+                  onKeyDown={e => e.key === "Enter" && !buying && buyEmail.includes("@") && handleCheckout()}
+                  autoFocus
+                />
+                <button
+                  className="btn-excel"
+                  onClick={handleCheckout}
+                  disabled={!buyEmail.includes("@") || buying}
+                >
+                  {buying ? "Redirigiendo..." : "PAGAR 2,99€ →"}
+                </button>
+              </div>
+              <p className="excel-hint">Recibirás el Excel en tu email al completar el pago.</p>
+            </>
+          )}
         </div>
 
         {/* CTAs */}
