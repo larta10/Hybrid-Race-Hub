@@ -867,29 +867,26 @@ async function main() {
   console.log(' Scraping de gimnasios: BasicFit · DreamFit · Vivagym');
   console.log('═══════════════════════════════════════════════════════════════════');
 
-  // 1. Check if table exists, if not try to create it
-  const exists = await tableExists();
-  if (!exists) {
-    console.log('\n⚠  La tabla sport_centers no existe.');
-    const applied = await applyMigration();
+  // 1. Ensure table exists; if not, wait until it's created manually
+  let tableReady = await tableExists();
+  if (!tableReady) {
+    console.log('\n  La tabla sport_centers no existe. Intentando crearla automaticamente...');
+    await applyMigration();
+    tableReady = await tableExists();
+  }
+  if (!tableReady) {
+    console.log('\n─────────────────────────────────────────────────────────────────');
+    console.log('  Accion requerida: aplica la migracion en el SQL Editor de Supabase');
+    console.log('  https://supabase.com/dashboard/project/ssyljhtganuaanczxeep/sql/new');
+    console.log('  Archivo: supabase/migrations/20260508_create_sport_centers.sql');
+    console.log('  El script continuara automaticamente en cuanto la tabla exista.');
+    console.log('─────────────────────────────────────────────────────────────────\n');
+    while (!tableReady) {
+      await new Promise(r => setTimeout(r, 10000));
+      process.stdout.write('  Comprobando si la tabla existe...\r');
+      tableReady = await tableExists();
     }
-
-    // Poll until the table exists (user must apply the migration manually)
-    let existsNow = await tableExists();
-    if (!existsNow) {
-      console.log('\n─────────────────────────────────────────────────────────────────');
-      console.log('  Accion requerida: aplica la migracion en el SQL Editor de Supabase');
-      console.log('  https://supabase.com/dashboard/project/ssyljhtganuaanczxeep/sql/new');
-      console.log('  Archivo: supabase/migrations/20260508_create_sport_centers.sql');
-      console.log('  El script continuara automaticamente en cuanto la tabla exista.');
-      console.log('─────────────────────────────────────────────────────────────────\n');
-      while (!existsNow) {
-        await new Promise(r => setTimeout(r, 10000));
-        process.stdout.write('  Comprobando si la tabla existe...\r');
-        existsNow = await tableExists();
-      }
-      console.log('\n  Tabla sport_centers detectada. Continuando...\n');
-    }
+    console.log('\n  Tabla sport_centers detectada. Continuando...\n');
   }
 
   // 2. Scrape all three chains
