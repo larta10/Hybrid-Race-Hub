@@ -31,7 +31,7 @@ export default function Calendario() {
 
   /* Fetch distinct CCAAa that have at least 1 event */
   useEffect(()=>{
-    fetch(`${SUPABASE_URL}/rest/v1/races?select=comunidad&modalidad_parent=in.(${NICHE_PARENTS.join(",")})&limit=500`,{
+    fetch(`${SUPABASE_URL}/rest/v1/races?select=comunidad&modalidad_parent=in.(${NICHE_PARENTS.join(",")})&limit=2000`,{
       headers:{ apikey:ANON_KEY, Authorization:`Bearer ${ANON_KEY}` },
     })
       .then(r=>r.json())
@@ -330,7 +330,7 @@ export default function Calendario() {
               ):(
                 <div className="race-grid">
                   {sorted.map((r,i)=>(
-                    <RaceCard key={r.id||i} race={r} featured={r.featured===true} onClick={()=>setSelectedRace(r)}/>
+                    <RaceCard key={r.id||i} race={r} featured={i===0} onClick={()=>setSelectedRace(r)}/>
                   ))}
                 </div>
               )

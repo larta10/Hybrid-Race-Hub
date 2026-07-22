@@ -3,6 +3,7 @@ const { haversine } = require("../lib/distance");
 import Head from "next/head";
 import Link from "next/link";
 import centrosJson from "../lib/centros-entrenamiento.json";
+import { CookieBanner } from "../lib/shared";
 
 /* ── Data helpers ────────────────────────────────────────────────────────── */
 const CCAA_LIST = [...new Set(centrosJson.map((c) => c.ccaa).filter(Boolean))].sort();
@@ -507,6 +508,8 @@ export default function CentrosEntrenamiento() {
           </Link>
         </div>
       </div>
+
+      <CookieBanner />
     </>
   );
 }

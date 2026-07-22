@@ -16,15 +16,30 @@ const nextConfig = {
       {
         source: "/(.*)",
         headers: [
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "X-Frame-Options", value: "SAMEORIGIN" },
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "X-Content-Type-Options",   value: "nosniff"                      },
+          { key: "X-Frame-Options",           value: "SAMEORIGIN"                   },
+          { key: "Referrer-Policy",           value: "strict-origin-when-cross-origin" },
         ],
       },
       {
-        source: "/sitemap.xml",
+        /* Explicitly allow indexing for all public content pages */
+        source: "/(|calendario|blog|productos|centros-entrenamiento|calculadora-hyrox|plan-entrenamiento|race-hub|comunidad|contacto-organizadores)(.*)",
         headers: [
-          { key: "X-Robots-Tag", value: "noindex" },
+          { key: "X-Robots-Tag", value: "index, follow" },
+        ],
+      },
+      {
+        /* Stub / coming-soon pages — keep out of Google */
+        source: "/(centros-deportivos|calculadora)",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+        ],
+      },
+      {
+        /* API routes — never indexed */
+        source: "/api/(.*)",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
         ],
       },
     ];

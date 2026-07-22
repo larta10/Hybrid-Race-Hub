@@ -1,5 +1,16 @@
+# Hybrid Race Hub — robots.txt
+# Calendario OCR, HYROX y CrossFit en España
+
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /centros-deportivos
+Disallow: /calculadora$
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 Sitemap: https://hybridracehub.com/sitemap.xml

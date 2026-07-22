@@ -3,7 +3,8 @@ export default function CentrosDeportivos() {
   return (
     <>
       <Head>
-        <title>Centros Deportivos - Próximamente</title>
+        <title>Centros Deportivos - Próximamente | Hybrid Race Hub</title>
+        <meta name="robots" content="noindex, nofollow" />
       </Head>
       <main style={{ padding: '4rem 2rem', maxWidth: 1200, margin: '0 auto' }}>
         <h1 style={{ fontFamily: 'var(--font-display)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Buscador de Centros - Próximamente</h1>

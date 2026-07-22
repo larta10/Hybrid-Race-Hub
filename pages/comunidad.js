@@ -31,9 +31,11 @@ export default function Comunidad() {
   return (
     <>
       <Head>
-        <title>Comunidad — Hybrid Race Hub</title>
-        <meta name="description" content="Artículos, guías y recomendaciones sobre carreras OCR, HYROX y equipamiento hídrido." />
+        <title>Comunidad OCR y HYROX — Artículos y Guías | Hybrid Race Hub</title>
+        <meta name="description" content="Artículos, guías y recomendaciones sobre carreras OCR, HYROX y equipamiento híbrido en España. Todo lo que necesitas saber para tu próxima carrera." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://hybridracehub.com/comunidad" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
