@@ -1,4 +1,5 @@
-﻿import { getAllSlugs } from "../lib/posts";
+import { getAllSlugs } from "../lib/posts";
+import { SUPABASE_URL, ANON_KEY } from "../lib/shared";
 
 const BASE = "https://www.hybridracehub.com";
 
@@ -46,6 +47,15 @@ export async function getServerSideProps({ res }) {
   const today = new Date().toISOString().split("T")[0];
   const slugs = getAllSlugs().map((s) => s.params.slug);
 
+  // Artículos de /comunidad (Supabase). Si falla, el sitemap se genera igual.
+  let comunidad = [];
+  try {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/articles?select=slug,published_at&order=published_at.desc`, {
+      headers: { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}` },
+    });
+    if (r.ok) comunidad = (await r.json()).filter((a) => a.slug);
+  } catch {}
+
   const urls = [
     { loc: `${BASE}/`,                          lastmod: today, changefreq: "daily",   priority: "1.0" },
     { loc: `${BASE}/calendario`,                lastmod: today, changefreq: "daily",   priority: "0.9" },
@@ -77,6 +87,13 @@ export async function getServerSideProps({ res }) {
       lastmod: today,
       changefreq: "monthly",
       priority: "0.7",
+    })),
+
+    ...comunidad.map((a) => ({
+      loc: `${BASE}/comunidad/${encodeURIComponent(a.slug)}`,
+      lastmod: a.published_at ? String(a.published_at).split("T")[0] : today,
+      changefreq: "monthly",
+      priority: "0.5",
     })),
   ];
 

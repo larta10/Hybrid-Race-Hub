@@ -14,12 +14,20 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const ranking = RANKINGS.find(r => r.slug === params.categoria);
   if (!ranking) return { notFound: true };
-  return { props: { ranking: JSON.parse(JSON.stringify(ranking)) } };
+  // Imágenes locales en /public/products/: <slug-del-nombre>.webp o <asin>.webp
+  const fs = require("fs");
+  const path = require("path");
+  const dir = path.join(process.cwd(), "public", "products");
+  const slugify = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const products = ranking.products.map(p => {
+    const local = [slugify(p.name), p.asin].map(n => `${n}.webp`).find(f => fs.existsSync(path.join(dir, f)));
+    return { ...p, img: local ? `/products/${local}` : (p.img || null) };
+  });
+  return { props: { ranking: JSON.parse(JSON.stringify({ ...ranking, products })) } };
 }
 
 export default function ProductoCategoria({ ranking }) {
   const productSchemas = ranking.products.map((product, i) => {
-    const ratingValue = ranking.table.rows[i]?.[ranking.table.rows[i].length - 1] ?? null;
     const price = product.price.match(/\d+/)?.[0] ?? "";
     return {
       "@context": "https://schema.org",
@@ -36,12 +44,6 @@ export default function ProductoCategoria({ ranking }) {
         "availability": "https://schema.org/InStock",
         "seller": { "@type": "Organization", "name": "Amazon" },
       },
-      ...(ratingValue ? { "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": ratingValue,
-        "bestRating": "10",
-        "ratingCount": "1",
-      }} : {}),
     };
   });
 
@@ -230,7 +232,6 @@ export default function ProductoCategoria({ ranking }) {
               <div className="product-img-wrap">
                 <ProductImage
                   src={product.img || null}
-                  slug={product.asin}
                   name={product.name}
                   category={ranking.slug}
                   width={220}

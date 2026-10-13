@@ -43,11 +43,9 @@ const CATEGORY_ICONS = {
   ),
 };
 
-export default function ProductImage({ src, slug, name, category, width = 220, height = 220, className = "" }) {
+export default function ProductImage({ src, name, category, width = 220, height = 220, className = "" }) {
   const [imgError, setImgError] = useState(false);
-  const localSrc = slug ? `/products/${slug}.webp` : null;
-
-  const effectiveSrc = !imgError && (localSrc || src);
+  const effectiveSrc = !imgError && src;
 
   if (effectiveSrc) {
     return (

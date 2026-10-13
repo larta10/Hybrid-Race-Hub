@@ -385,32 +385,6 @@ export default function Home() {
             ],
           })}}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{__html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Hybrid Race Hub",
-            "url": "https://www.hybridracehub.com",
-            "logo": "https://www.hybridracehub.com/logo.svg",
-            "description": "Plataforma de referencia para carreras OCR, HYROX y fitness funcional en España",
-            "sameAs": ["https://www.instagram.com/hybridracehub"],
-          })}}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{__html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Hybrid Race Hub",
-            "url": "https://www.hybridracehub.com",
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://www.hybridracehub.com/calendario?q={search_term_string}",
-              "query-input": "required name=search_term_string",
-            },
-          })}}
-        />
       </Head>
 
       {/* ── HEADER ── */}

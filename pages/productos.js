@@ -33,7 +33,6 @@ export default function Productos() {
           dangerouslySetInnerHTML={{__html: JSON.stringify(
             RANKINGS.flatMap((ranking, ri) =>
               ranking.products.map((product, i) => {
-                const ratingValue = ranking.table.rows[i]?.[ranking.table.rows[i].length - 1] ?? null;
                 const price = product.price.match(/\d+/)?.[0] ?? "";
                 return {
                   "@context": "https://schema.org",
@@ -50,12 +49,6 @@ export default function Productos() {
                     "availability": "https://schema.org/InStock",
                     "seller": { "@type": "Organization", "name": "Amazon" },
                   },
-                  ...(ratingValue ? { "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": ratingValue,
-                    "bestRating": "10",
-                    "ratingCount": "1",
-                  }} : {}),
                 };
               })
             )

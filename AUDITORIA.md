@@ -228,3 +228,21 @@ Los slugs de cada producto están definidos en `lib/rankings.js` en el campo `as
 ---
 
 *Nota: Esta auditoría se realizó sin datos de Search Console. Repetir esta fase con datos reales de Google Search Console para identificar las páginas con más impresiones y CTR bajo.*
+
+---
+
+## REGISTRO DE PROGRESO
+
+> Nota: el prompt original de la auditoría no estaba disponible al retomar la sesión (2026-10-13). Las fases 2+ se han reconstruido a partir de los hallazgos de este documento.
+
+### Fase 1 — Fallos técnicos ✅ (commits a8b1d00, 175d394)
+C1, C2, A1, A2, A3, A5, A6, M1, M2, M6, M7 resueltos.
+
+### Fase 2 — SEO on-page, schema y afiliación ✅
+- A4: eliminados los hotlinks de Bing (`img: null`). Las fichas muestran un placeholder con icono hasta que haya imagen local.
+- `ProductImage` ya no pide a ciegas `/products/<asin>.webp` (evita un 404 por producto). Ahora `getStaticProps` comprueba en build si existe `/public/products/<nombre-en-slug>.webp` o `<asin>.webp`.
+- B3: eliminado `aggregateRating` con `ratingCount: "1"` ficticio (productos.js y productos/[categoria].js).
+- B4: eliminado el JSON-LD duplicado de Organization/WebSite en la home (se mantiene el `@graph`).
+- M3: footer con enlaces a Centros, Plan de entreno y Calculadora + aviso de afiliado de Amazon (una sola vez).
+- M9: el sitemap incluye ahora los artículos de /comunidad (consulta a Supabase con fallback si falla).
+- Decisión: los BOM UTF-8 de varios ficheros de `pages/` no se tocan (inofensivos; evitar diffs masivos).
