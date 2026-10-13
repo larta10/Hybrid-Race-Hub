@@ -66,7 +66,7 @@ const bdr    = () => { const s = { style: "thin", color: { argb: "FF2A2D36" } };
 const fnt    = (argb, size = 10, bold = false, italic = false) => ({ name: "Calibri", size, bold, italic, color: { argb } });
 const centre = { vertical: "middle", horizontal: "center" };
 
-const C = { dark: "FF08090C", surface: "FF1A1D26", row: "FF13151C", alt: "FF0F1015", orange: "FFE10600", white: "FFF5F5F7", muted: "FF8C8E9A", brand: "FF5D5F6B" };
+const C = { dark: "FF0B0B0C", surface: "FF1B1B1E", row: "FF141416", alt: "FF0F0F11", accent: "FFE10600", white: "FFF2F2F0", muted: "FF9A9A9E", brand: "FF5D5F6B" };
 
 function sheetHeaderFooter(ws, brand) {
   ws.getCell("A1").value = brand;
@@ -102,7 +102,7 @@ async function buildExcel(plan, answers) {
   cover.mergeCells("B4:C4");
   const logo = cover.getCell("B4");
   logo.value = "HYBRID RACE HUB";
-  logo.font  = fnt(C.orange, 22, true);
+  logo.font  = fnt(C.accent, 22, true);
   logo.fill  = fill(C.dark);
 
   // Plan name
@@ -168,7 +168,7 @@ async function buildExcel(plan, answers) {
     ws.mergeCells(2, 1, 2, COLS.length);
     const wt = ws.getCell(2, 1);
     wt.value     = `SEMANA ${week.number}  ·  ${(week.phaseLabel || "").toUpperCase()}  ·  ${cycleLabel}${isDeload ? "  ← DELOAD" : ""}`;
-    wt.font      = fnt(C.orange, 13, true);
+    wt.font      = fnt(C.accent, 13, true);
     wt.fill      = fill(C.surface);
     wt.alignment = { vertical: "middle" };
     ws.getRow(2).height = 24;
@@ -187,7 +187,7 @@ async function buildExcel(plan, answers) {
     COLS.forEach((col, i) => {
       const cell = hRow.getCell(i + 1);
       cell.value     = col.header;
-      cell.font      = fnt(C.orange, 10, true);
+      cell.font      = fnt(C.accent, 10, true);
       cell.fill      = fill(C.surface);
       cell.border    = bdr();
       cell.alignment = centre;
@@ -235,7 +235,7 @@ async function buildExcel(plan, answers) {
           const cell = row.getCell(i + 1);
           cell.fill   = fill(C.row);
           cell.border = bdr();
-          cell.font   = i === 3 && v ? fnt(C.orange, 10, true) : fnt(C.white, 10);
+          cell.font   = i === 3 && v ? fnt(C.accent, 10, true) : fnt(C.white, 10);
           cell.value  = v;
         });
         curRow++;
@@ -286,7 +286,7 @@ async function buildExcel(plan, answers) {
   prog.mergeCells(2, 1, 2, PCOLS.length);
   const pt2 = prog.getCell(2, 1);
   pt2.value     = "MI PROGRESO — SEGUIMIENTO SEMANAL";
-  pt2.font      = fnt(C.orange, 14, true);
+  pt2.font      = fnt(C.accent, 14, true);
   pt2.fill      = fill(C.surface);
   pt2.alignment = { vertical: "middle" };
   prog.getRow(2).height = 26;
@@ -298,7 +298,7 @@ async function buildExcel(plan, answers) {
     prog.getColumn(i + 1).width = col.width;
     const cell = phRow.getCell(i + 1);
     cell.value     = col.header;
-    cell.font      = fnt(C.orange, 10, true);
+    cell.font      = fnt(C.accent, 10, true);
     cell.fill      = fill(C.surface);
     cell.border    = bdr();
     cell.alignment = centre;

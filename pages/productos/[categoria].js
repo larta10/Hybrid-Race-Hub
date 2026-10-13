@@ -118,8 +118,8 @@ export default function ProductoCategoria({ ranking }) {
         .comp-table td:first-child { font-family: var(--font-display); font-weight: 700; font-size: 13px; }
 
         .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin: 1.5rem 0; }
-        .product-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); display: flex; flex-direction: column; transition: border-color .15s, box-shadow .15s, transform .15s; overflow: hidden; }
-        .product-card:hover { border-color: var(--border2); box-shadow: 0 8px 28px rgba(0,0,0,0.4); transform: translateY(-2px); }
+        .product-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); display: flex; flex-direction: column; transition: border-color .15s; overflow: hidden; }
+        .product-card:hover { border-color: var(--border2); }
         .product-card-head { background: var(--surface2); padding: 1.25rem 1.25rem 1rem; border-bottom: 0.5px solid var(--border); display: flex; align-items: center; gap: 12px; }
         .product-rank { font-family: var(--font-display); font-size: 32px; font-weight: 900; color: var(--text); line-height: 1; flex-shrink: 0; width: 32px; }
         .product-name { font-family: var(--font-display); font-size: 18px; font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); line-height: 1.15; }
@@ -132,7 +132,7 @@ export default function ProductoCategoria({ ranking }) {
         .product-pc-list { display: flex; flex-direction: column; gap: 3px; }
         .product-pc-item { font-family: var(--font-body); font-size: 12px; color: var(--muted); display: flex; align-items: flex-start; gap: 6px; line-height: 1.4; }
         .pros .product-pc-item::before { content: "+"; color: var(--text-muted); font-size: 10px; margin-top: 2px; }
-        .cons .product-pc-item::before { content: "✗"; color: var(--muted2); font-size: 10px; margin-top: 2px; }
+        .cons .product-pc-item::before { content: "–"; color: var(--muted2); font-size: 10px; margin-top: 2px; }
         .product-price { font-family: var(--font-mono); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
         .product-cta { display: block; background: var(--accent); color: var(--on-accent); font-family: var(--font-display); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; text-align: center; padding: 11px 16px; border-top: 0.5px solid var(--border); transition: background-color .15s; }
         .product-cta:hover { background: var(--accent-hover); }
@@ -257,10 +257,10 @@ export default function ProductoCategoria({ ranking }) {
         {/* Enlazado interno */}
         <div style={{ marginTop: "1.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
           <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--text-muted)", border: "0.5px solid rgba(255,255,255,0.1)", borderRadius: 2, padding: "6px 14px" }}>
-            📅 ¿Listo para competir? Ver calendario →
+            ¿Listo para competir? Ver calendario →
           </Link>
           <Link href="/blog" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px" }}>
-            📖 Blog: guías y artículos →
+            Blog: guías y artículos →
           </Link>
           <Link href="/productos" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px" }}>
             ← Ver todos los rankings

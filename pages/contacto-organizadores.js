@@ -193,10 +193,9 @@ export default function ContactOrganizers() {
           border-radius: var(--radius-sm);
           cursor: pointer;
           margin-top: 1rem;
-          transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+          transition: border-color .15s, background-color .15s, color .15s;
         }
         .form-submit:hover:not(:disabled) {
-          transform: translateY(-2px);
           
         }
         .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }

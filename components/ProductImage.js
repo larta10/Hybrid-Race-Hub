@@ -67,7 +67,7 @@ export default function ProductImage({ src, name, category, width = 220, height 
     <div style={{
       width: "100%",
       height: height,
-      background: "linear-gradient(135deg, var(--bg2) 0%, var(--surface2) 60%, rgba(255,255,255,0.07) 100%)",
+      background: "var(--surface)",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",

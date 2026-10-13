@@ -336,7 +336,7 @@ export default function Calendario() {
             {results!==null&&!loading&&!error&&(
               sorted.length===0?(
                 <div className="state-center">
-                  <div className="state-icon">🏁</div>
+                  
                   <p className="state-title">Sin resultados</p>
                   <p className="state-sub">Prueba a ajustar los filtros o ampliar el rango de fechas.</p>
                 </div>

@@ -107,10 +107,9 @@ export default function Comunidad() {
         .article-card {
           background: var(--surface); border: 1px solid var(--border);
           border-radius: var(--radius); overflow: hidden;
-          transition: transform 0.2s, border-color 0.2s;
+          transition: border-color .15s, background-color .15s, color .15s;
         }
-        .article-card:hover {
-          transform: translateY(-4px); border-color: var(--border2);
+        .article-card:hover { border-color: var(--border2);
         }
         .article-image {
           width: 100%; height: 180px;
@@ -177,9 +176,9 @@ export default function Comunidad() {
           padding: 8px 14px; background: var(--text); color: var(--bg);
           font-family: var(--font-display); font-size: 11px; font-weight: 700;
           text-transform: uppercase; border: none; border-radius: 4px;
-          cursor: pointer; transition: transform 0.15s;
+          cursor: pointer; transition: border-color .15s, background-color .15s, color .15s;
         }
-        .product-btn:hover { transform: translateY(-1px); }
+        .product-btn:hover { }
 
         .empty { text-align: center; padding: 4rem; color: var(--muted); }
 

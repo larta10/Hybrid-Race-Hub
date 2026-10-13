@@ -266,8 +266,8 @@ export default function CentrosEntrenamiento() {
 
         .proximity-notice { font-family:var(--font-mono); font-size:10px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); background:var(--surface); border:0.5px dashed var(--border2); border-radius:var(--radius-sm); padding:10px 16px; margin-bottom:1rem; }
 
-        .centro-card { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius); padding:1.1rem; display:flex; flex-direction:column; gap:8px; transition:transform .15s,border-color .15s,box-shadow .15s; }
-        .centro-card:hover { transform:translateY(-2px); border-color:var(--border2); box-shadow:0 6px 24px rgba(0,0,0,0.35); }
+        .centro-card { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius); padding:1.1rem; display:flex; flex-direction:column; gap:8px; transition: border-color .15s, background-color .15s, color .15s; }
+        .centro-card:hover { border-color:var(--border2); }
         .centro-card-header { display:flex; align-items:flex-start; justify-content:space-between; gap:8px; }
         .tipo-badge { font-family:var(--font-display); font-size:8px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; padding:2px 8px; border-radius:2px; flex-shrink:0; margin-top:2px; }
         .centro-nombre { font-family:var(--font-display); font-size:17px; font-weight:800; text-transform:uppercase; letter-spacing:-0.01em; line-height:1.15; color:var(--text); flex:1; }
@@ -289,8 +289,8 @@ export default function CentrosEntrenamiento() {
         .cta-block { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); padding:2rem; text-align:center; margin-top:3rem; }
         .cta-block-title { font-family:var(--font-display); font-size:26px; font-weight:800; text-transform:uppercase; color:var(--text); margin-bottom:8px; }
         .cta-block-sub { font-family:var(--font-body); font-size:14px; color:var(--muted); margin-bottom:1.25rem; line-height:1.6; }
-        .cta-btn { display:inline-flex; align-items:center; gap:8px; background: var(--text); color: var(--bg); font-family:var(--font-display); font-size:14px; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; padding:12px 24px; border-radius:var(--radius-sm); transition:transform .12s,box-shadow .12s; }
-        .cta-btn:hover { transform:translateY(-2px);  }
+        .cta-btn { display:inline-flex; align-items:center; gap:8px; background: var(--text); color: var(--bg); font-family:var(--font-display); font-size:14px; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; padding:12px 24px; border-radius:var(--radius-sm); transition: border-color .15s, background-color .15s, color .15s; }
+        .cta-btn:hover {  }
 
         .bottom-links { margin-top:2rem; display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center; }
         .bottom-link { display:inline-flex; align-items:center; gap:6px; font-family:var(--font-mono); font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; border-radius:2px; padding:6px 14px; }

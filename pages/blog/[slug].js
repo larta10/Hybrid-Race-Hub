@@ -297,15 +297,15 @@ export default function BlogPost({ post }) {
           <p className="related-title">Te puede interesar</p>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
             <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--text-muted)", border: "0.5px solid rgba(255,255,255,0.1)", borderRadius: 2, padding: "6px 14px", textDecoration: "none" }}>
-              📅 Ver calendario de eventos →
+              Ver calendario de eventos →
             </Link>
             {post.category === "Equipamiento" && (
               <>
                 <Link href="/productos/relojes" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px", textDecoration: "none" }}>
-                  🏆 Ranking relojes GPS →
+                  Ranking relojes GPS →
                 </Link>
                 <Link href="/productos/zapatillas-hyrox" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px", textDecoration: "none" }}>
-                  👟 Ranking zapatillas HYROX →
+                  Ranking zapatillas HYROX →
                 </Link>
               </>
             )}
@@ -316,7 +316,7 @@ export default function BlogPost({ post }) {
             )}
             {post.category === "Eventos" && (
               <Link href="/productos/zapatillas-trail" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px", textDecoration: "none" }}>
-                👟 Zapatillas trail OCR →
+                Zapatillas trail OCR →
               </Link>
             )}
           </div>

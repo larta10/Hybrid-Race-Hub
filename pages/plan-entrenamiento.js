@@ -460,8 +460,8 @@ export default function PlanEntrenamiento() {
     .wizard-nav{display:flex;gap:.75rem;justify-content:space-between;align-items:center;margin-top:2rem;}
     .btn-back{padding:11px 20px;background:transparent;color:var(--muted);border:1.5px solid var(--border2);border-radius:var(--radius-sm);font-family:var(--font-display);font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;cursor:pointer;transition:all .18s;}
     .btn-back:hover{color:var(--text);border-color:var(--border2);}
-    .btn-next{padding:12px 28px;background: var(--text);color: var(--bg);border:none;border-radius:var(--radius-sm);font-family:var(--font-display);font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;transition:transform .15s,box-shadow .15s,opacity .15s;}
-    .btn-next:hover:not(:disabled){transform:translateY(-2px);}
+    .btn-next{padding:12px 28px;background: var(--text);color: var(--bg);border:none;border-radius:var(--radius-sm);font-family:var(--font-display);font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;transition: border-color .15s, background-color .15s, color .15s;}
+    .btn-next:hover:not(:disabled){}
     .btn-next:disabled{opacity:.35;cursor:not-allowed;}
 
     /* ── Plan Result ── */
@@ -486,7 +486,7 @@ export default function PlanEntrenamiento() {
     .week-num{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);min-width:52px;}
     .week-phase-badge{padding:.2rem .6rem;border-radius:4px;font-family:var(--font-mono);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#000;}
     .week-tip{font-size:13px;color:var(--muted);flex:1;}
-    .week-chevron{font-size:12px;color:var(--muted2);transition:transform .2s;flex-shrink:0;}
+    .week-chevron{font-size:12px;color:var(--muted2);transition: border-color .15s, background-color .15s, color .15s;flex-shrink:0;}
     .week-chevron.open{transform:rotate(90deg);}
 
     /* Days */
@@ -498,7 +498,7 @@ export default function PlanEntrenamiento() {
     .day-name{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);min-width:72px;}
     .day-badge{padding:.15rem .5rem;border-radius:3px;font-family:var(--font-mono);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;}
     .day-title{font-size:13px;font-weight:500;flex:1;}
-    .day-chevron{font-size:10px;color:var(--muted2);transition:transform .2s;}
+    .day-chevron{font-size:10px;color:var(--muted2);transition: border-color .15s, background-color .15s, color .15s;}
     .day-chevron.open{transform:rotate(90deg);}
     .day-body{background:var(--bg2);border-top:1px solid var(--border);padding:.75rem .9rem 1rem;}
     .day-section{margin-bottom:.75rem;}
@@ -513,7 +513,7 @@ export default function PlanEntrenamiento() {
     /* CTAs */
     .plan-ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);}
     .cta-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:var(--radius-sm);font-family:var(--font-display);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;transition:all .18s;}
-    .cta-btn:hover{text-decoration:none;transform:translateY(-2px);}
+    .cta-btn:hover{text-decoration:none;}
     .cta-primary{background: var(--text);color: var(--bg);}
     .cta-primary:hover{}
     .cta-secondary{background:transparent;color:var(--text);border:1.5px solid var(--border2);}
@@ -545,9 +545,9 @@ export default function PlanEntrenamiento() {
 
     /* ── Download buttons ── */
     .cta-dl-excel{background:rgba(255,255,255,0.05);color:var(--text);border:1.5px solid rgba(255,255,255,0.08);}
-    .cta-dl-excel:hover:not(:disabled){background:rgba(255,255,255,0.08);border-color:var(--text);transform:translateY(-2px);}
+    .cta-dl-excel:hover:not(:disabled){background:rgba(255,255,255,0.08);border-color:var(--text);}
     .cta-dl-pdf{background:rgba(255,255,255,0.05);color:var(--text);border:1.5px solid rgba(255,255,255,0.08);}
-    .cta-dl-pdf:hover:not(:disabled){background:rgba(255,255,255,0.08);border-color:var(--text);transform:translateY(-2px);}
+    .cta-dl-pdf:hover:not(:disabled){background:rgba(255,255,255,0.08);border-color:var(--text);}
     .cta-btn:disabled{opacity:.45;cursor:not-allowed;}
 
     @media(max-width:600px){

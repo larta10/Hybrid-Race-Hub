@@ -4,14 +4,14 @@ import Link from "next/link";
 
 /* ─── HYROX structure ──────────────────────────────────────────────────────── */
 const STATIONS = [
-  { id:"s1",  label:"SkiErg",             detail:"1.000 m",   icon:"⛷️",  tipo:"station" },
-  { id:"s2",  label:"Sled Push",          detail:"50 m",      icon:"🛷",  tipo:"station" },
-  { id:"s3",  label:"Sled Pull",          detail:"50 m",      icon:"🪢",  tipo:"station" },
-  { id:"s4",  label:"Burpee Broad Jump",  detail:"80 m",      icon:"💥",  tipo:"station" },
-  { id:"s5",  label:"Rowing",             detail:"1.000 m",   icon:"🚣",  tipo:"station" },
-  { id:"s6",  label:"Farmer's Carry",     detail:"200 m",     icon:"🏋️",  tipo:"station" },
-  { id:"s7",  label:"Sandbag Lunges",     detail:"100 m",     icon:"🎒",  tipo:"station" },
-  { id:"s8",  label:"Wall Balls",         detail:"100 reps",  icon:"🏀",  tipo:"station" },
+  { id:"s1",  label:"SkiErg",             detail:"1.000 m",   icon:"01",  tipo:"station" },
+  { id:"s2",  label:"Sled Push",          detail:"50 m",      icon:"02",  tipo:"station" },
+  { id:"s3",  label:"Sled Pull",          detail:"50 m",      icon:"03",  tipo:"station" },
+  { id:"s4",  label:"Burpee Broad Jump",  detail:"80 m",      icon:"04",  tipo:"station" },
+  { id:"s5",  label:"Rowing",             detail:"1.000 m",   icon:"05",  tipo:"station" },
+  { id:"s6",  label:"Farmer's Carry",     detail:"200 m",     icon:"06",  tipo:"station" },
+  { id:"s7",  label:"Sandbag Lunges",     detail:"100 m",     icon:"07",  tipo:"station" },
+  { id:"s8",  label:"Wall Balls",         detail:"100 reps",  icon:"08",  tipo:"station" },
 ];
 
 // 8 laps (before each station) + 8 stations = 16 inputs total
@@ -162,7 +162,7 @@ export default function CalculadoraHyrox() {
         .time-row { padding:.85rem 1rem; display:flex; flex-direction:column; gap:6px; }
         .time-row:first-child { border-right:0.5px solid var(--border); }
         .time-row-top { display:flex; align-items:center; gap:8px; }
-        .time-icon { font-size:14px; line-height:1; }
+        .time-icon { font-family:var(--font-mono); font-size:10px; font-weight:600; letter-spacing:0.08em; color:var(--text-muted); min-width:28px; line-height:1; }
         .time-label { font-family:var(--font-display); font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.02em; color:var(--text); }
         .time-detail { font-family:var(--font-mono); font-size:9px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted2); }
         .time-input {
@@ -268,7 +268,7 @@ export default function CalculadoraHyrox() {
                   {/* Run */}
                   <div className="time-row">
                     <div className="time-row-top">
-                      <span className="time-icon">🏃</span>
+                      <span className="time-icon">RUN</span>
                       <div>
                         <div className="time-label">Carrera</div>
                         <div className="time-detail">1 km</div>
@@ -311,13 +311,13 @@ export default function CalculadoraHyrox() {
           {/* Internal links */}
           <div style={{ marginTop:"2rem", display:"flex", gap:"0.75rem", flexWrap:"wrap" }}>
             <Link href="/calendario/madrid" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.1em", color:"var(--text-muted)", border:"0.5px solid rgba(255,255,255,0.1)", borderRadius:2, padding:"6px 14px" }}>
-              📅 Próximas HYROX España →
+              Próximas HYROX España →
             </Link>
             <Link href="/centros-entrenamiento" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.1em", color:"var(--muted)", border:"0.5px solid rgba(255,255,255,0.08)", borderRadius:2, padding:"6px 14px" }}>
-              🏋️ Centros de entrenamiento →
+              Centros de entrenamiento →
             </Link>
             <Link href="/productos/relojes" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.1em", color:"var(--muted)", border:"0.5px solid rgba(255,255,255,0.08)", borderRadius:2, padding:"6px 14px" }}>
-              ⌚ Relojes GPS para HYROX →
+              Relojes GPS para HYROX →
             </Link>
           </div>
         </div>
@@ -373,11 +373,11 @@ export default function CalculadoraHyrox() {
           {/* Tips */}
           <div className="tips-card">
             <p className="tips-title">Pesos reglamentarios</p>
-            <div className="tip-item">🛷 <strong>Sled Push:</strong> 152kg H / 102kg M</div>
-            <div className="tip-item">🪢 <strong>Sled Pull:</strong> 103kg H / 78kg M</div>
-            <div className="tip-item">🏋️ <strong>Farmer's Carry:</strong> 2×24kg H / 2×16kg M</div>
-            <div className="tip-item">🎒 <strong>Sandbag Lunges:</strong> 20kg H / 10kg M</div>
-            <div className="tip-item">🏀 <strong>Wall Balls:</strong> 9kg (3m) H / 6kg (2.7m) M</div>
+            <div className="tip-item"><strong>Sled Push:</strong> 152kg H / 102kg M</div>
+            <div className="tip-item"><strong>Sled Pull:</strong> 103kg H / 78kg M</div>
+            <div className="tip-item"><strong>Farmer's Carry:</strong> 2×24kg H / 2×16kg M</div>
+            <div className="tip-item"><strong>Sandbag Lunges:</strong> 20kg H / 10kg M</div>
+            <div className="tip-item"><strong>Wall Balls:</strong> 9kg (3m) H / 6kg (2.7m) M</div>
           </div>
 
           <button className="reset-btn" onClick={reset}>Reiniciar calculadora</button>

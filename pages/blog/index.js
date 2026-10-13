@@ -191,11 +191,9 @@ export default function BlogIndex() {
           background: var(--surface); border: 0.5px solid var(--border);
           border-radius: var(--radius-lg); padding: 1.5rem;
           display: flex; flex-direction: column; gap: 10px;
-          transition: transform .15s, border-color .15s, box-shadow .15s;
+          transition: border-color .15s, background-color .15s, color .15s;
         }
-        .post-card:hover {
-          transform: translateY(-2px); border-color: var(--border2);
-          box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+        .post-card:hover { border-color: var(--border2);
         }
         .post-card-title {
           font-family: var(--font-display); font-size: 20px; font-weight: 700;
@@ -352,13 +350,13 @@ export default function BlogIndex() {
         {/* Enlazado interno */}
         <div style={{ borderTop: "0.5px solid rgba(255,255,255,0.08)", paddingTop: "2rem", display: "flex", gap: "1rem", flexWrap: "wrap" }}>
           <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--text-muted)", border: "0.5px solid rgba(255,255,255,0.1)", borderRadius: 2, padding: "6px 14px" }}>
-            📅 Ver calendario de eventos →
+            Ver calendario de eventos →
           </Link>
           <Link href="/productos/relojes" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px" }}>
-            🏆 Ranking relojes GPS →
+            Ranking relojes GPS →
           </Link>
           <Link href="/productos/zapatillas-hyrox" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px" }}>
-            👟 Ranking zapatillas HYROX →
+            Ranking zapatillas HYROX →
           </Link>
         </div>
       </div>

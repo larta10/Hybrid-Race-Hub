@@ -1,9 +1,9 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import {
   SUPABASE_URL, ANON_KEY, CCAA, FORMATS,
-  InstagramIcon, EnvelopeIcon, HeroStats, SiteFooter, CookieBanner, CalIcon,
+  InstagramIcon, EnvelopeIcon, HeroStats, SiteFooter, CookieBanner,
   SiteNav,
 } from "../lib/shared";
 
@@ -36,7 +36,7 @@ function FAQSection() {
       <div className="faq-inner">
         <div className="faq-header">
           <p className="faq-eyebrow">PREGUNTAS FRECUENTES</p>
-          <h2 className="faq-title">Todo sobre carreras híbridas</h2>
+          <h2 className="faq-title">Lo que más nos preguntáis</h2>
         </div>
         <div className="faq-list">
           {FAQ_DATA.map((item,i)=><FAQItem key={i} question={item.question} answer={item.answer}/>)}
@@ -75,10 +75,9 @@ function OrganizerContact() {
           <p className="oc-eyebrow">COLABORACIONES</p>
           <h2 className="oc-title">¿TRABAJAMOS<br/>JUNTOS?</h2>
           <p className="oc-sub">
-            Si eres entrenador personal especializado en entrenamiento híbrido, organizador
-            de pruebas o gestor de un centro deportivo, queremos conocerte. Hybrid Race Hub
-            conecta a los mejores profesionales del sector con miles de atletas en España.
-            Escríbenos y estudiamos cómo podemos ayudarte a llegar a tu público.
+            ¿Organizas una prueba, llevas un box o entrenas a atletas híbridos?
+            Escríbenos. Publicamos tu evento en el calendario y vemos juntos cómo
+            llegar a la gente que ya está buscando carrera.
           </p>
           <a href="mailto:hola@hybridracehub.com" className="oc-ig-link" style={{marginBottom:8,display:"inline-flex"}}>
             <EnvelopeIcon size={14}/><span>hola@hybridracehub.com</span>
@@ -94,8 +93,8 @@ function OrganizerContact() {
             <div className="oc-success">
               <span className="oc-check">✓</span>
               <div>
-                <p className="oc-success-title">¡Mensaje enviado!</p>
-                <p className="oc-success-sub">Te contestaremos en un plazo máximo de 48 horas.</p>
+                <p className="oc-success-title">Mensaje enviado</p>
+                <p className="oc-success-sub">Te contestamos en 48 horas como mucho.</p>
               </div>
             </div>
           ):(
@@ -121,7 +120,7 @@ function OrganizerContact() {
                   rows={4} value={form.mensaje} onChange={e=>set("mensaje",e.target.value)} disabled={status==="loading"}/>
               </div>
               <button type="submit" className="oc-btn" disabled={status==="loading"}>
-                {status==="loading"?"Enviando…":"ENVIAR MENSAJE →"}
+                {status==="loading"?"Enviando…":"Enviar mensaje"}
               </button>
               {status==="error"&&<p className="oc-error">{errMsg}</p>}
             </form>
@@ -132,118 +131,67 @@ function OrganizerContact() {
   );
 }
 
-/* ─── HomeSections ─────────────────────────────────────────────────────────── */
-const BlogIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <rect x="4" y="4" width="24" height="28" rx="3" stroke="currentColor" strokeWidth="1.8"/>
-    <line x1="9" y1="11" x2="23" y2="11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-    <line x1="9" y1="16" x2="23" y2="16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-    <line x1="9" y1="21" x2="17" y2="21" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-  </svg>
-);
-
-const ShopIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <path d="M6 8h20l-2 14H8L6 8z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"/>
-    <path d="M12 8c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-    <circle cx="12" cy="26" r="1.5" fill="currentColor"/>
-    <circle cx="20" cy="26" r="1.5" fill="currentColor"/>
-  </svg>
-);
-
-const CalcIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <rect x="5" y="4" width="22" height="26" rx="3" stroke="var(--text)" strokeWidth="1.8"/>
-    <rect x="9" y="8" width="14" height="6" rx="1.5" stroke="var(--text)" strokeWidth="1.5"/>
-    <circle cx="10" cy="20" r="1.5" fill="var(--text)"/>
-    <circle cx="16" cy="20" r="1.5" fill="var(--text)"/>
-    <circle cx="22" cy="20" r="1.5" fill="var(--text)"/>
-    <circle cx="10" cy="26" r="1.5" fill="var(--text)"/>
-    <circle cx="16" cy="26" r="1.5" fill="var(--text)"/>
-    <circle cx="22" cy="26" r="1.5" fill="var(--text)"/>
-  </svg>
-);
-
-const BoxIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <rect x="4" y="10" width="24" height="18" rx="2" stroke="var(--text-muted)" strokeWidth="1.8"/>
-    <path d="M4 15h24" stroke="var(--text-muted)" strokeWidth="1.5"/>
-    <path d="M13 10V6a3 3 0 0 1 6 0v4" stroke="var(--text-muted)" strokeWidth="1.8" strokeLinecap="round"/>
-    <path d="M12 22h8" stroke="var(--text-muted)" strokeWidth="1.5" strokeLinecap="round"/>
-  </svg>
-);
-
-const PlanIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <rect x="4" y="4" width="24" height="24" rx="3" stroke="var(--text)" strokeWidth="1.8"/>
-    <path d="M9 12h14M9 17h10M9 22h6" stroke="var(--text)" strokeWidth="1.8" strokeLinecap="round"/>
-    <circle cx="24" cy="22" r="5" fill="var(--bg)" stroke="var(--text)" strokeWidth="1.8"/>
-    <path d="M22 22l1.5 1.5L26 20" stroke="var(--text)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
+/* ─── HomeSections: índice editorial del hub (sin iconos, filas con separador) ─ */
 function HomeSections() {
   const sections = [
     {
       href: "/calendario",
-      icon: <CalIcon/>,
       title: "Calendario",
-      desc: "Más de 140 eventos OCR, HYROX y fitness funcional en España. Filtra por comunidad, formato y fecha.",
-      cta: "→ Ver eventos",
-      iconBg: "var(--surface2)",
+      desc: "Más de 140 pruebas de OCR, HYROX y funcional en España. Filtra por comunidad, formato y mes.",
+      cta: "Ver carreras",
     },
     {
       href: "/plan-entrenamiento",
-      icon: <PlanIcon/>,
       title: "Plan de entrenamiento",
-      desc: "Crea tu plan personalizado para OCR, HYROX o CrossFit en 5 preguntas. Adaptado a tu nivel y días disponibles.",
-      cta: "→ Crear mi plan",
-      iconBg: "rgba(255,255,255,0.07)",
+      desc: "Cinco preguntas y tienes un plan por semanas para una Spartan Sprint, una HYROX o el Open. Gratis, en Excel o PDF.",
+      cta: "Crear plan",
     },
     {
       href: "/blog",
-      icon: <BlogIcon/>,
       title: "Blog",
-      desc: "Guías técnicas, análisis de equipamiento y estrategias de competición escritas por atletas.",
-      cta: "→ Leer artículos",
-      iconBg: "rgba(255,255,255,0.07)",
+      desc: "Guías de carrera, análisis de material y estrategia para el día de la prueba.",
+      cta: "Leer artículos",
     },
     {
       href: "/productos",
-      icon: <ShopIcon/>,
       title: "Productos",
-      desc: "Rankings de zapatillas, relojes GPS, pulsómetros y equipamiento para OCR e HYROX.",
-      cta: "→ Ver rankings",
-      iconBg: "rgba(255,255,255,0.07)",
+      desc: "Rankings de zapatillas, relojes GPS, pulsómetros y ropa, probados en barro y en estaciones.",
+      cta: "Ver rankings",
     },
     {
       href: "/calculadora-hyrox",
-      icon: <CalcIcon/>,
       title: "Calculadora HYROX",
-      desc: "Calcula tu ritmo por estación y estima tu tiempo final. Con categorías de referencia para planificar tu carrera.",
-      cta: "→ Calcular tiempo",
-      iconBg: "rgba(255,255,255,0.07)",
+      desc: "Mete tu ritmo de carrera y tus tiempos por estación, del SkiErg a los wall balls, y mira dónde acabas.",
+      cta: "Calcular",
     },
     {
       href: "/centros-entrenamiento",
-      icon: <BoxIcon/>,
       title: "Centros de entrenamiento",
-      desc: "Directorio de centros OCR, HYROX y CrossFit en España. Busca por ciudad o código postal.",
-      cta: "→ Buscar centro",
-      iconBg: "rgba(139,92,246,0.14)",
+      desc: "Boxes y gimnasios con material de OCR, HYROX y CrossFit. Busca por ciudad o código postal.",
+      cta: "Buscar centro",
     },
   ];
   return (
-    <section className="home-sections">
-      <div className="home-sections-inner">
-        {sections.map((s,i)=>(
-          <a key={i} href={s.href} className="home-card">
-            <div className="home-card-icon" style={{background:s.iconBg}}>{s.icon}</div>
-            <h2 className="home-card-title">{s.title}</h2>
-            <p className="home-card-desc">{s.desc}</p>
-            <span className="home-card-cta">{s.cta}</span>
-          </a>
-        ))}
+    <section className="home-index" aria-label="Secciones del hub">
+      <div className="home-index-inner">
+        <div className="home-index-head">
+          <p className="section-label">EL HUB</p>
+          <h2 className="section-title">Todo lo que hay aquí</h2>
+        </div>
+        <ol className="home-index-list">
+          {sections.map((s,i)=>(
+            <li key={s.href}>
+              <a href={s.href} className="home-index-row">
+                <span className="home-index-num">{String(i+1).padStart(2,"0")}</span>
+                <span className="home-index-body">
+                  <h3 className="home-index-title">{s.title}</h3>
+                  <span className="home-index-desc">{s.desc}</span>
+                </span>
+                <span className="home-index-cta">{s.cta} →</span>
+              </a>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
@@ -296,7 +244,8 @@ export default function Home() {
         <meta name="twitter:title" content="Hybrid Race Hub — Calendario OCR, HYROX y CrossFit en España" />
         <meta name="twitter:description" content="El calendario de referencia para carreras OCR, HYROX y competiciones funcionales en España." />
         <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
-        <link rel="preconnect" href={SUPABASE_URL} />
+        <link rel="preconnect" href={SUPABASE_URL} />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{__html: JSON.stringify({
@@ -387,7 +336,7 @@ export default function Home() {
       </Head>
 
       {/* ── HEADER ── */}
-      <header className="hero" style={{background:"linear-gradient(rgba(8,9,12,0.55),rgba(8,9,12,0.9)),url('https://images.unsplash.com/photo-1757147517623-ee9a76c9ead2?w=1920&q=80&fit=crop&auto=format') center/cover no-repeat"}}>
+      <header className="hero" style={{background:"linear-gradient(90deg,rgba(11,11,12,0.92) 0%,rgba(11,11,12,0.72) 55%,rgba(11,11,12,0.45) 100%),url('https://images.unsplash.com/photo-1757147517623-ee9a76c9ead2?w=1920&q=80&fit=crop&auto=format') center/cover no-repeat"}}>
         <div className="hero-inner">
           <div className="brand">
             <Image src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width={40} height={40} priority />
@@ -405,157 +354,72 @@ export default function Home() {
         {/* Hero body */}
         <div className="hero-body" style={{ paddingTop: 0 }}>
           <div className="hero-left">
-            <h1 className="hero-title" style={{ fontSize: 'clamp(28px,6vw,48px)', textTransform:'none' }}>
+            <p className="section-label">CALENDARIO · ESPAÑA 2026</p>
+            <h1 className="hero-title" style={{ fontSize: 'clamp(32px,6vw,48px)', textTransform:'none' }}>
               Encuentra tu Carrera OCR, HYROX y CrossFit en España 2026
             </h1>
-            <p className="hero-sub" style={{ maxWidth: 680 }}>
-              Encuentra tu carrera, entrena con un plan personalizado, localiza tu gimnasio
+            <p className="hero-sub" style={{ maxWidth: 620 }}>
+              Spartan, Tough Mudder, HYROX y competiciones de box en un solo calendario.
+              Elige fecha y comunidad, prepara la carrera y busca dónde entrenar.
             </p>
+            <div className="hero-actions">
+              <a href="/calendario" className="btn-solid">Ver carreras</a>
+              <a href="/plan-entrenamiento" className="btn-line">Crear plan gratis</a>
+            </div>
             <HeroStats totalCount={totalCount} ccaaCount={CCAA.length} formatsCount={FORMATS.length}/>
           </div>
         </div>
-
-        {/* Journey de 3 pasos */}
-        <section className="home-journey" aria-label="Tres pasos" style={{ padding:'4rem 0 2rem' }}>
-          <div className="home-journey-inner">
-            {/* Paso 1 */}
-            <div className="journey-card" title="Próximos eventos: Hyrox Madrid (Mayo), Spartan Race Barcelona (Junio)">
-              <div className="journey-icon" aria-hidden>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="5" y="9" width="38" height="34" rx="4"/>
-                  <line x1="5" y1="19" x2="43" y2="19"/>
-                  <line x1="16" y1="5" x2="16" y2="13"/>
-                  <line x1="32" y1="5" x2="32" y2="13"/>
-                  <rect x="12" y="25" width="7" height="5" rx="1.5"/>
-                  <rect x="29" y="25" width="7" height="5" rx="1.5"/>
-                  <rect x="12" y="34" width="7" height="5" rx="1.5"/>
-                </svg>
-              </div>
-              <h3 className="journey-title" style={{ color:'#fff' }}>Paso 1: Encuentra tu Evento</h3>
-              <p className="journey-desc">Calendario completo de carreras Hyrox, OCR y híbridas en España. Filtra por ciudad, fecha y nivel.</p>
-              <a href="/calendario" className="btn-primary" style={{ alignSelf:'flex-start' }}>Explorar Calendario</a>
-              <div className="journey-tooltip">Próximos eventos: Hyrox Madrid (Mayo), Spartan Race Barcelona (Junio)...</div>
-            </div>
-            {/* Paso 2 */}
-            <div className="journey-card" aria-label="Paso 2">
-              <div className="journey-icon" aria-hidden>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="9" y="4" width="30" height="38" rx="3"/>
-                  <line x1="16" y1="15" x2="32" y2="15"/>
-                  <line x1="16" y1="22" x2="32" y2="22"/>
-                  <line x1="16" y1="29" x2="25" y2="29"/>
-                  <circle cx="34" cy="36" r="8" fill="var(--bg)" stroke="currentColor" strokeWidth="1.8"/>
-                  <polyline points="30,36 33,39 38,32"/>
-                </svg>
-              </div>
-              <h3 className="journey-title" style={{ color:'#fff' }}>Paso 2: Plan Personalizado</h3>
-              <p className="journey-desc">Entrena con un plan diseñado para tu nivel y tus objetivos. Responde 5 preguntas y recibe tu rutina semanal.</p>
-              <ul className="journey-features">
-                {["100% gratuito, sin registro","Personalizado a tu nivel y objetivos","Descargable en Excel y PDF al instante"].map((item,i)=>(
-                  <li key={i} className="journey-feature-item">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style={{flexShrink:0}}>
-                      <circle cx="8" cy="8" r="7.5" fill="rgba(255,255,255,0.07)" stroke="currentColor" strokeWidth="1"/>
-                      <path d="M5 8l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="journey-trainer-note">¿Quieres que un entrenador personal te lleve la rutina y el seguimiento? Escríbenos a <a href="mailto:hola@hybridracehub.com" style={{color:"var(--text)"}}>hola@hybridracehub.com</a></p>
-              <a href="/plan-entrenamiento" className="btn-primary" style={{ alignSelf:'flex-start' }}>CREAR MI PLAN →</a>
-            </div>
-            {/* Paso 3 */}
-            <div className="journey-card" aria-label="Paso 3">
-              <div className="journey-icon" aria-hidden>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M24 4C16 4 11 11 11 18c0 11 13 26 13 26s13-15 13-26c0-7-5-14-13-14z"/>
-                  <rect x="19" y="12" width="10" height="9" rx="1.5"/>
-                  <line x1="22" y1="12" x2="22" y2="21"/>
-                  <line x1="26" y1="12" x2="26" y2="21"/>
-                  <line x1="19" y1="17" x2="29" y2="17"/>
-                </svg>
-              </div>
-              <h3 className="journey-title" style={{ color:'#fff' }}>Paso 3: Encuentra tu Centro</h3>
-              <p className="journey-desc">Más de 400 centros OCR, HYROX y CrossFit en toda España. Busca por ciudad o código postal.</p>
-              <a href="/centros-entrenamiento" className="btn-primary" style={{ alignSelf:'flex-start' }}>Buscar Centros</a>
-              <div className="journey-tooltip">426 centros registrados en toda España</div>
-            </div>
-          </div>
-
-          {/* Fotos de contexto bajo cada paso */}
-          <div className="journey-photos">
-            <img
-              src="https://images.unsplash.com/photo-1743993414654-0be2b73a9620?w=600&q=80&fit=crop&auto=format"
-              alt="Atletas compitiendo en HYROX empujando sleds en interior"
-              className="step-photo"
-              loading="lazy"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1639511205270-2b1ce5b112c6?w=600&q=80&fit=crop&auto=format"
-              alt="Atleta entrenando con kettlebell en el gimnasio"
-              className="step-photo"
-              loading="lazy"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1739283180407-21e27d5c0735?w=600&q=80&fit=crop&auto=format"
-              alt="Grupo de corredores en pista de competición"
-              className="step-photo"
-              loading="lazy"
-            />
-          </div>
-        </section>
-
-        {/* Recursos Complementarios */}
-        <section className="home-secondary" aria-label="Recursos Complementarios">
-          <div className="home-secondary-inner">
-            <a className="home-card small" href="/blog">
-              <div className="home-card-icon" style={{ width:40, height:40, display:'flex', alignItems:'center', justifyContent:'center' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="21" rx="2"/>
-                  <line x1="7" y1="8" x2="17" y2="8"/>
-                  <line x1="7" y1="12" x2="17" y2="12"/>
-                  <line x1="7" y1="16" x2="13" y2="16"/>
-                </svg>
-              </div>
-              <h2 className="home-card-title" style={{ fontSize:18 }}>Blog de Entrenamiento</h2>
-              <p className="home-card-desc">Artículos, guías y análisis técnico</p>
-              <span className="home-card-cta">Leer artículos</span>
-            </a>
-            <a className="home-card small" href="/productos">
-              <div className="home-card-icon" style={{ width:40, height:40, display:'flex', alignItems:'center', justifyContent:'center' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
-                  <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-                  <line x1="3" y1="6" x2="21" y2="6"/>
-                  <path d="M16 10a4 4 0 01-8 0"/>
-                </svg>
-              </div>
-              <h2 className="home-card-title" style={{ fontSize:18 }}>Equipamiento Recomendado</h2>
-              <p className="home-card-desc">Rankings de relojes, zapatillas y gear</p>
-              <span className="home-card-cta">Ver rankings</span>
-            </a>
-            <a className="home-card small" href="/calculadora-hyrox">
-              <div className="home-card-icon" style={{ width:40, height:40, display:'flex', alignItems:'center', justifyContent:'center' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text)" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-              </div>
-              <h2 className="home-card-title" style={{ fontSize:18 }}>Calculadora de Tiempos</h2>
-              <p className="home-card-desc">Estima tu marca en Hyrox según nivel</p>
-              <span className="home-card-cta">Calcular</span>
-            </a>
-          </div>
-        </section>
       </header>
+
+      {/* Cómo funciona: lista numerada, sin tarjetas ni iconos */}
+      <section className="steps" aria-label="Cómo funciona">
+        <div className="steps-inner">
+          <div className="steps-head">
+            <p className="section-label">CÓMO FUNCIONA</p>
+            <h2 className="section-title">De la inscripción a la línea de meta</h2>
+          </div>
+          <ol className="steps-list">
+            <li className="step">
+              <span className="step-num">01</span>
+              <h3 className="step-title">Elige carrera</h3>
+              <p className="step-text">Todas las fechas de OCR, HYROX y funcional que conocemos en España. Filtra por ciudad, mes y formato: individual, parejas o equipos.</p>
+              <a href="/calendario" className="step-link">Ver calendario →</a>
+            </li>
+            <li className="step">
+              <span className="step-num">02</span>
+              <h3 className="step-title">Prepárala con un plan</h3>
+              <p className="step-text">Respondes cinco preguntas y te damos las semanas que faltan hasta la carrera, con cargas y días de descarga. Sin registro. Lo bajas en Excel o PDF.</p>
+              <p className="step-text step-text--small">¿Prefieres que te lleve un entrenador? Escríbenos a <a href="mailto:hola@hybridracehub.com">hola@hybridracehub.com</a></p>
+              <a href="/plan-entrenamiento" className="step-link">Crear mi plan →</a>
+            </li>
+            <li className="step">
+              <span className="step-num">03</span>
+              <h3 className="step-title">Entrena cerca de casa</h3>
+              <p className="step-text">Más de 400 boxes y centros con sleds, rigs y remos. Busca por ciudad o código postal y llama antes de ir.</p>
+              <a href="/centros-entrenamiento" className="step-link">Buscar centro →</a>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      {/* Banda de foto a ancho completo */}
+      <figure className="photo-band">
+        <img
+          src="https://images.unsplash.com/photo-1743993414654-0be2b73a9620?w=1920&q=80&fit=crop&auto=format"
+          alt="Atletas compitiendo en HYROX empujando sleds en interior"
+          loading="lazy"
+        />
+        <figcaption>Sled push en una HYROX: 50 metros que se hacen eternos si no los has entrenado.</figcaption>
+      </figure>
 
       {/* Editorial 1: Eventos */}
       <EditorialBlock
         imgSrc="https://images.unsplash.com/photo-1741562238447-d7c44397f7e0?w=900&q=80&fit=crop&auto=format"
         imgAlt="Corredores en carrera indoor de atletismo híbrido"
-        eyebrow="CALENDARIO DE EVENTOS"
-        title="Tu próxima carrera está a un clic"
-        body="Más de 140 eventos OCR, HYROX y functional fitness en España. Desde Spartan Race hasta HYROX Madrid, todo el calendario en un solo sitio. Filtra por fecha, comunidad y nivel de dificultad."
-        cta="Ver el calendario completo →"
+        eyebrow="CALENDARIO"
+        title="Fechas revisadas cada día"
+        body="Más de 140 pruebas en España, desde una Spartan Sprint de 5 km hasta HYROX Madrid. Revisamos fechas y enlaces de inscripción a diario para que no te enteres cuando ya no quedan dorsales."
+        cta="Ver carreras →"
         ctaHref="/calendario"
       />
 
@@ -565,9 +429,9 @@ export default function Home() {
       <EditorialBlock
         imgSrc="https://images.unsplash.com/photo-1757147517580-90c214fc28f3?w=900&q=80&fit=crop&auto=format"
         imgAlt="Atletas compitiendo en evento HYROX Grand Palais París"
-        eyebrow="COMUNIDAD DE ATLETAS"
-        title="Hecho por atletas, para atletas"
-        body="Hybrid Race Hub nació en las trincheras: corredores de OCR, competidores de HYROX y atletas de CrossFit que querían una plataforma pensada para ellos. Sin filtros de marketing. Sin contenido genérico. Solo datos y herramientas que realmente usas para preparar tu siguiente carrera."
+        eyebrow="QUIÉNES SOMOS"
+        title="Lo hacemos atletas"
+        body="Corremos OCR, competimos en HYROX y entrenamos en box. Montamos esto porque estábamos hartos de buscar fechas en veinte webs distintas. Los rankings dicen qué compraríamos nosotros y por qué. Si un enlace es de afiliado, lo pone."
         cta="Síguenos en Instagram →"
         ctaHref="https://www.instagram.com/hybridracehub_spain"
         reverse

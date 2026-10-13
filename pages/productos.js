@@ -172,10 +172,10 @@ export default function Productos() {
         .product-card {
           background: var(--surface); border: 0.5px solid var(--border);
           border-radius: var(--radius-lg); display: flex; flex-direction: column;
-          transition: border-color .15s, box-shadow .15s, transform .15s; overflow: hidden;
+          transition: border-color .15s; overflow: hidden;
         }
         .product-card:hover {
-          border-color: var(--border2); box-shadow: 0 8px 28px rgba(0,0,0,0.4); transform: translateY(-2px);
+          border-color: var(--border2);
         }
         .product-card-head {
           background: var(--surface2); padding: 1.25rem 1.25rem 1rem;
@@ -221,7 +221,7 @@ export default function Productos() {
         }
         .product-pc-item::before { content: ""; flex-shrink: 0; margin-top: 5px; }
         .pros .product-pc-item::before { content: "+"; color: var(--text-muted); font-size: 10px; margin-top: 2px; }
-        .cons .product-pc-item::before { content: "✗"; color: var(--muted2); font-size: 10px; margin-top: 2px; }
+        .cons .product-pc-item::before { content: "–"; color: var(--muted2); font-size: 10px; margin-top: 2px; }
         .product-price {
           font-family: var(--font-mono); font-size: 12px; font-weight: 600;
           text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted);
@@ -453,10 +453,10 @@ export default function Productos() {
             {/* Enlazado interno */}
             <div style={{ marginTop: "1.25rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
               <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--text-muted)", border: "0.5px solid rgba(255,255,255,0.1)", borderRadius: 2, padding: "5px 12px" }}>
-                📅 ¿Listo para competir? Ver calendario →
+                ¿Listo para competir? Ver calendario →
               </Link>
               <Link href="/blog" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "5px 12px" }}>
-                📖 Leer artículos del blog →
+                Leer artículos del blog →
               </Link>
             </div>
           </section>

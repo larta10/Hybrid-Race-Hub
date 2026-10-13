@@ -287,10 +287,10 @@ export default function CalendarioCiudad({ slug, cityData }) {
             <Link href="/calendario" className="cta-btn">Ver calendario →</Link>
           </div>
 
-          <Link href="/productos/relojes" className="sidebar-link">🏆 Ranking relojes GPS</Link>
-          <Link href="/productos/zapatillas-hyrox" className="sidebar-link">👟 Zapatillas HYROX</Link>
-          <Link href="/productos/zapatillas-trail" className="sidebar-link">🥾 Zapatillas trail OCR</Link>
-          <Link href="/blog" className="sidebar-link">📖 Blog: guías y artículos</Link>
+          <Link href="/productos/relojes" className="sidebar-link">Ranking relojes GPS</Link>
+          <Link href="/productos/zapatillas-hyrox" className="sidebar-link">Zapatillas HYROX</Link>
+          <Link href="/productos/zapatillas-trail" className="sidebar-link">Zapatillas trail OCR</Link>
+          <Link href="/blog" className="sidebar-link">Blog: guías y artículos</Link>
 
           <div style={{ marginTop: "1.5rem" }}>
             <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.14em", color: "var(--muted2)", marginBottom: 8 }}>Otras ciudades</p>
