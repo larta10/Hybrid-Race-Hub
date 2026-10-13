@@ -1,13 +1,11 @@
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
 import Head from "next/head";
-
-const SUPABASE_URL = "https://ssyljhtganuaanczxeep.supabase.co";
-const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzeWxqaHRnYW51YWFuY3p4ZWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5MzA2MDcsImV4cCI6MjA5MjUwNjYwN30.kY5rw5BFXqdMze0IMQmbDQNfh5uXhaI35e4LfMYNOjE";
+import { SUPABASE_URL, ANON_KEY } from "../../lib/shared";
 
 function parseMarkdown(md) {
   if (!md) return "";
+  // Escapar HTML antes de aplicar el markdown (evita XSS desde la BD)
   return md
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
     .replace(/^### (.*$)/gim, '<h3>$1</h3>')
     .replace(/^## (.*$)/gim, '<h2>$1</h2>')
     .replace(/^# (.*$)/gim, '<h1>$1</h1>')
@@ -17,32 +15,26 @@ function parseMarkdown(md) {
     .replace(/\n/g, '<br>');
 }
 
-export default function ArticlePage() {
-  const router = useRouter();
-  const { slug } = router.query;
-  const [article, setArticle] = useState(null);
-  const [loading, setLoading] = useState(true);
+export async function getStaticPaths() {
+  return { paths: [], fallback: "blocking" };
+}
 
-  useEffect(() => {
-    if (!slug) return;
-    fetch(`${SUPABASE_URL}/rest/v1/articles?slug=eq.${slug}`, {
-      headers: { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}` }
-    })
-      .then(r => r.json())
-      .then(data => {
-        if (data && data.length > 0) setArticle(data[0]);
-      })
-      .finally(() => setLoading(false));
-  }, [slug]);
-
-  if (loading) {
-    return (
-      <div style={{ background: "#08090C", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", color: "#8C8E9A" }}>
-        Cargando...
-      </div>
-    );
+export async function getStaticProps({ params }) {
+  try {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/articles?slug=eq.${encodeURIComponent(params.slug)}&limit=1`, {
+      headers: { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}` },
+    });
+    if (!r.ok) throw new Error(`Supabase ${r.status}`);
+    const data = await r.json();
+    if (!data || data.length === 0) return { notFound: true, revalidate: 600 };
+    return { props: { article: data[0] }, revalidate: 3600 };
+  } catch (e) {
+    // Error temporal de Supabase: no cachear un 404 largo
+    return { notFound: true, revalidate: 60 };
   }
+}
 
+export default function ArticlePage({ article }) {
   if (!article) {
     return (
       <div style={{ background: "#08090C", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>

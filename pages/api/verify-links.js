@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 
 const SUPABASE_URL = "https://ssyljhtganuaanczxeep.supabase.co";
 const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzeWxqaHRnYW51YWFuY3p4ZWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5MzA2MDcsImV4cCI6MjA5MjUwNjYwN30.kY5rw5BFXqdMze0IMQmbDQNfh5uXhaI35e4LfMYNOjE";
-const SERVICE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzeWxqaHRnYW51YWFuY3p4ZWVwIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NjkzMDYwNywiZXhwIjoyMDkyNTA2NjA3fQ.K27H3dHoJyUcbzE8i-SjqWuM6nJ8okhntFM5XHisjqI";
+const SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
 
 // Dominios known con inscripción real
 const KNOWN_URLS = {
@@ -16,6 +16,14 @@ const KNOWN_URLS = {
 };
 
 export default async function handler(req, res) {
+  // Solo ejecutable con el secreto (Vercel Cron envía "Authorization: Bearer <CRON_SECRET>")
+  const secret = process.env.CRON_SECRET;
+  if (!secret || req.headers.authorization !== `Bearer ${secret}`) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+  if (!SERVICE_KEY) {
+    return res.status(500).json({ error: "SUPABASE_SERVICE_KEY no configurada" });
+  }
   try {
     // 1. Fetch all races
     const racesRes = await fetch(`${SUPABASE_URL}/rest/v1/races?select=*`, {

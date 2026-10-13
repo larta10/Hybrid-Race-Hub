@@ -1,8 +1,6 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
-
-const SUPABASE_URL = "https://ssyljhtganuaanczxeep.supabase.co";
-const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzeWxqaHRnYW51YWFuY3p4ZWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5MzA2MDcsImV4cCI6MjA5MjUwNjYwN30.kY5rw5BFXqdMze0IMQmbDQNfh5uXhaI35e4LfMYNOjE";
+import { SUPABASE_URL, ANON_KEY } from "../lib/shared";
 
 const CATEGORIES = ["Todos", "Rankings", "Guías OCR", "Equipamiento", "Noticias"];
 
@@ -10,20 +8,21 @@ export default function Comunidad() {
   const [articles, setArticles] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [category, setCategory] = useState("Todos");
 
   useEffect(() => {
     Promise.all([
       fetch(`${SUPABASE_URL}/rest/v1/articles?select=*&order=published_at.desc`, {
         headers: { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}` }
-      }).then(r => r.json()),
+      }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
       fetch(`${SUPABASE_URL}/rest/v1/recommended_products?select=*&active=eq.true&order=created_at.desc`, {
         headers: { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}` }
-      }).then(r => r.json())
+      }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     ]).then(([arts, prods]) => {
-      setArticles(arts || []);
-      setProducts(prods || []);
-    }).finally(() => setLoading(false));
+      setArticles(Array.isArray(arts) ? arts : []);
+      setProducts(Array.isArray(prods) ? prods : []);
+    }).catch(() => setError(true)).finally(() => setLoading(false));
   }, []);
 
   const filtered = category === "Todos" ? articles : articles.filter(a => a.category === category);
@@ -233,6 +232,8 @@ export default function Comunidad() {
 
         {loading ? (
           <div className="empty">Cargando...</div>
+        ) : error ? (
+          <div className="empty">No se han podido cargar los artículos. Inténtalo de nuevo en unos minutos.</div>
         ) : filtered.length === 0 ? (
           <div className="empty">No hay artículos en esta categoría</div>
         ) : (

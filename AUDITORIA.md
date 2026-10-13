@@ -156,6 +156,15 @@
 
 ## ACCIONES MANUALES PABLO
 
+### ACCIÓN MANUAL 0 — 🔴 URGENTE: rotar la clave secreta de Supabase
+La clave `service_role` (acceso TOTAL a la base de datos) estaba escrita en el código de un repositorio público de GitHub. Ya se ha quitado del código, pero sigue visible en el historial de git, así que hay que invalidarla:
+1. Ve a supabase.com → proyecto `ssyljhtganuaanczxeep` → "Project Settings" → "API Keys".
+2. Crea una nueva clave secreta ("Secret key", empieza por `sb_secret_...`) y una "Publishable key" (`sb_publishable_...`).
+3. Desactiva las claves antiguas ("Legacy API keys" → "Disable"). OJO: esto también desactiva la anon key antigua que usa la web; antes, sustituye el valor de `ANON_KEY` en `lib/shared.js` y `pages/api/verify-links.js` por la nueva publishable key (o pídemelo).
+4. En vercel.com → proyecto → Settings → Environment Variables, añade `SUPABASE_SERVICE_KEY` (la nueva secreta) y `CRON_SECRET` (una cadena larga inventada). Redeploy.
+5. En tu PC, para usar los scripts de `scripts/`, define la variable antes: en Git Bash `export SUPABASE_SERVICE_KEY=...`.
+6. Revisa en Supabase → Table Editor que las tablas `races` y `sport_centers` no tienen cambios extraños.
+
 ### ACCIÓN MANUAL 1 — Añadir dominio apex en Vercel
 1. Ve a vercel.com → tu proyecto Hybrid Race Hub
 2. Haz clic en "Settings" (arriba del todo)
@@ -246,3 +255,14 @@ C1, C2, A1, A2, A3, A5, A6, M1, M2, M6, M7 resueltos.
 - M3: footer con enlaces a Centros, Plan de entreno y Calculadora + aviso de afiliado de Amazon (una sola vez).
 - M9: el sitemap incluye ahora los artículos de /comunidad (consulta a Supabase con fallback si falla).
 - Decisión: los BOM UTF-8 de varios ficheros de `pages/` no se tocan (inofensivos; evitar diffs masivos).
+
+### Fase 3 — Seguridad y robustez ✅
+- 🔴 NUEVO (crítico): clave `service_role` de Supabase hardcodeada en 7 ficheros de un repo público. Sustituida por `process.env.SUPABASE_SERVICE_KEY`. Requiere rotación manual (ver ACCIÓN MANUAL 0).
+- 🔴 NUEVO: `/api/fix-formats` permitía a cualquiera modificar la tabla `races` sin autenticación. Eliminado (era un script de un solo uso).
+- `/api/verify-links` exige ahora `Authorization: Bearer $CRON_SECRET` (compatible con Vercel Cron).
+- `.env.example` documenta `CRON_SECRET` y `RESEND_API_KEY`.
+- SEO/robustez: `/comunidad/[slug]` pasa de render en cliente ("Cargando..." para Google) a ISR (`getStaticProps` + `fallback: "blocking"`, revalidate 1 h). Slug codificado en la consulta. 404 real si no existe.
+- XSS: `parseMarkdown` escapa el HTML antes de convertir (la tabla `articles` está vacía, no rompe contenido).
+- M4: `comunidad.js` y `comunidad/[slug].js` importan las credenciales de `lib/shared.js`.
+- M5: `comunidad.js` muestra un mensaje de error si Supabase falla en lugar de quedarse vacío.
+- Decisión: no se reescribe el historial de git (force-push arriesgado y no elimina copias ya clonadas). La solución real es rotar la clave.

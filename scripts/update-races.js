@@ -1,7 +1,7 @@
 // Actualizador de carreras - ejecutar con node update-races.js
 
 const supabaseUrl = 'https://ssyljhtganuaanczxeep.supabase.co';
-const serviceKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzeWxqaHRnYW51YWFuY3p4ZWVwIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NjkzMDYwNywiZXhwIjoyMDkyNTA2NjA3fQ.K27H3dHoJyUcbzE8i-SjqWuM6nJ8okhntFM5XHisjqI';
+const serviceKey = process.env.SUPABASE_SERVICE_KEY;
 
 const updates = [
   { filter: 'modalidad_id=ilike.*spartan*', data: { url: 'https://es.spartan.com/es/races', formato: 'Individual', precio: 'Desde 99€' } },

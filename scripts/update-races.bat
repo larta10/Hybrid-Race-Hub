@@ -3,7 +3,8 @@ REM Script para actualizar carreras en Supabase
 REM Ejecutar en terminal con Node.js instalado
 
 set SUPABASE_URL=https://ssyljhtganuaanczxeep.supabase.co
-set SERVICE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzeWxqaHRnYW51YWFuY3p4ZWVwIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NjkzMDYwNywiZXhwIjoyMDkyNTA2NjA3fQ.K27H3dHoJyUcbzE8i-SjqWuM6nJ8okhntFM5XHisjqI
+REM La clave se lee de la variable de entorno SUPABASE_SERVICE_KEY (no la escribas aqui)
+set SERVICE_KEY=%SUPABASE_SERVICE_KEY%
 
 echo Actualizando carreras Spartan...
 curl -X PATCH "%SUPABASE_URL%/rest/v1/races?modalidad_id=ilike.%25spartan%25" ^
