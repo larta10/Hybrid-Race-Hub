@@ -336,9 +336,8 @@ export default function Calendario() {
             {results!==null&&!loading&&!error&&(
               sorted.length===0?(
                 <div className="state-center">
-                  
-                  <p className="state-title">Sin resultados</p>
-                  <p className="state-sub">Prueba a ajustar los filtros o ampliar el rango de fechas.</p>
+                  <p className="state-title">Ninguna carrera con esos filtros</p>
+                  <p className="state-sub">Quita alguna comunidad o abre el rango de fechas. En invierno hay menos OCR y más HYROX.</p>
                 </div>
               ):(
                 <div className="race-grid">

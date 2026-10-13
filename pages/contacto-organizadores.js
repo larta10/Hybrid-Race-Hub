@@ -257,7 +257,7 @@ export default function ContactOrganizers() {
         </header>
 
         <section className="form-section" id="contact-form">
-          <h2 className="form-title">Solicita información</h2>
+          <h2 className="form-title">Escríbenos</h2>
 
           <form onSubmit={handleSubmit}>
             <div className="form-row">

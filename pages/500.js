@@ -37,7 +37,7 @@ export default function Custom500() {
         <div className="error-code">500</div>
         <h1 className="error-title">Algo ha ido mal</h1>
         <p className="error-sub">
-          Ha ocurrido un error en el servidor. Ya estamos en ello. Mientras tanto, el calendario sigue activo.
+          Algo ha fallado en el servidor y ya lo estamos mirando. El calendario sigue funcionando.
         </p>
         <div className="links">
           <Link href="/" className="link-primary">Volver al inicio →</Link>

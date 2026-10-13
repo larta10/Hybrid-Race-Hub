@@ -335,8 +335,8 @@ export default function CentrosEntrenamiento() {
             Centros de Entrenamiento OCR, HYROX y CrossFit en España
           </h1>
           <p className="page-sub">
-            Directorio de centros OCR, HYROX, CrossFit y entrenamiento funcional en toda España.
-            Busca por ciudad o código postal y encuentra dónde preparar tu próxima carrera.
+            Boxes y gimnasios con sleds, rigs y remos en toda España.
+            Busca por ciudad o código postal y llama antes de ir: los horarios cambian.
           </p>
           <div className="stats-bar">
             <div className="stat-item">

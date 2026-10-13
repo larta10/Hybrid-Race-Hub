@@ -226,7 +226,7 @@ export default function CalendarioCiudad({ slug, cityData }) {
       {/* Hero */}
       <div className="page-hero">
         <div className="page-hero-inner">
-          <p className="page-eyebrow">Hybrid Race Hub · España 2026</p>
+          <p className="page-eyebrow">Calendario · España 2026</p>
           <h1 className="page-title">Carreras OCR, HYROX<br/>y Híbridas en {cityData.name} 2026</h1>
           <p className="page-sub">{cityData.intro}</p>
           <div className="keywords">
@@ -260,7 +260,7 @@ export default function CalendarioCiudad({ slug, cityData }) {
                   </div>
                   {ev.url && (
                     <a href={ev.url} target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 4, display: "inline-block" }}>
-                      Ver detalles →
+                      Ver web →
                     </a>
                   )}
                 </div>

@@ -69,7 +69,7 @@ function getCategory(totalSec) {
   if (min < 60) return { label:"Sub-60 — Muy sólido", color:"var(--text)", note:"Rendimiento alto, cerca de la élite" };
   if (min < 75) return { label:"Open — Nivel avanzado", color:"var(--text)", note:"Tiempo competitivo en categoría Open" };
   if (min < 90) return { label:"Open — Nivel medio", color:"var(--text)", note:"Rango habitual de participantes Open" };
-  if (min < 105) return { label:"Finisher — Buen resultado", color:"var(--text-muted)", note:"¡Completar HYROX ya es un logro!" };
+  if (min < 105) return { label:"Finisher — Buen resultado", color:"var(--text-muted)", note:"Terminar una HYROX ya es mucho. Ahora toca bajar tiempo" };
   return { label:"Finisher", color:"var(--muted2)", note:"Sigue entrenando, cada intento suma" };
 }
 
@@ -239,8 +239,8 @@ export default function CalculadoraHyrox() {
           <p className="page-eyebrow">Hybrid Race Hub · Herramienta</p>
           <h1 className="page-title">Calculadora<br/><span>HYROX</span></h1>
           <p className="page-sub">
-            Introduce los tiempos de tus 8 carreras (1 km cada una) y 8 estaciones.
-            Calcula tu tiempo total estimado y descubre en qué categoría entrarías.
+            Mete tus 8 parciales de 1 km y tus 8 estaciones, del SkiErg a los wall balls.
+            Te damos el tiempo total y en qué categoría estarías.
           </p>
         </div>
       </div>

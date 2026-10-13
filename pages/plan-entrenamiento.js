@@ -657,7 +657,7 @@ export default function PlanEntrenamiento() {
           {step === 2 && (
             <>
               <h1 className="step-title">Nivel y disponibilidad</h1>
-              <p className="step-sub">Sé honesto — un plan bien ajustado es más efectivo que uno demasiado ambicioso.</p>
+              <p className="step-sub">Sé honesto. Un plan a tu nivel rinde más que uno demasiado ambicioso.</p>
               <div className="card-grid two-col" style={{ marginBottom: "1.5rem" }}>
                 {LEVELS.map(lv => (
                   <div
@@ -718,7 +718,7 @@ export default function PlanEntrenamiento() {
           {step === 4 && (
             <>
               <h1 className="step-title">¿Qué tienes disponible?</h1>
-              <p className="step-sub">Ajustaremos las sesiones a tu material. Siempre habrá alternativas.</p>
+              <p className="step-sub">Ajustamos las sesiones a tu material. Si no tienes sled, hay alternativa.</p>
               <div className="card-grid two-col">
                 {EQUIPMENT_OPTIONS.map(eq => (
                   <div
@@ -738,7 +738,7 @@ export default function PlanEntrenamiento() {
           {step === 5 && (
             <>
               <h1 className="step-title">¿Dónde quieres mejorar?</h1>
-              <p className="step-sub">Opcional. Recibirás consejos específicos cada semana para trabajar estos aspectos.</p>
+              <p className="step-sub">Opcional. Cada semana te damos un consejo para trabajarlos.</p>
               <div className="chip-grid">
                 {WEAKNESS_OPTIONS.map(w => (
                   <div

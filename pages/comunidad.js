@@ -212,9 +212,9 @@ export default function Comunidad() {
         {loading ? (
           <div className="empty">Cargando...</div>
         ) : error ? (
-          <div className="empty">No se han podido cargar los artículos. Inténtalo de nuevo en unos minutos.</div>
+          <div className="empty">No hemos podido cargar los artículos. Prueba otra vez en unos minutos.</div>
         ) : filtered.length === 0 ? (
-          <div className="empty">No hay artículos en esta categoría</div>
+          <div className="empty">Todavía no hay artículos en esta categoría.</div>
         ) : (
           <div className="articles-grid">
             {filtered.map(art => (
