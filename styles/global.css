@@ -687,14 +687,8 @@ html { scroll-behavior: smooth; }
   .cookie-btn { width:100%; text-align:center; }
 }
 
-/* ── CUSTOM ORANGE CURSOR ── */
-body {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M2 2 L2 23 L8 17 L13 28 L17 26 L12 15 L20 15 Z' fill='%23F97316' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 2 2, auto;
-}
-a, button, [role="button"], select {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M13 1 L17 1 L17 14 L20 14 Q23 14 23 17 L23 22 Q23 30 15 30 L13 30 Q8 30 8 25 L8 17 Q8 13 11 13 L11 1 Z' fill='%23F97316' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 15 1, pointer;
-}
-input, textarea { cursor: text; }
+/* Cursor: el del sistema. Pointer solo en elementos interactivos */
+a, button, [role="button"], select, summary, label[for] { cursor: pointer; }
 
 /* ── LOGO ICON IMAGE ── */
 .brand-logo-img {
