@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import {
   SUPABASE_URL, ANON_KEY, TODAY_ISO, TODAY_YEAR, NICHE_PARENTS,
   MODALITIES, CCAA, MONTH_NAMES, formatDate,
-  toggle, OcrIcon, FuncIcon, EnvelopeIcon, InstagramIcon,
+  toggle, track, OcrIcon, FuncIcon, EnvelopeIcon, InstagramIcon,
   FilterSection, ActiveFiltersRow, DateRangePicker,
   RaceCard, RaceModal, SiteFooter, CookieBanner, SiteNav,
 } from "../lib/shared";
@@ -50,7 +50,18 @@ export default function Calendario() {
     setRouterReady(true);
   },[router.isReady, router.query.q]);
 
+  /* Analítica: búsqueda de texto (debounce 1 s) */
+  useEffect(()=>{
+    const q=textQuery.trim();
+    if(q.length<2) return;
+    const t=setTimeout(()=>track("search",{search_term:q}),1000);
+    return ()=>clearTimeout(t);
+  },[textQuery]);
+
+  function trackFilter(type, value){ track("calendar_filter",{filter_type:type,filter_value:value}); }
+
   function toggleParent(id) {
+    if(!modalParents.includes(id)) trackFilter("tipo",id);
     if(modalParents.includes(id)){
       setModalParents(p=>p.filter(x=>x!==id));
       const subs=MODALITIES.find(m=>m.id===id)?.subs.map(s=>s.id)||[];
@@ -166,7 +177,7 @@ export default function Calendario() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Calendario OCR, HYROX y CrossFit España 2026 | Hybrid Race Hub" />
         <meta name="twitter:description" content="Todos los eventos OCR, HYROX y competiciones funcionales en España 2026." />
-        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
         <link rel="preconnect" href={SUPABASE_URL} />
       </Head>
 
@@ -217,7 +228,7 @@ export default function Calendario() {
                     {modalParents.includes(m.id)&&(
                       <div className="sub-chips">
                         {m.subs.map(s=>(
-                          <button key={s.id} onClick={()=>toggle(modalSubs,setModalSubs,s.id)}
+                          <button key={s.id} onClick={()=>{ if(!modalSubs.includes(s.id)) trackFilter("subtipo",s.id); toggle(modalSubs,setModalSubs,s.id); }}
                             className={`chip${modalSubs.includes(s.id)?" chip--on":""}`}
                             style={modalSubs.includes(s.id)?{borderColor:m.color,background:m.bg,color:m.color}:{}}>
                             {s.label}
@@ -233,7 +244,7 @@ export default function Calendario() {
             <FilterSection title="Comunidad autónoma" active={ccaa.length>0}>
               <div className="chips-wrap">
                 {availableCcaa.map(c=>(
-                  <button key={c} onClick={()=>toggle(ccaa,setCcaa,c)}
+                  <button key={c} onClick={()=>{ if(!ccaa.includes(c)) trackFilter("ccaa",c); toggle(ccaa,setCcaa,c); }}
                     className={`chip${ccaa.includes(c)?" chip--on":""}`}
                     style={ccaa.includes(c)?{borderColor:"var(--accent)",background:"var(--accent-bg)",color:"var(--accent-mid)"}:{}}>
                     {c}
@@ -245,7 +256,7 @@ export default function Calendario() {
             <FilterSection title="Fechas" active={!!(dateRange.from||dateRange.to)}>
               <DateRangePicker
                 from={dateRange.from} to={dateRange.to}
-                onChange={({from,to})=>setDateRange({from,to})}
+                onChange={({from,to})=>{ if(from||to) trackFilter("fechas",`${from||""}..${to||""}`); setDateRange({from,to}); }}
               />
             </FilterSection>
 

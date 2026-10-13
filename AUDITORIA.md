@@ -272,3 +272,20 @@ C1, C2, A1, A2, A3, A5, A6, M1, M2, M6, M7 resueltos.
 - Eliminado el dominio de Bing de `images.remotePatterns` (ya no se usa).
 - B2 (variables CSS duplicadas en `<style>` de páginas): NO se toca. Cada página define tokens ligeramente distintos y unificarlos podría cambiar el aspecto visual; beneficio de rendimiento mínimo. Pendiente para un refactor de estilos.
 - Nota: `next lint` no funciona (incompatibilidad de versión de ESLint con `.eslintrc.json`). El build compila sin errores. Pendiente: migrar a `eslint.config.js` o fijar ESLint 8.
+
+### Fase 5 — Analítica (GTM / dataLayer) ✅
+- Nuevo helper `track(event, params)` en `lib/shared.js` que hace `dataLayer.push`.
+- `/calendario`: evento `search` (`search_term`, debounce 1 s, mín. 2 caracteres) y `calendar_filter` (`filter_type` = tipo | subtipo | ccaa | fechas, `filter_value`) solo al activar un filtro.
+- Ficha de carrera (modal, todas las páginas): evento `organizer_click` (`race_name`, `url`) al pulsar "IR A INSCRIPCIÓN".
+- `amazon_click` se mide con un activador de clic de GTM (sin código), como indica la sección de GTM.
+- Pendiente manual: crear en GTM las variables de capa de datos (`search_term`, `filter_type`, `filter_value`, `race_name`, `url`) y los activadores descritos arriba. Para `organizer_click` usar ahora "Evento personalizado" en lugar del activador de clic.
+
+### Fase 6 — Contenido
+- Sin datos de Search Console no se crean artículos nuevos (decisión: evitar contenido sin validar). Las ideas siguen en "IDEAS DE CONTENIDO".
+
+## PENDIENTES TRAS LA AUDITORÍA
+1. 🔴 ACCIÓN MANUAL 0 (rotar clave Supabase) — lo más urgente.
+2. Acciones manuales 1–4 (dominio apex, DNS, sitemap en Search Console, imágenes de producto).
+3. Arreglar `next lint` (configuración de ESLint).
+4. B2: unificar variables CSS en `styles/global.css`.
+5. Repetir el análisis de contenido con datos reales de Search Console.
