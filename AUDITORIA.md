@@ -289,3 +289,8 @@ C1, C2, A1, A2, A3, A5, A6, M1, M2, M6, M7 resueltos.
 3. Arreglar `next lint` (configuración de ESLint).
 4. B2: unificar variables CSS en `styles/global.css`.
 5. Repetir el análisis de contenido con datos reales de Search Console.
+
+## INCIDENCIA 2026-10-13 — web caída (DNS_PROBE_FINISHED_NXDOMAIN)
+- Causa: la redirección hybridracehub.com → www (fase 1) enviaba todo a `www.hybridracehub.com`, que NO tiene registro DNS en Cloudflare.
+- Arreglo: eliminada la redirección (commit 564705c) y canonicals/sitemap/robots/schema pasados a `https://hybridracehub.com` (commit 4eb7bb1). Verificado en producción: todas las páginas 200, 404 correcto.
+- Si en el futuro se quiere usar www: primero crear el CNAME `www` → `cname.vercel-dns.com` en Cloudflare y añadir el dominio en Vercel; comprobar con `nslookup www.hybridracehub.com 8.8.8.8`; solo después volver a poner la redirección y los canonicals con www.
