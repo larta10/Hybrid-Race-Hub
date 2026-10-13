@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "NODE_OPTIONS=--max_old_space_size=4096 next build",
+    "build": "next build",
     "start": "next start",
     "seed": "node scripts/seed-events.mjs",
     "scrape-centros-live": "node scripts/scrape-centros-live.js",
@@ -28,6 +28,8 @@
   },
   "devDependencies": {
     "@supabase/supabase-js": "^2.104.1",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.0",
     "pg": "^8.20.0"
   }
 }

@@ -30,20 +30,20 @@ export default function BlogPost({ post }) {
         <meta name="description" content={post.excerpt} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://hybridracehub.com/blog/${post.slug}`} />
+        <link rel="canonical" href={`https://www.hybridracehub.com/blog/${post.slug}`} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://hybridracehub.com/blog/${post.slug}`} />
+        <meta property="og:url" content={`https://www.hybridracehub.com/blog/${post.slug}`} />
         <meta property="og:title" content={`${post.title} | Hybrid Race Hub`} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image" content="https://www.hybridracehub.com/og-image.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="article:published_time" content={post.date} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${post.title} | Hybrid Race Hub`} />
         <meta name="twitter:description" content={post.excerpt} />
-        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"
@@ -54,14 +54,14 @@ export default function BlogPost({ post }) {
             "description": post.excerpt,
             "datePublished": post.date,
             "dateModified": post.date,
-            "author": { "@type": "Organization", "name": "Hybrid Race Hub", "url": "https://hybridracehub.com/" },
+            "author": { "@type": "Organization", "name": "Hybrid Race Hub", "url": "https://www.hybridracehub.com/" },
             "publisher": {
               "@type": "Organization",
               "name": "Hybrid Race Hub",
-              "logo": { "@type": "ImageObject", "url": "https://hybridracehub.com/logo.svg" },
+              "logo": { "@type": "ImageObject", "url": "https://www.hybridracehub.com/logo.svg" },
             },
-            "mainEntityOfPage": { "@type": "WebPage", "@id": `https://hybridracehub.com/blog/${post.slug}` },
-            "url": `https://hybridracehub.com/blog/${post.slug}`,
+            "mainEntityOfPage": { "@type": "WebPage", "@id": `https://www.hybridracehub.com/blog/${post.slug}` },
+            "url": `https://www.hybridracehub.com/blog/${post.slug}`,
           })}}
         />
         <script
@@ -70,9 +70,9 @@ export default function BlogPost({ post }) {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://hybridracehub.com/" },
-              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://hybridracehub.com/blog" },
-              { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://hybridracehub.com/blog/${post.slug}` },
+              { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.hybridracehub.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.hybridracehub.com/blog" },
+              { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://www.hybridracehub.com/blog/${post.slug}` },
             ],
           })}}
         />
@@ -250,7 +250,7 @@ export default function BlogPost({ post }) {
           </div>
         </Link>
         <nav className="topbar-nav">
-          <Link href="/">Calendario</Link>
+          <Link href="/calendario">Calendario</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/productos">Productos</Link>
         </nav>
@@ -344,7 +344,7 @@ export default function BlogPost({ post }) {
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
           <Link href="/productos/relojes" className="cta-link" style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid var(--border2)', color: 'var(--text)' }}>Relojes GPS para HYROX</Link>
           <Link href="/productos/zapatillas-hyrox" className="cta-link" style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid var(--border2)', color: 'var(--text)' }}>Ranking zapatillas HYROX</Link>
-          <Link href="/productos/zapatillas" className="cta-link" style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid var(--border2)', color: 'var(--text)' }}>Ranking zapatillas OCR</Link>
+          <Link href="/productos/zapatillas-trail" className="cta-link" style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid var(--border2)', color: 'var(--text)' }}>Ranking zapatillas OCR</Link>
         </div>
       </section>
       </div>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import Head from "next/head";
 
 const SUPABASE_URL = "https://ssyljhtganuaanczxeep.supabase.co";
@@ -33,12 +33,28 @@ export default function Comunidad() {
       <Head>
         <title>Comunidad OCR y HYROX — Artículos y Guías | Hybrid Race Hub</title>
         <meta name="description" content="Artículos, guías y recomendaciones sobre carreras OCR, HYROX y equipamiento híbrido en España. Todo lo que necesitas saber para tu próxima carrera." />
+        <meta name="keywords" content="comunidad OCR, artículos HYROX, guías entrenamiento híbrido, equipamiento OCR España" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://hybridracehub.com/comunidad" />
+        <link rel="canonical" href="https://www.hybridracehub.com/comunidad" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "Comunidad Hybrid Race Hub",
+            "description": "Artículos, guías y recomendaciones sobre carreras OCR, HYROX y equipamiento híbrido en España",
+            "url": "https://www.hybridracehub.com/comunidad",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Hybrid Race Hub",
+              "url": "https://www.hybridracehub.com",
+            },
+          }) }}
+        />
       </Head>
 
       <style>{`
@@ -200,7 +216,7 @@ export default function Comunidad() {
 
         <header className="comunidad-header">
           <p className="comunidad-eyebrow">Comunidad</p>
-          <h1 className="comunidad-title">Articles y guías</h1>
+          <h1 className="comunidad-title">Artículos y guías</h1>
         </header>
 
         <div className="cat-filters">
@@ -224,7 +240,7 @@ export default function Comunidad() {
             {filtered.map(art => (
               <a key={art.id} href={`/comunidad/${art.slug}`} className="article-card">
                 {art.cover_image_url && (
-                  <img src={art.cover_image_url} alt={art.title} className="article-image" />
+                  <img src={art.cover_image_url} alt={art.title} className="article-image" loading="lazy" />
                 )}
                 <div className="article-content">
                   <p className="article-cat">{art.category}</p>
@@ -248,7 +264,7 @@ export default function Comunidad() {
               {products.map(prod => (
                 <div key={prod.id} className="product-card">
                   {prod.image_url && (
-                    <img src={prod.image_url} alt={prod.name} className="product-image" />
+                    <img src={prod.image_url} alt={prod.name} className="product-image" loading="lazy" />
                   )}
                   <h4 className="product-name">{prod.name}</h4>
                   <p className="product-desc">{prod.description}</p>

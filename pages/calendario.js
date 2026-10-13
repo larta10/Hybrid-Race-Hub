@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+﻿import { useState, useEffect, useCallback } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -154,19 +154,19 @@ export default function Calendario() {
         <meta name="description" content="Todos los eventos OCR, HYROX y competiciones funcionales en España 2026. Filtra por formato, comunidad autónoma y fecha. Actualizado a diario." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://hybridracehub.com/calendario" />
+        <link rel="canonical" href="https://www.hybridracehub.com/calendario" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hybridracehub.com/calendario" />
+        <meta property="og:url" content="https://www.hybridracehub.com/calendario" />
         <meta property="og:title" content="Calendario OCR, HYROX y CrossFit España 2026 | Hybrid Race Hub" />
         <meta property="og:description" content="Todos los eventos OCR, HYROX y competiciones funcionales en España 2026. Filtra por formato, comunidad autónoma y fecha." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image" content="https://www.hybridracehub.com/og-image.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Calendario OCR, HYROX y CrossFit España 2026 | Hybrid Race Hub" />
         <meta name="twitter:description" content="Todos los eventos OCR, HYROX y competiciones funcionales en España 2026." />
-        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
         <link rel="preconnect" href={SUPABASE_URL} />
       </Head>
@@ -281,6 +281,9 @@ export default function Calendario() {
         {/* ── MAIN ── */}
         <main className="main">
           <div className="main-inner">
+            <h1 style={{ position:"absolute", width:1, height:1, padding:0, margin:-1, overflow:"hidden", clip:"rect(0,0,0,0)", whiteSpace:"nowrap", border:0 }}>
+              Calendario OCR, HYROX y CrossFit España 2026
+            </h1>
 
             {results!==null&&!loading&&!error&&(
               <div className="results-head">

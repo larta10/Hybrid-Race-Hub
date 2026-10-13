@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { RANKINGS, AZ } from "../../lib/rankings";
+import ProductImage from "../../components/ProductImage";
 
 export async function getStaticPaths() {
   return {
@@ -26,7 +27,7 @@ export default function ProductoCategoria({ ranking }) {
       "name": product.name,
       "description": product.desc,
       "brand": { "@type": "Brand", "name": product.brand || product.name.split(" ")[0] },
-      "url": `https://hybridracehub.com/productos/${ranking.slug}`,
+      "url": `https://www.hybridracehub.com/productos/${ranking.slug}`,
       "offers": {
         "@type": "Offer",
         "url": AZ(product.asin),
@@ -48,9 +49,9 @@ export default function ProductoCategoria({ ranking }) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://hybridracehub.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Productos", "item": "https://hybridracehub.com/productos" },
-      { "@type": "ListItem", "position": 3, "name": ranking.title, "item": `https://hybridracehub.com/productos/${ranking.slug}` },
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.hybridracehub.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Productos", "item": "https://www.hybridracehub.com/productos" },
+      { "@type": "ListItem", "position": 3, "name": ranking.title, "item": `https://www.hybridracehub.com/productos/${ranking.slug}` },
     ],
   };
 
@@ -61,19 +62,19 @@ export default function ProductoCategoria({ ranking }) {
         <meta name="description" content={ranking.metaDesc} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://hybridracehub.com/productos/${ranking.slug}`} />
+        <link rel="canonical" href={`https://www.hybridracehub.com/productos/${ranking.slug}`} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://hybridracehub.com/productos/${ranking.slug}`} />
+        <meta property="og:url" content={`https://www.hybridracehub.com/productos/${ranking.slug}`} />
         <meta property="og:title" content={ranking.metaTitle} />
         <meta property="og:description" content={ranking.metaDesc} />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image" content="https://www.hybridracehub.com/og-image.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={ranking.metaTitle} />
         <meta name="twitter:description" content={ranking.metaDesc} />
-        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(productSchemas)}} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbSchema)}} />
@@ -226,11 +227,17 @@ export default function ProductoCategoria({ ranking }) {
                 <div className="product-rank">#{product.rank}</div>
                 <div className="product-name">{product.name}</div>
               </div>
-              {product.img && (
-                <div className="product-img-wrap">
-                  <Image src={product.img} alt={product.name} width={220} height={220} className="product-img" />
-                </div>
-              )}
+              <div className="product-img-wrap">
+                <ProductImage
+                  src={product.img || null}
+                  slug={product.asin}
+                  name={product.name}
+                  category={ranking.slug}
+                  width={220}
+                  height={220}
+                  className="product-img"
+                />
+              </div>
               <div className="product-body">
                 <p className="product-desc">{product.desc}</p>
                 <div className="product-pc pros">

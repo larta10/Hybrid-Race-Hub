@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import Head from "next/head";
 import { generatePlan, SESSION_TYPE_META, PHASE_META } from "../lib/training-plans";
 
@@ -372,14 +372,43 @@ export default function PlanEntrenamiento() {
       <meta name="description" content="Genera tu plan de entrenamiento personalizado para OCR, HYROX o CrossFit. Adaptado a tu nivel, días disponibles y puntos débiles. Gratis." />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://hybridracehub.com/plan-entrenamiento" />
+      <link rel="canonical" href="https://www.hybridracehub.com/plan-entrenamiento" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://hybridracehub.com/plan-entrenamiento" />
+      <meta property="og:url" content="https://www.hybridracehub.com/plan-entrenamiento" />
       <meta property="og:title" content="Plan de Entrenamiento Personalizado | Hybrid Race Hub" />
       <meta property="og:description" content="Genera tu plan para OCR, HYROX o CrossFit según tu nivel y objetivos." />
       <meta property="og:site_name" content="Hybrid Race Hub" />
-      <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+      <meta property="og:image" content="https://www.hybridracehub.com/og-image.svg" />
       <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Course",
+          "name": "Plan de Entrenamiento Personalizado OCR, HYROX y CrossFit",
+          "description": "Generador gratuito de plan de entrenamiento personalizado para OCR, HYROX y CrossFit, adaptado a tu nivel, días disponibles, equipamiento y puntos débiles. Descargable en Excel y PDF.",
+          "provider": {
+            "@type": "Organization",
+            "name": "Hybrid Race Hub",
+            "sameAs": "https://www.hybridracehub.com",
+          },
+          "url": "https://www.hybridracehub.com/plan-entrenamiento",
+          "educationalLevel": "Beginner to Advanced",
+          "inLanguage": "es-ES",
+          "isAccessibleForFree": true,
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "Online",
+            "courseWorkload": "PT45M",
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+          },
+        }) }}
+      />
     </Head>
   );
 

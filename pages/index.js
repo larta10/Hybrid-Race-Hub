@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import {
@@ -278,23 +278,24 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Hybrid Race Hub — Plataforma OCR, HYROX y Entrenamiento Funcional en España</title>
-        <meta name="description" content="Tu plataforma completa para el entrenamiento híbrido en España. Descubre eventos de OCR, HYROX y CrossFit, encuentra centros de entrenamiento cerca de ti y accede a rankings de equipamiento especializado." />
+        <title>Calendario OCR, HYROX y CrossFit España 2026 | Hybrid Race Hub</title>
+        <meta name="description" content="140+ carreras OCR, HYROX y CrossFit en España 2026. Filtra por ciudad, fecha y formato, genera tu plan de entrenamiento gratis y encuentra tu gimnasio más cercano. Actualizado a diario." />
+        <meta name="keywords" content="OCR España, HYROX España, carreras obstáculos, CrossFit competición, calendario carreras 2026" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://hybridracehub.com/" />
+        <link rel="canonical" href="https://www.hybridracehub.com/" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hybridracehub.com/" />
+        <meta property="og:url" content="https://www.hybridracehub.com/" />
         <meta property="og:title" content="Hybrid Race Hub — Plataforma OCR, HYROX y Entrenamiento Funcional en España" />
         <meta property="og:description" content="Tu plataforma completa para el entrenamiento híbrido en España. Descubre eventos de OCR, HYROX y CrossFit, encuentra centros de entrenamiento cerca de ti y accede a rankings de equipamiento." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image" content="https://www.hybridracehub.com/og-image.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Hybrid Race Hub — Calendario OCR, HYROX y CrossFit en España" />
         <meta name="twitter:description" content="El calendario de referencia para carreras OCR, HYROX y competiciones funcionales en España." />
-        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
         <link rel="preconnect" href={SUPABASE_URL} />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
         <script
@@ -304,26 +305,110 @@ export default function Home() {
             "@graph": [
               {
                 "@type": "Organization",
-                "@id": "https://hybridracehub.com/#organization",
+                "@id": "https://www.hybridracehub.com/#organization",
                 "name": "Hybrid Race Hub",
-                "url": "https://hybridracehub.com/",
-                "logo": { "@type": "ImageObject", "url": "https://hybridracehub.com/logo.svg" },
+                "url": "https://www.hybridracehub.com/",
+                "logo": { "@type": "ImageObject", "url": "https://www.hybridracehub.com/logo.svg" },
+                "description": "Plataforma de referencia para carreras OCR, HYROX y fitness funcional en España",
                 "sameAs": ["https://www.instagram.com/hybridracehub_spain"],
               },
               {
                 "@type": "WebSite",
-                "@id": "https://hybridracehub.com/#website",
-                "url": "https://hybridracehub.com/",
+                "@id": "https://www.hybridracehub.com/#website",
+                "url": "https://www.hybridracehub.com/",
                 "name": "Hybrid Race Hub",
                 "description": "Calendario OCR, HYROX y CrossFit en España",
-                "publisher": { "@id": "https://hybridracehub.com/#organization" },
+                "publisher": { "@id": "https://www.hybridracehub.com/#organization" },
                 "potentialAction": {
                   "@type": "SearchAction",
-                  "target": { "@type": "EntryPoint", "urlTemplate": "https://hybridracehub.com/calendario?q={search_term_string}" },
+                  "target": { "@type": "EntryPoint", "urlTemplate": "https://www.hybridracehub.com/calendario?q={search_term_string}" },
                   "query-input": "required name=search_term_string",
                 },
               },
             ],
+          })}}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{__html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Qué es una carrera OCR?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "OCR (Obstacle Course Race) es una carrera que combina running con obstáculos naturales o artificiales. Las pruebas más populares son Spartan Race, Tough Mudder y sus variantes. Los corredores deben completar tramos de carrera con desafíos físicos como trepar, arrastrarse, cargar peso y cruzar elementos de agua.",
+                },
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué es HYROX? ¿En qué se diferencia de CrossFit?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "HYROX es una modalidad específica de fitness funcional que consiste en completar una serie de ejercicios técnicos (burpees, saltos, remo, cargada) intercalados con carrera. A diferencia de los Open de CrossFit, los eventos HYROX están estandarizados y tienen un formato fijo (típicamente 8 estaciones + carrera) permitiendo comparar resultados entre eventos.",
+                },
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cómo me inscribo en una carrera?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Cada carrera tiene su propio sistema de inscripción. Haz clic en cualquier carrera del calendario para ver los detalles. Encontrarás un enlace directo a la web oficial del evento donde podrás completar tu inscripción.",
+                },
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué nivel necesito para participar?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Cada evento indica su nivel de dificultad. Los formatos 'Individual' son para todos los niveles, mientras que 'Pro / Elite' requieren experiencia previa. Las distancias varían desde 5km hasta ultra distancias de 50km+.",
+                },
+              },
+              {
+                "@type": "Question",
+                "name": "¿Puedo competir en pareja o equipo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí, muchos eventos OCR y funcionales ofrecen formatos por parejas (2 personas) o equipos (4+ personas). Estos formatos añaden una dimensión de teamwork. Filtra por 'Parejas' o 'Equipos' en el calendario.",
+                },
+              },
+              {
+                "@type": "Question",
+                "name": "¿Dónde encuentro entrenamientos específicos?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "En la sección 'Comunidad' del Hub encontrarás box de HYROX y CrossFit por toda España. Muchos de estos gyms ofrecen clases específicas para mejorar tu rendimiento en obstáculos.",
+                },
+              },
+            ],
+          })}}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{__html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Hybrid Race Hub",
+            "url": "https://www.hybridracehub.com",
+            "logo": "https://www.hybridracehub.com/logo.svg",
+            "description": "Plataforma de referencia para carreras OCR, HYROX y fitness funcional en España",
+            "sameAs": ["https://www.instagram.com/hybridracehub"],
+          })}}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{__html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Hybrid Race Hub",
+            "url": "https://www.hybridracehub.com",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://www.hybridracehub.com/calendario?q={search_term_string}",
+              "query-input": "required name=search_term_string",
+            },
           })}}
         />
       </Head>
@@ -348,7 +433,7 @@ export default function Home() {
         <div className="hero-body" style={{ paddingTop: 0 }}>
           <div className="hero-left">
             <h1 className="hero-title" style={{ fontSize: 'clamp(28px,6vw,48px)', textTransform:'none' }}>
-              De la inscripción al éxito: tu camino en 3 pasos
+              Encuentra tu Carrera OCR, HYROX y CrossFit en España 2026
             </h1>
             <p className="hero-sub" style={{ maxWidth: 680 }}>
               Encuentra tu carrera, entrena con un plan personalizado, localiza tu gimnasio
@@ -475,7 +560,7 @@ export default function Home() {
               <p className="home-card-desc">Rankings de relojes, zapatillas y gear</p>
               <span className="home-card-cta">Ver rankings</span>
             </a>
-            <a className="home-card small" href="/calculadora">
+            <a className="home-card small" href="/calculadora-hyrox">
               <div className="home-card-icon" style={{ width:40, height:40, display:'flex', alignItems:'center', justifyContent:'center' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FACC15" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
                   <circle cx="12" cy="12" r="10"/>

@@ -1,6 +1,6 @@
-import { getAllSlugs } from "../lib/posts";
+﻿import { getAllSlugs } from "../lib/posts";
 
-const BASE = "https://hybridracehub.com";
+const BASE = "https://www.hybridracehub.com";
 
 const PRODUCT_SLUGS = [
   "relojes",

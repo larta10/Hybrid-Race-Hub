@@ -14,19 +14,19 @@ export default function Productos() {
         <meta name="description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX. Con precios y enlaces a Amazon España." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://hybridracehub.com/productos" />
+        <link rel="canonical" href="https://www.hybridracehub.com/productos" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hybridracehub.com/productos" />
+        <meta property="og:url" content="https://www.hybridracehub.com/productos" />
         <meta property="og:title" content="Rankings de Equipamiento OCR y HYROX 2026 | Hybrid Race Hub" />
         <meta property="og:description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX. Con precios y enlaces a Amazon España." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image" content="https://www.hybridracehub.com/og-image.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Rankings de Equipamiento OCR y HYROX 2026 | Hybrid Race Hub" />
         <meta name="twitter:description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX." />
-        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"
@@ -41,7 +41,7 @@ export default function Productos() {
                   "name": product.name,
                   "description": product.desc,
                   "brand": { "@type": "Brand", "name": product.brand || product.name.split(" ")[0] },
-                  "url": `https://hybridracehub.com/productos/${ranking.slug}`,
+                  "url": `https://www.hybridracehub.com/productos/${ranking.slug}`,
                   "offers": {
                     "@type": "Offer",
                     "url": AZ(product.asin),
@@ -317,6 +317,63 @@ export default function Productos() {
           <span className="affiliate-notice">
             Como afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables.
           </span>
+        </div>
+      </div>
+
+      {/* Intro editorial */}
+      <div className="page-body" style={{ paddingTop: "2rem" }}>
+        <div style={{ maxWidth: 780, marginBottom: "2rem" }}>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "var(--muted)", lineHeight: 1.75, marginBottom: "1rem" }}>
+            En Hybrid Race Hub probamos y comparamos el equipamiento clave para OCR, HYROX
+            y CrossFit en España: zapatillas de trail y de sala, relojes GPS multideporte,
+            pulsómetros de brazo, ropa técnica y accesorios de entrenamiento funcional. Cada
+            ranking está pensado para atletas híbridos españoles: precios en euros, disponibilidad
+            en Amazon España y comparativas contra los modelos más vendidos del año.
+          </p>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "var(--muted)", lineHeight: 1.75 }}>
+            Estos rankings se actualizan al menos una vez por temporada (spring / autumn drops)
+            para reflejar lanzamientos nuevos y bajadas de precio reales, no artificiales.
+          </p>
+        </div>
+
+        <div style={{ background: "var(--surface)", border: "0.5px solid var(--border)", borderRadius: "var(--radius-lg)", padding: "1.5rem 1.75rem", marginBottom: "2rem" }}>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.14em", color: "var(--accent-mid)", marginBottom: "0.75rem" }}>
+            Por qué confiar en nuestros rankings
+          </p>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 800, textTransform: "uppercase", letterSpacing: "-0.01em", color: "var(--text)", marginBottom: "1rem" }}>
+            Criterios de selección
+          </h2>
+          <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+            <li style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--muted)", lineHeight: 1.65, paddingLeft: "1.25rem", position: "relative" }}>
+              <span style={{ position: "absolute", left: 0, color: "var(--accent)", fontWeight: 700 }}>·</span>
+              <strong style={{ color: "var(--text)", fontWeight: 600 }}>Uso real en carrera:</strong> priorizamos modelos que hemos probado
+              (o han probado atletas colaboradores) en competición OCR/HYROX, no solo
+              en gimnasio.
+            </li>
+            <li style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--muted)", lineHeight: 1.65, paddingLeft: "1.25rem", position: "relative" }}>
+              <span style={{ position: "absolute", left: 0, color: "var(--accent)", fontWeight: 700 }}>·</span>
+              <strong style={{ color: "var(--text)", fontWeight: 600 }}>Relación precio/prestaciones:</strong> cada ranking incluye modelos
+              en tres franjas (entry, mid-range y top) para que compares según tu presupuesto.
+            </li>
+            <li style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--muted)", lineHeight: 1.65, paddingLeft: "1.25rem", position: "relative" }}>
+              <span style={{ position: "absolute", left: 0, color: "var(--accent)", fontWeight: 700 }}>·</span>
+              <strong style={{ color: "var(--text)", fontWeight: 600 }}>Datos técnicos, no marketing:</strong> analizamos drop, peso,
+              autonomía GPS, sensores, materiales y compatibilidad con Zwift/Strava/Garmin
+              Connect, no las descripciones de la marca.
+            </li>
+            <li style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--muted)", lineHeight: 1.65, paddingLeft: "1.25rem", position: "relative" }}>
+              <span style={{ position: "absolute", left: 0, color: "var(--accent)", fontWeight: 700 }}>·</span>
+              <strong style={{ color: "var(--text)", fontWeight: 600 }}>Transparencia de afiliación:</strong> ganamos una pequeña comisión
+              si compras desde nuestros enlaces (sin coste extra para ti). Eso no cambia
+              el orden del ranking: si un producto no vale la pena, no aparece.
+            </li>
+            <li style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--muted)", lineHeight: 1.65, paddingLeft: "1.25rem", position: "relative" }}>
+              <span style={{ position: "absolute", left: 0, color: "var(--accent)", fontWeight: 700 }}>·</span>
+              <strong style={{ color: "var(--text)", fontWeight: 600 }}>Actualización estacional:</strong> revisamos precios y
+              disponibilidad cada trimestre y actualizamos los modelos cuando salen
+              versiones nuevas relevantes.
+            </li>
+          </ul>
         </div>
       </div>
 

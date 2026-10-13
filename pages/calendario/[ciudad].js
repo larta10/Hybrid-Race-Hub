@@ -116,9 +116,9 @@ export default function CalendarioCiudad({ slug, cityData }) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://hybridracehub.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Calendario", "item": "https://hybridracehub.com/calendario" },
-      { "@type": "ListItem", "position": 3, "name": cityData.name, "item": `https://hybridracehub.com/calendario/${slug}` },
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.hybridracehub.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Calendario", "item": "https://www.hybridracehub.com/calendario" },
+      { "@type": "ListItem", "position": 3, "name": cityData.name, "item": `https://www.hybridracehub.com/calendario/${slug}` },
     ],
   };
 
@@ -129,19 +129,19 @@ export default function CalendarioCiudad({ slug, cityData }) {
         <meta name="description" content={cityData.metaDesc} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://hybridracehub.com/calendario/${slug}`} />
+        <link rel="canonical" href={`https://www.hybridracehub.com/calendario/${slug}`} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://hybridracehub.com/calendario/${slug}`} />
+        <meta property="og:url" content={`https://www.hybridracehub.com/calendario/${slug}`} />
         <meta property="og:title" content={cityData.metaTitle} />
         <meta property="og:description" content={cityData.metaDesc} />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image" content="https://www.hybridracehub.com/og-image.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={cityData.metaTitle} />
         <meta name="twitter:description" content={cityData.metaDesc} />
-        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbSchema)}} />
       </Head>

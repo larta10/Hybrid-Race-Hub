@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+﻿import React, { useState, useMemo } from "react";
 const { haversine } = require("../lib/distance");
 import Head from "next/head";
 import Link from "next/link";
@@ -197,18 +197,18 @@ export default function CentrosEntrenamiento() {
           content={`Directorio de ${TOTAL}+ centros de entrenamiento funcional, HYROX, OCR y CrossFit en España. Busca por ciudad o código postal y encuentra dónde preparar tu próxima carrera híbrida.`}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://hybridracehub.com/centros-entrenamiento" />
+        <link rel="canonical" href="https://www.hybridracehub.com/centros-entrenamiento" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hybridracehub.com/centros-entrenamiento" />
+        <meta property="og:url" content="https://www.hybridracehub.com/centros-entrenamiento" />
         <meta property="og:title" content="Dónde Entrenar: OCR, HYROX y CrossFit en España" />
         <meta property="og:description" content={`Directorio de ${TOTAL}+ centros de entrenamiento funcional, HYROX, OCR y CrossFit en España.`} />
-        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image" content="https://www.hybridracehub.com/og-image.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Dónde Entrenar: OCR, HYROX y CrossFit en España" />
         <meta name="twitter:description" content={`Directorio de ${TOTAL}+ centros de entrenamiento funcional en España.`} />
-        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
         <link
           href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap"
           rel="stylesheet"
@@ -346,7 +346,7 @@ export default function CentrosEntrenamiento() {
         <div className="page-hero-inner">
           <p className="page-eyebrow">Hybrid Race Hub · Directorio nacional</p>
           <h1 className="page-title">
-            Tu Mapa de Entrenamiento Híbrido en España
+            Centros de Entrenamiento OCR, HYROX y CrossFit en España
           </h1>
           <p className="page-sub">
             Directorio de centros OCR, HYROX, CrossFit y entrenamiento funcional en toda España.
