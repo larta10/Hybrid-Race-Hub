@@ -8,7 +8,7 @@ export default function Document() {
         <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
         <link rel="apple-touch-icon" href="/logo-icon.svg" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#F97316" />
+        <meta name="theme-color" content="#0B0B0C" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Fuentes globales: una sola hoja para todo el sitio (antes cada página cargaba la suya) */}

@@ -146,18 +146,7 @@ export default function CalendarioCiudad({ slug, cityData }) {
       </Head>
 
       <style>{`
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-          --bg: #08090C; --bg2: #0F1015; --surface: #13151C; --surface2: #1A1D26;
-          --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.16);
-          --text: #F5F5F7; --muted: #8C8E9A; --muted2: #5D5F6B; --hint: #272932;
-          --accent: #FB923C; --accent-bg: rgba(251,146,60,0.14); --accent-mid: #FDBA74;
-          --green: #34D399;
-          --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
-          --font-body: "Inter", -apple-system, sans-serif;
-          --font-mono: "JetBrains Mono", ui-monospace, monospace;
-          --radius: 12px; --radius-sm: 8px; --radius-lg: 16px;
-        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: var(--bg); color: var(--text); font-family: var(--font-body); }
         a { color: inherit; text-decoration: none; }
         .topbar { background: var(--bg); border-bottom: 1px solid var(--border); height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; }
@@ -175,11 +164,11 @@ export default function CalendarioCiudad({ slug, cityData }) {
 
         .page-hero { background: var(--bg); border-bottom: 1px solid var(--border); padding: 2.5rem 2rem 2rem; }
         .page-hero-inner { max-width: 1100px; margin: 0 auto; }
-        .page-eyebrow { font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent-mid); margin-bottom: 8px; }
+        .page-eyebrow { font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-muted); margin-bottom: 8px; }
         .page-title { font-family: var(--font-display); font-size: clamp(36px, 6vw, 72px); font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; line-height: 0.95; color: var(--text); margin-bottom: 12px; }
         .page-sub { font-family: var(--font-body); font-size: 15px; color: var(--muted); max-width: 600px; line-height: 1.65; }
         .keywords { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
-        .keyword-tag { font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted2); border: 0.5px solid var(--border); border-radius: 999px; padding: 3px 9px; }
+        .keyword-tag { font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted2); border: 0.5px solid var(--border); border-radius: 2px; padding: 3px 9px; }
 
         .page-body { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 4rem; display: grid; grid-template-columns: 1fr 300px; gap: 2rem; }
         @media (max-width: 900px) { .page-body { grid-template-columns: 1fr; } .sidebar { order: -1; } }
@@ -190,7 +179,7 @@ export default function CalendarioCiudad({ slug, cityData }) {
         .events-section { margin-bottom: 2.5rem; }
         .event-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 10px; display: flex; gap: 1rem; align-items: flex-start; transition: border-color .15s; }
         .event-card:hover { border-color: var(--border2); }
-        .event-date { font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-mid); white-space: nowrap; flex-shrink: 0; padding-top: 3px; }
+        .event-date { font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); white-space: nowrap; flex-shrink: 0; padding-top: 3px; }
         .event-name { font-family: var(--font-display); font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); margin-bottom: 3px; }
         .event-meta { font-family: var(--font-mono); font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.08em; }
         .empty-state { font-family: var(--font-body); font-size: 14px; color: var(--muted); padding: 1.5rem; text-align: center; background: var(--surface); border-radius: var(--radius); border: 0.5px solid var(--border); }
@@ -198,10 +187,10 @@ export default function CalendarioCiudad({ slug, cityData }) {
         .training-section { margin-bottom: 2.5rem; }
         .training-text { font-family: var(--font-body); font-size: 14px; color: var(--muted); line-height: 1.7; }
 
-        .cta-box { background: var(--surface); border: 0.5px solid rgba(251,146,60,0.3); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1.5rem; }
+        .cta-box { background: var(--surface); border: 0.5px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1.5rem; }
         .cta-box-title { font-family: var(--font-display); font-size: 18px; font-weight: 800; text-transform: uppercase; color: var(--text); margin-bottom: 8px; }
         .cta-box-sub { font-family: var(--font-body); font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 1rem; }
-        .cta-btn { display: block; text-align: center; background: var(--accent); color: #08090C; font-family: var(--font-display); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; padding: 10px 16px; border-radius: var(--radius-sm); }
+        .cta-btn { display: block; text-align: center; background: var(--text); color: var(--bg); font-family: var(--font-display); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; padding: 10px 16px; border-radius: var(--radius-sm); }
         .sidebar-link { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 8px 12px; margin-bottom: 8px; transition: color .15s, border-color .15s; }
         .sidebar-link:hover { color: var(--text); border-color: var(--border2); }
 
@@ -256,7 +245,7 @@ export default function CalendarioCiudad({ slug, cityData }) {
             {!loading && events && events.length === 0 && (
               <div className="empty-state">
                 No hay eventos próximos registrados en {cityData.ccaa} en este momento.<br/>
-                <Link href="/calendario" style={{ color: "var(--accent)", textDecoration: "underline", marginTop: 8, display: "inline-block" }}>
+                <Link href="/calendario" style={{ color: "var(--text)", textDecoration: "underline", marginTop: 8, display: "inline-block" }}>
                   Ver todos los eventos de España →
                 </Link>
               </div>
@@ -270,7 +259,7 @@ export default function CalendarioCiudad({ slug, cityData }) {
                     {[ev.modalidad, ev.ubicacion, ev.precio].filter(Boolean).join(" · ")}
                   </div>
                   {ev.url && (
-                    <a href={ev.url} target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 4, display: "inline-block" }}>
+                    <a href={ev.url} target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 4, display: "inline-block" }}>
                       Ver detalles →
                     </a>
                   )}
@@ -286,7 +275,7 @@ export default function CalendarioCiudad({ slug, cityData }) {
           </div>
 
           {/* CTA */}
-          <Link href="/calendario" style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent)", border: "0.5px solid rgba(251,146,60,0.3)", borderRadius: 999, padding: "8px 16px", width: "fit-content", marginTop: 8 }}>
+          <Link href="/calendario" style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--text-muted)", border: "0.5px solid rgba(255,255,255,0.1)", borderRadius: 2, padding: "8px 16px", width: "fit-content", marginTop: 8 }}>
             Ver todos los eventos en España →
           </Link>
         </main>

@@ -5,12 +5,12 @@ import { generatePlan, SESSION_TYPE_META, PHASE_META } from "../lib/training-pla
 /* ─── DATA ─────────────────────────────────────────────────────────────── */
 
 const OBJECTIVES = [
-  { id: "ocr_sprint", label: "OCR Sprint",  sub: "Carrera con obstáculos corta (< 10 km)", accent: "#34D399" },
-  { id: "ocr_pro",    label: "OCR Pro",     sub: "Distancia media (10–20 km)",              accent: "#60A5FA" },
-  { id: "ocr_ultra",  label: "OCR Ultra",   sub: "Larga distancia (+ 20 km)",               accent: "#C084FC" },
-  { id: "hyrox",      label: "HYROX",       sub: "Fitness Race — 8 km + 8 estaciones",      accent: "#FACC15" },
-  { id: "crossfit",   label: "CrossFit",    sub: "Open / Competición en box",               accent: "#FB923C" },
-  { id: "general",    label: "Funcional",   sub: "Fitness general y bienestar",             accent: "#F472B6" },
+  { id: "ocr_sprint", label: "OCR Sprint",  sub: "Carrera con obstáculos corta (< 10 km)", accent: "var(--text)" },
+  { id: "ocr_pro",    label: "OCR Pro",     sub: "Distancia media (10–20 km)",              accent: "var(--text)" },
+  { id: "ocr_ultra",  label: "OCR Ultra",   sub: "Larga distancia (+ 20 km)",               accent: "var(--text-muted)" },
+  { id: "hyrox",      label: "HYROX",       sub: "Fitness Race — 8 km + 8 estaciones",      accent: "var(--text)" },
+  { id: "crossfit",   label: "CrossFit",    sub: "Open / Competición en box",               accent: "var(--text)" },
+  { id: "general",    label: "Funcional",   sub: "Fitness general y bienestar",             accent: "var(--text-muted)" },
 ];
 
 const LEVELS = [
@@ -179,11 +179,11 @@ export default function PlanEntrenamiento() {
 
       const doc = new jsPDF({ orientation: "p", unit: "mm", format: "a4" });
       const W = 210, H = 297, M = 15;
-      const ORANGE = [251, 146, 60];
-      const DARK   = [8, 9, 12];
-      const SURF   = [26, 29, 38];
-      const MUTED  = [140, 142, 154];
-      const WHITE  = [245, 245, 247];
+      const ACCENT = [225, 6, 0];
+      const DARK   = [11, 11, 12];
+      const SURF   = [27, 27, 30];
+      const MUTED  = [154, 154, 158];
+      const WHITE  = [242, 242, 240];
 
       const OBJ_MAP   = { ocr_sprint: "OCR Sprint", ocr_pro: "OCR Pro", ocr_ultra: "OCR Ultra", hyrox: "HYROX", crossfit: "CrossFit", general: "Funcional" };
       const LVL_MAP   = { principiante: "Principiante", intermedio: "Intermedio", avanzado: "Avanzado" };
@@ -193,9 +193,9 @@ export default function PlanEntrenamiento() {
         // Header brand
         doc.setFontSize(9);
         doc.setFont("helvetica", "bold");
-        doc.setTextColor(...ORANGE);
+        doc.setTextColor(...ACCENT);
         doc.text("HYBRID RACE HUB", M, 10);
-        doc.setDrawColor(...ORANGE);
+        doc.setDrawColor(...ACCENT);
         doc.setLineWidth(0.4);
         doc.line(M, 13, W - M, 13);
         // Footer
@@ -215,7 +215,7 @@ export default function PlanEntrenamiento() {
 
       doc.setFontSize(28);
       doc.setFont("helvetica", "bold");
-      doc.setTextColor(...ORANGE);
+      doc.setTextColor(...ACCENT);
       doc.text("PLAN DE ENTRENAMIENTO", M + 7, 36);
 
       doc.setFontSize(18);
@@ -235,7 +235,7 @@ export default function PlanEntrenamiento() {
       doc.text(infoLine, M + 7, 62, { maxWidth: W - 2 * M - 14 });
 
       doc.setFontSize(9);
-      doc.setTextColor(...ORANGE);
+      doc.setTextColor(...ACCENT);
       doc.text("hybridracehub.com", M + 7, 78);
 
       // ── Weekly pages ───────────────────────────────────────────────────
@@ -257,7 +257,7 @@ export default function PlanEntrenamiento() {
         doc.roundedRect(M, 16, W - 2 * M, 13, 2, 2, "F");
         doc.setFontSize(12);
         doc.setFont("helvetica", "bold");
-        doc.setTextColor(...ORANGE);
+        doc.setTextColor(...ACCENT);
         doc.text(
           `SEMANA ${week.number}  ·  ${(week.phaseLabel || "").toUpperCase()}  ·  ${cycleLabel}${isDeload ? "  ← DELOAD" : ""}`,
           M + 4, 24.5
@@ -299,7 +299,7 @@ export default function PlanEntrenamiento() {
           head: [["Ejercicio", "Series", "Reps", "Peso obj.(kg)", "Peso real(kg)", "RPE", "Notas"]],
           body: tableBody,
           theme: "grid",
-          headStyles: { fillColor: ORANGE, textColor: DARK, fontStyle: "bold", fontSize: 8 },
+          headStyles: { fillColor: DARK, textColor: WHITE, fontStyle: "bold", fontSize: 8 },
           bodyStyles: { fontSize: 8 },
           alternateRowStyles: { fillColor: [248, 248, 250] },
           columnStyles: {
@@ -321,7 +321,7 @@ export default function PlanEntrenamiento() {
       pageDecor();
       doc.setFontSize(13);
       doc.setFont("helvetica", "bold");
-      doc.setTextColor(...ORANGE);
+      doc.setTextColor(...ACCENT);
       doc.text("MI PROGRESO — SEGUIMIENTO SEMANAL", M, 22);
 
       const progBody = (plan?.weeks || []).map(w => [
@@ -332,7 +332,7 @@ export default function PlanEntrenamiento() {
         head: [["Semana", "Fase", "Peso corp.(kg)", "RPE medio", "Ejercicio clave", "Peso movido(kg)", "Observaciones"]],
         body: progBody,
         theme: "grid",
-        headStyles: { fillColor: ORANGE, textColor: DARK, fontStyle: "bold", fontSize: 8 },
+        headStyles: { fillColor: DARK, textColor: WHITE, fontStyle: "bold", fontSize: 8 },
         bodyStyles: { fontSize: 8.5 },
         alternateRowStyles: { fillColor: [248, 248, 250] },
         margin: { left: M, right: M },
@@ -378,7 +378,7 @@ export default function PlanEntrenamiento() {
       <meta property="og:title" content="Plan de Entrenamiento Personalizado | Hybrid Race Hub" />
       <meta property="og:description" content="Genera tu plan para OCR, HYROX o CrossFit según tu nivel y objetivos." />
       <meta property="og:site_name" content="Hybrid Race Hub" />
-      <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+      <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -412,31 +412,21 @@ export default function PlanEntrenamiento() {
   );
 
   const css = `
-    :root {
-      --bg:#08090C; --bg2:#0F1015; --surface:#13151C; --surface2:#1A1D26;
-      --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.16);
-      --text:#F5F5F7; --muted:#8C8E9A; --muted2:#5D5F6B;
-      --accent:#FB923C; --accent-bg:rgba(251,146,60,0.14);
-      --font-display:"Barlow Condensed","Arial Narrow",sans-serif;
-      --font-body:"Inter",-apple-system,sans-serif;
-      --font-mono:"JetBrains Mono",ui-monospace,monospace;
-      --radius-sm:8px; --radius:12px;
-    }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.6;min-height:100vh;}
-    a{color:var(--accent);text-decoration:none;}
+    a{color:var(--text);text-decoration:none;}
     a:hover{text-decoration:underline;}
 
     .plan-page{max-width:860px;margin:0 auto;padding:2rem 1.5rem 4rem;}
     .back-link{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:1.5rem;}
-    .back-link:hover{color:var(--accent);text-decoration:none;}
+    .back-link:hover{color:var(--text);text-decoration:none;}
 
     /* ── Wizard ── */
     .wizard-progress{display:flex;align-items:center;gap:6px;margin-bottom:2.5rem;}
     .wp-step{width:28px;height:4px;border-radius:2px;background:var(--border2);transition:background .25s;}
-    .wp-step.done{background:var(--accent);}
-    .wp-step.active{background:var(--accent);opacity:.6;}
+    .wp-step.done{background:var(--text);}
+    .wp-step.active{background:var(--text);opacity:.6;}
     .wizard-label{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-left:auto;}
 
     .step-title{font-family:var(--font-display);font-size:clamp(28px,6vw,42px);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:.5rem;}
@@ -445,8 +435,8 @@ export default function PlanEntrenamiento() {
     .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;margin-bottom:2rem;}
     .card-grid.two-col{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));}
     .sel-card{background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--radius);padding:1.1rem 1.25rem;cursor:pointer;transition:border-color .18s,background .18s;}
-    .sel-card:hover{border-color:rgba(251,146,60,.5);background:var(--surface2);}
-    .sel-card.selected{border-color:var(--sel-accent,var(--accent));background:rgba(251,146,60,.07);}
+    .sel-card:hover{border-color:rgba(255,255,255,0.1);background:var(--surface2);}
+    .sel-card.selected{border-color:var(--sel-accent,var(--text));background:rgba(255,255,255,0.04);}
     .sel-card-label{font-family:var(--font-display);font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;margin-bottom:2px;}
     .sel-card-sub{font-size:12px;color:var(--muted);line-height:1.4;}
 
@@ -456,27 +446,27 @@ export default function PlanEntrenamiento() {
     .days-label span{font-size:14px;font-weight:600;color:var(--text);font-family:var(--font-display);letter-spacing:0;}
     .days-pips{display:flex;gap:.5rem;}
     .days-pip{flex:1;height:40px;border-radius:var(--radius-sm);background:var(--surface);border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:18px;font-weight:700;cursor:pointer;transition:all .18s;}
-    .days-pip:hover{border-color:rgba(251,146,60,.5);}
-    .days-pip.selected{background:rgba(251,146,60,.12);border-color:var(--accent);color:var(--accent);}
+    .days-pip:hover{border-color:rgba(255,255,255,0.1);}
+    .days-pip.selected{background:rgba(255,255,255,0.06);border-color:var(--text);color:var(--text);}
 
     /* Weakness chips */
     .chip-grid{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:.5rem;}
-    .chip{padding:.45rem 1rem;border-radius:20px;background:var(--surface);border:1.5px solid var(--border2);font-size:13px;font-weight:500;cursor:pointer;transition:all .18s;}
-    .chip:hover{border-color:rgba(251,146,60,.5);}
-    .chip.selected{background:rgba(251,146,60,.13);border-color:var(--accent);color:var(--accent);}
+    .chip{padding:.45rem 1rem;border-radius:2px;background:var(--surface);border:1.5px solid var(--border2);font-size:13px;font-weight:500;cursor:pointer;transition:all .18s;}
+    .chip:hover{border-color:rgba(255,255,255,0.1);}
+    .chip.selected{background:rgba(255,255,255,0.07);border-color:var(--text);color:var(--text);}
     .chip-hint{font-size:12px;color:var(--muted2);margin-bottom:2rem;}
 
     /* Nav buttons */
     .wizard-nav{display:flex;gap:.75rem;justify-content:space-between;align-items:center;margin-top:2rem;}
     .btn-back{padding:11px 20px;background:transparent;color:var(--muted);border:1.5px solid var(--border2);border-radius:var(--radius-sm);font-family:var(--font-display);font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;cursor:pointer;transition:all .18s;}
     .btn-back:hover{color:var(--text);border-color:var(--border2);}
-    .btn-next{padding:12px 28px;background:var(--accent);color:#08090C;border:none;border-radius:var(--radius-sm);font-family:var(--font-display);font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;transition:transform .15s,box-shadow .15s,opacity .15s;}
-    .btn-next:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 6px 20px rgba(251,146,60,.35);}
+    .btn-next{padding:12px 28px;background: var(--text);color: var(--bg);border:none;border-radius:var(--radius-sm);font-family:var(--font-display);font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;transition:transform .15s,box-shadow .15s,opacity .15s;}
+    .btn-next:hover:not(:disabled){transform:translateY(-2px);}
     .btn-next:disabled{opacity:.35;cursor:not-allowed;}
 
     /* ── Plan Result ── */
     .plan-header{background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem;}
-    .plan-eyebrow{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);margin-bottom:.5rem;}
+    .plan-eyebrow{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--text-muted);margin-bottom:.5rem;}
     .plan-title{font-family:var(--font-display);font-size:clamp(28px,6vw,48px);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:1.1;margin-bottom:.4rem;}
     .plan-subtitle{color:var(--muted);font-size:14px;margin-bottom:1.25rem;}
     .plan-stats{display:flex;flex-wrap:wrap;gap:.75rem;}
@@ -516,7 +506,7 @@ export default function PlanEntrenamiento() {
     .day-section-label{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted2);margin-bottom:.35rem;}
     .day-section ul{list-style:none;display:flex;flex-direction:column;gap:.2rem;}
     .day-section ul li{font-size:13px;color:var(--muted);line-height:1.5;padding-left:.9rem;position:relative;}
-    .day-section ul li::before{content:"·";position:absolute;left:0;color:var(--accent);}
+    .day-section ul li::before{content:"·";position:absolute;left:0;color:var(--text);}
     .day-note{margin-top:.6rem;font-size:12px;color:var(--muted2);font-style:italic;border-left:2px solid var(--border2);padding-left:.6rem;}
     .day-rest{padding:.65rem .9rem;background:var(--bg2);color:var(--muted2);font-size:13px;font-style:italic;}
 
@@ -524,40 +514,40 @@ export default function PlanEntrenamiento() {
     .plan-ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);}
     .cta-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:var(--radius-sm);font-family:var(--font-display);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;transition:all .18s;}
     .cta-btn:hover{text-decoration:none;transform:translateY(-2px);}
-    .cta-primary{background:var(--accent);color:#08090C;}
-    .cta-primary:hover{box-shadow:0 6px 20px rgba(251,146,60,.35);}
+    .cta-primary{background: var(--text);color: var(--bg);}
+    .cta-primary:hover{}
     .cta-secondary{background:transparent;color:var(--text);border:1.5px solid var(--border2);}
-    .cta-secondary:hover{border-color:var(--accent);color:var(--accent);}
+    .cta-secondary:hover{border-color:var(--text);color:var(--text);}
     .cta-ghost{background:transparent;color:var(--muted);border:none;cursor:pointer;padding:12px 16px;font-family:var(--font-display);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;}
     .cta-ghost:hover{color:var(--text);}
 
     /* ── Free badge ── */
-    .free-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(251,146,60,.14);color:var(--accent);border:1px solid rgba(251,146,60,.3);border-radius:20px;padding:.35rem .9rem;font-family:var(--font-mono);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.25rem;}
+    .free-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.07);color:var(--text-muted);border:1px solid rgba(255,255,255,0.1);border-radius:2px;padding:.35rem .9rem;font-family:var(--font-mono);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.25rem;}
 
     /* ── Profile step ── */
     .profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem;}
     .profile-field{display:flex;flex-direction:column;gap:.5rem;}
     .profile-label{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);}
     .profile-input{background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--radius-sm);padding:.75rem 1rem;font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--text);outline:none;text-align:center;transition:border-color .18s;width:100%;}
-    .profile-input:focus{border-color:var(--accent);}
+    .profile-input:focus{border-color:var(--text);}
     .profile-input::placeholder{color:var(--muted2);font-size:16px;font-weight:400;}
 
     /* ── Loads panel ── */
-    .week-loads{background:rgba(251,146,60,.05);border-top:1px solid rgba(251,146,60,.18);padding:.75rem 1.25rem;}
+    .week-loads{background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.09);padding:.75rem 1.25rem;}
     .loads-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem;}
-    .loads-title{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);}
-    .loads-cycle-label{font-family:var(--font-mono);font-size:9px;font-weight:600;padding:.15rem .6rem;border-radius:4px;background:rgba(251,146,60,.15);color:var(--accent);}
-    .loads-cycle-label.deload{background:rgba(250,204,21,.12);color:#FACC15;}
+    .loads-title{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);}
+    .loads-cycle-label{font-family:var(--font-mono);font-size:9px;font-weight:600;padding:.15rem .6rem;border-radius:4px;background:rgba(255,255,255,0.07);color:var(--text);}
+    .loads-cycle-label.deload{background:rgba(255,255,255,0.06);color:var(--text);}
     .loads-grid{display:flex;flex-wrap:wrap;gap:.4rem;}
-    .load-item{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:.3rem .7rem;display:flex;flex-direction:column;gap:1px;}
+    .load-item{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:.3rem .7rem;display:flex;flex-direction:column;gap:1px;}
     .load-item-name{font-family:var(--font-mono);font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted2);}
-    .load-item-val{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--accent);line-height:1;}
+    .load-item-val{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--text);line-height:1;}
 
     /* ── Download buttons ── */
-    .cta-dl-excel{background:rgba(52,211,153,.1);color:#34D399;border:1.5px solid rgba(52,211,153,.35);}
-    .cta-dl-excel:hover:not(:disabled){background:rgba(52,211,153,.18);border-color:#34D399;transform:translateY(-2px);}
-    .cta-dl-pdf{background:rgba(96,165,250,.1);color:#60A5FA;border:1.5px solid rgba(96,165,250,.35);}
-    .cta-dl-pdf:hover:not(:disabled){background:rgba(96,165,250,.18);border-color:#60A5FA;transform:translateY(-2px);}
+    .cta-dl-excel{background:rgba(255,255,255,0.05);color:var(--text);border:1.5px solid rgba(255,255,255,0.08);}
+    .cta-dl-excel:hover:not(:disabled){background:rgba(255,255,255,0.08);border-color:var(--text);transform:translateY(-2px);}
+    .cta-dl-pdf{background:rgba(255,255,255,0.05);color:var(--text);border:1.5px solid rgba(255,255,255,0.08);}
+    .cta-dl-pdf:hover:not(:disabled){background:rgba(255,255,255,0.08);border-color:var(--text);transform:translateY(-2px);}
     .cta-btn:disabled{opacity:.45;cursor:not-allowed;}
 
     @media(max-width:600px){

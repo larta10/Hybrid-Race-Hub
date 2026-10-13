@@ -57,19 +57,6 @@ export default function Productos() {
 
       <style>{`
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-          --bg: #08090C; --bg2: #0F1015; --surface: #13151C; --surface2: #1A1D26;
-          --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.16);
-          --text: #F5F5F7; --muted: #8C8E9A; --muted2: #5D5F6B; --hint: #272932;
-          --ocr: #FB923C; --ocr-bg: rgba(251,146,60,0.14);
-          --hyrox: #FACC15; --hyrox-bg: rgba(250,204,21,0.12);
-          --accent: #FB923C; --accent-bg: rgba(251,146,60,0.14); --accent-mid: #FDBA74;
-          --green: #34D399; --green-bg: rgba(52,211,153,0.14);
-          --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
-          --font-body: "Inter", -apple-system, sans-serif;
-          --font-mono: "JetBrains Mono", ui-monospace, monospace;
-          --radius: 12px; --radius-sm: 8px; --radius-lg: 16px;
-        }
         body { background: var(--bg); color: var(--text); font-family: var(--font-body); }
         a { color: inherit; text-decoration: none; }
 
@@ -97,14 +84,14 @@ export default function Productos() {
           border: 0.5px solid transparent; transition: color .15s, border-color .15s;
         }
         .topbar-nav a:hover { color: var(--text); border-color: var(--border2); }
-        .topbar-nav a.active { color: var(--accent-mid); border-color: rgba(251,146,60,0.3); }
+        .topbar-nav a.active { color: var(--text); border-color: transparent; border-radius: 0; box-shadow: inset 0 -2px 0 var(--accent); }
 
         /* HERO */
         .page-hero { background: var(--bg); border-bottom: 1px solid var(--border); padding: 3rem 2rem 2.5rem; }
         .page-hero-inner { max-width: 1100px; margin: 0 auto; }
         .page-eyebrow {
           font-family: var(--font-mono); font-size: 10px; font-weight: 600;
-          text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent-mid); margin-bottom: 10px;
+          text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-muted); margin-bottom: 10px;
         }
         .page-title {
           font-family: var(--font-display); font-size: clamp(40px, 6vw, 72px);
@@ -142,8 +129,8 @@ export default function Productos() {
         .ranking-letter {
           display: inline-block; font-family: var(--font-display); font-size: 11px; font-weight: 800;
           text-transform: uppercase; letter-spacing: 0.14em;
-          background: var(--accent-bg); color: var(--accent);
-          padding: 3px 10px; border-radius: 999px; margin-bottom: 8px;
+          background: var(--surface2); color: var(--text);
+          padding: 3px 10px; border-radius: 2px; margin-bottom: 8px;
         }
         .ranking-eyebrow {
           font-family: var(--font-mono); font-size: 10px; font-weight: 600;
@@ -174,7 +161,7 @@ export default function Productos() {
           color: var(--text); vertical-align: middle;
         }
         .comp-table tr:last-child td { border-bottom: none; }
-        .comp-table tr:hover td { background: rgba(251,146,60,0.04); }
+        .comp-table tr:hover td { background: rgba(255,255,255,0.02); }
         .comp-table td:first-child { font-family: var(--font-display); font-weight: 700; font-size: 13px; }
 
         /* PRODUCT CARDS */
@@ -196,7 +183,7 @@ export default function Productos() {
         }
         .product-rank {
           font-family: var(--font-display); font-size: 32px; font-weight: 900;
-          color: var(--accent); line-height: 1; flex-shrink: 0; width: 32px;
+          color: var(--text); line-height: 1; flex-shrink: 0; width: 32px;
         }
         .product-name {
           font-family: var(--font-display); font-size: 18px; font-weight: 800;
@@ -210,12 +197,12 @@ export default function Productos() {
           padding: 16px; border-bottom: 0.5px solid var(--border);
         }
         .product-img {
-          max-height: 220px; width: 100%; object-fit: contain; border-radius: 8px; display: block;
+          max-height: 220px; width: 100%; object-fit: contain; border-radius: 4px; display: block;
         }
         .product-img-placeholder {
           min-height: 148px; width: 100%;
           display: flex; align-items: center; justify-content: center;
-          background: var(--surface2); border-radius: 8px;
+          background: var(--surface2); border-radius: 4px;
           font-family: var(--font-mono); font-size: 10px; color: var(--muted2);
           text-transform: uppercase; letter-spacing: 0.1em;
         }
@@ -233,20 +220,20 @@ export default function Productos() {
           display: flex; align-items: flex-start; gap: 6px; line-height: 1.4;
         }
         .product-pc-item::before { content: ""; flex-shrink: 0; margin-top: 5px; }
-        .pros .product-pc-item::before { content: "✓"; color: var(--green); font-size: 10px; margin-top: 2px; }
+        .pros .product-pc-item::before { content: "+"; color: var(--text-muted); font-size: 10px; margin-top: 2px; }
         .cons .product-pc-item::before { content: "✗"; color: var(--muted2); font-size: 10px; margin-top: 2px; }
         .product-price {
           font-family: var(--font-mono); font-size: 12px; font-weight: 600;
-          text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent-mid);
+          text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted);
         }
         .product-cta {
-          display: block; background: var(--accent); color: #08090C;
+          display: block; background: var(--accent); color: var(--on-accent);
           font-family: var(--font-display); font-size: 13px; font-weight: 800;
           text-transform: uppercase; letter-spacing: 0.06em;
           text-align: center; padding: 11px 16px;
-          border-top: 0.5px solid var(--border); transition: opacity .15s;
+          border-top: 0.5px solid var(--border); transition: background-color .15s;
         }
-        .product-cta:hover { opacity: 0.88; }
+        .product-cta:hover { background: var(--accent-hover); }
 
         /* CONCLUSION */
         .ranking-conclusion {
@@ -255,7 +242,7 @@ export default function Productos() {
         }
         .ranking-conclusion-label {
           font-family: var(--font-mono); font-size: 9px; font-weight: 600;
-          text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent-mid); margin-bottom: 8px;
+          text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted); margin-bottom: 8px;
         }
         .ranking-conclusion p { font-family: var(--font-body); font-size: 13px; color: var(--muted); line-height: 1.65; }
 
@@ -329,7 +316,7 @@ export default function Productos() {
         </div>
 
         <div style={{ background: "var(--surface)", border: "0.5px solid var(--border)", borderRadius: "var(--radius-lg)", padding: "1.5rem 1.75rem", marginBottom: "2rem" }}>
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.14em", color: "var(--accent-mid)", marginBottom: "0.75rem" }}>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.14em", color: "var(--text-muted)", marginBottom: "0.75rem" }}>
             Por qué confiar en nuestros rankings
           </p>
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 800, textTransform: "uppercase", letterSpacing: "-0.01em", color: "var(--text)", marginBottom: "1rem" }}>
@@ -337,30 +324,30 @@ export default function Productos() {
           </h2>
           <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
             <li style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--muted)", lineHeight: 1.65, paddingLeft: "1.25rem", position: "relative" }}>
-              <span style={{ position: "absolute", left: 0, color: "var(--accent)", fontWeight: 700 }}>·</span>
+              <span style={{ position: "absolute", left: 0, color: "var(--text)", fontWeight: 700 }}>·</span>
               <strong style={{ color: "var(--text)", fontWeight: 600 }}>Uso real en carrera:</strong> priorizamos modelos que hemos probado
               (o han probado atletas colaboradores) en competición OCR/HYROX, no solo
               en gimnasio.
             </li>
             <li style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--muted)", lineHeight: 1.65, paddingLeft: "1.25rem", position: "relative" }}>
-              <span style={{ position: "absolute", left: 0, color: "var(--accent)", fontWeight: 700 }}>·</span>
+              <span style={{ position: "absolute", left: 0, color: "var(--text)", fontWeight: 700 }}>·</span>
               <strong style={{ color: "var(--text)", fontWeight: 600 }}>Relación precio/prestaciones:</strong> cada ranking incluye modelos
               en tres franjas (entry, mid-range y top) para que compares según tu presupuesto.
             </li>
             <li style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--muted)", lineHeight: 1.65, paddingLeft: "1.25rem", position: "relative" }}>
-              <span style={{ position: "absolute", left: 0, color: "var(--accent)", fontWeight: 700 }}>·</span>
+              <span style={{ position: "absolute", left: 0, color: "var(--text)", fontWeight: 700 }}>·</span>
               <strong style={{ color: "var(--text)", fontWeight: 600 }}>Datos técnicos, no marketing:</strong> analizamos drop, peso,
               autonomía GPS, sensores, materiales y compatibilidad con Zwift/Strava/Garmin
               Connect, no las descripciones de la marca.
             </li>
             <li style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--muted)", lineHeight: 1.65, paddingLeft: "1.25rem", position: "relative" }}>
-              <span style={{ position: "absolute", left: 0, color: "var(--accent)", fontWeight: 700 }}>·</span>
+              <span style={{ position: "absolute", left: 0, color: "var(--text)", fontWeight: 700 }}>·</span>
               <strong style={{ color: "var(--text)", fontWeight: 600 }}>Transparencia de afiliación:</strong> ganamos una pequeña comisión
               si compras desde nuestros enlaces (sin coste extra para ti). Eso no cambia
               el orden del ranking: si un producto no vale la pena, no aparece.
             </li>
             <li style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--muted)", lineHeight: 1.65, paddingLeft: "1.25rem", position: "relative" }}>
-              <span style={{ position: "absolute", left: 0, color: "var(--accent)", fontWeight: 700 }}>·</span>
+              <span style={{ position: "absolute", left: 0, color: "var(--text)", fontWeight: 700 }}>·</span>
               <strong style={{ color: "var(--text)", fontWeight: 600 }}>Actualización estacional:</strong> revisamos precios y
               disponibilidad cada trimestre y actualizamos los modelos cuando salen
               versiones nuevas relevantes.
@@ -465,10 +452,10 @@ export default function Productos() {
 
             {/* Enlazado interno */}
             <div style={{ marginTop: "1.25rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-              <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent)", border: "0.5px solid rgba(251,146,60,0.3)", borderRadius: 999, padding: "5px 12px" }}>
+              <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--text-muted)", border: "0.5px solid rgba(255,255,255,0.1)", borderRadius: 2, padding: "5px 12px" }}>
                 📅 ¿Listo para competir? Ver calendario →
               </Link>
-              <Link href="/blog" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 999, padding: "5px 12px" }}>
+              <Link href="/blog" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "5px 12px" }}>
                 📖 Leer artículos del blog →
               </Link>
             </div>

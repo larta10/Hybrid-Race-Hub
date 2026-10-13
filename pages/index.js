@@ -135,50 +135,50 @@ function OrganizerContact() {
 /* ─── HomeSections ─────────────────────────────────────────────────────────── */
 const BlogIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <rect x="4" y="4" width="24" height="28" rx="3" stroke="#FB923C" strokeWidth="1.8"/>
-    <line x1="9" y1="11" x2="23" y2="11" stroke="#FB923C" strokeWidth="1.8" strokeLinecap="round"/>
-    <line x1="9" y1="16" x2="23" y2="16" stroke="#FB923C" strokeWidth="1.8" strokeLinecap="round"/>
-    <line x1="9" y1="21" x2="17" y2="21" stroke="#FB923C" strokeWidth="1.8" strokeLinecap="round"/>
+    <rect x="4" y="4" width="24" height="28" rx="3" stroke="currentColor" strokeWidth="1.8"/>
+    <line x1="9" y1="11" x2="23" y2="11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+    <line x1="9" y1="16" x2="23" y2="16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+    <line x1="9" y1="21" x2="17" y2="21" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
   </svg>
 );
 
 const ShopIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <path d="M6 8h20l-2 14H8L6 8z" stroke="#FB923C" strokeWidth="1.8" strokeLinejoin="round"/>
-    <path d="M12 8c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="#FB923C" strokeWidth="1.8" strokeLinecap="round"/>
-    <circle cx="12" cy="26" r="1.5" fill="#FB923C"/>
-    <circle cx="20" cy="26" r="1.5" fill="#FB923C"/>
+    <path d="M6 8h20l-2 14H8L6 8z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"/>
+    <path d="M12 8c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+    <circle cx="12" cy="26" r="1.5" fill="currentColor"/>
+    <circle cx="20" cy="26" r="1.5" fill="currentColor"/>
   </svg>
 );
 
 const CalcIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <rect x="5" y="4" width="22" height="26" rx="3" stroke="#FACC15" strokeWidth="1.8"/>
-    <rect x="9" y="8" width="14" height="6" rx="1.5" stroke="#FACC15" strokeWidth="1.5"/>
-    <circle cx="10" cy="20" r="1.5" fill="#FACC15"/>
-    <circle cx="16" cy="20" r="1.5" fill="#FACC15"/>
-    <circle cx="22" cy="20" r="1.5" fill="#FACC15"/>
-    <circle cx="10" cy="26" r="1.5" fill="#FACC15"/>
-    <circle cx="16" cy="26" r="1.5" fill="#FACC15"/>
-    <circle cx="22" cy="26" r="1.5" fill="#FACC15"/>
+    <rect x="5" y="4" width="22" height="26" rx="3" stroke="var(--text)" strokeWidth="1.8"/>
+    <rect x="9" y="8" width="14" height="6" rx="1.5" stroke="var(--text)" strokeWidth="1.5"/>
+    <circle cx="10" cy="20" r="1.5" fill="var(--text)"/>
+    <circle cx="16" cy="20" r="1.5" fill="var(--text)"/>
+    <circle cx="22" cy="20" r="1.5" fill="var(--text)"/>
+    <circle cx="10" cy="26" r="1.5" fill="var(--text)"/>
+    <circle cx="16" cy="26" r="1.5" fill="var(--text)"/>
+    <circle cx="22" cy="26" r="1.5" fill="var(--text)"/>
   </svg>
 );
 
 const BoxIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <rect x="4" y="10" width="24" height="18" rx="2" stroke="#A78BFA" strokeWidth="1.8"/>
-    <path d="M4 15h24" stroke="#A78BFA" strokeWidth="1.5"/>
-    <path d="M13 10V6a3 3 0 0 1 6 0v4" stroke="#A78BFA" strokeWidth="1.8" strokeLinecap="round"/>
-    <path d="M12 22h8" stroke="#A78BFA" strokeWidth="1.5" strokeLinecap="round"/>
+    <rect x="4" y="10" width="24" height="18" rx="2" stroke="var(--text-muted)" strokeWidth="1.8"/>
+    <path d="M4 15h24" stroke="var(--text-muted)" strokeWidth="1.5"/>
+    <path d="M13 10V6a3 3 0 0 1 6 0v4" stroke="var(--text-muted)" strokeWidth="1.8" strokeLinecap="round"/>
+    <path d="M12 22h8" stroke="var(--text-muted)" strokeWidth="1.5" strokeLinecap="round"/>
   </svg>
 );
 
 const PlanIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <rect x="4" y="4" width="24" height="24" rx="3" stroke="#34D399" strokeWidth="1.8"/>
-    <path d="M9 12h14M9 17h10M9 22h6" stroke="#34D399" strokeWidth="1.8" strokeLinecap="round"/>
-    <circle cx="24" cy="22" r="5" fill="#08090C" stroke="#34D399" strokeWidth="1.8"/>
-    <path d="M22 22l1.5 1.5L26 20" stroke="#34D399" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <rect x="4" y="4" width="24" height="24" rx="3" stroke="var(--text)" strokeWidth="1.8"/>
+    <path d="M9 12h14M9 17h10M9 22h6" stroke="var(--text)" strokeWidth="1.8" strokeLinecap="round"/>
+    <circle cx="24" cy="22" r="5" fill="var(--bg)" stroke="var(--text)" strokeWidth="1.8"/>
+    <path d="M22 22l1.5 1.5L26 20" stroke="var(--text)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
@@ -190,7 +190,7 @@ function HomeSections() {
       title: "Calendario",
       desc: "Más de 140 eventos OCR, HYROX y fitness funcional en España. Filtra por comunidad, formato y fecha.",
       cta: "→ Ver eventos",
-      iconBg: "var(--accent-bg)",
+      iconBg: "var(--surface2)",
     },
     {
       href: "/plan-entrenamiento",
@@ -198,7 +198,7 @@ function HomeSections() {
       title: "Plan de entrenamiento",
       desc: "Crea tu plan personalizado para OCR, HYROX o CrossFit en 5 preguntas. Adaptado a tu nivel y días disponibles.",
       cta: "→ Crear mi plan",
-      iconBg: "rgba(52,211,153,0.14)",
+      iconBg: "rgba(255,255,255,0.07)",
     },
     {
       href: "/blog",
@@ -206,7 +206,7 @@ function HomeSections() {
       title: "Blog",
       desc: "Guías técnicas, análisis de equipamiento y estrategias de competición escritas por atletas.",
       cta: "→ Leer artículos",
-      iconBg: "rgba(250,204,21,0.14)",
+      iconBg: "rgba(255,255,255,0.07)",
     },
     {
       href: "/productos",
@@ -214,7 +214,7 @@ function HomeSections() {
       title: "Productos",
       desc: "Rankings de zapatillas, relojes GPS, pulsómetros y equipamiento para OCR e HYROX.",
       cta: "→ Ver rankings",
-      iconBg: "rgba(52,211,153,0.14)",
+      iconBg: "rgba(255,255,255,0.07)",
     },
     {
       href: "/calculadora-hyrox",
@@ -222,7 +222,7 @@ function HomeSections() {
       title: "Calculadora HYROX",
       desc: "Calcula tu ritmo por estación y estima tu tiempo final. Con categorías de referencia para planificar tu carrera.",
       cta: "→ Calcular tiempo",
-      iconBg: "rgba(250,204,21,0.14)",
+      iconBg: "rgba(255,255,255,0.07)",
     },
     {
       href: "/centros-entrenamiento",
@@ -421,7 +421,7 @@ export default function Home() {
             {/* Paso 1 */}
             <div className="journey-card" title="Próximos eventos: Hyrox Madrid (Mayo), Spartan Race Barcelona (Junio)">
               <div className="journey-icon" aria-hidden>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#FB923C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="5" y="9" width="38" height="34" rx="4"/>
                   <line x1="5" y1="19" x2="43" y2="19"/>
                   <line x1="16" y1="5" x2="16" y2="13"/>
@@ -439,12 +439,12 @@ export default function Home() {
             {/* Paso 2 */}
             <div className="journey-card" aria-label="Paso 2">
               <div className="journey-icon" aria-hidden>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#FB923C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="9" y="4" width="30" height="38" rx="3"/>
                   <line x1="16" y1="15" x2="32" y2="15"/>
                   <line x1="16" y1="22" x2="32" y2="22"/>
                   <line x1="16" y1="29" x2="25" y2="29"/>
-                  <circle cx="34" cy="36" r="8" fill="#08090C" stroke="#FB923C" strokeWidth="1.8"/>
+                  <circle cx="34" cy="36" r="8" fill="var(--bg)" stroke="currentColor" strokeWidth="1.8"/>
                   <polyline points="30,36 33,39 38,32"/>
                 </svg>
               </div>
@@ -454,20 +454,20 @@ export default function Home() {
                 {["100% gratuito, sin registro","Personalizado a tu nivel y objetivos","Descargable en Excel y PDF al instante"].map((item,i)=>(
                   <li key={i} className="journey-feature-item">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style={{flexShrink:0}}>
-                      <circle cx="8" cy="8" r="7.5" fill="rgba(251,146,60,0.15)" stroke="#FB923C" strokeWidth="1"/>
-                      <path d="M5 8l2 2 4-4" stroke="#FB923C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="8" cy="8" r="7.5" fill="rgba(255,255,255,0.07)" stroke="currentColor" strokeWidth="1"/>
+                      <path d="M5 8l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="journey-trainer-note">¿Quieres que un entrenador personal te lleve la rutina y el seguimiento? Escríbenos a <a href="mailto:hola@hybridracehub.com" style={{color:"#FB923C"}}>hola@hybridracehub.com</a></p>
+              <p className="journey-trainer-note">¿Quieres que un entrenador personal te lleve la rutina y el seguimiento? Escríbenos a <a href="mailto:hola@hybridracehub.com" style={{color:"var(--text)"}}>hola@hybridracehub.com</a></p>
               <a href="/plan-entrenamiento" className="btn-primary" style={{ alignSelf:'flex-start' }}>CREAR MI PLAN →</a>
             </div>
             {/* Paso 3 */}
             <div className="journey-card" aria-label="Paso 3">
               <div className="journey-icon" aria-hidden>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#FB923C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M24 4C16 4 11 11 11 18c0 11 13 26 13 26s13-15 13-26c0-7-5-14-13-14z"/>
                   <rect x="19" y="12" width="10" height="9" rx="1.5"/>
                   <line x1="22" y1="12" x2="22" y2="21"/>
@@ -510,7 +510,7 @@ export default function Home() {
           <div className="home-secondary-inner">
             <a className="home-card small" href="/blog">
               <div className="home-card-icon" style={{ width:40, height:40, display:'flex', alignItems:'center', justifyContent:'center' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FB923C" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
                   <rect x="3" y="3" width="18" height="21" rx="2"/>
                   <line x1="7" y1="8" x2="17" y2="8"/>
                   <line x1="7" y1="12" x2="17" y2="12"/>
@@ -523,7 +523,7 @@ export default function Home() {
             </a>
             <a className="home-card small" href="/productos">
               <div className="home-card-icon" style={{ width:40, height:40, display:'flex', alignItems:'center', justifyContent:'center' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FB923C" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
                   <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
                   <line x1="3" y1="6" x2="21" y2="6"/>
                   <path d="M16 10a4 4 0 01-8 0"/>
@@ -535,7 +535,7 @@ export default function Home() {
             </a>
             <a className="home-card small" href="/calculadora-hyrox">
               <div className="home-card-icon" style={{ width:40, height:40, display:'flex', alignItems:'center', justifyContent:'center' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FACC15" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text)" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
                   <circle cx="12" cy="12" r="10"/>
                   <polyline points="12 6 12 12 16 14"/>
                 </svg>

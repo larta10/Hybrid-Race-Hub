@@ -246,7 +246,7 @@ export default function Calendario() {
                 {availableCcaa.map(c=>(
                   <button key={c} onClick={()=>{ if(!ccaa.includes(c)) trackFilter("ccaa",c); toggle(ccaa,setCcaa,c); }}
                     className={`chip${ccaa.includes(c)?" chip--on":""}`}
-                    style={ccaa.includes(c)?{borderColor:"var(--accent)",background:"var(--accent-bg)",color:"var(--accent-mid)"}:{}}>
+                    style={ccaa.includes(c)?{borderColor:"var(--text)",background:"var(--surface2)",color:"var(--accent-mid)"}:{}}>
                     {c}
                   </button>
                 ))}
@@ -268,7 +268,7 @@ export default function Calendario() {
                   ["zaragoza","Zaragoza"],["murcia","Murcia"],
                 ].map(([slug, label]) => (
                   <a key={slug} href={`/calendario/${slug}`}
-                    style={{ display:"inline-block", fontFamily:"var(--font-mono)", fontSize:10, fontWeight:500, textTransform:"uppercase", letterSpacing:"0.1em", color:"var(--muted)", border:"0.5px solid rgba(255,255,255,0.08)", borderRadius:999, padding:"4px 10px", textDecoration:"none", transition:"color .15s, border-color .15s" }}>
+                    style={{ display:"inline-block", fontFamily:"var(--font-mono)", fontSize:10, fontWeight:500, textTransform:"uppercase", letterSpacing:"0.1em", color:"var(--muted)", border:"0.5px solid rgba(255,255,255,0.08)", borderRadius:2, padding:"4px 10px", textDecoration:"none", transition:"color .15s, border-color .15s" }}>
                     {label}
                   </a>
                 ))}

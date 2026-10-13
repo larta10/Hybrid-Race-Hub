@@ -37,9 +37,9 @@ export async function getStaticProps({ params }) {
 export default function ArticlePage({ article }) {
   if (!article) {
     return (
-      <div style={{ background: "#08090C", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
-        <a href="/comunidad" style={{ color: "#FB923C", textDecoration: "underline" }}>← Volver a Comunidad</a>
-        <h1 style={{ color: "#F5F5F7", fontFamily: "Barlow Condensed, sans-serif" }}>Artículo no encontrado</h1>
+      <div style={{ background: "var(--bg)", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
+        <a href="/comunidad" style={{ color: "var(--text)", textDecoration: "underline" }}>← Volver a Comunidad</a>
+        <h1 style={{ color: "var(--text)", fontFamily: "Barlow Condensed, sans-serif" }}>Artículo no encontrado</h1>
       </div>
     );
   }
@@ -55,17 +55,6 @@ export default function ArticlePage({ article }) {
       </Head>
 
       <style>{`
-        :root {
-          --bg: #08090C;
-          --surface: #13151C;
-          --border: rgba(255,255,255,0.08);
-          --text: #F5F5F7;
-          --muted: #8C8E9A;
-          --accent: #FB923C;
-          --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
-          --font-body: "Inter", -apple-system, sans-serif;
-          --font-mono: "JetBrains Mono", ui-monospace, monospace;
-        }
         body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; }
 
         .article-page { max-width: 720px; margin: 0 auto; padding: 2rem; }
@@ -76,12 +65,12 @@ export default function ArticlePage({ article }) {
           text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);
           margin-bottom: 2rem;
         }
-        .back-link:hover { color: var(--accent); text-decoration: none; }
+        .back-link:hover { color: var(--text); text-decoration: none; }
 
         .article-header { margin-bottom: 2rem; }
         .article-cat {
           font-family: var(--font-mono); font-size: 10px; font-weight: 600;
-          text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent);
+          text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted);
           margin-bottom: 12px;
         }
         .article-title {
@@ -96,7 +85,7 @@ export default function ArticlePage({ article }) {
 
         .article-cover {
           width: 100%; max-height: 400px;
-          object-fit: cover; border-radius: 12px;
+          object-fit: cover; border-radius: 4px;
           margin-bottom: 2rem;
         }
 
@@ -122,9 +111,9 @@ export default function ArticlePage({ article }) {
         }
         .back-btn {
           display: inline-flex; align-items: center; gap: 8px;
-          padding: 12px 24px; background: var(--accent); color: #08090C;
+          padding: 12px 24px; background: var(--text); color: var(--bg);
           font-family: var(--font-display); font-size: 14px; font-weight: 700;
-          text-transform: uppercase; border: none; border-radius: 8px;
+          text-transform: uppercase; border: none; border-radius: 4px;
           cursor: pointer; text-decoration: none;
         }
 

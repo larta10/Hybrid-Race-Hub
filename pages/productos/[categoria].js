@@ -83,19 +83,6 @@ export default function ProductoCategoria({ ranking }) {
 
       <style>{`
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-          --bg: #08090C; --bg2: #0F1015; --surface: #13151C; --surface2: #1A1D26;
-          --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.16);
-          --text: #F5F5F7; --muted: #8C8E9A; --muted2: #5D5F6B; --hint: #272932;
-          --ocr: #FB923C; --ocr-bg: rgba(251,146,60,0.14);
-          --hyrox: #FACC15; --hyrox-bg: rgba(250,204,21,0.12);
-          --accent: #FB923C; --accent-bg: rgba(251,146,60,0.14); --accent-mid: #FDBA74;
-          --green: #34D399; --green-bg: rgba(52,211,153,0.14);
-          --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
-          --font-body: "Inter", -apple-system, sans-serif;
-          --font-mono: "JetBrains Mono", ui-monospace, monospace;
-          --radius: 12px; --radius-sm: 8px; --radius-lg: 16px;
-        }
         body { background: var(--bg); color: var(--text); font-family: var(--font-body); }
         a { color: inherit; text-decoration: none; }
         .topbar { background: var(--bg); border-bottom: 1px solid var(--border); height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; }
@@ -106,7 +93,7 @@ export default function ProductoCategoria({ ranking }) {
         .topbar-nav { display: flex; gap: 4px; }
         .topbar-nav a { font-family: var(--font-mono); font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); padding: 6px 12px; border-radius: var(--radius-sm); border: 0.5px solid transparent; transition: color .15s, border-color .15s; }
         .topbar-nav a:hover { color: var(--text); border-color: var(--border2); }
-        .topbar-nav a.active { color: var(--accent-mid); border-color: rgba(251,146,60,0.3); }
+        .topbar-nav a.active { color: var(--text); border-color: transparent; border-radius: 0; box-shadow: inset 0 -2px 0 var(--accent); }
 
         .breadcrumb { display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted2); padding: 1rem 2rem 0; max-width: 1100px; margin: 0 auto; }
         .breadcrumb a:hover { color: var(--text); }
@@ -114,7 +101,7 @@ export default function ProductoCategoria({ ranking }) {
 
         .page-hero { background: var(--bg); border-bottom: 1px solid var(--border); padding: 2.5rem 2rem 2rem; }
         .page-hero-inner { max-width: 1100px; margin: 0 auto; }
-        .page-eyebrow { font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent-mid); margin-bottom: 8px; }
+        .page-eyebrow { font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-muted); margin-bottom: 8px; }
         .page-title { font-family: var(--font-display); font-size: clamp(36px, 6vw, 72px); font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; line-height: 0.95; color: var(--text); margin-bottom: 12px; }
         .page-sub { font-family: var(--font-body); font-size: 15px; color: var(--muted); max-width: 560px; line-height: 1.65; }
         .affiliate-notice { display: inline-block; font-family: var(--font-mono); font-size: 9px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 10px; }
@@ -134,23 +121,23 @@ export default function ProductoCategoria({ ranking }) {
         .product-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); display: flex; flex-direction: column; transition: border-color .15s, box-shadow .15s, transform .15s; overflow: hidden; }
         .product-card:hover { border-color: var(--border2); box-shadow: 0 8px 28px rgba(0,0,0,0.4); transform: translateY(-2px); }
         .product-card-head { background: var(--surface2); padding: 1.25rem 1.25rem 1rem; border-bottom: 0.5px solid var(--border); display: flex; align-items: center; gap: 12px; }
-        .product-rank { font-family: var(--font-display); font-size: 32px; font-weight: 900; color: var(--accent); line-height: 1; flex-shrink: 0; width: 32px; }
+        .product-rank { font-family: var(--font-display); font-size: 32px; font-weight: 900; color: var(--text); line-height: 1; flex-shrink: 0; width: 32px; }
         .product-name { font-family: var(--font-display); font-size: 18px; font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); line-height: 1.15; }
         .product-img-wrap { background: rgba(255,255,255,0.05); min-height: 180px; display: flex; align-items: center; justify-content: center; padding: 16px; border-bottom: 0.5px solid var(--border); position: relative; }
-        .product-img { max-height: 220px; width: 100%; object-fit: contain; border-radius: 8px; display: block; }
+        .product-img { max-height: 220px; width: 100%; object-fit: contain; border-radius: 4px; display: block; }
         .product-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; gap: 10px; }
         .product-desc { font-family: var(--font-body); font-size: 13px; color: var(--muted); line-height: 1.6; flex: 1; }
         .product-pc { display: flex; flex-direction: column; gap: 6px; }
         .product-pc-label { font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted2); }
         .product-pc-list { display: flex; flex-direction: column; gap: 3px; }
         .product-pc-item { font-family: var(--font-body); font-size: 12px; color: var(--muted); display: flex; align-items: flex-start; gap: 6px; line-height: 1.4; }
-        .pros .product-pc-item::before { content: "✓"; color: var(--green); font-size: 10px; margin-top: 2px; }
+        .pros .product-pc-item::before { content: "+"; color: var(--text-muted); font-size: 10px; margin-top: 2px; }
         .cons .product-pc-item::before { content: "✗"; color: var(--muted2); font-size: 10px; margin-top: 2px; }
-        .product-price { font-family: var(--font-mono); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent-mid); }
-        .product-cta { display: block; background: var(--accent); color: #08090C; font-family: var(--font-display); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; text-align: center; padding: 11px 16px; border-top: 0.5px solid var(--border); transition: opacity .15s; }
-        .product-cta:hover { opacity: 0.88; }
+        .product-price { font-family: var(--font-mono); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+        .product-cta { display: block; background: var(--accent); color: var(--on-accent); font-family: var(--font-display); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; text-align: center; padding: 11px 16px; border-top: 0.5px solid var(--border); transition: background-color .15s; }
+        .product-cta:hover { background: var(--accent-hover); }
         .ranking-conclusion { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-top: 1.5rem; }
-        .ranking-conclusion-label { font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent-mid); margin-bottom: 8px; }
+        .ranking-conclusion-label { font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted); margin-bottom: 8px; }
         .ranking-conclusion p { font-family: var(--font-body); font-size: 13px; color: var(--muted); line-height: 1.65; }
         .legal-text { font-family: var(--font-mono); font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.6; margin-top: 2rem; padding-top: 1.5rem; border-top: 0.5px solid var(--border); }
 
@@ -269,13 +256,13 @@ export default function ProductoCategoria({ ranking }) {
 
         {/* Enlazado interno */}
         <div style={{ marginTop: "1.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-          <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent)", border: "0.5px solid rgba(251,146,60,0.3)", borderRadius: 999, padding: "6px 14px" }}>
+          <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--text-muted)", border: "0.5px solid rgba(255,255,255,0.1)", borderRadius: 2, padding: "6px 14px" }}>
             📅 ¿Listo para competir? Ver calendario →
           </Link>
-          <Link href="/blog" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 999, padding: "6px 14px" }}>
+          <Link href="/blog" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px" }}>
             📖 Blog: guías y artículos →
           </Link>
-          <Link href="/productos" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 999, padding: "6px 14px" }}>
+          <Link href="/productos" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px" }}>
             ← Ver todos los rankings
           </Link>
         </div>

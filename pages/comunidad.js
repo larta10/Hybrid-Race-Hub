@@ -54,26 +54,9 @@ export default function Comunidad() {
       </Head>
 
       <style>{`
-        :root {
-          --bg: #08090C;
-          --bg2: #0F1015;
-          --surface: #13151C;
-          --surface2: #1A1D26;
-          --border: rgba(255,255,255,0.08);
-          --border2: rgba(255,255,255,0.16);
-          --text: #F5F5F7;
-          --muted: #8C8E9A;
-          --accent: #FB923C;
-          --accent-bg: rgba(251,146,60,0.14);
-          --accent-mid: #FDBA74;
-          --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
-          --font-body: "Inter", -apple-system, sans-serif;
-          --font-mono: "JetBrains Mono", ui-monospace, monospace;
-          --radius: 12px;
-        }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; }
-        a { color: var(--accent); text-decoration: none; }
+        a { color: var(--text); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
         .comunidad-page { max-width: 1200px; margin: 0 auto; padding: 2rem; }
@@ -84,12 +67,12 @@ export default function Comunidad() {
           text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);
           margin-bottom: 2rem;
         }
-        .back-link:hover { color: var(--accent); text-decoration: none; }
+        .back-link:hover { color: var(--text); text-decoration: none; }
 
         .comunidad-header { text-align: center; padding: 3rem 0 2rem; }
         .comunidad-eyebrow {
           font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-          text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent);
+          text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted);
           margin-bottom: 1rem;
         }
         .comunidad-title {
@@ -103,7 +86,7 @@ export default function Comunidad() {
           margin: 2rem 0 3rem;
         }
         .cat-chip {
-          padding: 8px 16px; border-radius: 999px;
+          padding: 8px 16px; border-radius: 2px;
           font-family: var(--font-body); font-size: 13px; font-weight: 500;
           background: var(--surface2); color: var(--muted);
           border: 0.5px solid var(--border); cursor: pointer;
@@ -111,8 +94,8 @@ export default function Comunidad() {
         }
         .cat-chip:hover { border-color: var(--border2); color: var(--text); }
         .cat-chip--on {
-          background: var(--accent-bg); color: var(--accent-mid);
-          border-color: var(--accent);
+          background: var(--surface2); color: var(--accent-mid);
+          border-color: var(--text);
         }
 
         .articles-grid {
@@ -136,7 +119,7 @@ export default function Comunidad() {
         .article-content { padding: 1.25rem; }
         .article-cat {
           font-family: var(--font-mono); font-size: 9px; font-weight: 600;
-          text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent);
+          text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted);
           margin-bottom: 8px;
         }
         .article-title {
@@ -172,7 +155,7 @@ export default function Comunidad() {
         .product-card:hover { border-color: var(--border2); }
         .product-image {
           width: 100%; height: 140px;
-          background: var(--surface2); border-radius: 8px;
+          background: var(--surface2); border-radius: 4px;
           margin-bottom: 1rem; object-fit: cover;
         }
         .product-name {
@@ -188,12 +171,12 @@ export default function Comunidad() {
         }
         .product-price {
           font-family: var(--font-display); font-size: 18px; font-weight: 700;
-          color: var(--accent);
+          color: var(--text);
         }
         .product-btn {
-          padding: 8px 14px; background: var(--accent); color: #08090C;
+          padding: 8px 14px; background: var(--text); color: var(--bg);
           font-family: var(--font-display); font-size: 11px; font-weight: 700;
-          text-transform: uppercase; border: none; border-radius: 6px;
+          text-transform: uppercase; border: none; border-radius: 4px;
           cursor: pointer; transition: transform 0.15s;
         }
         .product-btn:hover { transform: translateY(-1px); }

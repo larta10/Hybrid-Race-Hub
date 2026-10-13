@@ -4,9 +4,9 @@ import Image from "next/image";
 import { getPostBySlug, getAllSlugs, posts } from "../../lib/posts";
 
 const CATEGORY_COLORS = {
-  "Guías":        { color: "var(--hyrox)",   bg: "rgba(250,204,21,0.12)" },
-  "Eventos":      { color: "var(--ocr)",     bg: "rgba(251,146,60,0.14)" },
-  "Equipamiento": { color: "var(--green)",   bg: "var(--green-bg)"       },
+  "Guías":        { color: "var(--hyrox)",   bg: "rgba(255,255,255,0.06)" },
+  "Eventos":      { color: "var(--ocr)",     bg: "rgba(255,255,255,0.07)" },
+  "Equipamiento": { color: "var(--text)",    bg: "rgba(255,255,255,0.06)" },
 };
 
 export async function getStaticPaths() {
@@ -20,7 +20,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function BlogPost({ post }) {
-  const colors = CATEGORY_COLORS[post.category] || { color: "var(--accent)", bg: "var(--accent-bg)" };
+  const colors = CATEGORY_COLORS[post.category] || { color: "var(--text)", bg: "var(--surface2)" };
   const related = posts.filter((p) => p.slug !== post.slug && p.category === post.category).slice(0, 2);
 
   return (
@@ -78,21 +78,7 @@ export default function BlogPost({ post }) {
       </Head>
 
       <style>{`
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-          --bg: #08090C; --bg2: #0F1015; --surface: #13151C; --surface2: #1A1D26;
-          --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.16);
-          --text: #F5F5F7; --muted: #8C8E9A; --muted2: #5D5F6B; --hint: #272932;
-          --ocr: #FB923C; --ocr-bg: rgba(251,146,60,0.14);
-          --hyrox: #FACC15; --hyrox-bg: rgba(250,204,21,0.12);
-          --accent: #FB923C; --accent-bg: rgba(251,146,60,0.14); --accent-mid: #FDBA74;
-          --green: #34D399; --green-bg: rgba(52,211,153,0.14);
-          --red: #F87171;
-          --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
-          --font-body: "Inter", -apple-system, sans-serif;
-          --font-mono: "JetBrains Mono", ui-monospace, monospace;
-          --radius: 12px; --radius-sm: 8px; --radius-lg: 16px;
-        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: var(--bg); color: var(--text); font-family: var(--font-body); }
         a { color: inherit; text-decoration: none; }
 
@@ -142,7 +128,7 @@ export default function BlogPost({ post }) {
         .cat-tag {
           font-family: var(--font-display); font-size: 10px; font-weight: 700;
           text-transform: uppercase; letter-spacing: 0.06em;
-          padding: 2px 9px; border-radius: 999px;
+          padding: 2px 9px; border-radius: 2px;
         }
         .meta-info {
           font-family: var(--font-mono); font-size: 10px; font-weight: 500;
@@ -179,7 +165,7 @@ export default function BlogPost({ post }) {
         .art-content li { margin-bottom: .4rem; }
         .art-content strong { color: var(--text); font-weight: 600; }
         .art-content em { color: var(--muted2); }
-        .art-content a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+        .art-content a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
         .art-content a:hover { color: var(--accent-mid); }
         .art-content table {
           width: 100%; border-collapse: collapse;
@@ -226,7 +212,7 @@ export default function BlogPost({ post }) {
           display: inline-flex; align-items: center; gap: 6px;
           font-family: var(--font-mono); font-size: 10px; font-weight: 600;
           text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);
-          border: 0.5px solid var(--border); border-radius: 999px;
+          border: 0.5px solid var(--border); border-radius: 2px;
           padding: 6px 14px; margin-top: 2.5rem;
           transition: color .15s, border-color .15s;
         }
@@ -291,7 +277,7 @@ export default function BlogPost({ post }) {
             <p className="related-title">También te puede interesar</p>
             <div className="related-grid">
               {related.map((r) => {
-                const rc = CATEGORY_COLORS[r.category] || { color: "var(--accent)", bg: "var(--accent-bg)" };
+                const rc = CATEGORY_COLORS[r.category] || { color: "var(--text)", bg: "var(--surface2)" };
                 return (
                   <Link key={r.slug} href={`/blog/${r.slug}`}>
                     <div className="related-card">
@@ -310,26 +296,26 @@ export default function BlogPost({ post }) {
         <div className="related-section" style={{ marginTop: "2rem" }}>
           <p className="related-title">Te puede interesar</p>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-            <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent)", border: "0.5px solid rgba(251,146,60,0.3)", borderRadius: 999, padding: "6px 14px", textDecoration: "none" }}>
+            <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--text-muted)", border: "0.5px solid rgba(255,255,255,0.1)", borderRadius: 2, padding: "6px 14px", textDecoration: "none" }}>
               📅 Ver calendario de eventos →
             </Link>
             {post.category === "Equipamiento" && (
               <>
-                <Link href="/productos/relojes" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 999, padding: "6px 14px", textDecoration: "none" }}>
+                <Link href="/productos/relojes" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px", textDecoration: "none" }}>
                   🏆 Ranking relojes GPS →
                 </Link>
-                <Link href="/productos/zapatillas-hyrox" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 999, padding: "6px 14px", textDecoration: "none" }}>
+                <Link href="/productos/zapatillas-hyrox" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px", textDecoration: "none" }}>
                   👟 Ranking zapatillas HYROX →
                 </Link>
               </>
             )}
             {post.category === "Guías" && (
-              <Link href="/productos/pulsometros" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 999, padding: "6px 14px", textDecoration: "none" }}>
+              <Link href="/productos/pulsometros" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px", textDecoration: "none" }}>
                 ❤️ Ranking pulsómetros →
               </Link>
             )}
             {post.category === "Eventos" && (
-              <Link href="/productos/zapatillas-trail" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 999, padding: "6px 14px", textDecoration: "none" }}>
+              <Link href="/productos/zapatillas-trail" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px", textDecoration: "none" }}>
                 👟 Zapatillas trail OCR →
               </Link>
             )}
@@ -341,9 +327,9 @@ export default function BlogPost({ post }) {
       <section className="productos-reco" style={{ maxWidth: '1100px', margin: '2rem auto', padding: '0 2rem' }}>
         <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 16, fontWeight: 800, textTransform: 'uppercase', marginBottom: 8 }}>Productos recomendados</h3>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-          <Link href="/productos/relojes" className="cta-link" style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid var(--border2)', color: 'var(--text)' }}>Relojes GPS para HYROX</Link>
-          <Link href="/productos/zapatillas-hyrox" className="cta-link" style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid var(--border2)', color: 'var(--text)' }}>Ranking zapatillas HYROX</Link>
-          <Link href="/productos/zapatillas-trail" className="cta-link" style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid var(--border2)', color: 'var(--text)' }}>Ranking zapatillas OCR</Link>
+          <Link href="/productos/relojes" className="cta-link" style={{ padding: '8px 12px', borderRadius: 2, border: '1px solid var(--border2)', color: 'var(--text)' }}>Relojes GPS para HYROX</Link>
+          <Link href="/productos/zapatillas-hyrox" className="cta-link" style={{ padding: '8px 12px', borderRadius: 2, border: '1px solid var(--border2)', color: 'var(--text)' }}>Ranking zapatillas HYROX</Link>
+          <Link href="/productos/zapatillas-trail" className="cta-link" style={{ padding: '8px 12px', borderRadius: 2, border: '1px solid var(--border2)', color: 'var(--text)' }}>Ranking zapatillas OCR</Link>
         </div>
       </section>
       </div>

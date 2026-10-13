@@ -66,7 +66,7 @@ const bdr    = () => { const s = { style: "thin", color: { argb: "FF2A2D36" } };
 const fnt    = (argb, size = 10, bold = false, italic = false) => ({ name: "Calibri", size, bold, italic, color: { argb } });
 const centre = { vertical: "middle", horizontal: "center" };
 
-const C = { dark: "FF08090C", surface: "FF1A1D26", row: "FF13151C", alt: "FF0F1015", orange: "FFFB923C", white: "FFF5F5F7", muted: "FF8C8E9A", brand: "FF5D5F6B" };
+const C = { dark: "FF08090C", surface: "FF1A1D26", row: "FF13151C", alt: "FF0F1015", orange: "FFE10600", white: "FFF5F5F7", muted: "FF8C8E9A", brand: "FF5D5F6B" };
 
 function sheetHeaderFooter(ws, brand) {
   ws.getCell("A1").value = brand;

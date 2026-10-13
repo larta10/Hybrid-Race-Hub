@@ -70,21 +70,7 @@ export default function ContactOrganizers() {
         <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
       </Head>
 
-      <style>{`
-        :root {
-          --bg: #08090C;
-          --bg2: #0F1015;
-          --surface: #13151C;
-          --border2: rgba(255,255,255,0.16);
-          --text: #F5F5F7;
-          --muted: #8C8E9A;
-          --accent: #FB923C;
-          --radius-sm: 8px;
-          --radius: 12px;
-          --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
-          --font-body: "Inter", -apple-system, sans-serif;
-          --font-mono: "JetBrains Mono", ui-monospace, monospace;
-        }
+      <style>{`
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body {
@@ -94,7 +80,7 @@ export default function ContactOrganizers() {
           line-height: 1.6;
           min-height: 100vh;
         }
-        a { color: var(--accent); text-decoration: none; }
+        a { color: var(--text); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
         .contact-page { max-width: 1200px; margin: 0 auto; padding: 2rem; }
@@ -111,7 +97,7 @@ export default function ContactOrganizers() {
           color: var(--muted);
           margin-bottom: 1rem;
         }
-        .back-link:hover { color: var(--accent); text-decoration: none; }
+        .back-link:hover { color: var(--text); text-decoration: none; }
 
         .contact-hero { text-align: center; padding: 4rem 0 3rem; }
         .contact-eyebrow {
@@ -120,7 +106,7 @@ export default function ContactOrganizers() {
           font-weight: 500;
           text-transform: uppercase;
           letter-spacing: 0.14em;
-          color: var(--accent);
+          color: var(--text);
           margin-bottom: 1rem;
         }
         .contact-title {
@@ -144,7 +130,7 @@ export default function ContactOrganizers() {
         .contact-email a {
           font-family: var(--font-mono);
           font-size: 13px;
-          color: var(--accent);
+          color: var(--text);
         }
 
         .form-section { max-width: 560px; margin: 0 auto; padding: 2rem 0 4rem; }
@@ -181,9 +167,9 @@ export default function ContactOrganizers() {
           transition: border-color 0.15s;
         }
         .form-input:focus, .form-textarea:focus, .form-select:focus {
-          border-color: var(--accent);
+          border-color: var(--text);
         }
-        .form-input.error, .form-textarea.error { border-color: #F87171; }
+        .form-input.error, .form-textarea.error { border-color: var(--red); }
         .form-textarea { min-height: 130px; resize: vertical; }
         .form-select { cursor: pointer; }
 
@@ -196,8 +182,8 @@ export default function ContactOrganizers() {
           justify-content: center;
           gap: 8px;
           padding: 14px 28px;
-          background: var(--accent);
-          color: #08090C;
+          background: var(--text);
+          color: var(--bg);
           font-family: var(--font-display);
           font-size: 15px;
           font-weight: 700;
@@ -211,7 +197,7 @@ export default function ContactOrganizers() {
         }
         .form-submit:hover:not(:disabled) {
           transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(251,146,60,0.35);
+          
         }
         .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 
@@ -219,7 +205,7 @@ export default function ContactOrganizers() {
           width: 16px;
           height: 16px;
           border: 2px solid rgba(8,9,12,0.3);
-          border-top-color: #08090C;
+          border-top-color: var(--bg);
           border-radius: 50%;
           animation: spin 0.7s linear infinite;
           flex-shrink: 0;
@@ -228,10 +214,10 @@ export default function ContactOrganizers() {
 
         .alert-success {
           padding: 14px 18px;
-          background: rgba(52,211,153,0.10);
-          border: 1px solid rgba(52,211,153,0.30);
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.08);
           border-radius: var(--radius-sm);
-          color: #34D399;
+          color: var(--green);
           font-size: 14px;
           font-weight: 600;
           margin-top: 1rem;
@@ -244,7 +230,7 @@ export default function ContactOrganizers() {
           background: rgba(248,113,113,0.08);
           border: 1px solid rgba(248,113,113,0.25);
           border-radius: var(--radius-sm);
-          color: #F87171;
+          color: var(--red);
           font-size: 13px;
           margin-top: 1rem;
           line-height: 1.5;

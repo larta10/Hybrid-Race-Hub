@@ -13,7 +13,7 @@ export default function CalculadoraRedirect() {
         <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href="https://hybridracehub.com/calculadora-hyrox" />
       </Head>
-      <div style={{ background: '#08090C', minHeight: '100vh' }} />
+      <div style={{ background: 'var(--bg)', minHeight: '100vh' }} />
     </>
   );
 }

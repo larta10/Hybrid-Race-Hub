@@ -13,24 +13,15 @@ export default function Custom500() {
 
       <style>{`
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-          --bg: #08090C; --bg2: #0F1015; --surface: #13151C;
-          --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.16);
-          --text: #F5F5F7; --muted: #8C8E9A;
-          --accent: #FB923C;
-          --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
-          --font-body: "Inter", -apple-system, sans-serif;
-          --radius: 12px;
-        }
         body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; }
         a { color: inherit; text-decoration: none; }
 
         .page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
-        .error-code { font-family: var(--font-display); font-size: clamp(80px, 20vw, 160px); font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: 0.5rem; }
+        .error-code { font-family: var(--font-display); font-size: clamp(80px, 20vw, 160px); font-weight: 900; color: var(--text); line-height: 1; margin-bottom: 0.5rem; }
         .error-title { font-family: var(--font-display); font-size: clamp(22px, 4vw, 36px); font-weight: 800; text-transform: uppercase; color: var(--text); margin-bottom: 1rem; }
         .error-sub { font-family: var(--font-body); font-size: 16px; color: var(--muted); max-width: 480px; line-height: 1.65; margin-bottom: 2.5rem; }
         .links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-        .link-primary { background: var(--accent); color: #08090C; font-family: var(--font-display); font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; padding: 12px 24px; border-radius: var(--radius); transition: opacity .15s; }
+        .link-primary { background: var(--text); color: var(--bg); font-family: var(--font-display); font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; padding: 12px 24px; border-radius: var(--radius); transition: opacity .15s; }
         .link-primary:hover { opacity: 0.88; }
         .link-ghost { border: 0.5px solid var(--border2); color: var(--muted); font-family: var(--font-display); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 12px 24px; border-radius: var(--radius); transition: color .15s, border-color .15s; }
         .link-ghost:hover { color: var(--text); border-color: rgba(255,255,255,0.3); }
