@@ -9,7 +9,6 @@ export default function Custom404() {
         <title>Página no encontrada | Hybrid Race Hub</title>
         <meta name="description" content="Esta página no existe o ha sido movida. Explora el calendario de carreras OCR y HYROX en España, rankings de equipamiento y más." />
         <meta name="robots" content="noindex" />
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
       </Head>
 
       <style>{`

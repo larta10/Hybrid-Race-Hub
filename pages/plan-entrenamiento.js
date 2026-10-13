@@ -378,8 +378,7 @@ export default function PlanEntrenamiento() {
       <meta property="og:title" content="Plan de Entrenamiento Personalizado | Hybrid Race Hub" />
       <meta property="og:description" content="Genera tu plan para OCR, HYROX o CrossFit según tu nivel y objetivos." />
       <meta property="og:site_name" content="Hybrid Race Hub" />
-      <meta property="og:image" content="https://www.hybridracehub.com/og-image.svg" />
-      <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+      <meta property="og:image" content="https://www.hybridracehub.com/og-image.svg" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({

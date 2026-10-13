@@ -266,3 +266,9 @@ C1, C2, A1, A2, A3, A5, A6, M1, M2, M6, M7 resueltos.
 - M4: `comunidad.js` y `comunidad/[slug].js` importan las credenciales de `lib/shared.js`.
 - M5: `comunidad.js` muestra un mensaje de error si Supabase falla en lugar de quedarse vacío.
 - Decisión: no se reescribe el historial de git (force-push arriesgado y no elimina copias ya clonadas). La solución real es rotar la clave.
+
+### Fase 4 — Rendimiento ✅
+- B1: Google Fonts se cargan una sola vez desde `_document.js` (una hoja con todos los pesos). Eliminados 16 `<link>` de fuentes y 4 preconnects duplicados en las páginas. El navegador solo descarga los pesos que realmente se usan.
+- Eliminado el dominio de Bing de `images.remotePatterns` (ya no se usa).
+- B2 (variables CSS duplicadas en `<style>` de páginas): NO se toca. Cada página define tokens ligeramente distintos y unificarlos podría cambiar el aspecto visual; beneficio de rendimiento mínimo. Pendiente para un refactor de estilos.
+- Nota: `next lint` no funciona (incompatibilidad de versión de ESLint con `.eslintrc.json`). El build compila sin errores. Pendiente: migrar a `eslint.config.js` o fijar ESLint 8.

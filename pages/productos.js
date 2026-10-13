@@ -27,7 +27,6 @@ export default function Productos() {
         <meta name="twitter:title" content="Rankings de Equipamiento OCR y HYROX 2026 | Hybrid Race Hub" />
         <meta name="twitter:description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX." />
         <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{__html: JSON.stringify(

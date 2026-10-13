@@ -49,8 +49,7 @@ export default function BlogIndex() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Guías OCR, HYROX y Entrenamiento Híbrido 2026 | Hybrid Race Hub" />
         <meta name="twitter:description" content="Guías de entrenamiento OCR y HYROX, análisis de equipamiento y noticias sobre competiciones funcionales en España 2026." />
-        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{__html: JSON.stringify({

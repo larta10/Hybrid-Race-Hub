@@ -67,8 +67,7 @@ export default function ContactOrganizers() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contacto Organizadores — Hybrid Race Hub" />
         <meta name="twitter:description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub, el calendario de referencia en España." />
-        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
       </Head>
 
       <style>{`

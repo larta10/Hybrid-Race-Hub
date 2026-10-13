@@ -166,8 +166,7 @@ export default function Calendario() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Calendario OCR, HYROX y CrossFit España 2026 | Hybrid Race Hub" />
         <meta name="twitter:description" content="Todos los eventos OCR, HYROX y competiciones funcionales en España 2026." />
-        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
         <link rel="preconnect" href={SUPABASE_URL} />
       </Head>
 

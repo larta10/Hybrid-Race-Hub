@@ -72,8 +72,7 @@ export default function RaceHub() {
         <meta property="og:url" content="https://www.hybridracehub.com/race-hub" />
         <meta property="og:title" content="Plan de Entrenamiento HYROX — Programas Fundamentos a Elite | Hybrid Race Hub" />
         <meta property="og:description" content="5 programas de entrenamiento HYROX estructurados: desde fundamentos hasta nivel avanzado. Guías de pacing, bloques de fuerza y planes de competición." />
-        <meta property="og:site_name" content="Hybrid Race Hub" />
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+        <meta property="og:site_name" content="Hybrid Race Hub" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{__html: JSON.stringify({

@@ -296,8 +296,7 @@ export default function Home() {
         <meta name="twitter:title" content="Hybrid Race Hub — Calendario OCR, HYROX y CrossFit en España" />
         <meta name="twitter:description" content="El calendario de referencia para carreras OCR, HYROX y competiciones funcionales en España." />
         <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
-        <link rel="preconnect" href={SUPABASE_URL} />
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href={SUPABASE_URL} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{__html: JSON.stringify({

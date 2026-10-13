@@ -9,7 +9,6 @@ export default function Custom500() {
         <title>Error del servidor | Hybrid Race Hub</title>
         <meta name="description" content="Ha ocurrido un error inesperado. Vuelve al calendario de carreras OCR y HYROX en España." />
         <meta name="robots" content="noindex" />
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
       </Head>
 
       <style>{`
