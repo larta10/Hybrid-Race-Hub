@@ -37,19 +37,19 @@ export default function BlogIndex() {
         <meta name="keywords" content="guías OCR, entrenamiento HYROX, equipamiento carreras obstáculos, fitness funcional España, competiciones HYROX España, carreras OCR 2026" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.hybridracehub.com/blog" />
+        <link rel="canonical" href="https://hybridracehub.com/blog" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.hybridracehub.com/blog" />
+        <meta property="og:url" content="https://hybridracehub.com/blog" />
         <meta property="og:title" content="Guías OCR, HYROX y Entrenamiento Híbrido 2026 | Hybrid Race Hub" />
         <meta property="og:description" content="Guías de entrenamiento OCR y HYROX, análisis de equipamiento y noticias sobre competiciones funcionales en España 2026." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://www.hybridracehub.com/og-image.svg" />
+        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Guías OCR, HYROX y Entrenamiento Híbrido 2026 | Hybrid Race Hub" />
         <meta name="twitter:description" content="Guías de entrenamiento OCR y HYROX, análisis de equipamiento y noticias sobre competiciones funcionales en España 2026." />
-        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{__html: JSON.stringify({
@@ -57,12 +57,12 @@ export default function BlogIndex() {
             "@type": "ItemList",
             "name": "Blog — Hybrid Race Hub",
             "description": "Artículos sobre OCR, HYROX y fitness funcional en España",
-            "url": "https://www.hybridracehub.com/blog",
+            "url": "https://hybridracehub.com/blog",
             "numberOfItems": posts.length,
             "itemListElement": [...posts].sort((a,b)=>b.date.localeCompare(a.date)).map((p, i) => ({
               "@type": "ListItem",
               "position": i + 1,
-              "url": `https://www.hybridracehub.com/blog/${p.slug}`,
+              "url": `https://hybridracehub.com/blog/${p.slug}`,
               "name": p.title,
             })),
           })}}

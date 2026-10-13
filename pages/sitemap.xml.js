@@ -1,7 +1,7 @@
 import { getAllSlugs } from "../lib/posts";
 import { SUPABASE_URL, ANON_KEY } from "../lib/shared";
 
-const BASE = "https://www.hybridracehub.com";
+const BASE = "https://hybridracehub.com";
 
 const PRODUCT_SLUGS = [
   "relojes",

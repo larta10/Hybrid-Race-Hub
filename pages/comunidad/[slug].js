@@ -51,7 +51,7 @@ export default function ArticlePage({ article }) {
         <meta name="description" content={article.excerpt} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://www.hybridracehub.com/comunidad/${article.slug}`} />
+        <link rel="canonical" href={`https://hybridracehub.com/comunidad/${article.slug}`} />
       </Head>
 
       <style>{`

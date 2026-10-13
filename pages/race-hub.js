@@ -67,9 +67,9 @@ export default function RaceHub() {
         <meta name="description" content="5 programas de entrenamiento HYROX estructurados: desde fundamentos hasta nivel avanzado. Guías de pacing, bloques de fuerza y planes de competición para España 2026." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.hybridracehub.com/race-hub" />
+        <link rel="canonical" href="https://hybridracehub.com/race-hub" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.hybridracehub.com/race-hub" />
+        <meta property="og:url" content="https://hybridracehub.com/race-hub" />
         <meta property="og:title" content="Plan de Entrenamiento HYROX — Programas Fundamentos a Elite | Hybrid Race Hub" />
         <meta property="og:description" content="5 programas de entrenamiento HYROX estructurados: desde fundamentos hasta nivel avanzado. Guías de pacing, bloques de fuerza y planes de competición." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
@@ -80,14 +80,14 @@ export default function RaceHub() {
             "@type": "ItemList",
             "name": "Programas de Entrenamiento HYROX",
             "description": "Programas estructurados de entrenamiento HYROX para todos los niveles",
-            "url": "https://www.hybridracehub.com/race-hub",
+            "url": "https://hybridracehub.com/race-hub",
             "numberOfItems": PROGRAMS.length,
             "itemListElement": PROGRAMS.map((p, i) => ({
               "@type": "ListItem",
               "position": i + 1,
               "name": p.title,
               "description": p.detail,
-              "url": `https://www.hybridracehub.com/race-hub#${p.anchor}`,
+              "url": `https://hybridracehub.com/race-hub#${p.anchor}`,
             })),
           })}}
         />
@@ -104,7 +104,7 @@ export default function RaceHub() {
               "position": i + 1,
               "name": p.title,
               "text": (p.body && p.body[0]) || p.detail,
-              "url": `https://www.hybridracehub.com/race-hub#${p.anchor}`,
+              "url": `https://hybridracehub.com/race-hub#${p.anchor}`,
             })),
           })}}
         />

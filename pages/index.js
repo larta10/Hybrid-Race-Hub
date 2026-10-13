@@ -283,19 +283,19 @@ export default function Home() {
         <meta name="keywords" content="OCR España, HYROX España, carreras obstáculos, CrossFit competición, calendario carreras 2026" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.hybridracehub.com/" />
+        <link rel="canonical" href="https://hybridracehub.com/" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.hybridracehub.com/" />
+        <meta property="og:url" content="https://hybridracehub.com/" />
         <meta property="og:title" content="Hybrid Race Hub — Plataforma OCR, HYROX y Entrenamiento Funcional en España" />
         <meta property="og:description" content="Tu plataforma completa para el entrenamiento híbrido en España. Descubre eventos de OCR, HYROX y CrossFit, encuentra centros de entrenamiento cerca de ti y accede a rankings de equipamiento." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://www.hybridracehub.com/og-image.svg" />
+        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Hybrid Race Hub — Calendario OCR, HYROX y CrossFit en España" />
         <meta name="twitter:description" content="El calendario de referencia para carreras OCR, HYROX y competiciones funcionales en España." />
-        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
         <link rel="preconnect" href={SUPABASE_URL} />
         <script
           type="application/ld+json"
@@ -304,23 +304,23 @@ export default function Home() {
             "@graph": [
               {
                 "@type": "Organization",
-                "@id": "https://www.hybridracehub.com/#organization",
+                "@id": "https://hybridracehub.com/#organization",
                 "name": "Hybrid Race Hub",
-                "url": "https://www.hybridracehub.com/",
-                "logo": { "@type": "ImageObject", "url": "https://www.hybridracehub.com/logo.svg" },
+                "url": "https://hybridracehub.com/",
+                "logo": { "@type": "ImageObject", "url": "https://hybridracehub.com/logo.svg" },
                 "description": "Plataforma de referencia para carreras OCR, HYROX y fitness funcional en España",
                 "sameAs": ["https://www.instagram.com/hybridracehub_spain"],
               },
               {
                 "@type": "WebSite",
-                "@id": "https://www.hybridracehub.com/#website",
-                "url": "https://www.hybridracehub.com/",
+                "@id": "https://hybridracehub.com/#website",
+                "url": "https://hybridracehub.com/",
                 "name": "Hybrid Race Hub",
                 "description": "Calendario OCR, HYROX y CrossFit en España",
-                "publisher": { "@id": "https://www.hybridracehub.com/#organization" },
+                "publisher": { "@id": "https://hybridracehub.com/#organization" },
                 "potentialAction": {
                   "@type": "SearchAction",
-                  "target": { "@type": "EntryPoint", "urlTemplate": "https://www.hybridracehub.com/calendario?q={search_term_string}" },
+                  "target": { "@type": "EntryPoint", "urlTemplate": "https://hybridracehub.com/calendario?q={search_term_string}" },
                   "query-input": "required name=search_term_string",
                 },
               },

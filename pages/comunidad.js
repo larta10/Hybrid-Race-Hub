@@ -35,7 +35,7 @@ export default function Comunidad() {
         <meta name="keywords" content="comunidad OCR, artículos HYROX, guías entrenamiento híbrido, equipamiento OCR España" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.hybridracehub.com/comunidad" />
+        <link rel="canonical" href="https://hybridracehub.com/comunidad" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -43,11 +43,11 @@ export default function Comunidad() {
             "@type": "Blog",
             "name": "Comunidad Hybrid Race Hub",
             "description": "Artículos, guías y recomendaciones sobre carreras OCR, HYROX y equipamiento híbrido en España",
-            "url": "https://www.hybridracehub.com/comunidad",
+            "url": "https://hybridracehub.com/comunidad",
             "publisher": {
               "@type": "Organization",
               "name": "Hybrid Race Hub",
-              "url": "https://www.hybridracehub.com",
+              "url": "https://hybridracehub.com",
             },
           }) }}
         />

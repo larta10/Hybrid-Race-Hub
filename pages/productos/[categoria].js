@@ -35,7 +35,7 @@ export default function ProductoCategoria({ ranking }) {
       "name": product.name,
       "description": product.desc,
       "brand": { "@type": "Brand", "name": product.brand || product.name.split(" ")[0] },
-      "url": `https://www.hybridracehub.com/productos/${ranking.slug}`,
+      "url": `https://hybridracehub.com/productos/${ranking.slug}`,
       "offers": {
         "@type": "Offer",
         "url": AZ(product.asin),
@@ -51,9 +51,9 @@ export default function ProductoCategoria({ ranking }) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.hybridracehub.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Productos", "item": "https://www.hybridracehub.com/productos" },
-      { "@type": "ListItem", "position": 3, "name": ranking.title, "item": `https://www.hybridracehub.com/productos/${ranking.slug}` },
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://hybridracehub.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Productos", "item": "https://hybridracehub.com/productos" },
+      { "@type": "ListItem", "position": 3, "name": ranking.title, "item": `https://hybridracehub.com/productos/${ranking.slug}` },
     ],
   };
 
@@ -64,19 +64,19 @@ export default function ProductoCategoria({ ranking }) {
         <meta name="description" content={ranking.metaDesc} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://www.hybridracehub.com/productos/${ranking.slug}`} />
+        <link rel="canonical" href={`https://hybridracehub.com/productos/${ranking.slug}`} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://www.hybridracehub.com/productos/${ranking.slug}`} />
+        <meta property="og:url" content={`https://hybridracehub.com/productos/${ranking.slug}`} />
         <meta property="og:title" content={ranking.metaTitle} />
         <meta property="og:description" content={ranking.metaDesc} />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://www.hybridracehub.com/og-image.svg" />
+        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={ranking.metaTitle} />
         <meta name="twitter:description" content={ranking.metaDesc} />
-        <meta name="twitter:image" content="https://www.hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(productSchemas)}} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbSchema)}} />
       </Head>
