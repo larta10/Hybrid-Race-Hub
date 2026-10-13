@@ -64,7 +64,7 @@ export default function ProductImage({ src, name, category, width = 220, height 
   const icon = CATEGORY_ICONS[category] || CATEGORY_ICONS.relojes;
 
   return (
-    <div style={{
+    <div className="product-ph" style={{
       width: "100%",
       height: height,
       background: "var(--surface)",

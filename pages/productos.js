@@ -147,105 +147,6 @@ export default function Productos() {
           line-height: 1.7; margin-bottom: 0.75rem;
         }
 
-        /* COMPARISON TABLE */
-        .comp-table-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: var(--radius); border: 0.5px solid var(--border); }
-        .comp-table { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 11px; }
-        .comp-table th {
-          background: var(--surface2); color: var(--muted); font-weight: 600;
-          text-transform: uppercase; letter-spacing: 0.08em;
-          padding: 10px 14px; text-align: left; border-bottom: 0.5px solid var(--border);
-          white-space: nowrap;
-        }
-        .comp-table td {
-          padding: 9px 14px; border-bottom: 0.5px solid var(--border);
-          color: var(--text); vertical-align: middle;
-        }
-        .comp-table tr:last-child td { border-bottom: none; }
-        .comp-table tr:hover td { background: rgba(255,255,255,0.02); }
-        .comp-table td:first-child { font-family: var(--font-display); font-weight: 700; font-size: 13px; }
-
-        /* PRODUCT CARDS */
-        .products-grid {
-          display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px;
-          margin: 1.5rem 0;
-        }
-        .product-card {
-          background: var(--surface); border: 0.5px solid var(--border);
-          border-radius: var(--radius-lg); display: flex; flex-direction: column;
-          transition: border-color .15s; overflow: hidden;
-        }
-        .product-card:hover {
-          border-color: var(--border2);
-        }
-        .product-card-head {
-          background: var(--surface2); padding: 1.25rem 1.25rem 1rem;
-          border-bottom: 0.5px solid var(--border); display: flex; align-items: center; gap: 12px;
-        }
-        .product-rank {
-          font-family: var(--font-display); font-size: 32px; font-weight: 900;
-          color: var(--text); line-height: 1; flex-shrink: 0; width: 32px;
-        }
-        .product-name {
-          font-family: var(--font-display); font-size: 18px; font-weight: 800;
-          text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); line-height: 1.15;
-        }
-
-        /* PRODUCT IMAGE */
-        .product-img-wrap {
-          background: rgba(255,255,255,0.05); min-height: 180px;
-          display: flex; align-items: center; justify-content: center;
-          padding: 16px; border-bottom: 0.5px solid var(--border);
-        }
-        .product-img {
-          max-height: 220px; width: 100%; object-fit: contain; border-radius: 4px; display: block;
-        }
-        .product-img-placeholder {
-          min-height: 148px; width: 100%;
-          display: flex; align-items: center; justify-content: center;
-          background: var(--surface2); border-radius: 4px;
-          font-family: var(--font-mono); font-size: 10px; color: var(--muted2);
-          text-transform: uppercase; letter-spacing: 0.1em;
-        }
-
-        .product-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; gap: 10px; }
-        .product-desc { font-family: var(--font-body); font-size: 13px; color: var(--muted); line-height: 1.6; flex: 1; }
-        .product-pc { display: flex; flex-direction: column; gap: 6px; }
-        .product-pc-label {
-          font-family: var(--font-mono); font-size: 9px; font-weight: 600;
-          text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted2);
-        }
-        .product-pc-list { display: flex; flex-direction: column; gap: 3px; }
-        .product-pc-item {
-          font-family: var(--font-body); font-size: 12px; color: var(--muted);
-          display: flex; align-items: flex-start; gap: 6px; line-height: 1.4;
-        }
-        .product-pc-item::before { content: ""; flex-shrink: 0; margin-top: 5px; }
-        .pros .product-pc-item::before { content: "+"; color: var(--text-muted); font-size: 10px; margin-top: 2px; }
-        .cons .product-pc-item::before { content: "–"; color: var(--muted2); font-size: 10px; margin-top: 2px; }
-        .product-price {
-          font-family: var(--font-mono); font-size: 12px; font-weight: 600;
-          text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted);
-        }
-        .product-cta {
-          display: block; background: var(--accent); color: var(--on-accent);
-          font-family: var(--font-display); font-size: 13px; font-weight: 800;
-          text-transform: uppercase; letter-spacing: 0.06em;
-          text-align: center; padding: 11px 16px;
-          border-top: 0.5px solid var(--border); transition: background-color .15s;
-        }
-        .product-cta:hover { background: var(--accent-hover); }
-
-        /* CONCLUSION */
-        .ranking-conclusion {
-          background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius);
-          padding: 1.25rem 1.5rem; margin-top: 1.5rem;
-        }
-        .ranking-conclusion-label {
-          font-family: var(--font-mono); font-size: 9px; font-weight: 600;
-          text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted); margin-bottom: 8px;
-        }
-        .ranking-conclusion p { font-family: var(--font-body); font-size: 13px; color: var(--muted); line-height: 1.65; }
-
         /* LEGAL FOOTER */
         .legal-footer {
           border-top: 0.5px solid var(--border); padding: 2rem;
@@ -260,9 +161,6 @@ export default function Productos() {
           .topbar { padding: 0 1rem; }
           .page-hero { padding: 2rem 1rem 1.5rem; }
           .page-body { padding: 0 1rem 3rem; }
-          .products-grid { grid-template-columns: 1fr; }
-          .comp-table { font-size: 10px; }
-          .comp-table td, .comp-table th { padding: 8px 10px; }
           .rankings-nav { padding: 0 1rem; }
         }
       `}</style>
@@ -287,11 +185,11 @@ export default function Productos() {
       {/* Hero */}
       <div className="page-hero">
         <div className="page-hero-inner">
-          <p className="page-eyebrow">Hybrid Race Hub · Equipamiento</p>
+          <p className="page-eyebrow">Ranking · 2026 · Equipamiento</p>
           <h1 className="page-title">Rankings<br/>de Equipamiento</h1>
           <p className="page-sub">
-            Selección honesta de relojes GPS, zapatillas, pulsómetros y ropa deportiva
-            para OCR y HYROX — solo lo que vale la pena, con precio en Amazon España.
+            Relojes GPS, zapatillas, pulsómetros y ropa para OCR y HYROX. Solo lo que
+            usaríamos nosotros, con el precio de Amazon España al lado.
           </p>
           <span className="affiliate-notice">
             Como afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables.
@@ -392,57 +290,52 @@ export default function Productos() {
             </div>
 
             {/* Fichas */}
-            <div className="products-grid">
+            <ol className="products-list">
               {ranking.products.map(product => (
-                <div key={product.rank} className="product-card">
-                  <div className="product-card-head">
-                    <div className="product-rank">#{product.rank}</div>
-                    <div className="product-name">{product.name}</div>
-                  </div>
-
-                  {product.img && (
-                    <div className="product-img-wrap">
-                      <Image
-                        src={product.img}
-                        alt={product.name}
-                        width={220}
-                        height={220}
-                        className="product-img"
-                      />
-                    </div>
-                  )}
-
-                  <div className="product-body">
+                <li key={product.rank} className={`product-row${product.rank === 1 ? " product-row--top" : ""}${product.img ? "" : " product-row--noimg"}`}>
+                  <div className="product-rank" aria-label={`Puesto ${product.rank}`}>{String(product.rank).padStart(2, "0")}</div>
+                  <div className="product-main">
+                    {product.brand && <p className="product-brand">{product.brand}</p>}
+                    <h3 className="product-name">{product.name}</h3>
                     <p className="product-desc">{product.desc}</p>
-                    <div className="product-pc pros">
-                      <div className="product-pc-label">Pros</div>
-                      <div className="product-pc-list">
-                        {product.pros.map((p, i) => (
-                          <div key={i} className="product-pc-item">{p}</div>
-                        ))}
+                    <div className="product-pcs">
+                      <div className="product-pc pros">
+                        <div className="product-pc-label">A favor</div>
+                        <div className="product-pc-list">
+                          {product.pros.map((p, i) => (
+                            <div key={i} className="product-pc-item">{p}</div>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="product-pc cons">
+                        <div className="product-pc-label">En contra</div>
+                        <div className="product-pc-list">
+                          {product.cons.map((c, i) => (
+                            <div key={i} className="product-pc-item">{c}</div>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                    <div className="product-pc cons">
-                      <div className="product-pc-label">Contras</div>
-                      <div className="product-pc-list">
-                        {product.cons.map((c, i) => (
-                          <div key={i} className="product-pc-item">{c}</div>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="product-price">{product.price}</div>
                   </div>
-                  <a
-                    href={AZ(product.asin)}
-                    target="_blank"
-                    rel="nofollow sponsored noopener noreferrer"
-                    className="product-cta"
-                  >
-                    Ver en Amazon →
-                  </a>
-                </div>
+                  <div className="product-side">
+                    {product.img && (
+                      <div className="product-img-wrap">
+                        <Image src={product.img} alt={product.name} width={220} height={220} className="product-img" />
+                      </div>
+                    )}
+                    <div className="product-price">{product.price}</div>
+                    <a
+                      href={AZ(product.asin)}
+                      target="_blank"
+                      rel="nofollow sponsored noopener noreferrer"
+                      className="product-cta"
+                    >
+                      Ver precio en Amazon
+                    </a>
+                  </div>
+                </li>
               ))}
-            </div>
+            </ol>
 
             {/* Conclusión */}
             <div className="ranking-conclusion">

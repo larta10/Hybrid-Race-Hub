@@ -147,9 +147,10 @@ export default function BlogPost({ post }) {
         /* ── ARTICLE BODY ── */
         .art-body-wrap { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
         .art-content {
-          font-family: var(--font-body); font-size: 16px; color: var(--muted);
-          line-height: 1.75;
+          font-family: var(--font-body); font-size: 17px; color: var(--text-muted);
+          line-height: 1.6; max-width: 70ch;
         }
+        .art-content img { border-radius: var(--radius) !important; }
         .art-content p { margin-bottom: 1.2rem; }
         .art-content h2 {
           font-family: var(--font-display); font-size: 28px; font-weight: 800;

@@ -506,7 +506,6 @@ export default function PlanEntrenamiento() {
     .day-section-label{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted2);margin-bottom:.35rem;}
     .day-section ul{list-style:none;display:flex;flex-direction:column;gap:.2rem;}
     .day-section ul li{font-size:13px;color:var(--muted);line-height:1.5;padding-left:.9rem;position:relative;}
-    .day-section ul li::before{content:"·";position:absolute;left:0;color:var(--text);}
     .day-note{margin-top:.6rem;font-size:12px;color:var(--muted2);font-style:italic;border-left:2px solid var(--border2);padding-left:.6rem;}
     .day-rest{padding:.65rem .9rem;background:var(--bg2);color:var(--muted2);font-size:13px;font-style:italic;}
 

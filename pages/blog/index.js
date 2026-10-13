@@ -15,6 +15,8 @@ const PAGE_SIZE = 6;
 export default function BlogIndex() {
   const sorted = [...posts].sort((a, b) => b.date.localeCompare(a.date));
   const featured = sorted[0];
+  // Foto real del artículo (primera imagen del cuerpo) en lugar de un relleno tipográfico
+  const featuredImg = featured && (featured.cover || (featured.content || "").match(/<img[^>]+src="([^"]+)"/)?.[1] || "https://images.unsplash.com/photo-1741562238447-d7c44397f7e0?w=900&q=80&fit=crop&auto=format");
   const rest = sorted.slice(1);
 
   const [page, setPage] = useState(1);
@@ -137,14 +139,8 @@ export default function BlogIndex() {
           cursor: pointer;
         }
         .featured-card:hover { border-color: var(--border2); }
-        .featured-placeholder {
-          background: var(--surface2); border-radius: var(--radius);
-          display: flex; align-items: center; justify-content: center;
-          min-height: 200px;
-          font-family: var(--font-display); font-size: 80px; font-weight: 900;
-          color: var(--text); opacity: 0.15; text-transform: uppercase;
-          letter-spacing: -2px; user-select: none;
-        }
+        .featured-placeholder { background: var(--surface2); border-radius: var(--radius); min-height: 200px; }
+        .featured-photo { width: 100%; height: 100%; min-height: 240px; max-height: 340px; object-fit: cover; border-radius: var(--radius); display: block; }
         .featured-content { display: flex; flex-direction: column; justify-content: center; gap: 12px; }
         .featured-label {
           font-family: var(--font-mono); font-size: 9px; font-weight: 600;
@@ -246,9 +242,8 @@ export default function BlogIndex() {
           <p className="blog-eyebrow">Hybrid Race Hub · Blog</p>
           <h1 className="blog-title">Guías OCR<br/>& HYROX</h1>
           <p className="blog-sub">
-            Todo sobre carreras OCR 2026, competiciones HYROX España y entrenamiento
-            híbrido: guías técnicas, planes semanales, análisis de equipamiento
-            (zapatillas, relojes GPS, pulsómetros) y los mejores eventos del calendario nacional.
+            Cómo preparar tu primera OCR, cómo repartir esfuerzos en las ocho estaciones
+            de una HYROX, qué zapatilla aguanta el barro y qué carreras merecen el viaje este año.
           </p>
         </div>
       </div>
@@ -260,9 +255,9 @@ export default function BlogIndex() {
         {showFeatured && featured && (
           <Link href={`/blog/${featured.slug}`} style={{ display: "block" }}>
             <article className="featured-card">
-              <div className="featured-placeholder">
-                {featured.category.substring(0, 2).toUpperCase()}
-              </div>
+              {featuredImg
+                ? <img src={featuredImg} alt="" className="featured-photo" loading="lazy" />
+                : <div className="featured-placeholder" aria-hidden="true" />}
               <div className="featured-content">
                 <p className="featured-label">Artículo destacado</p>
                 <div className="post-meta">

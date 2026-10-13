@@ -99,53 +99,23 @@ export default function ProductoCategoria({ ranking }) {
         .breadcrumb a:hover { color: var(--text); }
         .breadcrumb-sep { color: var(--hint); }
 
-        .page-hero { background: var(--bg); border-bottom: 1px solid var(--border); padding: 2.5rem 2rem 2rem; }
+        .page-hero { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--s6) 2rem var(--s5); }
         .page-hero-inner { max-width: 1100px; margin: 0 auto; }
-        .page-eyebrow { font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-muted); margin-bottom: 8px; }
-        .page-title { font-family: var(--font-display); font-size: clamp(36px, 6vw, 72px); font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; line-height: 0.95; color: var(--text); margin-bottom: 12px; }
-        .page-sub { font-family: var(--font-body); font-size: 15px; color: var(--muted); max-width: 560px; line-height: 1.65; }
+        .page-eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--text-muted); margin-bottom: var(--s2); }
+        .page-title { font-family: var(--font-display); font-size: clamp(36px, 5vw, 48px); font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; line-height: 1; color: var(--text); margin-bottom: var(--s2); }
+        .page-sub { font-family: var(--font-body); font-size: 17px; color: var(--text-muted); max-width: 62ch; line-height: 1.6; }
         .affiliate-notice { display: inline-block; font-family: var(--font-mono); font-size: 9px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 10px; }
 
         .page-body { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 4rem; }
-        .ranking-intro { font-family: var(--font-body); font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+        .ranking-intro { font-family: var(--font-body); font-size: 17px; color: var(--text-muted); line-height: 1.6; margin-bottom: var(--s5); max-width: 70ch; }
         .ranking-intro p { margin-bottom: 0.75rem; }
 
-        .comp-table-wrap { overflow-x: auto; margin-bottom: 1.5rem; }
-        .comp-table { width: 100%; border-collapse: collapse; font-size: 13px; border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-        .comp-table th { background: var(--surface2); color: var(--text); font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 10px 14px; border-bottom: 0.5px solid var(--border2); text-align: left; white-space: nowrap; }
-        .comp-table td { padding: 10px 14px; border-bottom: 0.5px solid var(--border); color: var(--muted); }
-        .comp-table tr:last-child td { border-bottom: none; }
-        .comp-table td:first-child { font-family: var(--font-display); font-weight: 700; font-size: 13px; }
-
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin: 1.5rem 0; }
-        .product-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); display: flex; flex-direction: column; transition: border-color .15s; overflow: hidden; }
-        .product-card:hover { border-color: var(--border2); }
-        .product-card-head { background: var(--surface2); padding: 1.25rem 1.25rem 1rem; border-bottom: 0.5px solid var(--border); display: flex; align-items: center; gap: 12px; }
-        .product-rank { font-family: var(--font-display); font-size: 32px; font-weight: 900; color: var(--text); line-height: 1; flex-shrink: 0; width: 32px; }
-        .product-name { font-family: var(--font-display); font-size: 18px; font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); line-height: 1.15; }
-        .product-img-wrap { background: rgba(255,255,255,0.05); min-height: 180px; display: flex; align-items: center; justify-content: center; padding: 16px; border-bottom: 0.5px solid var(--border); position: relative; }
-        .product-img { max-height: 220px; width: 100%; object-fit: contain; border-radius: 4px; display: block; }
-        .product-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; gap: 10px; }
-        .product-desc { font-family: var(--font-body); font-size: 13px; color: var(--muted); line-height: 1.6; flex: 1; }
-        .product-pc { display: flex; flex-direction: column; gap: 6px; }
-        .product-pc-label { font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted2); }
-        .product-pc-list { display: flex; flex-direction: column; gap: 3px; }
-        .product-pc-item { font-family: var(--font-body); font-size: 12px; color: var(--muted); display: flex; align-items: flex-start; gap: 6px; line-height: 1.4; }
-        .pros .product-pc-item::before { content: "+"; color: var(--text-muted); font-size: 10px; margin-top: 2px; }
-        .cons .product-pc-item::before { content: "–"; color: var(--muted2); font-size: 10px; margin-top: 2px; }
-        .product-price { font-family: var(--font-mono); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
-        .product-cta { display: block; background: var(--accent); color: var(--on-accent); font-family: var(--font-display); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; text-align: center; padding: 11px 16px; border-top: 0.5px solid var(--border); transition: background-color .15s; }
-        .product-cta:hover { background: var(--accent-hover); }
-        .ranking-conclusion { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-top: 1.5rem; }
-        .ranking-conclusion-label { font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted); margin-bottom: 8px; }
-        .ranking-conclusion p { font-family: var(--font-body); font-size: 13px; color: var(--muted); line-height: 1.65; }
         .legal-text { font-family: var(--font-mono); font-size: 10px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.6; margin-top: 2rem; padding-top: 1.5rem; border-top: 0.5px solid var(--border); }
 
         @media (max-width: 720px) {
           .topbar { padding: 0 1rem; }
           .page-hero { padding: 2rem 1rem 1.5rem; }
           .page-body { padding: 1rem 1rem 3rem; }
-          .products-grid { grid-template-columns: 1fr; }
         }
       `}</style>
 
@@ -178,7 +148,7 @@ export default function ProductoCategoria({ ranking }) {
       {/* Hero */}
       <div className="page-hero">
         <div className="page-hero-inner">
-          <p className="page-eyebrow">Hybrid Race Hub · {ranking.eyebrow}</p>
+          <p className="page-eyebrow">Ranking · 2026 · {ranking.eyebrow}</p>
           <h1 className="page-title">{ranking.title}</h1>
           <p className="page-sub">{ranking.metaDesc}</p>
           <span className="affiliate-notice">
@@ -208,45 +178,48 @@ export default function ProductoCategoria({ ranking }) {
         </div>
 
         {/* Fichas */}
-        <div className="products-grid">
+        <ol className="products-list">
           {ranking.products.map(product => (
-            <div key={product.rank} className="product-card">
-              <div className="product-card-head">
-                <div className="product-rank">#{product.rank}</div>
-                <div className="product-name">{product.name}</div>
-              </div>
-              <div className="product-img-wrap">
-                <ProductImage
-                  src={product.img || null}
-                  name={product.name}
-                  category={ranking.slug}
-                  width={220}
-                  height={220}
-                  className="product-img"
-                />
-              </div>
-              <div className="product-body">
+            <li key={product.rank} className={`product-row${product.rank === 1 ? " product-row--top" : ""}`}>
+              <div className="product-rank" aria-label={`Puesto ${product.rank}`}>{String(product.rank).padStart(2, "0")}</div>
+              <div className="product-main">
+                {product.brand && <p className="product-brand">{product.brand}</p>}
+                <h2 className="product-name">{product.name}</h2>
                 <p className="product-desc">{product.desc}</p>
-                <div className="product-pc pros">
-                  <div className="product-pc-label">Pros</div>
-                  <div className="product-pc-list">
-                    {product.pros.map((p, i) => <div key={i} className="product-pc-item">{p}</div>)}
+                <div className="product-pcs">
+                  <div className="product-pc pros">
+                    <div className="product-pc-label">A favor</div>
+                    <div className="product-pc-list">
+                      {product.pros.map((p, i) => <div key={i} className="product-pc-item">{p}</div>)}
+                    </div>
+                  </div>
+                  <div className="product-pc cons">
+                    <div className="product-pc-label">En contra</div>
+                    <div className="product-pc-list">
+                      {product.cons.map((c, i) => <div key={i} className="product-pc-item">{c}</div>)}
+                    </div>
                   </div>
                 </div>
-                <div className="product-pc cons">
-                  <div className="product-pc-label">Contras</div>
-                  <div className="product-pc-list">
-                    {product.cons.map((c, i) => <div key={i} className="product-pc-item">{c}</div>)}
-                  </div>
+              </div>
+              <div className="product-side">
+                <div className="product-img-wrap">
+                  <ProductImage
+                    src={product.img || null}
+                    name={product.name}
+                    category={ranking.slug}
+                    width={220}
+                    height={220}
+                    className="product-img"
+                  />
                 </div>
                 <div className="product-price">{product.price}</div>
+                <a href={AZ(product.asin)} target="_blank" rel="nofollow sponsored noopener noreferrer" className="product-cta">
+                  Ver precio en Amazon
+                </a>
               </div>
-              <a href={AZ(product.asin)} target="_blank" rel="nofollow sponsored noopener noreferrer" className="product-cta">
-                Ver en Amazon →
-              </a>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
 
         {/* Conclusión */}
         <div className="ranking-conclusion">

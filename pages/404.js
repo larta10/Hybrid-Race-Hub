@@ -37,7 +37,7 @@ export default function Custom404() {
         <div className="error-code">404</div>
         <h1 className="error-title">Página no encontrada</h1>
         <p className="error-sub">
-          Esta página no existe o ha sido movida. Pero tu próxima carrera sí existe — búscala en el calendario.
+          Esta página no existe o la hemos movido. Las carreras siguen en el calendario.
         </p>
         <div className="links">
           <Link href="/calendario" className="link-primary">Ver calendario →</Link>
