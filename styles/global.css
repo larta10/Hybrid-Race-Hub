@@ -1336,3 +1336,11 @@ p { max-width: 70ch; }
   .nav-toggle { width: 44px; height: 44px; }
   .sort-btn { min-height: 40px; }
 }
+
+/* Formato citable en rankings */
+.ranking-updated { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin-top: var(--s1); }
+.quick-answer { border-left: 2px solid var(--text); padding: var(--s1) 0 var(--s1) var(--s3); margin: 0 0 var(--s5); max-width: 760px; }
+.quick-answer-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: var(--s1); }
+.quick-answer p { font-size: 17px; line-height: 1.6; color: var(--text); margin-bottom: var(--s2); }
+.quick-answer-list { padding-left: 1.2em; color: var(--text-muted); font-size: 15px; line-height: 1.6; }
+.quick-answer-list strong { color: var(--text); }

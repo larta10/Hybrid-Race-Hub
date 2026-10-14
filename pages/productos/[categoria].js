@@ -2,7 +2,8 @@ import Head from "next/head";
 import GuideCallout from "../../components/GuideCallout";
 import Link from "next/link";
 import Image from "next/image";
-import { RANKINGS, AZ } from "../../lib/rankings";
+import { RANKINGS, AZ, RANKINGS_UPDATED } from "../../lib/rankings";
+import { dateParts } from "../../lib/races-server";
 import ProductImage from "../../components/ProductImage";
 
 import { SITE_URL } from "../../lib/site";
@@ -153,6 +154,7 @@ export default function ProductoCategoria({ ranking }) {
           <p className="page-eyebrow">Ranking · 2026 · {ranking.eyebrow}</p>
           <h1 className="page-title">{ranking.title}</h1>
           <p className="page-sub">{ranking.metaDesc}</p>
+          <p className="ranking-updated">Última revisión: <time dateTime={RANKINGS_UPDATED}>{dateParts(RANKINGS_UPDATED).long}</time></p>
           <span className="affiliate-notice">
             Como afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables.
           </span>
@@ -161,6 +163,20 @@ export default function ProductoCategoria({ ranking }) {
 
       {/* Content */}
       <div className="page-body">
+        {/* Respuesta directa (formato citable) */}
+        <section className="quick-answer" aria-labelledby="respuesta-rapida">
+          <h2 id="respuesta-rapida" className="quick-answer-title">¿Cuál elegir? Respuesta rápida</h2>
+          <p>
+            <strong>Nuestra primera opción es {ranking.products[0].name}</strong> ({ranking.products[0].price}).{" "}
+            {ranking.conclusion}
+          </p>
+          <ol className="quick-answer-list">
+            {ranking.products.slice(0, 3).map(p => (
+              <li key={p.rank}><strong>{p.name}</strong> · {p.price} · {p.pros[0]}</li>
+            ))}
+          </ol>
+        </section>
+
         <div className="ranking-intro">
           {ranking.intro.map((p, i) => <p key={i}>{p}</p>)}
         </div>

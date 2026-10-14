@@ -251,7 +251,7 @@ export default function Comunidad() {
                   <p className="product-desc">{prod.description}</p>
                   <div className="product-footer">
                     <span className="product-price">{prod.price_approx}</span>
-                    <a href={prod.product_url} target="_blank" rel="noreferrer" className="product-btn">
+                    <a href={prod.product_url} target="_blank" rel="sponsored nofollow noopener noreferrer" className="product-btn">
                       Ver producto
                     </a>
                   </div>

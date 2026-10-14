@@ -61,6 +61,7 @@ export async function getServerSideProps({ res }) {
     { loc: `${BASE}/race-hub`,                  lastmod: today, changefreq: "monthly", priority: "0.7" },
     { loc: `${BASE}/comunidad`,                 lastmod: today, changefreq: "weekly",  priority: "0.6" },
     { loc: `${BASE}/productos`,                 lastmod: today, changefreq: "monthly", priority: "0.7" },
+    { loc: `${BASE}/sobre-nosotros`,            lastmod: today, changefreq: "monthly", priority: "0.5" },
     { loc: `${BASE}/contacto-organizadores`,    lastmod: today, changefreq: "monthly", priority: "0.5" },
 
     ...PRODUCT_SLUGS.map((slug) => ({

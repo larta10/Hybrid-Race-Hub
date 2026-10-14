@@ -54,7 +54,7 @@ export default function BlogPost({ post }) {
             "headline": post.title,
             "description": post.excerpt,
             "datePublished": post.date,
-            "dateModified": post.date,
+            "dateModified": post.updated || post.date,
             "author": { "@type": "Organization", "name": "Hybrid Race Hub", "url": `${SITE_URL}/` },
             "publisher": {
               "@type": "Organization",
@@ -258,7 +258,9 @@ export default function BlogPost({ post }) {
             <span className="cat-tag" style={{ background: colors.bg, color: colors.color }}>
               {post.category}
             </span>
-            <span className="meta-info">{post.date}</span>
+            <span className="meta-info">Publicado: <time dateTime={post.date}>{post.date}</time></span>
+            <span className="meta-info">·</span>
+            <span className="meta-info">Última actualización: <time dateTime={post.updated || post.date}>{post.updated || post.date}</time></span>
             <span className="meta-info">·</span>
             <span className="meta-info">{post.readTime} lectura</span>
           </div>
