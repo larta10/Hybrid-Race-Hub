@@ -10,8 +10,27 @@ import {
   FilterSection, ActiveFiltersRow, DateRangePicker,
   RaceCard, RaceModal, SiteFooter, CookieBanner, SiteNav,
 } from "../lib/shared";
+import { fetchUpcomingRaces, seasonLabel } from "../lib/races-server";
+import { withOfficialUrl } from "../lib/race-links";
 
-export default function Calendario() {
+// El HTML sale ya con las carreras (ISR): Google ve el calendario sin ejecutar JS.
+export async function getStaticProps() {
+  const races = await fetchUpcomingRaces();
+  return { props: { initialRaces: races, season: seasonLabel() }, revalidate: 3600 };
+}
+
+const MES_CORTO = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
+function nextMonths(n = 6) {
+  const [y, m] = TODAY_ISO.split("-").map(Number);
+  return Array.from({ length: n }, (_, i) => {
+    const mm = (m - 1 + i) % 12, yy = y + Math.floor((m - 1 + i) / 12);
+    const last = new Date(Date.UTC(yy, mm + 1, 0)).getUTCDate();
+    const p = v => String(v).padStart(2, "0");
+    return { key: `${yy}-${p(mm + 1)}`, label: `${MES_CORTO[mm]}${yy !== y ? ` ${String(yy).slice(2)}` : ""}`, from: `${yy}-${p(mm + 1)}-01`, to: `${yy}-${p(mm + 1)}-${p(last)}` };
+  });
+}
+
+export default function Calendario({ initialRaces = null, season = "" }) {
   const router = useRouter();
 
   const [ccaa, setCcaa]                 = useState([]);
@@ -19,8 +38,8 @@ export default function Calendario() {
   const [modalSubs, setModalSubs]       = useState([]);
   const [dateRange, setDateRange]       = useState({ from:null, to:null });
   const [textQuery, setTextQuery]       = useState("");
-  const [results, setResults]           = useState(null);
-  const [loading, setLoading]           = useState(true);
+  const [results, setResults]           = useState(initialRaces && initialRaces.length ? initialRaces : null);
+  const [loading, setLoading]           = useState(!(initialRaces && initialRaces.length));
   const [refreshing, setRefreshing]     = useState(false);
   const [error, setError]               = useState(null);
   const [totalCount, setTotalCount]     = useState(null);
@@ -108,7 +127,7 @@ export default function Calendario() {
       const data = await res.json();
       if(!Array.isArray(data)) throw new Error(data.message||"Error");
 
-      setResults(data);
+      setResults(data.map(withOfficialUrl));
     } catch {
       setError("Error de conexión. Inténtalo de nuevo.");
     } finally {
@@ -128,6 +147,13 @@ export default function Calendario() {
       headers:{ apikey:ANON_KEY, Authorization:`Bearer ${ANON_KEY}`, Prefer:"count=exact" },
     }).then(r=>{ const c=r.headers.get("content-range"); if(c) setTotalCount(c.split("/")[1]); }).catch(()=>{});
   },[]);
+
+  function selectMonth(mo){
+    const on = dateRange.from===mo.from && dateRange.to===mo.to;
+    if(!on) trackFilter("mes", mo.key);
+    setDateRange(on?{from:null,to:null}:{from:mo.from,to:mo.to});
+  }
+  const months = nextMonths(6);
 
   function handleReset(){
     setCcaa([]); setModalParents([]); setModalSubs([]);
@@ -162,8 +188,8 @@ export default function Calendario() {
   return (
     <>
       <Head>
-        <title>Calendario OCR, HYROX y CrossFit España 2026 | Hybrid Race Hub</title>
-        <meta name="description" content="Todos los eventos OCR, HYROX y competiciones funcionales en España 2026. Filtra por formato, comunidad autónoma y fecha. Actualizado a diario." />
+        <title>{`Calendario de carreras híbridas ${season}: HYROX, OCR y Spartan | Hybrid Race Hub`}</title>
+        <meta name="description" content="Calendario de carreras híbridas en España: HYROX, OCR, Spartan y DEKA. Filtra por comunidad, mes y formato y añade la carrera a tu calendario." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/calendario`} />
@@ -292,9 +318,33 @@ export default function Calendario() {
         {/* ── MAIN ── */}
         <main className="main">
           <div className="main-inner">
-            <h1 style={{ position:"absolute", width:1, height:1, padding:0, margin:-1, overflow:"hidden", clip:"rect(0,0,0,0)", whiteSpace:"nowrap", border:0 }}>
-              Calendario OCR, HYROX y CrossFit España 2026
-            </h1>
+            <h1 className="cal-h1">Calendario de carreras híbridas {season}</h1>
+
+            {/* Buscador + filtros rápidos (chips con scroll horizontal, cómodos con el pulgar) */}
+            <div className="cal-quick">
+              <label className="cal-search">
+                <span className="sr-only">Buscar carrera, ciudad o comunidad</span>
+                <input type="search" inputMode="search" enterKeyHint="search" autoComplete="off"
+                  placeholder="Buscar carrera, ciudad o comunidad"
+                  value={textQuery} onChange={e=>setTextQuery(e.target.value)}/>
+              </label>
+              <div className="cal-chips" role="group" aria-label="Filtros rápidos">
+                {MODALITIES.map(m=>(
+                  <button key={m.id} type="button" className={`qchip${modalParents.includes(m.id)?" qchip--on":""}`}
+                    aria-pressed={modalParents.includes(m.id)} onClick={()=>toggleParent(m.id)}>{m.label}</button>
+                ))}
+                <span className="qchip-sep" aria-hidden="true"/>
+                {months.map(mo=>{
+                  const on=dateRange.from===mo.from&&dateRange.to===mo.to;
+                  return <button key={mo.key} type="button" className={`qchip${on?" qchip--on":""}`} aria-pressed={on} onClick={()=>selectMonth(mo)}>{mo.label}</button>;
+                })}
+                <span className="qchip-sep" aria-hidden="true"/>
+                {availableCcaa.slice(0,10).map(c=>(
+                  <button key={c} type="button" className={`qchip${ccaa.includes(c)?" qchip--on":""}`} aria-pressed={ccaa.includes(c)}
+                    onClick={()=>{ if(!ccaa.includes(c)) trackFilter("ccaa",c); toggle(ccaa,setCcaa,c); }}>{c}</button>
+                ))}
+              </div>
+            </div>
 
             {results!==null&&!loading&&!error&&(
               <div className="results-head">

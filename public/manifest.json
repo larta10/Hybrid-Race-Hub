@@ -1,0 +1,23 @@
+{
+  "name": "Hybrid Race Hub — Carreras híbridas en España",
+  "short_name": "Hybrid Race Hub",
+  "description": "Calendario de carreras híbridas en España: HYROX, OCR, Spartan y DEKA.",
+  "lang": "es-ES",
+  "start_url": "/?utm_source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0B0B0C",
+  "theme_color": "#0B0B0C",
+  "categories": ["sports", "health", "fitness"],
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "shortcuts": [
+    { "name": "Calendario", "url": "/calendario", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Qué es una carrera híbrida", "url": "/que-es-una-carrera-hibrida", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

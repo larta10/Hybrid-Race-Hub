@@ -40,7 +40,7 @@ export default function ArticlePage({ article }) {
     return (
       <div style={{ background: "var(--bg)", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
         <a href="/comunidad" style={{ color: "var(--text)", textDecoration: "underline" }}>← Volver a Comunidad</a>
-        <h1 style={{ color: "var(--text)", fontFamily: "Barlow Condensed, sans-serif" }}>Artículo no encontrado</h1>
+        <h1 style={{ color: "var(--text)", fontFamily: "var(--font-display)" }}>Artículo no encontrado</h1>
       </div>
     );
   }

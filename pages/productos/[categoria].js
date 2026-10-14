@@ -204,7 +204,7 @@ export default function ProductoCategoria({ ranking }) {
                 </div>
               </div>
               <div className="product-side">
-                <div className="product-img-wrap">
+                <div className={`product-img-wrap${product.img ? "" : " product-img-wrap--ph"}`}>
                   <ProductImage
                     src={product.img || null}
                     name={product.name}
