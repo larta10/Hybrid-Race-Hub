@@ -311,7 +311,7 @@ export default function CalculadoraHyrox() {
 
           {/* Internal links */}
           <div style={{ marginTop:"2rem", display:"flex", gap:"0.75rem", flexWrap:"wrap" }}>
-            <Link href="/calendario/madrid" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.1em", color:"var(--text-muted)", border:"0.5px solid rgba(255,255,255,0.1)", borderRadius:2, padding:"6px 14px" }}>
+            <Link href="/carreras-hibridas/madrid" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.1em", color:"var(--text-muted)", border:"0.5px solid rgba(255,255,255,0.1)", borderRadius:2, padding:"6px 14px" }}>
               Próximas HYROX España →
             </Link>
             <Link href="/centros-entrenamiento" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.1em", color:"var(--muted)", border:"0.5px solid rgba(255,255,255,0.08)", borderRadius:2, padding:"6px 14px" }}>

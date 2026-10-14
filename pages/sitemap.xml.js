@@ -1,7 +1,9 @@
-import { getAllSlugs } from "../lib/posts";
+﻿import { getAllSlugs } from "../lib/posts";
 import { SUPABASE_URL, ANON_KEY } from "../lib/shared";
 
 import { SITE_URL } from "../lib/site";
+import { fetchUpcomingRaces } from "../lib/races-server";
+import { HYBRID_CITIES, raceMatchesCity } from "../lib/hybrid-cities";
 const BASE = `${SITE_URL}`;
 
 const PRODUCT_SLUGS = [
@@ -11,17 +13,6 @@ const PRODUCT_SLUGS = [
   "zapatillas-crossfit",
   "pulsometros",
   "ropa",
-];
-
-const CIUDAD_SLUGS = [
-  "bilbao",
-  "barcelona",
-  "madrid",
-  "valencia",
-  "malaga",
-  "sevilla",
-  "zaragoza",
-  "murcia",
 ];
 
 function buildSitemap(urls) {
@@ -47,6 +38,8 @@ export default function SitemapXml() {
 export async function getServerSideProps({ res }) {
   const today = new Date().toISOString().split("T")[0];
   const slugs = getAllSlugs().map((s) => s.params.slug);
+  const races = await fetchUpcomingRaces();
+  const cityPages = HYBRID_CITIES.filter((c) => races.some((r) => raceMatchesCity(r, c))).map((c) => c.slug);
 
   // Artículos de /comunidad (Supabase). Si falla, el sitemap se genera igual.
   let comunidad = [];
@@ -77,10 +70,11 @@ export async function getServerSideProps({ res }) {
       priority: "0.7",
     })),
 
-    ...CIUDAD_SLUGS.map((ciudad) => ({
-      loc: `${BASE}/calendario/${ciudad}`,
+    // Solo ciudades con carreras futuras (las demás llevan noindex)
+    ...cityPages.map((slug) => ({
+      loc: `${BASE}/carreras-hibridas/${slug}`,
       lastmod: today,
-      changefreq: "weekly",
+      changefreq: "daily",
       priority: "0.8",
     })),
 

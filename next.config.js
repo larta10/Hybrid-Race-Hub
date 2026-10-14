@@ -12,6 +12,16 @@ const nextConfig = {
     ],
   },
 
+  // Las antiguas páginas /calendario/<ciudad> pasan a /carreras-hibridas/<ciudad> (301).
+  // Solo redirecciones de ruta: el dominio no se toca desde el código.
+  async redirects() {
+    return ["bilbao", "barcelona", "madrid", "valencia", "malaga", "sevilla", "zaragoza", "murcia"].map(slug => ({
+      source: `/calendario/${slug}`,
+      destination: `/carreras-hibridas/${slug}`,
+      permanent: true,
+    }));
+  },
+
   async headers() {
     return [
       {
@@ -20,13 +30,6 @@ const nextConfig = {
           { key: "X-Content-Type-Options",   value: "nosniff"                      },
           { key: "X-Frame-Options",           value: "SAMEORIGIN"                   },
           { key: "Referrer-Policy",           value: "strict-origin-when-cross-origin" },
-        ],
-      },
-      {
-        /* Explicitly allow indexing for all public content pages */
-        source: "/(|calendario|blog|productos|centros-entrenamiento|calculadora-hyrox|plan-entrenamiento|race-hub|comunidad|contacto-organizadores)(.*)",
-        headers: [
-          { key: "X-Robots-Tag", value: "index, follow" },
         ],
       },
       {

@@ -261,14 +261,14 @@ export default function Calendario() {
               />
             </FilterSection>
 
-            <FilterSection title="Eventos por ciudad" active={false}>
+            <FilterSection title="Carreras híbridas por ciudad" active={false}>
               <div className="chips-wrap">
                 {[
-                  ["bilbao","Bilbao"],["barcelona","Barcelona"],["madrid","Madrid"],
-                  ["valencia","Valencia"],["malaga","Málaga"],["sevilla","Sevilla"],
-                  ["zaragoza","Zaragoza"],["murcia","Murcia"],
+                  ["madrid","Madrid"],["barcelona","Barcelona"],["valencia","Valencia"],
+                  ["sevilla","Sevilla"],["bilbao","Bilbao"],["malaga","Málaga"],
+                  ["zaragoza","Zaragoza"],["valladolid","Valladolid"],["asturias","Asturias"],["murcia","Murcia"],
                 ].map(([slug, label]) => (
-                  <a key={slug} href={`/calendario/${slug}`}
+                  <a key={slug} href={`/carreras-hibridas/${slug}`}
                     style={{ display:"inline-block", fontFamily:"var(--font-mono)", fontSize:10, fontWeight:500, textTransform:"uppercase", letterSpacing:"0.1em", color:"var(--muted)", border:"0.5px solid rgba(255,255,255,0.08)", borderRadius:2, padding:"4px 10px", textDecoration:"none", transition:"color .15s, border-color .15s" }}>
                     {label}
                   </a>

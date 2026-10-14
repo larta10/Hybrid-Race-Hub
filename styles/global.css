@@ -1295,3 +1295,16 @@ p { max-width: 70ch; }
 .guide-callout { border-top: 2px solid var(--text); border-bottom: 1px solid var(--border); padding: var(--s3) 0; margin: var(--s5) 0; max-width: 760px; }
 .guide-callout .section-label { margin-bottom: var(--s1); }
 .guide-callout-text { font-size: 17px; color: var(--text); margin-bottom: var(--s2); }
+
+/* Páginas de ciudad */
+.center-list { list-style: none; padding: 0 !important; border-top: 1px solid var(--border); }
+.center-list li { display: grid; grid-template-columns: 1fr auto; gap: 2px var(--s2); padding: 12px 0; border-bottom: 1px solid var(--border); margin: 0 !important; }
+.center-name { color: var(--text); font-weight: 600; font-size: 16px; }
+.center-meta { grid-column: 1; font-size: 14px; color: var(--text-muted); }
+.center-list a { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-size: 14px; min-height: 44px; display: flex; align-items: center; }
+.city-links--inline { grid-template-columns: repeat(3, 1fr); padding: 0 !important; margin-bottom: var(--s3); }
+.city-links--inline li { margin: 0 !important; }
+.city-links--inline a { flex-wrap: wrap; text-decoration: none !important; gap: 0 var(--s1); padding: var(--s1) 0; }
+.city-count { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; width: 100%; }
+.city-links--inline a::after { display: none; }
+@media (max-width: 720px) { .city-links--inline { grid-template-columns: 1fr; } }
