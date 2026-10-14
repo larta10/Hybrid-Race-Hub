@@ -1,7 +1,7 @@
 {
   "generado": "2026-10-14",
   "descripcion": "Carreras de 2027 en España verificadas en la web oficial del organizador o en su plataforma oficial de inscripción. Solo inserciones nuevas en la tabla races. Los datos no publicados quedan en null.",
-  "estado_insercion": "pendiente: ejecutar scripts/insert-races-2027.mjs con SUPABASE_SERVICE_KEY o scripts/insert-races-2027.sql en el editor SQL de Supabase",
+  "estado_insercion": "insertadas el 2026-10-14 vía SQL Editor de Supabase (ids 173-198), verificadas con SELECT",
   "races": [
     {
       "nombre": "Heart Fit Challenge Hybrid Race Sevilla 2027",

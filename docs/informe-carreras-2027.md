@@ -2,20 +2,24 @@
 
 Fecha de la revisión: 14 de octubre de 2026.
 
-## Importante: las carreras aún no están en Supabase
+## Resultado de la inserción
 
-La tabla `races` solo admite escrituras con la clave **service_role** (política RLS "Service write"). Esa clave no está en el equipo: `.env.local` solo tiene `RESEND_API_KEY` y no hay MCP de Supabase conectado. Con la clave pública (anon) solo se puede leer.
+Insertadas el 14 de octubre de 2026: Pablo ejecutó `scripts/insert-races-2027.sql` en el SQL Editor de Supabase, porque el MCP aún no estaba autenticado y la clave anon solo permite leer.
 
-Por eso las 26 carreras están preparadas pero **no insertadas**. Para insertarlas elige una opción (las dos solo añaden filas nuevas y se saltan las que ya existan):
+Verificación posterior con un `SELECT` a la API:
 
-1. **SQL Editor de Supabase**: pega y ejecuta `scripts/insert-races-2027.sql`. Al final hay un `SELECT` que lista las carreras de 2027 para comprobarlo.
-2. **Script con verificación por lotes**: en PowerShell, `$env:SUPABASE_SERVICE_KEY="<service_role>"; node scripts/insert-races-2027.mjs`. Inserta en lotes de 5 y verifica cada lote con un `SELECT`. Con `--dry-run` muestra lo que haría sin escribir nada.
+- La tabla `races` pasa de 166 a **192 filas**.
+- Hay **26 carreras con fecha de 2027** (ids 173–198), todas las del registro y ninguna duplicada ni fallida.
+- **Corrección**: la fila 133, Medieval Xtreme Race Peñíscola 2026, pasa del 25 de octubre de 2026 al **13 de diciembre de 2026** (`fecha` "13 Dic 2026", `fecha_iso` 2026-12-13). Lo confirma su [página oficial de inscripción](https://medievalxtremrace.com/inscripciones-peniscola/). Solo se cambió esa fila.
 
-Cuando estén insertadas, el calendario, las páginas de ciudad, el sitemap y el schema Event las mostrarán solos, en un máximo de una hora (ISR).
+Copias de seguridad previas (en `backups/`, fuera de git):
 
-Copia de seguridad previa de la tabla `races` (166 filas): `backups/races-backup-2026-10-14.json`. La carpeta `backups/` está en `.gitignore`.
+- `races-backup-2026-10-14.json`
+- `races-backup-2026-10-14-19-02.json`, justo antes de insertar
 
 Registro completo con la fuente de cada carrera: `data/import-2027-2026-10-14.json`.
+
+Para volver a insertar en otra ocasión: `scripts/insert-races-2027.sql` en el SQL Editor, o `node scripts/insert-races-2027.mjs` con `SUPABASE_SERVICE_KEY`. Los dos se saltan las filas que ya existen.
 
 ## Criterio
 
@@ -73,7 +77,7 @@ Por modalidad:
 
 Estas carreras afectan a las páginas de ciudad:
 
-- Bilbao: entran HYROX Bilbao (Barakaldo) y Desafío de Guerreros Gernika, porque la página cuenta toda Bizkaia. Dejará de ser `noindex` y entrará en el sitemap en cuanto se inserten.
+- Bilbao: entran HYROX Bilbao (Barakaldo) y Desafío de Guerreros Gernika, porque la página cuenta toda Bizkaia. Deja de ser `noindex` y entra en el sitemap.
 - Madrid, Málaga, Valencia, Barcelona, Andalucía, Cataluña, Comunidad Valenciana y Baleares (DEKA Ibiza) suman carreras nuevas.
 - Zaragoza, Valladolid, Asturias y Murcia siguen sin carreras de 2027 confirmadas y continúan como `noindex`.
 
@@ -107,7 +111,7 @@ Estas carreras afectan a las páginas de ciudad:
 | Valmeinier Throwdown (8-11 jul 2027) | Es en Francia. |
 | XXI Subida Vertical Gran Hotel Bali (3 abr 2027) | Es una subida de escaleras, no una carrera híbrida. |
 
-Aviso, sin tocar la base de datos: la web de Medieval Xtreme Race anuncia **Peñíscola el 13 de diciembre de 2026**, y la fila 133 dice 25 de octubre de 2026. Conviene revisarla a mano.
+Medieval Xtreme Race Peñíscola: la web oficial la anuncia el 13 de diciembre de 2026 y la fila 133 decía 25 de octubre. Ya está corregida (ver «Resultado de la inserción»).
 
 ## Series que todavía no han publicado su calendario de 2027
 
