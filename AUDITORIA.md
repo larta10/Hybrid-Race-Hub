@@ -76,12 +76,12 @@
 
 **A5. Sin redirección www → no-www en next.config.js**
 - Archivo: `next.config.js`
-- No hay redirección 301 de `hybridracehub.com` → `www.hybridracehub.com`
+- (Corregido 2026-10-14) El dominio oficial es `hybridracehub.com` sin www; no debe haber redirección hacia www
 - Impacto: posible indexación duplicada, pérdida de link equity
 
 **A6. Todos los canonicals y OG usan non-www**
 - Todos los `<link rel="canonical">` apuntan a `https://hybridracehub.com/...`
-- La URL oficial es `https://www.hybridracehub.com`
+- La URL oficial es `https://hybridracehub.com` (sin www)
 - Afecta a: index.js, calendario.js, blog/index.js, blog/[slug].js, productos.js, productos/[categoria].js, plan-entrenamiento.js, calculadora-hyrox.js, centros-entrenamiento.js, comunidad.js, comunidad/[slug].js, contacto-organizadores.js, race-hub.js, calendario/[ciudad].js, sitemap.xml.js
 
 ---
@@ -156,17 +156,15 @@
 
 ## ACCIONES MANUALES PABLO
 
-### ACCIÓN MANUAL PRIORITARIA — Dominio www (DNS)
-Comprobado el 2026-10-14 con `nslookup`: **`www.hybridracehub.com` NO existe en DNS** (NXDOMAIN) y **`hybridracehub.com` SÍ resuelve** (Vercel, 216.198.79.x / 64.29.17.x). Es justo al revés de lo que parecía en Search Console. Por eso hoy el dominio canónico del código es el que funciona (sin www): si se redirigiera a www, la web se caería (ya pasó el 2026-10-13).
+### ACCIÓN MANUAL PRIORITARIA — Dominio oficial: https://hybridracehub.com (sin www)
+El dominio oficial es **https://hybridracehub.com** (sin www): es el que está configurado y validado en Vercel y el que Google tiene indexado. `www.hybridracehub.com` no está configurado y **el código no contiene ninguna redirección de dominio** (ni en `next.config.js` ni en middleware). Todas las URLs absolutas salen de `SITE_URL` en `lib/site.js`.
 
-Para pasar a www como dominio oficial:
-1. Cloudflare → tu dominio → **DNS → Records → Add record**: Tipo `CNAME`, Nombre `www`, Destino `cname.vercel-dns.com`, Proxy **desactivado** (nube gris). Guardar.
-2. Vercel → proyecto → **Settings → Domains → Add**: `www.hybridracehub.com`. Espera a que ponga "Valid Configuration". Deja también `hybridracehub.com` en la lista **sin** redirección propia de Vercel.
-3. Comprueba en tu ordenador: `nslookup www.hybridracehub.com` debe devolver una IP (no "Non-existent domain"), y https://www.hybridracehub.com debe cargar la web.
-4. Vercel → **Settings → Environment Variables → Add**: `NEXT_PUBLIC_SITE_URL` = `https://www.hybridracehub.com` (entorno Production). Guardar y pulsar **Redeploy** en el último despliegue.
-5. Listo: todos los canonicals, og:url, sitemap, robots.txt y JSON-LD pasan a www, y `next.config.js` activa sola la redirección 301 `hybridracehub.com/* → https://www.hybridracehub.com/*`. En Search Console, añade la propiedad de dominio (tipo "Dominio") si no la tienes y vuelve a enviar `https://www.hybridracehub.com/sitemap.xml`.
+Opcional, si algún día quieres que www también funcione (sin cambiar el dominio oficial):
+1. Cloudflare → DNS → Records → Add record: `CNAME`, nombre `www`, destino `cname.vercel-dns.com`, nube gris (DNS only).
+2. Vercel → Settings → Domains → Add `www.hybridracehub.com` y elige **"Redirect to hybridracehub.com" (308/301)**. La redirección la hace Vercel, no el código.
+3. Comprueba con `nslookup www.hybridracehub.com` que devuelve una IP y que https://www.hybridracehub.com acaba en https://hybridracehub.com.
 
-**No hagas el paso 4 antes que el 3**: sin DNS en www, la web dejaría de cargar.
+Search Console: la propiedad y el sitemap son `https://hybridracehub.com/sitemap.xml`.
 
 ### ACCIÓN MANUAL 0 — 🔴 URGENTE: rotar la clave secreta de Supabase
 La clave `service_role` (acceso TOTAL a la base de datos) estaba escrita en el código de un repositorio público de GitHub. Ya se ha quitado del código, pero sigue visible en el historial de git, así que hay que invalidarla:
@@ -195,7 +193,7 @@ La clave `service_role` (acceso TOTAL a la base de datos) estaba escrita en el c
 1. Ve a search.google.com/search-console
 2. Selecciona la propiedad hybridracehub.com
 3. En el menú izquierdo haz clic en "Sitemaps"
-4. Añade `https://www.hybridracehub.com/sitemap.xml`
+4. Añade `https://hybridracehub.com/sitemap.xml`
 5. Haz clic en "Enviar"
 
 ### ACCIÓN MANUAL 4 — Añadir imágenes de productos
@@ -305,7 +303,7 @@ C1, C2, A1, A2, A3, A5, A6, M1, M2, M6, M7 resueltos.
 ## INCIDENCIA 2026-10-13 — web caída (DNS_PROBE_FINISHED_NXDOMAIN)
 - Causa: la redirección hybridracehub.com → www (fase 1) enviaba todo a `www.hybridracehub.com`, que NO tiene registro DNS en Cloudflare.
 - Arreglo: eliminada la redirección (commit 564705c) y canonicals/sitemap/robots/schema pasados a `https://hybridracehub.com` (commit 4eb7bb1). Verificado en producción: todas las páginas 200, 404 correcto.
-- Si en el futuro se quiere usar www: primero crear el CNAME `www` → `cname.vercel-dns.com` en Cloudflare y añadir el dominio en Vercel; comprobar con `nslookup www.hybridracehub.com 8.8.8.8`; solo después volver a poner la redirección y los canonicals con www.
+- El dominio oficial queda sin www. Si se configura www en el futuro, que sea Vercel quien redirija www → sin www (nunca al revés y nunca desde el código).
 
 ---
 
