@@ -3,7 +3,7 @@ const { haversine } = require("../lib/distance");
 import Head from "next/head";
 import Link from "next/link";
 import centrosJson from "../lib/centros-entrenamiento.json";
-import { CookieBanner } from "../lib/shared";
+import { CookieBanner, SiteNav } from "../lib/shared";
 
 import { SITE_URL } from "../lib/site";
 /* ── Data helpers ────────────────────────────────────────────────────────── */
@@ -318,14 +318,7 @@ export default function CentrosEntrenamiento() {
             <div className="brand-sub">OCR · HYROX · Functional</div>
           </div>
         </Link>
-        <nav className="topbar-nav">
-          <Link href="/">Inicio</Link>
-          <Link href="/calendario">Calendario</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/productos">Productos</Link>
-          <Link href="/calculadora-hyrox">Calculadora</Link>
-          <Link href="/centros-entrenamiento" className="active">Centros</Link>
-        </nav>
+        <SiteNav activePath="/centros-entrenamiento"/>
       </div>
 
       {/* Hero */}

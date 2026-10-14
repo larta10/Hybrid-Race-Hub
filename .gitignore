@@ -19,3 +19,6 @@ Thumbs.db
 
 # Copias locales de datos de Supabase
 backups/
+
+# Capturas del QA de layout
+qa-screenshots/

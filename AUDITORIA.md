@@ -415,3 +415,30 @@ Objetivos: LCP < 2,5 s ✅ · CLS < 0,1 ✅ · INP < 200 ms: no se mide en labor
 8. **"Carreras híbridas en Andalucía: temporada otoño-primavera"**: refuerza la página de comunidad (Sevilla, Málaga, Granada, Jaén).
 9. **"Zapatillas para HYROX vs zapatillas para OCR: cuál necesitas"**: artículo puente entre los dos rankings con más intención de compra.
 10. **"Qué llevar a tu primera carrera de obstáculos: checklist"**: lista imprimible con enlaces a ropa y zapatillas de trail.
+
+---
+
+## REGLA PERMANENTE: QA de layout responsive
+
+**Antes de cualquier push que toque UI, ejecutar `npm run qa:layout` y debe dar 0 fallos.**
+
+- Script: `scripts/qa-layout.mjs` (Playwright). Hace el build, arranca `next start` en :3100 y recorre 14 rutas: home, calendario, centros, calculadoras, blog y un artículo, rankings y un ranking, Madrid, guía, sobre nosotros, plan y 404.
+- Anchos: 360, 390, 768, 1024, 1280, 1440 y 1920 px.
+- Falla si `scrollWidth` supera el viewport o si algún elemento visible se sale por la derecha. No cuenta los contenedores con `overflow-x: auto`.
+- Capturas en `qa-screenshots/` (ignorado en git).
+- Opciones: `-- --no-build`, `-- --no-shots` o `-- https://hybridracehub.com` para revisar producción.
+- Si el Chromium de Playwright no está instalado, usa el Chrome del sistema. El 14-10-2026 la instalación falló por falta de espacio en C:.
+
+### Incidente 14-10-2026: el calendario se cortaba a 1920 px
+
+- **Causa:** `.body` usaba `grid-template-columns: 300px 1fr`. Con `1fr` (= `minmax(auto, 1fr)`), la columna principal no podía encoger por debajo del ancho mínimo de su contenido. La fila de chips (`nowrap`) la ensanchaba hasta 2.100 px y `overflow-x: hidden` en `html`/`body` lo ocultaba, cortando la 4ª columna, el buscador y los chips.
+- **QA antes:** 10 fallos. `/calendario` en los 7 anchos; `/centros-entrenamiento` a 360 y 390 px por el menú propio; home y calendario a 768 px porque el menú no cabía.
+- **Arreglo:**
+  - `minmax(0, 1fr)` y `min-width: 0` en los hijos del grid.
+  - Se quita `overflow-x: hidden` de `html`/`body`.
+  - Tarjetas en `auto-fill minmax(280px, 1fr)`: 2 columnas en tablet y 1 en móvil.
+  - Arriba del calendario solo quedan el buscador y el selector de año. Modalidad, meses y comunidades pasan al panel.
+  - Panel sticky en escritorio. Por debajo de 1024 px se abre desde abajo a pantalla completa, con "Aplicar" y "Limpiar" y el botón "Filtros (n)".
+  - Menú hamburguesa por debajo de 1024 px, también en las 6 páginas que tenían menú propio.
+  - Lugar de la tarjeta en 2 líneas; el nombre nunca se corta.
+- **QA después:** 0 fallos en las 98 combinaciones.

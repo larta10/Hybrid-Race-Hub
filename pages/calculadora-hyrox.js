@@ -1,4 +1,5 @@
 ﻿import { useState, useCallback } from "react";
+import { SiteNav } from "../lib/shared";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -226,12 +227,7 @@ export default function CalculadoraHyrox() {
             <div className="brand-sub">OCR · HYROX · Functional</div>
           </div>
         </Link>
-        <nav className="topbar-nav">
-          <Link href="/">Inicio</Link>
-          <Link href="/calendario">Calendario</Link>
-          <Link href="/calculadora-hyrox" className="active">Calculadora</Link>
-          <Link href="/centros-entrenamiento">Centros</Link>
-        </nav>
+        <SiteNav activePath="/calculadora-hyrox"/>
       </div>
 
       {/* Hero */}

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { SiteNav } from "../../lib/shared";
 import GuideCallout from "../../components/GuideCallout";
 import Link from "next/link";
 import Image from "next/image";
@@ -237,11 +238,7 @@ export default function BlogPost({ post }) {
             <div className="brand-sub">OCR · HYROX · Functional</div>
           </div>
         </Link>
-        <nav className="topbar-nav">
-          <Link href="/calendario">Calendario</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/productos">Productos</Link>
-        </nav>
+        <SiteNav activePath="/blog"/>
       </div>
 
       {/* Article hero */}

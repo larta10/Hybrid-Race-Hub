@@ -1,4 +1,5 @@
 ﻿import { useState } from "react";
+import { SiteNav } from "../../lib/shared";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -237,11 +238,7 @@ export default function BlogIndex({ year }) {
             <div className="brand-sub">OCR · HYROX · Functional</div>
           </div>
         </Link>
-        <nav className="topbar-nav">
-          <Link href="/">Calendario</Link>
-          <Link href="/blog" className="active">Blog</Link>
-          <Link href="/productos">Productos</Link>
-        </nav>
+        <SiteNav activePath="/blog"/>
       </div>
 
       {/* Hero */}

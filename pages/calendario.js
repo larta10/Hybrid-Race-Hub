@@ -156,6 +156,7 @@ export default function Calendario({ initialRaces = null, season = "", years = [
   }
   const months = nextMonths(6);
   const yearRanges = years.map(y => ({ key: y, from: y === TODAY_ISO.slice(0, 4) ? TODAY_ISO : `${y}-01-01`, to: `${y}-12-31` }));
+  const activeYear = (yearRanges.find(yr => dateRange.from===yr.from && dateRange.to===yr.to) || {}).key || null;
   function selectYear(yr){
     const on = dateRange.from===yr.from && dateRange.to===yr.to;
     if(!on) trackFilter("año", yr.key);
@@ -170,6 +171,7 @@ export default function Calendario({ initialRaces = null, season = "", years = [
 
   const anyFilter=ccaa.length||modalParents.length||modalSubs.length
     ||dateRange.from||dateRange.to||textQuery;
+  const filterCount=[ccaa.length,modalParents.length,modalSubs.length,(dateRange.from||dateRange.to)?1:0].reduce((a,b)=>a+b,0);
 
   const sorted=results?[...results].sort((a,b)=>{
     if(sortBy==="price"){
@@ -239,9 +241,10 @@ export default function Calendario({ initialRaces = null, season = "", years = [
       <div className="body">
 
         {/* ── SIDEBAR ── */}
-        <aside className={`sidebar${sidebarOpen?" sidebar--open":""}`}>
+        <aside className={`sidebar${sidebarOpen?" sidebar--open":""}`} aria-label="Filtros">
           <div className="sidebar-head">
             <span className="sidebar-head-title">Filtros</span>
+            <button type="button" className="sidebar-close" onClick={()=>setSidebarOpen(false)} aria-label="Cerrar filtros">×</button>
             {anyFilter
               ?<button className="sidebar-clear" onClick={handleReset}>Limpiar ×</button>
               :null}
@@ -288,6 +291,12 @@ export default function Calendario({ initialRaces = null, season = "", years = [
             </FilterSection>
 
             <FilterSection title="Fechas" active={!!(dateRange.from||dateRange.to)}>
+              <div className="chips-wrap month-chips">
+                {months.map(mo=>{
+                  const on=dateRange.from===mo.from&&dateRange.to===mo.to;
+                  return <button key={mo.key} type="button" className={`chip${on?" chip--on":""}`} aria-pressed={on} onClick={()=>selectMonth(mo)}>{mo.label}</button>;
+                })}
+              </div>
               <DateRangePicker
                 from={dateRange.from} to={dateRange.to}
                 onChange={({from,to})=>{ if(from||to) trackFilter("fechas",`${from||""}..${to||""}`); setDateRange({from,to}); }}
@@ -313,8 +322,9 @@ export default function Calendario({ initialRaces = null, season = "", years = [
 
           {/* Apply button — mobile bottom sheet only */}
           <div className="sidebar-apply-wrap">
-            <button className="sidebar-apply-btn" onClick={()=>setSidebarOpen(false)}>
-              Aplicar filtros
+            <button type="button" className="sidebar-reset-btn" onClick={handleReset} disabled={!anyFilter}>Limpiar</button>
+            <button type="button" className="sidebar-apply-btn" onClick={()=>setSidebarOpen(false)}>
+              {results!==null?`Aplicar · ${sorted.length} carrera${sorted.length!==1?"s":""}`:"Aplicar"}
             </button>
           </div>
         </aside>
@@ -335,27 +345,16 @@ export default function Calendario({ initialRaces = null, season = "", years = [
                   placeholder="Buscar carrera, ciudad o comunidad"
                   value={textQuery} onChange={e=>setTextQuery(e.target.value)}/>
               </label>
-              <div className="cal-chips" role="group" aria-label="Filtros rápidos">
-                {MODALITIES.map(m=>(
-                  <button key={m.id} type="button" className={`qchip${modalParents.includes(m.id)?" qchip--on":""}`}
-                    aria-pressed={modalParents.includes(m.id)} onClick={()=>toggleParent(m.id)}>{m.label}</button>
-                ))}
-                {yearRanges.length>1&&<span className="qchip-sep" aria-hidden="true"/>}
-                {yearRanges.length>1&&yearRanges.map(yr=>{
-                  const on=dateRange.from===yr.from&&dateRange.to===yr.to;
-                  return <button key={yr.key} type="button" className={`qchip${on?" qchip--on":""}`} aria-pressed={on} onClick={()=>selectYear(yr)}>{yr.key}</button>;
-                })}
-                <span className="qchip-sep" aria-hidden="true"/>
-                {months.map(mo=>{
-                  const on=dateRange.from===mo.from&&dateRange.to===mo.to;
-                  return <button key={mo.key} type="button" className={`qchip${on?" qchip--on":""}`} aria-pressed={on} onClick={()=>selectMonth(mo)}>{mo.label}</button>;
-                })}
-                <span className="qchip-sep" aria-hidden="true"/>
-                {availableCcaa.slice(0,10).map(c=>(
-                  <button key={c} type="button" className={`qchip${ccaa.includes(c)?" qchip--on":""}`} aria-pressed={ccaa.includes(c)}
-                    onClick={()=>{ if(!ccaa.includes(c)) trackFilter("ccaa",c); toggle(ccaa,setCcaa,c); }}>{c}</button>
-                ))}
-              </div>
+              {yearRanges.length>1&&(
+                <div className="cal-years" role="group" aria-label="Año">
+                  <button type="button" className={`cal-year-btn${!activeYear?" cal-year-btn--on":""}`} aria-pressed={!activeYear}
+                    onClick={()=>{ if(activeYear) setDateRange({from:null,to:null}); }}>Todas</button>
+                  {yearRanges.map(yr=>(
+                    <button key={yr.key} type="button" className={`cal-year-btn${activeYear===yr.key?" cal-year-btn--on":""}`}
+                      aria-pressed={activeYear===yr.key} onClick={()=>selectYear(yr)}>{yr.key}</button>
+                  ))}
+                </div>
+              )}
             </div>
 
             {results!==null&&!loading&&!error&&(
@@ -425,9 +424,11 @@ export default function Calendario({ initialRaces = null, season = "", years = [
       <SiteFooter/>
       <CookieBanner/>
 
-      <button className="mobile-filter-btn" onClick={()=>setSidebarOpen(o=>!o)}>
-        {sidebarOpen?"Cerrar ×":`Filtros${anyFilter?` (${[ccaa.length,modalParents.length,modalSubs.length,(dateRange.from||dateRange.to)?1:0,textQuery?1:0].reduce((a,b)=>a+b,0)})`:"" }`}
-      </button>
+      {!sidebarOpen&&(
+        <button type="button" className="mobile-filter-btn" onClick={()=>setSidebarOpen(true)} aria-haspopup="dialog">
+          {`Filtros (${filterCount})`}
+        </button>
+      )}
 
       {selectedRace&&<RaceModal race={selectedRace} onClose={()=>setSelectedRace(null)}/>}
     </>
