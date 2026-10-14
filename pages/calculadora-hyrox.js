@@ -2,6 +2,7 @@
 import Head from "next/head";
 import Link from "next/link";
 
+import { SITE_URL } from "../lib/site";
 /* ─── HYROX structure ──────────────────────────────────────────────────────── */
 const STATIONS = [
   { id:"s1",  label:"SkiErg",             detail:"1.000 m",   icon:"01",  tipo:"station" },
@@ -100,7 +101,7 @@ export default function CalculadoraHyrox() {
     "name": "Calculadora HYROX — Hybrid Race Hub",
     "applicationCategory": "Sports",
     "description": "Calcula tu tiempo total en HYROX introduciendo los tiempos de cada estación y carrera. Descubre tu categoría: Elite, Open o Finisher.",
-    "url": "https://hybridracehub.com/calculadora-hyrox",
+    "url": `${SITE_URL}/calculadora-hyrox`,
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "operatingSystem": "Web",
   };
@@ -111,18 +112,18 @@ export default function CalculadoraHyrox() {
         <title>Calculadora HYROX — Estima tu Tiempo Total | Hybrid Race Hub</title>
         <meta name="description" content="Calcula tu tiempo estimado en HYROX introduciendo los tiempos de cada estación (SkiErg, Sled Push, Rowing...) y las 8 carreras de 1km. Descubre tu categoría." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://hybridracehub.com/calculadora-hyrox" />
+        <link rel="canonical" href={`${SITE_URL}/calculadora-hyrox`} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hybridracehub.com/calculadora-hyrox" />
+        <meta property="og:url" content={`${SITE_URL}/calculadora-hyrox`} />
         <meta property="og:title" content="Calculadora HYROX — Estima tu Tiempo Total" />
         <meta property="og:description" content="Calcula tu tiempo estimado en HYROX. Introduce los tiempos de tus 8 carreras y 8 estaciones y obtén tu tiempo total y categoría." />
-        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image" content={`${SITE_URL}/og-image.svg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Calculadora HYROX — Hybrid Race Hub" />
         <meta name="twitter:description" content="Calcula tu tiempo total estimado en HYROX por estación." />
-        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.svg`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 

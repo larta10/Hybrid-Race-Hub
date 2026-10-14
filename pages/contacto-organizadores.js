@@ -1,6 +1,7 @@
 ﻿import { useState } from "react";
 import Head from "next/head";
 
+import { SITE_URL } from "../lib/site";
 const INITIAL_FORM = { nombre: "", email: "", tipo: "", mensaje: "" };
 
 export default function ContactOrganizers() {
@@ -55,19 +56,19 @@ export default function ContactOrganizers() {
         <meta name="description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub, el calendario de referencia en España. Contacta con nosotros para estudiar tu colaboración." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://hybridracehub.com/contacto-organizadores" />
+        <link rel="canonical" href={`${SITE_URL}/contacto-organizadores`} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hybridracehub.com/contacto-organizadores" />
+        <meta property="og:url" content={`${SITE_URL}/contacto-organizadores`} />
         <meta property="og:title" content="Contacto Organizadores — Hybrid Race Hub" />
         <meta property="og:description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub, el calendario de referencia en España." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image" content={`${SITE_URL}/og-image.svg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contacto Organizadores — Hybrid Race Hub" />
         <meta name="twitter:description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub, el calendario de referencia en España." />
-        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.svg`} />
       </Head>
 
       <style>{`

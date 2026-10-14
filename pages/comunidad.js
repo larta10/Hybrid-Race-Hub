@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import { SUPABASE_URL, ANON_KEY } from "../lib/shared";
 
+import { SITE_URL } from "../lib/site";
 const CATEGORIES = ["Todos", "Rankings", "Guías OCR", "Equipamiento", "Noticias"];
 
 export default function Comunidad() {
@@ -35,7 +36,7 @@ export default function Comunidad() {
         <meta name="keywords" content="comunidad OCR, artículos HYROX, guías entrenamiento híbrido, equipamiento OCR España" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://hybridracehub.com/comunidad" />
+        <link rel="canonical" href={`${SITE_URL}/comunidad`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -43,11 +44,11 @@ export default function Comunidad() {
             "@type": "Blog",
             "name": "Comunidad Hybrid Race Hub",
             "description": "Artículos, guías y recomendaciones sobre carreras OCR, HYROX y equipamiento híbrido en España",
-            "url": "https://hybridracehub.com/comunidad",
+            "url": `${SITE_URL}/comunidad`,
             "publisher": {
               "@type": "Organization",
               "name": "Hybrid Race Hub",
-              "url": "https://hybridracehub.com",
+              "url": `${SITE_URL}`,
             },
           }) }}
         />

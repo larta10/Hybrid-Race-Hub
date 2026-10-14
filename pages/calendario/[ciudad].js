@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { SUPABASE_URL, ANON_KEY, NICHE_PARENTS, formatDate } from "../../lib/shared";
 
+import { SITE_URL } from "../../lib/site";
 const CIUDADES = {
   bilbao: {
     name: "Bilbao",
@@ -116,9 +117,9 @@ export default function CalendarioCiudad({ slug, cityData }) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://hybridracehub.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Calendario", "item": "https://hybridracehub.com/calendario" },
-      { "@type": "ListItem", "position": 3, "name": cityData.name, "item": `https://hybridracehub.com/calendario/${slug}` },
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": `${SITE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Calendario", "item": `${SITE_URL}/calendario` },
+      { "@type": "ListItem", "position": 3, "name": cityData.name, "item": `${SITE_URL}/calendario/${slug}` },
     ],
   };
 
@@ -129,19 +130,19 @@ export default function CalendarioCiudad({ slug, cityData }) {
         <meta name="description" content={cityData.metaDesc} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://hybridracehub.com/calendario/${slug}`} />
+        <link rel="canonical" href={`${SITE_URL}/calendario/${slug}`} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://hybridracehub.com/calendario/${slug}`} />
+        <meta property="og:url" content={`${SITE_URL}/calendario/${slug}`} />
         <meta property="og:title" content={cityData.metaTitle} />
         <meta property="og:description" content={cityData.metaDesc} />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image" content={`${SITE_URL}/og-image.svg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={cityData.metaTitle} />
         <meta name="twitter:description" content={cityData.metaDesc} />
-        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.svg`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbSchema)}} />
       </Head>
 

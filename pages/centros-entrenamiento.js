@@ -5,6 +5,7 @@ import Link from "next/link";
 import centrosJson from "../lib/centros-entrenamiento.json";
 import { CookieBanner } from "../lib/shared";
 
+import { SITE_URL } from "../lib/site";
 /* ── Data helpers ────────────────────────────────────────────────────────── */
 const CCAA_LIST = [...new Set(centrosJson.map((c) => c.ccaa).filter(Boolean))].sort();
 const TIPO_LIST = [...new Set(centrosJson.map((c) => c.tipo).filter(Boolean))].sort();
@@ -197,18 +198,18 @@ export default function CentrosEntrenamiento() {
           content={`Directorio de ${TOTAL}+ centros de entrenamiento funcional, HYROX, OCR y CrossFit en España. Busca por ciudad o código postal y encuentra dónde preparar tu próxima carrera híbrida.`}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://hybridracehub.com/centros-entrenamiento" />
+        <link rel="canonical" href={`${SITE_URL}/centros-entrenamiento`} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hybridracehub.com/centros-entrenamiento" />
+        <meta property="og:url" content={`${SITE_URL}/centros-entrenamiento`} />
         <meta property="og:title" content="Dónde Entrenar: OCR, HYROX y CrossFit en España" />
         <meta property="og:description" content={`Directorio de ${TOTAL}+ centros de entrenamiento funcional, HYROX, OCR y CrossFit en España.`} />
-        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image" content={`${SITE_URL}/og-image.svg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Dónde Entrenar: OCR, HYROX y CrossFit en España" />
         <meta name="twitter:description" content={`Directorio de ${TOTAL}+ centros de entrenamiento funcional en España.`} />
-        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.svg`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 

@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
+
+// Dominio canónico (ver lib/site.js). La redirección 301 envía el otro host
+// (con o sin www) al canónico. Hoy: canónico = hybridracehub.com porque
+// www.hybridracehub.com no tiene DNS. Al poner NEXT_PUBLIC_SITE_URL=https://www.hybridracehub.com
+// en Vercel, la regla pasa a ser hybridracehub.com -> https://www.hybridracehub.com/:path* (301).
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://hybridracehub.com").replace(/\/+$/, "");
+const CANONICAL_HOST = new URL(SITE_URL).host;
+const ALT_HOST = CANONICAL_HOST.startsWith("www.") ? CANONICAL_HOST.slice(4) : `www.${CANONICAL_HOST}`;
+
 const nextConfig = {
   reactStrictMode: true,
 
@@ -8,6 +17,17 @@ const nextConfig = {
       { protocol: "https", hostname: "m.media-amazon.com" },
       { protocol: "https", hostname: "images.weserv.nl" },
     ],
+  },
+
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: ALT_HOST }],
+        destination: `${SITE_URL}/:path*`,
+        permanent: true,
+      },
+    ];
   },
 
   async headers() {

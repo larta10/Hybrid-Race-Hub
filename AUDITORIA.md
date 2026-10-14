@@ -156,6 +156,18 @@
 
 ## ACCIONES MANUALES PABLO
 
+### ACCIÓN MANUAL PRIORITARIA — Dominio www (DNS)
+Comprobado el 2026-10-14 con `nslookup`: **`www.hybridracehub.com` NO existe en DNS** (NXDOMAIN) y **`hybridracehub.com` SÍ resuelve** (Vercel, 216.198.79.x / 64.29.17.x). Es justo al revés de lo que parecía en Search Console. Por eso hoy el dominio canónico del código es el que funciona (sin www): si se redirigiera a www, la web se caería (ya pasó el 2026-10-13).
+
+Para pasar a www como dominio oficial:
+1. Cloudflare → tu dominio → **DNS → Records → Add record**: Tipo `CNAME`, Nombre `www`, Destino `cname.vercel-dns.com`, Proxy **desactivado** (nube gris). Guardar.
+2. Vercel → proyecto → **Settings → Domains → Add**: `www.hybridracehub.com`. Espera a que ponga "Valid Configuration". Deja también `hybridracehub.com` en la lista **sin** redirección propia de Vercel.
+3. Comprueba en tu ordenador: `nslookup www.hybridracehub.com` debe devolver una IP (no "Non-existent domain"), y https://www.hybridracehub.com debe cargar la web.
+4. Vercel → **Settings → Environment Variables → Add**: `NEXT_PUBLIC_SITE_URL` = `https://www.hybridracehub.com` (entorno Production). Guardar y pulsar **Redeploy** en el último despliegue.
+5. Listo: todos los canonicals, og:url, sitemap, robots.txt y JSON-LD pasan a www, y `next.config.js` activa sola la redirección 301 `hybridracehub.com/* → https://www.hybridracehub.com/*`. En Search Console, añade la propiedad de dominio (tipo "Dominio") si no la tienes y vuelve a enviar `https://www.hybridracehub.com/sitemap.xml`.
+
+**No hagas el paso 4 antes que el 3**: sin DNS en www, la web dejaría de cargar.
+
 ### ACCIÓN MANUAL 0 — 🔴 URGENTE: rotar la clave secreta de Supabase
 La clave `service_role` (acceso TOTAL a la base de datos) estaba escrita en el código de un repositorio público de GitHub. Ya se ha quitado del código, pero sigue visible en el historial de git, así que hay que invalidarla:
 1. Ve a supabase.com → proyecto `ssyljhtganuaanczxeep` → "Project Settings" → "API Keys".

@@ -2,6 +2,7 @@
 import Head from "next/head";
 import { generatePlan, SESSION_TYPE_META, PHASE_META } from "../lib/training-plans";
 
+import { SITE_URL } from "../lib/site";
 /* ─── DATA ─────────────────────────────────────────────────────────────── */
 
 const OBJECTIVES = [
@@ -372,13 +373,13 @@ export default function PlanEntrenamiento() {
       <meta name="description" content="Genera tu plan de entrenamiento personalizado para OCR, HYROX o CrossFit. Adaptado a tu nivel, días disponibles y puntos débiles. Gratis." />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://hybridracehub.com/plan-entrenamiento" />
+      <link rel="canonical" href={`${SITE_URL}/plan-entrenamiento`} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://hybridracehub.com/plan-entrenamiento" />
+      <meta property="og:url" content={`${SITE_URL}/plan-entrenamiento`} />
       <meta property="og:title" content="Plan de Entrenamiento Personalizado | Hybrid Race Hub" />
       <meta property="og:description" content="Genera tu plan para OCR, HYROX o CrossFit según tu nivel y objetivos." />
       <meta property="og:site_name" content="Hybrid Race Hub" />
-      <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+      <meta property="og:image" content={`${SITE_URL}/og-image.svg`} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -389,9 +390,9 @@ export default function PlanEntrenamiento() {
           "provider": {
             "@type": "Organization",
             "name": "Hybrid Race Hub",
-            "sameAs": "https://hybridracehub.com",
+            "sameAs": `${SITE_URL}`,
           },
-          "url": "https://hybridracehub.com/plan-entrenamiento",
+          "url": `${SITE_URL}/plan-entrenamiento`,
           "educationalLevel": "Beginner to Advanced",
           "inLanguage": "es-ES",
           "isAccessibleForFree": true,

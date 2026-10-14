@@ -4,6 +4,7 @@ import Image from "next/image";
 import { RANKINGS, AZ } from "../lib/rankings";
 
 
+import { SITE_URL } from "../lib/site";
 /* ─── COMPONENT ─────────────────────────────────────────────────────────────── */
 
 export default function Productos() {
@@ -14,19 +15,19 @@ export default function Productos() {
         <meta name="description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX. Con precios y enlaces a Amazon España." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://hybridracehub.com/productos" />
+        <link rel="canonical" href={`${SITE_URL}/productos`} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hybridracehub.com/productos" />
+        <meta property="og:url" content={`${SITE_URL}/productos`} />
         <meta property="og:title" content="Rankings de Equipamiento OCR y HYROX 2026 | Hybrid Race Hub" />
         <meta property="og:description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX. Con precios y enlaces a Amazon España." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta property="og:image" content={`${SITE_URL}/og-image.svg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Rankings de Equipamiento OCR y HYROX 2026 | Hybrid Race Hub" />
         <meta name="twitter:description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX." />
-        <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.svg`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{__html: JSON.stringify(
@@ -39,7 +40,7 @@ export default function Productos() {
                   "name": product.name,
                   "description": product.desc,
                   "brand": { "@type": "Brand", "name": product.brand || product.name.split(" ")[0] },
-                  "url": `https://hybridracehub.com/productos/${ranking.slug}`,
+                  "url": `${SITE_URL}/productos/${ranking.slug}`,
                   "offers": {
                     "@type": "Offer",
                     "url": AZ(product.asin),
