@@ -329,3 +329,89 @@ Edita **solo** `--accent` y `--accent-hover` en `styles/global.css` (bloque `:ro
 - Las imágenes dentro de los artículos conservan su `border-radius` inline; se limitan a 4px por CSS para no tocar `lib/posts.js`.
 - Los colores por tipo de sesión del plan de entrenamiento y por tipo de centro pasan a grises (se distinguen por la etiqueta de texto).
 - Reglas CSS de componentes que ya no existen (journey, home-secondary, home-sections…) eliminadas de `global.css`.
+
+
+---
+
+## PLAN DE TRÁFICO ORGÁNICO — "CARRERAS HÍBRIDAS" (2026-10-14)
+
+### Fase 6 — Medición: eventos dataLayer (verificados en navegador)
+| Evento | Cuándo se envía | Parámetros |
+|---|---|---|
+| `amazon_click` | Clic en cualquier enlace de Amazon (rankings, artículos, comunidad) | `product_name`, `link_url`, `page_path` |
+| `search` | Búsqueda en el calendario (1 s tras dejar de escribir, mín. 2 letras) | `search_term` |
+| `calendar_filter` | Al activar un filtro del calendario (chips o panel) | `filter_type` (tipo, subtipo, ccaa, fechas, mes), `filter_value` |
+| `organizer_click` | Clic en "Web oficial" / "Inscribirme" | `race_name`, `url` |
+| `ics_download` | Clic en "Añadir a mi calendario" | `race_name`, `race_date` |
+| `whatsapp_share` | Clic en "Compartir por WhatsApp" | `race_name`, `race_date` |
+| `city_page_view` | Al abrir una página /carreras-hibridas/<ciudad> | `city_name`, `city_slug`, `races_count` |
+
+#### Cómo verlos en GA4 (5 pasos)
+1. **GTM → Variables → Nueva → "Variable de capa de datos"**: crea una por parámetro (`product_name`, `search_term`, `filter_type`, `filter_value`, `race_name`, `race_date`, `url`, `city_name`). Nómbralas `DLV - product_name`, etc.
+2. **GTM → Activadores → Nuevo → "Evento personalizado"**: uno por evento, con el nombre exacto (`amazon_click`, `search`, `calendar_filter`, `organizer_click`, `ics_download`, `whatsapp_share`, `city_page_view`). Si tenías el activador antiguo de "Clic — solo enlaces" para Amazon u organizadores, bórralo para no contar dos veces.
+3. **GTM → Etiquetas → Nueva → "Evento de Google Analytics: GA4"**: tu ID de medición, nombre del evento = `{{Event}}`, y en "Parámetros del evento" añade cada parámetro con su variable. Activador: los 7 eventos personalizados. **Enviar → Publicar**.
+4. **GA4 → Administrar → Definiciones personalizadas → Crear dimensión personalizada** (ámbito "Evento") para `city_name`, `product_name`, `race_name`, `search_term` y `filter_value`. Marca `amazon_click`, `organizer_click` e `ics_download` como **eventos clave** en Administrar → Eventos.
+5. **GA4 → Informes → Interacción → Eventos** (datos en 24-48 h) o **Explorar → Exploración libre**: filas = Nombre del evento y la dimensión (p. ej. `city_name`), métrica = Recuento de eventos. Para verlo en directo mientras pruebas: GA4 → Administrar → **DebugView** con la extensión Tag Assistant activa.
+
+### Fase 7 — Informe
+
+#### Qué se ha hecho
+- **Dominio único**: el dominio oficial es **https://hybridracehub.com (sin www)**. Todas las URLs absolutas (canonical, og:url, JSON-LD, sitemap, robots) salen de `SITE_URL` en `lib/site.js`. No hay redirecciones de dominio en el código (la de www → sin www, si se configura, es del panel de Vercel). Las únicas redirecciones son de ruta: `/calendario/<ciudad>` → `/carreras-hibridas/<ciudad>` (permanentes).
+- **Home**: renderizada en servidor (ISR cada hora). Title `Carreras híbridas en España <temporada>: calendario Hyrox y OCR` con la temporada calculada (hoy 2026-2027), meta description nueva, H1 único "Carreras híbridas en España 2026-2027", "hybrid races" en el primer párrafo, bloque de las 6 próximas carreras reales de Supabase, accesos por ciudad y enlaces a la guía y a los rankings.
+- **Guía pilar** `/que-es-una-carrera-hibrida` (~1.700 palabras de texto + calendario dinámico): respuesta directa en la primera frase, tipos (HYROX, OCR, Spartan, DEKA y las modalidades que haya en la base de datos), tabla de las 8 estaciones HYROX, tabla comparativa HYROX vs OCR vs Spartan, categorías, preparación, material (enlaces a rankings), próximas carreras (dinámico), FAQ de 8 preguntas con FAQPage, "Última actualización" visible y `dateModified` en el schema Article. La pregunta de precios se genera solo con precios publicados en la base de datos; no hay ninguna de HYROX porque no tienen precio en la tabla.
+- **Enlazado a la guía**: home, pie de página, todos los artículos (bloque al final) y todos los rankings.
+- **Páginas por ciudad/comunidad** `/carreras-hibridas/<slug>` (15): getStaticProps + ISR diario, intro propia por ciudad (se reutilizan los textos de las antiguas páginas /calendario/<ciudad> y hay textos nuevos para Valladolid, Asturias y las comunidades), carreras reales con fecha, modalidad, precio y enlace, centros del directorio por código postal, FAQ local con FAQPage, schema SportsEvent por carrera y BreadcrumbList, ciudades cercanas y enlace a la guía. **Si no hay carreras futuras: `noindex, follow`, se muestran las carreras de las zonas cercanas y no entra en el sitemap.**
+- **Móvil**: fuentes con `next/font` (autoalojadas, sin saltos de diseño), GTM con `afterInteractive`, calendario con el HTML ya relleno (antes Google lo veía vacío), H1 visible, buscador siempre a mano y chips con scroll horizontal (modalidad, mes, comunidad) fijos arriba en móvil, objetivos táctiles de 44 px, texto base de 16 px. Cada carrera tiene **"Añadir a mi calendario"** (.ics con aviso una semana antes) y **"Compartir por WhatsApp"** (texto + URL). `manifest.json` con iconos PNG 192/512/maskable y theme-color: la web se puede instalar como app. Nueva imagen social `og-image.png` (WhatsApp y las redes no muestran SVG).
+- **Buscadores con IA**: `robots.txt` dinámico que permite Googlebot, Bingbot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Claude-SearchBot y Applebot, bloquea solo /api y páginas internas e incluye la línea Sitemap. Rankings con "Respuesta rápida" arriba (H2 en forma de pregunta + top 3 en lista) y "Última revisión" visible; artículos con "Última actualización" visible y `dateModified`. Página **/sobre-nosotros** (E-E-A-T) enlazada desde el pie, con marcadores `[COMPLETAR PABLO: …]`. Schema Organization con logo, email y sameAs de Instagram.
+- **Enlaces oficiales de carreras**: 76 carreras de la base de datos apuntaban a la portada de carrerasocr.com (un agregador, no el organizador). La web ya no muestra esos enlaces como oficiales (`lib/race-links.js`). Webs oficiales verificadas y aplicadas: Gladius Race Santacara → gladiusrace.com, Bestial Race Arucas → bestialrace.com, Desafío Costa Blanca → desafiocostablanca.com. Sin web oficial verificable: Monster Race (Sant Miquel de Campmajor), OCR Mencey Los Realejos y Gollizno Race Olivares; aparecen como "Sin web oficial".
+- **Enlaces de Amazon**: todos con `tag=hybridracehub-21` y `rel="sponsored nofollow noopener"` (también los 22 de dentro de los artículos y los productos de /comunidad).
+- **Nota**: la tabla `sport_centers` no existe en Supabase; los centros salen de `lib/centros-entrenamiento.json` (468 centros), que es lo que ya usaba la web.
+
+#### Páginas nuevas
+| URL | Estado |
+|---|---|
+| https://hybridracehub.com/que-es-una-carrera-hibrida | Indexable |
+| https://hybridracehub.com/sobre-nosotros | Indexable (completar datos personales) |
+| https://hybridracehub.com/carreras-hibridas/madrid | Indexable |
+| https://hybridracehub.com/carreras-hibridas/barcelona | Indexable |
+| https://hybridracehub.com/carreras-hibridas/valencia | Indexable |
+| https://hybridracehub.com/carreras-hibridas/sevilla | Indexable |
+| https://hybridracehub.com/carreras-hibridas/malaga | Indexable |
+| https://hybridracehub.com/carreras-hibridas/andalucia | Indexable |
+| https://hybridracehub.com/carreras-hibridas/cataluna | Indexable |
+| https://hybridracehub.com/carreras-hibridas/comunidad-valenciana | Indexable |
+| https://hybridracehub.com/carreras-hibridas/canarias | Indexable |
+| https://hybridracehub.com/carreras-hibridas/baleares | Indexable |
+| /carreras-hibridas/bilbao, /zaragoza, /valladolid, /asturias, /murcia | noindex hasta que haya carreras (pasan solas a indexables y al sitemap con el ISR diario) |
+| /calendario/<ciudad> (8 URLs antiguas) | Redirección permanente a /carreras-hibridas/<ciudad> |
+
+#### Lighthouse móvil (`--preset=perf --form-factor=mobile`, build de producción en local, mejor de 2 pasadas)
+| Página | Antes (tras fase 3) | Después (fase 4) |
+|---|---|---|
+| Home `/` | 77 · LCP 2,2 s · CLS 0,266 · TBT 280 ms | **95** · LCP 2,3 s · CLS 0,005 · TBT 100 ms |
+| Guía `/que-es-una-carrera-hibrida` | 77 · LCP 2,2 s · CLS 0,185 · TBT 440 ms | **93** · LCP 2,3 s · CLS 0 · TBT 180 ms |
+| Ciudad `/carreras-hibridas/madrid` | 93 · LCP 2,1 s · CLS 0,011 · TBT 230 ms | **96** · LCP 2,2 s · CLS 0,003 · TBT 100 ms |
+| Ranking `/productos/zapatillas-hyrox` | 95 · LCP 2,0 s · CLS 0,066 · TBT 170 ms | **97** · LCP 2,1 s · CLS 0,041 · TBT 60 ms |
+
+Objetivos: LCP < 2,5 s ✅ · CLS < 0,1 ✅ · INP < 200 ms: no se mide en laboratorio; el TBT (su indicador de laboratorio) está entre 60 y 180 ms. Revisa el INP real en Search Console → Métricas web principales dentro de 28 días.
+
+#### ACCIONES MANUAL PABLO (por orden de prioridad)
+1. **Search Console**: envía de nuevo `https://hybridracehub.com/sitemap.xml` (Sitemaps → Añadir) y pide la indexación de `/`, `/que-es-una-carrera-hibrida` y `/carreras-hibridas/madrid` con "Inspección de URLs → Solicitar indexación".
+2. **Supabase → SQL Editor**: ejecuta `scripts/fix-race-urls.sql` para dejar corregidos en la base de datos los enlaces de carrerasocr.com (pone las 3 webs oficiales verificadas y vacía el resto). Luego busca la web oficial de Monster Race, OCR Mencey Los Realejos y Gollizno Race (no encontré ediciones 2026 confirmadas de las dos últimas: revisa si siguen en pie) y actualízalas.
+3. **Completa /sobre-nosotros**: busca `[COMPLETAR PABLO` en `pages/sobre-nosotros.js` y escribe tus datos reales (nombre, pruebas que has hecho, material que usas). Es lo que más pesa para E-E-A-T.
+4. **GTM/GA4**: configura los 7 eventos siguiendo los 5 pasos de la fase 6.
+5. **Rotar la clave de Supabase** (ACCIÓN MANUAL 0, sigue pendiente si no lo hiciste).
+6. **Carreras sin precio**: las HYROX de la tabla no tienen `precio`; si lo añades, aparecerá en las fichas, en el schema Event y en la FAQ de precios de la guía.
+7. **Opcional**: configura www en Vercel como redirección a hybridracehub.com (ver "ACCIÓN MANUAL PRIORITARIA — Dominio oficial").
+
+#### 10 ideas de contenido, por potencial de tráfico
+1. **"HYROX Madrid 2026-2027: fechas, sede, categorías y cómo prepararla"**: la ciudad que ya trae clics + la marca más buscada. URL sugerida `/blog/hyrox-madrid`.
+2. **"Carreras de obstáculos para principiantes en España"**: qué distancias elegir, la lista de pruebas cortas del calendario y un plan de 8 semanas.
+3. **"HYROX Barcelona y HYROX Valencia: guía de la sede"** (dos artículos): accesos, tandas y dónde entrenar cerca (cruzando con el directorio de centros).
+4. **"Cómo entrenar para HYROX: plan de 12 semanas"**: guía larga con tablas por semana y enlace al generador de planes.
+5. **"Tiempos medios en HYROX por categoría"**: tabla de referencias y enlace a la calculadora (muy citable por buscadores con IA).
+6. **"Spartan Race en España: Sprint, Super y Beast explicados"**: distancias, obstáculos, penalizaciones y próximas fechas Spartan del calendario.
+7. **"DEKA FIT vs HYROX: diferencias y cuál elegir"**: comparativa con tabla; ahora mismo hay 3 DEKA en el calendario.
+8. **"Carreras híbridas en Andalucía: temporada otoño-primavera"**: refuerza la página de comunidad (Sevilla, Málaga, Granada, Jaén).
+9. **"Zapatillas para HYROX vs zapatillas para OCR: cuál necesitas"**: artículo puente entre los dos rankings con más intención de compra.
+10. **"Qué llevar a tu primera carrera de obstáculos: checklist"**: lista imprimible con enlaces a ropa y zapatillas de trail.

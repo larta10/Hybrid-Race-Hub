@@ -1,6 +1,6 @@
 /* Lista editorial de carreras (render en servidor). Datos reales de Supabase. */
 import { dateParts, modalityLabel } from "../lib/races-server";
-import { downloadIcs, whatsappUrl, onWhatsappShare } from "../lib/race-actions";
+import { downloadIcs, whatsappUrl, onWhatsappShare, onOrganizerClick } from "../lib/race-actions";
 
 export default function RaceList({ races, pageUrl, showRegion = true, compact = false }) {
   if (!races || races.length === 0) return null;
@@ -25,7 +25,7 @@ export default function RaceList({ races, pageUrl, showRegion = true, compact = 
             </div>
             <div className="rl-actions">
               {r.url
-                ? <a className="rl-btn rl-btn--main" href={r.url} target="_blank" rel="nofollow noopener noreferrer">Web oficial</a>
+                ? <a className="rl-btn rl-btn--main" href={r.url} target="_blank" rel="nofollow noopener noreferrer" onClick={() => onOrganizerClick(r)}>Web oficial</a>
                 : <span className="rl-btn rl-btn--off">Sin web oficial</span>}
               <button type="button" className="rl-btn" onClick={() => downloadIcs(r, pageUrl)}>Añadir a mi calendario</button>
               <a className="rl-btn" href={whatsappUrl(r, pageUrl)} target="_blank" rel="noopener noreferrer" onClick={() => onWhatsappShare(r)}>Compartir por WhatsApp</a>

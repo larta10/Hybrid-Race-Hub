@@ -1,4 +1,5 @@
-﻿import Script from "next/script";
+﻿import { useEffect } from "react";
+import Script from "next/script";
 import { Barlow_Condensed, Inter, JetBrains_Mono } from "next/font/google";
 import "../styles/global.css";
 import GoogleAnalytics from "../components/GoogleAnalytics";
@@ -14,6 +15,20 @@ const mono = JetBrains_Mono({ subsets: ["latin"], display: "swap", preload: fals
 const GTM_ID = "GTM-5D5D2CH9";
 
 export default function App({ Component, pageProps }) {
+  // amazon_click: un único listener delegado cubre rankings, artículos y comunidad
+  useEffect(() => {
+    function onClick(e) {
+      const a = e.target.closest && e.target.closest("a[href]");
+      if (!a || !/(^|\.)amazon\.[a-z.]+\//i.test(a.href.replace(/^https?:\/\//, ""))) return;
+      const card = a.closest("li, .product-row, .product-card, article");
+      const name = card?.querySelector(".product-name, h2, h3")?.textContent?.trim() || a.textContent.trim();
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "amazon_click", product_name: name.slice(0, 100), link_url: a.href, page_path: window.location.pathname });
+    }
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
+  }, []);
+
   return (
     <>
       <style jsx global>{`
