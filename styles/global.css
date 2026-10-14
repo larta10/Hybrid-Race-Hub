@@ -1344,3 +1344,15 @@ p { max-width: 70ch; }
 .quick-answer p { font-size: 17px; line-height: 1.6; color: var(--text); margin-bottom: var(--s2); }
 .quick-answer-list { padding-left: 1.2em; color: var(--text-muted); font-size: 15px; line-height: 1.6; }
 .quick-answer-list strong { color: var(--text); }
+
+/* Separador por año en el calendario (2026 / 2027…) */
+.cal-year {
+  grid-column: 1 / -1;
+  margin: var(--s4) 0 0;
+  padding-bottom: var(--s2);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--ff-display);
+  font-size: 22px; font-weight: 800; letter-spacing: .01em;
+  color: var(--text);
+}
+.cal-year:first-child { margin-top: 0; }

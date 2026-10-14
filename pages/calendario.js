@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useCallback } from "react";
+﻿import { Fragment, useState, useEffect, useCallback } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -16,7 +16,8 @@ import { withOfficialUrl } from "../lib/race-links";
 // El HTML sale ya con las carreras (ISR): Google ve el calendario sin ejecutar JS.
 export async function getStaticProps() {
   const races = await fetchUpcomingRaces();
-  return { props: { initialRaces: races, season: seasonLabel() }, revalidate: 3600 };
+  const years = [...new Set(races.map(r => (r.fecha_iso || "").slice(0, 4)).filter(Boolean))].sort();
+  return { props: { initialRaces: races, season: seasonLabel(), years }, revalidate: 3600 };
 }
 
 const MES_CORTO = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
@@ -30,7 +31,7 @@ function nextMonths(n = 6) {
   });
 }
 
-export default function Calendario({ initialRaces = null, season = "" }) {
+export default function Calendario({ initialRaces = null, season = "", years = [] }) {
   const router = useRouter();
 
   const [ccaa, setCcaa]                 = useState([]);
@@ -154,6 +155,12 @@ export default function Calendario({ initialRaces = null, season = "" }) {
     setDateRange(on?{from:null,to:null}:{from:mo.from,to:mo.to});
   }
   const months = nextMonths(6);
+  const yearRanges = years.map(y => ({ key: y, from: y === TODAY_ISO.slice(0, 4) ? TODAY_ISO : `${y}-01-01`, to: `${y}-12-31` }));
+  function selectYear(yr){
+    const on = dateRange.from===yr.from && dateRange.to===yr.to;
+    if(!on) trackFilter("año", yr.key);
+    setDateRange(on?{from:null,to:null}:{from:yr.from,to:yr.to});
+  }
 
   function handleReset(){
     setCcaa([]); setModalParents([]); setModalSubs([]);
@@ -195,15 +202,15 @@ export default function Calendario({ initialRaces = null, season = "" }) {
         <link rel="canonical" href={`${SITE_URL}/calendario`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/calendario`} />
-        <meta property="og:title" content="Calendario OCR, HYROX y CrossFit España 2026 | Hybrid Race Hub" />
-        <meta property="og:description" content="Todos los eventos OCR, HYROX y competiciones funcionales en España 2026. Filtra por formato, comunidad autónoma y fecha." />
+        <meta property="og:title" content={`Calendario OCR, HYROX y CrossFit España ${season} | Hybrid Race Hub`} />
+        <meta property="og:description" content={`Todos los eventos OCR, HYROX y competiciones funcionales en España ${season}. Filtra por formato, comunidad autónoma, año y mes.`} />
         <meta property="og:site_name" content="Hybrid Race Hub" />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Calendario OCR, HYROX y CrossFit España 2026 | Hybrid Race Hub" />
-        <meta name="twitter:description" content="Todos los eventos OCR, HYROX y competiciones funcionales en España 2026." />
+        <meta name="twitter:title" content={`Calendario OCR, HYROX y CrossFit España ${season} | Hybrid Race Hub`} />
+        <meta name="twitter:description" content={`Todos los eventos OCR, HYROX y competiciones funcionales en España ${season}.`} />
         <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <link rel="preconnect" href={SUPABASE_URL} />
       </Head>
@@ -333,6 +340,11 @@ export default function Calendario({ initialRaces = null, season = "" }) {
                   <button key={m.id} type="button" className={`qchip${modalParents.includes(m.id)?" qchip--on":""}`}
                     aria-pressed={modalParents.includes(m.id)} onClick={()=>toggleParent(m.id)}>{m.label}</button>
                 ))}
+                {yearRanges.length>1&&<span className="qchip-sep" aria-hidden="true"/>}
+                {yearRanges.length>1&&yearRanges.map(yr=>{
+                  const on=dateRange.from===yr.from&&dateRange.to===yr.to;
+                  return <button key={yr.key} type="button" className={`qchip${on?" qchip--on":""}`} aria-pressed={on} onClick={()=>selectYear(yr)}>{yr.key}</button>;
+                })}
                 <span className="qchip-sep" aria-hidden="true"/>
                 {months.map(mo=>{
                   const on=dateRange.from===mo.from&&dateRange.to===mo.to;
@@ -392,9 +404,17 @@ export default function Calendario({ initialRaces = null, season = "" }) {
                 </div>
               ):(
                 <div className="race-grid">
-                  {sorted.map((r,i)=>(
-                    <RaceCard key={r.id||i} race={r} featured={i===0} onClick={()=>setSelectedRace(r)}/>
-                  ))}
+                  {sorted.map((r,i)=>{
+                    const y=(r.fecha_iso||"").slice(0,4);
+                    const prevY=i>0?(sorted[i-1].fecha_iso||"").slice(0,4):null;
+                    const showYear=sortBy==="date"&&y&&y!==prevY&&(i>0||sorted.some(x=>(x.fecha_iso||"").slice(0,4)!==y));
+                    return (
+                      <Fragment key={r.id||i}>
+                        {showYear&&<h2 className="cal-year" id={`carreras-${y}`}>Carreras de {y}</h2>}
+                        <RaceCard race={r} featured={i===0} onClick={()=>setSelectedRace(r)}/>
+                      </Fragment>
+                    );
+                  })}
                 </div>
               )
             )}

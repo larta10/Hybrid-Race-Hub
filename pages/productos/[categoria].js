@@ -151,7 +151,7 @@ export default function ProductoCategoria({ ranking }) {
       {/* Hero */}
       <div className="page-hero">
         <div className="page-hero-inner">
-          <p className="page-eyebrow">Ranking · 2026 · {ranking.eyebrow}</p>
+          <p className="page-eyebrow">Ranking · {RANKINGS_UPDATED.slice(0, 4)} · {ranking.eyebrow}</p>
           <h1 className="page-title">{ranking.title}</h1>
           <p className="page-sub">{ranking.metaDesc}</p>
           <p className="ranking-updated">Última revisión: <time dateTime={RANKINGS_UPDATED}>{dateParts(RANKINGS_UPDATED).long}</time></p>

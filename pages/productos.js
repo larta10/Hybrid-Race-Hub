@@ -2,7 +2,7 @@
 import GuideCallout from "../components/GuideCallout";
 import Link from "next/link";
 import Image from "next/image";
-import { RANKINGS, AZ } from "../lib/rankings";
+import { RANKINGS, AZ, RANKINGS_UPDATED } from "../lib/rankings";
 
 
 import { SITE_URL } from "../lib/site";
@@ -12,21 +12,21 @@ export default function Productos() {
   return (
     <>
       <Head>
-        <title>Rankings de Equipamiento OCR y HYROX 2026 | Hybrid Race Hub</title>
+        <title>{`Rankings de Equipamiento OCR y HYROX ${RANKINGS_UPDATED.slice(0, 4)} | Hybrid Race Hub`}</title>
         <meta name="description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX. Con precios y enlaces a Amazon España." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/productos`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/productos`} />
-        <meta property="og:title" content="Rankings de Equipamiento OCR y HYROX 2026 | Hybrid Race Hub" />
+        <meta property="og:title" content={`Rankings de Equipamiento OCR y HYROX ${RANKINGS_UPDATED.slice(0, 4)} | Hybrid Race Hub`} />
         <meta property="og:description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX. Con precios y enlaces a Amazon España." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Rankings de Equipamiento OCR y HYROX 2026 | Hybrid Race Hub" />
+        <meta name="twitter:title" content={`Rankings de Equipamiento OCR y HYROX ${RANKINGS_UPDATED.slice(0, 4)} | Hybrid Race Hub`} />
         <meta name="twitter:description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX." />
         <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <script
@@ -187,7 +187,7 @@ export default function Productos() {
       {/* Hero */}
       <div className="page-hero">
         <div className="page-hero-inner">
-          <p className="page-eyebrow">Ranking · 2026 · Equipamiento</p>
+          <p className="page-eyebrow">Ranking · {RANKINGS_UPDATED.slice(0, 4)} · Equipamiento</p>
           <h1 className="page-title">Rankings<br/>de Equipamiento</h1>
           <p className="page-sub">
             Relojes GPS, zapatillas, pulsómetros y ropa para OCR y HYROX. Solo lo que

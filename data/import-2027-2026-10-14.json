@@ -1,0 +1,293 @@
+{
+  "generado": "2026-10-14",
+  "descripcion": "Carreras de 2027 en España verificadas en la web oficial del organizador o en su plataforma oficial de inscripción. Solo inserciones nuevas en la tabla races. Los datos no publicados quedan en null.",
+  "estado_insercion": "pendiente: ejecutar scripts/insert-races-2027.mjs con SUPABASE_SERVICE_KEY o scripts/insert-races-2027.sql en el editor SQL de Supabase",
+  "races": [
+    {
+      "nombre": "Heart Fit Challenge Hybrid Race Sevilla 2027",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "16 Ene 2027", "fecha_iso": "2027-01-16",
+      "ubicacion": "Centro Deportivo Bellavista, Sevilla", "municipio": "Sevilla", "provincia": "Sevilla", "comunidad": "Andalucía", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": null, "estado": "Abierta", "formato": null,
+      "notas": "Carrera híbrida. Precios y categorías en la página de inscripción.",
+      "url": "https://my.weezevent.com/heart-fit-challenge-hybrid-race-sevilla-2",
+      "source": "weezevent.com",
+      "_fuente": "https://my.weezevent.com/heart-fit-challenge-hybrid-race-sevilla-2 (plataforma oficial de entradas: 16 de enero de 2027, Centro Deportivo Bellavista, C/ Gaspar Calderas s/n, 41014 Sevilla)"
+    },
+    {
+      "nombre": "HYROX Bilbao 2027",
+      "modalidad": "HYROX", "modalidad_id": "func-hyrox", "modalidad_parent": "funcional",
+      "fecha": "6 Feb 2027", "fecha_iso": "2027-02-06",
+      "ubicacion": "Bilbao Exhibition Centre, Barakaldo", "municipio": "Barakaldo", "provincia": "Bizkaia", "comunidad": "País Vasco", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": null, "estado": "Abierta", "formato": "Individual, Parejas",
+      "notas": "6 y 7 de febrero. Categorías individual, Pro, Doubles (masculina, femenina y mixta) y relevos. Hay lista de espera en la web oficial.",
+      "url": "https://hyrox.es/eventos/hyrox-bilbao-26-27/",
+      "source": "hyrox.es",
+      "_fuente": "https://hyrox.es/eventos/hyrox-bilbao-26-27/"
+    },
+    {
+      "nombre": "Hybrid League — Ronda Febrero 2027",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "20 Feb 2027", "fecha_iso": "2027-02-20",
+      "ubicacion": "Pinto, Madrid", "municipio": "Pinto", "provincia": "Madrid", "comunidad": "Madrid", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": null, "estado": "Abierta", "formato": null,
+      "notas": "Ronda de la liga híbrida por parejas (masculinas, femeninas y mixtas) en categorías Pro y Amateur.",
+      "url": "https://hybridleague.es/evento/entradas-hybrid-league-20-febrero-2027/",
+      "source": "hybridleague.es",
+      "_fuente": "https://hybridleague.es/wp-json/tribe/events/v1/events (calendario oficial: 20 de febrero de 2027, Pinto)"
+    },
+    {
+      "nombre": "Medieval Xtreme Race Polop 2027",
+      "modalidad": "OCR", "modalidad_id": "ocr-general", "modalidad_parent": "ocr",
+      "fecha": "21 Feb 2027", "fecha_iso": "2027-02-21",
+      "ubicacion": "Polop, Alicante", "municipio": "Polop", "provincia": "Alicante", "comunidad": "Comunidad Valenciana", "pais": "España",
+      "distancia": "5 km / 9 km", "distancia_km": 9, "precio": "Desde 39€", "estado": "Abierta", "formato": "Individual, Parejas, Equipos, Elite",
+      "notas": "Dos distancias: 5 km (popular, sub-16 y equipos) y 9 km (popular, élite, grupos de edad, parejas y equipos). Tanda Family para ir con menores de 12 años. El precio sube por plazos.",
+      "url": "https://medievalxtremrace.com/inscripciones-polop/",
+      "source": "medievalxtremrace.com",
+      "_fuente": "https://medievalxtremrace.com/inscripciones-polop/"
+    },
+    {
+      "nombre": "DEKA Torremolinos 2027",
+      "modalidad": "DEKA FIT", "modalidad_id": "func-hyrox", "modalidad_parent": "funcional",
+      "fecha": "27 Feb 2027", "fecha_iso": "2027-02-27",
+      "ubicacion": "Campo de Fútbol Ciudad de Torremolinos", "municipio": "Torremolinos", "provincia": "Málaga", "comunidad": "Andalucía", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": "Desde 50€", "estado": "Abierta", "formato": null,
+      "notas": "27 y 28 de febrero. Sábado: DEKA FIT Teams (72 €) y DEKA MILE Teams (50 €). Domingo: DEKA FIT (89 €). Precios iniciales.",
+      "url": "https://es.spartan.com/es/races/deka-torremolinos",
+      "source": "es.spartan.com",
+      "_fuente": "https://es.spartan.com/es/races/deka-torremolinos"
+    },
+    {
+      "nombre": "DEKA Toledo 2027",
+      "modalidad": "DEKA FIT", "modalidad_id": "func-hyrox", "modalidad_parent": "funcional",
+      "fecha": "6 Mar 2027", "fecha_iso": "2027-03-06",
+      "ubicacion": "Universidad de Castilla-La Mancha, Campus de la Fábrica de Armas, Toledo", "municipio": "Toledo", "provincia": "Toledo", "comunidad": "Castilla-La Mancha", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": "Desde 50€", "estado": "Abierta", "formato": null,
+      "notas": "6 y 7 de marzo. Sábado: DEKA FIT Teams (72 €) y DEKA MILE Teams (50 €). Domingo: DEKA FIT (89 €) y DEKA MILE (72 €). Precios iniciales.",
+      "url": "https://es.spartan.com/es/races/deka-toledo-2027",
+      "source": "es.spartan.com",
+      "_fuente": "https://es.spartan.com/es/races/deka-toledo-2027"
+    },
+    {
+      "nombre": "HYROX Madrid 2027",
+      "modalidad": "HYROX", "modalidad_id": "func-hyrox", "modalidad_parent": "funcional",
+      "fecha": "17 Mar 2027", "fecha_iso": "2027-03-17",
+      "ubicacion": "IFEMA Madrid", "municipio": "Madrid", "provincia": "Madrid", "comunidad": "Madrid", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": null, "estado": "Abierta", "formato": "Individual, Parejas",
+      "notas": "Del 17 al 21 de marzo. Categorías individual, Pro, Doubles, Pro Doubles y relevos (masculinos, femeninos y mixtos). Horario provisional.",
+      "url": "https://hyrox.es/eventos/hyrox-madrid-26-27/",
+      "source": "hyrox.es",
+      "_fuente": "https://hyrox.es/eventos/hyrox-madrid-26-27/"
+    },
+    {
+      "nombre": "DEKA Barcelona Primavera 2027",
+      "modalidad": "DEKA FIT", "modalidad_id": "func-hyrox", "modalidad_parent": "funcional",
+      "fecha": "20 Mar 2027", "fecha_iso": "2027-03-20",
+      "ubicacion": "Complejo Deportivo Municipal Mar Bella, Barcelona", "municipio": "Barcelona", "provincia": "Barcelona", "comunidad": "Cataluña", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": "Desde 50€", "estado": "Abierta", "formato": null,
+      "notas": "20 y 21 de marzo. Sábado: DEKA FIT Teams (72 €), DEKA MILE (72 €) y DEKA STRONG (50 €). Domingo: DEKA FIT (89 €). Precios iniciales.",
+      "url": "https://es.spartan.com/es/races/deka-barcelona-primavera",
+      "source": "es.spartan.com",
+      "_fuente": "https://es.spartan.com/es/races/deka-barcelona-primavera"
+    },
+    {
+      "nombre": "DEKA Valencia 2027",
+      "modalidad": "DEKA FIT", "modalidad_id": "func-hyrox", "modalidad_parent": "funcional",
+      "fecha": "3 Abr 2027", "fecha_iso": "2027-04-03",
+      "ubicacion": "Tinglado nº2, La Marina de Valencia", "municipio": "Valencia", "provincia": "Valencia", "comunidad": "Comunidad Valenciana", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": "Desde 50€", "estado": "Abierta", "formato": null,
+      "notas": "3 y 4 de abril. Sábado: DEKA FIT Teams (72 €) y DEKA MILE Teams (50 €). Domingo: DEKA MILE (72 €) y DEKA FIT (89 €). Precios iniciales.",
+      "url": "https://es.spartan.com/es/races/deka-valencia-2027",
+      "source": "es.spartan.com",
+      "_fuente": "https://es.spartan.com/es/races/deka-valencia-2027"
+    },
+    {
+      "nombre": "Survivor Race Alicante 2027",
+      "modalidad": "OCR", "modalidad_id": "ocr-general", "modalidad_parent": "ocr",
+      "fecha": "10 Abr 2027", "fecha_iso": "2027-04-10",
+      "ubicacion": "Av. Jaime I, Alicante", "municipio": "Alicante", "provincia": "Alicante", "comunidad": "Comunidad Valenciana", "pais": "España",
+      "distancia": "3 km / 6 km / 10 km", "distancia_km": 10, "precio": "Desde 51€", "estado": "Abierta", "formato": "Individual",
+      "notas": "10 y 11 de abril. Distancias XPLORER 3K (15 obstáculos), HUMAN 6K (20) y HERO 10K (25). 10 % de descuento para equipos de 10 o más personas. Edad mínima: 16 años.",
+      "url": "https://survivor-race.com/carreras/survivor-alicante/",
+      "source": "survivor-race.com",
+      "_fuente": "https://survivor-race.com/carreras/survivor-alicante/"
+    },
+    {
+      "nombre": "Hybrid Zone Torrelavega 2027",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "10 Abr 2027", "fecha_iso": "2027-04-10",
+      "ubicacion": "Mercado Nacional de Ganados, Torrelavega", "municipio": "Torrelavega", "provincia": "Cantabria", "comunidad": "Cantabria", "pais": "España",
+      "distancia": "4,8 km / 7,2 km", "distancia_km": 7.2, "precio": "Desde 65€", "estado": "Abierta", "formato": "Individual, Parejas",
+      "notas": "Dos formatos: HZ6 (4.800 m) y HZ9 (7.200 m, con 800 m de carrera entre 9 zonas). Individual, parejas y, como novedad en 2027, relevos «I Go You Go». El primer tramo de precio ya se agotó.",
+      "url": "https://hybridzone.es/",
+      "source": "hybridzone.es",
+      "_fuente": "https://hybridzone.es/"
+    },
+    {
+      "nombre": "HYROX Málaga 2027",
+      "modalidad": "HYROX", "modalidad_id": "func-hyrox", "modalidad_parent": "funcional",
+      "fecha": "14 Abr 2027", "fecha_iso": "2027-04-14",
+      "ubicacion": "Palacio de Ferias y Congresos de Málaga (FYCMA)", "municipio": "Málaga", "provincia": "Málaga", "comunidad": "Andalucía", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": null, "estado": "Abierta", "formato": "Individual, Parejas",
+      "notas": "Del 14 al 18 de abril. Individual, Doubles y relevos, con plazas de clasificación para el Campeonato del Mundo. Horario por confirmar.",
+      "url": "https://hyrox.es/eventos/hyrox-malaga-26-27/",
+      "source": "hyrox.es",
+      "_fuente": "https://hyrox.es/eventos/hyrox-malaga-26-27/"
+    },
+    {
+      "nombre": "DEKA Ibiza 2027",
+      "modalidad": "DEKA FIT", "modalidad_id": "func-hyrox", "modalidad_parent": "funcional",
+      "fecha": "17 Abr 2027", "fecha_iso": "2027-04-17",
+      "ubicacion": "Camp Municipal d'Esports de Sant Agustí, Sant Agustí des Vedrà", "municipio": "Sant Agustí des Vedrà", "provincia": "Islas Baleares", "comunidad": "Baleares", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": "Desde 50€", "estado": "Abierta", "formato": null,
+      "notas": "17 y 18 de abril. Sábado: DEKA FIT Teams (72 €) y DEKA MILE Teams (50 €). Domingo: DEKA FIT (89 €) y DEKA MILE (72 €). Precios iniciales.",
+      "url": "https://es.spartan.com/es/races/deka-ibiza-2027",
+      "source": "es.spartan.com",
+      "_fuente": "https://es.spartan.com/es/races/deka-ibiza-2027"
+    },
+    {
+      "nombre": "Desafío de Guerreros Valencia 2027",
+      "modalidad": "OCR", "modalidad_id": "ocr-general", "modalidad_parent": "ocr",
+      "fecha": "18 Abr 2027", "fecha_iso": "2027-04-18",
+      "ubicacion": "Valencia", "municipio": "Valencia", "provincia": "Valencia", "comunidad": "Comunidad Valenciana", "pais": "España",
+      "distancia": "6 km / 10 km", "distancia_km": 10, "precio": "Desde 47,11€", "estado": "Abierta", "formato": "Individual, Parejas, Equipos, Elite",
+      "notas": "6 km con 20 obstáculos o 10 km con 25. La tanda Élite tiene 150 dorsales y el 10 km clasifica para el OCR World Championship. Se puede correr en pareja o en equipo. El precio sube cada mes.",
+      "url": "https://www.desafiodeguerreros.com.es/carreras/p/desafio-valencia",
+      "source": "desafiodeguerreros.com.es",
+      "_fuente": "https://www.desafiodeguerreros.com.es/carreras/p/desafio-valencia"
+    },
+    {
+      "nombre": "Spartan Race Madrid 2027 - Sprint",
+      "modalidad": "Spartan Race", "modalidad_id": "ocr-spartan", "modalidad_parent": "ocr",
+      "fecha": "8 May 2027", "fecha_iso": "2027-05-08",
+      "ubicacion": "San Agustín del Guadalix, Madrid", "municipio": "San Agustín del Guadalix", "provincia": "Madrid", "comunidad": "Madrid", "pais": "España",
+      "distancia": "5K + 20 obstáculos", "distancia_km": 5, "precio": "94,98€", "estado": "Abierta", "formato": null,
+      "notas": "Madrid Spartan Weekend, 8 y 9 de mayo. El Sprint y el Beast se corren el sábado; el Super, el domingo. También hay Kids Race (1-3 km).",
+      "url": "https://es.spartan.com/es/races/madrid",
+      "source": "es.spartan.com",
+      "_fuente": "https://es.spartan.com/es/races/madrid (fechas 8-9 de mayo de 2027 en la ficha oficial)"
+    },
+    {
+      "nombre": "Spartan Race Madrid 2027 - Beast",
+      "modalidad": "Spartan Race", "modalidad_id": "ocr-spartan", "modalidad_parent": "ocr",
+      "fecha": "8 May 2027", "fecha_iso": "2027-05-08",
+      "ubicacion": "San Agustín del Guadalix, Madrid", "municipio": "San Agustín del Guadalix", "provincia": "Madrid", "comunidad": "Madrid", "pais": "España",
+      "distancia": "21K + 30 obstáculos", "distancia_km": 21, "precio": "189,98€", "estado": "Abierta", "formato": null,
+      "notas": "Madrid Spartan Weekend, 8 y 9 de mayo. El Beast se corre el sábado 8.",
+      "url": "https://es.spartan.com/es/races/madrid",
+      "source": "es.spartan.com",
+      "_fuente": "https://es.spartan.com/es/races/madrid"
+    },
+    {
+      "nombre": "Spartan Race Madrid 2027 - Super",
+      "modalidad": "Spartan Race", "modalidad_id": "ocr-spartan", "modalidad_parent": "ocr",
+      "fecha": "9 May 2027", "fecha_iso": "2027-05-09",
+      "ubicacion": "San Agustín del Guadalix, Madrid", "municipio": "San Agustín del Guadalix", "provincia": "Madrid", "comunidad": "Madrid", "pais": "España",
+      "distancia": "10K + 25 obstáculos", "distancia_km": 10, "precio": "139,99€", "estado": "Abierta", "formato": null,
+      "notas": "Madrid Spartan Weekend, 8 y 9 de mayo. El Super se corre el domingo 9.",
+      "url": "https://es.spartan.com/es/races/madrid",
+      "source": "es.spartan.com",
+      "_fuente": "https://es.spartan.com/es/races/madrid"
+    },
+    {
+      "nombre": "Desafío de Guerreros Barcelona 2027",
+      "modalidad": "OCR", "modalidad_id": "ocr-general", "modalidad_parent": "ocr",
+      "fecha": "16 May 2027", "fecha_iso": "2027-05-16",
+      "ubicacion": "Pineda de Mar, Barcelona", "municipio": "Pineda de Mar", "provincia": "Barcelona", "comunidad": "Cataluña", "pais": "España",
+      "distancia": "6 km / 10 km", "distancia_km": 10, "precio": "Desde 47,11€", "estado": "Abierta", "formato": "Individual, Parejas, Equipos, Elite",
+      "notas": "11.ª edición. 6 km con 20 obstáculos o 10 km con 25, con tanda Élite. El precio sube cada mes.",
+      "url": "https://www.desafiodeguerreros.com.es/carreras/p/desafio-barcelona",
+      "source": "desafiodeguerreros.com.es",
+      "_fuente": "https://www.desafiodeguerreros.com.es/carreras/p/desafio-barcelona"
+    },
+    {
+      "nombre": "Sacaba Summer Games 2027",
+      "modalidad": "CrossFit", "modalidad_id": "func-crossfit", "modalidad_parent": "funcional",
+      "fecha": "29 May 2027", "fecha_iso": "2027-05-29",
+      "ubicacion": "Playa de la Misericordia, Málaga", "municipio": "Málaga", "provincia": "Málaga", "comunidad": "Andalucía", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": null, "estado": "Próximamente", "formato": null,
+      "notas": "29 y 30 de mayo. Competición de cross training por parejas en la playa, con categorías Escalado, Intermedio, RX y Máster. Las inscripciones abren el 1 de diciembre de 2026.",
+      "url": "https://www.sacabasummergames.com/",
+      "source": "sacabasummergames.com",
+      "_fuente": "https://www.sacabasummergames.com/"
+    },
+    {
+      "nombre": "Madrid Fitness Challenge 2027",
+      "modalidad": "CrossFit", "modalidad_id": "func-crossfit", "modalidad_parent": "funcional",
+      "fecha": "4 Jun 2027", "fecha_iso": "2027-06-04",
+      "ubicacion": "Majadahonda, Madrid", "municipio": "Majadahonda", "provincia": "Madrid", "comunidad": "Madrid", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": null, "estado": "Abierta", "formato": null,
+      "notas": "4, 5 y 6 de junio. Competición de fitness con dos arenas y categorías Élite, RX, Intermedio y Scaled.",
+      "url": "https://madridfitnesschallenge.com/",
+      "source": "madridfitnesschallenge.com",
+      "_fuente": "https://madridfitnesschallenge.com/"
+    },
+    {
+      "nombre": "Desafío de Guerreros Gernika 2027",
+      "modalidad": "OCR", "modalidad_id": "ocr-general", "modalidad_parent": "ocr",
+      "fecha": "13 Jun 2027", "fecha_iso": "2027-06-13",
+      "ubicacion": "Gernika-Lumo, Bizkaia", "municipio": "Gernika-Lumo", "provincia": "Bizkaia", "comunidad": "País Vasco", "pais": "España",
+      "distancia": "6 km / 10 km", "distancia_km": 10, "precio": "Desde 47,11€", "estado": "Abierta", "formato": "Individual, Parejas, Equipos, Elite",
+      "notas": "6 km con 20 obstáculos o 10 km con 25. La tanda Élite tiene 150 dorsales y el 10 km clasifica para el OCR World Championship. El precio sube cada mes.",
+      "url": "https://www.desafiodeguerreros.com.es/carreras/p/desafio-bizkaia",
+      "source": "desafiodeguerreros.com.es",
+      "_fuente": "https://www.desafiodeguerreros.com.es/carreras/p/desafio-bizkaia"
+    },
+    {
+      "nombre": "BOLD Series Madrid 2027",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "18 Jun 2027", "fecha_iso": "2027-06-18",
+      "ubicacion": "Madrid Arena, Casa de Campo", "municipio": "Madrid", "provincia": "Madrid", "comunidad": "Madrid", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": "440€ por equipo", "estado": "Abierta", "formato": null,
+      "notas": "Del 18 al 20 de junio. Competición de fitness solo por equipos de cuatro, con seis categorías por nivel y edad. 440 € por equipo hasta el 30 de noviembre de 2026; luego sube. La inscripción cierra el 31 de marzo de 2027.",
+      "url": "https://www.theboldseries.com/",
+      "source": "theboldseries.com",
+      "_fuente": "https://www.theboldseries.com/"
+    },
+    {
+      "nombre": "DEKA Vigo 2027",
+      "modalidad": "DEKA FIT", "modalidad_id": "func-hyrox", "modalidad_parent": "funcional",
+      "fecha": "26 Jun 2027", "fecha_iso": "2027-06-26",
+      "ubicacion": "IFEVI – Instituto Ferial de Vigo", "municipio": "Vigo", "provincia": "Pontevedra", "comunidad": "Galicia", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": "Desde 50€", "estado": "Abierta", "formato": null,
+      "notas": "26 y 27 de junio. Sábado: DEKA FIT Teams (72 €) y DEKA MILE Teams (50 €). Domingo: DEKA FIT (89 €) y DEKA MILE (72 €). Precios iniciales.",
+      "url": "https://es.spartan.com/es/races/deka-vigo-2027",
+      "source": "es.spartan.com",
+      "_fuente": "https://es.spartan.com/es/races/deka-vigo-2027"
+    },
+    {
+      "nombre": "DEKA Madrid 2027",
+      "modalidad": "DEKA FIT", "modalidad_id": "func-hyrox", "modalidad_parent": "funcional",
+      "fecha": "10 Jul 2027", "fecha_iso": "2027-07-10",
+      "ubicacion": "Madrid Arena", "municipio": "Madrid", "provincia": "Madrid", "comunidad": "Madrid", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": "Desde 50€", "estado": "Abierta", "formato": null,
+      "notas": "10 y 11 de julio. Sábado: DEKA FIT Teams (72 €) y DEKA MILE Teams (50 €). DEKA STRONG ambos días (50 €). Domingo: DEKA MILE (72 €) y DEKA FIT (89 €). Precios iniciales.",
+      "url": "https://es.spartan.com/es/races/deka-madrid-2027",
+      "source": "es.spartan.com",
+      "_fuente": "https://es.spartan.com/es/races/deka-madrid-2027"
+    },
+    {
+      "nombre": "DEKA Barcelona Otoño 2027",
+      "modalidad": "DEKA FIT", "modalidad_id": "func-hyrox", "modalidad_parent": "funcional",
+      "fecha": "25 Sep 2027", "fecha_iso": "2027-09-25",
+      "ubicacion": "Complejo Deportivo Municipal Mar Bella, Barcelona", "municipio": "Barcelona", "provincia": "Barcelona", "comunidad": "Cataluña", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": "Desde 50€", "estado": "Abierta", "formato": null,
+      "notas": "25 y 26 de septiembre. Sábado: DEKA FIT Teams (72 €) y DEKA MILE Teams (50 €). Domingo: DEKA FIT (89 €) y DEKA MILE (72 €). Precios iniciales.",
+      "url": "https://es.spartan.com/es/races/deka-barcelona-otono-2027",
+      "source": "es.spartan.com",
+      "_fuente": "https://es.spartan.com/es/races/deka-barcelona-otono-2027"
+    },
+    {
+      "nombre": "Desafío de Guerreros Madrid 2027",
+      "modalidad": "OCR", "modalidad_id": "ocr-general", "modalidad_parent": "ocr",
+      "fecha": "26 Sep 2027", "fecha_iso": "2027-09-26",
+      "ubicacion": "Madrid", "municipio": "Madrid", "provincia": "Madrid", "comunidad": "Madrid", "pais": "España",
+      "distancia": "6 km / 10 km", "distancia_km": 10, "precio": "Desde 47,11€", "estado": "Abierta", "formato": "Individual, Parejas, Equipos, Elite",
+      "notas": "11.ª edición. 6 km con 20 obstáculos o 10 km con 25, con tanda Élite de 150 dorsales. El precio sube cada mes.",
+      "url": "https://www.desafiodeguerreros.com.es/carreras/p/desafio-madrid",
+      "source": "desafiodeguerreros.com.es",
+      "_fuente": "https://www.desafiodeguerreros.com.es/carreras/p/desafio-madrid"
+    }
+  ]
+}
