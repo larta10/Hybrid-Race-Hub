@@ -1192,3 +1192,9 @@ p { max-width: 70ch; }
   .product-side { max-width: 320px; }
 }
 .soon-dot { display: inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-right: 8px; vertical-align: 1px; }
+
+/* Foto del hero de la home: degradado negro sutil solo para legibilidad */
+.hero--home { background: linear-gradient(90deg, rgba(11,11,12,0.92) 0%, rgba(11,11,12,0.72) 55%, rgba(11,11,12,0.45) 100%), url("/hero-home.webp") center/cover no-repeat; }
+@media (max-width: 720px) {
+  .hero--home { background: var(--bg); } /* en móvil sin foto: carga más rápida */
+}

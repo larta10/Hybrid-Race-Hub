@@ -245,6 +245,7 @@ export default function Home() {
         <meta name="twitter:description" content="El calendario de referencia para carreras OCR, HYROX y competiciones funcionales en España." />
         <meta name="twitter:image" content="https://hybridracehub.com/og-image.svg" />
         <link rel="preconnect" href={SUPABASE_URL} />
+        <link rel="preload" as="image" href="/hero-home.webp" media="(min-width: 721px)" fetchpriority="high" />
 
         <script
           type="application/ld+json"
@@ -336,7 +337,7 @@ export default function Home() {
       </Head>
 
       {/* ── HEADER ── */}
-      <header className="hero" style={{background:"linear-gradient(90deg,rgba(11,11,12,0.92) 0%,rgba(11,11,12,0.72) 55%,rgba(11,11,12,0.45) 100%),url('https://images.unsplash.com/photo-1757147517623-ee9a76c9ead2?w=1920&q=80&fit=crop&auto=format') center/cover no-repeat"}}>
+      <header className="hero hero--home">
         <div className="hero-inner">
           <div className="brand">
             <Image src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width={40} height={40} priority />

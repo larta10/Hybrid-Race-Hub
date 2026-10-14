@@ -294,3 +294,28 @@ C1, C2, A1, A2, A3, A5, A6, M1, M2, M6, M7 resueltos.
 - Causa: la redirección hybridracehub.com → www (fase 1) enviaba todo a `www.hybridracehub.com`, que NO tiene registro DNS en Cloudflare.
 - Arreglo: eliminada la redirección (commit 564705c) y canonicals/sitemap/robots/schema pasados a `https://hybridracehub.com` (commit 4eb7bb1). Verificado en producción: todas las páginas 200, 404 correcto.
 - Si en el futuro se quiere usar www: primero crear el CNAME `www` → `cname.vercel-dns.com` en Cloudflare y añadir el dominio en Vercel; comprobar con `nslookup www.hybridracehub.com 8.8.8.8`; solo después volver a poner la redirección y los canonicals con www.
+
+---
+
+## REDISEÑO VISUAL (2026-10-14)
+
+Objetivo: que la web parezca hecha a mano por un equipo y no generada por IA. Sin cambios de URLs, rutas, datos, enlaces de Amazon (tag `hybridracehub-21`), titles, meta descriptions, H1, JSON-LD, sitemap ni cuerpo de los artículos.
+
+### Cómo cambiar el color de marca
+Edita **solo** `--accent` y `--accent-hover` en `styles/global.css` (bloque `:root`, arriba del todo). Todo lo demás lee esas variables. Si cambias el acento, revisa también `public/logo-icon.svg`, `public/favicon.svg`, `public/favicon.ico` y `public/og-image.svg` (los SVG/ICO no pueden leer variables CSS).
+
+### Qué ha cambiado
+1. **Cursor**: eliminado el cursor naranja personalizado (SVG en CSS). Cursor del sistema; `pointer` solo en enlaces, botones y selects.
+2. **Color**: paleta centralizada en `:root` (`--bg #0B0B0C`, `--surface #141416`, `--border #26262A`, `--text #F2F2F0`, `--text-muted #9A9A9E`, `--accent #E10600`, `--accent-hover #CB0500`). Eliminadas las 13 redefiniciones de `:root` que había en las páginas. Todos los naranjas, amarillos, verdes, azules y morados decorativos pasan a blanco/grises. El rojo solo aparece en: botones "Ver precio en Amazon" y "Inscribirme", subrayado del menú activo, punto de carreras en los próximos 14 días, el nº 01 de cada ranking y el logo. Verde/rojo de estado solo en mensajes de formulario.
+3. **Rasgos de IA eliminados**: glows y sombras de color, degradados (salvo un degradado negro sobre la foto del hero), elevación/scale en hover, animación de aparición de tarjetas, emojis como iconos (calculadora, enlaces, estados vacíos), iconos en cajas de color en rejillas iguales, cinta girada de "Destacada". Radios: 4px en tarjetas y botones, 2px en etiquetas. Transiciones solo de color, 150 ms.
+4. **Look editorial**: escala tipográfica 48/32/22/17/14, Barlow Condensed solo en titulares, Inter para el texto (16–17px, interlineado 1.6, máx. 70 caracteres). Etiquetas pequeñas en mayúsculas sobre los titulares (`CALENDARIO · ESPAÑA 2026`, `RANKING · 2026 · …`). Home con ritmo variado: hero con foto, "Cómo funciona" como lista numerada a tres columnas, banda de foto a ancho completo, bloques foto+texto e índice del hub en filas (sustituye a las dos rejillas de tarjetas con iconos; los enlaces y textos se conservan en el índice). Rankings tipo revista: número grande 01–06, filas separadas por 1px, tabla comparativa limpia, "A favor / En contra" en dos columnas. Estilos de ranking compartidos en `global.css`. Logo "H" blanco con barra roja; favicon, `theme-color` y manifest regenerados.
+5. **Microcopy**: botones con verbos claros ("Ver carreras", "Crear plan", "Ver precio en Amazon", "Inscribirme"), subtítulos y estados vacíos reescritos en tono de atleta, sin "descubre", "todo lo que necesitas", exclamaciones ni guiones largos en la interfaz.
+6. **Revisión**: home, ranking, artículo, calendario y 404 revisados a 375px y 1440px (sin scroll horizontal; la tabla comparativa hace scroll dentro de su caja en móvil). Lighthouse en la home (local, build de producción), antes → después:
+   - Móvil: Rendimiento 100 → 100 · Accesibilidad 95 → 100.
+   - Escritorio: Rendimiento 100 → 100 · Accesibilidad 95 → 100.
+   - Para no empeorar el LCP, la foto del hero se sirve en local (`public/hero-home.webp`, 140 KB, precargada) y en móvil el hero va sin foto.
+
+### Decisiones tomadas sin consultar
+- Las imágenes dentro de los artículos conservan su `border-radius` inline; se limitan a 4px por CSS para no tocar `lib/posts.js`.
+- Los colores por tipo de sesión del plan de entrenamiento y por tipo de centro pasan a grises (se distinguen por la etiqueta de texto).
+- Reglas CSS de componentes que ya no existen (journey, home-secondary, home-sections…) eliminadas de `global.css`.
