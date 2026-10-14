@@ -117,18 +117,18 @@ export default function CalculadoraHyrox() {
         <meta property="og:url" content={`${SITE_URL}/calculadora-hyrox`} />
         <meta property="og:title" content="Calculadora HYROX — Estima tu Tiempo Total" />
         <meta property="og:description" content="Calcula tu tiempo estimado en HYROX. Introduce los tiempos de tus 8 carreras y 8 estaciones y obtén tu tiempo total y categoría." />
-        <meta property="og:image" content={`${SITE_URL}/og-image.svg`} />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Calculadora HYROX — Hybrid Race Hub" />
         <meta name="twitter:description" content="Calcula tu tiempo total estimado en HYROX por estación." />
-        <meta name="twitter:image" content={`${SITE_URL}/og-image.svg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
       <style>{`
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
         a { color:inherit; text-decoration:none; }
 

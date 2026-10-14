@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { SITE_URL } from "../lib/site";
+import { SITE_URL, SITE_EMAIL, SITE_INSTAGRAM } from "../lib/site";
+import RaceList from "../components/RaceList";
+import { fetchUpcomingRaces, seasonLabel } from "../lib/races-server";
+import { HYBRID_CITIES } from "../lib/hybrid-cities";
 import {
   SUPABASE_URL, ANON_KEY, CCAA, FORMATS,
   InstagramIcon, EnvelopeIcon, HeroStats, SiteFooter, CookieBanner,
@@ -216,7 +219,15 @@ function EditorialBlock({ imgSrc, imgAlt, eyebrow, title, body, cta, ctaHref, re
 }
 
 /* ─── Home ─────────────────────────────────────────────────────────────────── */
-export default function Home() {
+export async function getStaticProps() {
+  const races = await fetchUpcomingRaces();
+  return {
+    props: { nextRaces: races.slice(0, 6), upcomingCount: races.length, season: seasonLabel() },
+    revalidate: 3600,
+  };
+}
+
+export default function Home({ nextRaces = [], upcomingCount = 0, season }) {
   const [totalCount, setTotalCount] = useState(null);
   useEffect(()=>{
     fetch(`${SUPABASE_URL}/rest/v1/races?select=count&modalidad_parent=in.(ocr,funcional)`,{
@@ -227,24 +238,24 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Calendario OCR, HYROX y CrossFit España 2026 | Hybrid Race Hub</title>
-        <meta name="description" content="140+ carreras OCR, HYROX y CrossFit en España 2026. Filtra por ciudad, fecha y formato, genera tu plan de entrenamiento gratis y encuentra tu gimnasio más cercano. Actualizado a diario." />
-        <meta name="keywords" content="OCR España, HYROX España, carreras obstáculos, CrossFit competición, calendario carreras 2026" />
+        <title>{`Carreras híbridas en España ${season}: calendario Hyrox y OCR | Hybrid Race Hub`}</title>
+        <meta name="description" content="Calendario de carreras híbridas en España: HYROX, OCR, Spartan y DEKA con fechas, precios e inscripción. Busca por ciudad y prepara tu próxima carrera." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/`} />
-        <meta property="og:title" content="Hybrid Race Hub — Plataforma OCR, HYROX y Entrenamiento Funcional en España" />
-        <meta property="og:description" content="Tu plataforma completa para el entrenamiento híbrido en España. Descubre eventos de OCR, HYROX y CrossFit, encuentra centros de entrenamiento cerca de ti y accede a rankings de equipamiento." />
+        <meta property="og:title" content={`Carreras híbridas en España ${season}: calendario HYROX y OCR`} />
+        <meta property="og:description" content="Todas las carreras híbridas de España en un calendario: HYROX, OCR, Spartan y DEKA. Fechas, precios, inscripción y dónde entrenar." />
+        <meta property="og:locale" content="es_ES" />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content={`${SITE_URL}/og-image.svg`} />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Hybrid Race Hub — Calendario OCR, HYROX y CrossFit en España" />
-        <meta name="twitter:description" content="El calendario de referencia para carreras OCR, HYROX y competiciones funcionales en España." />
-        <meta name="twitter:image" content={`${SITE_URL}/og-image.svg`} />
+        <meta name="twitter:title" content={`Carreras híbridas en España ${season}`} />
+        <meta name="twitter:description" content="Calendario de carreras híbridas en España: HYROX, OCR, Spartan y DEKA." />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <link rel="preconnect" href={SUPABASE_URL} />
         <link rel="preload" as="image" href="/hero-home.webp" media="(min-width: 721px)" fetchpriority="high" />
 
@@ -259,15 +270,18 @@ export default function Home() {
                 "name": "Hybrid Race Hub",
                 "url": `${SITE_URL}/`,
                 "logo": { "@type": "ImageObject", "url": `${SITE_URL}/logo.svg` },
-                "description": "Plataforma de referencia para carreras OCR, HYROX y fitness funcional en España",
-                "sameAs": ["https://www.instagram.com/hybridracehub_spain"],
+                "description": "Calendario y guías de carreras híbridas en España: HYROX, OCR, Spartan y DEKA.",
+                "email": SITE_EMAIL,
+                "contactPoint": { "@type": "ContactPoint", "email": SITE_EMAIL, "contactType": "customer support", "availableLanguage": ["es"] },
+                "sameAs": [SITE_INSTAGRAM],
               },
               {
                 "@type": "WebSite",
                 "@id": `${SITE_URL}/#website`,
                 "url": `${SITE_URL}/`,
                 "name": "Hybrid Race Hub",
-                "description": "Calendario OCR, HYROX y CrossFit en España",
+                "description": "Calendario de carreras híbridas en España",
+                "inLanguage": "es-ES",
                 "publisher": { "@id": `${SITE_URL}/#organization` },
                 "potentialAction": {
                   "@type": "SearchAction",
@@ -356,13 +370,13 @@ export default function Home() {
         {/* Hero body */}
         <div className="hero-body" style={{ paddingTop: 0 }}>
           <div className="hero-left">
-            <p className="section-label">CALENDARIO · ESPAÑA 2026</p>
+            <p className="section-label">{`CALENDARIO · TEMPORADA ${season}`}</p>
             <h1 className="hero-title" style={{ fontSize: 'clamp(32px,6vw,48px)', textTransform:'none' }}>
-              Encuentra tu Carrera OCR, HYROX y CrossFit en España 2026
+              {`Carreras híbridas en España ${season}`}
             </h1>
-            <p className="hero-sub" style={{ maxWidth: 620 }}>
-              Spartan, Tough Mudder, HYROX y competiciones de box en un solo calendario.
-              Elige fecha y comunidad, prepara la carrera y busca dónde entrenar.
+            <p className="hero-sub" style={{ maxWidth: 640 }}>
+              El calendario de carreras híbridas (<em>hybrid races</em> en inglés) de España: HYROX, Spartan, OCR y DEKA en un solo sitio.
+              Elige fecha y ciudad, prepara la carrera y busca dónde entrenar.
             </p>
             <div className="hero-actions">
               <a href="/calendario" className="btn-solid">Ver carreras</a>
@@ -372,6 +386,49 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      {/* Próximas carreras reales (Supabase, ISR cada hora) */}
+      <section className="home-next" aria-labelledby="proximas">
+        <div className="home-next-inner">
+          <div className="home-next-head">
+            <p className="section-label">PRÓXIMAS CARRERAS</p>
+            <h2 id="proximas" className="section-title">Las siguientes {nextRaces.length} carreras híbridas</h2>
+            {upcomingCount > 0 && <p className="home-next-sub">Hay {upcomingCount} carreras programadas en el calendario. Fechas y precios los publica cada organizador.</p>}
+          </div>
+          {nextRaces.length
+            ? <RaceList races={nextRaces} pageUrl={`${SITE_URL}/`} />
+            : <p className="home-next-sub">Ahora mismo no podemos cargar las próximas fechas. Las tienes en el <a href="/calendario">calendario</a>.</p>}
+          <div className="home-next-more">
+            <a href="/calendario" className="btn-solid">Ver todo el calendario</a>
+            <a href="/que-es-una-carrera-hibrida" className="btn-line">Qué es una carrera híbrida</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Accesos por ciudad + guía + rankings */}
+      <section className="home-cities" aria-labelledby="por-ciudad">
+        <div className="home-cities-inner">
+          <div>
+            <p className="section-label">POR CIUDAD</p>
+            <h2 id="por-ciudad" className="section-title">Carreras híbridas cerca de ti</h2>
+          </div>
+          <ul className="city-links">
+            {HYBRID_CITIES.filter(c => c.priority <= 10).map(c => (
+              <li key={c.slug}><a href={`/carreras-hibridas/${c.slug}`}>{c.name}</a></li>
+            ))}
+          </ul>
+          <div className="home-guides">
+            <p className="section-label">EMPIEZA AQUÍ</p>
+            <ul>
+              <li><a href="/que-es-una-carrera-hibrida">Qué es una carrera híbrida y qué tipos hay</a></li>
+              <li><a href="/productos/zapatillas-hyrox">Ranking de zapatillas para HYROX</a></li>
+              <li><a href="/productos/zapatillas-trail">Ranking de zapatillas de trail para OCR</a></li>
+              <li><a href="/productos/relojes">Ranking de relojes GPS</a></li>
+              <li><a href="/calculadora-hyrox">Calculadora de tiempos HYROX</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
       {/* Cómo funciona: lista numerada, sin tarjetas ni iconos */}
       <section className="steps" aria-label="Cómo funciona">

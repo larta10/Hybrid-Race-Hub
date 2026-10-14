@@ -1,4 +1,5 @@
 import Head from "next/head";
+import GuideCallout from "../../components/GuideCallout";
 import Link from "next/link";
 import Image from "next/image";
 import { RANKINGS, AZ } from "../../lib/rankings";
@@ -71,13 +72,13 @@ export default function ProductoCategoria({ ranking }) {
         <meta property="og:title" content={ranking.metaTitle} />
         <meta property="og:description" content={ranking.metaDesc} />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content={`${SITE_URL}/og-image.svg`} />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={ranking.metaTitle} />
         <meta name="twitter:description" content={ranking.metaDesc} />
-        <meta name="twitter:image" content={`${SITE_URL}/og-image.svg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(productSchemas)}} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbSchema)}} />
       </Head>
@@ -229,6 +230,8 @@ export default function ProductoCategoria({ ranking }) {
         </div>
 
         {/* Enlazado interno */}
+        <GuideCallout context="ranking" />
+
         <div style={{ marginTop: "1.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
           <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--text-muted)", border: "0.5px solid rgba(255,255,255,0.1)", borderRadius: 2, padding: "6px 14px" }}>
             Ver carreras →

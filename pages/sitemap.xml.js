@@ -59,6 +59,7 @@ export async function getServerSideProps({ res }) {
 
   const urls = [
     { loc: `${BASE}/`,                          lastmod: today, changefreq: "daily",   priority: "1.0" },
+    { loc: `${BASE}/que-es-una-carrera-hibrida`, lastmod: today, changefreq: "weekly",  priority: "0.9" },
     { loc: `${BASE}/calendario`,                lastmod: today, changefreq: "daily",   priority: "0.9" },
     { loc: `${BASE}/blog`,                      lastmod: today, changefreq: "weekly",  priority: "0.8" },
     { loc: `${BASE}/plan-entrenamiento`,        lastmod: today, changefreq: "monthly", priority: "0.8" },

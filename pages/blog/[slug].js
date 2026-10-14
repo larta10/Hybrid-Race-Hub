@@ -1,4 +1,5 @@
 import Head from "next/head";
+import GuideCallout from "../../components/GuideCallout";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostBySlug, getAllSlugs, posts } from "../../lib/posts";
@@ -37,14 +38,14 @@ export default function BlogPost({ post }) {
         <meta property="og:title" content={`${post.title} | Hybrid Race Hub`} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content={`${SITE_URL}/og-image.svg`} />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="article:published_time" content={post.date} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${post.title} | Hybrid Race Hub`} />
         <meta name="twitter:description" content={post.excerpt} />
-        <meta name="twitter:image" content={`${SITE_URL}/og-image.svg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{__html: JSON.stringify({
@@ -79,7 +80,7 @@ export default function BlogPost({ post }) {
       </Head>
 
       <style>{`
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: var(--bg); color: var(--text); font-family: var(--font-body); }
         a { color: inherit; text-decoration: none; }
 
@@ -295,6 +296,8 @@ export default function BlogPost({ post }) {
         )}
 
         {/* Enlazado interno por categoría */}
+        <GuideCallout />
+
         <div className="related-section" style={{ marginTop: "2rem" }}>
           <p className="related-title">Te puede interesar</p>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>

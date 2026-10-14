@@ -1,4 +1,5 @@
 ﻿import Head from "next/head";
+import GuideCallout from "../components/GuideCallout";
 import Link from "next/link";
 import Image from "next/image";
 import { RANKINGS, AZ } from "../lib/rankings";
@@ -21,13 +22,13 @@ export default function Productos() {
         <meta property="og:title" content="Rankings de Equipamiento OCR y HYROX 2026 | Hybrid Race Hub" />
         <meta property="og:description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX. Con precios y enlaces a Amazon España." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content={`${SITE_URL}/og-image.svg`} />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Rankings de Equipamiento OCR y HYROX 2026 | Hybrid Race Hub" />
         <meta name="twitter:description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX." />
-        <meta name="twitter:image" content={`${SITE_URL}/og-image.svg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{__html: JSON.stringify(
@@ -254,6 +255,8 @@ export default function Productos() {
           </ul>
         </div>
       </div>
+
+      <div className="page-body"><GuideCallout context="ranking" /></div>
 
       {/* Nav interna */}
       <nav className="rankings-nav">

@@ -1198,3 +1198,100 @@ p { max-width: 70ch; }
 @media (max-width: 720px) {
   .hero--home { background: var(--bg); } /* en móvil sin foto: carga más rápida */
 }
+
+/* ══════════════════════════════════════════════════════════════
+   PÁGINAS EDITORIALES (guía pilar, ciudades, sobre nosotros)
+══════════════════════════════════════════════════════════════ */
+.page-shell-head { padding-bottom: 0; }
+.crumbs { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted2); margin-bottom: var(--s3); display: flex; flex-wrap: wrap; gap: 4px; }
+.crumbs a { color: var(--text-muted); text-decoration: none; }
+.crumbs a:hover { color: var(--text); }
+.crumbs-sep { margin: 0 6px; color: var(--hint); }
+
+.guide { max-width: 1200px; margin: 0 auto; padding: var(--s6) var(--s4) var(--s7); }
+.guide-head { max-width: 760px; margin: 0 auto var(--s5); }
+.guide-title { font-family: var(--font-display); font-size: clamp(36px, 6vw, 48px); font-weight: 800; text-transform: uppercase; line-height: 1; letter-spacing: -0.01em; color: var(--text); margin-bottom: var(--s2); }
+.guide-updated { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); letter-spacing: 0.04em; }
+.guide-body { max-width: 760px; margin: 0 auto; font-size: 17px; line-height: 1.65; color: var(--text-muted); }
+.guide-body p, .guide-body ul, .guide-body ol { margin-bottom: var(--s3); }
+.guide-body strong { color: var(--text); font-weight: 600; }
+.guide-body a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--border2); }
+.guide-body a:hover { text-decoration-color: var(--text); }
+.guide-body h2 { font-family: var(--font-display); font-size: clamp(26px, 4vw, 32px); font-weight: 800; text-transform: uppercase; line-height: 1.05; color: var(--text); margin: var(--s6) 0 var(--s2); padding-top: var(--s3); border-top: 1px solid var(--border); scroll-margin-top: 16px; }
+.guide-body h3 { font-family: var(--font-display); font-size: 22px; font-weight: 700; text-transform: uppercase; color: var(--text); margin: var(--s4) 0 var(--s1); }
+.guide-body ul, .guide-body ol { padding-left: 1.2em; }
+.guide-body li { margin-bottom: var(--s1); }
+.guide-lead { font-size: 19px; color: var(--text); }
+.guide-toc { border: 1px solid var(--border); border-radius: var(--radius); padding: var(--s3); margin: var(--s4) 0; }
+.guide-toc ol { margin: 0; columns: 2; column-gap: var(--s4); }
+.guide-toc a { text-decoration: none; }
+.guide-cities { font-size: 15px; }
+.table-wrap { overflow-x: auto; margin: var(--s3) 0; -webkit-overflow-scrolling: touch; }
+.guide-table { width: 100%; border-collapse: collapse; font-size: 15px; border-top: 2px solid var(--text); min-width: 520px; }
+.guide-table th { text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); padding: 12px 12px 12px 0; border-bottom: 1px solid var(--border2); }
+.guide-table td { padding: 12px 12px 12px 0; border-bottom: 1px solid var(--border); color: var(--text-muted); vertical-align: top; }
+.guide-table td:first-child { color: var(--text); font-weight: 600; }
+
+/* FAQ sin JavaScript */
+.faq-plain { border-top: 1px solid var(--border); }
+.faq-d { border-bottom: 1px solid var(--border); }
+.faq-d summary { cursor: pointer; list-style: none; padding: var(--s3) var(--s4) var(--s3) 0; font-size: 17px; font-weight: 600; color: var(--text); position: relative; min-height: 44px; }
+.faq-d summary::-webkit-details-marker { display: none; }
+.faq-d summary::after { content: "+"; position: absolute; right: 0; top: var(--s3); font-family: var(--font-mono); color: var(--text-muted); }
+.faq-d[open] summary::after { content: "−"; }
+.faq-d p { padding-bottom: var(--s3); margin: 0; }
+
+/* Lista de carreras */
+.rl { list-style: none; padding: 0 !important; margin: var(--s3) 0; border-top: 2px solid var(--text); }
+.rl-item { display: grid; grid-template-columns: 72px 1fr auto; gap: var(--s3); padding: var(--s3) 0; border-bottom: 1px solid var(--border); align-items: start; margin: 0 !important; }
+.rl-date { display: flex; flex-direction: column; line-height: 1; }
+.rl-day { font-family: var(--font-display); font-size: 40px; font-weight: 800; color: var(--text); letter-spacing: -0.02em; }
+.rl-mon { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-top: 4px; }
+.rl-main { min-width: 0; }
+.rl-tag { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); border: 1px solid var(--border2); border-radius: var(--radius-tag); padding: 2px 6px; margin-bottom: 6px; }
+.rl-name { font-family: var(--font-display); font-size: 22px; font-weight: 700; text-transform: uppercase; color: var(--text); line-height: 1.1; margin: 0 0 4px !important; padding: 0 !important; border: 0 !important; }
+.rl-place { font-size: 15px; color: var(--text); margin: 0 0 2px !important; }
+.rl-meta { font-size: 14px; color: var(--text-muted); margin: 0 !important; }
+.rl-actions { display: flex; flex-direction: column; gap: 6px; min-width: 200px; }
+.rl-btn { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 14px; font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--text) !important; text-decoration: none !important; background: transparent; border: 1px solid var(--border2); border-radius: var(--radius); cursor: pointer; transition: border-color .15s, background-color .15s; }
+.rl-btn:hover { border-color: var(--text); }
+.rl-btn--main { background: var(--text); color: var(--bg) !important; border-color: var(--text); }
+.rl-btn--main:hover { background: #FFFFFF; }
+.rl-btn--off { color: var(--muted2) !important; cursor: default; }
+.rl--compact .rl-actions { min-width: 180px; }
+
+@media (max-width: 720px) {
+  .guide { padding: var(--s4) var(--s2) var(--s6); }
+  .guide-body { font-size: 16px; }
+  .guide-lead { font-size: 17px; }
+  .guide-toc ol { columns: 1; }
+  .rl-item { grid-template-columns: 56px 1fr; gap: var(--s2); }
+  .rl-day { font-size: 32px; }
+  .rl-name { font-size: 20px; }
+  .rl-actions { grid-column: 1 / -1; min-width: 0; display: grid; grid-template-columns: 1fr 1fr; }
+  .rl-actions .rl-btn--main, .rl-actions .rl-btn--off { grid-column: 1 / -1; }
+}
+
+/* Home: próximas carreras y accesos por ciudad */
+.home-next { padding: var(--s7) var(--s4); border-bottom: 1px solid var(--border); }
+.home-next-inner, .home-cities-inner { max-width: 1200px; margin: 0 auto; }
+.home-next-head { margin-bottom: var(--s3); }
+.home-next-sub { color: var(--text-muted); margin-top: var(--s1); font-size: 16px; }
+.home-next-sub a { color: var(--text); }
+.home-next-more { display: flex; gap: var(--s2); flex-wrap: wrap; margin-top: var(--s4); }
+.home-cities { padding: var(--s6) var(--s4); border-bottom: 1px solid var(--border); }
+.home-cities-inner { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: var(--s5); align-items: start; }
+.city-links { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--border); }
+.city-links li { border-bottom: 1px solid var(--border); }
+.city-links a { display: flex; align-items: center; min-height: 48px; font-family: var(--font-display); font-size: 20px; font-weight: 700; text-transform: uppercase; color: var(--text); text-decoration: none; transition: color .15s; }
+.city-links a::after { content: "→"; margin-left: auto; padding-right: var(--s2); font-family: var(--font-mono); font-size: 14px; color: var(--muted2); }
+.city-links a:hover::after { color: var(--text); }
+.home-guides ul { list-style: none; border-top: 1px solid var(--border); }
+.home-guides li { border-bottom: 1px solid var(--border); }
+.home-guides a { display: flex; align-items: center; min-height: 48px; color: var(--text); text-decoration: none; font-size: 15px; }
+.home-guides a:hover { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 900px) { .home-cities-inner { grid-template-columns: 1fr; gap: var(--s4); } }
+@media (max-width: 720px) { .home-next, .home-cities { padding: var(--s5) var(--s2); } }
+.guide-callout { border-top: 2px solid var(--text); border-bottom: 1px solid var(--border); padding: var(--s3) 0; margin: var(--s5) 0; max-width: 760px; }
+.guide-callout .section-label { margin-bottom: var(--s1); }
+.guide-callout-text { font-size: 17px; color: var(--text); margin-bottom: var(--s2); }

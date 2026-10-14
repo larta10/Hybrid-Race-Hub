@@ -46,13 +46,13 @@ export default function BlogIndex() {
         <meta property="og:title" content="Guías OCR, HYROX y Entrenamiento Híbrido 2026 | Hybrid Race Hub" />
         <meta property="og:description" content="Guías de entrenamiento OCR y HYROX, análisis de equipamiento y noticias sobre competiciones funcionales en España 2026." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content={`${SITE_URL}/og-image.svg`} />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Guías OCR, HYROX y Entrenamiento Híbrido 2026 | Hybrid Race Hub" />
         <meta name="twitter:description" content="Guías de entrenamiento OCR y HYROX, análisis de equipamiento y noticias sobre competiciones funcionales en España 2026." />
-        <meta name="twitter:image" content={`${SITE_URL}/og-image.svg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{__html: JSON.stringify({
@@ -73,7 +73,7 @@ export default function BlogIndex() {
       </Head>
 
       <style>{`
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: var(--bg); color: var(--text); font-family: var(--font-body); }
         a { color: inherit; text-decoration: none; }
 
