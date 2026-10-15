@@ -8,6 +8,7 @@ export default function Document() {
         <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="alternate" type="application/rss+xml" title="Blog de Hybrid Race Hub" href="https://hybridracehub.com/rss.xml" />
         <meta name="theme-color" content="#0B0B0C" />
       </Head>
       <body>

@@ -1,368 +1,151 @@
 import Head from "next/head";
-import { SiteNav } from "../../lib/shared";
-import GuideCallout from "../../components/GuideCallout";
-import Link from "next/link";
 import Image from "next/image";
-import { getPostBySlug, getAllSlugs, posts } from "../../lib/posts";
-
-import { SITE_URL } from "../../lib/site";
-import { renderAffiliateHtml } from "../../lib/affiliate";
+import Link from "next/link";
+import PageShell, { Breadcrumbs } from "../../components/PageShell";
 import ArticleBody from "../../components/blog/ArticleBody";
+import { Toc, ShareButtons, AuthorBox, ArticleCta, RelatedPosts } from "../../components/blog/ArticleParts";
+import { getAllSlugs } from "../../lib/posts";
+import { prepareArticle } from "../../lib/article-server";
+import { fechaLarga, mesAno } from "../../lib/dates";
+import { SITE_URL, SITE_NAME } from "../../lib/site";
 import { PODCASTS } from "../../data/podcasts";
-const CATEGORY_COLORS = {
-  "Guías":        { color: "var(--hyrox)",   bg: "rgba(255,255,255,0.06)" },
-  "Eventos":      { color: "var(--ocr)",     bg: "rgba(255,255,255,0.07)" },
-  "Equipamiento": { color: "var(--text)",    bg: "rgba(255,255,255,0.06)" },
-};
 
 export async function getStaticPaths() {
   return { paths: getAllSlugs(), fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  const raw = getPostBySlug(params.slug);
-  if (!raw) return { notFound: true };
-  const hasAffiliate = /data-product="/.test(raw.content);
-  const post = { ...raw, content: renderAffiliateHtml(raw.content, { category: raw.category }), hasAffiliate };
-  return { props: { post } };
+  const data = prepareArticle(params.slug);
+  if (!data) return { notFound: true };
+  return { props: data };
 }
 
-export default function BlogPost({ post }) {
-  const colors = CATEGORY_COLORS[post.category] || { color: "var(--text)", bg: "var(--surface2)" };
-  const related = posts.filter((p) => p.slug !== post.slug && p.category === post.category).slice(0, 2);
+export default function BlogPost({ post, toc, related }) {
+  const url = `${SITE_URL}/blog/${post.slug}`;
+  const crumbs = [
+    { name: "Inicio", href: "/" },
+    { name: "Blog", href: "/blog" },
+    ...(post.catSlug ? [{ name: post.category, href: `/blog/categoria/${post.catSlug}` }] : []),
+    { name: post.h1 },
+  ];
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post.h1.slice(0, 110),
+      "description": post.description,
+      "image": [post.ogImage],
+      "datePublished": post.date,
+      "dateModified": post.updated,
+      "inLanguage": "es-ES",
+      "wordCount": post.words,
+      "articleSection": post.category,
+      "author": { "@type": "Organization", "name": "Equipo de Hybrid Race Hub", "url": `${SITE_URL}/sobre-nosotros` },
+      "publisher": {
+        "@type": "Organization",
+        "@id": `${SITE_URL}/#organization`,
+        "name": SITE_NAME,
+        "logo": { "@type": "ImageObject", "url": `${SITE_URL}/icon-512.png`, "width": 512, "height": 512 },
+      },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": url },
+      "url": url,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": crumbs.map((c, i) => ({ "@type": "ListItem", "position": i + 1, "name": c.name, "item": c.href ? `${SITE_URL}${c.href}` : url })),
+    },
+  ];
+  if (post.faq?.length) {
+    schema.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": post.faq.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+    });
+  }
+  if (post.category === "Podcasts") {
+    schema.push({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": post.h1,
+      "numberOfItems": PODCASTS.length,
+      "itemListElement": PODCASTS.map((p, i) => ({
+        "@type": "ListItem", "position": i + 1,
+        "item": { "@type": "PodcastSeries", "name": p.name, "url": p.apple, "inLanguage": p.lang === "ES" ? "es" : "en" },
+      })),
+    });
+  }
 
   return (
-    <>
+    <PageShell activePath="/blog">
       <Head>
-        <title>{`${post.metaTitle || post.title} | Hybrid Race Hub`}</title>
-        <meta name="description" content={post.description || post.excerpt} />
+        <title>{`${post.metaTitle} | ${SITE_NAME}`}</title>
+        <meta name="description" content={post.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`${SITE_URL}/blog/${post.slug}`} />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <link rel="canonical" href={url} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`${SITE_URL}/blog/${post.slug}`} />
-        <meta property="og:title" content={`${post.title} | Hybrid Race Hub`} />
-        <meta property="og:description" content={post.excerpt} />
-        <meta property="og:site_name" content="Hybrid Race Hub" />
-        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={post.metaTitle} />
+        <meta property="og:description" content={post.description} />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:image" content={post.ogImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="article:published_time" content={post.date} />
+        <meta property="article:modified_time" content={post.updated} />
+        <meta property="article:section" content={post.category} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${post.title} | Hybrid Race Hub`} />
-        <meta name="twitter:description" content={post.excerpt} />
-        <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{__html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": post.title,
-            "description": post.excerpt,
-            "datePublished": post.date,
-            "dateModified": post.updated || post.date,
-            "author": { "@type": "Organization", "name": "Hybrid Race Hub", "url": `${SITE_URL}/` },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Hybrid Race Hub",
-              "logo": { "@type": "ImageObject", "url": `${SITE_URL}/logo.svg` },
-            },
-            "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
-            "url": `${SITE_URL}/blog/${post.slug}`,
-          })}}
-        />
-        {post.faq?.length > 0 && (
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": post.faq.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
-          }) }} />
-        )}
-        {post.category === "Podcasts" && (
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "name": post.h1 || post.title,
-            "numberOfItems": PODCASTS.length,
-            "itemListElement": PODCASTS.map((p, i) => ({
-              "@type": "ListItem", "position": i + 1,
-              "item": { "@type": "PodcastSeries", "name": p.name, "url": p.apple, "inLanguage": p.lang === "ES" ? "es" : "en" },
-            })),
-          }) }} />
-        )}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{__html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Inicio", "item": `${SITE_URL}/` },
-              { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${SITE_URL}/blog` },
-              { "@type": "ListItem", "position": 3, "name": post.title, "item": `${SITE_URL}/blog/${post.slug}` },
-            ],
-          })}}
-        />
+        <meta name="twitter:title" content={post.metaTitle} />
+        <meta name="twitter:description" content={post.description} />
+        <meta name="twitter:image" content={post.ogImage} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
-      <style>{`
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: var(--bg); color: var(--text); font-family: var(--font-body); }
-        a { color: inherit; text-decoration: none; }
-
-        /* ── NAV ── */
-        .topbar {
-          background: var(--bg); border-bottom: 1px solid var(--border);
-          height: 64px; display: flex; align-items: center;
-          justify-content: space-between; padding: 0 2rem;
-        }
-        .brand { display: flex; align-items: center; gap: 14px; }
-        .brand-logo-img {
-          width: 36px; height: 36px;
-          object-fit: contain; flex-shrink: 0; display: block;
-        }
-        .brand-name {
-          font-family: var(--font-display); font-size: 17px; font-weight: 800;
-          text-transform: uppercase; letter-spacing: -0.01em;
-        }
-        .brand-sub {
-          font-family: var(--font-mono); font-size: 9px; font-weight: 500;
-          text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted);
-        }
-        .topbar-nav { display: flex; gap: 4px; }
-        .topbar-nav a {
-          font-family: var(--font-mono); font-size: 10px; font-weight: 500;
-          text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);
-          padding: 6px 12px; border-radius: var(--radius-sm);
-          border: 0.5px solid transparent; transition: color .15s, border-color .15s;
-        }
-        .topbar-nav a:hover { color: var(--text); border-color: var(--border2); }
-
-        /* ── ARTICLE HERO ── */
-        .art-hero {
-          background: var(--bg); border-bottom: 1px solid var(--border);
-          padding: 3rem 2rem 2.5rem;
-        }
-        .art-hero-inner { max-width: 760px; margin: 0 auto; }
-        .breadcrumb {
-          display: flex; align-items: center; gap: 6px;
-          font-family: var(--font-mono); font-size: 10px; font-weight: 500;
-          text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted2);
-          margin-bottom: 1.5rem;
-        }
-        .breadcrumb a:hover { color: var(--text); }
-        .breadcrumb-sep { color: var(--hint); }
-        .art-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
-        .cat-tag {
-          font-family: var(--font-display); font-size: 10px; font-weight: 700;
-          text-transform: uppercase; letter-spacing: 0.06em;
-          padding: 2px 9px; border-radius: 2px;
-        }
-        .meta-info {
-          font-family: var(--font-mono); font-size: 10px; font-weight: 500;
-          text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted2);
-        }
-        .art-title {
-          font-family: var(--font-display); font-size: clamp(30px, 5vw, 52px);
-          font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em;
-          line-height: 1.05; color: var(--text); margin-bottom: 14px;
-        }
-        .art-excerpt {
-          font-family: var(--font-body); font-size: 16px; color: var(--muted);
-          line-height: 1.65; max-width: 600px;
-        }
-
-        /* ── ARTICLE BODY ── */
-        .art-body-wrap { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
-        .art-content {
-          font-family: var(--font-body); font-size: 17px; color: var(--text-muted);
-          line-height: 1.6; max-width: 70ch;
-        }
-        .art-content img { border-radius: var(--radius) !important; }
-        .art-content p { margin-bottom: 1.2rem; }
-        .art-content h2 {
-          font-family: var(--font-display); font-size: 28px; font-weight: 800;
-          text-transform: uppercase; letter-spacing: -0.01em; color: var(--text);
-          margin: 2rem 0 .75rem;
-        }
-        .art-content h3 {
-          font-family: var(--font-display); font-size: 20px; font-weight: 700;
-          text-transform: uppercase; letter-spacing: -0.01em; color: var(--text);
-          margin: 1.5rem 0 .5rem;
-        }
-        .art-content ul, .art-content ol { padding-left: 1.4rem; margin-bottom: 1.2rem; }
-        .art-content li { margin-bottom: .4rem; }
-        .art-content strong { color: var(--text); font-weight: 600; }
-        .art-content em { color: var(--muted2); }
-        .art-content a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
-        .art-content a:hover { color: var(--accent-mid); }
-        .art-content table {
-          width: 100%; border-collapse: collapse;
-          margin: 1.5rem 0; font-size: 14px;
-          border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden;
-        }
-        .art-content th {
-          background: var(--surface2); color: var(--text);
-          font-family: var(--font-mono); font-size: 10px; font-weight: 600;
-          text-transform: uppercase; letter-spacing: 0.08em;
-          padding: 10px 14px; border-bottom: 0.5px solid var(--border2); text-align: left;
-        }
-        .art-content td {
-          padding: 10px 14px; border-bottom: 0.5px solid var(--border); color: var(--muted);
-        }
-        .art-content tr:last-child td { border-bottom: none; }
-        .art-content hr { border: none; border-top: 0.5px solid var(--border); margin: 2rem 0; }
-
-        /* ── RELATED ── */
-        .related-section { margin-top: 3rem; padding-top: 2rem; border-top: 0.5px solid var(--border); }
-        .related-title {
-          font-family: var(--font-display); font-size: 18px; font-weight: 700;
-          text-transform: uppercase; letter-spacing: -0.01em; color: var(--text);
-          margin-bottom: 1rem;
-        }
-        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
-        .related-card {
-          background: var(--surface); border: 0.5px solid var(--border);
-          border-radius: var(--radius); padding: 1.25rem;
-          transition: border-color .15s;
-        }
-        .related-card:hover { border-color: var(--border2); }
-        .related-card-title {
-          font-family: var(--font-display); font-size: 17px; font-weight: 700;
-          text-transform: uppercase; letter-spacing: -0.01em; color: var(--text);
-          margin: 8px 0 6px; line-height: 1.2;
-        }
-        .related-card-excerpt {
-          font-family: var(--font-body); font-size: 12px; color: var(--muted); line-height: 1.55;
-        }
-
-        /* ── BACK ── */
-        .back-link {
-          display: inline-flex; align-items: center; gap: 6px;
-          font-family: var(--font-mono); font-size: 10px; font-weight: 600;
-          text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);
-          border: 0.5px solid var(--border); border-radius: 2px;
-          padding: 6px 14px; margin-top: 2.5rem;
-          transition: color .15s, border-color .15s;
-        }
-        .back-link:hover { color: var(--text); border-color: var(--border2); }
-
-        @media (max-width: 720px) {
-          .topbar { padding: 0 1rem; }
-          .art-hero { padding: 2rem 1rem 1.5rem; }
-          .art-body-wrap { padding: 1.5rem 1rem 3rem; }
-        }
-      `}</style>
-
-      {/* Topbar */}
-      <div className="topbar">
-        <Link href="/" className="brand">
-          <Image src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width={36} height={36} priority />
-          <div>
-            <div className="brand-name">Hybrid Race Hub</div>
-            <div className="brand-sub">OCR · HYROX · Functional</div>
-          </div>
-        </Link>
-        <SiteNav activePath="/blog"/>
-      </div>
-
-      {/* Article hero */}
-      <div className="art-hero">
-        <div className="art-hero-inner">
-          <div className="breadcrumb">
-            <Link href="/">Inicio</Link>
-            <span className="breadcrumb-sep">/</span>
-            <Link href="/blog">Blog</Link>
-            <span className="breadcrumb-sep">/</span>
-            <span>{post.category}</span>
-          </div>
-          <div className="art-meta">
-            <span className="cat-tag" style={{ background: colors.bg, color: colors.color }}>
-              {post.category}
-            </span>
-            <span className="meta-info">Publicado: <time dateTime={post.date}>{post.date}</time></span>
-            <span className="meta-info">·</span>
-            <span className="meta-info">Última actualización: <time dateTime={post.updated || post.date}>{post.updated || post.date}</time></span>
-            <span className="meta-info">·</span>
-            <span className="meta-info">{post.readTime} lectura</span>
-          </div>
-          <h1 className="art-title">{post.h1 || post.title}</h1>
-          <p className="art-excerpt">{post.excerpt}</p>
-        </div>
-      </div>
-
-      {/* Article body */}
-      <div className="art-body-wrap">
-        {post.hasAffiliate && (
-          <p className="aff-disclosure">
-            Este artículo contiene enlaces de afiliado: si compras a través de ellos, Hybrid Race Hub recibe una pequeña comisión sin coste extra para ti.
+      <div className="article-wrap">
+        <header className="art-head">
+          <Breadcrumbs items={crumbs} />
+          {post.catSlug && <Link href={`/blog/categoria/${post.catSlug}`} className="art-cat">{post.category}</Link>}
+          <h1 className="art-h1">{post.h1}</h1>
+          <p className="art-byline">
+            Por <Link href="/sobre-nosotros">el equipo de Hybrid Race Hub</Link>
+            <span aria-hidden="true"> · </span>
+            Publicado el <time dateTime={post.date}>{fechaLarga(post.date)}</time>
+            {post.updated !== post.date && (<><span aria-hidden="true"> · </span>Actualizado: <time dateTime={post.updated}>{mesAno(post.updated)}</time></>)}
+            <span aria-hidden="true"> · </span>
+            {post.readTime} de lectura
           </p>
-        )}
-        <ArticleBody html={post.content} faq={post.faq} />
+          {post.excerpt && <p className="art-lead">{post.excerpt}</p>}
+        </header>
 
-        {/* Related posts */}
-        {related.length > 0 && (
-          <div className="related-section">
-            <p className="related-title">También te puede interesar</p>
-            <div className="related-grid">
-              {related.map((r) => {
-                const rc = CATEGORY_COLORS[r.category] || { color: "var(--text)", bg: "var(--surface2)" };
-                return (
-                  <Link key={r.slug} href={`/blog/${r.slug}`}>
-                    <div className="related-card">
-                      <span className="cat-tag" style={{ background: rc.bg, color: rc.color }}>{r.category}</span>
-                      <p className="related-card-title">{r.title}</p>
-                      <p className="related-card-excerpt">{r.excerpt}</p>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
+        {/* Foto de cabecera solo si es una foto real; la imagen generada (título sobre fondo de marca) se usa para redes y tarjetas */}
+        {!post.generatedImage && (
+          <div className="art-cover">
+            <Image src={post.image} alt={post.imageAlt} fill priority sizes="(min-width: 1280px) 1040px, 100vw" style={{ objectFit: "cover" }} />
           </div>
         )}
 
-        {/* Enlazado interno por categoría */}
-        <GuideCallout />
-
-        <div className="related-section" style={{ marginTop: "2rem" }}>
-          <p className="related-title">Te puede interesar</p>
-          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-            <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--text-muted)", border: "0.5px solid rgba(255,255,255,0.1)", borderRadius: 2, padding: "6px 14px", textDecoration: "none" }}>
-              Ver calendario de eventos →
-            </Link>
-            {post.category === "Equipamiento" && (
-              <>
-                <Link href="/productos/relojes" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px", textDecoration: "none" }}>
-                  Ranking relojes GPS →
-                </Link>
-                <Link href="/productos/zapatillas-hyrox" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px", textDecoration: "none" }}>
-                  Ranking zapatillas HYROX →
-                </Link>
-              </>
+        <div className="art-layout">
+          <div className="art-main">
+            <Toc toc={toc} variant="inline" />
+            {post.hasAffiliate && (
+              <p className="aff-disclosure">
+                Este artículo contiene enlaces de afiliado: si compras a través de ellos, Hybrid Race Hub recibe una pequeña comisión sin coste extra para ti.
+              </p>
             )}
-            {post.category === "Guías" && (
-              <Link href="/productos/pulsometros" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px", textDecoration: "none" }}>
-                ❤️ Ranking pulsómetros →
-              </Link>
-            )}
-            {post.category === "Eventos" && (
-              <Link href="/productos/zapatillas-trail" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 2, padding: "6px 14px", textDecoration: "none" }}>
-                Zapatillas trail OCR →
-              </Link>
-            )}
+            <ArticleBody html={post.content} faq={post.faq} className="art-body" />
+            <ShareButtons url={url} title={post.h1} />
+            <ArticleCta category={post.category} />
+            <AuthorBox />
           </div>
+          <aside className="art-side">
+            <Toc toc={toc} variant="side" />
+          </aside>
         </div>
 
-      <Link href="/blog" className="back-link">← Volver al blog</Link>
-      {/* Productos recomendados (enlaces a rankings) */}
-      <section className="productos-reco" style={{ maxWidth: '1100px', margin: '2rem auto', padding: '0 2rem' }}>
-        <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 16, fontWeight: 800, textTransform: 'uppercase', marginBottom: 8 }}>Productos recomendados</h3>
-        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-          <Link href="/productos/relojes" className="cta-link" style={{ padding: '8px 12px', borderRadius: 2, border: '1px solid var(--border2)', color: 'var(--text)' }}>Relojes GPS para HYROX</Link>
-          <Link href="/productos/zapatillas-hyrox" className="cta-link" style={{ padding: '8px 12px', borderRadius: 2, border: '1px solid var(--border2)', color: 'var(--text)' }}>Ranking zapatillas HYROX</Link>
-          <Link href="/productos/zapatillas-trail" className="cta-link" style={{ padding: '8px 12px', borderRadius: 2, border: '1px solid var(--border2)', color: 'var(--text)' }}>Ranking zapatillas OCR</Link>
-        </div>
-      </section>
+        <RelatedPosts related={related} />
       </div>
-    </>
+    </PageShell>
   );
 }

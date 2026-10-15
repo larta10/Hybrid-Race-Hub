@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PODCASTS } from "../../data/podcasts";
 import PodcastCard from "./PodcastCard";
 
@@ -58,6 +59,13 @@ export default function ArticleBody({ html, faq, className = "art-content" }) {
           case "podcast-table": return <PodcastTable key={i} />;
           case "podcasts": return <PodcastList key={i} lang={attrs.lang} />;
           case "faq": return <Faq key={i} faq={faq} />;
+          case "img": return (
+            <figure key={i} className="art-figure">
+              <div className="art-figure-img">
+                <Image src={attrs.src} alt={attrs.alt || ""} fill sizes="(min-width: 760px) 720px, 100vw" style={{ objectFit: "cover" }} />
+              </div>
+            </figure>
+          );
           default: return null;
         }
       })}
