@@ -3,7 +3,8 @@ import { SiteNav } from "../../lib/shared";
 import GuideCallout from "../../components/GuideCallout";
 import Link from "next/link";
 import Image from "next/image";
-import { RANKINGS, AZ, RANKINGS_UPDATED } from "../../lib/rankings";
+import { RANKINGS, RANKINGS_UPDATED, resolveRanking } from "../../lib/rankings";
+import AffiliateLink from "../../components/AffiliateLink";
 import { dateParts } from "../../lib/races-server";
 import ProductImage from "../../components/ProductImage";
 
@@ -16,40 +17,39 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const ranking = RANKINGS.find(r => r.slug === params.categoria);
-  if (!ranking) return { notFound: true };
+  const raw = RANKINGS.find(r => r.slug === params.categoria);
+  if (!raw) return { notFound: true };
+  const ranking = resolveRanking(raw);
   // Imágenes locales en /public/products/: <slug-del-nombre>.webp o <asin>.webp
   const fs = require("fs");
   const path = require("path");
   const dir = path.join(process.cwd(), "public", "products");
   const slugify = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   const products = ranking.products.map(p => {
-    const local = [slugify(p.name), p.asin].map(n => `${n}.webp`).find(f => fs.existsSync(path.join(dir, f)));
-    return { ...p, img: local ? `/products/${local}` : (p.img || null) };
+    const local = [p.id, slugify(p.name), p.product.asin].filter(Boolean).map(n => `${n}.webp`).find(f => fs.existsSync(path.join(dir, f)));
+    return { ...p, img: local ? `/products/${local}` : (p.product.imagenLocal || null) };
   });
   return { props: { ranking: JSON.parse(JSON.stringify({ ...ranking, products })) } };
 }
 
 export default function ProductoCategoria({ ranking }) {
-  const productSchemas = ranking.products.map((product, i) => {
-    const price = product.price.match(/\d+/)?.[0] ?? "";
-    return {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": product.name,
-      "description": product.desc,
-      "brand": { "@type": "Brand", "name": product.brand || product.name.split(" ")[0] },
-      "url": `${SITE_URL}/productos/${ranking.slug}`,
-      "offers": {
-        "@type": "Offer",
-        "url": AZ(product.asin),
-        "priceCurrency": "EUR",
-        "price": price,
-        "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "Amazon" },
+  const productSchemas = [{
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": ranking.title,
+    "itemListOrder": "https://schema.org/ItemListOrderAscending",
+    "numberOfItems": ranking.products.length,
+    "itemListElement": ranking.products.map(product => ({
+      "@type": "ListItem",
+      "position": product.rank,
+      "item": {
+        "@type": "Product",
+        "name": product.name,
+        "description": product.desc,
+        "brand": { "@type": "Brand", "name": product.brand || product.name.split(" ")[0] },
       },
-    };
-  });
+    })),
+  }];
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -163,12 +163,12 @@ export default function ProductoCategoria({ ranking }) {
         <section className="quick-answer" aria-labelledby="respuesta-rapida">
           <h2 id="respuesta-rapida" className="quick-answer-title">¿Cuál elegir? Respuesta rápida</h2>
           <p>
-            <strong>Nuestra primera opción es {ranking.products[0].name}</strong> ({ranking.products[0].price}).{" "}
+            <strong>Nuestra primera opción es {ranking.products[0].name}</strong>.{" "}
             {ranking.conclusion}
           </p>
           <ol className="quick-answer-list">
             {ranking.products.slice(0, 3).map(p => (
-              <li key={p.rank}><strong>{p.name}</strong> · {p.price} · {p.pros[0]}</li>
+              <li key={p.rank}><strong>{p.name}</strong> · {p.pros[0]}</li>
             ))}
           </ol>
         </section>
@@ -226,10 +226,9 @@ export default function ProductoCategoria({ ranking }) {
                     className="product-img"
                   />
                 </div>
-                <div className="product-price">{product.price}</div>
-                <a href={AZ(product.asin)} target="_blank" rel="nofollow sponsored noopener noreferrer" className="product-cta">
+                <AffiliateLink product={product.product} position={product.rank} className="product-cta">
                   Ver precio en Amazon
-                </a>
+                </AffiliateLink>
               </div>
             </li>
           ))}

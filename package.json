@@ -14,7 +14,8 @@
     "test:haversine": "node scripts/test-haversine.js",
     "test:proximity": "node scripts/test-proximity.js",
     "seo-report": "node scripts/seo-accessibility-report.js",
-    "qa:layout": "node scripts/qa-layout.mjs"
+    "qa:layout": "node scripts/qa-layout.mjs",
+    "qa:links": "node scripts/check-affiliate-links.mjs"
   },
   "dependencies": {
     "exceljs": "^4.4.0",

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import { SUPABASE_URL, ANON_KEY } from "../lib/shared";
+import { normalizeAmazonUrl, AFFILIATE_REL } from "../lib/affiliate";
 
 import { SITE_URL } from "../lib/site";
 const CATEGORIES = ["Todos", "Rankings", "Guías OCR", "Equipamiento", "Noticias"];
@@ -250,9 +251,8 @@ export default function Comunidad() {
                   <h4 className="product-name">{prod.name}</h4>
                   <p className="product-desc">{prod.description}</p>
                   <div className="product-footer">
-                    <span className="product-price">{prod.price_approx}</span>
-                    <a href={prod.product_url} target="_blank" rel="sponsored nofollow noopener noreferrer" className="product-btn">
-                      Ver producto
+                    <a href={normalizeAmazonUrl(prod.product_url)} target="_blank" rel={AFFILIATE_REL} className="product-btn" data-aff-name={prod.name}>
+                      {/amazon\./i.test(prod.product_url || "") ? "Ver precio en Amazon" : "Ver producto"}
                     </a>
                   </div>
                 </div>

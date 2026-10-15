@@ -6,6 +6,7 @@ import Image from "next/image";
 import { getPostBySlug, getAllSlugs, posts } from "../../lib/posts";
 
 import { SITE_URL } from "../../lib/site";
+import { renderAffiliateHtml } from "../../lib/affiliate";
 const CATEGORY_COLORS = {
   "Guías":        { color: "var(--hyrox)",   bg: "rgba(255,255,255,0.06)" },
   "Eventos":      { color: "var(--ocr)",     bg: "rgba(255,255,255,0.07)" },
@@ -17,8 +18,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug);
-  if (!post) return { notFound: true };
+  const raw = getPostBySlug(params.slug);
+  if (!raw) return { notFound: true };
+  const hasAffiliate = /data-product="/.test(raw.content);
+  const post = { ...raw, content: renderAffiliateHtml(raw.content, { category: raw.category }), hasAffiliate };
   return { props: { post } };
 }
 
@@ -268,6 +271,11 @@ export default function BlogPost({ post }) {
 
       {/* Article body */}
       <div className="art-body-wrap">
+        {post.hasAffiliate && (
+          <p className="aff-disclosure">
+            Este artículo contiene enlaces de afiliado: si compras a través de ellos, Hybrid Race Hub recibe una pequeña comisión sin coste extra para ti.
+          </p>
+        )}
         <article
           className="art-content"
           dangerouslySetInnerHTML={{ __html: post.content }}

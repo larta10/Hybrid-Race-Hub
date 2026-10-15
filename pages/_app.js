@@ -20,10 +20,21 @@ export default function App({ Component, pageProps }) {
     function onClick(e) {
       const a = e.target.closest && e.target.closest("a[href]");
       if (!a || !/(^|\.)amazon\.[a-z.]+\//i.test(a.href.replace(/^https?:\/\//, ""))) return;
+      // Los enlaces de AffiliateLink / renderAffiliateHtml traen producto, categoría y posición en data-aff-*
       const card = a.closest("li, .product-row, .product-card, article");
-      const name = card?.querySelector(".product-name, h2, h3")?.textContent?.trim() || a.textContent.trim();
+      const name = a.dataset.affName || card?.querySelector(".product-name, h2, h3")?.textContent?.trim() || a.textContent.trim();
+      const all = [...document.querySelectorAll("a[data-aff]")];
+      const position = Number(a.dataset.affPos) || (all.indexOf(a) + 1) || undefined;
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "amazon_click", product_name: name.slice(0, 100), link_url: a.href, page_path: window.location.pathname });
+      window.dataLayer.push({
+        event: "amazon_click",
+        product_name: name.slice(0, 100),
+        product_id: a.dataset.aff || undefined,
+        product_category: a.dataset.affCat || undefined,
+        position,
+        link_url: a.href,
+        page_path: window.location.pathname,
+      });
     }
     document.addEventListener("click", onClick, true);
     return () => document.removeEventListener("click", onClick, true);

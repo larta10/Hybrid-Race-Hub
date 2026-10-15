@@ -1483,3 +1483,10 @@ input, select, textarea { max-width: 100%; }
   .results-head { flex-direction: row; align-items: center; flex-wrap: nowrap; }
   .sort-btns { align-self: auto; }
 }
+
+/* Aviso de afiliación al inicio de los artículos */
+.aff-disclosure {
+  max-width: 70ch; margin: 0 auto var(--s3);
+  padding: 10px 14px; border-left: 2px solid var(--border2);
+  font-size: 13px; line-height: 1.5; color: var(--text-muted);
+}

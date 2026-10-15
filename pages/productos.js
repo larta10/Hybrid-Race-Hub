@@ -3,7 +3,10 @@ import { SiteNav } from "../lib/shared";
 import GuideCallout from "../components/GuideCallout";
 import Link from "next/link";
 import Image from "next/image";
-import { RANKINGS, AZ, RANKINGS_UPDATED } from "../lib/rankings";
+import { RANKINGS as RAW_RANKINGS, RANKINGS_UPDATED, resolveRanking } from "../lib/rankings";
+import AffiliateLink from "../components/AffiliateLink";
+
+const RANKINGS = RAW_RANKINGS.map(resolveRanking);
 
 
 import { SITE_URL } from "../lib/site";
@@ -33,27 +36,18 @@ export default function Productos() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{__html: JSON.stringify(
-            RANKINGS.flatMap((ranking, ri) =>
-              ranking.products.map((product, i) => {
-                const price = product.price.match(/\d+/)?.[0] ?? "";
-                return {
-                  "@context": "https://schema.org",
-                  "@type": "Product",
-                  "name": product.name,
-                  "description": product.desc,
-                  "brand": { "@type": "Brand", "name": product.brand || product.name.split(" ")[0] },
-                  "url": `${SITE_URL}/productos/${ranking.slug}`,
-                  "offers": {
-                    "@type": "Offer",
-                    "url": AZ(product.asin),
-                    "priceCurrency": "EUR",
-                    "price": price,
-                    "availability": "https://schema.org/InStock",
-                    "seller": { "@type": "Organization", "name": "Amazon" },
-                  },
-                };
-              })
-            )
+            RANKINGS.map(ranking => ({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "name": ranking.title,
+              "url": `${SITE_URL}/productos/${ranking.slug}`,
+              "numberOfItems": ranking.products.length,
+              "itemListElement": ranking.products.map(product => ({
+                "@type": "ListItem",
+                "position": product.rank,
+                "item": { "@type": "Product", "name": product.name, "brand": { "@type": "Brand", "name": product.brand || product.name.split(" ")[0] } },
+              })),
+            }))
           )}}
         />
       </Head>
@@ -323,15 +317,9 @@ export default function Productos() {
                         <Image src={product.img} alt={product.name} width={220} height={220} className="product-img" />
                       </div>
                     )}
-                    <div className="product-price">{product.price}</div>
-                    <a
-                      href={AZ(product.asin)}
-                      target="_blank"
-                      rel="nofollow sponsored noopener noreferrer"
-                      className="product-cta"
-                    >
+                    <AffiliateLink product={product.product} position={product.rank} className="product-cta">
                       Ver precio en Amazon
-                    </a>
+                    </AffiliateLink>
                   </div>
                 </li>
               ))}
