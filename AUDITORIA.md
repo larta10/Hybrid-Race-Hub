@@ -442,3 +442,42 @@ Objetivos: LCP < 2,5 s ✅ · CLS < 0,1 ✅ · INP < 200 ms: no se mide en labor
   - Menú hamburguesa por debajo de 1024 px, también en las 6 páginas que tenían menú propio.
   - Lugar de la tarjeta en 2 líneas; el nombre nunca se corta.
 - **QA después:** 0 fallos en las 98 combinaciones.
+
+---
+
+## SEM: medir afiliación y preparar Google Ads (15-10-2026)
+
+### Eventos del blog (comprobados en el navegador)
+
+| Evento | Cuándo se envía | Parámetros |
+|---|---|---|
+| `amazon_click` | Clic en cualquier enlace de Amazon (rankings, artículos, comunidad) | `product_name`, `product_id`, `product_category`, `position`, `link_url`, `page_path` |
+| `podcast_play` | Botón "Escuchar aquí" del reproductor de Spotify | `platform`, `podcast_name` |
+| `podcast_click` | Enlaces a Spotify, Apple Podcasts o un episodio | `platform`, `podcast_name` |
+| `blog_search` | Búsqueda en /blog (se envía 0,9 s después de dejar de escribir) | `search_term`, `results` |
+| `share_click` | Botones de compartir del artículo | `network` (whatsapp, x, copy_link) |
+| `toc_click` | Clic en el índice del artículo | `section`, `position` |
+| `related_click` | Clic en "Sigue leyendo" | `target` |
+
+UTM, gclid y fbclid: la web no hace redirecciones que los quiten y GA4 los lee al aterrizar. Los canonicals son siempre la URL limpia, sin parámetros; comprobado con `/blog/que-es-hyrox?utm_source=google&gclid=abc`.
+
+### Marcar `amazon_click` como conversión en GA4 e importarla a Google Ads
+
+1. **GTM:** crea un activador de tipo "Evento personalizado" con el nombre `amazon_click` y una etiqueta "Google Analytics: evento de GA4" con ese mismo nombre de evento. Añade como parámetros `product_name`, `product_category` y `position` (variables de capa de datos). Publica el contenedor.
+2. **GA4 › Administrar › Eventos clave:** cuando el evento aparezca (puede tardar 24 h), activa el interruptor "Marcar como evento clave" en `amazon_click`.
+3. **GA4 › Administrar › Vinculación de productos › Google Ads:** vincula la cuenta de Google Ads (con "Habilitar el etiquetado automático" activado).
+4. **Google Ads › Objetivos › Conversiones › Nueva › Importar › Propiedades de Google Analytics 4 › Web:** elige `amazon_click` e impórtalo como conversión secundaria al principio, mientras se acumulan datos. Pásala a principal cuando tenga volumen.
+5. **Valor:** Amazon no te dice qué compra viene de cada clic. Pon un valor fijo estimado, por ejemplo la comisión media de tu informe de Afiliados dividida entre los clics del mismo mes, y revísalo cada trimestre.
+
+### Mejores candidatos para anuncios (intención de compra)
+
+| Página | Por qué |
+|---|---|
+| `/blog/material-hyrox-carreras-obstaculos` | Búsquedas de compra ("material HYROX", "qué necesito para una OCR") con 18 enlaces de afiliado |
+| `/productos/zapatillas-hyrox` | "Zapatillas para HYROX": la búsqueda de compra más clara del nicho |
+| `/blog/zapatillas-hyrox-running-hibrido-2026` | Misma intención, formato artículo |
+| `/productos/zapatillas-trail` | "Zapatillas para carreras de obstáculos", con temporada en primavera y otoño |
+| `/blog/equipamiento-ocr-guia-compra-2026` | Guía de compra OCR |
+| `/productos/relojes` | Ticket alto (más comisión por venta) |
+
+No conviene anunciar las guías informativas (qué es HYROX o el plan de 12 semanas): atraen tráfico, pero convierten poco. Mejor posicionarlas en orgánico y llevar desde ellas a las páginas de material con enlaces internos, como ya hacen.
