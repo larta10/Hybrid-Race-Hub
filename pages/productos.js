@@ -165,7 +165,7 @@ export default function Productos() {
       {/* Topbar */}
       <div className="topbar">
         <Link href="/" className="brand">
-          <Image src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width={36} height={36} priority />
+          <Image src="/logo-icon.svg" className="brand-logo-img" alt="" width={36} height={36} priority />
           <div>
             <div className="brand-name">Hybrid Race Hub</div>
             <div className="brand-sub">OCR · HYROX · Functional</div>

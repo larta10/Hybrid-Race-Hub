@@ -31,7 +31,7 @@ export default function Custom404() {
 
       <div className="page">
         <Link href="/" className="brand">
-          <Image src="/logo-icon.svg" alt="Hybrid Race Hub" width={32} height={32} />
+          <Image src="/logo-icon.svg" alt="" width={32} height={32} />
           <span className="brand-name">Hybrid Race Hub</span>
         </Link>
         <div className="error-code">404</div>

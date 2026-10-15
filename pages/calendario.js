@@ -222,7 +222,7 @@ export default function Calendario({ initialRaces = null, season = "", years = [
         <div className="hero-inner">
           <div className="brand">
             <a href="/" style={{textDecoration:"none",display:"flex",alignItems:"center",gap:14}}>
-              <Image src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width={40} height={40} priority />
+              <Image src="/logo-icon.svg" className="brand-logo-img" alt="" width={40} height={40} priority />
               <div>
                 <div className="brand-name">Hybrid Race Hub</div>
                 <div className="brand-sub">

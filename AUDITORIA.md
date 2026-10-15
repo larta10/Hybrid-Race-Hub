@@ -481,3 +481,82 @@ UTM, gclid y fbclid: la web no hace redirecciones que los quiten y GA4 los lee a
 | `/productos/relojes` | Ticket alto (más comisión por venta) |
 
 No conviene anunciar las guías informativas (qué es HYROX o el plan de 12 semanas): atraen tráfico, pero convierten poco. Mejor posicionarlas en orgánico y llevar desde ellas a las páginas de material con enlaces internos, como ya hacen.
+
+---
+
+## BLOG: afiliación, podcasts, plantilla y contenido (15-10-2026)
+
+### Enlaces de afiliado (detalle en `docs/informe-enlaces-afiliado.md`)
+
+| | Antes | Después |
+|---|---|---|
+| URLs de Amazon escritas a mano | 53 | 0 (todas salen de `buildAmazonUrl` en `lib/affiliate.js`) |
+| Fichas inexistentes (404 en amazon.es) | 21 | 0: pasan a la búsqueda de amazon.es con tag |
+| ASIN de otro modelo | 2 | 0 |
+| Precios de Amazon escritos a mano | 31 en rankings + 19 en artículos + 5 sueltos | 0. Botón "Ver precio en Amazon" |
+| Schema Product con precio inventado | 31 | 0 |
+| Fuente de productos | repartida en rankings y artículos | `data/products.js` (49 productos) |
+| Test automático | no | `npm run qa:links` (código fuente + HTML generado) |
+
+### Artículos nuevos
+
+| URL | Categoría | Palabras aprox. |
+|---|---|---|
+| /blog/mejores-podcasts-hyrox-deporte-hibrido | Podcasts | 1.000 con fichas y FAQ (12 podcasts verificados) |
+| /blog/que-es-hyrox | Guías | 1.800 con FAQ |
+| /blog/plan-entrenamiento-hyrox-12-semanas | Entrenamiento | 1.750 con FAQ |
+| /blog/material-hyrox-carreras-obstaculos | Material | 1.750 con FAQ (18 enlaces de afiliado) |
+| /blog/carreras-hibridas-principiantes-primera-prueba | Carreras | 1.700 con FAQ |
+
+Podcasts incluidos, verificados en Apple Podcasts y Spotify y con episodios de 2026:
+
+- **En español:** RUN, LIFT, REPEAT; Rendimiento Evolutivo; Vida de élite; Los Otros de 77 Feet; Radio Fitness Revolucionario; La Hoguera.
+- **En inglés:** Rox Lyfe; Hybrid Coaching Podcast; TrainHybrd; HYROX HEROES; UKOCR; The Sevan Podcast.
+
+### Artículos mejorados (12)
+
+En cada uno:
+
+- Respuesta directa en el primer párrafo.
+- H2 en forma de pregunta donde encaja.
+- Al menos 3 enlaces internos (antes tenían 0).
+- Fecha "Actualizado: octubre de 2026".
+- Sin guiones largos.
+
+En 8 se ha añadido FAQ con schema FAQPage.
+
+Se han corregido cifras inventadas: "70 % de corredores de Spartan Elite", "40 % falla un obstáculo", "15-20 % más el día de carrera", "de 20-30 eventos hace cinco años", "box que se han triplicado" y "Relay más barato". También los pesos de HYROX, que ponían 6/9 kg en wall balls; según hyrox.com son 4/6 kg en Open. Se han quitado 4 fotos: 2 daban 404 y otras 2 no tenían relación con el deporte (un libro y gráficos de bolsa). Los textos alternativos se han reescrito para describir la foto real.
+
+### Plantilla y portada
+
+- **/blog:** artículo destacado, 5 categorías indexables (/blog/categoria/…) con intro propia, buscador, paginación de 12 (/blog/pagina/2) y bloque de próximas carreras desde Supabase.
+- **Artículo:**
+  - migas de pan e índice (desplegable en móvil, lateral fijo desde 1280 px);
+  - autor enlazado a /sobre-nosotros, fecha de publicación y de actualización;
+  - botones de compartir (WhatsApp, X, copiar enlace), CTA según la categoría, caja de autor y 3 artículos relacionados;
+  - schema Article completo (con FAQPage e ItemList cuando aplica);
+  - tablas con scroll propio e imágenes con `next/image`.
+- **Imagen OG por artículo:** PNG estático en `public/og/blog/`, generado con `node scripts/gen-og.mjs` a partir de la ruta `/og`. Al añadir o cambiar el título de un artículo hay que volver a ejecutarlo, con la web arrancada en local, y subir las imágenes.
+- **RSS** en /rss.xml, enlazado desde el `<head>`.
+
+### Lighthouse móvil (build de producción en local)
+
+| Página | Rendimiento | Accesibilidad | Buenas prácticas | SEO | LCP | CLS |
+|---|---|---|---|---|---|---|
+| /blog | 94 (80 antes de pasar las imágenes OG a estáticas) | 99 → 100* | 100 | 100 | 2,9 s | 0,03 |
+| /blog/mejores-podcasts-hyrox-deporte-hibrido | 94 | 99 → 100* | 100 | 100 | 2,9 s | 0,01 |
+
+\*El único aviso de accesibilidad era el `alt` del logo, que repetía el nombre que va justo al lado. Ya está corregido; no se ha vuelto a medir.
+
+### 10 ideas de artículos, por potencial de tráfico
+
+1. **HYROX Madrid 2027:** fechas, IFEMA, horarios y consejos (búsqueda local con fecha confirmada).
+2. **Tiempos medios en HYROX por categoría y edad:** qué es un buen tiempo (intención informativa muy buscada).
+3. **Wall balls en HYROX:** técnica, estrategia por bloques y cómo entrenarlas.
+4. **Sled push y sled pull:** cómo mejorar sin trineo en tu gimnasio.
+5. **Spartan Race Madrid 2027:** Sprint, Super y Beast, qué elegir y cómo es el recorrido.
+6. **DEKA FIT vs HYROX:** diferencias, zonas y cuál hacer primero (8 sedes DEKA en España en 2027).
+7. **Mejores zapatillas para OCR en barro (2027)** (intención de compra y afiliación).
+8. **Qué comer antes y durante una HYROX:** plan de nutrición del día de carrera.
+9. **HYROX Doubles:** cómo repartir las estaciones con tu pareja.
+10. **Carreras de obstáculos para niños en España:** Kids Race, Youngstars y edades mínimas.

@@ -355,7 +355,7 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season }) {
       <header className="hero hero--home">
         <div className="hero-inner">
           <div className="brand">
-            <Image src="/logo-icon.svg" className="brand-logo-img" alt="Hybrid Race Hub" width={40} height={40} priority />
+            <Image src="/logo-icon.svg" className="brand-logo-img" alt="" width={40} height={40} priority />
             <div>
               <div className="brand-name">Hybrid Race Hub</div>
               <div className="brand-sub">

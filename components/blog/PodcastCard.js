@@ -34,7 +34,7 @@ export default function PodcastCard({ podcast: p, index }) {
       </header>
 
       <p className="pod-about">{p.about}</p>
-      <p className="pod-for"><strong>Para quién:</strong> {p.idealFor}. Nivel: {p.level.toLowerCase()}.</p>
+      <p className="pod-for"><strong>Ideal para:</strong> {p.idealFor}. <strong>Nivel:</strong> {p.level.toLowerCase()}.</p>
 
       <div className="pod-eps">
         <p className="pod-eps-label">Episodios para empezar</p>

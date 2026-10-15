@@ -25,7 +25,7 @@ export function PostCard({ post, priority = false, large = false }) {
             fill
             sizes={large ? "(min-width: 1024px) 60vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"}
             priority={priority}
-            unoptimized={post.generatedImage}
+            unoptimized={post.dynamicImage}
             style={{ objectFit: "cover" }}
           />
         </div>
