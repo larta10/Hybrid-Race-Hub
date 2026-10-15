@@ -1,0 +1,102 @@
+{
+  "generado": "2026-10-15",
+  "descripcion": "Carreras futuras de circuitos y franquicias híbridas con 2 o más pruebas en España, verificadas en la web oficial del organizador o en su plataforma oficial de inscripción. Solo inserciones nuevas.",
+  "races": [
+    {
+      "nombre": "FitRace Costa Brava 2026",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "17 Oct 2026", "fecha_iso": "2026-10-17",
+      "ubicacion": "Camping La Ballena Alegre, Sant Pere Pescador", "municipio": "Sant Pere Pescador", "provincia": "Girona", "comunidad": "Cataluña", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": "100€", "estado": "Cerrada", "formato": null,
+      "notas": "Carrera híbrida por parejas (masculinas, femeninas o mixtas) en categorías Elite, RX y Open: tramos de 1 km entre estaciones funcionales. Plazas agotadas. Forma parte del Costa Brava Fitness Challenge de la Fitness Challenge League.",
+      "url": "https://fitnesschallengeleague.com/fitrace-costa-brava-2026-d85",
+      "source": "fitnesschallengeleague.com",
+      "_circuito": "FitRace / Fitness Challenge League (FCL)",
+      "_fuente": "https://fitnesschallengeleague.com/fitrace-costa-brava-2026-d85"
+    },
+    {
+      "nombre": "H6 Hyatlón La Nucía 2026",
+      "modalidad": "Hyatlón", "modalidad_id": "func-hyatlon", "modalidad_parent": "funcional",
+      "fecha": "24 Oct 2026", "fecha_iso": "2026-10-24",
+      "ubicacion": "La Nucía Combat Sports Center", "municipio": "La Nucía", "provincia": "Alicante", "comunidad": "Comunidad Valenciana", "pais": "España",
+      "distancia": "6 x 1 km + 6 estaciones y tramo final (H6)", "distancia_km": null, "precio": null, "estado": "Abierta", "formato": null,
+      "notas": "Formato H6 del Tour Nacional de Hyatlón (FETRI). Sábado 24: individual; domingo 25: dobles y relevos. También hay modalidad ParaHyatlón.",
+      "url": "https://hyatlon.org/event/la-nucia",
+      "source": "hyatlon.org",
+      "_circuito": "Hyatlón (FETRI)",
+      "_fuente": "https://hyatlon.org/event/la-nucia"
+    },
+    {
+      "nombre": "HURBAX Madrid 2026 · Final Nacional",
+      "modalidad": "HURBAX", "modalidad_id": "func-hurbax", "modalidad_parent": "funcional",
+      "fecha": "24 Oct 2026", "fecha_iso": "2026-10-24",
+      "ubicacion": "Recinto Ferial de San Sebastián de los Reyes", "municipio": "San Sebastián de los Reyes", "provincia": "Madrid", "comunidad": "Madrid", "pais": "España",
+      "distancia": "5 km + 5 estaciones", "distancia_km": 5, "precio": null, "estado": "Abierta", "formato": null,
+      "notas": "Final del Campeonato HURBAX 2026, con los 20 primeros del ranking en individual, parejas y equipos. Individual por grupos de edad (18-29, 30-39, 40-49, 50+), parejas en formato You Go-I Go y equipos de 4. Inscripción hasta el 18 de octubre o hasta completar tandas.",
+      "url": "https://hurbax.com/eventos/madrid",
+      "source": "hurbax.com",
+      "_circuito": "HURBAX",
+      "_fuente": "https://hurbax.com/eventos/madrid"
+    },
+    {
+      "nombre": "Badajoz Race Hybrid Calamonte 2026",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-hyrox", "modalidad_parent": "funcional",
+      "fecha": "25 Oct 2026", "fecha_iso": "2026-10-25",
+      "ubicacion": "Campo de Fútbol de Calamonte", "municipio": "Calamonte", "provincia": "Badajoz", "comunidad": "Extremadura", "pais": "España",
+      "distancia": "8 x 1 km (Pro) / 8 x 500 m (Popular)", "distancia_km": 8, "precio": "47,50€", "estado": "Abierta", "formato": "Individual, Parejas",
+      "notas": "Circuito provincial de la Diputación de Badajoz con formato tipo HYROX: 8 tramos de carrera y 8 estaciones (SkiErg, sled push y pull, burpees, remo, farmers carry, zancadas y wall balls). Categorías Pro y Popular, individual y parejas, desde 16 años. Inscripción hasta el 22 de octubre.",
+      "url": "https://www.chipserena.es/web-evento/13941-badajoz-race-hybrid-calamonte",
+      "source": "dip-badajoz.es",
+      "_circuito": "Badajoz Race Hybrid (Diputación de Badajoz)",
+      "_fuente": "https://www.dip-badajoz.es/badajozrace/ y https://www.chipserena.es/web-evento/13941-badajoz-race-hybrid-calamonte (25 oct 2026)"
+    },
+    {
+      "nombre": "H6 Hyatlón Gran Canaria 2026",
+      "modalidad": "Hyatlón", "modalidad_id": "func-hyatlon", "modalidad_parent": "funcional",
+      "fecha": "14 Nov 2026", "fecha_iso": "2026-11-14",
+      "ubicacion": "Plaza de la Música - ExpoDeca, Las Palmas de Gran Canaria", "municipio": "Las Palmas de Gran Canaria", "provincia": "Las Palmas", "comunidad": "Canarias", "pais": "España",
+      "distancia": "6 x 1 km + 6 estaciones y tramo final (H6)", "distancia_km": null, "precio": null, "estado": "Abierta", "formato": null,
+      "notas": "Formato H6 del Tour Nacional de Hyatlón (FETRI). Sábado 14: individual; domingo 15: dobles y relevos. También hay modalidad ParaHyatlón.",
+      "url": "https://hyatlon.org/event/gran-canaria",
+      "source": "hyatlon.org",
+      "_circuito": "Hyatlón (FETRI)",
+      "_fuente": "https://hyatlon.org/event/gran-canaria"
+    },
+    {
+      "nombre": "Athlon X Fuengirola · Last Wave 2026",
+      "modalidad": "Fitness Funcional", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "21 Nov 2026", "fecha_iso": "2026-11-21",
+      "ubicacion": "Fuengirola", "municipio": "Fuengirola", "provincia": "Málaga", "comunidad": "Andalucía", "pais": "España",
+      "distancia": "4 km (10 x 400 m) + 10 workouts", "distancia_km": 4, "precio": "77€ (hasta el 1 de noviembre)", "estado": "Abierta", "formato": "Individual, Parejas, Equipos, Elite",
+      "notas": "Formato Athlon X: 10 tramos de 400 m con un workout (track) después de cada uno. Individual Open y Pro, parejas y equipos 2+1. El precio sube por plazos.",
+      "url": "https://athlonx.es/athlonx/last-wave/",
+      "source": "athlonx.es",
+      "_circuito": "Athlon X",
+      "_fuente": "https://athlonx.es/athlonx/last-wave/ y https://athlonx.es/athlonx/reglamento/"
+    },
+    {
+      "nombre": "H8 Hyatlón Zaragoza 2026",
+      "modalidad": "Hyatlón", "modalidad_id": "func-hyatlon", "modalidad_parent": "funcional",
+      "fecha": "28 Nov 2026", "fecha_iso": "2026-11-28",
+      "ubicacion": "Pabellón 4, Feria de Zaragoza", "municipio": "Zaragoza", "provincia": "Zaragoza", "comunidad": "Aragón", "pais": "España",
+      "distancia": "8 x 1 km + 8 estaciones y tramo final (H8)", "distancia_km": null, "precio": null, "estado": "Abierta", "formato": null,
+      "notas": "Cierre de la temporada de Hyatlón 2026 con el formato completo H8. Sábado 28: individual; domingo 29: dobles y relevos. También hay modalidad ParaHyatlón.",
+      "url": "https://hyatlon.org/event/zaragoza",
+      "source": "hyatlon.org",
+      "_circuito": "Hyatlón (FETRI)",
+      "_fuente": "https://hyatlon.org/event/zaragoza"
+    },
+    {
+      "nombre": "Athlon X Benidorm · Terra Mítica 2027",
+      "modalidad": "Fitness Funcional", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "20 Feb 2027", "fecha_iso": "2027-02-20",
+      "ubicacion": "Benidorm", "municipio": "Benidorm", "provincia": "Alicante", "comunidad": "Comunidad Valenciana", "pais": "España",
+      "distancia": "4 km (10 x 400 m) + 10 workouts", "distancia_km": 4, "precio": "Desde 57€", "estado": "Abierta", "formato": "Individual, Parejas, Equipos, Elite",
+      "notas": "Formato Athlon X: 10 tramos de 400 m con un workout después de cada uno. Individual Open y Pro, parejas y equipos 2+1. 57 € hasta el 8 de noviembre; luego sube por plazos.",
+      "url": "https://athlonx.es/athlonx/terra-mitica/",
+      "source": "athlonx.es",
+      "_circuito": "Athlon X",
+      "_fuente": "https://athlonx.es/athlonx/terra-mitica/ y https://athlonx.es/athlonx/reglamento/"
+    }
+  ]
+}

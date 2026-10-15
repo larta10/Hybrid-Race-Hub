@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { PODCASTS } from "../../data/podcasts";
 import PodcastCard from "./PodcastCard";
+import RaceList from "../RaceList";
 
 /** Tabla resumen de podcasts */
 function PodcastTable() {
@@ -47,7 +48,7 @@ function Faq({ faq }) {
  * Pinta el HTML del artículo y sustituye los marcadores <div data-block="..."></div>
  * por componentes React (tabla y fichas de podcasts, FAQ…).
  */
-export default function ArticleBody({ html, faq, className = "art-content" }) {
+export default function ArticleBody({ html, faq, races = null, pageUrl, className = "art-content" }) {
   const parts = html.split(/(<div data-block="[a-z-]+"(?: data-[a-z]+="[^"]*")*><\/div>)/);
   return (
     <article className={className}>
@@ -59,6 +60,9 @@ export default function ArticleBody({ html, faq, className = "art-content" }) {
           case "podcast-table": return <PodcastTable key={i} />;
           case "podcasts": return <PodcastList key={i} lang={attrs.lang} />;
           case "faq": return <Faq key={i} faq={faq} />;
+          case "races": return races?.length
+            ? <RaceList key={i} races={races} pageUrl={pageUrl} compact />
+            : <p key={i} className="races-empty">Ahora mismo no hay pruebas con fecha confirmada en nuestro calendario. En cuanto el organizador publique las nuevas fechas, aparecerán aquí.</p>;
           case "img": return (
             <figure key={i} className="art-figure">
               <div className="art-figure-img">

@@ -1695,3 +1695,7 @@ input, select, textarea { max-width: 100%; }
 .art-main .aff-disclosure { margin: 0 0 var(--s3); max-width: none; }
 .guide-callout-more { list-style: none; margin: var(--s2) 0 0; padding: 0; display: grid; gap: 6px; }
 .guide-callout-more a { color: var(--text); text-underline-offset: 3px; font-size: 15px; }
+.modal-guide { margin: 0 0 var(--s2); font-size: 15px; }
+.modal-guide a, .rl-guide a { color: var(--text); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+.rl-guide { margin: 4px 0 0; font-size: 14px; }
+.races-empty { color: var(--text-muted); border: 1px dashed var(--border2); border-radius: var(--radius); padding: var(--s2); }

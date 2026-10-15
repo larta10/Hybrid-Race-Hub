@@ -30,6 +30,8 @@ const ROUTES = [
   "/blog/hyrox-vs-ocr-diferencias",
   "/blog/equipamiento-ocr-guia-compra-2026",
   "/blog/plan-entrenamiento-hyrox-12-semanas",
+  "/blog/que-es-el-hyatlon",
+  "/blog/que-es-hurbax",
   "/blog/mejores-podcasts-hyrox-deporte-hibrido",
   "/productos",
   "/productos/relojes",

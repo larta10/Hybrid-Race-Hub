@@ -68,8 +68,12 @@ export default function Calendario({ initialRaces = null, season = "", years = [
   useEffect(()=>{
     if(!router.isReady) return;
     if(router.query.q) setTextQuery(decodeURIComponent(router.query.q));
+    // ?modalidad=func-hyatlon (enlaces desde las guías): abre el calendario filtrado por esa modalidad
+    const sub = router.query.modalidad;
+    const parent = sub && MODALITIES.find(m => m.subs.some(x => x.id === sub));
+    if(parent){ setModalParents([parent.id]); setModalSubs([sub]); }
     setRouterReady(true);
-  },[router.isReady, router.query.q]);
+  },[router.isReady, router.query.q, router.query.modalidad]);
 
   /* Analítica: búsqueda de texto (debounce 1 s) */
   useEffect(()=>{

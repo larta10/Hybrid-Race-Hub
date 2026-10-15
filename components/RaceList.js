@@ -1,6 +1,7 @@
 /* Lista editorial de carreras (render en servidor). Datos reales de Supabase. */
 import { dateParts, modalityLabel } from "../lib/races-server";
 import { downloadIcs, whatsappUrl, onWhatsappShare, onOrganizerClick } from "../lib/race-actions";
+import { guideFor } from "../lib/race-links";
 
 export default function RaceList({ races, pageUrl, showRegion = true, compact = false }) {
   if (!races || races.length === 0) return null;
@@ -22,6 +23,7 @@ export default function RaceList({ races, pageUrl, showRegion = true, compact = 
               <p className="rl-meta">
                 {[r.formato, r.distancia, r.precio].filter(Boolean).join(" · ") || "Formato y precio: consulta la web oficial"}
               </p>
+              {guideFor(r) && <p className="rl-guide"><a href={guideFor(r).href}>{guideFor(r).label} →</a></p>}
             </div>
             <div className="rl-actions">
               {r.url

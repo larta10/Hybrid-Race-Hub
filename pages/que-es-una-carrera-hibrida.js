@@ -82,7 +82,7 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
   const title = `Qué es una carrera híbrida: HYROX, OCR y Spartan explicados (${season}) | ${SITE_NAME}`;
   const desc = "Qué es una carrera híbrida, tipos (HYROX, OCR, Spartan, DEKA), cómo es una prueba HYROX, categorías, cómo prepararte y próximas carreras en España.";
   const updated = dateParts(CONTENT_UPDATED);
-  const otherMods = Object.entries(counts).filter(([k]) => !["HYROX", "OCR", "Spartan", "DEKA", "DEKA FIT"].includes(k));
+  const otherMods = Object.entries(counts).filter(([k]) => !["HYROX", "OCR", "Spartan", "DEKA", "DEKA FIT", "Hyatlón", "HURBAX"].includes(k));
 
   const schema = [
     {
@@ -198,6 +198,19 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
             y DEKA STRONG elimina la carrera. Es una buena alternativa si te gusta HYROX y quieres algo más corto.
           </p>
 
+          <h3>Hyatlón</h3>
+          <p>
+            La carrera híbrida oficial de la Federación Española de Triatlón, aprobada en 2026 y desarrollada junto a World Triathlon. Alterna tramos de 1 km con estaciones
+            en recinto cerrado, en dos formatos: H6 (6 estaciones) y H8 (las mismas 8 que HYROX). Tiene modalidad individual, dobles, relevos y ParaHyatlón.
+            Te lo explicamos en <a href="/blog/que-es-el-hyatlon">qué es el Hyatlón</a>.
+          </p>
+
+          <h3>HURBAX</h3>
+          <p>
+            Circuito español al aire libre con 5 km de carrera y 5 estaciones, en individual, parejas o equipos de cuatro. Funciona como una liga por puntos con ranking
+            nacional, clasificación de clubes y una final en Madrid. Más detalles en <a href="/blog/que-es-hurbax">qué es HURBAX</a>.
+          </p>
+
           {otherMods.length > 0 && (
             <>
               <h3>Otras modalidades en el calendario</h3>
@@ -237,18 +250,18 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
             Tienes el formato completo, con los pesos oficiales de cada categoría y las sedes en España, en <a href="/blog/que-es-hyrox">qué es HYROX</a>.
           </p>
 
-          <h2 id="comparativa">HYROX vs OCR vs Spartan: ¿en qué se diferencian?</h2>
+          <h2 id="comparativa">HYROX vs OCR vs Spartan vs Hyatlón vs HURBAX: ¿en qué se diferencian?</h2>
           <div className="table-wrap">
             <table className="guide-table">
-              <thead><tr><th></th><th>HYROX</th><th>OCR</th><th>Spartan Race</th></tr></thead>
+              <thead><tr><th></th><th>HYROX</th><th>OCR</th><th>Spartan Race</th><th>Hyatlón</th><th>HURBAX</th></tr></thead>
               <tbody>
-                <tr><td>Dónde</td><td>Recinto cubierto</td><td>Al aire libre</td><td>Al aire libre, montaña o circuito</td></tr>
-                <tr><td>Recorrido</td><td>Siempre igual</td><td>Cambia en cada prueba</td><td>Cambia, con obstáculos de la marca</td></tr>
-                <tr><td>Distancia</td><td>8 km + 8 estaciones</td><td>De 3 a más de 20 km</td><td>Sprint ~5 km, Super ~10 km, Beast ~21 km</td></tr>
-                <tr><td>Clave</td><td>Ritmo y fuerza resistencia</td><td>Agarre, técnica y terreno</td><td>Agarre, trepa y gestión de burpees</td></tr>
-                <tr><td>Penalización</td><td>Repeticiones no válidas</td><td>Según organizador</td><td>30 burpees por obstáculo fallado</td></tr>
-                <tr><td>Zapatilla</td><td>Estable, de asfalto o gym</td><td>Trail con tacos</td><td>Trail con tacos y buen drenaje</td></tr>
-                <tr><td>Comparar tiempos</td><td>Sí, entre sedes</td><td>No</td><td>Solo dentro de la misma prueba</td></tr>
+                <tr><td>Dónde</td><td>Recinto cubierto</td><td>Al aire libre</td><td>Al aire libre, montaña o circuito</td><td>Recinto cerrado</td><td>Al aire libre</td></tr>
+                <tr><td>Recorrido</td><td>Siempre igual</td><td>Cambia en cada prueba</td><td>Cambia, con obstáculos de la marca</td><td>Fijo según formato (H6 u H8)</td><td>5 tramos de 1 km + 5 estaciones</td></tr>
+                <tr><td>Distancia</td><td>8 km + 8 estaciones</td><td>De 3 a más de 20 km</td><td>Sprint ~5 km, Super ~10 km, Beast ~21 km</td><td>6 u 8 tramos de 1 km + tramo final</td><td>5 km + 5 estaciones</td></tr>
+                <tr><td>Clave</td><td>Ritmo y fuerza resistencia</td><td>Agarre, técnica y terreno</td><td>Agarre, trepa y gestión de burpees</td><td>Ritmo y fuerza resistencia</td><td>Intensidad y regularidad en la liga</td></tr>
+                <tr><td>Penalización</td><td>Repeticiones no válidas</td><td>Según organizador</td><td>30 burpees por obstáculo fallado</td><td>Según reglamento FETRI</td><td>Según reglamento HURBAX</td></tr>
+                <tr><td>Zapatilla</td><td>Estable, de asfalto o gym</td><td>Trail con tacos</td><td>Trail con tacos y buen drenaje</td><td>Estable, de asfalto o gym</td><td>Estable, con algo de agarre</td></tr>
+                <tr><td>Comparar tiempos</td><td>Sí, entre sedes</td><td>No</td><td>Solo dentro de la misma prueba</td><td>Sí, dentro del mismo formato</td><td>Ranking acumulado por puntos</td></tr>
               </tbody>
             </table>
           </div>

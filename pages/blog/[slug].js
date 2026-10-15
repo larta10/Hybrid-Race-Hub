@@ -9,6 +9,7 @@ import { prepareArticle } from "../../lib/article-server";
 import { fechaLarga, mesAno } from "../../lib/dates";
 import { SITE_URL, SITE_NAME } from "../../lib/site";
 import { PODCASTS } from "../../data/podcasts";
+import { fetchUpcomingRaces } from "../../lib/races-server";
 
 export async function getStaticPaths() {
   return { paths: getAllSlugs(), fallback: false };
@@ -17,10 +18,17 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const data = prepareArticle(params.slug);
   if (!data) return { notFound: true };
-  return { props: data };
+  // Artículos con bloque de próximas carreras (Supabase): se regeneran cada hora
+  const f = data.post.racesFilter;
+  if (f) {
+    const re = new RegExp(f.name, "i");
+    const races = (await fetchUpcomingRaces()).filter(r => r.modalidad_id === f.modalidadId || re.test(r.nombre || ""));
+    return { props: { ...data, races }, revalidate: 3600 };
+  }
+  return { props: { ...data, races: null } };
 }
 
-export default function BlogPost({ post, toc, related }) {
+export default function BlogPost({ post, toc, related, races }) {
   const url = `${SITE_URL}/blog/${post.slug}`;
   const crumbs = [
     { name: "Inicio", href: "/" },
@@ -134,7 +142,7 @@ export default function BlogPost({ post, toc, related }) {
                 Este artículo contiene enlaces de afiliado: si compras a través de ellos, Hybrid Race Hub recibe una pequeña comisión sin coste extra para ti.
               </p>
             )}
-            <ArticleBody html={post.content} faq={post.faq} className="art-body" />
+            <ArticleBody html={post.content} faq={post.faq} races={races} pageUrl={url} className="art-body" />
             <ShareButtons url={url} title={post.h1} />
             <ArticleCta category={post.category} />
             <AuthorBox />
