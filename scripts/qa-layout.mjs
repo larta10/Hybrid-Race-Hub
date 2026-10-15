@@ -27,6 +27,7 @@ const ROUTES = [
   "/calculadora-hyrox",
   "/blog",
   "/blog/hyrox-vs-ocr-diferencias",
+  "/blog/mejores-podcasts-hyrox-deporte-hibrido",
   "/productos",
   "/productos/relojes",
   "/carreras-hibridas/madrid",

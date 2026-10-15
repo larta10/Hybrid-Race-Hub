@@ -1490,3 +1490,47 @@ input, select, textarea { max-width: 100%; }
   padding: 10px 14px; border-left: 2px solid var(--border2);
   font-size: 13px; line-height: 1.5; color: var(--text-muted);
 }
+
+/* ── Podcasts (artículo /blog/mejores-podcasts-hyrox-deporte-hibrido) ── */
+.pod-list { display: grid; gap: var(--s3); margin: var(--s3) 0 var(--s4); }
+.pod { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--s3); min-width: 0; }
+.pod-head { display: flex; gap: var(--s2); align-items: flex-start; margin-bottom: var(--s2); }
+.pod-num { font-family: var(--font-display); font-size: 28px; font-weight: 800; line-height: 1; color: var(--text-muted); flex: 0 0 auto; }
+.pod-titles { min-width: 0; }
+.art-content .pod-name, .pod-name { font-family: var(--font-display); font-size: 22px; font-weight: 800; line-height: 1.15; text-transform: none; margin: 0 0 6px; color: var(--text); }
+.pod-meta { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 13px; color: var(--text-muted); margin: 0; }
+.pod-lang { font-family: var(--font-mono); font-size: 11px; font-weight: 600; padding: 1px 6px; border: 1px solid var(--border2); border-radius: var(--radius-tag); color: var(--text); }
+.pod-about, .pod-for { margin: 0 0 var(--s2); }
+.pod-eps { border-top: 1px solid var(--border); padding-top: var(--s2); margin-top: var(--s2); }
+.pod-eps-label { font-family: var(--font-mono); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; color: var(--text-muted); margin: 0 0 var(--s1); }
+.art-content .pod-eps ul { list-style: none; padding: 0; margin: 0; }
+.pod-eps li { margin: 0 0 var(--s2); }
+.pod-ep-date { font-size: 13px; color: var(--text-muted); }
+.pod-ep-why { display: block; font-size: 15px; color: var(--text-muted); margin-top: 2px; }
+.pod-player { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2); margin-top: var(--s2); }
+.pod-player iframe { flex: 1 1 100%; border-radius: 12px; min-height: 152px; }
+.pod-play {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px;
+  font-family: var(--font-display); font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--bg); background: var(--text); border: 1px solid var(--text); border-radius: var(--radius-sm);
+}
+.pod-play:hover { background: #fff; }
+.pod-links { display: flex; flex-wrap: wrap; gap: var(--s1); }
+.art-content .pod-links a, .pod-links a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px;
+  font-size: 14px; text-decoration: none; color: var(--text);
+  border: 1px solid var(--border2); border-radius: var(--radius-sm);
+}
+.pod-links a:hover { border-color: var(--text); }
+
+/* FAQ desplegable en artículos */
+.faq-list { display: grid; gap: var(--s1); margin: var(--s2) 0 var(--s4); }
+.faq-item { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.faq-item summary { cursor: pointer; list-style: none; padding: 14px 16px; min-height: 44px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.art-content .faq-item summary h3, .faq-item summary h3 { display: inline; font-family: var(--font-body); font-size: 17px; font-weight: 600; text-transform: none; letter-spacing: 0; margin: 0; color: var(--text); }
+.faq-item p { padding: 0 16px 14px; margin: 0; }
+/* Tablas de artículos: en móvil hacen scroll propio con columnas legibles */
+@media (max-width: 720px) {
+  .table-wrap table, .art-content .table-wrap table { min-width: 560px; }
+}

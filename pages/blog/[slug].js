@@ -7,6 +7,8 @@ import { getPostBySlug, getAllSlugs, posts } from "../../lib/posts";
 
 import { SITE_URL } from "../../lib/site";
 import { renderAffiliateHtml } from "../../lib/affiliate";
+import ArticleBody from "../../components/blog/ArticleBody";
+import { PODCASTS } from "../../data/podcasts";
 const CATEGORY_COLORS = {
   "Guías":        { color: "var(--hyrox)",   bg: "rgba(255,255,255,0.06)" },
   "Eventos":      { color: "var(--ocr)",     bg: "rgba(255,255,255,0.07)" },
@@ -32,8 +34,8 @@ export default function BlogPost({ post }) {
   return (
     <>
       <Head>
-        <title>{post.title} | Hybrid Race Hub</title>
-        <meta name="description" content={post.excerpt} />
+        <title>{`${post.metaTitle || post.title} | Hybrid Race Hub`}</title>
+        <meta name="description" content={post.description || post.excerpt} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/blog/${post.slug}`} />
@@ -69,6 +71,25 @@ export default function BlogPost({ post }) {
             "url": `${SITE_URL}/blog/${post.slug}`,
           })}}
         />
+        {post.faq?.length > 0 && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": post.faq.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+          }) }} />
+        )}
+        {post.category === "Podcasts" && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": post.h1 || post.title,
+            "numberOfItems": PODCASTS.length,
+            "itemListElement": PODCASTS.map((p, i) => ({
+              "@type": "ListItem", "position": i + 1,
+              "item": { "@type": "PodcastSeries", "name": p.name, "url": p.apple, "inLanguage": p.lang === "ES" ? "es" : "en" },
+            })),
+          }) }} />
+        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{__html: JSON.stringify({
@@ -264,7 +285,7 @@ export default function BlogPost({ post }) {
             <span className="meta-info">·</span>
             <span className="meta-info">{post.readTime} lectura</span>
           </div>
-          <h1 className="art-title">{post.title}</h1>
+          <h1 className="art-title">{post.h1 || post.title}</h1>
           <p className="art-excerpt">{post.excerpt}</p>
         </div>
       </div>
@@ -276,10 +297,7 @@ export default function BlogPost({ post }) {
             Este artículo contiene enlaces de afiliado: si compras a través de ellos, Hybrid Race Hub recibe una pequeña comisión sin coste extra para ti.
           </p>
         )}
-        <article
-          className="art-content"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+        <ArticleBody html={post.content} faq={post.faq} />
 
         {/* Related posts */}
         {related.length > 0 && (
