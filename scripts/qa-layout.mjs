@@ -26,6 +26,7 @@ const ROUTES = [
   "/calculadora",
   "/calculadora-hyrox",
   "/blog",
+  "/blog/categoria/entrenamiento",
   "/blog/hyrox-vs-ocr-diferencias",
   "/blog/mejores-podcasts-hyrox-deporte-hibrido",
   "/productos",

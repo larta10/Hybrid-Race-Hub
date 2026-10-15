@@ -15,8 +15,7 @@ export default {
   updated: "2026-10-15",
   readTime: "11 min",
   author: "Hybrid Race Hub",
-  image: "/blog/podcasts-hyrox.webp",
-  imageAlt: "Atleta con auriculares corriendo durante un entrenamiento de HYROX",
+
   excerpt: `${PODCASTS.length} podcasts de HYROX, carreras de obstáculos, CrossFit y entrenamiento híbrido que siguen publicando en 2026, con el episodio por el que empezar en cada uno.`,
   description: "Los mejores podcasts de HYROX y deporte híbrido en español e inglés: quién los presenta, para quién son y qué episodio escuchar primero. Todos activos en 2026.",
   faq: [

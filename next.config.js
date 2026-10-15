@@ -22,6 +22,11 @@ const nextConfig = {
     }));
   },
 
+  // Imágenes Open Graph del blog: URL pública /og (fuera de /api, que está bloqueado en robots.txt)
+  async rewrites() {
+    return [{ source: "/og", destination: "/api/og" }];
+  },
+
   async headers() {
     return [
       {
