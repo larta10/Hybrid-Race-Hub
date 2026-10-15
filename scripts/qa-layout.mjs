@@ -29,6 +29,7 @@ const ROUTES = [
   "/blog/categoria/entrenamiento",
   "/blog/hyrox-vs-ocr-diferencias",
   "/blog/equipamiento-ocr-guia-compra-2026",
+  "/blog/plan-entrenamiento-hyrox-12-semanas",
   "/blog/mejores-podcasts-hyrox-deporte-hibrido",
   "/productos",
   "/productos/relojes",

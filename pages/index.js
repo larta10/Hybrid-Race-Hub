@@ -421,6 +421,10 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season }) {
             <p className="section-label">EMPIEZA AQUÍ</p>
             <ul>
               <li><a href="/que-es-una-carrera-hibrida">Qué es una carrera híbrida y qué tipos hay</a></li>
+              <li><a href="/blog/que-es-hyrox">Qué es HYROX: estaciones, pesos y cómo inscribirte</a></li>
+              <li><a href="/blog/carreras-hibridas-principiantes-primera-prueba">Cómo elegir tu primera carrera híbrida</a></li>
+              <li><a href="/blog/plan-entrenamiento-hyrox-12-semanas">Plan de entrenamiento HYROX de 12 semanas</a></li>
+              <li><a href="/blog/material-hyrox-carreras-obstaculos">Material para HYROX y carreras de obstáculos</a></li>
               <li><a href="/productos/zapatillas-hyrox">Ranking de zapatillas para HYROX</a></li>
               <li><a href="/productos/zapatillas-trail">Ranking de zapatillas de trail para OCR</a></li>
               <li><a href="/productos/relojes">Ranking de relojes GPS</a></li>

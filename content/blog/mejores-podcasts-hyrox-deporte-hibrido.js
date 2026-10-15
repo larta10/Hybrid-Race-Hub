@@ -1,6 +1,6 @@
 // Artículo: podcasts de HYROX y deporte híbrido. Datos de cada podcast en data/podcasts.js (verificados).
 // Los bloques <div data-block="..."></div> los pinta la plantilla del artículo con componentes React.
-import { PODCASTS } from "../../data/podcasts";
+import { PODCASTS } from "../../data/podcasts.js";
 
 const es = PODCASTS.filter(p => p.lang === "ES").length;
 const en = PODCASTS.filter(p => p.lang === "EN").length;

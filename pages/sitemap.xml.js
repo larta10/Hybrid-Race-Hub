@@ -1,4 +1,5 @@
-﻿import { getAllSlugs } from "../lib/posts";
+﻿import { allSummaries, PER_PAGE } from "../lib/blog";
+import { CATEGORIES } from "../lib/blog-categories";
 import { SUPABASE_URL, ANON_KEY } from "../lib/shared";
 
 import { SITE_URL } from "../lib/site";
@@ -37,7 +38,9 @@ export default function SitemapXml() {
 
 export async function getServerSideProps({ res }) {
   const today = new Date().toISOString().split("T")[0];
-  const slugs = getAllSlugs().map((s) => s.params.slug);
+  const posts = allSummaries();
+  const newest = posts.reduce((m, p) => (p.updated > m ? p.updated : m), "2026-01-01");
+  const blogPages = Math.max(1, Math.ceil((posts.length - 1) / PER_PAGE));
   const races = await fetchUpcomingRaces();
   const cityPages = HYBRID_CITIES.filter((c) => races.some((r) => raceMatchesCity(r, c))).map((c) => c.slug);
 
@@ -54,7 +57,7 @@ export async function getServerSideProps({ res }) {
     { loc: `${BASE}/`,                          lastmod: today, changefreq: "daily",   priority: "1.0" },
     { loc: `${BASE}/que-es-una-carrera-hibrida`, lastmod: today, changefreq: "weekly",  priority: "0.9" },
     { loc: `${BASE}/calendario`,                lastmod: today, changefreq: "daily",   priority: "0.9" },
-    { loc: `${BASE}/blog`,                      lastmod: today, changefreq: "weekly",  priority: "0.8" },
+    { loc: `${BASE}/blog`,                      lastmod: newest, changefreq: "weekly",  priority: "0.8" },
     { loc: `${BASE}/plan-entrenamiento`,        lastmod: today, changefreq: "monthly", priority: "0.8" },
     { loc: `${BASE}/centros-entrenamiento`,     lastmod: today, changefreq: "monthly", priority: "0.7" },
     { loc: `${BASE}/calculadora-hyrox`,         lastmod: today, changefreq: "monthly", priority: "0.7" },
@@ -79,11 +82,25 @@ export async function getServerSideProps({ res }) {
       priority: "0.8",
     })),
 
-    ...slugs.map((slug) => ({
-      loc: `${BASE}/blog/${slug}`,
-      lastmod: today,
+    // Artículos con su fecha real de última actualización
+    ...posts.map((p) => ({
+      loc: `${BASE}/blog/${p.slug}`,
+      lastmod: p.updated,
       changefreq: "monthly",
       priority: "0.7",
+    })),
+    // Categorías del blog y páginas 2, 3… del listado
+    ...CATEGORIES.map((c) => ({
+      loc: `${BASE}/blog/categoria/${c.slug}`,
+      lastmod: posts.filter((p) => p.catSlug === c.slug).reduce((m, p) => (p.updated > m ? p.updated : m), "2026-01-01"),
+      changefreq: "weekly",
+      priority: "0.6",
+    })),
+    ...Array.from({ length: blogPages - 1 }, (_, i) => ({
+      loc: `${BASE}/blog/pagina/${i + 2}`,
+      lastmod: newest,
+      changefreq: "weekly",
+      priority: "0.4",
     })),
 
     ...comunidad.map((a) => ({

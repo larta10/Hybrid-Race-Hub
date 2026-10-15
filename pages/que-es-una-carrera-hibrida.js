@@ -234,6 +234,7 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
           </p>
           <p>
             Para saber qué tiempo puedes hacer, mete tus parciales en la <a href="/calculadora-hyrox">calculadora HYROX</a>: te da el total y en qué rango de categoría estarías.
+            Tienes el formato completo, con los pesos oficiales de cada categoría y las sedes en España, en <a href="/blog/que-es-hyrox">qué es HYROX</a>.
           </p>
 
           <h2 id="comparativa">HYROX vs OCR vs Spartan: ¿en qué se diferencian?</h2>
@@ -276,7 +277,8 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
           </ol>
           <p>
             Si no quieres pensar la planificación, el <a href="/plan-entrenamiento">generador de planes</a> te prepara las semanas que faltan hasta tu carrera, con cargas y descargas,
-            y lo puedes bajar en Excel o PDF. Para encontrar dónde entrenar con sled y SkiErg, mira el <a href="/centros-entrenamiento">directorio de centros</a>.
+            y lo puedes bajar en Excel o PDF. Si prefieres una tabla fija, sigue nuestro <a href="/blog/plan-entrenamiento-hyrox-12-semanas">plan HYROX de 12 semanas</a>.
+            Para encontrar dónde entrenar con sled y SkiErg, mira el <a href="/centros-entrenamiento">directorio de centros</a>.
           </p>
 
           <h2 id="material">Material recomendado</h2>
@@ -287,6 +289,7 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
             <li><strong>Pulsómetro de pecho</strong> si quieres datos fiables en las estaciones (<a href="/productos/pulsometros">ranking de pulsómetros</a>).</li>
             <li><strong>Ropa</strong> que no roce con barro ni sudor (<a href="/productos/ropa">ranking de ropa técnica</a>).</li>
           </ul>
+          <p>Lo tienes todo ordenado por necesidad, con pros y contras, en la guía de <a href="/blog/material-hyrox-carreras-obstaculos">material para HYROX y carreras de obstáculos</a>. Y si todavía dudas qué carrera hacer, lee cómo <a href="/blog/carreras-hibridas-principiantes-primera-prueba">elegir tu primera prueba</a>.</p>
 
           <h2 id="proximas">Próximas carreras híbridas en España</h2>
           {upcoming.length ? (

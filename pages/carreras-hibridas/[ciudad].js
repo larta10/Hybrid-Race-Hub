@@ -198,6 +198,10 @@ export default function CiudadPage(props) {
             Si es tu primera, empieza por la guía <a href="/que-es-una-carrera-hibrida">qué es una carrera híbrida</a>: formatos, las 8 estaciones de HYROX y cómo prepararla.
             Y para el material, los rankings de <a href="/productos/zapatillas-hyrox">zapatillas HYROX</a> y <a href="/productos/zapatillas-trail">zapatillas de trail para OCR</a>.
           </p>
+          <p>
+            Para preparar tu carrera: <a href="/blog/carreras-hibridas-principiantes-primera-prueba">cómo elegir tu primera prueba</a>,{" "}
+            <a href="/blog/que-es-hyrox">qué es HYROX y cómo inscribirte</a> y el <a href="/blog/plan-entrenamiento-hyrox-12-semanas">plan de entrenamiento de 12 semanas</a>.
+          </p>
 
           <h2 id="faq">Preguntas frecuentes sobre carreras híbridas en {city.name}</h2>
           <div className="faq-plain">

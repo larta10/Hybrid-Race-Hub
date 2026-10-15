@@ -1693,3 +1693,5 @@ input, select, textarea { max-width: 100%; }
 .art-body a.aff-link:hover { border-color: var(--text); }
 .art-body li > a.aff-link { margin-top: 6px; }
 .art-main .aff-disclosure { margin: 0 0 var(--s3); max-width: none; }
+.guide-callout-more { list-style: none; margin: var(--s2) 0 0; padding: 0; display: grid; gap: 6px; }
+.guide-callout-more a { color: var(--text); text-underline-offset: 3px; font-size: 15px; }
