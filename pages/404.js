@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const REGIONS = [
   ["madrid", "Madrid"], ["cataluna", "Cataluña"], ["andalucia", "Andalucía"], ["comunidad-valenciana", "Comunidad Valenciana"],
-  ["canarias", "Canarias"], ["baleares", "Baleares"], ["bilbao", "Bilbao"], ["sevilla", "Sevilla"],
+  ["canarias", "Canarias"], ["baleares", "Baleares"], ["galicia", "Galicia"], ["bilbao", "Bilbao"],
 ];
 
 export default function Custom404() {

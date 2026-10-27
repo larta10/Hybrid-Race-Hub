@@ -4,46 +4,64 @@ import Image from "next/image";
 import { SITE_URL, SITE_EMAIL, SITE_INSTAGRAM } from "../lib/site";
 import RaceList from "../components/RaceList";
 import { fetchUpcomingRaces, seasonLabel, raceEventSchema } from "../lib/races-server";
-import { HYBRID_CITIES } from "../lib/hybrid-cities";
+import { HYBRID_CITIES, CITY_BY_SLUG, raceMatchesCity } from "../lib/hybrid-cities";
+import { fechaLarga } from "../lib/dates";
 import {
   SUPABASE_URL, ANON_KEY, CCAA, FORMATS,
   InstagramIcon, EnvelopeIcon, HeroStats, SiteFooter, CookieBanner,
   SiteNav,
 } from "../lib/shared";
 
-/* ─── FAQ ──────────────────────────────────────────────────────────────────── */
-const FAQ_DATA = [
-  { question:"¿Qué es una carrera OCR?", answer:"OCR (Obstacle Course Race) es una carrera que combina running con obstáculos naturales o artificiales. Las pruebas más populares son Spartan Race, Tough Mudder y sus variantes. Los corredores deben completar tramos de carrera con desafíos físicos como trepar, arrastrarse, cargar peso y cruzar elementos de agua." },
-  { question:"¿Qué es HYROX? ¿En qué se diferencia de CrossFit?", answer:"HYROX es una modalidad específica de fitness funcional que consiste en completar una serie de ejercicios técnicos (burpees, saltos, remo, cargada) intercalados con carrera. A diferencia de los Open de CrossFit, los eventos HYROX están estandarizados y tienen un formato fijo (típicamente 8 estaciones + carrera) permitiendo comparar resultados entre eventos." },
-  { question:"¿Cómo me inscribo en una carrera?", answer:"Cada carrera tiene su propio sistema de inscripción. Haz clic en cualquier carrera del calendario para ver los detalles. Encontrarás un enlace directo a la web oficial del evento donde podrás completar tu inscripción." },
-  { question:"¿Qué nivel necesito para participar?", answer:"Cada evento indica su nivel de dificultad. Los formatos 'Individual' son para todos los niveles, mientras que 'Pro / Elite' requieren experiencia previa. Las distancias varían desde 5km hasta ultra distancias de 50km+." },
-  { question:"¿Puedo competir en pareja o equipo?", answer:"Sí, muchos eventos OCR y funcionales ofrecen formatos por parejas (2 personas) o equipos (4+ personas). Estos formatos añaden una dimensión de teamwork. Filtra por 'Parejas' o 'Equipos' en el calendario." },
-  { question:"¿Dónde encuentro entrenamientos específicos?", answer:"En la sección 'Comunidad' del Hub encontrarás box de HYROX y CrossFit por toda España. Muchos de estos gyms ofrecen clases específicas para mejorar tu rendimiento en obstáculos." },
-];
-
-function FAQItem({ question, answer }) {
-  const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div className="faq-item">
-      <button className={`faq-question${isOpen?" faq-question--open":""}`} onClick={()=>setIsOpen(!isOpen)}>
-        <span>{question}</span>
-        <span className="faq-icon">{isOpen?"−":"+"}</span>
-      </button>
-      {isOpen&&<div className="faq-answer">{answer}</div>}
-    </div>
-  );
+/* ─── FAQ (visible y con los mismos textos en el FAQPage) ────────────────── */
+function buildHomeFaqs({ madridRaces, races2027, count2027 }) {
+  const list = arr => arr.map(r => `${r.nombre} (${fechaLarga(r.fecha_iso)})`).join("; ");
+  return [
+    {
+      q: "¿Qué es una hybrid race o carrera híbrida?",
+      a: "Es una competición que mezcla carrera a pie con ejercicios de fuerza o con obstáculos. En España las más conocidas son HYROX, DEKA, el Hyatlón de la Federación Española de Triatlón y HURBAX, que alternan tramos de carrera con estaciones, y las carreras de obstáculos (OCR) como Spartan Race. Hybrid race es el nombre en inglés.",
+    },
+    {
+      q: "¿Cuáles son las próximas carreras híbridas en Madrid?",
+      a: madridRaces.length
+        ? `En el calendario tenemos ahora ${list(madridRaces)}. La lista completa, con precios y enlace de inscripción, está en la página de carreras híbridas en Madrid.`
+        : "Ahora mismo no hay carreras con fecha en Madrid en el calendario. En cuanto un organizador publique una, aparecerá en la página de carreras híbridas en Madrid.",
+    },
+    {
+      q: "¿Qué carreras híbridas hay en 2027?",
+      a: count2027
+        ? `Ya hay ${count2027} carreras con fecha en 2027 en el calendario. Las primeras son ${list(races2027)}. Las organizaciones siguen anunciando sedes, así que la lista crece cada semana.`
+        : "Todavía no hay carreras con fecha en 2027 en el calendario. Las organizaciones suelen anunciar la temporada con pocos meses de margen.",
+    },
+    {
+      q: "¿Es lo mismo HYROX que una carrera híbrida?",
+      a: "No exactamente. HYROX es una marca concreta de carrera híbrida: 8 km de carrera y 8 estaciones, siempre en el mismo orden y en pabellón. Carrera híbrida es el término general, que incluye también DEKA, Hyatlón, HURBAX, Hybrid Day y las carreras de obstáculos.",
+    },
+    {
+      q: "¿Cómo me inscribo en una carrera?",
+      a: "Cada carrera tiene su propia inscripción. En la ficha de cada prueba del calendario tienes el enlace a la web oficial del organizador, que es donde se paga y se elige categoría. Nosotros no vendemos dorsales.",
+    },
+    {
+      q: "¿Dónde puedo entrenar para una carrera híbrida?",
+      a: "En boxes de CrossFit y gimnasios funcionales con trineo, SkiErg y remo. En el directorio de centros de entrenamiento tienes más de 400 por toda España, con páginas por ciudad; llama antes de ir para confirmar el material.",
+    },
+  ];
 }
 
-function FAQSection() {
+function FAQSection({ faqs }) {
   return (
-    <section className="faq">
+    <section className="faq" aria-labelledby="faq-home">
       <div className="faq-inner">
         <div className="faq-header">
           <p className="faq-eyebrow">PREGUNTAS FRECUENTES</p>
-          <h2 className="faq-title">Lo que más nos preguntáis</h2>
+          <h2 id="faq-home" className="faq-title">Lo que más nos preguntáis</h2>
         </div>
-        <div className="faq-list">
-          {FAQ_DATA.map((item,i)=><FAQItem key={i} question={item.question} answer={item.answer}/>)}
+        <div className="faq-plain">
+          {faqs.map((f, i) => (
+            <details key={i} className="faq-d" open={i === 0}>
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
         </div>
       </div>
     </section>
@@ -222,13 +240,21 @@ function EditorialBlock({ imgSrc, imgAlt, eyebrow, title, body, cta, ctaHref, re
 /* ─── Home ─────────────────────────────────────────────────────────────────── */
 export async function getStaticProps() {
   const races = await fetchUpcomingRaces();
+  const madridRaces = races.filter(r => raceMatchesCity(r, CITY_BY_SLUG.madrid)).slice(0, 3)
+    .map(r => ({ nombre: r.nombre, fecha_iso: r.fecha_iso }));
+  const all2027 = races.filter(r => (r.fecha_iso || "").startsWith("2027"));
   return {
-    props: { nextRaces: races.slice(0, 6), upcomingCount: races.length, season: seasonLabel() },
+    props: {
+      nextRaces: races.slice(0, 6), upcomingCount: races.length, season: seasonLabel(),
+      madridRaces, count2027: all2027.length,
+      races2027: all2027.slice(0, 3).map(r => ({ nombre: r.nombre, fecha_iso: r.fecha_iso })),
+    },
     revalidate: 3600,
   };
 }
 
-export default function Home({ nextRaces = [], upcomingCount = 0, season }) {
+export default function Home({ nextRaces = [], upcomingCount = 0, season, madridRaces = [], races2027 = [], count2027 = 0 }) {
+  const faqs = buildHomeFaqs({ madridRaces, races2027, count2027 });
   const [totalCount, setTotalCount] = useState(null);
   useEffect(()=>{
     fetch(`${SUPABASE_URL}/rest/v1/races?select=count&modalidad_parent=in.(ocr,funcional)`,{
@@ -298,63 +324,11 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season }) {
             ],
           })}}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{__html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "¿Qué es una carrera OCR?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "OCR (Obstacle Course Race) es una carrera que combina running con obstáculos naturales o artificiales. Las pruebas más populares son Spartan Race, Tough Mudder y sus variantes. Los corredores deben completar tramos de carrera con desafíos físicos como trepar, arrastrarse, cargar peso y cruzar elementos de agua.",
-                },
-              },
-              {
-                "@type": "Question",
-                "name": "¿Qué es HYROX? ¿En qué se diferencia de CrossFit?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "HYROX es una modalidad específica de fitness funcional que consiste en completar una serie de ejercicios técnicos (burpees, saltos, remo, cargada) intercalados con carrera. A diferencia de los Open de CrossFit, los eventos HYROX están estandarizados y tienen un formato fijo (típicamente 8 estaciones + carrera) permitiendo comparar resultados entre eventos.",
-                },
-              },
-              {
-                "@type": "Question",
-                "name": "¿Cómo me inscribo en una carrera?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Cada carrera tiene su propio sistema de inscripción. Haz clic en cualquier carrera del calendario para ver los detalles. Encontrarás un enlace directo a la web oficial del evento donde podrás completar tu inscripción.",
-                },
-              },
-              {
-                "@type": "Question",
-                "name": "¿Qué nivel necesito para participar?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Cada evento indica su nivel de dificultad. Los formatos 'Individual' son para todos los niveles, mientras que 'Pro / Elite' requieren experiencia previa. Las distancias varían desde 5km hasta ultra distancias de 50km+.",
-                },
-              },
-              {
-                "@type": "Question",
-                "name": "¿Puedo competir en pareja o equipo?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Sí, muchos eventos OCR y funcionales ofrecen formatos por parejas (2 personas) o equipos (4+ personas). Estos formatos añaden una dimensión de teamwork. Filtra por 'Parejas' o 'Equipos' en el calendario.",
-                },
-              },
-              {
-                "@type": "Question",
-                "name": "¿Dónde encuentro entrenamientos específicos?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "En la sección 'Comunidad' del Hub encontrarás box de HYROX y CrossFit por toda España. Muchos de estos gyms ofrecen clases específicas para mejorar tu rendimiento en obstáculos.",
-                },
-              },
-            ],
-          })}}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+        }) }} />
       </Head>
 
       {/* ── HEADER ── */}
@@ -392,6 +366,22 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season }) {
           </div>
         </div>
       </header>
+
+      {/* Qué es esto, en pocas líneas */}
+      <section className="home-intro" aria-label="Sobre el calendario">
+        <div className="home-intro-inner">
+          <p>
+            Hybrid Race Hub reúne en un solo calendario las carreras híbridas que se celebran en España. Si buscas una <em>hybrid race</em>,
+            aquí la llamamos carrera híbrida: una prueba que mezcla correr con estaciones de fuerza, como HYROX, DEKA o el Hyatlón, o con obstáculos,
+            como Spartan y el resto de OCR. Revisamos las fechas con las webs de los organizadores y enlazamos siempre a la inscripción oficial.
+          </p>
+          <p>
+            También tienes las competiciones híbridas por zona, de <a href="/carreras-hibridas/madrid">Madrid</a> y <a href="/carreras-hibridas/cataluna">Cataluña</a>{" "}
+            a <a href="/carreras-hibridas/andalucia">Andalucía</a>, <a href="/carreras-hibridas/canarias">Canarias</a> o <a href="/carreras-hibridas/galicia">Galicia</a>,
+            y las que ya tienen fecha en 2027. Si es tu primera, empieza por <a href="/que-es-una-carrera-hibrida">qué es una carrera híbrida</a>.
+          </p>
+        </div>
+      </section>
 
       {/* Próximas carreras reales (Supabase, ISR cada hora) */}
       <section className="home-next" aria-labelledby="proximas">
@@ -509,7 +499,7 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season }) {
         reverse
       />
 
-      <FAQSection/>
+      <FAQSection faqs={faqs}/>
       <OrganizerContact/>
       <SiteFooter/>
       <CookieBanner/>

@@ -6,7 +6,7 @@ import { fetchUpcomingRaces, seasonLabel, modalityLabel, priceNumber, dateParts,
 import { CITY_BY_SLUG, raceMatchesCity } from "../lib/hybrid-cities";
 
 // Fecha de la última revisión del texto (no del calendario, que se actualiza a diario)
-const CONTENT_UPDATED = "2026-10-14";
+const CONTENT_UPDATED = "2026-10-27";
 const PATH = "/que-es-una-carrera-hibrida";
 
 export async function getStaticProps() {
@@ -32,6 +32,14 @@ export async function getStaticProps() {
 
 function faqData({ madrid, priced, total }) {
   const faqs = [
+    {
+      q: "¿Qué significa carrera híbrida?",
+      a: "Que la prueba mezcla dos tipos de esfuerzo: correr y hacer fuerza (o superar obstáculos). Es la traducción de hybrid race. No es una distancia ni una marca concreta, sino una familia de competiciones: HYROX, DEKA, Hyatlón, HURBAX, Hybrid Day o las carreras de obstáculos.",
+    },
+    {
+      q: "¿Es lo mismo hybrid race que HYROX?",
+      a: "No. HYROX es una marca concreta de carrera híbrida, la más conocida: 8 km de carrera y 8 estaciones siempre en el mismo orden. Hybrid race es el término general. DEKA, Hyatlón, HURBAX y Hybrid Day también son carreras híbridas, cada una con su formato y sus reglas.",
+    },
     {
       q: "¿Qué es una carrera híbrida?",
       a: "Una carrera híbrida es una competición que mezcla carrera a pie con trabajo de fuerza o con obstáculos. Las más conocidas en España son HYROX (8 km de carrera alternados con 8 estaciones de ejercicio funcional), las carreras de obstáculos u OCR como Spartan Race, y formatos como DEKA. En inglés se llaman hybrid races.",
@@ -73,7 +81,7 @@ function faqData({ madrid, priced, total }) {
       a: "Para HYROX, una zapatilla estable con algo de amortiguación, que agarre bien en moqueta y no se hunda en el sled push. Para OCR, zapatilla de trail con tacos profundos que drene el agua. Tienes las dos comparativas en nuestros rankings de zapatillas HYROX y de zapatillas de trail para OCR.",
     },
   );
-  return faqs.slice(0, 8);
+  return faqs.slice(0, 10);
 }
 
 export default function Guia({ upcoming, total, madrid, counts, priced, season }) {
@@ -142,15 +150,17 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
         <div className="guide-head">
           <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Qué es una carrera híbrida" }]} />
           <p className="section-label">GUÍA · CARRERAS HÍBRIDAS</p>
-          <h1 className="guide-title">Qué es una carrera híbrida</h1>
+          <h1 className="guide-title">Qué es una carrera híbrida (hybrid race) y cómo funciona</h1>
           <p className="guide-updated">Última actualización: <time dateTime={CONTENT_UPDATED}>{updated.long}</time> · El calendario de abajo se actualiza cada día</p>
         </div>
 
         <div className="guide-body">
           <p className="guide-lead">
-            <strong>Una carrera híbrida es una competición que combina correr con fuerza, ejercicios funcionales u obstáculos dentro de la misma prueba.</strong>{" "}
-            No gana el que corre más rápido ni el que más levanta, sino el que mejor aguanta las dos cosas a la vez.
-            En España las más conocidas son HYROX, las carreras de obstáculos (OCR) como Spartan Race y formatos como DEKA; en inglés se llaman <em>hybrid races</em>.
+            <strong>Una carrera híbrida (en inglés, <em>hybrid race</em>) es una competición que alterna tramos de carrera a pie con ejercicios de fuerza u obstáculos dentro de la misma prueba.</strong>{" "}
+            Gana quien mejor aguanta las dos cosas a la vez. En España las más conocidas son HYROX, DEKA, el Hyatlón, HURBAX y las carreras de obstáculos como Spartan Race.
+          </p>
+          <p>
+            La clave está en seguir corriendo con las piernas cargadas después de un trineo o de cien wall balls, no en ser el más rápido ni el más fuerte.
           </p>
           <p>
             Hace unos años era un nicho de gente que venía del CrossFit o del trail. Hoy en nuestro calendario hay {total} carreras de este tipo programadas en España
@@ -209,6 +219,14 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
           <p>
             Circuito español al aire libre con 5 km de carrera y 5 estaciones, en individual, parejas o equipos de cuatro. Funciona como una liga por puntos con ranking
             nacional, clasificación de clubes y una final en Madrid. Más detalles en <a href="/blog/que-es-hurbax">qué es HURBAX</a>.
+          </p>
+
+          <h3>Hybrid Day</h3>
+          <p>
+            Circuito de competiciones híbridas de una organización portuguesa que se celebra en Portugal y España, con el mismo esquema que HYROX:
+            8 tramos de 1 km de carrera y 8 estaciones (SkiErg, sled push y pull, burpee broad jumps, remo, farmers carry, sandbag lunges y wall balls),
+            en individual, parejas y relevos. En 2026 ha pasado por Valencia y Torremolinos, y la próxima sede publicada es Vigo, en el IFEVI, los días 12 y 13 de diciembre de 2026.
+            Las sedes de 2027 todavía no están anunciadas en su web oficial.
           </p>
 
           {otherMods.length > 0 && (
@@ -315,7 +333,7 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
             <p>No hemos podido cargar el calendario ahora mismo. Lo tienes completo en <a href="/calendario">el calendario de carreras</a>.</p>
           )}
           <p className="guide-cities">
-            Por ciudad: <a href="/carreras-hibridas/madrid">Madrid</a> · <a href="/carreras-hibridas/barcelona">Barcelona</a> · <a href="/carreras-hibridas/valencia">Valencia</a> · <a href="/carreras-hibridas/sevilla">Sevilla</a> · <a href="/carreras-hibridas/malaga">Málaga</a> · <a href="/carreras-hibridas/bilbao">Bilbao</a> · <a href="/carreras-hibridas/zaragoza">Zaragoza</a>
+            Por zona: <a href="/carreras-hibridas/madrid">Madrid</a> · <a href="/carreras-hibridas/cataluna">Cataluña</a> · <a href="/carreras-hibridas/andalucia">Andalucía</a> · <a href="/carreras-hibridas/comunidad-valenciana">Comunidad Valenciana</a> · <a href="/carreras-hibridas/canarias">Canarias</a> · <a href="/carreras-hibridas/galicia">Galicia</a> · <a href="/carreras-hibridas/bilbao">Bilbao</a> · <a href="/carreras-hibridas/zaragoza">Zaragoza</a>
           </p>
 
           <h2 id="faq">Preguntas frecuentes</h2>

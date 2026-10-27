@@ -8,6 +8,8 @@ import { track } from "../../lib/shared";
 import { fetchUpcomingRaces, seasonLabel, dateParts, raceEventSchema, todayISO } from "../../lib/races-server";
 import { HYBRID_CITIES, CITY_BY_SLUG, raceMatchesCity, centerMatchesCity } from "../../lib/hybrid-cities";
 import CENTROS from "../../lib/centros-entrenamiento.json";
+import { upcomingVerifiedEvents } from "../../lib/verified-events";
+import { CENTER_CITIES } from "../../lib/center-cities";
 
 export async function getStaticPaths() {
   return { paths: HYBRID_CITIES.map(c => ({ params: { ciudad: c.slug } })), fallback: false };
@@ -16,7 +18,9 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const city = CITY_BY_SLUG[params.ciudad];
   if (!city) return { notFound: true };
-  const all = await fetchUpcomingRaces();
+  // Supabase + eventos comprobados a mano en la web oficial (lib/verified-events.js)
+  const all = [...(await fetchUpcomingRaces()), ...upcomingVerifiedEvents(todayISO())]
+    .sort((a, b) => a.fecha_iso.localeCompare(b.fecha_iso));
   const races = all.filter(r => raceMatchesCity(r, city));
   const centers = CENTROS.filter(c => centerMatchesCity(c, city))
     .map(c => ({ nombre: c.nombre, tipo: c.tipo || null, ciudad: c.ciudad || null, direccion: c.direccion || null, web: c.web || null }));
@@ -46,6 +50,7 @@ export async function getStaticProps({ params }) {
       season: seasonLabel(),
       totalSpain: all.length,
       generated: todayISO(),
+      centerCities: CENTER_CITIES.filter(cc => city.cp.some(p => cc.cp.startsWith(p))).map(cc => ({ slug: cc.slug, name: cc.name, count: cc.count })),
     },
     revalidate: 86400,
   };
@@ -84,7 +89,7 @@ function buildFaqs({ city, races, centers, centersTotal, nearby }) {
 }
 
 export default function CiudadPage(props) {
-  const { city, races, centers, centersTotal, nearby, nearbyRaces, season, totalSpain, generated } = props;
+  const { city, races, centers, centersTotal, nearby, nearbyRaces, season, totalSpain, generated, centerCities = [] } = props;
   const path = `/carreras-hibridas/${city.slug}`;
   const url = `${SITE_URL}${path}`;
   const indexable = races.length > 0;
@@ -151,8 +156,8 @@ export default function CiudadPage(props) {
           <h1 className="guide-title">Carreras híbridas {city.en} {season}</h1>
           <p className="guide-updated">
             {races.length
-              ? `${races.length} ${races.length === 1 ? "carrera programada" : "carreras programadas"} · Calendario actualizado cada día`
-              : "Sin carreras programadas ahora mismo · Calendario actualizado cada día"}
+              ? `${races.length} ${races.length === 1 ? "carrera programada" : "carreras programadas"}`
+              : "Sin carreras programadas ahora mismo"}
             {" · "}Actualizado: <time dateTime={generated}>{fechaLarga(generated)}</time>
           </p>
         </div>
@@ -165,6 +170,11 @@ export default function CiudadPage(props) {
             <>
               <p>Ordenadas por fecha. Precio y formato son los que publica cada organizador; confirma siempre en su web antes de inscribirte.</p>
               <RaceList races={races} pageUrl={url} showRegion={city.kind === "comunidad"} />
+              {races.some(r => r.fuente) && (
+                <p className="guide-note">
+                  {races.filter(r => r.fuente).map(r => `${r.nombre}: fecha y sede comprobadas el ${fechaLarga(r.verificado)} en ${r.fuente}`).join(". ")}.
+                </p>
+              )}
             </>
           ) : (
             <>
@@ -175,6 +185,7 @@ export default function CiudadPage(props) {
               {nearbyRaces.length
                 ? <RaceList races={nearbyRaces} pageUrl={url} showRegion />
                 : <p>Tampoco hay fechas en las zonas de alrededor. Tienes todas las de España ({totalSpain}) en el <a href="/calendario">calendario completo</a>.</p>}
+              <p>¿Organizas una carrera {city.en}? <a href="/contacto-organizadores">Envíanos la fecha</a> y la publicamos gratis.</p>
             </>
           )}
 
@@ -195,6 +206,14 @@ export default function CiudadPage(props) {
                 ))}
               </ul>
               {centersTotal > centers.length && <p><a href="/centros-entrenamiento">Ver los {centersTotal} centros en el directorio →</a></p>}
+              {centerCities.length > 0 && (
+                <p>
+                  Por ciudad:{" "}
+                  {centerCities.map((cc, i) => (
+                    <span key={cc.slug}>{i > 0 && " · "}<a href={`/centros-entrenamiento/${cc.slug}`}>dónde entrenar HYROX en {cc.name}</a></span>
+                  ))}
+                </p>
+              )}
             </>
           ) : (
             <p>Aún no tenemos centros registrados aquí. Busca por código postal en el <a href="/centros-entrenamiento">directorio de centros</a> o escríbenos si quieres que añadamos el tuyo.</p>
@@ -209,6 +228,7 @@ export default function CiudadPage(props) {
             ))}
           </ul>
           <p>
+            Tienes todas las fechas de España en el <a href="/">calendario de carreras híbridas</a>.
             Si es tu primera, empieza por la guía <a href="/que-es-una-carrera-hibrida">qué es una carrera híbrida</a>: formatos, las 8 estaciones de HYROX y cómo prepararla.
             Y para el material, los rankings de <a href="/productos/zapatillas-hyrox">zapatillas HYROX</a> y <a href="/productos/zapatillas-trail">zapatillas de trail para OCR</a>.
           </p>

@@ -4,7 +4,7 @@ Si la sesión se corta: leer este archivo y `git log -5`, y seguir por la primer
 
 - ✅ Fase 1 — Auditoría técnica (enlaces, imágenes, móvil)
 - ✅ Fase 2 — SEO técnico (sitemap, canonical, metas, schema, CWV, enlazado, 404)
-- ⏳ Fase 3 — SEO de contenido (home, guía, blog, Galicia y regiones nuevas, centros por ciudad, artículos)
+- ✅ Fase 3 — SEO de contenido (home, guía, blog, Galicia y regiones nuevas, centros por ciudad, artículos)
 - ⏳ Fase 4 — SEM (lib/track.js, docs/sem/*)
 - ⏳ Fase 5 — Cierre (lint, crawler, INFORME-AUDITORIA-2026-10.md)
 
@@ -28,3 +28,12 @@ Si la sesión se corta: leer este archivo y `git log -5`, y seguir por la primer
 - Centros: geolocalización solo bajo demanda, 6 centros por comunidad con botón "Ver los N" (DOM inicial mucho menor).
 - Enlazado: home → todas las regiones con anchor "Carreras híbridas en X"; bloque fijo en cada post (calendario + 3 regiones + ranking); 404 con regiones.
 - Lighthouse móvil ANTES (producción): home 76 (LCP 4,5 s, TBT 310 ms), centros 71 (TBT 1.270 ms, 8.162 nodos DOM).
+
+### Fase 3 (hecho)
+- Home: title "Carreras híbridas en España 2026-2027 | Hybrid Race Hub", bloque de ~105 palabras con hybrid race / carreras híbridas / competiciones híbridas, FAQ visible (<details>) de 6 preguntas con datos de Supabase + FAQPage.
+- Guía: title y H1 con "hybrid race", definición de ~55 palabras al inicio, sección Hybrid Day (verificada en hybrid-day.com), 2 FAQ nuevas (qué significa / ¿hybrid race = HYROX?).
+- Blog: titles/metas de HURBAX, Hyatlón y HYROX con respuesta directa (+ fechas verificadas en hyatlon.org y hurbax.com).
+- Regiones nuevas: /carreras-hibridas/galicia (DEKA Vigo 2027 de Supabase + Hybrid Day Vigo 12-13/12/2026 verificado en hybrid-day.com, en lib/verified-events.js), /carreras-hibridas/cantabria, /carreras-hibridas/castilla-la-mancha. No se menciona Coruña: no hay evento verificado.
+- 31 páginas /centros-entrenamiento/[ciudad] (≥3 centros distintos, lib/center-cities.js) + bloque "Centros por ciudad".
+- Artículos: /blog/hyrox-vs-carrera-hibrida-diferencias y /blog/calendario-hyrox-espana-2026-2027 (Hybrid Day 2027 sin sedes publicadas → sustituido).
+- "Actualizado: fecha" en regiones, centros por ciudad y posts.

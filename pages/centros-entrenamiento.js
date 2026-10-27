@@ -1,6 +1,8 @@
 ﻿import React, { useState, useMemo } from "react";
 const { haversine } = require("../lib/distance");
 import { Breadcrumbs } from "../components/PageShell";
+import { CENTER_CITIES } from "../lib/center-cities";
+import { trackSearch } from "../lib/track";
 import Head from "next/head";
 import Link from "next/link";
 import centrosJson from "../lib/centros-entrenamiento.json";
@@ -293,6 +295,12 @@ export default function CentrosEntrenamiento() {
         .no-results { text-align:center; padding:4rem 2rem; color:var(--muted); }
         .no-results strong { display:block; font-family:var(--font-display); font-size:28px; font-weight:800; color:var(--text); text-transform:uppercase; margin-bottom:8px; }
 
+        .by-city { margin-bottom: 2.5rem; }
+        .by-city-sub { font-size:14px; color:var(--text-muted); margin:.4rem 0 1rem; }
+        .by-city-list { list-style:none; display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:0 1.5rem; border-top:0.5px solid var(--border); }
+        .by-city-list li { border-bottom:0.5px solid var(--border); }
+        .by-city-list a { display:flex; align-items:center; justify-content:space-between; min-height:44px; font-size:15px; color:var(--text); }
+        .by-city-list a span { font-family:var(--font-mono); font-size:12px; color:var(--muted2); }
         .show-more { display:block; width:100%; min-height:44px; margin-top:10px; background:transparent; border:0.5px solid var(--border2); border-radius:var(--radius-sm); color:var(--text-muted); font-family:var(--font-body); font-size:14px; cursor:pointer; }
         .show-more:hover { color:var(--text); border-color:var(--text-muted); }
         .near-btn { min-height:44px; padding:0 14px; background:transparent; border:0.5px solid var(--border2); border-radius:var(--radius-sm); color:var(--text-muted); font-family:var(--font-body); font-size:14px; cursor:pointer; white-space:nowrap; }
@@ -377,7 +385,7 @@ export default function CentrosEntrenamiento() {
               className="search-input"
               placeholder="Ciudad, código postal o nombre del centro..."
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => { setSearch(e.target.value); trackSearch(e.target.value, "centros"); }}
               aria-label="Buscar centros de entrenamiento"
             />
           </div>
@@ -431,6 +439,18 @@ export default function CentrosEntrenamiento() {
 
       {/* Body */}
       <div className="centros-body">
+        {!search.trim() && (
+          <section className="by-city" aria-labelledby="por-ciudad">
+            <h2 id="por-ciudad" className="ccaa-title">Centros por ciudad</h2>
+            <p className="by-city-sub">Páginas con todos los boxes y gimnasios de cada ciudad y las carreras híbridas más cercanas.</p>
+            <ul className="by-city-list">
+              {CENTER_CITIES.map((c) => (
+                <li key={c.slug}><a href={`/centros-entrenamiento/${c.slug}`}>HYROX en {c.name} <span>{c.count}</span></a></li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         {noResults && (
           <div className="no-results">
             <strong>Sin resultados exactos</strong>

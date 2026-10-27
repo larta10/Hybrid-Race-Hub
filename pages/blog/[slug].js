@@ -6,7 +6,7 @@ import ArticleBody from "../../components/blog/ArticleBody";
 import { Toc, ShareButtons, AuthorBox, ArticleCta, ArticleNextSteps, RelatedPosts } from "../../components/blog/ArticleParts";
 import { getAllSlugs } from "../../lib/posts";
 import { prepareArticle } from "../../lib/article-server";
-import { fechaLarga, mesAno } from "../../lib/dates";
+import { fechaLarga } from "../../lib/dates";
 import { SITE_URL, SITE_NAME, pageTitle } from "../../lib/site";
 import { PODCASTS } from "../../data/podcasts";
 import { fetchUpcomingRaces } from "../../lib/races-server";
@@ -120,7 +120,7 @@ export default function BlogPost({ post, toc, related, races }) {
             Por <Link href="/sobre-nosotros">el equipo de Hybrid Race Hub</Link>
             <span aria-hidden="true"> · </span>
             Publicado el <time dateTime={post.date}>{fechaLarga(post.date)}</time>
-            {post.updated !== post.date && (<><span aria-hidden="true"> · </span>Actualizado: <time dateTime={post.updated}>{mesAno(post.updated)}</time></>)}
+            <span aria-hidden="true"> · </span>Actualizado: <time dateTime={post.updated}>{fechaLarga(post.updated)}</time>
             <span aria-hidden="true"> · </span>
             {post.readTime} de lectura
           </p>
