@@ -62,7 +62,8 @@ export async function getServerSideProps({ res }) {
   const posts = allSummaries();
   const newest = posts.reduce((m, p) => (p.updated > m ? p.updated : m), "2026-01-01");
   const blogPages = Math.max(1, Math.ceil((posts.length - 1) / PER_PAGE));
-  const races = [...(await fetchUpcomingRaces()), ...upcomingVerifiedEvents(todayISO())];
+  const fromDb = await fetchUpcomingRaces();
+  const races = [...fromDb, ...upcomingVerifiedEvents(todayISO(), fromDb)];
   const racesLastmod = max(lastUpdated(races), TEMPLATE_LASTMOD);
   // Solo ciudades con carreras futuras (las demás llevan noindex); lastmod = último cambio de sus carreras
   const cityPages = HYBRID_CITIES

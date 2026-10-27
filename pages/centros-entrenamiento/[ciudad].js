@@ -34,7 +34,8 @@ export async function getStaticProps({ params }) {
   const city = CENTER_CITY_BY_SLUG[params.ciudad];
   if (!city) return { notFound: true };
   const today = todayISO();
-  const all = [...(await fetchUpcomingRaces()), ...upcomingVerifiedEvents(today)].sort((a, b) => a.fecha_iso.localeCompare(b.fecha_iso));
+  const fromDb = await fetchUpcomingRaces();
+  const all = [...fromDb, ...upcomingVerifiedEvents(today, fromDb)].sort((a, b) => a.fecha_iso.localeCompare(b.fecha_iso));
   const inProvince = city.province ? all.filter(r => r.provincia === city.province) : [];
   const inCcaa = city.ccaa ? all.filter(r => !inProvince.includes(r) && city.ccaa.includes(r.comunidad || "—")) : [];
   // Página de carreras de la zona: primero la ciudad, si no la comunidad
@@ -61,7 +62,7 @@ export async function getStaticProps({ params }) {
       others,
       generated: today,
     },
-    revalidate: 86400,
+    revalidate: 3600,
   };
 }
 

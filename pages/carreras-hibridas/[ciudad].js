@@ -20,7 +20,8 @@ export async function getStaticProps({ params }) {
   const city = CITY_BY_SLUG[params.ciudad];
   if (!city) return { notFound: true };
   // Supabase + eventos comprobados a mano en la web oficial (lib/verified-events.js)
-  const all = [...(await fetchUpcomingRaces()), ...upcomingVerifiedEvents(todayISO())]
+  const fromDb = await fetchUpcomingRaces();
+  const all = [...fromDb, ...upcomingVerifiedEvents(todayISO(), fromDb)]
     .sort((a, b) => a.fecha_iso.localeCompare(b.fecha_iso));
   const races = all.filter(r => raceMatchesCity(r, city));
   const centers = CENTROS.filter(c => centerMatchesCity(c, city))
@@ -53,7 +54,7 @@ export async function getStaticProps({ params }) {
       generated: todayISO(),
       centerCities: CENTER_CITIES.filter(cc => city.cp.some(p => cc.cp.startsWith(p))).map(cc => ({ slug: cc.slug, name: cc.name, count: cc.count })),
     },
-    revalidate: 86400,
+    revalidate: 3600,
   };
 }
 

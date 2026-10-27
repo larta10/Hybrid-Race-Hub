@@ -26,7 +26,7 @@ export async function getStaticProps() {
       priced,
       season: seasonLabel(),
     },
-    revalidate: 86400,
+    revalidate: 3600,
   };
 }
 
