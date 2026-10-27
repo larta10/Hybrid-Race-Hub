@@ -1699,3 +1699,17 @@ input, select, textarea { max-width: 100%; }
 .modal-guide a, .rl-guide a { color: var(--text); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
 .rl-guide { margin: 4px 0 0; font-size: 14px; }
 .races-empty { color: var(--text-muted); border: 1px dashed var(--border2); border-radius: var(--radius); padding: var(--s2); }
+
+/* ─── Auditoría móvil 10/2026: tamaños mínimos de lectura y de toque ─────────
+   Etiquetas en mayúsculas a 11-12px como mínimo; texto corrido a 14px+;
+   zonas táctiles de 44px en móvil. Sin cambios de color. */
+.card-formato, .oc-label, .sf-legal-head, .hero-stat-lbl { font-size: 11px; }
+.sf-copy { font-size: 11px; }
+@media (max-width: 720px) {
+  .sf-link { display: inline-flex; align-items: center; min-height: 44px; }
+  .site-footer ul { gap: 0 !important; }
+  .sf-ig, .oc-ig-link { min-height: 44px; }
+  .card-gcal { width: 44px; height: 44px; }
+  .step-link, .editorial-cta { display: inline-flex; align-items: center; min-height: 44px; }
+  .crumbs a { display: inline-block; padding: 12px 0; }
+}

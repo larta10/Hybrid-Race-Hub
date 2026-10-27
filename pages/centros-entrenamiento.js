@@ -242,16 +242,16 @@ export default function CentrosEntrenamiento() {
         .search-bar-inner { max-width:1100px; margin:0 auto; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
         .search-input-wrap { position:relative; flex:1; min-width:200px; }
         .search-icon { position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--muted2); pointer-events:none; }
-        .search-input { width:100%; background:var(--surface2); border:0.5px solid var(--border2); border-radius:var(--radius-sm); padding:10px 12px 10px 36px; font-family:var(--font-body); font-size:14px; color:var(--text); outline:none; transition:border-color .15s; }
+        .search-input { width:100%; background:var(--surface2); border:0.5px solid var(--border2); border-radius:var(--radius-sm); padding:10px 12px 10px 36px; min-height:44px; font-size:16px; font-family:var(--font-body); color:var(--text); outline:none; transition:border-color .15s; }
         .search-input::placeholder { color:var(--muted2); }
         .search-input:focus { border-color:rgba(255,255,255,0.1); }
-        .result-count { font-family:var(--font-mono); font-size:10px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); white-space:nowrap; }
+        .result-count { font-family:var(--font-mono); font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); white-space:nowrap; }
 
         .filters-bar { background:var(--surface); border-bottom:1px solid var(--border); padding:.6rem 2rem; display:flex; gap:0; flex-direction:column; }
         .filter-row { display:flex; gap:6px; flex-wrap:wrap; align-items:center; padding:.35rem 0; }
         .filter-row + .filter-row { border-top:0.5px solid var(--border); }
-        .filter-label { font-family:var(--font-mono); font-size:8px; font-weight:600; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted2); white-space:nowrap; min-width:40px; }
-        .filter-chip { font-family:var(--font-mono); font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; padding:4px 11px; border-radius:2px; border:0.5px solid var(--border); background:var(--surface2); color:var(--muted); cursor:pointer; white-space:nowrap; transition:all .15s; }
+        .filter-label { font-family:var(--font-mono); font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted2); white-space:nowrap; min-width:40px; }
+        .filter-chip { font-family:var(--font-mono); font-size:11px; font-weight:600; min-height:36px; text-transform:uppercase; letter-spacing:0.08em; padding:4px 11px; border-radius:2px; border:0.5px solid var(--border); background:var(--surface2); color:var(--muted); cursor:pointer; white-space:nowrap; transition:all .15s; }
         .filter-chip:hover { border-color:var(--border2); color:var(--text); }
         .filter-chip--on { background:var(--surface2); color:var(--accent-mid); border-color:rgba(255,255,255,0.1); }
         .filter-chip--tipo { }
@@ -261,7 +261,7 @@ export default function CentrosEntrenamiento() {
         .section-head { margin-bottom:1rem; display:flex; align-items:center; gap:10px; }
         .section-head::after { content:""; flex:1; height:0.5px; background:var(--border); }
         .ccaa-title { font-family:var(--font-display); font-size:19px; font-weight:800; text-transform:uppercase; letter-spacing:0.02em; color:var(--text); }
-        .section-count { font-family:var(--font-mono); font-size:9px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted2); }
+        .section-count { font-family:var(--font-mono); font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted2); }
         .ccaa-section { margin-bottom:2.5rem; }
         .centros-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:12px; }
 
@@ -270,14 +270,14 @@ export default function CentrosEntrenamiento() {
         .centro-card { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius); padding:1.1rem; display:flex; flex-direction:column; gap:8px; transition: border-color .15s, background-color .15s, color .15s; }
         .centro-card:hover { border-color:var(--border2); }
         .centro-card-header { display:flex; align-items:flex-start; justify-content:space-between; gap:8px; }
-        .tipo-badge { font-family:var(--font-display); font-size:8px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; padding:2px 8px; border-radius:2px; flex-shrink:0; margin-top:2px; }
+        .tipo-badge { font-family:var(--font-display); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; padding:2px 8px; border-radius:2px; flex-shrink:0; margin-top:2px; }
         .centro-nombre { font-family:var(--font-display); font-size:17px; font-weight:800; text-transform:uppercase; letter-spacing:-0.01em; line-height:1.15; color:var(--text); flex:1; }
         .centro-loc { display:flex; align-items:baseline; gap:6px; flex-wrap:wrap; }
-        .centro-ciudad { font-family:var(--font-mono); font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); }
-        .centro-cp { font-family:var(--font-mono); font-size:10px; font-weight:500; color:var(--muted2); }
+        .centro-ciudad { font-family:var(--font-mono); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); }
+        .centro-cp { font-family:var(--font-mono); font-size:12px; font-weight:500; color:var(--muted2); }
         .centro-dir { font-family:var(--font-body); font-size:12px; color:var(--muted); line-height:1.5; flex:1; }
         .centro-links { display:flex; gap:6px; flex-wrap:wrap; padding-top:8px; border-top:0.5px solid var(--border); }
-        .centro-link { display:inline-flex; align-items:center; gap:4px; font-family:var(--font-mono); font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; padding:4px 10px; border-radius:2px; border:0.5px solid var(--border); color:var(--muted); transition:color .15s,border-color .15s; }
+        .centro-link { display:inline-flex; align-items:center; gap:4px; font-family:var(--font-mono); font-size:11px; font-weight:600; min-height:36px; text-transform:uppercase; letter-spacing:0.08em; padding:4px 10px; border-radius:2px; border:0.5px solid var(--border); color:var(--muted); transition:color .15s,border-color .15s; }
         .centro-link:hover { color:var(--text); border-color:rgba(255,255,255,0.1); }
         .centro-link--web { color:var(--accent-mid); border-color:rgba(255,255,255,0.1); }
         .centro-link--web:hover { border-color:var(--accent-mid); }
@@ -306,6 +306,9 @@ export default function CentrosEntrenamiento() {
           .search-bar { padding:.75rem 1rem; }
           .filters-bar { padding:.5rem 1rem; }
           .centros-grid { grid-template-columns:1fr; }
+          .filter-chip, .centro-link { min-height:44px; }
+          .filter-row { flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; margin-right:-1rem; padding-right:1rem; }
+          .filter-chip { flex:0 0 auto; white-space:nowrap; }
         }
       `}</style>
 

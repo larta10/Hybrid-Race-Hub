@@ -206,7 +206,8 @@ function EditorialBlock({ imgSrc, imgAlt, eyebrow, title, body, cta, ctaHref, re
   return (
     <section className="editorial-section">
       <div className={`editorial${reverse ? " editorial--reverse" : ""}`}>
-        <img src={imgSrc} alt={imgAlt} loading="lazy" className="editorial-photo"/>
+        <Image src={imgSrc} alt={imgAlt} width={900} height={675} className="editorial-photo"
+          sizes="(max-width: 900px) 100vw, 560px"/>
         <div className="editorial-text">
           {eyebrow && <p className="editorial-eyebrow">{eyebrow}</p>}
           <h2 className="editorial-title">{title}</h2>
@@ -467,12 +468,14 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season }) {
 
       {/* Banda de foto a ancho completo */}
       <figure className="photo-band">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1743993414654-0be2b73a9620?w=1920&q=80&fit=crop&auto=format"
-          alt="Atletas compitiendo en HYROX empujando sleds en interior"
-          loading="lazy"
+          alt="Fila de atletas en la estación de SkiErg durante una competición de fitness híbrido en pabellón"
+          width={1920}
+          height={1080}
+          sizes="100vw"
         />
-        <figcaption>Sled push en una HYROX: 50 metros que se hacen eternos si no los has entrenado.</figcaption>
+        <figcaption>SkiErg, la primera estación de HYROX: 1.000 metros tirando de brazos con la carrera recién empezada.</figcaption>
       </figure>
 
       {/* Editorial 1: Eventos */}

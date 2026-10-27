@@ -22,3 +22,8 @@ backups/
 
 # Capturas del QA de layout
 qa-screenshots/
+
+# Auditoría
+audit-screenshots/
+audit-report-*.json
+lighthouse-*.json

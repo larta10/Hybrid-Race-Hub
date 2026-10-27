@@ -4662,7 +4662,7 @@
     "direccion": "Calle de Arturo Soria, 200",
     "ccaa": "Comunidad de Madrid",
     "telefono": "",
-    "web": "https://wodandfit.es",
+    "web": "",
     "lat": 40.4529,
     "lng": -3.6381
   },
@@ -4675,7 +4675,7 @@
     "direccion": "Calle de Alonso Cano, 40",
     "ccaa": "Comunidad de Madrid",
     "telefono": "",
-    "web": "https://wodandfit.es",
+    "web": "",
     "lat": 40.4349,
     "lng": -3.7021
   },
@@ -4688,7 +4688,7 @@
     "direccion": "Calle de Alberto Alcocer, 7",
     "ccaa": "Comunidad de Madrid",
     "telefono": "+34 913 59 79 79",
-    "web": "https://sanasfitness.com",
+    "web": "",
     "lat": 40.4637,
     "lng": -3.6881
   },
@@ -4805,7 +4805,7 @@
     "direccion": "Calle de Embajadores, 35",
     "ccaa": "Comunidad de Madrid",
     "telefono": "",
-    "web": "https://www.spartan.com/en/race/detail/sgx",
+    "web": "",
     "lat": 40.4107,
     "lng": -3.7061
   },
@@ -4844,7 +4844,7 @@
     "direccion": "Calle de las Naciones, 14",
     "ccaa": "Comunidad de Madrid",
     "telefono": "",
-    "web": "https://crossfitironmadrid.com",
+    "web": "",
     "lat": 40.4372,
     "lng": -3.6563
   },
@@ -4870,7 +4870,7 @@
     "direccion": "Carrer de Còrsega, 257",
     "ccaa": "Cataluña",
     "telefono": "+34 933 17 82 52",
-    "web": "https://crossfitgracia.com",
+    "web": "",
     "lat": 41.3976,
     "lng": 2.1577
   },
@@ -4909,7 +4909,7 @@
     "direccion": "Calle de Pelayo, 32",
     "ccaa": "Comunidad de Madrid",
     "telefono": "",
-    "web": "https://box32.es",
+    "web": "",
     "lat": 40.4248,
     "lng": -3.6966
   },
@@ -4974,7 +4974,7 @@
     "direccion": "Carrer de Pujades 188",
     "ccaa": "Cataluña",
     "telefono": "+34 931234567",
-    "web": "https://www.functrack.barcelona",
+    "web": "",
     "lat": 41.3921,
     "lng": 2.18
   },
@@ -4987,7 +4987,7 @@
     "direccion": "Carrer de Colón 12",
     "ccaa": "Comunitat Valenciana",
     "telefono": "",
-    "web": "https://hydroxlab.es",
+    "web": "",
     "lat": 39.4697,
     "lng": -0.3763
   },
@@ -5013,7 +5013,7 @@
     "direccion": "Avenida Madrid 25",
     "ccaa": "Aragón",
     "telefono": "+34 976000222",
-    "web": "https://funcionalzaragoza.es",
+    "web": "",
     "lat": 41.648,
     "lng": -0.889
   },
@@ -5183,7 +5183,7 @@
     "direccion": "Paseo de la Habana 137",
     "ccaa": "Comunidad de Madrid",
     "telefono": "",
-    "web": "https://roxzone-og.es/",
+    "web": "",
     "lat": 40.458,
     "lng": -3.682
   },
@@ -5534,7 +5534,7 @@
     "direccion": "Calle Gabriel Esteve 4",
     "ccaa": "Comunidad Valenciana",
     "telefono": "",
-    "web": "https://www.foctrainingcenter.com/",
+    "web": "",
     "lat": 39.518,
     "lng": -0.356
   },
@@ -5560,7 +5560,7 @@
     "direccion": "Calle Sierra Carbonera, 47",
     "ccaa": "Madrid",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
@@ -5573,7 +5573,7 @@
     "direccion": "Calle Santa Engracia, 99",
     "ccaa": "Madrid",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
@@ -5586,7 +5586,7 @@
     "direccion": "Calle Antonio López, 109",
     "ccaa": "Madrid",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
@@ -5599,7 +5599,7 @@
     "direccion": "Avenida de Moscú, 45",
     "ccaa": "Madrid",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
@@ -5612,7 +5612,7 @@
     "direccion": "Carrer Gran de Gràcia, 12",
     "ccaa": "Cataluña",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
@@ -5625,7 +5625,7 @@
     "direccion": "Carrer de Sants, 79",
     "ccaa": "Cataluña",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
@@ -5638,7 +5638,7 @@
     "direccion": "Carrer de Palència, 127",
     "ccaa": "Cataluña",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
@@ -5651,7 +5651,7 @@
     "direccion": "Carrer de Navarro Reverter, 4",
     "ccaa": "Comunidad Valenciana",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
@@ -5664,7 +5664,7 @@
     "direccion": "Calle San Jacinto, 26",
     "ccaa": "Andalucía",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
@@ -5677,7 +5677,7 @@
     "direccion": "Calle Luis de Morales, 1",
     "ccaa": "Andalucía",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
@@ -5690,7 +5690,7 @@
     "direccion": "Calle Alfonso I, 20",
     "ccaa": "Aragón",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
@@ -5703,7 +5703,7 @@
     "direccion": "Calle Armengual de la Mota, 34",
     "ccaa": "Andalucía",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
@@ -5716,7 +5716,7 @@
     "direccion": "Calle Iturribide, 64",
     "ccaa": "País Vasco",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
@@ -5729,7 +5729,7 @@
     "direccion": "Calle Puente Tocinos, 22",
     "ccaa": "Murcia",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
@@ -5742,7 +5742,7 @@
     "direccion": "Avenida de Aguilera, 1",
     "ccaa": "Comunidad Valenciana",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
@@ -5755,7 +5755,7 @@
     "direccion": "Calle Duque de la Victoria, 20",
     "ccaa": "Castilla y León",
     "telefono": "",
-    "web": "https://www.basic-fit.com/es-es/gimnasios/espana",
+    "web": "https://www.basic-fit.com/es-es/gimnasios",
     "lat": null,
     "lng": null
   },
