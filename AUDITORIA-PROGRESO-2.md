@@ -9,7 +9,7 @@ Punto de retorno: tag `pre-rediseno`.
 - ✅ Fase 4 — Rediseño editorial
 - ✅ Fase 5 — Mobile first y rendimiento
 - ✅ Fase 6 — QA
-- ⏳ Fase 7 — Informe
+- ✅ Fase 7 — Informe
 
 ## Notas
 - Fase 1: sin clave de servicio en .env.local y MCP de Supabase sin autorizar → la clave anon no puede escribir (RLS). Cambios verificados en docs/datos/cambios-races-2026-10-27.sql (6 altas, 8 correcciones) para pegar en el SQL Editor. Hybrid Day Vigo se mantiene en lib/verified-events.js hasta entonces (se oculta solo cuando exista en Supabase). Evidencias: docs/datos/verificacion-carreras-2026-10.md.
