@@ -1,6 +1,7 @@
 ﻿import { useEffect } from "react";
 import { trackAffiliateClick } from "../lib/track";
 import Script from "next/script";
+import dynamic from "next/dynamic";
 import { Barlow_Condensed, Inter, JetBrains_Mono } from "next/font/google";
 import "../styles/global.css";
 
@@ -13,6 +14,8 @@ const body = Inter({ subsets: ["latin"], display: "swap", preload: false });
 const mono = JetBrains_Mono({ subsets: ["latin"], display: "swap", preload: false });
 
 const GTM_ID = "GTM-5D5D2CH9";
+// El aviso de cookies no es crítico para el primer pintado: se carga aparte, solo en el navegador
+const ConsentBanner = dynamic(() => import("../components/ConsentBanner"), { ssr: false });
 
 export default function App({ Component, pageProps }) {
   // amazon_click: un único listener delegado cubre rankings, artículos y comunidad
@@ -55,6 +58,7 @@ export default function App({ Component, pageProps }) {
       {/* Google Tag Manager: después de que la página sea interactiva */}
       <Script id="gtm" strategy="afterInteractive">{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}</Script>
       <Component {...pageProps} />
+      <ConsentBanner />
     </>
   );
 }

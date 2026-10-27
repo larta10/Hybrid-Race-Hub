@@ -1,9 +1,12 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { CONSENT_DEFAULT_SCRIPT } from "../lib/consent";
 
 export default function Document() {
   return (
     <Html lang="es">
       <Head>
+        {/* Consent Mode v2: todo denegado por defecto antes de que cargue GTM (se aplica la elección guardada si existe) */}
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULT_SCRIPT }} />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

@@ -22,6 +22,7 @@ const STATIC_LASTMOD = {
   "/productos": "2026-10-27",
   "/sobre-nosotros": "2026-10-27",
   "/contacto-organizadores": "2026-10-27",
+  "/politica-cookies": "2026-10-27",
 };
 const RANKINGS_LASTMOD = "2026-10-27";
 // Fecha del último cambio de las plantillas de home, calendario y regiones
@@ -85,7 +86,7 @@ export async function getServerSideProps({ res }) {
     { loc: `${BASE}/que-es-una-carrera-hibrida`, lastmod: STATIC_LASTMOD["/que-es-una-carrera-hibrida"], changefreq: "weekly",  priority: "0.9" },
     { loc: `${BASE}/calendario`,                lastmod: racesLastmod, changefreq: "daily",   priority: "0.9" },
     { loc: `${BASE}/blog`,                      lastmod: newest, changefreq: "weekly",  priority: "0.8" },
-    ...["/plan-entrenamiento", "/centros-entrenamiento", "/calculadora-hyrox", "/race-hub", "/comunidad", "/productos", "/sobre-nosotros", "/contacto-organizadores"]
+    ...["/plan-entrenamiento", "/centros-entrenamiento", "/calculadora-hyrox", "/race-hub", "/comunidad", "/productos", "/sobre-nosotros", "/contacto-organizadores", "/politica-cookies"]
       .map((p) => ({ loc: `${BASE}${p}`, lastmod: STATIC_LASTMOD[p], changefreq: "monthly", priority: p === "/centros-entrenamiento" ? "0.8" : "0.6" })),
 
     ...PRODUCT_SLUGS.map((slug) => ({

@@ -117,7 +117,7 @@ try {
   for (const width of WIDTHS) {
     const ctx = await browser.newContext({ viewport: { width, height: HEIGHT }, deviceScaleFactor: 1 });
     // Cookie banner aceptado para que no tape contenido en las capturas
-    await ctx.addInitScript(() => { try { localStorage.setItem("hrh_cookies_ok", "1"); } catch {} });
+    await ctx.addInitScript(() => { try { localStorage.setItem("hrh_consent", JSON.stringify({ a: false, p: false, v: 1, t: "qa" })); } catch {} });
     const page = await ctx.newPage();
     for (const route of ROUTES) {
       checks++;

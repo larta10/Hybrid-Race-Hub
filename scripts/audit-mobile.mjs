@@ -62,7 +62,7 @@ mkdirSync(DIR, { recursive: true });
 const report = [];
 for (const vp of VIEWPORTS) {
   const ctx = await browser.newContext({ viewport: { width: vp.width, height: vp.height }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
-  await ctx.addInitScript(() => { try { localStorage.setItem("hrh_cookies_ok", "1"); } catch {} });
+  await ctx.addInitScript(() => { try { localStorage.setItem("hrh_consent", JSON.stringify({ a: false, p: false, v: 1, t: "qa" })); } catch {} });
   const page = await ctx.newPage();
   for (const route of ROUTES) {
     try { await page.goto(BASE + route, { waitUntil: "networkidle", timeout: 45000 }); } catch { await page.waitForTimeout(1500); }

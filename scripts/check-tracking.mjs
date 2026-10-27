@@ -6,7 +6,7 @@ const BASE = (process.argv[2] || "http://localhost:3000").replace(/\/$/, "");
 const browser = await chromium.launch().catch(() => chromium.launch({ channel: "chrome" }));
 const ctx = await browser.newContext();
 await ctx.route(/googletagmanager\.com|amazon\.|hyrox\.es|spartan\.com|carrerasocr|hybrid-day/, r => r.abort());
-await ctx.addInitScript(() => { try { localStorage.setItem("hrh_cookies_ok", "1"); } catch {} });
+await ctx.addInitScript(() => { try { localStorage.setItem("hrh_consent", JSON.stringify({ a: false, p: false, v: 1, t: "qa" })); } catch {} });
 const page = await ctx.newPage();
 const events = async () => page.evaluate(() => (window.dataLayer || []).filter(e => e && e.event).map(e => ({ ...e })));
 const results = [];
