@@ -1,6 +1,6 @@
 ﻿import { useState, useCallback } from "react";
+import SiteHeader from "../components/SiteHeader";
 import { Breadcrumbs } from "../components/PageShell";
-import { SiteNav } from "../lib/shared";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -220,17 +220,7 @@ export default function CalculadoraHyrox() {
         }
       `}</style>
 
-      {/* Topbar */}
-      <div className="topbar">
-        <Link href="/" className="brand">
-          <div className="brand-logo">H</div>
-          <div>
-            <div className="brand-name">Hybrid Race Hub</div>
-            <div className="brand-sub">OCR · HYROX · Functional</div>
-          </div>
-        </Link>
-        <SiteNav activePath="/calculadora-hyrox"/>
-      </div>
+      <SiteHeader activePath="/calculadora-hyrox" />
 
       {/* Hero */}
       <div className="page-hero">

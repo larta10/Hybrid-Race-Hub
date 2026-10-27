@@ -1,40 +1,55 @@
-/* Lista editorial de carreras (render en servidor). Datos reales de Supabase. */
+/* Lista de carreras: el HTML sale del servidor (SEO) y cada tarjeta, entera, abre la ficha con las acciones. */
+import { useState } from "react";
+import dynamic from "next/dynamic";
 import { dateParts, modalityLabel } from "../lib/races-server";
-import { downloadIcs, whatsappUrl, onWhatsappShare, onOrganizerClick } from "../lib/race-actions";
-import { guideFor } from "../lib/race-links";
+import { raceStatus, racePrice } from "../lib/race-ui";
 
-export default function RaceList({ races, pageUrl, showRegion = true, compact = false }) {
-  if (!races || races.length === 0) return null;
+// La ficha solo hace falta al pulsar una tarjeta: se carga aparte
+const RaceDetail = dynamic(() => import("./RaceDetail"), { ssr: false });
+
+export function RaceCard({ race: r, onOpen, showRegion = true }) {
+  const dp = dateParts(r.fecha_iso);
+  const status = raceStatus(r);
+  const price = racePrice(r);
+  const city = r.municipio || r.ubicacion;
+  const place = [city, showRegion && r.comunidad && r.comunidad !== city ? r.comunidad : null].filter(Boolean).join(" · ");
   return (
-    <ol className={`rl${compact ? " rl--compact" : ""}`}>
-      {races.map(r => {
-        const dp = dateParts(r.fecha_iso);
-        const place = [r.ubicacion || r.municipio, showRegion && r.comunidad && !String(r.ubicacion || "").includes(r.comunidad) ? r.comunidad : null].filter(Boolean).join(" · ");
-        return (
-          <li key={r.id || `${r.nombre}-${r.fecha_iso}`} className="rl-item">
-            <time className="rl-date" dateTime={r.fecha_iso}>
-              <span className="rl-day">{dp?.d}</span>
-              <span className="rl-mon">{dp?.m} {dp?.y}</span>
-            </time>
-            <div className="rl-main">
-              <span className="rl-tag">{modalityLabel(r)}</span>
-              <h3 className="rl-name">{r.nombre}</h3>
-              {place && <p className="rl-place">{place}</p>}
-              <p className="rl-meta">
-                {[r.formato, r.distancia, r.precio].filter(Boolean).join(" · ") || "Formato y precio: consulta la web oficial"}
-              </p>
-              {guideFor(r) && <p className="rl-guide"><a href={guideFor(r).href}>{guideFor(r).label} →</a></p>}
-            </div>
-            <div className="rl-actions">
-              {r.url
-                ? <a className="rl-btn rl-btn--main" href={r.url} target="_blank" rel="nofollow noopener noreferrer" onClick={() => onOrganizerClick(r)}>Web oficial</a>
-                : <span className="rl-btn rl-btn--off">Sin web oficial</span>}
-              <button type="button" className="rl-btn" onClick={() => downloadIcs(r, pageUrl)}>Añadir a mi calendario</button>
-              <a className="rl-btn" href={whatsappUrl(r, pageUrl)} target="_blank" rel="noopener noreferrer" onClick={() => onWhatsappShare(r)}>Compartir por WhatsApp</a>
-            </div>
-          </li>
-        );
-      })}
-    </ol>
+    <li className="rc">
+      <time className="rc-date" dateTime={r.fecha_iso}>
+        <span className="rc-day">{dp?.d}</span>
+        <span className="rc-mon">{dp?.m}{dp?.y && <span className="rc-year"> {dp.y}</span>}</span>
+      </time>
+      <div className="rc-main">
+        <h3 className="rc-name"><button type="button" className="rc-open" onClick={() => onOpen(r)}>{r.nombre}</button></h3>
+        {place && <p className="rc-place">{place}</p>}
+        <p className="rc-tags">
+          <span className="rl-tag">{modalityLabel(r)}</span>
+          {price && <span className="rc-price">{price}</span>}
+          {status && <span className={`st st--${status.kind}`}>{status.label}</span>}
+        </p>
+      </div>
+      <span className="rc-chev" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M9 6l6 6-6 6" /></svg>
+      </span>
+    </li>
+  );
+}
+
+export default function RaceList({ races, pageUrl, showRegion = true, compact = false, groupByYear = false }) {
+  const [open, setOpen] = useState(null);
+  if (!races || races.length === 0) return null;
+  let lastYear = null;
+  const items = [];
+  races.forEach((r, i) => {
+    const y = (r.fecha_iso || "").slice(0, 4);
+    if (groupByYear && y && y !== lastYear) items.push(<li key={`y${y}`} className="rc-year-head"><h2 id={`carreras-${y}`}>Carreras de {y}</h2></li>);
+    lastYear = y;
+    items.push(<RaceCard key={r.id || `${r.nombre}-${r.fecha_iso}-${i}`} race={r} onOpen={setOpen} showRegion={showRegion} />);
+  });
+  return (
+    <>
+      <ol className={`rcl${compact ? " rcl--compact" : ""}`}>{items}</ol>
+      {open && <RaceDetail race={open} pageUrl={pageUrl} onClose={() => setOpen(null)} />}
+    </>
   );
 }

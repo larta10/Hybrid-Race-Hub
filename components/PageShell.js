@@ -1,24 +1,11 @@
 /* Cabecera + pie comunes para las páginas editoriales nuevas. */
-import Image from "next/image";
-import { SiteNav, SiteFooter, CookieBanner } from "../lib/shared";
+import { SiteFooter, CookieBanner } from "../lib/shared";
+import SiteHeader from "./SiteHeader";
 
 export default function PageShell({ activePath, children }) {
   return (
     <>
-      <header className="hero page-shell-head">
-        <div className="hero-inner">
-          <div className="brand">
-            <a href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 14 }}>
-              <Image src="/logo-icon.svg" className="brand-logo-img" alt="" width={40} height={40} priority />
-              <div>
-                <div className="brand-name">Hybrid Race Hub</div>
-                <div className="brand-sub"><span>OCR · HYROX · Functional</span></div>
-              </div>
-            </a>
-          </div>
-          <SiteNav activePath={activePath} />
-        </div>
-      </header>
+      <SiteHeader activePath={activePath} />
       <main id="contenido">{children}</main>
       <SiteFooter />
       <CookieBanner />

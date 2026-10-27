@@ -1,207 +1,99 @@
-﻿import { Fragment, useState, useEffect, useCallback } from "react";
-import { trackSearch } from "../lib/track";
-import { Breadcrumbs } from "../components/PageShell";
+﻿import { useState, useEffect, useMemo } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import { useRouter } from "next/router";
+import SiteHeader from "../components/SiteHeader";
+import RaceList from "../components/RaceList";
+import { Breadcrumbs } from "../components/PageShell";
+import { trackSearch } from "../lib/track";
 import { SITE_URL, breadcrumbLd } from "../lib/site";
-import {
-  SUPABASE_URL, ANON_KEY, TODAY_ISO, TODAY_YEAR, NICHE_PARENTS,
-  MODALITIES, CCAA, MONTH_NAMES, formatDate,
-  toggle, track, OcrIcon, FuncIcon, EnvelopeIcon, InstagramIcon,
-  FilterSection, ActiveFiltersRow, DateRangePicker,
-  RaceCard, RaceModal, SiteFooter, CookieBanner, SiteNav,
-} from "../lib/shared";
-import { fetchUpcomingRaces, seasonLabel } from "../lib/races-server";
+import { track, SiteFooter } from "../lib/shared";
+import { fetchUpcomingRaces, seasonLabel, modalityLabel, todayISO } from "../lib/races-server";
 import { withOfficialUrl } from "../lib/race-links";
 
-// El HTML sale ya con las carreras (ISR): Google ve el calendario sin ejecutar JS.
+// El HTML sale ya con todas las carreras futuras (ISR cada hora): Google ve el calendario
+// sin ejecutar JS y los filtros trabajan en el navegador sobre estos datos, sin más consultas.
 export async function getStaticProps() {
-  const races = await fetchUpcomingRaces();
-  const years = [...new Set(races.map(r => (r.fecha_iso || "").slice(0, 4)).filter(Boolean))].sort();
-  return { props: { initialRaces: races, season: seasonLabel(), years }, revalidate: 3600 };
+  const races = (await fetchUpcomingRaces()).map(withOfficialUrl);
+  return { props: { races, season: seasonLabel(), today: todayISO() }, revalidate: 3600 };
 }
 
-const MES_CORTO = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
-function nextMonths(n = 6) {
-  const [y, m] = TODAY_ISO.split("-").map(Number);
-  return Array.from({ length: n }, (_, i) => {
-    const mm = (m - 1 + i) % 12, yy = y + Math.floor((m - 1 + i) / 12);
-    const last = new Date(Date.UTC(yy, mm + 1, 0)).getUTCDate();
-    const p = v => String(v).padStart(2, "0");
-    return { key: `${yy}-${p(mm + 1)}`, label: `${MES_CORTO[mm]}${yy !== y ? ` ${String(yy).slice(2)}` : ""}`, from: `${yy}-${p(mm + 1)}-01`, to: `${yy}-${p(mm + 1)}-${p(last)}` };
-  });
+const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+const MES_CORTO = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+// Enlaces antiguos ?modalidad=<id de subtipo> (desde las guías del blog)
+const LEGACY_MOD = { "func-hyatlon": /hyatl/i, "func-hurbax": /hurbax/i, "func-hyrox": /hyrox/i, "ocr-spartan": /spartan/i };
+const norm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+
+function Chips({ label, options, value, onChange }) {
+  return (
+    <div className="cal-chips" role="group" aria-label={label}>
+      <span className="cal-chips-label">{label}</span>
+      <div className="cal-chips-row">
+        <button type="button" className={`cchip${!value ? " cchip--on" : ""}`} aria-pressed={!value} onClick={() => onChange("")}>Todas</button>
+        {options.map(o => (
+          <button key={o.key} type="button" className={`cchip${value === o.key ? " cchip--on" : ""}`} aria-pressed={value === o.key}
+            onClick={() => onChange(value === o.key ? "" : o.key)}>
+            {o.label}<span className="cchip-n">{o.n}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default function Calendario({ initialRaces = null, season = "", years = [] }) {
+const counts = (races, fn) => races.reduce((m, r) => { const k = fn(r); if (k) m[k] = (m[k] || 0) + 1; return m; }, {});
+
+export default function Calendario({ races = [], season, today }) {
   const router = useRouter();
+  const [region, setRegion] = useState("");
+  const [mod, setMod] = useState("");
+  const [mes, setMes] = useState("");
+  const [q, setQ] = useState("");
+  const [ready, setReady] = useState(false);
 
-  const [ccaa, setCcaa]                 = useState([]);
-  const [modalParents, setModalParents] = useState([]);
-  const [modalSubs, setModalSubs]       = useState([]);
-  const [dateRange, setDateRange]       = useState({ from:null, to:null });
-  const [textQuery, setTextQuery]       = useState("");
-  const [results, setResults]           = useState(initialRaces && initialRaces.length ? initialRaces : null);
-  const [loading, setLoading]           = useState(!(initialRaces && initialRaces.length));
-  const [refreshing, setRefreshing]     = useState(false);
-  const [error, setError]               = useState(null);
-  const [totalCount, setTotalCount]     = useState(null);
-  const [sortBy, setSortBy]             = useState("date");
-  const [selectedRace, setSelectedRace] = useState(null);
-  const [sidebarOpen, setSidebarOpen]   = useState(false);
-  const [routerReady, setRouterReady]   = useState(false);
-  const [availableCcaa, setAvailableCcaa] = useState(CCAA);
+  // Opciones con su número de carreras (solo las que existen)
+  const regionOpts = useMemo(() => Object.entries(counts(races, r => r.comunidad)).sort((a, b) => b[1] - a[1]).map(([k, n]) => ({ key: k, label: k, n })), [races]);
+  const modOpts = useMemo(() => Object.entries(counts(races, r => modalityLabel(r))).sort((a, b) => b[1] - a[1]).map(([k, n]) => ({ key: k, label: k, n })), [races]);
+  const mesOpts = useMemo(() => Object.entries(counts(races, r => (r.fecha_iso || "").slice(0, 7))).sort((a, b) => a[0].localeCompare(b[0])).map(([k, n]) => {
+    const [y, m] = k.split("-").map(Number);
+    return { key: k, label: `${MES_CORTO[m - 1]}${String(y) !== today.slice(0, 4) ? ` ${String(y).slice(2)}` : ""}`, n };
+  }), [races, today]);
 
-  /* Fetch distinct CCAAa that have at least 1 event */
-  useEffect(()=>{
-    fetch(`${SUPABASE_URL}/rest/v1/races?select=comunidad&modalidad_parent=in.(${NICHE_PARENTS.join(",")})&limit=2000`,{
-      headers:{ apikey:ANON_KEY, Authorization:`Bearer ${ANON_KEY}` },
-    })
-      .then(r=>r.json())
-      .then(data=>{
-        if(!Array.isArray(data)) return;
-        const seen=new Set(data.map(r=>r.comunidad).filter(Boolean));
-        setAvailableCcaa(CCAA.filter(c=>seen.has(c)));
-      })
-      .catch(()=>{});
-  },[]);
+  // Leer la URL al cargar (?region=&modalidad=&mes=&q=)
+  useEffect(() => {
+    if (!router.isReady) return;
+    const g = k => (typeof router.query[k] === "string" ? router.query[k] : "");
+    /* eslint-disable react-hooks/set-state-in-effect -- la query solo existe tras hidratar */
+    setRegion(g("region")); setMod(g("modalidad")); setMes(g("mes")); setQ(g("q"));
+    setReady(true);
+    /* eslint-enable react-hooks/set-state-in-effect */
+  }, [router.isReady]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  /* Read ?q param from URL on mount */
-  useEffect(()=>{
-    if(!router.isReady) return;
-    // La query solo está disponible tras hidratar (router.isReady): sincronizarla aquí es intencionado
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    if(router.query.q) setTextQuery(decodeURIComponent(router.query.q));
-    // ?modalidad=func-hyatlon (enlaces desde las guías): abre el calendario filtrado por esa modalidad
-    const sub = router.query.modalidad;
-    const parent = sub && MODALITIES.find(m => m.subs.some(x => x.id === sub));
-    if(parent){ setModalParents([parent.id]); setModalSubs([sub]); }
-    setRouterReady(true);
-  },[router.isReady, router.query.q, router.query.modalidad]);
+  // Escribir los filtros en la URL (compartible); el canonical sigue siendo /calendario
+  useEffect(() => {
+    if (!ready) return;
+    const query = {};
+    if (region) query.region = region;
+    if (mod) query.modalidad = mod;
+    if (mes) query.mes = mes;
+    if (q.trim()) query.q = q.trim();
+    router.replace({ pathname: "/calendario", query }, undefined, { shallow: true, scroll: false });
+  }, [region, mod, mes, q, ready]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  /* Analítica: búsqueda de texto (debounce 1 s) */
-  useEffect(()=>{
-    const q=textQuery.trim();
-    if(q.length<2) return;
-    const t=setTimeout(()=>track("search",{search_term:q}),1000);
-    trackSearch(q,"calendario");
-    return ()=>clearTimeout(t);
-  },[textQuery]);
+  useEffect(() => { if (q.trim().length >= 2) trackSearch(q, "calendario"); }, [q]);
 
-  function trackFilter(type, value){ track("calendar_filter",{filter_type:type,filter_value:value}); }
+  const filtered = useMemo(() => {
+    const t = norm(q.trim());
+    return races.filter(r =>
+      (!region || r.comunidad === region) &&
+      (!mod || (LEGACY_MOD[mod] ? LEGACY_MOD[mod].test(`${r.nombre} ${r.modalidad}`) : modalityLabel(r) === mod)) &&
+      (!mes || (r.fecha_iso || "").startsWith(mes)) &&
+      (!t || norm(`${r.nombre} ${r.ubicacion} ${r.municipio} ${r.provincia} ${r.comunidad} ${r.modalidad}`).includes(t)));
+  }, [races, region, mod, mes, q]);
 
-  function toggleParent(id) {
-    if(!modalParents.includes(id)) trackFilter("tipo",id);
-    if(modalParents.includes(id)){
-      setModalParents(p=>p.filter(x=>x!==id));
-      const subs=MODALITIES.find(m=>m.id===id)?.subs.map(s=>s.id)||[];
-      setModalSubs(s=>s.filter(x=>!subs.includes(x)));
-    } else {
-      setModalParents(p=>[...p,id]);
-    }
-  }
-
-  const fetchRaces = useCallback(async ()=>{
-    if(results!==null) setRefreshing(true); else setLoading(true);
-    setError(null);
-    try {
-      const p = new URLSearchParams();
-      p.append("select","*");
-      p.append("order","fecha_iso.asc");
-
-      if(modalSubs.length>0){
-        if(modalSubs.length===1) p.append("modalidad_id",`eq.${modalSubs[0]}`);
-        else p.append("modalidad_id",`in.(${modalSubs.join(",")})`);
-      } else if(modalParents.length>0){
-        if(modalParents.length===1) p.append("modalidad_parent",`eq.${modalParents[0]}`);
-        else p.append("modalidad_parent",`in.(${modalParents.join(",")})`);
-      } else {
-        p.append("modalidad_parent",`in.(${NICHE_PARENTS.join(",")})`);
-      }
-
-      if(dateRange.from) p.append("fecha_iso",`gte.${dateRange.from}`);
-      else p.append("fecha_iso",`gte.${TODAY_ISO}`);
-      if(dateRange.to) p.append("fecha_iso",`lte.${dateRange.to}`);
-
-      if(ccaa.length===1) p.append("comunidad",`eq.${ccaa[0]}`);
-      else if(ccaa.length>1) p.append("comunidad",`in.(${ccaa.join(",")})`);
-
-      if(textQuery.trim()){
-        const t = textQuery.trim().replace(/[%_]/g,"");
-        p.append("or",`(nombre.ilike.*${t}*,ubicacion.ilike.*${t}*,comunidad.ilike.*${t}*)`);
-      }
-
-      const res  = await fetch(`${SUPABASE_URL}/rest/v1/races?${p}`,{
-        headers:{ apikey:ANON_KEY, Authorization:`Bearer ${ANON_KEY}` },
-      });
-      const data = await res.json();
-      if(!Array.isArray(data)) throw new Error(data.message||"Error");
-
-      setResults(data.map(withOfficialUrl));
-    } catch {
-      setError("Error de conexión. Inténtalo de nuevo.");
-    } finally {
-      setLoading(false);
-      setRefreshing(false);
-    }
-  },[ccaa,modalParents,modalSubs,dateRange,textQuery]);
-
-  useEffect(()=>{
-    if(!routerReady) return;
-    const t=setTimeout(fetchRaces,320);
-    return ()=>clearTimeout(t);
-  },[fetchRaces,routerReady]);
-
-  useEffect(()=>{
-    fetch(`${SUPABASE_URL}/rest/v1/races?select=count&modalidad_parent=in.(ocr,funcional)`,{
-      headers:{ apikey:ANON_KEY, Authorization:`Bearer ${ANON_KEY}`, Prefer:"count=exact" },
-    }).then(r=>{ const c=r.headers.get("content-range"); if(c) setTotalCount(c.split("/")[1]); }).catch(()=>{});
-  },[]);
-
-  function selectMonth(mo){
-    const on = dateRange.from===mo.from && dateRange.to===mo.to;
-    if(!on) trackFilter("mes", mo.key);
-    setDateRange(on?{from:null,to:null}:{from:mo.from,to:mo.to});
-  }
-  const months = nextMonths(6);
-  const yearRanges = years.map(y => ({ key: y, from: y === TODAY_ISO.slice(0, 4) ? TODAY_ISO : `${y}-01-01`, to: `${y}-12-31` }));
-  const activeYear = (yearRanges.find(yr => dateRange.from===yr.from && dateRange.to===yr.to) || {}).key || null;
-  function selectYear(yr){
-    const on = dateRange.from===yr.from && dateRange.to===yr.to;
-    if(!on) trackFilter("año", yr.key);
-    setDateRange(on?{from:null,to:null}:{from:yr.from,to:yr.to});
-  }
-
-  function handleReset(){
-    setCcaa([]); setModalParents([]); setModalSubs([]);
-    setDateRange({from:null,to:null}); setTextQuery("");
-    router.replace("/calendario",undefined,{shallow:true});
-  }
-
-  const anyFilter=ccaa.length||modalParents.length||modalSubs.length
-    ||dateRange.from||dateRange.to||textQuery;
-  const filterCount=[ccaa.length,modalParents.length,modalSubs.length,(dateRange.from||dateRange.to)?1:0].reduce((a,b)=>a+b,0);
-
-  const sorted=results?[...results].sort((a,b)=>{
-    if(sortBy==="price"){
-      const pa=parseFloat((a.precio||"").replace(/[^\d.]/g,""))||0;
-      const pb=parseFloat((b.precio||"").replace(/[^\d.]/g,""))||0;
-      return pa-pb;
-    }
-    return (a.fecha_iso||"").localeCompare(b.fecha_iso||"");
-  }):[];
-
-  const subtitle=[
-    textQuery&&`"${textQuery}"`,
-    (dateRange.from||dateRange.to)&&(
-      dateRange.from&&dateRange.to
-        ?`${formatDate(dateRange.from)}→${formatDate(dateRange.to)}`
-        :dateRange.from?`Desde ${formatDate(dateRange.from)}`:`Hasta ${formatDate(dateRange.to)}`
-    ),
-    ...ccaa.slice(0,2),
-    ccaa.length>2&&`+${ccaa.length-2} CCAA`,
-    modalParents.length>0&&modalParents.map(p=>MODALITIES.find(m=>m.id===p)?.label||p).join(" + "),
-  ].filter(Boolean).join(" · ");
+  const anyFilter = region || mod || mes || q.trim();
+  const set = (fn, type) => v => { if (v) track("calendar_filter", { filter_type: type, filter_value: v }); fn(v); };
+  const clear = () => { setRegion(""); setMod(""); setMes(""); setQ(""); };
+  const mesLabel = mes ? `${MESES[Number(mes.slice(5, 7)) - 1]} de ${mes.slice(0, 4)}` : "";
 
   return (
     <>
@@ -214,234 +106,61 @@ export default function Calendario({ initialRaces = null, season = "", years = [
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/calendario`} />
         <meta property="og:title" content={`Calendario de carreras híbridas en España ${season}`} />
-        <meta property="og:description" content={`Todos los eventos OCR, HYROX y competiciones funcionales en España ${season}. Filtra por formato, comunidad autónoma, año y mes.`} />
+        <meta property="og:description" content={`Todas las carreras HYROX, OCR, Spartan y DEKA en España ${season}. Filtra por comunidad, modalidad y mes.`} />
         <meta property="og:site_name" content="Hybrid Race Hub" />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`Calendario OCR, HYROX y CrossFit España ${season} | Hybrid Race Hub`} />
-        <meta name="twitter:description" content={`Todos los eventos OCR, HYROX y competiciones funcionales en España ${season}.`} />
+        <meta name="twitter:title" content={`Calendario de carreras híbridas en España ${season}`} />
+        <meta name="twitter:description" content={`Todas las carreras HYROX, OCR, Spartan y DEKA en España ${season}.`} />
         <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
-        <link rel="preconnect" href={SUPABASE_URL} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd([{ name: "Inicio", href: "/" }, { name: "Calendario" }], `${SITE_URL}/calendario`)) }} />
       </Head>
 
-      {/* ── HEADER ── */}
-      <header className="hero" style={{paddingBottom:"1rem"}}>
-        <div className="hero-inner">
-          <div className="brand">
-            <a href="/" style={{textDecoration:"none",display:"flex",alignItems:"center",gap:14}}>
-              <Image src="/logo-icon.svg" className="brand-logo-img" alt="" width={40} height={40} priority />
-              <div>
-                <div className="brand-name">Hybrid Race Hub</div>
-                <div className="brand-sub">
-                  <span>OCR · HYROX · Functional</span>
-                  {totalCount&&<span className="brand-count">{totalCount} eventos</span>}
-                  {refreshing&&<span className="refreshing-dot"/>}
-                </div>
-              </div>
-            </a>
-          </div>
-          <SiteNav activePath="/calendario"/>
+      <SiteHeader activePath="/calendario" />
+
+      <main className="cal" id="contenido">
+        <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Calendario" }]} />
+        <h1 className="cal-h1">Calendario de carreras híbridas {season}</h1>
+
+        <div className="cal-filters">
+          <label className="cal-search">
+            <span className="sr-only">Buscar carrera, ciudad o comunidad</span>
+            <input type="search" inputMode="search" enterKeyHint="search" autoComplete="off"
+              placeholder="Buscar carrera, ciudad o comunidad" value={q} onChange={e => setQ(e.target.value)} />
+          </label>
+          <Chips label="Región" options={regionOpts} value={region} onChange={set(setRegion, "ccaa")} />
+          <Chips label="Modalidad" options={modOpts} value={mod} onChange={set(setMod, "tipo")} />
+          <Chips label="Mes" options={mesOpts} value={mes} onChange={set(setMes, "mes")} />
         </div>
-      </header>
 
-      {/* ── BODY ── */}
-      <div className="body">
+        <div className="cal-count" aria-live="polite">
+          <p><strong>{filtered.length}</strong> {filtered.length === 1 ? "carrera" : "carreras"}{mesLabel ? ` en ${mesLabel}` : ""}{region ? ` · ${region}` : ""}{mod && !LEGACY_MOD[mod] ? ` · ${mod}` : ""}</p>
+          {anyFilter && <button type="button" className="btn-line cal-clear" onClick={clear}>Limpiar filtros</button>}
+        </div>
 
-        {/* ── SIDEBAR ── */}
-        <aside className={`sidebar${sidebarOpen?" sidebar--open":""}`} aria-label="Filtros">
-          <div className="sidebar-head">
-            <span className="sidebar-head-title">Filtros</span>
-            <button type="button" className="sidebar-close" onClick={()=>setSidebarOpen(false)} aria-label="Cerrar filtros">×</button>
-            {anyFilter
-              ?<button className="sidebar-clear" onClick={handleReset}>Limpiar ×</button>
-              :null}
-          </div>
-          <div className="sidebar-body">
-
-            <FilterSection title="Tipo de prueba" active={modalParents.length>0||modalSubs.length>0}>
-              <div className="chips-col">
-                {MODALITIES.map(m=>(
-                  <div key={m.id}>
-                    <button onClick={()=>toggleParent(m.id)}
-                      className={`chip${modalParents.includes(m.id)?" chip--on":""}`}
-                      style={modalParents.includes(m.id)?{borderColor:m.color,background:m.bg,color:m.color}:{}}>
-                      {m.id==="ocr"?<OcrIcon/>:<FuncIcon/>}
-                      {m.label}
-                      <span style={{fontSize:8,opacity:.5,marginLeft:2}}>{modalParents.includes(m.id)?"▲":"▼"}</span>
-                    </button>
-                    {modalParents.includes(m.id)&&(
-                      <div className="sub-chips">
-                        {m.subs.map(s=>(
-                          <button key={s.id} onClick={()=>{ if(!modalSubs.includes(s.id)) trackFilter("subtipo",s.id); toggle(modalSubs,setModalSubs,s.id); }}
-                            className={`chip${modalSubs.includes(s.id)?" chip--on":""}`}
-                            style={modalSubs.includes(s.id)?{borderColor:m.color,background:m.bg,color:m.color}:{}}>
-                            {s.label}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </FilterSection>
-
-            <FilterSection title="Comunidad autónoma" active={ccaa.length>0}>
-              <div className="chips-wrap">
-                {availableCcaa.map(c=>(
-                  <button key={c} onClick={()=>{ if(!ccaa.includes(c)) trackFilter("ccaa",c); toggle(ccaa,setCcaa,c); }}
-                    className={`chip${ccaa.includes(c)?" chip--on":""}`}
-                    style={ccaa.includes(c)?{borderColor:"var(--text)",background:"var(--surface2)",color:"var(--accent-mid)"}:{}}>
-                    {c}
-                  </button>
-                ))}
-              </div>
-            </FilterSection>
-
-            <FilterSection title="Fechas" active={!!(dateRange.from||dateRange.to)}>
-              <div className="chips-wrap month-chips">
-                {months.map(mo=>{
-                  const on=dateRange.from===mo.from&&dateRange.to===mo.to;
-                  return <button key={mo.key} type="button" className={`chip${on?" chip--on":""}`} aria-pressed={on} onClick={()=>selectMonth(mo)}>{mo.label}</button>;
-                })}
-              </div>
-              <DateRangePicker
-                from={dateRange.from} to={dateRange.to}
-                onChange={({from,to})=>{ if(from||to) trackFilter("fechas",`${from||""}..${to||""}`); setDateRange({from,to}); }}
-              />
-            </FilterSection>
-
-            <FilterSection title="Carreras híbridas por ciudad" active={false}>
-              <div className="chips-wrap">
-                {[
-                  ["madrid","Madrid"],["barcelona","Barcelona"],["valencia","Valencia"],
-                  ["sevilla","Sevilla"],["bilbao","Bilbao"],["malaga","Málaga"],
-                  ["zaragoza","Zaragoza"],["valladolid","Valladolid"],["asturias","Asturias"],["murcia","Murcia"],
-                ].map(([slug, label]) => (
-                  <a key={slug} href={`/carreras-hibridas/${slug}`}
-                    style={{ display:"inline-block", fontFamily:"var(--font-mono)", fontSize:10, fontWeight:500, letterSpacing: "0.01em", color:"var(--muted)", border:"0.5px solid rgba(20,22,26,0.08)", borderRadius:2, padding:"4px 10px", textDecoration:"none", transition:"color .15s, border-color .15s" }}>
-                    {label}
-                  </a>
-                ))}
-              </div>
-            </FilterSection>
-
-          </div>
-
-          {/* Apply button — mobile bottom sheet only */}
-          <div className="sidebar-apply-wrap">
-            <button type="button" className="sidebar-reset-btn" onClick={handleReset} disabled={!anyFilter}>Limpiar</button>
-            <button type="button" className="sidebar-apply-btn" onClick={()=>setSidebarOpen(false)}>
-              {results!==null?`Aplicar · ${sorted.length} carrera${sorted.length!==1?"s":""}`:"Aplicar"}
-            </button>
-          </div>
-        </aside>
-
-        {/* Filter backdrop — mobile only */}
-        {sidebarOpen&&<div className="filter-backdrop" onClick={()=>setSidebarOpen(false)}/>}
-
-        {/* ── MAIN ── */}
-        <main className="main">
-          <div className="main-inner">
-            <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Calendario" }]} />
-            <h1 className="cal-h1">Calendario de carreras híbridas {season}</h1>
-
-            {/* Buscador + filtros rápidos (chips con scroll horizontal, cómodos con el pulgar) */}
-            <div className="cal-quick">
-              <label className="cal-search">
-                <span className="sr-only">Buscar carrera, ciudad o comunidad</span>
-                <input type="search" inputMode="search" enterKeyHint="search" autoComplete="off"
-                  placeholder="Buscar carrera, ciudad o comunidad"
-                  value={textQuery} onChange={e=>setTextQuery(e.target.value)}/>
-              </label>
-              {yearRanges.length>1&&(
-                <div className="cal-years" role="group" aria-label="Año">
-                  <button type="button" className={`cal-year-btn${!activeYear?" cal-year-btn--on":""}`} aria-pressed={!activeYear}
-                    onClick={()=>{ if(activeYear) setDateRange({from:null,to:null}); }}>Todas</button>
-                  {yearRanges.map(yr=>(
-                    <button key={yr.key} type="button" className={`cal-year-btn${activeYear===yr.key?" cal-year-btn--on":""}`}
-                      aria-pressed={activeYear===yr.key} onClick={()=>selectYear(yr)}>{yr.key}</button>
-                  ))}
-                </div>
-              )}
+        {filtered.length
+          ? <RaceList races={filtered} pageUrl={`${SITE_URL}/calendario`} groupByYear />
+          : (
+            <div className="cal-empty">
+              <p className="cal-empty-title">Ninguna carrera con esos filtros</p>
+              <p>Quita la región o el mes. En invierno hay menos carreras de obstáculos y más pruebas en pabellón.</p>
+              <button type="button" className="btn-solid" onClick={clear}>Ver todas las carreras</button>
             </div>
+          )}
 
-            {results!==null&&!loading&&!error&&(
-              <div className="results-head">
-                <div>
-                  <div className="results-count">
-                    <span>{sorted.length}</span> EVENTO{sorted.length!==1?"S":""}
-                  </div>
-                  {subtitle&&<div className="results-sub">{subtitle}</div>}
-                </div>
-                <div className="sort-btns">
-                  <button className={`sort-btn${sortBy==="date"?" sort-btn--on":""}`} onClick={()=>setSortBy("date")}>Fecha ↑</button>
-                  <button className={`sort-btn${sortBy==="price"?" sort-btn--on":""}`} onClick={()=>setSortBy("price")}>Precio</button>
-                </div>
-              </div>
-            )}
+        <section className="cal-more" aria-labelledby="por-zona">
+          <h2 id="por-zona">Carreras híbridas por zona</h2>
+          <ul className="city-links city-links--long">
+            {[["madrid", "Madrid"], ["cataluna", "Cataluña"], ["andalucia", "Andalucía"], ["comunidad-valenciana", "la Comunidad Valenciana"], ["canarias", "Canarias"], ["galicia", "Galicia"], ["baleares", "Baleares"], ["bilbao", "Bilbao"]].map(([slug, name]) => (
+              <li key={slug}><a href={`/carreras-hibridas/${slug}`}>Carreras híbridas en {name}</a></li>
+            ))}
+          </ul>
+        </section>
+      </main>
 
-            {anyFilter&&(
-              <ActiveFiltersRow
-                ccaa={ccaa} modalParents={modalParents} modalSubs={modalSubs}
-                dateRange={dateRange} textQuery={textQuery}
-                setCcaa={setCcaa} setModalParents={setModalParents}
-                setModalSubs={setModalSubs}
-                setDateRange={setDateRange} setTextQuery={setTextQuery}
-              />
-            )}
-
-            {loading&&results===null&&(
-              <div className="state-center">
-                <div className="spinner"/>
-                <p className="state-sub">Cargando eventos…</p>
-              </div>
-            )}
-
-            {error&&!loading&&(
-              <div className="state-center">
-                <p className="state-sub" style={{color:"var(--red)"}}>{error}</p>
-              </div>
-            )}
-
-            {results!==null&&!loading&&!error&&(
-              sorted.length===0?(
-                <div className="state-center">
-                  <p className="state-title">Ninguna carrera con esos filtros</p>
-                  <p className="state-sub">Quita alguna comunidad o abre el rango de fechas. En invierno hay menos OCR y más HYROX.</p>
-                </div>
-              ):(
-                <div className="race-grid">
-                  {sorted.map((r,i)=>{
-                    const y=(r.fecha_iso||"").slice(0,4);
-                    const prevY=i>0?(sorted[i-1].fecha_iso||"").slice(0,4):null;
-                    const showYear=sortBy==="date"&&y&&y!==prevY&&(i>0||sorted.some(x=>(x.fecha_iso||"").slice(0,4)!==y));
-                    return (
-                      <Fragment key={r.id||i}>
-                        {showYear&&<h2 className="cal-year" id={`carreras-${y}`}>Carreras de {y}</h2>}
-                        <RaceCard race={r} featured={i===0} onClick={()=>setSelectedRace(r)}/>
-                      </Fragment>
-                    );
-                  })}
-                </div>
-              )
-            )}
-          </div>
-        </main>
-      </div>
-
-      <SiteFooter/>
-      <CookieBanner/>
-
-      {!sidebarOpen&&(
-        <button type="button" className="mobile-filter-btn" onClick={()=>setSidebarOpen(true)} aria-haspopup="dialog">
-          {`Filtros (${filterCount})`}
-        </button>
-      )}
-
-      {selectedRace&&<RaceModal race={selectedRace} onClose={()=>setSelectedRace(null)}/>}
+      <SiteFooter />
     </>
   );
 }

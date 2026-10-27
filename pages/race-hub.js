@@ -1,5 +1,6 @@
 ﻿import Head from "next/head";
-import { SiteFooter, CookieBanner, SiteNav } from "../lib/shared";
+import SiteHeader from "../components/SiteHeader";
+import { SiteFooter, CookieBanner} from "../lib/shared";
 
 import { SITE_URL, breadcrumbLd } from "../lib/site";
 const PROGRAMS = [
@@ -117,20 +118,7 @@ export default function RaceHub() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd([{ name: "Inicio", href: "/" }, { name: "Programas HYROX" }], `${SITE_URL}/race-hub`)) }} />
       </Head>
 
-      <header className="hero" style={{ paddingBottom: "1rem" }}>
-        <div className="hero-inner">
-          <div className="brand">
-            <a href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 14 }}>
-              <div className="brand-logo">H</div>
-              <div>
-                <div className="brand-name">Hybrid Race Hub</div>
-                <div className="brand-sub"><span>OCR · HYROX · Functional</span></div>
-              </div>
-            </a>
-          </div>
-          <SiteNav activePath="/race-hub" />
-        </div>
-      </header>
+      <SiteHeader activePath="/race-hub" />
 
       <main style={{ maxWidth: 1000, margin: "0 auto", padding: "2rem 1rem" }}>
         <section id="training-programs" style={{ marginBottom: "2rem" }}>

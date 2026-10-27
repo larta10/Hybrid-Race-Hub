@@ -1,12 +1,13 @@
 ﻿import React, { useState, useMemo } from "react";
 const { haversine } = require("../lib/distance");
+import SiteHeader from "../components/SiteHeader";
 import { Breadcrumbs } from "../components/PageShell";
 import { CENTER_CITIES } from "../lib/center-cities";
 import { trackSearch } from "../lib/track";
 import Head from "next/head";
 import Link from "next/link";
 import centrosJson from "../lib/centros-entrenamiento.json";
-import { CookieBanner, SiteNav } from "../lib/shared";
+import { CookieBanner} from "../lib/shared";
 
 import { SITE_URL, breadcrumbLd } from "../lib/site";
 /* ── Data helpers ────────────────────────────────────────────────────────── */
@@ -30,7 +31,7 @@ const TIPO_COLOR = {
 /* ── Proximity expansion ─────────────────────────────────────────────────── */
 const MIN_RESULTS = 3;
 // Sin búsqueda se pintan los primeros de cada comunidad; el resto, al pulsar "Ver los N centros"
-const PER_GROUP = 6;
+const PER_GROUP = 4;
 
 function expandByProximity(exactResults, allCentros, query, activeCCAA, userLat, userLng) {
   if (exactResults.length >= MIN_RESULTS) return { results: exactResults, expanded: false, reason: "" };
@@ -329,17 +330,7 @@ export default function CentrosEntrenamiento() {
         }
       `}</style>
 
-      {/* Topbar */}
-      <div className="topbar">
-        <Link href="/" className="brand">
-          <div className="brand-logo">H</div>
-          <div>
-            <div className="brand-name">Hybrid Race Hub</div>
-            <div className="brand-sub">OCR · HYROX · Functional</div>
-          </div>
-        </Link>
-        <SiteNav activePath="/centros-entrenamiento"/>
-      </div>
+      <SiteHeader activePath="/centros-entrenamiento" />
 
       {/* Hero */}
       <div className="page-hero">
@@ -439,17 +430,6 @@ export default function CentrosEntrenamiento() {
 
       {/* Body */}
       <div className="centros-body">
-        {!search.trim() && (
-          <section className="by-city" aria-labelledby="por-ciudad">
-            <h2 id="por-ciudad" className="ccaa-title">Centros por ciudad</h2>
-            <p className="by-city-sub">Páginas con todos los boxes y gimnasios de cada ciudad y las carreras híbridas más cercanas.</p>
-            <ul className="by-city-list">
-              {CENTER_CITIES.map((c) => (
-                <li key={c.slug}><a href={`/centros-entrenamiento/${c.slug}`}>HYROX en {c.name} <span>{c.count}</span></a></li>
-              ))}
-            </ul>
-          </section>
-        )}
 
         {noResults && (
           <div className="no-results">
@@ -513,6 +493,18 @@ export default function CentrosEntrenamiento() {
                 )}
               </section>
             ))}
+
+        {!search.trim() && (
+          <section className="by-city" aria-labelledby="por-ciudad">
+            <h2 id="por-ciudad" className="ccaa-title">Centros por ciudad</h2>
+            <p className="by-city-sub">Páginas con todos los boxes y gimnasios de cada ciudad y las carreras híbridas más cercanas.</p>
+            <ul className="by-city-list">
+              {CENTER_CITIES.map((c) => (
+                <li key={c.slug}><a href={`/centros-entrenamiento/${c.slug}`}>HYROX en {c.name} <span>{c.count}</span></a></li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* CTA */}
         <div className="cta-block">

@@ -38,7 +38,7 @@ export async function getStaticProps({ params }) {
 export default function ArticlePage({ article }) {
   if (!article) {
     return (
-      <div style={{ background: "var(--bg)", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
+      <div style={{ background: "var(--bg)", minHeight: "100svh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
         <a href="/comunidad" style={{ color: "var(--text)", textDecoration: "underline" }}>← Volver a Comunidad</a>
         <h1 style={{ color: "var(--text)", fontFamily: "var(--font-display)" }}>Artículo no encontrado</h1>
       </div>
@@ -56,7 +56,7 @@ export default function ArticlePage({ article }) {
       </Head>
 
       <style>{`
-        body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; }
+        body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100svh; }
 
         .article-page { max-width: 720px; margin: 0 auto; padding: 2rem; }
 

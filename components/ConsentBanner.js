@@ -31,9 +31,10 @@ export default function ConsentBanner() {
       <div className="consent-inner">
         <p id="consent-title" className="consent-title">Cookies</p>
         <p className="consent-text">
-          Usamos cookies técnicas para que la web funcione y, si nos dejas, cookies de analítica (Google Analytics) para saber qué páginas se usan
-          y de publicidad (Google Ads) para medir nuestras campañas. Puedes cambiar de opinión cuando quieras en
-          «Configurar cookies», al pie de cada página. <a href="/politica-cookies">Política de cookies</a>.
+          Usamos cookies técnicas y, si aceptas, de analítica (Google Analytics) y publicidad (Google Ads).
+        </p>
+        <p className="consent-text">
+          Puedes cambiarlo cuando quieras en «Configurar cookies», al pie. <a href="/politica-cookies">Política de cookies</a>.
         </p>
 
         {settings && (

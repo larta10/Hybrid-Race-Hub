@@ -18,10 +18,10 @@ export default function Custom404() {
 
       <style>{`
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; }
+        body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100svh; }
         a { color: inherit; text-decoration: none; }
 
-        .page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
+        .page { min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
         .error-code { font-family: var(--font-display); font-size: clamp(80px, 20vw, 160px); font-weight: 900; color: var(--text); line-height: 1; margin-bottom: 0.5rem; }
         .error-title { font-family: var(--font-display); font-size: clamp(22px, 4vw, 36px); font-weight: 800; color: var(--text); margin-bottom: 1rem; }
         .error-sub { font-family: var(--font-body); font-size: 16px; color: var(--muted); max-width: 480px; line-height: 1.65; margin-bottom: 2.5rem; }

@@ -62,7 +62,7 @@ export default function Comunidad() {
 
       <style>{`
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; }
+        body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100svh; }
         a { color: var(--text); text-decoration: none; }
         a:hover { text-decoration: underline; }
 

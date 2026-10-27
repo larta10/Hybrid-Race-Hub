@@ -14,7 +14,7 @@ export default function CalculadoraRedirect() {
         <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href={`${SITE_URL}/calculadora-hyrox`} />
       </Head>
-      <div style={{ background: 'var(--bg)', minHeight: '100vh' }} />
+      <div style={{ background: 'var(--bg)', minHeight: '100svh' }} />
     </>
   );
 }

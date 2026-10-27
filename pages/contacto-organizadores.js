@@ -260,9 +260,12 @@ export default function ContactOrganizers() {
           <form onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
-                <label className="form-label">Nombre *</label>
+                <label className="form-label" htmlFor="co-nombre">Nombre *</label>
                 <input
+                  id="co-nombre"
+                  name="nombre"
                   type="text"
+                  autoComplete="name"
                   className={`form-input${errors.nombre ? " error" : ""}`}
                   value={form.nombre}
                   onChange={e => setForm(f => ({ ...f, nombre: e.target.value }))}
@@ -271,9 +274,13 @@ export default function ContactOrganizers() {
                 />
               </div>
               <div className="form-group">
-                <label className="form-label">Email *</label>
+                <label className="form-label" htmlFor="co-email">Email *</label>
                 <input
+                  id="co-email"
+                  name="email"
                   type="email"
+                  inputMode="email"
+                  autoComplete="email"
                   className={`form-input${errors.email ? " error" : ""}`}
                   value={form.email}
                   onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
@@ -284,8 +291,10 @@ export default function ContactOrganizers() {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Soy... *</label>
+              <label className="form-label" htmlFor="co-tipo">Soy... *</label>
               <select
+                id="co-tipo"
+                name="tipo"
                 className="form-select"
                 value={form.tipo}
                 onChange={e => setForm(f => ({ ...f, tipo: e.target.value }))}
@@ -300,8 +309,10 @@ export default function ContactOrganizers() {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Mensaje *</label>
+              <label className="form-label" htmlFor="co-mensaje">Mensaje *</label>
               <textarea
+                id="co-mensaje"
+                name="mensaje"
                 className={`form-textarea${errors.mensaje ? " error" : ""}`}
                 value={form.mensaje}
                 onChange={e => setForm(f => ({ ...f, mensaje: e.target.value }))}

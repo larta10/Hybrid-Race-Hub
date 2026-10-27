@@ -1,6 +1,6 @@
 ﻿import Head from "next/head";
+import SiteHeader from "../components/SiteHeader";
 import { Breadcrumbs } from "../components/PageShell";
-import { SiteNav } from "../lib/shared";
 import GuideCallout from "../components/GuideCallout";
 import Link from "next/link";
 import Image from "next/image";
@@ -164,17 +164,7 @@ export default function Productos() {
         }
       `}</style>
 
-      {/* Topbar */}
-      <div className="topbar">
-        <Link href="/" className="brand">
-          <Image src="/logo-icon.svg" className="brand-logo-img" alt="" width={36} height={36} priority />
-          <div>
-            <div className="brand-name">Hybrid Race Hub</div>
-            <div className="brand-sub">OCR · HYROX · Functional</div>
-          </div>
-        </Link>
-        <SiteNav activePath="/productos"/>
-      </div>
+      <SiteHeader activePath="/productos" />
 
       {/* Hero */}
       <div className="page-hero">

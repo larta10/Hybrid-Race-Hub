@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import SiteHeader from "../components/SiteHeader";
 import { trackContactSubmit } from "../lib/track";
 import Head from "next/head";
 import Image from "next/image";
@@ -10,7 +11,6 @@ import { fechaLarga } from "../lib/dates";
 import {
 
   InstagramIcon, EnvelopeIcon, SiteFooter, CookieBanner,
-  SiteNav,
 } from "../lib/shared";
 
 /* ─── FAQ (visible y con los mismos textos en el FAQPage) ────────────────── */
@@ -123,23 +123,23 @@ function OrganizerContact() {
           ):(
             <form className="oc-form" onSubmit={handleSubmit}>
               <div className="oc-field">
-                <label className="oc-label">Nombre *</label>
-                <input className="oc-input" type="text" placeholder="Tu nombre" required
+                <label className="oc-label" htmlFor="oc-nombre">Nombre *</label>
+                <input id="oc-nombre" name="nombre" className="oc-input" type="text" autoComplete="name" placeholder="Tu nombre" required
                   value={form.nombre} onChange={e=>set("nombre",e.target.value)} disabled={status==="loading"}/>
               </div>
               <div className="oc-field">
-                <label className="oc-label">Email de contacto *</label>
-                <input className="oc-input" type="email" placeholder="tu@email.com" required
+                <label className="oc-label" htmlFor="oc-email">Email de contacto *</label>
+                <input id="oc-email" name="email" className="oc-input" type="email" inputMode="email" autoComplete="email" placeholder="tu@email.com" required
                   value={form.email} onChange={e=>set("email",e.target.value)} disabled={status==="loading"}/>
               </div>
               <div className="oc-field">
-                <label className="oc-label">Nombre del evento</label>
-                <input className="oc-input" type="text" placeholder="Nombre de la prueba (opcional)"
+                <label className="oc-label" htmlFor="oc-prueba">Nombre del evento</label>
+                <input id="oc-prueba" name="prueba" className="oc-input" type="text" autoComplete="off" placeholder="Nombre de la prueba (opcional)"
                   value={form.prueba} onChange={e=>set("prueba",e.target.value)} disabled={status==="loading"}/>
               </div>
               <div className="oc-field">
-                <label className="oc-label">Mensaje *</label>
-                <textarea className="oc-input oc-textarea" placeholder="Cuéntanos tu prueba, fecha, lugar…" required
+                <label className="oc-label" htmlFor="oc-mensaje">Mensaje *</label>
+                <textarea id="oc-mensaje" name="mensaje" className="oc-input oc-textarea" placeholder="Cuéntanos tu prueba, fecha, lugar…" required
                   rows={4} value={form.mensaje} onChange={e=>set("mensaje",e.target.value)} disabled={status==="loading"}/>
               </div>
               <button type="submit" className="oc-btn" disabled={status==="loading"}>
@@ -323,22 +323,12 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
         }) }} />
       </Head>
 
-      {/* ── HEADER ── */}
-      <header className="hero hero--home">
+      <SiteHeader activePath="/" />
+
+      {/* ── HERO ── */}
+      <section className="hero hero--home">
         <Image src="/hero-home.webp" alt="" fill priority fetchPriority="high" quality={60}
           sizes="(max-width: 1200px) 100vw, 1200px" className="hero-photo" />
-        <div className="hero-inner">
-          <div className="brand">
-            <Image src="/logo-icon-light.svg" className="brand-logo-img" alt="" width={40} height={40} />
-            <div>
-              <div className="brand-name">Hybrid Race Hub</div>
-              <div className="brand-sub">
-                <span>OCR · HYROX · Functional</span>
-              </div>
-            </div>
-          </div>
-          <SiteNav activePath="/"/>
-        </div>
 
         {/* Hero body */}
         <div className="hero-body" style={{ paddingTop: 0 }}>
@@ -357,22 +347,6 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
             </div>
           </div>
         </div>
-      </header>
-
-      {/* Qué es esto, en pocas líneas */}
-      <section className="home-intro" aria-label="Sobre el calendario">
-        <div className="home-intro-inner">
-          <p>
-            Hybrid Race Hub reúne en un solo calendario las carreras híbridas que se celebran en España. Si buscas una <em>hybrid race</em>,
-            aquí la llamamos carrera híbrida: una prueba que mezcla correr con estaciones de fuerza, como HYROX, DEKA o el Hyatlón, o con obstáculos,
-            como Spartan y el resto de OCR. Revisamos las fechas con las webs de los organizadores y enlazamos siempre a la inscripción oficial.
-          </p>
-          <p>
-            También tienes las competiciones híbridas por zona, de <a href="/carreras-hibridas/madrid">Madrid</a> y <a href="/carreras-hibridas/cataluna">Cataluña</a>{" "}
-            a <a href="/carreras-hibridas/andalucia">Andalucía</a>, <a href="/carreras-hibridas/canarias">Canarias</a> o <a href="/carreras-hibridas/galicia">Galicia</a>,
-            y las que ya tienen fecha en 2027. Si es tu primera, empieza por <a href="/que-es-una-carrera-hibrida">qué es una carrera híbrida</a>.
-          </p>
-        </div>
       </section>
 
       {/* Próximas carreras reales (Supabase, ISR cada hora) */}
@@ -390,6 +364,22 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
             <a href="/calendario" className="btn-solid">Ver todo el calendario</a>
             <a href="/que-es-una-carrera-hibrida" className="btn-line">Qué es una carrera híbrida</a>
           </div>
+        </div>
+      </section>
+
+      {/* Qué es esto, en pocas líneas */}
+      <section className="home-intro" aria-label="Sobre el calendario">
+        <div className="home-intro-inner">
+          <p>
+            Hybrid Race Hub reúne en un solo calendario las carreras híbridas que se celebran en España. Si buscas una <em>hybrid race</em>,
+            aquí la llamamos carrera híbrida: una prueba que mezcla correr con estaciones de fuerza, como HYROX, DEKA o el Hyatlón, o con obstáculos,
+            como Spartan y el resto de OCR. Revisamos las fechas con las webs de los organizadores y enlazamos siempre a la inscripción oficial.
+          </p>
+          <p>
+            También tienes las competiciones híbridas por zona, de <a href="/carreras-hibridas/madrid">Madrid</a> y <a href="/carreras-hibridas/cataluna">Cataluña</a>{" "}
+            a <a href="/carreras-hibridas/andalucia">Andalucía</a>, <a href="/carreras-hibridas/canarias">Canarias</a> o <a href="/carreras-hibridas/galicia">Galicia</a>,
+            y las que ya tienen fecha en 2027. Si es tu primera, empieza por <a href="/que-es-una-carrera-hibrida">qué es una carrera híbrida</a>.
+          </p>
         </div>
       </section>
 

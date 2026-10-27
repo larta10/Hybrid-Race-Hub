@@ -2,12 +2,15 @@
 import { trackAffiliateClick } from "../lib/track";
 import Script from "next/script";
 import dynamic from "next/dynamic";
-import { Archivo, Source_Sans_3 } from "next/font/google";
+import { useRouter } from "next/router";
+import { Source_Sans_3 } from "next/font/google";
+import localFont from "next/font/local";
 import "../styles/global.css";
 
 // Tipografía (rediseño 10/2026): Archivo variable con eje de anchura para titulares
 // y Source Sans 3 para el texto. Solo se precargan estas dos; display swap y métricas de reserva ajustadas (sin CLS).
-const display = Archivo({ subsets: ["latin"], axes: ["wdth"], display: "swap", adjustFontFallback: true });
+// Archivo: solo la instancia que se usa (anchura 112 %, peso 800, latín), 37 KB en vez de 88 KB de la variable completa
+const display = localFont({ src: "../assets/fonts/archivo-112-800-latin.woff2", weight: "800", style: "normal", display: "swap", adjustFontFallback: "Arial", variable: "--ff-archivo" });
 const body = Source_Sans_3({ subsets: ["latin"], weight: ["400", "600"], display: "swap", adjustFontFallback: true });
 
 const GTM_ID = "GTM-5D5D2CH9";
@@ -15,6 +18,7 @@ const GTM_ID = "GTM-5D5D2CH9";
 const ConsentBanner = dynamic(() => import("../components/ConsentBanner"), { ssr: false });
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
   // amazon_click: un único listener delegado cubre rankings, artículos y comunidad
   useEffect(() => {
     function onClick(e) {
@@ -42,6 +46,18 @@ export default function App({ Component, pageProps }) {
     document.addEventListener("click", onClick, true);
     return () => document.removeEventListener("click", onClick, true);
   }, []);
+
+  // Tablas escritas en JSX: mismo data-label que las del blog para apilarlas en móvil
+  useEffect(() => {
+    const label = () => document.querySelectorAll("table").forEach(t => {
+      const heads = [...t.querySelectorAll("thead th")].map(th => th.textContent.trim());
+      if (!heads.length) return;
+      t.querySelectorAll("tbody tr").forEach(tr => [...tr.children].forEach((td, i) => { if (!td.dataset.label && heads[i]) td.dataset.label = heads[i]; }));
+    });
+    label();
+    router.events.on("routeChangeComplete", label);
+    return () => router.events.off("routeChangeComplete", label);
+  }, [router.events]);
 
   return (
     <>
