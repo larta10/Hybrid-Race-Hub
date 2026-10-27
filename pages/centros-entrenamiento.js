@@ -1,11 +1,12 @@
 ﻿import React, { useState, useMemo } from "react";
 const { haversine } = require("../lib/distance");
+import { Breadcrumbs } from "../components/PageShell";
 import Head from "next/head";
 import Link from "next/link";
 import centrosJson from "../lib/centros-entrenamiento.json";
 import { CookieBanner, SiteNav } from "../lib/shared";
 
-import { SITE_URL } from "../lib/site";
+import { SITE_URL, breadcrumbLd } from "../lib/site";
 /* ── Data helpers ────────────────────────────────────────────────────────── */
 const CCAA_LIST = [...new Set(centrosJson.map((c) => c.ccaa).filter(Boolean))].sort();
 const TIPO_LIST = [...new Set(centrosJson.map((c) => c.tipo).filter(Boolean))].sort();
@@ -26,6 +27,8 @@ const TIPO_COLOR = {
 
 /* ── Proximity expansion ─────────────────────────────────────────────────── */
 const MIN_RESULTS = 3;
+// Sin búsqueda se pintan los primeros de cada comunidad; el resto, al pulsar "Ver los N centros"
+const PER_GROUP = 6;
 
 function expandByProximity(exactResults, allCentros, query, activeCCAA, userLat, userLng) {
   if (exactResults.length >= MIN_RESULTS) return { results: exactResults, expanded: false, reason: "" };
@@ -96,15 +99,16 @@ export default function CentrosEntrenamiento() {
   const [userLat, setUserLat] = useState(null);
   const [userLng, setUserLng] = useState(null);
 
-  // Intentar obtener ubicación del usuario para búsquedas por proximidad
-  React.useEffect(() => {
-    if (typeof navigator !== 'undefined' && 'geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition((pos) => {
-        setUserLat(pos.coords.latitude);
-        setUserLng(pos.coords.longitude);
-      }, () => {}, { enableHighAccuracy: true, timeout: 5000, maximumAge: 60000 });
-    }
-  }, []);
+  const [expandedCCAA, setExpandedCCAA] = useState({});
+
+  // Ubicación solo cuando el usuario la pide (no se pide permiso al cargar la página)
+  function askLocation() {
+    if (typeof navigator === "undefined" || !("geolocation" in navigator)) return;
+    navigator.geolocation.getCurrentPosition((pos) => {
+      setUserLat(pos.coords.latitude);
+      setUserLng(pos.coords.longitude);
+    }, () => {}, { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 });
+  }
 
   const { exact, proximity, proximityReason } = useMemo(() => {
     let pool = centrosJson;
@@ -114,7 +118,8 @@ export default function CentrosEntrenamiento() {
     const q = search.trim().toLowerCase();
     if (!q) {
       // Devolver exactamente la misma lista con dist=null cuando no hay búsqueda
-      return { exact: pool.map(c => ({...c, distKm: null})), proximity: [], proximityReason: "" };
+      const withDist = pool.map(c => ({ ...c, distKm: (userLat != null && c.lat != null && c.lng != null) ? haversine(userLat, userLng, c.lat, c.lng) : null }));
+      return { exact: withDist, proximity: [], proximityReason: "" };
     }
 
     const exactRaw = pool.filter(
@@ -192,25 +197,26 @@ export default function CentrosEntrenamiento() {
   return (
     <>
       <Head>
-        <title>Dónde Entrenar: OCR, HYROX y CrossFit en España | Hybrid Race Hub</title>
+        <title>Dónde entrenar HYROX y OCR en España | Hybrid Race Hub</title>
         <meta
           name="description"
-          content={`Directorio de ${TOTAL}+ centros de entrenamiento funcional, HYROX, OCR y CrossFit en España. Busca por ciudad o código postal y encuentra dónde preparar tu próxima carrera híbrida.`}
+          content="Directorio de boxes y gimnasios para entrenar HYROX, OCR y fitness híbrido en España, con sled, SkiErg y remo. Busca por ciudad o código postal y llama."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/centros-entrenamiento`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/centros-entrenamiento`} />
-        <meta property="og:title" content="Dónde Entrenar: OCR, HYROX y CrossFit en España" />
+        <meta property="og:title" content="Dónde entrenar HYROX y OCR en España" />
         <meta property="og:description" content={`Directorio de ${TOTAL}+ centros de entrenamiento funcional, HYROX, OCR y CrossFit en España.`} />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Dónde Entrenar: OCR, HYROX y CrossFit en España" />
+        <meta name="twitter:title" content="Dónde entrenar HYROX y OCR en España" />
         <meta name="twitter:description" content={`Directorio de ${TOTAL}+ centros de entrenamiento funcional en España.`} />
         <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd([{ name: "Inicio", href: "/" }, { name: "Centros de entrenamiento" }], `${SITE_URL}/centros-entrenamiento`)) }} />
       </Head>
 
       <style>{`
@@ -287,6 +293,9 @@ export default function CentrosEntrenamiento() {
         .no-results { text-align:center; padding:4rem 2rem; color:var(--muted); }
         .no-results strong { display:block; font-family:var(--font-display); font-size:28px; font-weight:800; color:var(--text); text-transform:uppercase; margin-bottom:8px; }
 
+        .show-more { display:block; width:100%; min-height:44px; margin-top:10px; background:transparent; border:0.5px solid var(--border2); border-radius:var(--radius-sm); color:var(--text-muted); font-family:var(--font-body); font-size:14px; cursor:pointer; }
+        .show-more:hover { color:var(--text); border-color:var(--text-muted); }
+        .near-btn { min-height:44px; padding:0 14px; background:transparent; border:0.5px solid var(--border2); border-radius:var(--radius-sm); color:var(--text-muted); font-family:var(--font-body); font-size:14px; cursor:pointer; white-space:nowrap; }
         .cta-block { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); padding:2rem; text-align:center; margin-top:3rem; }
         .cta-block-title { font-family:var(--font-display); font-size:26px; font-weight:800; text-transform:uppercase; color:var(--text); margin-bottom:8px; }
         .cta-block-sub { font-family:var(--font-body); font-size:14px; color:var(--muted); margin-bottom:1.25rem; line-height:1.6; }
@@ -327,9 +336,9 @@ export default function CentrosEntrenamiento() {
       {/* Hero */}
       <div className="page-hero">
         <div className="page-hero-inner">
-          <p className="page-eyebrow">Hybrid Race Hub · Directorio nacional</p>
+          <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Centros de entrenamiento" }]} />
           <h1 className="page-title">
-            Centros de Entrenamiento OCR, HYROX y CrossFit en España
+            Dónde entrenar HYROX y OCR en España
           </h1>
           <p className="page-sub">
             Boxes y gimnasios con sleds, rigs y remos en toda España.
@@ -373,6 +382,9 @@ export default function CentrosEntrenamiento() {
             />
           </div>
           <span className="result-count">{totalShown} resultado{totalShown !== 1 ? "s" : ""}</span>
+          {userLat == null && (
+            <button type="button" className="near-btn" onClick={askLocation}>Ordenar por cercanía</button>
+          )}
         </div>
       </div>
 
@@ -451,6 +463,16 @@ export default function CentrosEntrenamiento() {
           </>
         )}
 
+        {/* Más cercanos (solo si el usuario ha compartido su ubicación) */}
+        {grouped && userLat != null && (
+          <section className="ccaa-section">
+            <div className="section-head"><h2 className="ccaa-title">Los más cercanos a ti</h2></div>
+            <div className="centros-grid">
+              {exact.filter(c => typeof c.distKm === "number").sort((a, b) => a.distKm - b.distKm).slice(0, 9).map((c) => <CentroCard key={`n${c.id}`} centro={c} />)}
+            </div>
+          </section>
+        )}
+
         {/* Grouped (no search) */}
         {grouped &&
           Object.entries(grouped)
@@ -462,8 +484,13 @@ export default function CentrosEntrenamiento() {
                   <span className="section-count">{boxes.length} centro{boxes.length !== 1 ? "s" : ""}</span>
                 </div>
                 <div className="centros-grid">
-                  {boxes.map((c) => <CentroCard key={c.id} centro={c} />)}
+                  {(expandedCCAA[ccaa] ? boxes : boxes.slice(0, PER_GROUP)).map((c) => <CentroCard key={c.id} centro={c} />)}
                 </div>
+                {boxes.length > PER_GROUP && !expandedCCAA[ccaa] && (
+                  <button type="button" className="show-more" onClick={() => setExpandedCCAA((e) => ({ ...e, [ccaa]: true }))}>
+                    Ver los {boxes.length} centros de {ccaa}
+                  </button>
+                )}
               </section>
             ))}
 

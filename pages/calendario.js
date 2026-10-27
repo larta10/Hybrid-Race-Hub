@@ -1,8 +1,9 @@
 ﻿import { Fragment, useState, useEffect, useCallback } from "react";
+import { Breadcrumbs } from "../components/PageShell";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { SITE_URL } from "../lib/site";
+import { SITE_URL, breadcrumbLd } from "../lib/site";
 import {
   SUPABASE_URL, ANON_KEY, TODAY_ISO, TODAY_YEAR, NICHE_PARENTS,
   MODALITIES, CCAA, MONTH_NAMES, formatDate,
@@ -201,14 +202,14 @@ export default function Calendario({ initialRaces = null, season = "", years = [
   return (
     <>
       <Head>
-        <title>{`Calendario de carreras híbridas ${season}: HYROX, OCR y Spartan | Hybrid Race Hub`}</title>
-        <meta name="description" content="Calendario de carreras híbridas en España: HYROX, OCR, Spartan y DEKA. Filtra por comunidad, mes y formato y añade la carrera a tu calendario." />
+        <title>{`Calendario de carreras híbridas ${season} | Hybrid Race Hub`}</title>
+        <meta name="description" content="Todas las carreras híbridas de España en un calendario: HYROX, OCR, Spartan y DEKA. Filtra por comunidad, mes y formato y guarda la fecha en tu agenda." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/calendario`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/calendario`} />
-        <meta property="og:title" content={`Calendario OCR, HYROX y CrossFit España ${season} | Hybrid Race Hub`} />
+        <meta property="og:title" content={`Calendario de carreras híbridas en España ${season}`} />
         <meta property="og:description" content={`Todos los eventos OCR, HYROX y competiciones funcionales en España ${season}. Filtra por formato, comunidad autónoma, año y mes.`} />
         <meta property="og:site_name" content="Hybrid Race Hub" />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
@@ -219,6 +220,7 @@ export default function Calendario({ initialRaces = null, season = "", years = [
         <meta name="twitter:description" content={`Todos los eventos OCR, HYROX y competiciones funcionales en España ${season}.`} />
         <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <link rel="preconnect" href={SUPABASE_URL} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd([{ name: "Inicio", href: "/" }, { name: "Calendario" }], `${SITE_URL}/calendario`)) }} />
       </Head>
 
       {/* ── HEADER ── */}
@@ -339,6 +341,7 @@ export default function Calendario({ initialRaces = null, season = "", years = [
         {/* ── MAIN ── */}
         <main className="main">
           <div className="main-inner">
+            <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Calendario" }]} />
             <h1 className="cal-h1">Calendario de carreras híbridas {season}</h1>
 
             {/* Buscador + filtros rápidos (chips con scroll horizontal, cómodos con el pulgar) */}

@@ -102,3 +102,26 @@ export function RelatedPosts({ related }) {
     </section>
   );
 }
+
+/* Enlazado fijo al final de cada artículo: calendario, zonas con más carreras y un ranking del tema. */
+const RANKING_BY_CATEGORY = {
+  Material: { href: "/productos/zapatillas-hyrox", label: "Ranking de zapatillas para HYROX" },
+  Entrenamiento: { href: "/productos/relojes", label: "Ranking de relojes GPS para entrenar" },
+  Carreras: { href: "/productos/zapatillas-trail", label: "Ranking de zapatillas de trail para OCR" },
+  Podcasts: { href: "/productos/pulsometros", label: "Ranking de pulsómetros" },
+};
+export function ArticleNextSteps({ category }) {
+  const ranking = RANKING_BY_CATEGORY[category] || { href: "/productos/zapatillas-hyrox", label: "Ranking de zapatillas para HYROX" };
+  return (
+    <nav className="art-next" aria-label="Siguientes pasos">
+      <p className="art-next-title">Busca tu carrera y prepárala</p>
+      <ul>
+        <li><Link href="/calendario">Calendario de carreras híbridas en España</Link></li>
+        <li><Link href="/carreras-hibridas/madrid">Carreras híbridas en Madrid</Link></li>
+        <li><Link href="/carreras-hibridas/cataluna">Carreras híbridas en Cataluña</Link></li>
+        <li><Link href="/carreras-hibridas/andalucia">Carreras híbridas en Andalucía</Link></li>
+        <li><Link href={ranking.href}>{ranking.label}</Link></li>
+      </ul>
+    </nav>
+  );
+}

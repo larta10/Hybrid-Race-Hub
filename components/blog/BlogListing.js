@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PageShell, { Breadcrumbs } from "../PageShell";
 import RaceList from "../RaceList";
-import { SITE_URL, SITE_NAME } from "../../lib/site";
+import { SITE_URL, SITE_NAME, pageTitle } from "../../lib/site";
 import { fechaLarga } from "../../lib/dates";
 
 function track(event, params) {
@@ -89,7 +89,7 @@ export default function BlogListing({
   return (
     <PageShell activePath="/blog">
       <Head>
-        <title>{`${title} | ${SITE_NAME}`}</title>
+        <title>{pageTitle(title)}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow, max-image-preview:large" />

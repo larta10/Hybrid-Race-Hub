@@ -1,7 +1,7 @@
 ﻿import Head from "next/head";
 import { SiteFooter, CookieBanner, SiteNav } from "../lib/shared";
 
-import { SITE_URL } from "../lib/site";
+import { SITE_URL, breadcrumbLd } from "../lib/site";
 const PROGRAMS = [
   {
     title: "HYROX Foundations",
@@ -64,16 +64,17 @@ export default function RaceHub() {
   return (
     <>
       <Head>
-        <title>Plan de Entrenamiento HYROX — Programas Fundamentos a Elite | Hybrid Race Hub</title>
-        <meta name="description" content="5 programas de entrenamiento HYROX estructurados: desde fundamentos hasta nivel avanzado. Guías de pacing, bloques de fuerza y planes de competición para España 2026." />
+        <title>Programas HYROX: de fundamentos a élite | Hybrid Race Hub</title>
+        <meta name="description" content="Cinco programas HYROX por niveles, de fundamentos a élite: bloques de fuerza, ritmo por estación y semanas de puesta a punto para llegar bien a competir." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/race-hub`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/race-hub`} />
-        <meta property="og:title" content="Plan de Entrenamiento HYROX — Programas Fundamentos a Elite | Hybrid Race Hub" />
+        <meta property="og:title" content="Programas de entrenamiento HYROX: de fundamentos a élite" />
         <meta property="og:description" content="5 programas de entrenamiento HYROX estructurados: desde fundamentos hasta nivel avanzado. Guías de pacing, bloques de fuerza y planes de competición." />
-        <meta property="og:site_name" content="Hybrid Race Hub" />
+        <meta property="og:site_name" content="Hybrid Race Hub" />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{__html: JSON.stringify({
@@ -109,6 +110,11 @@ export default function RaceHub() {
             })),
           })}}
         />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd([{ name: "Inicio", href: "/" }, { name: "Programas HYROX" }], `${SITE_URL}/race-hub`)) }} />
       </Head>
 
       <header className="hero" style={{ paddingBottom: "1rem" }}>

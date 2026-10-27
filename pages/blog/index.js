@@ -11,8 +11,8 @@ export default function BlogIndex({ all, featured, items, page, pages, upcoming 
   return (
     <BlogListing
       path="/blog"
-      title="Blog de carreras híbridas: HYROX, OCR, entrenamiento y material"
-      description="Guías, planes de entrenamiento, material y podcasts para HYROX, carreras de obstáculos y Spartan en España, escritos por gente que compite."
+      title="Blog de carreras híbridas: HYROX, OCR y material"
+      description="Guías, planes de entrenamiento, material y podcasts para HYROX, carreras de obstáculos y Spartan en España, escritos por gente que compite en ellas."
       h1="Blog de carreras híbridas"
       intro="Guías para entender cada formato, planes para llegar en forma a tu primera HYROX u OCR, el material que de verdad hace falta y los podcasts que escuchamos mientras entrenamos. Todo pensado para carreras en España."
       items={items}

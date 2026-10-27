@@ -2,9 +2,10 @@ import Head from "next/head";
 import { useEffect } from "react";
 import PageShell, { Breadcrumbs } from "../../components/PageShell";
 import RaceList from "../../components/RaceList";
-import { SITE_URL, SITE_NAME } from "../../lib/site";
+import { SITE_URL, SITE_NAME, pageTitle, fitDesc } from "../../lib/site";
+import { fechaLarga } from "../../lib/dates";
 import { track } from "../../lib/shared";
-import { fetchUpcomingRaces, seasonLabel, dateParts, raceEventSchema } from "../../lib/races-server";
+import { fetchUpcomingRaces, seasonLabel, dateParts, raceEventSchema, todayISO } from "../../lib/races-server";
 import { HYBRID_CITIES, CITY_BY_SLUG, raceMatchesCity, centerMatchesCity } from "../../lib/hybrid-cities";
 import CENTROS from "../../lib/centros-entrenamiento.json";
 
@@ -36,7 +37,7 @@ export async function getStaticProps({ params }) {
   }
   return {
     props: {
-      city: { slug: city.slug, name: city.name, kind: city.kind, ccaa: city.ccaa, intro: city.intro },
+      city: { slug: city.slug, name: city.name, en: city.en || `en ${city.name}`, kind: city.kind, ccaa: city.ccaa, intro: city.intro },
       races,
       centers: centers.slice(0, 18),
       centersTotal: centers.length,
@@ -44,6 +45,7 @@ export async function getStaticProps({ params }) {
       nearbyRaces,
       season: seasonLabel(),
       totalSpain: all.length,
+      generated: todayISO(),
     },
     revalidate: 86400,
   };
@@ -82,15 +84,24 @@ function buildFaqs({ city, races, centers, centersTotal, nearby }) {
 }
 
 export default function CiudadPage(props) {
-  const { city, races, centers, centersTotal, nearby, nearbyRaces, season, totalSpain } = props;
+  const { city, races, centers, centersTotal, nearby, nearbyRaces, season, totalSpain, generated } = props;
   const path = `/carreras-hibridas/${city.slug}`;
   const url = `${SITE_URL}${path}`;
   const indexable = races.length > 0;
   const faqs = buildFaqs(props);
-  const title = `Carreras híbridas en ${city.name} ${season}: HYROX y OCR | ${SITE_NAME}`;
-  const desc = races.length
-    ? `${races.length} ${races.length === 1 ? "carrera híbrida" : "carreras híbridas"} en ${city.name}: HYROX, OCR y Spartan con fechas, precios e inscripción. Próxima: ${races[0].nombre}.`
-    : `Carreras híbridas en ${city.name}: HYROX, OCR y Spartan. Centros donde entrenar y las carreras más cercanas con fecha publicada.`;
+  const title = pageTitle(`Carreras híbridas ${city.en} ${season}`);
+  const n = races.length;
+  const desc = n
+    ? fitDesc([
+        `${n} ${n === 1 ? "carrera híbrida" : "carreras híbridas"} ${city.en} en ${season}: HYROX, OCR, Spartan y DEKA con fechas, precios e inscripción. Próxima: ${races[0].nombre}.`,
+        `${n} ${n === 1 ? "carrera híbrida" : "carreras híbridas"} ${city.en} en ${season}: HYROX, OCR, Spartan y DEKA con fechas, precios e inscripción, y dónde entrenar cerca.`,
+        `Calendario de carreras híbridas ${city.en} ${season}: HYROX, OCR, Spartan y DEKA con fechas, precios, enlace de inscripción y centros donde entrenar.`,
+        `${n} ${n === 1 ? "carrera híbrida" : "carreras híbridas"} ${city.en}: HYROX, OCR y Spartan con fechas, precios e inscripción.`,
+      ])
+    : fitDesc([
+        `Carreras híbridas ${city.en}: HYROX, OCR y Spartan. Centros donde entrenar y las carreras más cercanas con fecha publicada en el calendario de ${season}.`,
+        `Carreras híbridas ${city.en}: HYROX, OCR y Spartan. Centros donde entrenar y las carreras más cercanas con fecha publicada.`,
+      ]);
 
   useEffect(() => { track("city_page_view", { city_name: city.name, city_slug: city.slug, races_count: races.length }); }, [city.slug]);
 
@@ -123,10 +134,12 @@ export default function CiudadPage(props) {
         <link rel="canonical" href={url} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={url} />
-        <meta property="og:title" content={`Carreras híbridas en ${city.name} ${season}`} />
+        <meta property="og:title" content={`Carreras híbridas ${city.en} ${season}`} />
         <meta property="og:description" content={desc} />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:locale" content="es_ES" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
@@ -135,11 +148,12 @@ export default function CiudadPage(props) {
         <div className="guide-head">
           <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Carreras híbridas", href: "/que-es-una-carrera-hibrida" }, { name: city.name }]} />
           <p className="section-label">{city.kind === "comunidad" ? "COMUNIDAD" : "CIUDAD"} · {city.ccaa.toUpperCase()}</p>
-          <h1 className="guide-title">Carreras híbridas en {city.name} {season}</h1>
+          <h1 className="guide-title">Carreras híbridas {city.en} {season}</h1>
           <p className="guide-updated">
             {races.length
               ? `${races.length} ${races.length === 1 ? "carrera programada" : "carreras programadas"} · Calendario actualizado cada día`
               : "Sin carreras programadas ahora mismo · Calendario actualizado cada día"}
+            {" · "}Actualizado: <time dateTime={generated}>{fechaLarga(generated)}</time>
           </p>
         </div>
 

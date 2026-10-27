@@ -19,7 +19,7 @@ export default function BlogPage({ all, featured, items, page, pages, upcoming }
     <BlogListing
       path={`/blog/pagina/${page}`}
       title={`Blog de carreras híbridas, página ${page}`}
-      description={`Artículos anteriores del blog de Hybrid Race Hub sobre HYROX, carreras de obstáculos, entrenamiento y material (página ${page}).`}
+      description={`Artículos anteriores del blog de Hybrid Race Hub sobre HYROX, carreras de obstáculos, Spartan, entrenamiento y material para carreras híbridas (pág. ${page}).`}
       h1="Blog de carreras híbridas"
       items={items}
       all={all}

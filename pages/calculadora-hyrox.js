@@ -1,9 +1,10 @@
 ﻿import { useState, useCallback } from "react";
+import { Breadcrumbs } from "../components/PageShell";
 import { SiteNav } from "../lib/shared";
 import Head from "next/head";
 import Link from "next/link";
 
-import { SITE_URL } from "../lib/site";
+import { SITE_URL, breadcrumbLd } from "../lib/site";
 /* ─── HYROX structure ──────────────────────────────────────────────────────── */
 const STATIONS = [
   { id:"s1",  label:"SkiErg",             detail:"1.000 m",   icon:"01",  tipo:"station" },
@@ -110,8 +111,8 @@ export default function CalculadoraHyrox() {
   return (
     <>
       <Head>
-        <title>Calculadora HYROX — Estima tu Tiempo Total | Hybrid Race Hub</title>
-        <meta name="description" content="Calcula tu tiempo estimado en HYROX introduciendo los tiempos de cada estación (SkiErg, Sled Push, Rowing...) y las 8 carreras de 1km. Descubre tu categoría." />
+        <title>Calculadora HYROX: estima tu tiempo total | Hybrid Race Hub</title>
+        <meta name="description" content="Calcula tu tiempo en HYROX con tus ritmos de carrera y tus tiempos en SkiErg, trineo, remo y wall balls. Descubre en qué estación pierdes más minutos." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/calculadora-hyrox`} />
         <meta property="og:type" content="website" />
@@ -126,6 +127,7 @@ export default function CalculadoraHyrox() {
         <meta name="twitter:description" content="Calcula tu tiempo total estimado en HYROX por estación." />
         <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd([{ name: "Inicio", href: "/" }, { name: "Calculadora HYROX" }], `${SITE_URL}/calculadora-hyrox`)) }} />
       </Head>
 
       <style>{`
@@ -233,7 +235,7 @@ export default function CalculadoraHyrox() {
       {/* Hero */}
       <div className="page-hero">
         <div className="page-hero-inner">
-          <p className="page-eyebrow">Hybrid Race Hub · Herramienta</p>
+          <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Calculadora HYROX" }]} />
           <h1 className="page-title">Calculadora<br/><span>HYROX</span></h1>
           <p className="page-sub">
             Mete tus 8 parciales de 1 km y tus 8 estaciones, del SkiErg a los wall balls.

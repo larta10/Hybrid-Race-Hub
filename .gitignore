@@ -26,4 +26,5 @@ qa-screenshots/
 # Auditoría
 audit-screenshots/
 audit-report-*.json
+audit-seo-*.json
 lighthouse-*.json

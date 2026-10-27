@@ -8,7 +8,7 @@ const UPDATED = "2026-10-14";
 
 export default function SobreNosotros() {
   const url = `${SITE_URL}${PATH}`;
-  const desc = "Quién está detrás de Hybrid Race Hub, por qué existe, cómo elegimos los productos de los rankings y cómo funciona la afiliación.";
+  const desc = "Quién está detrás de Hybrid Race Hub, por qué existe, cómo revisamos las fechas del calendario, cómo elegimos los productos y cómo funciona la afiliación.";
   const schema = [
     {
       "@context": "https://schema.org",
@@ -44,7 +44,7 @@ export default function SobreNosotros() {
   return (
     <PageShell activePath={PATH}>
       <Head>
-        <title>{`Sobre nosotros: quién hace Hybrid Race Hub | ${SITE_NAME}`}</title>
+        <title>Sobre nosotros: quién hace Hybrid Race Hub</title>
         <meta name="description" content={desc} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
@@ -55,6 +55,7 @@ export default function SobreNosotros() {
         <meta property="og:description" content={desc} />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <article className="guide">

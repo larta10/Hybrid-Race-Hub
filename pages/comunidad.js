@@ -3,7 +3,7 @@ import Head from "next/head";
 import { SUPABASE_URL, ANON_KEY } from "../lib/shared";
 import { normalizeAmazonUrl, AFFILIATE_REL } from "../lib/affiliate";
 
-import { SITE_URL } from "../lib/site";
+import { SITE_URL, breadcrumbLd } from "../lib/site";
 const CATEGORIES = ["Todos", "Rankings", "Guías OCR", "Equipamiento", "Noticias"];
 
 export default function Comunidad() {
@@ -32,8 +32,8 @@ export default function Comunidad() {
   return (
     <>
       <Head>
-        <title>Comunidad OCR y HYROX — Artículos y Guías | Hybrid Race Hub</title>
-        <meta name="description" content="Artículos, guías y recomendaciones sobre carreras OCR, HYROX y equipamiento híbrido en España. Todo lo que necesitas saber para tu próxima carrera." />
+        <title>Comunidad OCR y HYROX: artículos y guías | Hybrid Race Hub</title>
+        <meta name="description" content="Artículos de la comunidad sobre carreras OCR, HYROX y material híbrido en España: crónicas, consejos de entrenamiento y recomendaciones para tu carrera." />
         <meta name="keywords" content="comunidad OCR, artículos HYROX, guías entrenamiento híbrido, equipamiento OCR España" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
@@ -53,6 +53,11 @@ export default function Comunidad() {
             },
           }) }}
         />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd([{ name: "Inicio", href: "/" }, { name: "Comunidad" }], `${SITE_URL}/comunidad`)) }} />
       </Head>
 
       <style>{`

@@ -2,7 +2,7 @@
 import Head from "next/head";
 import { generatePlan, SESSION_TYPE_META, PHASE_META } from "../lib/training-plans";
 
-import { SITE_URL } from "../lib/site";
+import { SITE_URL, breadcrumbLd } from "../lib/site";
 /* ─── DATA ─────────────────────────────────────────────────────────────── */
 
 const OBJECTIVES = [
@@ -369,8 +369,8 @@ export default function PlanEntrenamiento() {
   /* ── Shared head ──────────────────────────────────────────────────────── */
   const pageHead = (
     <Head>
-      <title>Plan de Entrenamiento Personalizado OCR, HYROX, CrossFit | Hybrid Race Hub</title>
-      <meta name="description" content="Genera tu plan de entrenamiento personalizado para OCR, HYROX o CrossFit. Adaptado a tu nivel, días disponibles y puntos débiles. Gratis." />
+      <title>Plan de entrenamiento HYROX, OCR y CrossFit gratis</title>
+      <meta name="description" content="Crea gratis tu plan de entrenamiento para HYROX, OCR o CrossFit: cinco preguntas sobre tu nivel, días y puntos débiles, y lo descargas en Excel o PDF." />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href={`${SITE_URL}/plan-entrenamiento`} />
@@ -409,6 +409,8 @@ export default function PlanEntrenamiento() {
           },
         }) }}
       />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd([{ name: "Inicio", href: "/" }, { name: "Plan de entrenamiento" }], `${SITE_URL}/plan-entrenamiento`)) }} />
     </Head>
   );
 

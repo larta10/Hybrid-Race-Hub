@@ -1,11 +1,28 @@
-﻿import { allSummaries, PER_PAGE } from "../lib/blog";
+import { allSummaries, PER_PAGE } from "../lib/blog";
 import { CATEGORIES } from "../lib/blog-categories";
 import { SUPABASE_URL, ANON_KEY } from "../lib/shared";
 
 import { SITE_URL } from "../lib/site";
-import { fetchUpcomingRaces } from "../lib/races-server";
+import { fetchUpcomingRaces, lastUpdated } from "../lib/races-server";
 import { HYBRID_CITIES, raceMatchesCity } from "../lib/hybrid-cities";
 const BASE = `${SITE_URL}`;
+
+// Última modificación real del contenido o de las metas de cada plantilla estática.
+// Actualiza la fecha cuando cambies el texto visible o el title/description de la página.
+const STATIC_LASTMOD = {
+  "/que-es-una-carrera-hibrida": "2026-10-27",
+  "/plan-entrenamiento": "2026-10-27",
+  "/centros-entrenamiento": "2026-10-27",
+  "/calculadora-hyrox": "2026-10-27",
+  "/race-hub": "2026-10-27",
+  "/comunidad": "2026-10-27",
+  "/productos": "2026-10-27",
+  "/sobre-nosotros": "2026-10-27",
+  "/contacto-organizadores": "2026-10-27",
+};
+const RANKINGS_LASTMOD = "2026-10-27";
+// Fecha del último cambio de las plantillas de home, calendario y regiones
+const TEMPLATE_LASTMOD = "2026-10-27";
 
 const PRODUCT_SLUGS = [
   "relojes",
@@ -38,11 +55,17 @@ export default function SitemapXml() {
 
 export async function getServerSideProps({ res }) {
   const today = new Date().toISOString().split("T")[0];
+  const max = (...d) => d.filter(Boolean).sort().pop();
   const posts = allSummaries();
   const newest = posts.reduce((m, p) => (p.updated > m ? p.updated : m), "2026-01-01");
   const blogPages = Math.max(1, Math.ceil((posts.length - 1) / PER_PAGE));
   const races = await fetchUpcomingRaces();
-  const cityPages = HYBRID_CITIES.filter((c) => races.some((r) => raceMatchesCity(r, c))).map((c) => c.slug);
+  const racesLastmod = max(lastUpdated(races), TEMPLATE_LASTMOD);
+  // Solo ciudades con carreras futuras (las demás llevan noindex); lastmod = último cambio de sus carreras
+  const cityPages = HYBRID_CITIES
+    .map((c) => ({ slug: c.slug, races: races.filter((r) => raceMatchesCity(r, c)) }))
+    .filter((c) => c.races.length)
+    .map((c) => ({ slug: c.slug, lastmod: max(lastUpdated(c.races), TEMPLATE_LASTMOD) }));
 
   // Artículos de /comunidad (Supabase). Si falla, el sitemap se genera igual.
   let comunidad = [];
@@ -54,30 +77,23 @@ export async function getServerSideProps({ res }) {
   } catch {}
 
   const urls = [
-    { loc: `${BASE}/`,                          lastmod: today, changefreq: "daily",   priority: "1.0" },
-    { loc: `${BASE}/que-es-una-carrera-hibrida`, lastmod: today, changefreq: "weekly",  priority: "0.9" },
-    { loc: `${BASE}/calendario`,                lastmod: today, changefreq: "daily",   priority: "0.9" },
+    { loc: `${BASE}/`,                          lastmod: racesLastmod, changefreq: "daily",   priority: "1.0" },
+    { loc: `${BASE}/que-es-una-carrera-hibrida`, lastmod: STATIC_LASTMOD["/que-es-una-carrera-hibrida"], changefreq: "weekly",  priority: "0.9" },
+    { loc: `${BASE}/calendario`,                lastmod: racesLastmod, changefreq: "daily",   priority: "0.9" },
     { loc: `${BASE}/blog`,                      lastmod: newest, changefreq: "weekly",  priority: "0.8" },
-    { loc: `${BASE}/plan-entrenamiento`,        lastmod: today, changefreq: "monthly", priority: "0.8" },
-    { loc: `${BASE}/centros-entrenamiento`,     lastmod: today, changefreq: "monthly", priority: "0.7" },
-    { loc: `${BASE}/calculadora-hyrox`,         lastmod: today, changefreq: "monthly", priority: "0.7" },
-    { loc: `${BASE}/race-hub`,                  lastmod: today, changefreq: "monthly", priority: "0.7" },
-    { loc: `${BASE}/comunidad`,                 lastmod: today, changefreq: "weekly",  priority: "0.6" },
-    { loc: `${BASE}/productos`,                 lastmod: today, changefreq: "monthly", priority: "0.7" },
-    { loc: `${BASE}/sobre-nosotros`,            lastmod: today, changefreq: "monthly", priority: "0.5" },
-    { loc: `${BASE}/contacto-organizadores`,    lastmod: today, changefreq: "monthly", priority: "0.5" },
+    ...["/plan-entrenamiento", "/centros-entrenamiento", "/calculadora-hyrox", "/race-hub", "/comunidad", "/productos", "/sobre-nosotros", "/contacto-organizadores"]
+      .map((p) => ({ loc: `${BASE}${p}`, lastmod: STATIC_LASTMOD[p], changefreq: "monthly", priority: p === "/centros-entrenamiento" ? "0.8" : "0.6" })),
 
     ...PRODUCT_SLUGS.map((slug) => ({
       loc: `${BASE}/productos/${slug}`,
-      lastmod: today,
+      lastmod: RANKINGS_LASTMOD,
       changefreq: "monthly",
       priority: "0.7",
     })),
 
-    // Solo ciudades con carreras futuras (las demás llevan noindex)
-    ...cityPages.map((slug) => ({
+    ...cityPages.map(({ slug, lastmod }) => ({
       loc: `${BASE}/carreras-hibridas/${slug}`,
-      lastmod: today,
+      lastmod,
       changefreq: "daily",
       priority: "0.8",
     })),

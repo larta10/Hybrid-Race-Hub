@@ -1,4 +1,5 @@
 ﻿import Head from "next/head";
+import { Breadcrumbs } from "../components/PageShell";
 import { SiteNav } from "../lib/shared";
 import GuideCallout from "../components/GuideCallout";
 import Link from "next/link";
@@ -9,15 +10,15 @@ import AffiliateLink from "../components/AffiliateLink";
 const RANKINGS = RAW_RANKINGS.map(resolveRanking);
 
 
-import { SITE_URL } from "../lib/site";
+import { SITE_URL, breadcrumbLd } from "../lib/site";
 /* ─── COMPONENT ─────────────────────────────────────────────────────────────── */
 
 export default function Productos() {
   return (
     <>
       <Head>
-        <title>{`Rankings de Equipamiento OCR y HYROX ${RANKINGS_UPDATED.slice(0, 4)} | Hybrid Race Hub`}</title>
-        <meta name="description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX. Con precios y enlaces a Amazon España." />
+        <title>{`Rankings de material OCR y HYROX ${RANKINGS_UPDATED.slice(0, 4)} | Hybrid Race Hub`}</title>
+        <meta name="description" content="Rankings de relojes GPS, zapatillas de trail y de HYROX, pulsómetros y ropa para carreras híbridas, con pros y contras de cada modelo y enlace a Amazon." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/productos`} />
@@ -50,6 +51,7 @@ export default function Productos() {
             }))
           )}}
         />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd([{ name: "Inicio", href: "/" }, { name: "Productos" }], `${SITE_URL}/productos`)) }} />
       </Head>
 
       <style>{`
@@ -177,7 +179,7 @@ export default function Productos() {
       {/* Hero */}
       <div className="page-hero">
         <div className="page-hero-inner">
-          <p className="page-eyebrow">Ranking · {RANKINGS_UPDATED.slice(0, 4)} · Equipamiento</p>
+          <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Productos" }]} />
           <h1 className="page-title">Rankings<br/>de Equipamiento</h1>
           <p className="page-sub">
             Relojes GPS, zapatillas, pulsómetros y ropa para OCR y HYROX. Solo lo que

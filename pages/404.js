@@ -2,12 +2,17 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 
+const REGIONS = [
+  ["madrid", "Madrid"], ["cataluna", "Cataluña"], ["andalucia", "Andalucía"], ["comunidad-valenciana", "Comunidad Valenciana"],
+  ["canarias", "Canarias"], ["baleares", "Baleares"], ["bilbao", "Bilbao"], ["sevilla", "Sevilla"],
+];
+
 export default function Custom404() {
   return (
     <>
       <Head>
         <title>Página no encontrada | Hybrid Race Hub</title>
-        <meta name="description" content="Esta página no existe o ha sido movida. Explora el calendario de carreras OCR y HYROX en España, rankings de equipamiento y más." />
+        <meta name="description" content="Esta página no existe o la hemos movido. Desde aquí puedes ir al calendario de carreras híbridas, a las carreras por comunidad o a las guías del blog." />
         <meta name="robots" content="noindex" />
       </Head>
 
@@ -27,6 +32,10 @@ export default function Custom404() {
         .link-ghost:hover { color: var(--text); border-color: rgba(255,255,255,0.3); }
         .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 3rem; }
         .brand-name { font-family: var(--font-display); font-size: 16px; font-weight: 800; text-transform: uppercase; }
+        .regions { margin-top: 2.5rem; max-width: 560px; }
+        .regions-title { font-size: 14px; color: var(--muted); margin-bottom: .75rem; }
+        .regions ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 16px; justify-content: center; }
+        .regions a { display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
       `}</style>
 
       <div className="page">
@@ -45,6 +54,14 @@ export default function Custom404() {
           <Link href="/blog" className="link-ghost">Blog</Link>
           <Link href="/centros-entrenamiento" className="link-ghost">Centros</Link>
         </div>
+        <nav className="regions" aria-label="Carreras por zona">
+          <p className="regions-title">Carreras híbridas por zona</p>
+          <ul>
+            {REGIONS.map(([slug, name]) => (
+              <li key={slug}><Link href={`/carreras-hibridas/${slug}`}>{name}</Link></li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </>
   );

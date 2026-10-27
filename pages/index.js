@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { SITE_URL, SITE_EMAIL, SITE_INSTAGRAM } from "../lib/site";
 import RaceList from "../components/RaceList";
-import { fetchUpcomingRaces, seasonLabel } from "../lib/races-server";
+import { fetchUpcomingRaces, seasonLabel, raceEventSchema } from "../lib/races-server";
 import { HYBRID_CITIES } from "../lib/hybrid-cities";
 import {
   SUPABASE_URL, ANON_KEY, CCAA, FORMATS,
@@ -239,8 +239,8 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season }) {
   return (
     <>
       <Head>
-        <title>{`Carreras híbridas en España ${season}: calendario Hyrox y OCR | Hybrid Race Hub`}</title>
-        <meta name="description" content="Calendario de carreras híbridas en España: HYROX, OCR, Spartan y DEKA con fechas, precios e inscripción. Busca por ciudad y prepara tu próxima carrera." />
+        <title>{`Carreras híbridas en España ${season} | Hybrid Race Hub`}</title>
+        <meta name="description" content={`Calendario de carreras híbridas ${season} en España: HYROX, OCR, Spartan y DEKA con fechas, precios e inscripción. Mira las de 2027 y elige la tuya.`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/`} />
@@ -257,6 +257,11 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season }) {
         <meta name="twitter:title" content={`Carreras híbridas en España ${season}`} />
         <meta name="twitter:description" content="Calendario de carreras híbridas en España: HYROX, OCR, Spartan y DEKA." />
         <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
+        {nextRaces.length > 0 && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(
+            nextRaces.map(r => raceEventSchema(r, SITE_URL)).filter(Boolean).map(e => ({ "@context": "https://schema.org", ...e }))
+          ) }} />
+        )}
         <link rel="preconnect" href={SUPABASE_URL} />
         <link rel="preload" as="image" href="/hero-home.webp" media="(min-width: 721px)" fetchpriority="high" />
 
@@ -413,9 +418,9 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season }) {
             <p className="section-label">POR CIUDAD</p>
             <h2 id="por-ciudad" className="section-title">Carreras híbridas cerca de ti</h2>
           </div>
-          <ul className="city-links">
-            {HYBRID_CITIES.filter(c => c.priority <= 10).map(c => (
-              <li key={c.slug}><a href={`/carreras-hibridas/${c.slug}`}>{c.name}</a></li>
+          <ul className="city-links city-links--long">
+            {HYBRID_CITIES.map(c => (
+              <li key={c.slug}><a href={`/carreras-hibridas/${c.slug}`}>Carreras híbridas {c.en || `en ${c.name}`}</a></li>
             ))}
           </ul>
           <div className="home-guides">
@@ -474,6 +479,7 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season }) {
           width={1920}
           height={1080}
           sizes="100vw"
+          quality={65}
         />
         <figcaption>SkiErg, la primera estación de HYROX: 1.000 metros tirando de brazos con la carrera recién empezada.</figcaption>
       </figure>

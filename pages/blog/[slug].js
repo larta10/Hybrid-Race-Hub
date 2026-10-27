@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import PageShell, { Breadcrumbs } from "../../components/PageShell";
 import ArticleBody from "../../components/blog/ArticleBody";
-import { Toc, ShareButtons, AuthorBox, ArticleCta, RelatedPosts } from "../../components/blog/ArticleParts";
+import { Toc, ShareButtons, AuthorBox, ArticleCta, ArticleNextSteps, RelatedPosts } from "../../components/blog/ArticleParts";
 import { getAllSlugs } from "../../lib/posts";
 import { prepareArticle } from "../../lib/article-server";
 import { fechaLarga, mesAno } from "../../lib/dates";
-import { SITE_URL, SITE_NAME } from "../../lib/site";
+import { SITE_URL, SITE_NAME, pageTitle } from "../../lib/site";
 import { PODCASTS } from "../../data/podcasts";
 import { fetchUpcomingRaces } from "../../lib/races-server";
 
@@ -87,7 +87,7 @@ export default function BlogPost({ post, toc, related, races }) {
   return (
     <PageShell activePath="/blog">
       <Head>
-        <title>{`${post.metaTitle} | ${SITE_NAME}`}</title>
+        <title>{pageTitle(post.metaTitle)}</title>
         <meta name="description" content={post.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -145,6 +145,7 @@ export default function BlogPost({ post, toc, related, races }) {
             <ArticleBody html={post.content} faq={post.faq} races={races} pageUrl={url} className="art-body" />
             <ShareButtons url={url} title={post.h1} />
             <ArticleCta category={post.category} />
+            <ArticleNextSteps category={post.category} />
             <AuthorBox />
           </div>
           <aside className="art-side">

@@ -1,7 +1,7 @@
 ﻿import { useState } from "react";
 import Head from "next/head";
 
-import { SITE_URL } from "../lib/site";
+import { SITE_URL, breadcrumbLd } from "../lib/site";
 const INITIAL_FORM = { nombre: "", email: "", tipo: "", mensaje: "" };
 
 export default function ContactOrganizers() {
@@ -52,8 +52,8 @@ export default function ContactOrganizers() {
   return (
     <>
       <Head>
-        <title>Contacto Organizadores de Carreras OCR y HYROX | Hybrid Race Hub</title>
-        <meta name="description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub, el calendario de referencia en España. Contacta con nosotros para estudiar tu colaboración." />
+        <title>Publica tu carrera OCR o HYROX en el calendario</title>
+        <meta name="description" content="¿Organizas una carrera OCR, HYROX o de fitness funcional? Envíanos la fecha y la publicamos gratis en el calendario de carreras híbridas de España." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/contacto-organizadores`} />
@@ -69,6 +69,7 @@ export default function ContactOrganizers() {
         <meta name="twitter:title" content="Contacto Organizadores — Hybrid Race Hub" />
         <meta name="twitter:description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub, el calendario de referencia en España." />
         <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd([{ name: "Inicio", href: "/" }, { name: "Organizadores" }], `${SITE_URL}/contacto-organizadores`)) }} />
       </Head>
 
       <style>{`

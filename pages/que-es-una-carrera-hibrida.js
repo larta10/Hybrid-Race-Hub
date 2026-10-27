@@ -79,8 +79,8 @@ function faqData({ madrid, priced, total }) {
 export default function Guia({ upcoming, total, madrid, counts, priced, season }) {
   const url = `${SITE_URL}${PATH}`;
   const faqs = faqData({ madrid, priced, total });
-  const title = `Qué es una carrera híbrida: HYROX, OCR y Spartan explicados (${season}) | ${SITE_NAME}`;
-  const desc = "Qué es una carrera híbrida, tipos (HYROX, OCR, Spartan, DEKA), cómo es una prueba HYROX, categorías, cómo prepararte y próximas carreras en España.";
+  const title = "Qué es una carrera híbrida (hybrid race) y cómo funciona";
+  const desc = "Una carrera híbrida mezcla tramos de carrera con ejercicios de fuerza o con obstáculos. Te explicamos HYROX, OCR, Spartan, Hurbax e Hyatlón y sus fechas.";
   const updated = dateParts(CONTENT_UPDATED);
   const otherMods = Object.entries(counts).filter(([k]) => !["HYROX", "OCR", "Spartan", "DEKA", "DEKA FIT", "Hyatlón", "HURBAX"].includes(k));
 
@@ -129,7 +129,7 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
         <link rel="canonical" href={url} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={url} />
-        <meta property="og:title" content="Qué es una carrera híbrida: HYROX, OCR y Spartan explicados" />
+        <meta property="og:title" content="Qué es una carrera híbrida (hybrid race) y cómo funciona" />
         <meta property="og:description" content={desc} />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:locale" content="es_ES" />
