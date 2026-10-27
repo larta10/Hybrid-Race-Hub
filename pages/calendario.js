@@ -1,4 +1,5 @@
 ﻿import { Fragment, useState, useEffect, useCallback } from "react";
+import { trackSearch } from "../lib/track";
 import { Breadcrumbs } from "../components/PageShell";
 import Head from "next/head";
 import Image from "next/image";
@@ -81,6 +82,7 @@ export default function Calendario({ initialRaces = null, season = "", years = [
     const q=textQuery.trim();
     if(q.length<2) return;
     const t=setTimeout(()=>track("search",{search_term:q}),1000);
+    trackSearch(q,"calendario");
     return ()=>clearTimeout(t);
   },[textQuery]);
 

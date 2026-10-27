@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { trackContactSubmit } from "../lib/track";
 import Head from "next/head";
 import Image from "next/image";
 import { SITE_URL, SITE_EMAIL, SITE_INSTAGRAM } from "../lib/site";
@@ -85,7 +86,7 @@ function OrganizerContact() {
         method:"POST", headers:{"Content-Type":"application/json"},
         body:JSON.stringify(form),
       });
-      if(res.ok){ setStatus("success"); }
+      if(res.ok){ setStatus("success"); trackContactSubmit("home"); }
       else { const body=await res.json().catch(()=>({})); throw new Error(body.error||"Error al enviar"); }
     } catch(err) { setStatus("error"); setErrMsg(err.message||"No se pudo enviar. Inténtalo de nuevo."); }
   }

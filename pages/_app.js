@@ -1,4 +1,5 @@
 ﻿import { useEffect } from "react";
+import { trackAffiliateClick } from "../lib/track";
 import Script from "next/script";
 import { Barlow_Condensed, Inter, JetBrains_Mono } from "next/font/google";
 import "../styles/global.css";
@@ -34,6 +35,9 @@ export default function App({ Component, pageProps }) {
         link_url: a.href,
         page_path: window.location.pathname,
       });
+      // Conversión principal (ver docs/sem/GTM-CONFIG.md)
+      const rankingFromPath = (window.location.pathname.match(/^\/productos\/([^/]+)/) || [])[1];
+      trackAffiliateClick({ product: name, ranking: rankingFromPath || a.dataset.affCat || "articulo", position });
     }
     document.addEventListener("click", onClick, true);
     return () => document.removeEventListener("click", onClick, true);

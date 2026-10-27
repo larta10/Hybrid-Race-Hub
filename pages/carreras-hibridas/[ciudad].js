@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { trackRegionView } from "../../lib/track";
 import { useEffect } from "react";
 import PageShell, { Breadcrumbs } from "../../components/PageShell";
 import RaceList from "../../components/RaceList";
@@ -108,7 +109,10 @@ export default function CiudadPage(props) {
         `Carreras híbridas ${city.en}: HYROX, OCR y Spartan. Centros donde entrenar y las carreras más cercanas con fecha publicada.`,
       ]);
 
-  useEffect(() => { track("city_page_view", { city_name: city.name, city_slug: city.slug, races_count: races.length }); }, [city.slug]);
+  useEffect(() => {
+    track("city_page_view", { city_name: city.name, city_slug: city.slug, races_count: races.length });
+    trackRegionView(city.slug);
+  }, [city.slug]);
 
   const events = races.map(r => raceEventSchema(r, SITE_URL)).filter(Boolean).map(e => ({ "@context": "https://schema.org", ...e }));
   const schema = [

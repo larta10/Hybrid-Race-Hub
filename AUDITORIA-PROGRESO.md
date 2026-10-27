@@ -5,7 +5,7 @@ Si la sesión se corta: leer este archivo y `git log -5`, y seguir por la primer
 - ✅ Fase 1 — Auditoría técnica (enlaces, imágenes, móvil)
 - ✅ Fase 2 — SEO técnico (sitemap, canonical, metas, schema, CWV, enlazado, 404)
 - ✅ Fase 3 — SEO de contenido (home, guía, blog, Galicia y regiones nuevas, centros por ciudad, artículos)
-- ⏳ Fase 4 — SEM (lib/track.js, docs/sem/*)
+- ✅ Fase 4 — SEM (lib/track.js, docs/sem/*)
 - ⏳ Fase 5 — Cierre (lint, crawler, INFORME-AUDITORIA-2026-10.md)
 
 ## Notas de trabajo
@@ -37,3 +37,8 @@ Si la sesión se corta: leer este archivo y `git log -5`, y seguir por la primer
 - 31 páginas /centros-entrenamiento/[ciudad] (≥3 centros distintos, lib/center-cities.js) + bloque "Centros por ciudad".
 - Artículos: /blog/hyrox-vs-carrera-hibrida-diferencias y /blog/calendario-hyrox-espana-2026-2027 (Hybrid Day 2027 sin sedes publicadas → sustituido).
 - "Actualizado: fecha" en regiones, centros por ciudad y posts.
+
+### Fase 4 (hecho)
+- `lib/track.js`: affiliate_click, race_outbound_click, contact_form_submit, search_used, region_view. Enganchado en Amazon (listener de _app), "Web oficial"/"Inscribirme", formularios de organizadores y home, buscadores de calendario y centros, y páginas de región/ciudad. Verificado con `scripts/check-tracking.mjs` (los 5 llegan al dataLayer).
+- docs/sem/GTM-CONFIG.md, PLAN-GOOGLE-ADS.md, PLAN-META-ADS.md y google-ads-editor.csv (generado y validado por `scripts/sem-build-csv.mjs`: 3 campañas en pausa, 19 RSA, 250 keywords, 34 negativas por campaña).
+- Aviso: el texto de cookies dice "solo técnicas"; hace falta CMP + Consent Mode v2 antes de lanzar campañas.

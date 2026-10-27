@@ -1,4 +1,5 @@
 ﻿import { useState } from "react";
+import { trackContactSubmit } from "../lib/track";
 import Head from "next/head";
 
 import { SITE_URL, breadcrumbLd } from "../lib/site";
@@ -38,6 +39,7 @@ export default function ContactOrganizers() {
       if (res.ok) {
         setForm(INITIAL_FORM);
         setStatus("success");
+        trackContactSubmit("organizadores");
       } else {
         const data = await res.json().catch(() => ({}));
         setSubmitError(data.error || "Error al enviar. Escríbenos directamente a hola@hybridracehub.com");
