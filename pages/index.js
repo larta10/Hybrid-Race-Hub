@@ -8,8 +8,8 @@ import { fetchUpcomingRaces, seasonLabel, raceEventSchema } from "../lib/races-s
 import { HYBRID_CITIES, CITY_BY_SLUG, raceMatchesCity } from "../lib/hybrid-cities";
 import { fechaLarga } from "../lib/dates";
 import {
-  SUPABASE_URL, ANON_KEY, CCAA, FORMATS,
-  InstagramIcon, EnvelopeIcon, HeroStats, SiteFooter, CookieBanner,
+
+  InstagramIcon, EnvelopeIcon, SiteFooter, CookieBanner,
   SiteNav,
 } from "../lib/shared";
 
@@ -53,7 +53,7 @@ function FAQSection({ faqs }) {
     <section className="faq" aria-labelledby="faq-home">
       <div className="faq-inner">
         <div className="faq-header">
-          <p className="faq-eyebrow">PREGUNTAS FRECUENTES</p>
+          <p className="faq-eyebrow">Preguntas frecuentes</p>
           <h2 id="faq-home" className="faq-title">Lo que más nos preguntáis</h2>
         </div>
         <div className="faq-plain">
@@ -95,8 +95,8 @@ function OrganizerContact() {
     <section className="oc">
       <div className="oc-inner">
         <div className="oc-text">
-          <p className="oc-eyebrow">COLABORACIONES</p>
-          <h2 className="oc-title">¿TRABAJAMOS<br/>JUNTOS?</h2>
+          <p className="oc-eyebrow">Organizadores</p>
+          <h2 className="oc-title">¿Organizas una carrera?</h2>
           <p className="oc-sub">
             ¿Organizas una prueba, llevas un box o entrenas a atletas híbridos?
             Escríbenos. Publicamos tu evento en el calendario y vemos juntos cómo
@@ -107,14 +107,14 @@ function OrganizerContact() {
           </a>
           <br/>
           <a href="https://www.instagram.com/hybridracehub_spain" target="_blank" rel="noreferrer" className="oc-ig-link">
-            <InstagramIcon size={14}/><span>O DM · @hybridracehub_spain</span>
+            <InstagramIcon size={14}/><span>O por mensaje directo · @hybridracehub_spain</span>
           </a>
         </div>
 
         <div className="oc-form-wrap">
           {status==="success"?(
             <div className="oc-success">
-              <span className="oc-check">✓</span>
+              <span className="oc-check" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>
               <div>
                 <p className="oc-success-title">Mensaje enviado</p>
                 <p className="oc-success-sub">Te contestamos en 48 horas como mucho.</p>
@@ -143,7 +143,7 @@ function OrganizerContact() {
                   rows={4} value={form.mensaje} onChange={e=>set("mensaje",e.target.value)} disabled={status==="loading"}/>
               </div>
               <button type="submit" className="oc-btn" disabled={status==="loading"}>
-                {status==="loading"?"Enviando…":"Enviar mensaje"}
+                {status==="loading"?"Enviando…":"Enviar mi carrera"}
               </button>
               {status==="error"&&<p className="oc-error">{errMsg}</p>}
             </form>
@@ -256,13 +256,6 @@ export async function getStaticProps() {
 
 export default function Home({ nextRaces = [], upcomingCount = 0, season, madridRaces = [], races2027 = [], count2027 = 0 }) {
   const faqs = buildHomeFaqs({ madridRaces, races2027, count2027 });
-  const [totalCount, setTotalCount] = useState(null);
-  useEffect(()=>{
-    fetch(`${SUPABASE_URL}/rest/v1/races?select=count&modalidad_parent=in.(ocr,funcional)`,{
-      headers:{ apikey:ANON_KEY, Authorization:`Bearer ${ANON_KEY}`, Prefer:"count=exact" },
-    }).then(r=>{ const c=r.headers.get("content-range"); if(c) setTotalCount(c.split("/")[1]); }).catch(()=>{});
-  },[]);
-
   return (
     <>
       <Head>
@@ -289,8 +282,6 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
             nextRaces.map(r => raceEventSchema(r, SITE_URL)).filter(Boolean).map(e => ({ "@context": "https://schema.org", ...e }))
           ) }} />
         )}
-        <link rel="preconnect" href={SUPABASE_URL} />
-        <link rel="preload" as="image" href="/hero-home.webp" media="(min-width: 721px)" fetchpriority="high" />
 
         <script
           type="application/ld+json"
@@ -334,14 +325,15 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
 
       {/* ── HEADER ── */}
       <header className="hero hero--home">
+        <Image src="/hero-home.webp" alt="" fill priority fetchPriority="high" quality={60}
+          sizes="(max-width: 1200px) 100vw, 1200px" className="hero-photo" />
         <div className="hero-inner">
           <div className="brand">
-            <Image src="/logo-icon.svg" className="brand-logo-img" alt="" width={40} height={40} priority />
+            <Image src="/logo-icon-light.svg" className="brand-logo-img" alt="" width={40} height={40} />
             <div>
               <div className="brand-name">Hybrid Race Hub</div>
               <div className="brand-sub">
                 <span>OCR · HYROX · Functional</span>
-                {totalCount&&<span className="brand-count">{totalCount} eventos</span>}
               </div>
             </div>
           </div>
@@ -351,7 +343,7 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
         {/* Hero body */}
         <div className="hero-body" style={{ paddingTop: 0 }}>
           <div className="hero-left">
-            <p className="section-label">{`CALENDARIO · TEMPORADA ${season}`}</p>
+            <p className="section-label">{`Calendario · Temporada ${season}`}</p>
             <h1 className="hero-title" style={{ fontSize: 'clamp(32px,6vw,48px)', textTransform:'none' }}>
               {`Carreras híbridas en España ${season}`}
             </h1>
@@ -360,10 +352,9 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
               Elige fecha y ciudad, prepara la carrera y busca dónde entrenar.
             </p>
             <div className="hero-actions">
-              <a href="/calendario" className="btn-solid">Ver carreras</a>
+              <a href="/calendario" className="btn-solid">Ver el calendario</a>
               <a href="/plan-entrenamiento" className="btn-line">Crear plan gratis</a>
             </div>
-            <HeroStats totalCount={totalCount} ccaaCount={CCAA.length} formatsCount={FORMATS.length}/>
           </div>
         </div>
       </header>
@@ -388,7 +379,7 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
       <section className="home-next" aria-labelledby="proximas">
         <div className="home-next-inner">
           <div className="home-next-head">
-            <p className="section-label">PRÓXIMAS CARRERAS</p>
+            <p className="section-label">Próximas carreras</p>
             <h2 id="proximas" className="section-title">Las siguientes {nextRaces.length} carreras híbridas</h2>
             {upcomingCount > 0 && <p className="home-next-sub">Hay {upcomingCount} carreras programadas en el calendario. Fechas y precios los publica cada organizador.</p>}
           </div>
@@ -406,7 +397,7 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
       <section className="home-cities" aria-labelledby="por-ciudad">
         <div className="home-cities-inner">
           <div>
-            <p className="section-label">POR CIUDAD</p>
+            <p className="section-label">Por zona</p>
             <h2 id="por-ciudad" className="section-title">Carreras híbridas cerca de ti</h2>
           </div>
           <ul className="city-links city-links--long">
@@ -415,7 +406,7 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
             ))}
           </ul>
           <div className="home-guides">
-            <p className="section-label">EMPIEZA AQUÍ</p>
+            <p className="section-label">Empieza aquí</p>
             <ul>
               <li><a href="/que-es-una-carrera-hibrida">Qué es una carrera híbrida y qué tipos hay</a></li>
               <li><a href="/blog/que-es-hyrox">Qué es HYROX: estaciones, pesos y cómo inscribirte</a></li>
@@ -435,7 +426,7 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
       <section className="steps" aria-label="Cómo funciona">
         <div className="steps-inner">
           <div className="steps-head">
-            <p className="section-label">CÓMO FUNCIONA</p>
+            <p className="section-label">Cómo funciona</p>
             <h2 className="section-title">De la inscripción a la línea de meta</h2>
           </div>
           <ol className="steps-list">
@@ -479,10 +470,10 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
       <EditorialBlock
         imgSrc="https://images.unsplash.com/photo-1741562238447-d7c44397f7e0?w=900&q=80&fit=crop&auto=format"
         imgAlt="Corredores en carrera indoor de atletismo híbrido"
-        eyebrow="CALENDARIO"
+        eyebrow="Calendario"
         title="Fechas revisadas cada día"
         body="Más de 140 pruebas en España, desde una Spartan Sprint de 5 km hasta HYROX Madrid. Revisamos fechas y enlaces de inscripción a diario para que no te enteres cuando ya no quedan dorsales."
-        cta="Ver carreras →"
+        cta="Ver el calendario →"
         ctaHref="/calendario"
       />
 
@@ -492,7 +483,7 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
       <EditorialBlock
         imgSrc="https://images.unsplash.com/photo-1757147517580-90c214fc28f3?w=900&q=80&fit=crop&auto=format"
         imgAlt="Atletas compitiendo en evento HYROX Grand Palais París"
-        eyebrow="QUIÉNES SOMOS"
+        eyebrow="Quiénes somos"
         title="Lo hacemos atletas"
         body="Corremos OCR, competimos en HYROX y entrenamos en box. Montamos esto porque estábamos hartos de buscar fechas en veinte webs distintas. Los rankings dicen qué compraríamos nosotros y por qué. Si un enlace es de afiliado, lo pone."
         cta="Síguenos en Instagram →"

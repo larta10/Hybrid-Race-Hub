@@ -2,16 +2,13 @@
 import { trackAffiliateClick } from "../lib/track";
 import Script from "next/script";
 import dynamic from "next/dynamic";
-import { Barlow_Condensed, Inter, JetBrains_Mono } from "next/font/google";
+import { Archivo, Source_Sans_3 } from "next/font/google";
 import "../styles/global.css";
 
-// Fuentes autoalojadas con next/font: se precargan, no bloquean y la fuente de
-// reserva se ajusta a las métricas de la final (evita saltos de diseño / CLS).
-const display = Barlow_Condensed({ subsets: ["latin"], weight: ["700", "800"], display: "swap", adjustFontFallback: true, preload: false });
-// Inter es variable: un solo archivo cubre todos los pesos
-const body = Inter({ subsets: ["latin"], display: "swap", preload: false });
-// La mono solo se usa en etiquetas pequeñas: no se precarga para no retrasar el primer pintado
-const mono = JetBrains_Mono({ subsets: ["latin"], display: "swap", preload: false });
+// Tipografía (rediseño 10/2026): Archivo variable con eje de anchura para titulares
+// y Source Sans 3 para el texto. Solo se precargan estas dos; display swap y métricas de reserva ajustadas (sin CLS).
+const display = Archivo({ subsets: ["latin"], axes: ["wdth"], display: "swap", adjustFontFallback: true });
+const body = Source_Sans_3({ subsets: ["latin"], weight: ["400", "600"], display: "swap", adjustFontFallback: true });
 
 const GTM_ID = "GTM-5D5D2CH9";
 // El aviso de cookies no es crítico para el primer pintado: se carga aparte, solo en el navegador
@@ -52,7 +49,6 @@ export default function App({ Component, pageProps }) {
         :root {
           --ff-display: ${display.style.fontFamily};
           --ff-body: ${body.style.fontFamily};
-          --ff-mono: ${mono.style.fontFamily};
         }
       `}</style>
       {/* Google Tag Manager: después de que la página sea interactiva */}

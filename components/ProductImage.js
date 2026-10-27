@@ -81,7 +81,6 @@ export default function ProductImage({ src, name, category, width = 220, height 
         fontFamily: "var(--font-display)",
         fontSize: 13,
         fontWeight: 700,
-        textTransform: "uppercase",
         letterSpacing: "0.04em",
         color: "var(--text-muted)",
         textAlign: "center",

@@ -63,7 +63,7 @@ export default function ArticlePage({ article }) {
         .back-link {
           display: inline-flex; align-items: center; gap: 6px;
           font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-          text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);
+          letter-spacing:0.01em; color: var(--muted);
           margin-bottom: 2rem;
         }
         .back-link:hover { color: var(--text); text-decoration: none; }
@@ -71,12 +71,12 @@ export default function ArticlePage({ article }) {
         .article-header { margin-bottom: 2rem; }
         .article-cat {
           font-family: var(--font-mono); font-size: 10px; font-weight: 600;
-          text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted);
+          letter-spacing:0.01em; color: var(--text-muted);
           margin-bottom: 12px;
         }
         .article-title {
           font-family: var(--font-display); font-size: clamp(32px, 6vw, 48px);
-          font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em;
+          font-weight: 800; letter-spacing: -0.01em;
           line-height: 1.1; margin-bottom: 1rem;
         }
         .article-meta {
@@ -95,7 +95,7 @@ export default function ArticlePage({ article }) {
         }
         .article-body h1, .article-body h2, .article-body h3 {
           font-family: var(--font-display); font-weight: 700;
-          text-transform: uppercase; margin: 2rem 0 1rem;
+          margin: 2rem 0 1rem;
           color: var(--text);
         }
         .article-body h2 { font-size: 24px; }
@@ -114,7 +114,7 @@ export default function ArticlePage({ article }) {
           display: inline-flex; align-items: center; gap: 8px;
           padding: 12px 24px; background: var(--text); color: var(--bg);
           font-family: var(--font-display); font-size: 14px; font-weight: 700;
-          text-transform: uppercase; border: none; border-radius: 4px;
+          border: none; border-radius: 4px;
           cursor: pointer; text-decoration: none;
         }
 

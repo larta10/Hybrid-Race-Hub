@@ -61,14 +61,14 @@ export default function ContactOrganizers() {
         <link rel="canonical" href={`${SITE_URL}/contacto-organizadores`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/contacto-organizadores`} />
-        <meta property="og:title" content="Contacto Organizadores — Hybrid Race Hub" />
+        <meta property="og:title" content="Publica tu carrera en Hybrid Race Hub" />
         <meta property="og:description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub, el calendario de referencia en España." />
         <meta property="og:site_name" content="Hybrid Race Hub" />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contacto Organizadores — Hybrid Race Hub" />
+        <meta name="twitter:title" content="Publica tu carrera en Hybrid Race Hub" />
         <meta name="twitter:description" content="Promociona tu evento OCR, HYROX o CrossFit en Hybrid Race Hub, el calendario de referencia en España." />
         <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd([{ name: "Inicio", href: "/" }, { name: "Organizadores" }], `${SITE_URL}/contacto-organizadores`)) }} />
@@ -96,8 +96,7 @@ export default function ContactOrganizers() {
           font-family: var(--font-mono);
           font-size: 11px;
           font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
+          letter-spacing:0.01em;
           color: var(--muted);
           margin-bottom: 1rem;
         }
@@ -108,8 +107,7 @@ export default function ContactOrganizers() {
           font-family: var(--font-mono);
           font-size: 11px;
           font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 0.14em;
+          letter-spacing:0.01em;
           color: var(--text);
           margin-bottom: 1rem;
         }
@@ -117,7 +115,6 @@ export default function ContactOrganizers() {
           font-family: var(--font-display);
           font-size: clamp(42px, 8vw, 72px);
           font-weight: 800;
-          text-transform: uppercase;
           letter-spacing: -0.02em;
           line-height: 1.05;
           margin-bottom: 1rem;
@@ -142,7 +139,6 @@ export default function ContactOrganizers() {
           font-family: var(--font-display);
           font-size: 24px;
           font-weight: 700;
-          text-transform: uppercase;
           letter-spacing: 0.04em;
           text-align: center;
           margin-bottom: 2rem;
@@ -153,8 +149,7 @@ export default function ContactOrganizers() {
           font-family: var(--font-mono);
           font-size: 10px;
           font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 0.14em;
+          letter-spacing:0.01em;
           color: var(--muted);
           margin-bottom: 6px;
         }
@@ -191,8 +186,7 @@ export default function ContactOrganizers() {
           font-family: var(--font-display);
           font-size: 15px;
           font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
+          letter-spacing:0.01em;
           border: none;
           border-radius: var(--radius-sm);
           cursor: pointer;
@@ -207,7 +201,7 @@ export default function ContactOrganizers() {
         .spinner {
           width: 16px;
           height: 16px;
-          border: 2px solid rgba(8,9,12,0.3);
+          border: 2px solid rgba(20,22,26,0.35);
           border-top-color: var(--bg);
           border-radius: 50%;
           animation: spin 0.7s linear infinite;
@@ -217,8 +211,8 @@ export default function ContactOrganizers() {
 
         .alert-success {
           padding: 14px 18px;
-          background: rgba(255,255,255,0.05);
-          border: 1px solid rgba(255,255,255,0.08);
+          background: rgba(20,22,26,0.05);
+          border: 1px solid rgba(20,22,26,0.08);
           border-radius: var(--radius-sm);
           color: var(--green);
           font-size: 14px;
@@ -230,8 +224,8 @@ export default function ContactOrganizers() {
         }
         .alert-error {
           padding: 12px 16px;
-          background: rgba(248,113,113,0.08);
-          border: 1px solid rgba(248,113,113,0.25);
+          background: var(--red-bg);
+          border: 1px solid var(--red);
           border-radius: var(--radius-sm);
           color: var(--red);
           font-size: 13px;
@@ -318,7 +312,7 @@ export default function ContactOrganizers() {
 
             {status === "success" && (
               <div className="alert-success">
-                <span>✓</span>
+                <span aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>
                 Mensaje enviado. Te contestaremos en un plazo máximo de 48 horas.
               </div>
             )}

@@ -18,11 +18,11 @@ const TOTAL = centrosJson.length;
 const CIUDADES = [...new Set(centrosJson.map((c) => c.ciudad).filter(Boolean))].length;
 
 const TIPO_COLOR = {
-  CrossFit:        { color: "var(--text)", bg: "rgba(255,255,255,0.07)" },
-  HYROX:           { color: "var(--text)", bg: "rgba(255,255,255,0.07)" },
-  OCR:             { color: "var(--text)", bg: "rgba(255,255,255,0.09)" },
-  Funcional:       { color: "var(--text)", bg: "rgba(255,255,255,0.07)" },
-  Multidisciplinar:{ color: "var(--text-muted)", bg: "rgba(255,255,255,0.07)" },
+  CrossFit:        { color: "var(--text)", bg: "rgba(20,22,26,0.07)" },
+  HYROX:           { color: "var(--text)", bg: "rgba(20,22,26,0.07)" },
+  OCR:             { color: "var(--text)", bg: "rgba(20,22,26,0.09)" },
+  Funcional:       { color: "var(--text)", bg: "rgba(20,22,26,0.07)" },
+  Multidisciplinar:{ color: "var(--text-muted)", bg: "rgba(20,22,26,0.07)" },
 };
 
 /* Haversine function defined earlier (first definition kept) */
@@ -229,22 +229,22 @@ export default function CentrosEntrenamiento() {
         .topbar { background:var(--bg); border-bottom:1px solid var(--border); height:64px; display:flex; align-items:center; justify-content:space-between; padding:0 2rem; }
         .brand { display:flex; align-items:center; gap:14px; }
         .brand-logo { width:34px; height:34px; clip-path:polygon(15% 0,100% 0,85% 100%,0 100%); background:var(--text);box-shadow:inset 0 -3px 0 var(--accent); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:16px; font-weight:900; color:var(--bg); }
-        .brand-name { font-family:var(--font-display); font-size:17px; font-weight:800; text-transform:uppercase; color:var(--text); }
-        .brand-sub { font-family:var(--font-mono); font-size:9px; font-weight:500; text-transform:uppercase; letter-spacing:0.14em; color:var(--muted); }
+        .brand-name { font-family:var(--font-display); font-size:17px; font-weight:800; color:var(--text); }
+        .brand-sub { font-family:var(--font-mono); font-size:9px; font-weight:500; letter-spacing:0.01em; color:var(--muted); }
         .topbar-nav { display:flex; gap:4px; }
-        .topbar-nav a { font-family:var(--font-mono); font-size:10px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); padding:6px 12px; border-radius:var(--radius-sm); border:0.5px solid transparent; transition:color .15s,border-color .15s; }
+        .topbar-nav a { font-family:var(--font-mono); font-size:10px; font-weight:500; letter-spacing:0.01em; color:var(--muted); padding:6px 12px; border-radius:var(--radius-sm); border:0.5px solid transparent; transition:color .15s,border-color .15s; }
         .topbar-nav a:hover { color:var(--text); border-color:var(--border2); }
         .topbar-nav a.active { color: var(--text); border-color: transparent; border-radius: 0; box-shadow: inset 0 -2px 0 var(--accent); }
 
         .page-hero { background:var(--bg); border-bottom:1px solid var(--border); padding:3rem 2rem 2.5rem; }
         .page-hero-inner { max-width:1100px; margin:0 auto; }
-        .page-eyebrow { font-family:var(--font-mono); font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:0.16em; color:var(--text-muted); margin-bottom:10px; }
-        .page-title { font-family:var(--font-display); font-size:clamp(36px,6vw,70px); font-weight:800; text-transform:uppercase; letter-spacing:-0.01em; line-height:0.95; color:var(--text); margin-bottom:14px; }
+        .page-eyebrow { font-family:var(--font-mono); font-size:10px; font-weight:600; letter-spacing:0.01em; color:var(--text-muted); margin-bottom:10px; }
+        .page-title { font-family:var(--font-display); font-size:clamp(36px,6vw,70px); font-weight:800; letter-spacing:-0.01em; line-height:0.95; color:var(--text); margin-bottom:14px; }
         .page-sub { font-family:var(--font-body); font-size:15px; color:var(--muted); max-width:640px; line-height:1.65; }
         .stats-bar { display:flex; gap:2rem; flex-wrap:wrap; margin-top:1.5rem; }
         .stat-item { display:flex; flex-direction:column; gap:2px; }
         .stat-val { font-family:var(--font-display); font-size:32px; font-weight:800; color:var(--text); line-height:1; }
-        .stat-lbl { font-family:var(--font-mono); font-size:9px; font-weight:500; text-transform:uppercase; letter-spacing:0.14em; color:var(--muted); }
+        .stat-lbl { font-family:var(--font-mono); font-size:9px; font-weight:500; letter-spacing:0.01em; color:var(--muted); }
 
         .search-bar { background:var(--surface); border-bottom:1px solid var(--border); padding:1rem 2rem; }
         .search-bar-inner { max-width:1100px; margin:0 auto; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
@@ -252,48 +252,48 @@ export default function CentrosEntrenamiento() {
         .search-icon { position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--muted2); pointer-events:none; }
         .search-input { width:100%; background:var(--surface2); border:0.5px solid var(--border2); border-radius:var(--radius-sm); padding:10px 12px 10px 36px; min-height:44px; font-size:16px; font-family:var(--font-body); color:var(--text); outline:none; transition:border-color .15s; }
         .search-input::placeholder { color:var(--muted2); }
-        .search-input:focus { border-color:rgba(255,255,255,0.1); }
-        .result-count { font-family:var(--font-mono); font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); white-space:nowrap; }
+        .search-input:focus { border-color:rgba(20,22,26,0.1); }
+        .result-count { font-family:var(--font-mono); font-size:11px; font-weight:500; letter-spacing:0.01em; color:var(--muted); white-space:nowrap; }
 
         .filters-bar { background:var(--surface); border-bottom:1px solid var(--border); padding:.6rem 2rem; display:flex; gap:0; flex-direction:column; }
         .filter-row { display:flex; gap:6px; flex-wrap:wrap; align-items:center; padding:.35rem 0; }
         .filter-row + .filter-row { border-top:0.5px solid var(--border); }
-        .filter-label { font-family:var(--font-mono); font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted2); white-space:nowrap; min-width:40px; }
-        .filter-chip { font-family:var(--font-mono); font-size:11px; font-weight:600; min-height:36px; text-transform:uppercase; letter-spacing:0.08em; padding:4px 11px; border-radius:2px; border:0.5px solid var(--border); background:var(--surface2); color:var(--muted); cursor:pointer; white-space:nowrap; transition:all .15s; }
+        .filter-label { font-family:var(--font-mono); font-size:11px; font-weight:600; letter-spacing:0.01em; color:var(--muted2); white-space:nowrap; min-width:40px; }
+        .filter-chip { font-family:var(--font-mono); font-size:11px; font-weight:600; min-height:36px; letter-spacing:0.01em; padding:4px 11px; border-radius:2px; border:0.5px solid var(--border); background:var(--surface2); color:var(--muted); cursor:pointer; white-space:nowrap; transition:all .15s; }
         .filter-chip:hover { border-color:var(--border2); color:var(--text); }
-        .filter-chip--on { background:var(--surface2); color:var(--accent-mid); border-color:rgba(255,255,255,0.1); }
+        .filter-chip--on { background:var(--surface2); color:var(--accent-mid); border-color:rgba(20,22,26,0.1); }
         .filter-chip--tipo { }
-        .filter-chip--tipo.filter-chip--on { background:rgba(255,255,255,0.07); color:var(--text); border-color:rgba(255,255,255,0.08); }
+        .filter-chip--tipo.filter-chip--on { background:rgba(20,22,26,0.07); color:var(--text); border-color:rgba(20,22,26,0.08); }
 
         .centros-body { max-width:1100px; margin:0 auto; padding:2.5rem 2rem 4rem; }
         .section-head { margin-bottom:1rem; display:flex; align-items:center; gap:10px; }
         .section-head::after { content:""; flex:1; height:0.5px; background:var(--border); }
-        .ccaa-title { font-family:var(--font-display); font-size:19px; font-weight:800; text-transform:uppercase; letter-spacing:0.02em; color:var(--text); }
-        .section-count { font-family:var(--font-mono); font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted2); }
+        .ccaa-title { font-family:var(--font-display); font-size:19px; font-weight:800; letter-spacing:0.02em; color:var(--text); }
+        .section-count { font-family:var(--font-mono); font-size:11px; font-weight:500; letter-spacing:0.01em; color:var(--muted2); }
         .ccaa-section { margin-bottom:2.5rem; }
         .centros-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:12px; }
 
-        .proximity-notice { font-family:var(--font-mono); font-size:10px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); background:var(--surface); border:0.5px dashed var(--border2); border-radius:var(--radius-sm); padding:10px 16px; margin-bottom:1rem; }
+        .proximity-notice { font-family:var(--font-mono); font-size:10px; font-weight:500; letter-spacing:0.01em; color:var(--muted); background:var(--surface); border:0.5px dashed var(--border2); border-radius:var(--radius-sm); padding:10px 16px; margin-bottom:1rem; }
 
         .centro-card { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius); padding:1.1rem; display:flex; flex-direction:column; gap:8px; transition: border-color .15s, background-color .15s, color .15s; }
         .centro-card:hover { border-color:var(--border2); }
         .centro-card-header { display:flex; align-items:flex-start; justify-content:space-between; gap:8px; }
-        .tipo-badge { font-family:var(--font-display); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; padding:2px 8px; border-radius:2px; flex-shrink:0; margin-top:2px; }
-        .centro-nombre { font-family:var(--font-display); font-size:17px; font-weight:800; text-transform:uppercase; letter-spacing:-0.01em; line-height:1.15; color:var(--text); flex:1; }
+        .tipo-badge { font-family:var(--font-display); font-size:11px; font-weight:700; letter-spacing:0.01em; padding:2px 8px; border-radius:2px; flex-shrink:0; margin-top:2px; }
+        .centro-nombre { font-family:var(--font-display); font-size:17px; font-weight:800; letter-spacing:-0.01em; line-height:1.15; color:var(--text); flex:1; }
         .centro-loc { display:flex; align-items:baseline; gap:6px; flex-wrap:wrap; }
-        .centro-ciudad { font-family:var(--font-mono); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); }
+        .centro-ciudad { font-family:var(--font-mono); font-size:12px; font-weight:600; letter-spacing:0.01em; color:var(--text-muted); }
         .centro-cp { font-family:var(--font-mono); font-size:12px; font-weight:500; color:var(--muted2); }
         .centro-dir { font-family:var(--font-body); font-size:12px; color:var(--muted); line-height:1.5; flex:1; }
         .centro-links { display:flex; gap:6px; flex-wrap:wrap; padding-top:8px; border-top:0.5px solid var(--border); }
-        .centro-link { display:inline-flex; align-items:center; gap:4px; font-family:var(--font-mono); font-size:11px; font-weight:600; min-height:36px; text-transform:uppercase; letter-spacing:0.08em; padding:4px 10px; border-radius:2px; border:0.5px solid var(--border); color:var(--muted); transition:color .15s,border-color .15s; }
-        .centro-link:hover { color:var(--text); border-color:rgba(255,255,255,0.1); }
-        .centro-link--web { color:var(--accent-mid); border-color:rgba(255,255,255,0.1); }
+        .centro-link { display:inline-flex; align-items:center; gap:4px; font-family:var(--font-mono); font-size:11px; font-weight:600; min-height:36px; letter-spacing:0.01em; padding:4px 10px; border-radius:2px; border:0.5px solid var(--border); color:var(--muted); transition:color .15s,border-color .15s; }
+        .centro-link:hover { color:var(--text); border-color:rgba(20,22,26,0.1); }
+        .centro-link--web { color:var(--accent-mid); border-color:rgba(20,22,26,0.1); }
         .centro-link--web:hover { border-color:var(--accent-mid); }
-        .centro-link--tel { color:var(--text); border-color:rgba(255,255,255,0.08); }
+        .centro-link--tel { color:var(--text); border-color:rgba(20,22,26,0.08); }
         .centro-link--tel:hover { border-color:var(--text); }
 
         .no-results { text-align:center; padding:4rem 2rem; color:var(--muted); }
-        .no-results strong { display:block; font-family:var(--font-display); font-size:28px; font-weight:800; color:var(--text); text-transform:uppercase; margin-bottom:8px; }
+        .no-results strong { display:block; font-family:var(--font-display); font-size:28px; font-weight:800; color:var(--text); margin-bottom:8px; }
 
         .by-city { margin-bottom: 2.5rem; }
         .by-city-sub { font-size:14px; color:var(--text-muted); margin:.4rem 0 1rem; }
@@ -305,15 +305,15 @@ export default function CentrosEntrenamiento() {
         .show-more:hover { color:var(--text); border-color:var(--text-muted); }
         .near-btn { min-height:44px; padding:0 14px; background:transparent; border:0.5px solid var(--border2); border-radius:var(--radius-sm); color:var(--text-muted); font-family:var(--font-body); font-size:14px; cursor:pointer; white-space:nowrap; }
         .cta-block { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); padding:2rem; text-align:center; margin-top:3rem; }
-        .cta-block-title { font-family:var(--font-display); font-size:26px; font-weight:800; text-transform:uppercase; color:var(--text); margin-bottom:8px; }
+        .cta-block-title { font-family:var(--font-display); font-size:26px; font-weight:800; color:var(--text); margin-bottom:8px; }
         .cta-block-sub { font-family:var(--font-body); font-size:14px; color:var(--muted); margin-bottom:1.25rem; line-height:1.6; }
-        .cta-btn { display:inline-flex; align-items:center; gap:8px; background: var(--text); color: var(--bg); font-family:var(--font-display); font-size:14px; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; padding:12px 24px; border-radius:var(--radius-sm); transition: border-color .15s, background-color .15s, color .15s; }
+        .cta-btn { display:inline-flex; align-items:center; gap:8px; background: var(--text); color: var(--bg); font-family:var(--font-display); font-size:14px; font-weight:800; letter-spacing:0.01em; padding:12px 24px; border-radius:var(--radius-sm); transition: border-color .15s, background-color .15s, color .15s; }
         .cta-btn:hover {  }
 
         .bottom-links { margin-top:2rem; display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center; }
-        .bottom-link { display:inline-flex; align-items:center; gap:6px; font-family:var(--font-mono); font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; border-radius:2px; padding:6px 14px; }
-        .bottom-link--accent { color:var(--text); border:0.5px solid rgba(255,255,255,0.1); }
-        .bottom-link--muted { color:var(--muted); border:0.5px solid rgba(255,255,255,0.08); }
+        .bottom-link { display:inline-flex; align-items:center; gap:6px; font-family:var(--font-mono); font-size:11px; font-weight:600; letter-spacing:0.01em; border-radius:2px; padding:6px 14px; }
+        .bottom-link--accent { color:var(--text); border:0.5px solid rgba(20,22,26,0.1); }
+        .bottom-link--muted { color:var(--muted); border:0.5px solid rgba(20,22,26,0.08); }
 
         @media (max-width:720px) {
           .topbar { padding:0 1rem; }
@@ -546,7 +546,7 @@ export default function CentrosEntrenamiento() {
 
 /* ── Card ───────────────────────────────────────────────────────────────── */
 function CentroCard({ centro }) {
-  const tc = TIPO_COLOR[centro.tipo] || { color: "var(--text-muted)", bg: "rgba(140,142,154,0.12)" };
+  const tc = TIPO_COLOR[centro.tipo] || { color: "var(--text-muted)", bg: "rgba(20,22,26,0.12)" };
   const mapsUrl = `https://maps.google.com?q=${encodeURIComponent(
     [centro.nombre, centro.direccion, centro.ciudad].filter(Boolean).join(" ")
   )}`;

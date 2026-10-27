@@ -149,7 +149,7 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
       <article className="guide">
         <div className="guide-head">
           <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Qué es una carrera híbrida" }]} />
-          <p className="section-label">GUÍA · CARRERAS HÍBRIDAS</p>
+          <p className="section-label">Guía · Carreras híbridas</p>
           <h1 className="guide-title">Qué es una carrera híbrida (hybrid race) y cómo funciona</h1>
           <p className="guide-updated">Última actualización: <time dateTime={CONTENT_UPDATED}>{updated.long}</time> · El calendario de abajo se actualiza cada día</p>
         </div>
@@ -168,7 +168,7 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
           </p>
 
           <nav className="guide-toc" aria-label="Contenido de la guía">
-            <p className="section-label">EN ESTA GUÍA</p>
+            <p className="section-label">En esta guía</p>
             <ol>
               <li><a href="#tipos">Tipos de carreras híbridas</a></li>
               <li><a href="#hyrox">Cómo es una prueba HYROX</a></li>

@@ -157,7 +157,7 @@ export default function CiudadPage(props) {
       <article className="guide city-page">
         <div className="guide-head">
           <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Carreras híbridas", href: "/que-es-una-carrera-hibrida" }, { name: city.name }]} />
-          <p className="section-label">{city.kind === "comunidad" ? "COMUNIDAD" : "CIUDAD"} · {city.ccaa.toUpperCase()}</p>
+          <p className="section-label">{city.kind === "comunidad" ? "Comunidad" : "Ciudad"} · {city.ccaa}</p>
           <h1 className="guide-title">Carreras híbridas {city.en} {season}</h1>
           <p className="guide-updated">
             {races.length

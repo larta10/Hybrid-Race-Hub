@@ -21,10 +21,10 @@ const LEVELS = [
 ];
 
 const HORIZONS = [
-  { weeks: 4,  label: "4 semanas",      sub: "Evento inminente — plan de choque" },
+  { weeks: 4,  label: "4 semanas",      sub: "Carrera muy cerca: plan de choque" },
   { weeks: 8,  label: "8 semanas",      sub: "Preparación estándar" },
   { weeks: 12, label: "12 semanas",     sub: "Preparación completa con base sólida" },
-  { weeks: 16, label: "16 semanas",     sub: "Pretemporada — máximo rendimiento" },
+  { weeks: 16, label: "16 semanas",     sub: "Pretemporada: rendimiento máximo" },
   { weeks: 12, label: "Sin fecha fija", sub: "Mejora continua (equivale a 12 sem)", id: "open" },
 ];
 
@@ -422,7 +422,7 @@ export default function PlanEntrenamiento() {
     a:hover{text-decoration:underline;}
 
     .plan-page{max-width:860px;margin:0 auto;padding:2rem 1.5rem 4rem;}
-    .back-link{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:1.5rem;}
+    .back-link{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:0.01em;color:var(--muted);margin-bottom:1.5rem;}
     .back-link:hover{color:var(--text);text-decoration:none;}
 
     /* ── Wizard ── */
@@ -430,47 +430,47 @@ export default function PlanEntrenamiento() {
     .wp-step{width:28px;height:4px;border-radius:2px;background:var(--border2);transition:background .25s;}
     .wp-step.done{background:var(--text);}
     .wp-step.active{background:var(--text);opacity:.6;}
-    .wizard-label{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-left:auto;}
+    .wizard-label{font-family:var(--font-mono);font-size:10px;letter-spacing:0.01em;color:var(--muted);margin-left:auto;}
 
-    .step-title{font-family:var(--font-display);font-size:clamp(28px,6vw,42px);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:.5rem;}
+    .step-title{font-family:var(--font-display);font-size:clamp(28px,6vw,42px);font-weight:800;letter-spacing:-.01em;margin-bottom:.5rem;}
     .step-sub{color:var(--muted);font-size:14px;margin-bottom:2rem;}
 
     .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;margin-bottom:2rem;}
     .card-grid.two-col{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));}
     .sel-card{background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--radius);padding:1.1rem 1.25rem;cursor:pointer;transition:border-color .18s,background .18s;}
-    .sel-card:hover{border-color:rgba(255,255,255,0.1);background:var(--surface2);}
-    .sel-card.selected{border-color:var(--sel-accent,var(--text));background:rgba(255,255,255,0.04);}
-    .sel-card-label{font-family:var(--font-display);font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;margin-bottom:2px;}
+    .sel-card:hover{border-color:rgba(20,22,26,0.1);background:var(--surface2);}
+    .sel-card.selected{border-color:var(--sel-accent,var(--text));background:rgba(20,22,26,0.04);}
+    .sel-card-label{font-family:var(--font-display);font-size:20px;font-weight:700;letter-spacing:.02em;margin-bottom:2px;}
     .sel-card-sub{font-size:12px;color:var(--muted);line-height:1.4;}
 
     /* Days slider */
     .days-row{margin-bottom:2rem;}
-    .days-label{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.75rem;display:flex;justify-content:space-between;}
+    .days-label{font-family:var(--font-mono);font-size:10px;letter-spacing:0.01em;color:var(--muted);margin-bottom:.75rem;display:flex;justify-content:space-between;}
     .days-label span{font-size:14px;font-weight:600;color:var(--text);font-family:var(--font-display);letter-spacing:0;}
     .days-pips{display:flex;gap:.5rem;}
     .days-pip{flex:1;height:40px;border-radius:var(--radius-sm);background:var(--surface);border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:18px;font-weight:700;cursor:pointer;transition:all .18s;}
-    .days-pip:hover{border-color:rgba(255,255,255,0.1);}
-    .days-pip.selected{background:rgba(255,255,255,0.06);border-color:var(--text);color:var(--text);}
+    .days-pip:hover{border-color:rgba(20,22,26,0.1);}
+    .days-pip.selected{background:rgba(20,22,26,0.06);border-color:var(--text);color:var(--text);}
 
     /* Weakness chips */
     .chip-grid{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:.5rem;}
     .chip{padding:.45rem 1rem;border-radius:2px;background:var(--surface);border:1.5px solid var(--border2);font-size:13px;font-weight:500;cursor:pointer;transition:all .18s;}
-    .chip:hover{border-color:rgba(255,255,255,0.1);}
-    .chip.selected{background:rgba(255,255,255,0.07);border-color:var(--text);color:var(--text);}
+    .chip:hover{border-color:rgba(20,22,26,0.1);}
+    .chip.selected{background:rgba(20,22,26,0.07);border-color:var(--text);color:var(--text);}
     .chip-hint{font-size:12px;color:var(--muted2);margin-bottom:2rem;}
 
     /* Nav buttons */
     .wizard-nav{display:flex;gap:.75rem;justify-content:space-between;align-items:center;margin-top:2rem;}
-    .btn-back{padding:11px 20px;background:transparent;color:var(--muted);border:1.5px solid var(--border2);border-radius:var(--radius-sm);font-family:var(--font-display);font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;cursor:pointer;transition:all .18s;}
+    .btn-back{padding:11px 20px;background:transparent;color:var(--muted);border:1.5px solid var(--border2);border-radius:var(--radius-sm);font-family:var(--font-display);font-size:15px;font-weight:600;letter-spacing:.04em;cursor:pointer;transition:all .18s;}
     .btn-back:hover{color:var(--text);border-color:var(--border2);}
-    .btn-next{padding:12px 28px;background: var(--text);color: var(--bg);border:none;border-radius:var(--radius-sm);font-family:var(--font-display);font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;transition: border-color .15s, background-color .15s, color .15s;}
+    .btn-next{padding:12px 28px;background: var(--text);color: var(--bg);border:none;border-radius:var(--radius-sm);font-family:var(--font-display);font-size:16px;font-weight:700;letter-spacing:0.01em;cursor:pointer;transition: border-color .15s, background-color .15s, color .15s;}
     .btn-next:hover:not(:disabled){}
     .btn-next:disabled{opacity:.35;cursor:not-allowed;}
 
     /* ── Plan Result ── */
     .plan-header{background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem;}
-    .plan-eyebrow{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--text-muted);margin-bottom:.5rem;}
-    .plan-title{font-family:var(--font-display);font-size:clamp(28px,6vw,48px);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:1.1;margin-bottom:.4rem;}
+    .plan-eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:0.01em;color:var(--text-muted);margin-bottom:.5rem;}
+    .plan-title{font-family:var(--font-display);font-size:clamp(28px,6vw,48px);font-weight:800;letter-spacing:-.01em;line-height:1.1;margin-bottom:.4rem;}
     .plan-subtitle{color:var(--muted);font-size:14px;margin-bottom:1.25rem;}
     .plan-stats{display:flex;flex-wrap:wrap;gap:.75rem;}
     .plan-stat{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.5rem 1rem;font-family:var(--font-mono);font-size:12px;color:var(--muted);}
@@ -478,7 +478,7 @@ export default function PlanEntrenamiento() {
 
     /* Phase timeline */
     .phase-bar{display:flex;gap:0;border-radius:var(--radius-sm);overflow:hidden;margin-bottom:1.5rem;height:36px;}
-    .phase-seg{display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:#000;padding:0 .5rem;}
+    .phase-seg{display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:9px;letter-spacing:0.01em;font-weight:600;color:#000;padding:0 .5rem;}
     .phase-seg span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
     /* Weeks accordion */
@@ -486,8 +486,8 @@ export default function PlanEntrenamiento() {
     .week-card{background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius);overflow:hidden;}
     .week-header{display:flex;align-items:center;gap:.75rem;padding:1rem 1.25rem;cursor:pointer;transition:background .18s;}
     .week-header:hover{background:var(--surface2);}
-    .week-num{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);min-width:52px;}
-    .week-phase-badge{padding:.2rem .6rem;border-radius:4px;font-family:var(--font-mono);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#000;}
+    .week-num{font-family:var(--font-mono);font-size:10px;letter-spacing:0.01em;color:var(--muted);min-width:52px;}
+    .week-phase-badge{padding:.2rem .6rem;border-radius:4px;font-family:var(--font-mono);font-size:9px;font-weight:600;letter-spacing:0.01em;color:#000;}
     .week-tip{font-size:13px;color:var(--muted);flex:1;}
     .week-chevron{font-size:12px;color:var(--muted2);transition: border-color .15s, background-color .15s, color .15s;flex-shrink:0;}
     .week-chevron.open{transform:rotate(90deg);}
@@ -498,15 +498,15 @@ export default function PlanEntrenamiento() {
     .day-card:last-child{margin-bottom:0;}
     .day-header{display:flex;align-items:center;gap:.75rem;padding:.65rem .9rem;background:var(--bg2);cursor:pointer;transition:background .18s;}
     .day-header:hover{background:var(--bg);}
-    .day-name{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);min-width:72px;}
-    .day-badge{padding:.15rem .5rem;border-radius:3px;font-family:var(--font-mono);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;}
+    .day-name{font-family:var(--font-mono);font-size:10px;letter-spacing:0.01em;color:var(--muted);min-width:72px;}
+    .day-badge{padding:.15rem .5rem;border-radius:3px;font-family:var(--font-mono);font-size:9px;font-weight:600;letter-spacing:0.01em;}
     .day-title{font-size:13px;font-weight:500;flex:1;}
     .day-chevron{font-size:10px;color:var(--muted2);transition: border-color .15s, background-color .15s, color .15s;}
     .day-chevron.open{transform:rotate(90deg);}
     .day-body{background:var(--bg2);border-top:1px solid var(--border);padding:.75rem .9rem 1rem;}
     .day-section{margin-bottom:.75rem;}
     .day-section:last-child{margin-bottom:0;}
-    .day-section-label{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted2);margin-bottom:.35rem;}
+    .day-section-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.01em;color:var(--muted2);margin-bottom:.35rem;}
     .day-section ul{list-style:none;display:flex;flex-direction:column;gap:.2rem;}
     .day-section ul li{font-size:13px;color:var(--muted);line-height:1.5;padding-left:.9rem;position:relative;}
     .day-note{margin-top:.6rem;font-size:12px;color:var(--muted2);font-style:italic;border-left:2px solid var(--border2);padding-left:.6rem;}
@@ -514,42 +514,42 @@ export default function PlanEntrenamiento() {
 
     /* CTAs */
     .plan-ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);}
-    .cta-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:var(--radius-sm);font-family:var(--font-display);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;transition:all .18s;}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:var(--radius-sm);font-family:var(--font-display);font-size:14px;font-weight:700;letter-spacing:0.01em;text-decoration:none;transition:all .18s;}
     .cta-btn:hover{text-decoration:none;}
     .cta-primary{background: var(--text);color: var(--bg);}
     .cta-primary:hover{}
     .cta-secondary{background:transparent;color:var(--text);border:1.5px solid var(--border2);}
     .cta-secondary:hover{border-color:var(--text);color:var(--text);}
-    .cta-ghost{background:transparent;color:var(--muted);border:none;cursor:pointer;padding:12px 16px;font-family:var(--font-display);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;}
+    .cta-ghost{background:transparent;color:var(--muted);border:none;cursor:pointer;padding:12px 16px;font-family:var(--font-display);font-size:14px;font-weight:700;letter-spacing:0.01em;}
     .cta-ghost:hover{color:var(--text);}
 
     /* ── Free badge ── */
-    .free-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.07);color:var(--text-muted);border:1px solid rgba(255,255,255,0.1);border-radius:2px;padding:.35rem .9rem;font-family:var(--font-mono);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.25rem;}
+    .free-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(20,22,26,0.07);color:var(--text-muted);border:1px solid rgba(20,22,26,0.1);border-radius:2px;padding:.35rem .9rem;font-family:var(--font-mono);font-size:10px;font-weight:600;letter-spacing:0.01em;margin-bottom:1.25rem;}
 
     /* ── Profile step ── */
     .profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem;}
     .profile-field{display:flex;flex-direction:column;gap:.5rem;}
-    .profile-label{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);}
+    .profile-label{font-family:var(--font-mono);font-size:10px;letter-spacing:0.01em;color:var(--muted);}
     .profile-input{background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--radius-sm);padding:.75rem 1rem;font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--text);outline:none;text-align:center;transition:border-color .18s;width:100%;}
     .profile-input:focus{border-color:var(--text);}
     .profile-input::placeholder{color:var(--muted2);font-size:16px;font-weight:400;}
 
     /* ── Loads panel ── */
-    .week-loads{background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.09);padding:.75rem 1.25rem;}
+    .week-loads{background:rgba(20,22,26,0.03);border-top:1px solid rgba(20,22,26,0.09);padding:.75rem 1.25rem;}
     .loads-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem;}
-    .loads-title{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);}
-    .loads-cycle-label{font-family:var(--font-mono);font-size:9px;font-weight:600;padding:.15rem .6rem;border-radius:4px;background:rgba(255,255,255,0.07);color:var(--text);}
-    .loads-cycle-label.deload{background:rgba(255,255,255,0.06);color:var(--text);}
+    .loads-title{font-family:var(--font-mono);font-size:9px;letter-spacing:0.01em;color:var(--text-muted);}
+    .loads-cycle-label{font-family:var(--font-mono);font-size:9px;font-weight:600;padding:.15rem .6rem;border-radius:4px;background:rgba(20,22,26,0.07);color:var(--text);}
+    .loads-cycle-label.deload{background:rgba(20,22,26,0.06);color:var(--text);}
     .loads-grid{display:flex;flex-wrap:wrap;gap:.4rem;}
     .load-item{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:.3rem .7rem;display:flex;flex-direction:column;gap:1px;}
-    .load-item-name{font-family:var(--font-mono);font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted2);}
+    .load-item-name{font-family:var(--font-mono);font-size:8px;letter-spacing:0.01em;color:var(--muted2);}
     .load-item-val{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--text);line-height:1;}
 
     /* ── Download buttons ── */
-    .cta-dl-excel{background:rgba(255,255,255,0.05);color:var(--text);border:1.5px solid rgba(255,255,255,0.08);}
-    .cta-dl-excel:hover:not(:disabled){background:rgba(255,255,255,0.08);border-color:var(--text);}
-    .cta-dl-pdf{background:rgba(255,255,255,0.05);color:var(--text);border:1.5px solid rgba(255,255,255,0.08);}
-    .cta-dl-pdf:hover:not(:disabled){background:rgba(255,255,255,0.08);border-color:var(--text);}
+    .cta-dl-excel{background:rgba(20,22,26,0.05);color:var(--text);border:1.5px solid rgba(20,22,26,0.08);}
+    .cta-dl-excel:hover:not(:disabled){background:rgba(20,22,26,0.08);border-color:var(--text);}
+    .cta-dl-pdf{background:rgba(20,22,26,0.05);color:var(--text);border:1.5px solid rgba(20,22,26,0.08);}
+    .cta-dl-pdf:hover:not(:disabled){background:rgba(20,22,26,0.08);border-color:var(--text);}
     .cta-btn:disabled{opacity:.45;cursor:not-allowed;}
 
     @media(max-width:600px){
@@ -869,7 +869,7 @@ export default function PlanEntrenamiento() {
                         return (
                           <div key={di} className="day-card">
                             <div className="day-rest">
-                              <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: ".1em", color: "var(--muted2)", marginRight: ".75rem" }}>
+                              <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: "0.01em", color: "var(--muted2)", marginRight: ".75rem" }}>
                                 {dayObj.day}
                               </span>
                               Descanso — recuperación total

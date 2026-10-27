@@ -12,7 +12,7 @@ export default function Document() {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="alternate" type="application/rss+xml" title="Blog de Hybrid Race Hub" href="https://hybridracehub.com/rss.xml" />
-        <meta name="theme-color" content="#0B0B0C" />
+        <meta name="theme-color" content="#F5F4F0" />
       </Head>
       <body>
         {/* Google Tag Manager (noscript) */}

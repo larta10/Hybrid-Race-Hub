@@ -43,8 +43,8 @@ export default async function handler(req, res) {
       <table width="580" cellpadding="0" cellspacing="0" style="max-width:580px;width:100%;">
 
         <!-- Header -->
-        <tr><td style="background:#13151C;padding:28px 36px 24px;border-radius:12px 12px 0 0;border-bottom:2px solid #E10600;">
-          <p style="margin:0 0 6px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#E10600;font-weight:700;font-family:monospace;">HYBRID RACE HUB</p>
+        <tr><td style="background:#14161A;padding:28px 36px 24px;border-radius:12px 12px 0 0;border-bottom:2px solid #1F5C46;">
+          <p style="margin:0 0 6px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#1F5C46;font-weight:700;font-family:monospace;">HYBRID RACE HUB</p>
           <h1 style="margin:0;font-size:24px;font-weight:800;color:#F5F5F7;line-height:1.2;">Nueva colaboración</h1>
           <p style="margin:6px 0 0;font-size:13px;color:#8C8E9A;">${esc(tipoLabel)}</p>
         </td></tr>
@@ -58,7 +58,7 @@ export default async function handler(req, res) {
             </tr>
             <tr>
               <td style="padding:8px 16px 8px 0;color:#8C8E9A;white-space:nowrap;font-weight:600;vertical-align:top;">Email</td>
-              <td style="padding:8px 0;"><a href="mailto:${esc(email)}" style="color:#E10600;text-decoration:none;">${esc(email)}</a></td>
+              <td style="padding:8px 0;"><a href="mailto:${esc(email)}" style="color:#1F5C46;text-decoration:none;">${esc(email)}</a></td>
             </tr>
             <tr>
               <td style="padding:8px 16px 8px 0;color:#8C8E9A;white-space:nowrap;font-weight:600;vertical-align:top;">Perfil</td>
@@ -70,8 +70,8 @@ export default async function handler(req, res) {
             </tr>` : ""}
           </table>
 
-          <p style="margin:0 0 8px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#E10600;font-weight:600;font-family:monospace;">MENSAJE</p>
-          <div style="background:#08090C;border-radius:8px;padding:16px 20px;font-size:14px;line-height:1.75;color:#8C8E9A;">
+          <p style="margin:0 0 8px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#1F5C46;font-weight:600;font-family:monospace;">MENSAJE</p>
+          <div style="background:#F5F4F0;border-radius:8px;padding:16px 20px;font-size:14px;line-height:1.75;color:#14161A;">
             ${esc(mensaje).replace(/\n/g, "<br>")}
           </div>
         </td></tr>
@@ -83,7 +83,7 @@ export default async function handler(req, res) {
           </p>
           <p style="margin:0;font-size:11px;color:#5D5F6B;">
             Responde a este email para contactar directamente con
-            <a href="mailto:${esc(email)}" style="color:#E10600;text-decoration:none;">${esc(email)}</a>
+            <a href="mailto:${esc(email)}" style="color:#1F5C46;text-decoration:none;">${esc(email)}</a>
           </p>
         </td></tr>
 

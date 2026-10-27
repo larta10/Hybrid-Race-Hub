@@ -1,42 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
-  <!-- Background -->
-  <rect width="400" height="200" fill="#0B0B0C" rx="4"/>
-
-  <!-- HRH letters -->
-  <text
-    x="200" y="108"
-    font-family="Arial Black, Arial, sans-serif"
-    font-weight="900"
-    font-size="88"
-    letter-spacing="-2"
-    fill="#F2F2F0"
-    text-anchor="middle"
-    font-style="normal"
-  >HRH</text>
-
-  <!-- Barra de acento bajo la R -->
-  <rect x="155" y="116" width="90" height="4" fill="#E10600"/>
-
-  <!-- "HYBRID RACE HUB" subtitle -->
-  <text
-    x="200" y="152"
-    font-family="Arial Narrow, Arial, sans-serif"
-    font-weight="700"
-    font-size="17"
-    letter-spacing="6"
-    fill="#F2F2F0"
-    text-anchor="middle"
-    text-transform="uppercase"
-  >HYBRID RACE HUB</text>
-
-  <!-- "ESPAÑA · OCR · HYROX" tagline -->
-  <text
-    x="200" y="174"
-    font-family="Arial Narrow, Arial, sans-serif"
-    font-weight="400"
-    font-size="12"
-    letter-spacing="3"
-    fill="#9A9A9E"
-    text-anchor="middle"
-  >ESPAÑA · OCR · HYROX</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 48" width="300" height="48">
+  <g transform="translate(0,4)"><rect x="8" y="7" width="7" height="24" fill="#14161A"/><rect x="25" y="7" width="7" height="24" fill="#14161A"/><rect x="15" y="16" width="10" height="5" fill="#14161A"/><rect x="8" y="34" width="24" height="3" fill="#1F5C46"/></g>
+  <text x="50" y="33" font-family="Archivo, 'Arial Narrow', Arial, sans-serif" font-weight="800" font-size="26" letter-spacing="-0.4" fill="#14161A">Hybrid Race Hub</text>
 </svg>

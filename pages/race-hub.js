@@ -134,7 +134,7 @@ export default function RaceHub() {
 
       <main style={{ maxWidth: 1000, margin: "0 auto", padding: "2rem 1rem" }}>
         <section id="training-programs" style={{ marginBottom: "2rem" }}>
-          <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px,5vw,40px)", fontWeight: 800, textTransform: "uppercase", marginBottom: "0.75rem" }}>
+          <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px,5vw,40px)", fontWeight: 800, marginBottom: "0.75rem" }}>
             Programas HYROX
           </h1>
           <p style={{ color: "var(--muted)", marginBottom: "1.5rem" }}>
@@ -145,7 +145,7 @@ export default function RaceHub() {
             {PROGRAMS.map((p) => (
               <article key={p.anchor} style={{ background: "var(--surface)", border: "0.5px solid var(--border)", borderRadius: "var(--radius)", padding: "1.25rem", display: "flex", flexDirection: "column", gap: 8 }}>
                 <a href={`#${p.anchor}`} style={{ textDecoration: "none", color: "inherit" }}>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 800, textTransform: "uppercase", color: "var(--text)" }}>{p.title}</div>
+                  <div style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 800, color: "var(--text)" }}>{p.title}</div>
                 </a>
                 <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "var(--muted)", lineHeight: 1.6, flex: 1 }}>{p.text}</p>
                 <a href={`#${p.anchor}`} className="btn-primary" style={{ display: "inline-flex", marginTop: 4, fontSize: 12, padding: "8px 16px" }}>Detalles</a>
@@ -156,7 +156,7 @@ export default function RaceHub() {
 
         {PROGRAMS.map((p) => (
           <section key={p.anchor} id={p.anchor} style={{ padding: "2rem 0", borderTop: "0.5px solid var(--border)" }}>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 800, textTransform: "uppercase", marginBottom: 8 }}>{p.title}</h2>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 800, marginBottom: 8 }}>{p.title}</h2>
             <p style={{ color: "var(--muted)", lineHeight: 1.7, marginBottom: "1rem" }}>{p.detail}</p>
             {p.body && p.body.map((para, i) => (
               <p key={i} style={{ color: "var(--muted)", lineHeight: 1.75, marginBottom: "0.9rem", fontSize: 15 }}>{para}</p>

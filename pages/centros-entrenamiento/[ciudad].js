@@ -162,7 +162,7 @@ export default function CentrosCiudad(props) {
       <article className="guide city-page">
         <div className="guide-head">
           <Breadcrumbs items={crumbs} />
-          <p className="section-label">CENTROS DE ENTRENAMIENTO · {(city.province || city.fullName).toUpperCase()}</p>
+          <p className="section-label">Centros de entrenamiento · {city.province || city.fullName}</p>
           <h1 className="guide-title">{h1}</h1>
           <p className="guide-updated">{centers.length} centros · Actualizado: <time dateTime={generated}>{fechaLarga(generated)}</time></p>
         </div>

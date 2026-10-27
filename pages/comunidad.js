@@ -71,7 +71,7 @@ export default function Comunidad() {
         .back-link {
           display: inline-flex; align-items: center; gap: 6px;
           font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-          text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);
+          letter-spacing:0.01em; color: var(--muted);
           margin-bottom: 2rem;
         }
         .back-link:hover { color: var(--text); text-decoration: none; }
@@ -79,12 +79,12 @@ export default function Comunidad() {
         .comunidad-header { text-align: center; padding: 3rem 0 2rem; }
         .comunidad-eyebrow {
           font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-          text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted);
+          letter-spacing:0.01em; color: var(--text-muted);
           margin-bottom: 1rem;
         }
         .comunidad-title {
           font-family: var(--font-display); font-size: clamp(42px, 8vw, 72px);
-          font-weight: 800; text-transform: uppercase; letter-spacing: -0.02em;
+          font-weight: 800; letter-spacing: -0.02em;
           line-height: 1.05;
         }
 
@@ -125,12 +125,12 @@ export default function Comunidad() {
         .article-content { padding: 1.25rem; }
         .article-cat {
           font-family: var(--font-mono); font-size: 9px; font-weight: 600;
-          text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted);
+          letter-spacing:0.01em; color: var(--text-muted);
           margin-bottom: 8px;
         }
         .article-title {
           font-family: var(--font-display); font-size: 20px; font-weight: 700;
-          text-transform: uppercase; letter-spacing: 0.02em;
+          letter-spacing: 0.02em;
           margin-bottom: 8px; line-height: 1.2;
         }
         .article-excerpt {
@@ -139,13 +139,13 @@ export default function Comunidad() {
         }
         .article-date {
           font-family: var(--font-mono); font-size: 10px;
-          text-transform: uppercase; color: var(--muted);
+          color: var(--muted);
         }
 
         .products-section { padding: 2rem 0; }
         .products-title {
           font-family: var(--font-display); font-size: 28px; font-weight: 700;
-          text-transform: uppercase; letter-spacing: 0.04em;
+          letter-spacing: 0.04em;
           margin-bottom: 2rem; text-align: center;
         }
         .products-grid {
@@ -166,7 +166,7 @@ export default function Comunidad() {
         }
         .product-name {
           font-family: var(--font-display); font-size: 16px; font-weight: 700;
-          text-transform: uppercase; margin-bottom: 4px;
+          margin-bottom: 4px;
         }
         .product-desc {
           font-size: 12px; color: var(--muted); line-height: 1.5;
@@ -182,7 +182,7 @@ export default function Comunidad() {
         .product-btn {
           padding: 8px 14px; background: var(--text); color: var(--bg);
           font-family: var(--font-display); font-size: 11px; font-weight: 700;
-          text-transform: uppercase; border: none; border-radius: 4px;
+          border: none; border-radius: 4px;
           cursor: pointer; transition: border-color .15s, background-color .15s, color .15s;
         }
         .product-btn:hover { }

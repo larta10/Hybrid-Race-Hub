@@ -69,10 +69,10 @@ function getCategory(totalSec) {
   const min = totalSec / 60;
   if (min < 45) return { label:"PRO / Elite top", color:"var(--text)", note:"Rendimiento de competición internacional" };
   if (min < 55) return { label:"Elite Hombres / PRO", color:"var(--text)", note:"Nivel de competición top" };
-  if (min < 60) return { label:"Sub-60 — Muy sólido", color:"var(--text)", note:"Rendimiento alto, cerca de la élite" };
-  if (min < 75) return { label:"Open — Nivel avanzado", color:"var(--text)", note:"Tiempo competitivo en categoría Open" };
-  if (min < 90) return { label:"Open — Nivel medio", color:"var(--text)", note:"Rango habitual de participantes Open" };
-  if (min < 105) return { label:"Finisher — Buen resultado", color:"var(--text-muted)", note:"Terminar una HYROX ya es mucho. Ahora toca bajar tiempo" };
+  if (min < 60) return { label:"Sub-60: muy sólido", color:"var(--text)", note:"Rendimiento alto, cerca de la élite" };
+  if (min < 75) return { label:"Open: nivel avanzado", color:"var(--text)", note:"Tiempo competitivo en categoría Open" };
+  if (min < 90) return { label:"Open: nivel medio", color:"var(--text)", note:"Rango habitual de participantes Open" };
+  if (min < 105) return { label:"Finisher: buen resultado", color:"var(--text-muted)", note:"Terminar una HYROX ya es mucho. Ahora toca bajar tiempo" };
   return { label:"Finisher", color:"var(--muted2)", note:"Sigue entrenando, cada intento suma" };
 }
 
@@ -100,9 +100,9 @@ export default function CalculadoraHyrox() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Calculadora HYROX — Hybrid Race Hub",
+    "name": "Calculadora HYROX de Hybrid Race Hub",
     "applicationCategory": "Sports",
-    "description": "Calcula tu tiempo total en HYROX introduciendo los tiempos de cada estación y carrera. Descubre tu categoría: Elite, Open o Finisher.",
+    "description": "Calcula tu tiempo total en HYROX con los tiempos de cada estación y de cada kilómetro, y mira en qué rango quedarías: Elite, Open o Finisher.",
     "url": `${SITE_URL}/calculadora-hyrox`,
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "operatingSystem": "Web",
@@ -117,13 +117,13 @@ export default function CalculadoraHyrox() {
         <link rel="canonical" href={`${SITE_URL}/calculadora-hyrox`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/calculadora-hyrox`} />
-        <meta property="og:title" content="Calculadora HYROX — Estima tu Tiempo Total" />
+        <meta property="og:title" content="Calculadora HYROX: estima tu tiempo total" />
         <meta property="og:description" content="Calcula tu tiempo estimado en HYROX. Introduce los tiempos de tus 8 carreras y 8 estaciones y obtén tu tiempo total y categoría." />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Calculadora HYROX — Hybrid Race Hub" />
+        <meta name="twitter:title" content="Calculadora HYROX de Hybrid Race Hub" />
         <meta name="twitter:description" content="Calcula tu tiempo total estimado en HYROX por estación." />
         <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
@@ -139,18 +139,18 @@ export default function CalculadoraHyrox() {
         .topbar { background:var(--bg); border-bottom:1px solid var(--border); height:64px; display:flex; align-items:center; justify-content:space-between; padding:0 2rem; }
         .brand { display:flex; align-items:center; gap:14px; }
         .brand-logo { width:34px; height:34px; clip-path:polygon(15% 0,100% 0,85% 100%,0 100%); background:var(--text);box-shadow:inset 0 -3px 0 var(--accent); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:16px; font-weight:900; color:var(--bg); }
-        .brand-name { font-family:var(--font-display); font-size:17px; font-weight:800; text-transform:uppercase; color:var(--text); }
-        .brand-sub { font-family:var(--font-mono); font-size:9px; font-weight:500; text-transform:uppercase; letter-spacing:0.14em; color:var(--muted); }
+        .brand-name { font-family:var(--font-display); font-size:17px; font-weight:800; color:var(--text); }
+        .brand-sub { font-family:var(--font-mono); font-size:9px; font-weight:500; letter-spacing:0.01em; color:var(--muted); }
         .topbar-nav { display:flex; gap:4px; }
-        .topbar-nav a { font-family:var(--font-mono); font-size:10px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); padding:6px 12px; border-radius:var(--radius-sm); border:0.5px solid transparent; transition:color .15s,border-color .15s; }
+        .topbar-nav a { font-family:var(--font-mono); font-size:10px; font-weight:500; letter-spacing:0.01em; color:var(--muted); padding:6px 12px; border-radius:var(--radius-sm); border:0.5px solid transparent; transition:color .15s,border-color .15s; }
         .topbar-nav a:hover { color:var(--text); border-color:var(--border2); }
         .topbar-nav a.active { color: var(--text); border-color: transparent; border-radius: 0; box-shadow: inset 0 -2px 0 var(--accent); }
 
         /* HERO */
         .page-hero { background:var(--bg); border-bottom:1px solid var(--border); padding:3rem 2rem 2.5rem; }
         .page-hero-inner { max-width:900px; margin:0 auto; }
-        .page-eyebrow { font-family:var(--font-mono); font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:0.16em; color:var(--hyrox); margin-bottom:10px; }
-        .page-title { font-family:var(--font-display); font-size:clamp(44px,7vw,80px); font-weight:800; text-transform:uppercase; letter-spacing:-0.01em; line-height:0.95; color:var(--text); margin-bottom:14px; }
+        .page-eyebrow { font-family:var(--font-mono); font-size:10px; font-weight:600; letter-spacing:0.01em; color:var(--hyrox); margin-bottom:10px; }
+        .page-title { font-family:var(--font-display); font-size:clamp(44px,7vw,80px); font-weight:800; letter-spacing:-0.01em; line-height:0.95; color:var(--text); margin-bottom:14px; }
         .page-title span { color:var(--hyrox); }
         .page-sub { font-family:var(--font-body); font-size:15px; color:var(--muted); max-width:600px; line-height:1.65; }
 
@@ -161,19 +161,19 @@ export default function CalculadoraHyrox() {
         .rounds-list { display:flex; flex-direction:column; gap:10px; }
         .round-block { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; }
         .round-header { background:var(--surface2); padding:.6rem 1rem; display:flex; align-items:center; gap:8px; border-bottom:0.5px solid var(--border); }
-        .round-num { font-family:var(--font-display); font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-muted); }
+        .round-num { font-family:var(--font-display); font-size:12px; font-weight:800; letter-spacing:0.01em; color:var(--text-muted); }
         .round-rows { display:grid; grid-template-columns:1fr 1fr; }
         .time-row { padding:.85rem 1rem; display:flex; flex-direction:column; gap:6px; }
         .time-row:first-child { border-right:0.5px solid var(--border); }
         .time-row-top { display:flex; align-items:center; gap:8px; }
-        .time-icon { font-family:var(--font-mono); font-size:10px; font-weight:600; letter-spacing:0.08em; color:var(--text-muted); min-width:28px; line-height:1; }
-        .time-label { font-family:var(--font-display); font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.02em; color:var(--text); }
-        .time-detail { font-family:var(--font-mono); font-size:9px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted2); }
+        .time-icon { font-family:var(--font-mono); font-size:10px; font-weight:600; letter-spacing:0.01em; color:var(--text-muted); min-width:28px; line-height:1; }
+        .time-label { font-family:var(--font-display); font-size:13px; font-weight:700; letter-spacing:0.02em; color:var(--text); }
+        .time-detail { font-family:var(--font-mono); font-size:9px; font-weight:500; letter-spacing:0.01em; color:var(--muted2); }
         .time-input {
           width:100%; font-family:var(--font-mono); font-size:18px; font-weight:600;
           background:var(--bg2); color:var(--text); border:1px solid var(--border2);
           border-radius:var(--radius-sm); padding:8px 10px; outline:none;
-          transition:border-color .15s; letter-spacing:0.05em; text-align:center;
+          transition:border-color .15s; letter-spacing:0.01em; text-align:center;
         }
         .time-input:focus { border-color:var(--text); }
         .time-input::placeholder { color:var(--muted2); font-size:14px; }
@@ -181,23 +181,23 @@ export default function CalculadoraHyrox() {
         /* RESULT PANEL */
         .result-panel { position:sticky; top:1.5rem; display:flex; flex-direction:column; gap:12px; }
         .result-card { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); padding:1.5rem; }
-        .result-label { font-family:var(--font-mono); font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.16em; color:var(--muted); margin-bottom:8px; }
-        .result-time { font-family:var(--font-display); font-size:clamp(48px,8vw,72px); font-weight:800; text-transform:uppercase; letter-spacing:-0.02em; color:var(--hyrox); line-height:1; margin-bottom:4px; }
+        .result-label { font-family:var(--font-mono); font-size:9px; font-weight:600; letter-spacing:0.01em; color:var(--muted); margin-bottom:8px; }
+        .result-time { font-family:var(--font-display); font-size:clamp(48px,8vw,72px); font-weight:800; letter-spacing:-0.02em; color:var(--hyrox); line-height:1; margin-bottom:4px; }
         .result-time--empty { color:var(--muted2); }
         .result-splits { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:1rem; padding-top:1rem; border-top:0.5px solid var(--border); }
         .split-item { display:flex; flex-direction:column; gap:3px; }
-        .split-lbl { font-family:var(--font-mono); font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted2); }
+        .split-lbl { font-family:var(--font-mono); font-size:9px; font-weight:600; letter-spacing:0.01em; color:var(--muted2); }
         .split-val { font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--text); }
         .cat-card { padding:1.25rem; background:var(--surface); border-radius:var(--radius-lg); border:0.5px solid var(--border); }
-        .cat-label { font-family:var(--font-mono); font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.16em; color:var(--muted); margin-bottom:8px; }
-        .cat-name { font-family:var(--font-display); font-size:22px; font-weight:800; text-transform:uppercase; letter-spacing:-0.01em; line-height:1.1; margin-bottom:6px; }
+        .cat-label { font-family:var(--font-mono); font-size:9px; font-weight:600; letter-spacing:0.01em; color:var(--muted); margin-bottom:8px; }
+        .cat-name { font-family:var(--font-display); font-size:22px; font-weight:800; letter-spacing:-0.01em; line-height:1.1; margin-bottom:6px; }
         .cat-note { font-family:var(--font-body); font-size:12px; color:var(--muted); line-height:1.5; }
-        .reset-btn { width:100%; font-family:var(--font-display); font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; background:transparent; color:var(--muted); border:0.5px solid var(--border); border-radius:var(--radius-sm); padding:10px; cursor:pointer; transition:color .15s,border-color .15s; }
+        .reset-btn { width:100%; font-family:var(--font-display); font-size:13px; font-weight:700; letter-spacing:0.01em; background:transparent; color:var(--muted); border:0.5px solid var(--border); border-radius:var(--radius-sm); padding:10px; cursor:pointer; transition:color .15s,border-color .15s; }
         .reset-btn:hover { color:var(--text); border-color:var(--border2); }
 
         /* REFERENCE TABLE */
         .ref-card { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; }
-        .ref-title { font-family:var(--font-display); font-size:16px; font-weight:800; text-transform:uppercase; letter-spacing:0.02em; color:var(--text); margin-bottom:12px; }
+        .ref-title { font-family:var(--font-display); font-size:16px; font-weight:800; letter-spacing:0.02em; color:var(--text); margin-bottom:12px; }
         .ref-row { display:flex; align-items:center; justify-content:space-between; padding:6px 0; border-bottom:0.5px solid var(--border); }
         .ref-row:last-child { border-bottom:none; }
         .ref-cat { font-family:var(--font-body); font-size:12px; color:var(--muted); }
@@ -205,7 +205,7 @@ export default function CalculadoraHyrox() {
 
         /* TIPS */
         .tips-card { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; }
-        .tips-title { font-family:var(--font-display); font-size:16px; font-weight:800; text-transform:uppercase; color:var(--text); margin-bottom:10px; }
+        .tips-title { font-family:var(--font-display); font-size:16px; font-weight:800; color:var(--text); margin-bottom:10px; }
         .tip-item { font-family:var(--font-body); font-size:12px; color:var(--muted); padding:5px 0; border-bottom:0.5px solid var(--border); line-height:1.5; }
         .tip-item:last-child { border-bottom:none; }
 
@@ -249,7 +249,7 @@ export default function CalculadoraHyrox() {
         {/* Left: rounds */}
         <div>
           <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:"1rem" }}>
-            <span style={{ fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.14em", color:"var(--muted)" }}>
+            <span style={{ fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, letterSpacing: "0.01em", color:"var(--muted)" }}>
               Introduce tiempos en formato MM:SS (ej: 4:30)
             </span>
             <button className="reset-btn" style={{ width:"auto", padding:"6px 14px" }} onClick={reset}>
@@ -309,13 +309,13 @@ export default function CalculadoraHyrox() {
 
           {/* Internal links */}
           <div style={{ marginTop:"2rem", display:"flex", gap:"0.75rem", flexWrap:"wrap" }}>
-            <Link href="/carreras-hibridas/madrid" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.1em", color:"var(--text-muted)", border:"0.5px solid rgba(255,255,255,0.1)", borderRadius:2, padding:"6px 14px" }}>
+            <Link href="/carreras-hibridas/madrid" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, letterSpacing: "0.01em", color:"var(--text-muted)", border:"0.5px solid rgba(20,22,26,0.1)", borderRadius:2, padding:"6px 14px" }}>
               Próximas HYROX España →
             </Link>
-            <Link href="/centros-entrenamiento" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.1em", color:"var(--muted)", border:"0.5px solid rgba(255,255,255,0.08)", borderRadius:2, padding:"6px 14px" }}>
+            <Link href="/centros-entrenamiento" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, letterSpacing: "0.01em", color:"var(--muted)", border:"0.5px solid rgba(20,22,26,0.08)", borderRadius:2, padding:"6px 14px" }}>
               Centros de entrenamiento →
             </Link>
-            <Link href="/productos/relojes" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, textTransform:"uppercase", letterSpacing:"0.1em", color:"var(--muted)", border:"0.5px solid rgba(255,255,255,0.08)", borderRadius:2, padding:"6px 14px" }}>
+            <Link href="/productos/relojes" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, letterSpacing: "0.01em", color:"var(--muted)", border:"0.5px solid rgba(20,22,26,0.08)", borderRadius:2, padding:"6px 14px" }}>
               Relojes GPS para HYROX →
             </Link>
           </div>

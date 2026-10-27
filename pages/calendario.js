@@ -321,7 +321,7 @@ export default function Calendario({ initialRaces = null, season = "", years = [
                   ["zaragoza","Zaragoza"],["valladolid","Valladolid"],["asturias","Asturias"],["murcia","Murcia"],
                 ].map(([slug, label]) => (
                   <a key={slug} href={`/carreras-hibridas/${slug}`}
-                    style={{ display:"inline-block", fontFamily:"var(--font-mono)", fontSize:10, fontWeight:500, textTransform:"uppercase", letterSpacing:"0.1em", color:"var(--muted)", border:"0.5px solid rgba(255,255,255,0.08)", borderRadius:2, padding:"4px 10px", textDecoration:"none", transition:"color .15s, border-color .15s" }}>
+                    style={{ display:"inline-block", fontFamily:"var(--font-mono)", fontSize:10, fontWeight:500, letterSpacing: "0.01em", color:"var(--muted)", border:"0.5px solid rgba(20,22,26,0.08)", borderRadius:2, padding:"4px 10px", textDecoration:"none", transition:"color .15s, border-color .15s" }}>
                     {label}
                   </a>
                 ))}

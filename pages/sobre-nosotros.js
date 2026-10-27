@@ -61,7 +61,7 @@ export default function SobreNosotros() {
       <article className="guide">
         <div className="guide-head">
           <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Sobre nosotros" }]} />
-          <p className="section-label">QUIÉNES SOMOS</p>
+          <p className="section-label">Quiénes somos</p>
           <h1 className="guide-title">Sobre Hybrid Race Hub</h1>
           <p className="guide-updated">Última actualización: <time dateTime={UPDATED}>14 de octubre de 2026</time></p>
         </div>

@@ -23,15 +23,15 @@ export default function Custom404() {
 
         .page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
         .error-code { font-family: var(--font-display); font-size: clamp(80px, 20vw, 160px); font-weight: 900; color: var(--text); line-height: 1; margin-bottom: 0.5rem; }
-        .error-title { font-family: var(--font-display); font-size: clamp(22px, 4vw, 36px); font-weight: 800; text-transform: uppercase; color: var(--text); margin-bottom: 1rem; }
+        .error-title { font-family: var(--font-display); font-size: clamp(22px, 4vw, 36px); font-weight: 800; color: var(--text); margin-bottom: 1rem; }
         .error-sub { font-family: var(--font-body); font-size: 16px; color: var(--muted); max-width: 480px; line-height: 1.65; margin-bottom: 2.5rem; }
         .links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-        .link-primary { background: var(--text); color: var(--bg); font-family: var(--font-display); font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; padding: 12px 24px; border-radius: var(--radius); transition: opacity .15s; }
+        .link-primary { background: var(--text); color: var(--bg); font-family: var(--font-display); font-size: 14px; font-weight: 800; letter-spacing:0.01em; padding: 12px 24px; border-radius: var(--radius); transition: opacity .15s; }
         .link-primary:hover { opacity: 0.88; }
-        .link-ghost { border: 0.5px solid var(--border2); color: var(--muted); font-family: var(--font-display); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 12px 24px; border-radius: var(--radius); transition: color .15s, border-color .15s; }
-        .link-ghost:hover { color: var(--text); border-color: rgba(255,255,255,0.3); }
+        .link-ghost { border: 0.5px solid var(--border2); color: var(--muted); font-family: var(--font-display); font-size: 14px; font-weight: 700; letter-spacing:0.01em; padding: 12px 24px; border-radius: var(--radius); transition: color .15s, border-color .15s; }
+        .link-ghost:hover { color: var(--text); border-color: rgba(20,22,26,0.3); }
         .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 3rem; }
-        .brand-name { font-family: var(--font-display); font-size: 16px; font-weight: 800; text-transform: uppercase; }
+        .brand-name { font-family: var(--font-display); font-size: 16px; font-weight: 800; }
         .regions { margin-top: 2.5rem; max-width: 560px; }
         .regions-title { font-size: 14px; color: var(--muted); margin-bottom: .75rem; }
         .regions ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 16px; justify-content: center; }
