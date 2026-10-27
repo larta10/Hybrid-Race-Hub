@@ -135,8 +135,8 @@ export default function RaceHub() {
                 <a href={`#${p.anchor}`} style={{ textDecoration: "none", color: "inherit" }}>
                   <div style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 800, color: "var(--text)" }}>{p.title}</div>
                 </a>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "var(--muted)", lineHeight: 1.6, flex: 1 }}>{p.text}</p>
-                <a href={`#${p.anchor}`} className="btn-primary" style={{ display: "inline-flex", marginTop: 4, fontSize: 12, padding: "8px 16px" }}>Detalles</a>
+                <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--muted)", lineHeight: 1.6, flex: 1 }}>{p.text}</p>
+                <a href={`#${p.anchor}`} className="btn-primary" style={{ display: "inline-flex", marginTop: 4, fontSize: 14, padding: "8px 16px" }}>Detalles</a>
               </article>
             ))}
           </div>

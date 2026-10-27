@@ -93,28 +93,28 @@ export default function ProductoCategoria({ ranking }) {
         .brand { display: flex; align-items: center; gap: 14px; }
         .brand-logo-img { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; display: block; }
         .brand-name { font-family: var(--font-display); font-size: 17px; font-weight: 800; letter-spacing: -0.01em; color: var(--text); }
-        .brand-sub { font-family: var(--font-mono); font-size: 9px; font-weight: 500; letter-spacing:0.01em; color: var(--muted); }
+        .brand-sub { font-family: var(--font-mono); font-size:14px; font-weight: 500; letter-spacing:0.01em; color: var(--muted); }
         .topbar-nav { display: flex; gap: 4px; }
-        .topbar-nav a { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing:0.01em; color: var(--muted); padding: 6px 12px; border-radius: var(--radius-sm); border: 0.5px solid transparent; transition: color .15s, border-color .15s; }
+        .topbar-nav a { font-family: var(--font-mono); font-size:14px; font-weight: 500; letter-spacing:0.01em; color: var(--muted); padding: 6px 12px; border-radius: var(--radius-sm); border: 0.5px solid transparent; transition: color .15s, border-color .15s; }
         .topbar-nav a:hover { color: var(--text); border-color: var(--border2); }
         .topbar-nav a.active { color: var(--text); border-color: transparent; border-radius: 0; box-shadow: inset 0 -2px 0 var(--accent); }
 
-        .breadcrumb { display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing:0.01em; color: var(--muted2); padding: 1rem 2rem 0; max-width: 1100px; margin: 0 auto; }
+        .breadcrumb { display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size:14px; font-weight: 500; letter-spacing:0.01em; color: var(--muted2); padding: 1rem 2rem 0; max-width: 1100px; margin: 0 auto; }
         .breadcrumb a:hover { color: var(--text); }
         .breadcrumb-sep { color: var(--hint); }
 
         .page-hero { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--s6) 2rem var(--s5); }
         .page-hero-inner { max-width: 1100px; margin: 0 auto; }
-        .page-eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing:0.01em; color: var(--text-muted); margin-bottom: var(--s2); }
+        .page-eyebrow { font-family: var(--font-mono); font-size:14px; font-weight: 600; letter-spacing:0.01em; color: var(--text-muted); margin-bottom: var(--s2); }
         .page-title { font-family: var(--font-display); font-size: clamp(36px, 5vw, 48px); font-weight: 800; letter-spacing: -0.01em; line-height: 1; color: var(--text); margin-bottom: var(--s2); }
         .page-sub { font-family: var(--font-body); font-size: 17px; color: var(--text-muted); max-width: 62ch; line-height: 1.6; }
-        .affiliate-notice { display: inline-block; font-family: var(--font-mono); font-size: 9px; color: var(--muted2); letter-spacing:0.01em; margin-top: 10px; }
+        .affiliate-notice { display: inline-block; font-family: var(--font-mono); font-size:14px; color: var(--muted2); letter-spacing:0.01em; margin-top: 10px; }
 
         .page-body { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 4rem; }
         .ranking-intro { font-family: var(--font-body); font-size: 17px; color: var(--text-muted); line-height: 1.6; margin-bottom: var(--s5); max-width: 70ch; }
         .ranking-intro p { margin-bottom: 0.75rem; }
 
-        .legal-text { font-family: var(--font-mono); font-size: 10px; color: var(--muted2); letter-spacing:0.01em; line-height: 1.6; margin-top: 2rem; padding-top: 1.5rem; border-top: 0.5px solid var(--border); }
+        .legal-text { font-family: var(--font-mono); font-size:14px; color: var(--muted2); letter-spacing:0.01em; line-height: 1.6; margin-top: 2rem; padding-top: 1.5rem; border-top: 0.5px solid var(--border); }
 
         @media (max-width: 720px) {
           .topbar { padding: 0 1rem; }
@@ -233,14 +233,14 @@ export default function ProductoCategoria({ ranking }) {
         {/* Enlazado interno */}
         <GuideCallout context="ranking" />
 
-        <div style={{ marginTop: "1.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-          <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, letterSpacing: "0.01em", color: "var(--text-muted)", border: "0.5px solid rgba(20,22,26,0.1)", borderRadius: 2, padding: "6px 14px" }}>
+        <div className="ranking-bottom" style={{ marginTop: "1.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+          <Link href="/calendario" className="btn-line ranking-more">
             Ver carreras →
           </Link>
-          <Link href="/blog" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, letterSpacing: "0.01em", color: "var(--muted)", border: "0.5px solid rgba(20,22,26,0.08)", borderRadius: 2, padding: "6px 14px" }}>
+          <Link href="/blog" className="btn-line ranking-more">
             Leer el blog →
           </Link>
-          <Link href="/productos" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, letterSpacing: "0.01em", color: "var(--muted)", border: "0.5px solid rgba(20,22,26,0.08)", borderRadius: 2, padding: "6px 14px" }}>
+          <Link href="/productos" className="btn-line ranking-more">
             ← Ver todos los rankings
           </Link>
         </div>

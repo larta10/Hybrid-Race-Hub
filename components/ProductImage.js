@@ -79,7 +79,7 @@ export default function ProductImage({ src, name, category, width = 220, height 
       {icon}
       <span style={{
         fontFamily: "var(--font-display)",
-        fontSize: 13,
+        fontSize: 14,
         fontWeight: 700,
         letterSpacing: "0.04em",
         color: "var(--text-muted)",

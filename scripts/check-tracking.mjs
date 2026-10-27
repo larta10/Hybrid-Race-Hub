@@ -21,7 +21,8 @@ check("Ranking relojes", await events(), "affiliate_click");
 // race_outbound_click + region_view en una región
 await page.goto(`${BASE}/carreras-hibridas/madrid`, { waitUntil: "networkidle" });
 check("Región Madrid", await events(), "region_view");
-await page.locator(".rl-btn--main").first().click({ noWaitAfter: true }).catch(() => {});
+await page.locator(".rc-open").first().click();
+await page.locator(".rd-main").first().click({ noWaitAfter: true }).catch(() => {});
 await page.waitForTimeout(500);
 check("Región Madrid", await events(), "race_outbound_click");
 

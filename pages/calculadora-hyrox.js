@@ -140,16 +140,16 @@ export default function CalculadoraHyrox() {
         .brand { display:flex; align-items:center; gap:14px; }
         .brand-logo { width:34px; height:34px; clip-path:polygon(15% 0,100% 0,85% 100%,0 100%); background:var(--text);box-shadow:inset 0 -3px 0 var(--accent); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:16px; font-weight:900; color:var(--bg); }
         .brand-name { font-family:var(--font-display); font-size:17px; font-weight:800; color:var(--text); }
-        .brand-sub { font-family:var(--font-mono); font-size:9px; font-weight:500; letter-spacing:0.01em; color:var(--muted); }
+        .brand-sub { font-family:var(--font-mono); font-size:14px; font-weight:500; letter-spacing:0.01em; color:var(--muted); }
         .topbar-nav { display:flex; gap:4px; }
-        .topbar-nav a { font-family:var(--font-mono); font-size:10px; font-weight:500; letter-spacing:0.01em; color:var(--muted); padding:6px 12px; border-radius:var(--radius-sm); border:0.5px solid transparent; transition:color .15s,border-color .15s; }
+        .topbar-nav a { font-family:var(--font-mono); font-size:14px; font-weight:500; letter-spacing:0.01em; color:var(--muted); padding:6px 12px; border-radius:var(--radius-sm); border:0.5px solid transparent; transition:color .15s,border-color .15s; }
         .topbar-nav a:hover { color:var(--text); border-color:var(--border2); }
         .topbar-nav a.active { color: var(--text); border-color: transparent; border-radius: 0; box-shadow: inset 0 -2px 0 var(--accent); }
 
         /* HERO */
         .page-hero { background:var(--bg); border-bottom:1px solid var(--border); padding:3rem 2rem 2.5rem; }
         .page-hero-inner { max-width:900px; margin:0 auto; }
-        .page-eyebrow { font-family:var(--font-mono); font-size:10px; font-weight:600; letter-spacing:0.01em; color:var(--hyrox); margin-bottom:10px; }
+        .page-eyebrow { font-family:var(--font-mono); font-size:14px; font-weight:600; letter-spacing:0.01em; color:var(--hyrox); margin-bottom:10px; }
         .page-title { font-family:var(--font-display); font-size:clamp(44px,7vw,80px); font-weight:800; letter-spacing:-0.01em; line-height:0.95; color:var(--text); margin-bottom:14px; }
         .page-title span { color:var(--hyrox); }
         .page-sub { font-family:var(--font-body); font-size:15px; color:var(--muted); max-width:600px; line-height:1.65; }
@@ -161,14 +161,14 @@ export default function CalculadoraHyrox() {
         .rounds-list { display:flex; flex-direction:column; gap:10px; }
         .round-block { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; }
         .round-header { background:var(--surface2); padding:.6rem 1rem; display:flex; align-items:center; gap:8px; border-bottom:0.5px solid var(--border); }
-        .round-num { font-family:var(--font-display); font-size:12px; font-weight:800; letter-spacing:0.01em; color:var(--text-muted); }
+        .round-num { font-family:var(--font-display); font-size:14px; font-weight:800; letter-spacing:0.01em; color:var(--text-muted); }
         .round-rows { display:grid; grid-template-columns:1fr 1fr; }
         .time-row { padding:.85rem 1rem; display:flex; flex-direction:column; gap:6px; }
         .time-row:first-child { border-right:0.5px solid var(--border); }
         .time-row-top { display:flex; align-items:center; gap:8px; }
-        .time-icon { font-family:var(--font-mono); font-size:10px; font-weight:600; letter-spacing:0.01em; color:var(--text-muted); min-width:28px; line-height:1; }
-        .time-label { font-family:var(--font-display); font-size:13px; font-weight:700; letter-spacing:0.02em; color:var(--text); }
-        .time-detail { font-family:var(--font-mono); font-size:9px; font-weight:500; letter-spacing:0.01em; color:var(--muted2); }
+        .time-icon { font-family:var(--font-mono); font-size:14px; font-weight:600; letter-spacing:0.01em; color:var(--text-muted); min-width:28px; line-height:1; }
+        .time-label { font-family:var(--font-display); font-size:14px; font-weight:700; letter-spacing:0.02em; color:var(--text); }
+        .time-detail { font-family:var(--font-mono); font-size:14px; font-weight:500; letter-spacing:0.01em; color:var(--muted2); }
         .time-input {
           width:100%; font-family:var(--font-mono); font-size:18px; font-weight:600;
           background:var(--bg2); color:var(--text); border:1px solid var(--border2);
@@ -181,18 +181,18 @@ export default function CalculadoraHyrox() {
         /* RESULT PANEL */
         .result-panel { position:sticky; top:1.5rem; display:flex; flex-direction:column; gap:12px; }
         .result-card { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); padding:1.5rem; }
-        .result-label { font-family:var(--font-mono); font-size:9px; font-weight:600; letter-spacing:0.01em; color:var(--muted); margin-bottom:8px; }
+        .result-label { font-family:var(--font-mono); font-size:14px; font-weight:600; letter-spacing:0.01em; color:var(--muted); margin-bottom:8px; }
         .result-time { font-family:var(--font-display); font-size:clamp(48px,8vw,72px); font-weight:800; letter-spacing:-0.02em; color:var(--hyrox); line-height:1; margin-bottom:4px; }
         .result-time--empty { color:var(--muted2); }
         .result-splits { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:1rem; padding-top:1rem; border-top:0.5px solid var(--border); }
         .split-item { display:flex; flex-direction:column; gap:3px; }
-        .split-lbl { font-family:var(--font-mono); font-size:9px; font-weight:600; letter-spacing:0.01em; color:var(--muted2); }
+        .split-lbl { font-family:var(--font-mono); font-size:14px; font-weight:600; letter-spacing:0.01em; color:var(--muted2); }
         .split-val { font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--text); }
         .cat-card { padding:1.25rem; background:var(--surface); border-radius:var(--radius-lg); border:0.5px solid var(--border); }
-        .cat-label { font-family:var(--font-mono); font-size:9px; font-weight:600; letter-spacing:0.01em; color:var(--muted); margin-bottom:8px; }
+        .cat-label { font-family:var(--font-mono); font-size:14px; font-weight:600; letter-spacing:0.01em; color:var(--muted); margin-bottom:8px; }
         .cat-name { font-family:var(--font-display); font-size:22px; font-weight:800; letter-spacing:-0.01em; line-height:1.1; margin-bottom:6px; }
-        .cat-note { font-family:var(--font-body); font-size:12px; color:var(--muted); line-height:1.5; }
-        .reset-btn { width:100%; font-family:var(--font-display); font-size:13px; font-weight:700; letter-spacing:0.01em; background:transparent; color:var(--muted); border:0.5px solid var(--border); border-radius:var(--radius-sm); padding:10px; cursor:pointer; transition:color .15s,border-color .15s; }
+        .cat-note { font-family:var(--font-body); font-size:14px; color:var(--muted); line-height:1.5; }
+        .reset-btn { width:100%; font-family:var(--font-display); font-size:14px; font-weight:700; letter-spacing:0.01em; background:transparent; color:var(--muted); border:0.5px solid var(--border); border-radius:var(--radius-sm); padding:10px; cursor:pointer; transition:color .15s,border-color .15s; }
         .reset-btn:hover { color:var(--text); border-color:var(--border2); }
 
         /* REFERENCE TABLE */
@@ -200,13 +200,13 @@ export default function CalculadoraHyrox() {
         .ref-title { font-family:var(--font-display); font-size:16px; font-weight:800; letter-spacing:0.02em; color:var(--text); margin-bottom:12px; }
         .ref-row { display:flex; align-items:center; justify-content:space-between; padding:6px 0; border-bottom:0.5px solid var(--border); }
         .ref-row:last-child { border-bottom:none; }
-        .ref-cat { font-family:var(--font-body); font-size:12px; color:var(--muted); }
-        .ref-time { font-family:var(--font-mono); font-size:12px; font-weight:600; }
+        .ref-cat { font-family:var(--font-body); font-size:14px; color:var(--muted); }
+        .ref-time { font-family:var(--font-mono); font-size:14px; font-weight:600; }
 
         /* TIPS */
         .tips-card { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; }
         .tips-title { font-family:var(--font-display); font-size:16px; font-weight:800; color:var(--text); margin-bottom:10px; }
-        .tip-item { font-family:var(--font-body); font-size:12px; color:var(--muted); padding:5px 0; border-bottom:0.5px solid var(--border); line-height:1.5; }
+        .tip-item { font-family:var(--font-body); font-size:14px; color:var(--muted); padding:5px 0; border-bottom:0.5px solid var(--border); line-height:1.5; }
         .tip-item:last-child { border-bottom:none; }
 
         @media (max-width:720px) {
@@ -239,7 +239,7 @@ export default function CalculadoraHyrox() {
         {/* Left: rounds */}
         <div>
           <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:"1rem" }}>
-            <span style={{ fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, letterSpacing: "0.01em", color:"var(--muted)" }}>
+            <span style={{ fontFamily:"var(--font-mono)", fontSize: 14, fontWeight:600, letterSpacing: "0.01em", color:"var(--muted)" }}>
               Introduce tiempos en formato MM:SS (ej: 4:30)
             </span>
             <button className="reset-btn" style={{ width:"auto", padding:"6px 14px" }} onClick={reset}>
@@ -299,13 +299,13 @@ export default function CalculadoraHyrox() {
 
           {/* Internal links */}
           <div style={{ marginTop:"2rem", display:"flex", gap:"0.75rem", flexWrap:"wrap" }}>
-            <Link href="/carreras-hibridas/madrid" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, letterSpacing: "0.01em", color:"var(--text-muted)", border:"0.5px solid rgba(20,22,26,0.1)", borderRadius:2, padding:"6px 14px" }}>
+            <Link href="/carreras-hibridas/madrid" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize: 14, fontWeight:600, letterSpacing: "0.01em", color:"var(--text-muted)", border:"0.5px solid rgba(20,22,26,0.1)", borderRadius:2, padding:"6px 14px" }}>
               Próximas HYROX España →
             </Link>
-            <Link href="/centros-entrenamiento" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, letterSpacing: "0.01em", color:"var(--muted)", border:"0.5px solid rgba(20,22,26,0.08)", borderRadius:2, padding:"6px 14px" }}>
+            <Link href="/centros-entrenamiento" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize: 14, fontWeight:600, letterSpacing: "0.01em", color:"var(--muted)", border:"0.5px solid rgba(20,22,26,0.08)", borderRadius:2, padding:"6px 14px" }}>
               Centros de entrenamiento →
             </Link>
-            <Link href="/productos/relojes" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize:10, fontWeight:600, letterSpacing: "0.01em", color:"var(--muted)", border:"0.5px solid rgba(20,22,26,0.08)", borderRadius:2, padding:"6px 14px" }}>
+            <Link href="/productos/relojes" style={{ display:"inline-flex", alignItems:"center", gap:6, fontFamily:"var(--font-mono)", fontSize: 14, fontWeight:600, letterSpacing: "0.01em", color:"var(--muted)", border:"0.5px solid rgba(20,22,26,0.08)", borderRadius:2, padding:"6px 14px" }}>
               Relojes GPS para HYROX →
             </Link>
           </div>

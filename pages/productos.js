@@ -72,12 +72,12 @@ export default function Productos() {
           letter-spacing: -0.01em; color: var(--text);
         }
         .brand-sub {
-          font-family: var(--font-mono); font-size: 9px; font-weight: 500;
+          font-family: var(--font-mono); font-size:14px; font-weight: 500;
           letter-spacing:0.01em; color: var(--muted);
         }
         .topbar-nav { display: flex; gap: 4px; }
         .topbar-nav a {
-          font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+          font-family: var(--font-mono); font-size:14px; font-weight: 500;
           letter-spacing:0.01em; color: var(--muted);
           padding: 6px 12px; border-radius: var(--radius-sm);
           border: 0.5px solid transparent; transition: color .15s, border-color .15s;
@@ -89,7 +89,7 @@ export default function Productos() {
         .page-hero { background: var(--bg); border-bottom: 1px solid var(--border); padding: 3rem 2rem 2.5rem; }
         .page-hero-inner { max-width: 1100px; margin: 0 auto; }
         .page-eyebrow {
-          font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+          font-family: var(--font-mono); font-size:14px; font-weight: 600;
           letter-spacing:0.01em; color: var(--text-muted); margin-bottom: 10px;
         }
         .page-title {
@@ -99,7 +99,7 @@ export default function Productos() {
         }
         .page-sub { font-family: var(--font-body); font-size: 15px; color: var(--muted); max-width: 580px; line-height: 1.65; }
         .affiliate-notice {
-          margin-top: 1.25rem; font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+          margin-top: 1.25rem; font-family: var(--font-mono); font-size:14px; font-weight: 500;
           letter-spacing:0.01em; color: var(--muted2);
           background: var(--surface); border: 0.5px solid var(--border);
           border-radius: var(--radius-sm); padding: 8px 14px; display: inline-block;
@@ -111,7 +111,7 @@ export default function Productos() {
           padding: 0 2rem; display: flex; gap: 0; overflow-x: auto;
         }
         .rankings-nav a {
-          font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+          font-family: var(--font-mono); font-size:14px; font-weight: 600;
           letter-spacing:0.01em; color: var(--muted);
           padding: 12px 16px; border-bottom: 2px solid transparent;
           white-space: nowrap; transition: color .15s, border-color .15s;
@@ -126,13 +126,13 @@ export default function Productos() {
         .ranking-section:last-child { border-bottom: none; }
         .ranking-header { margin-bottom: 1.5rem; }
         .ranking-letter {
-          display: inline-block; font-family: var(--font-display); font-size: 11px; font-weight: 800;
+          display: inline-block; font-family: var(--font-display); font-size:14px; font-weight: 800;
           letter-spacing:0.01em;
           background: var(--surface2); color: var(--text);
           padding: 3px 10px; border-radius: 2px; margin-bottom: 8px;
         }
         .ranking-eyebrow {
-          font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+          font-family: var(--font-mono); font-size:14px; font-weight: 600;
           letter-spacing:0.01em; color: var(--muted2); margin-bottom: 6px;
         }
         .ranking-title {
@@ -152,7 +152,7 @@ export default function Productos() {
           max-width: 1100px; margin: 0 auto;
         }
         .legal-text {
-          font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+          font-family: var(--font-mono); font-size:14px; font-weight: 500;
           letter-spacing:0.01em; color: var(--muted2); line-height: 1.6;
         }
 
@@ -198,7 +198,7 @@ export default function Productos() {
         </div>
 
         <div style={{ background: "var(--surface)", border: "0.5px solid var(--border)", borderRadius: "var(--radius-lg)", padding: "1.5rem 1.75rem", marginBottom: "2rem" }}>
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, letterSpacing: "0.01em", color: "var(--text-muted)", marginBottom: "0.75rem" }}>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: 14, fontWeight: 600, letterSpacing: "0.01em", color: "var(--text-muted)", marginBottom: "0.75rem" }}>
             Por qué confiar en nuestros rankings
           </p>
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 800, letterSpacing: "-0.01em", color: "var(--text)", marginBottom: "1rem" }}>
@@ -325,10 +325,10 @@ export default function Productos() {
 
             {/* Enlazado interno */}
             <div style={{ marginTop: "1.25rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-              <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, letterSpacing: "0.01em", color: "var(--text-muted)", border: "0.5px solid rgba(20,22,26,0.1)", borderRadius: 2, padding: "5px 12px" }}>
+              <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 14, fontWeight: 600, letterSpacing: "0.01em", color: "var(--text-muted)", border: "0.5px solid rgba(20,22,26,0.1)", borderRadius: 2, padding: "5px 12px" }}>
                 Ver carreras →
               </Link>
-              <Link href="/blog" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, letterSpacing: "0.01em", color: "var(--muted)", border: "0.5px solid rgba(20,22,26,0.08)", borderRadius: 2, padding: "5px 12px" }}>
+              <Link href="/blog" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 14, fontWeight: 600, letterSpacing: "0.01em", color: "var(--muted)", border: "0.5px solid rgba(20,22,26,0.08)", borderRadius: 2, padding: "5px 12px" }}>
                 Leer artículos del blog →
               </Link>
             </div>

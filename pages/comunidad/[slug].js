@@ -62,7 +62,7 @@ export default function ArticlePage({ article }) {
 
         .back-link {
           display: inline-flex; align-items: center; gap: 6px;
-          font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+          font-family: var(--font-mono); font-size:14px; font-weight: 500;
           letter-spacing:0.01em; color: var(--muted);
           margin-bottom: 2rem;
         }
@@ -70,7 +70,7 @@ export default function ArticlePage({ article }) {
 
         .article-header { margin-bottom: 2rem; }
         .article-cat {
-          font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+          font-family: var(--font-mono); font-size:14px; font-weight: 600;
           letter-spacing:0.01em; color: var(--text-muted);
           margin-bottom: 12px;
         }
@@ -80,7 +80,7 @@ export default function ArticlePage({ article }) {
           line-height: 1.1; margin-bottom: 1rem;
         }
         .article-meta {
-          font-family: var(--font-mono); font-size: 11px;
+          font-family: var(--font-mono); font-size:14px;
           color: var(--muted);
         }
 

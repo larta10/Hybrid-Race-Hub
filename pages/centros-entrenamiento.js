@@ -231,21 +231,21 @@ export default function CentrosEntrenamiento() {
         .brand { display:flex; align-items:center; gap:14px; }
         .brand-logo { width:34px; height:34px; clip-path:polygon(15% 0,100% 0,85% 100%,0 100%); background:var(--text);box-shadow:inset 0 -3px 0 var(--accent); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:16px; font-weight:900; color:var(--bg); }
         .brand-name { font-family:var(--font-display); font-size:17px; font-weight:800; color:var(--text); }
-        .brand-sub { font-family:var(--font-mono); font-size:9px; font-weight:500; letter-spacing:0.01em; color:var(--muted); }
+        .brand-sub { font-family:var(--font-mono); font-size:14px; font-weight:500; letter-spacing:0.01em; color:var(--muted); }
         .topbar-nav { display:flex; gap:4px; }
-        .topbar-nav a { font-family:var(--font-mono); font-size:10px; font-weight:500; letter-spacing:0.01em; color:var(--muted); padding:6px 12px; border-radius:var(--radius-sm); border:0.5px solid transparent; transition:color .15s,border-color .15s; }
+        .topbar-nav a { font-family:var(--font-mono); font-size:14px; font-weight:500; letter-spacing:0.01em; color:var(--muted); padding:6px 12px; border-radius:var(--radius-sm); border:0.5px solid transparent; transition:color .15s,border-color .15s; }
         .topbar-nav a:hover { color:var(--text); border-color:var(--border2); }
         .topbar-nav a.active { color: var(--text); border-color: transparent; border-radius: 0; box-shadow: inset 0 -2px 0 var(--accent); }
 
         .page-hero { background:var(--bg); border-bottom:1px solid var(--border); padding:3rem 2rem 2.5rem; }
         .page-hero-inner { max-width:1100px; margin:0 auto; }
-        .page-eyebrow { font-family:var(--font-mono); font-size:10px; font-weight:600; letter-spacing:0.01em; color:var(--text-muted); margin-bottom:10px; }
+        .page-eyebrow { font-family:var(--font-mono); font-size:14px; font-weight:600; letter-spacing:0.01em; color:var(--text-muted); margin-bottom:10px; }
         .page-title { font-family:var(--font-display); font-size:clamp(36px,6vw,70px); font-weight:800; letter-spacing:-0.01em; line-height:0.95; color:var(--text); margin-bottom:14px; }
         .page-sub { font-family:var(--font-body); font-size:15px; color:var(--muted); max-width:640px; line-height:1.65; }
         .stats-bar { display:flex; gap:2rem; flex-wrap:wrap; margin-top:1.5rem; }
         .stat-item { display:flex; flex-direction:column; gap:2px; }
         .stat-val { font-family:var(--font-display); font-size:32px; font-weight:800; color:var(--text); line-height:1; }
-        .stat-lbl { font-family:var(--font-mono); font-size:9px; font-weight:500; letter-spacing:0.01em; color:var(--muted); }
+        .stat-lbl { font-family:var(--font-mono); font-size:14px; font-weight:500; letter-spacing:0.01em; color:var(--muted); }
 
         .search-bar { background:var(--surface); border-bottom:1px solid var(--border); padding:1rem 2rem; }
         .search-bar-inner { max-width:1100px; margin:0 auto; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
@@ -254,13 +254,13 @@ export default function CentrosEntrenamiento() {
         .search-input { width:100%; background:var(--surface2); border:0.5px solid var(--border2); border-radius:var(--radius-sm); padding:10px 12px 10px 36px; min-height:44px; font-size:16px; font-family:var(--font-body); color:var(--text); outline:none; transition:border-color .15s; }
         .search-input::placeholder { color:var(--muted2); }
         .search-input:focus { border-color:rgba(20,22,26,0.1); }
-        .result-count { font-family:var(--font-mono); font-size:11px; font-weight:500; letter-spacing:0.01em; color:var(--muted); white-space:nowrap; }
+        .result-count { font-family:var(--font-mono); font-size:14px; font-weight:500; letter-spacing:0.01em; color:var(--muted); white-space:nowrap; }
 
         .filters-bar { background:var(--surface); border-bottom:1px solid var(--border); padding:.6rem 2rem; display:flex; gap:0; flex-direction:column; }
         .filter-row { display:flex; gap:6px; flex-wrap:wrap; align-items:center; padding:.35rem 0; }
         .filter-row + .filter-row { border-top:0.5px solid var(--border); }
-        .filter-label { font-family:var(--font-mono); font-size:11px; font-weight:600; letter-spacing:0.01em; color:var(--muted2); white-space:nowrap; min-width:40px; }
-        .filter-chip { font-family:var(--font-mono); font-size:11px; font-weight:600; min-height:36px; letter-spacing:0.01em; padding:4px 11px; border-radius:2px; border:0.5px solid var(--border); background:var(--surface2); color:var(--muted); cursor:pointer; white-space:nowrap; transition:all .15s; }
+        .filter-label { font-family:var(--font-mono); font-size:14px; font-weight:600; letter-spacing:0.01em; color:var(--muted2); white-space:nowrap; min-width:40px; }
+        .filter-chip { font-family:var(--font-mono); font-size:14px; font-weight:600; min-height:36px; letter-spacing:0.01em; padding:4px 11px; border-radius:2px; border:0.5px solid var(--border); background:var(--surface2); color:var(--muted); cursor:pointer; white-space:nowrap; transition:all .15s; }
         .filter-chip:hover { border-color:var(--border2); color:var(--text); }
         .filter-chip--on { background:var(--surface2); color:var(--accent-mid); border-color:rgba(20,22,26,0.1); }
         .filter-chip--tipo { }
@@ -270,23 +270,23 @@ export default function CentrosEntrenamiento() {
         .section-head { margin-bottom:1rem; display:flex; align-items:center; gap:10px; }
         .section-head::after { content:""; flex:1; height:0.5px; background:var(--border); }
         .ccaa-title { font-family:var(--font-display); font-size:19px; font-weight:800; letter-spacing:0.02em; color:var(--text); }
-        .section-count { font-family:var(--font-mono); font-size:11px; font-weight:500; letter-spacing:0.01em; color:var(--muted2); }
+        .section-count { font-family:var(--font-mono); font-size:14px; font-weight:500; letter-spacing:0.01em; color:var(--muted2); }
         .ccaa-section { margin-bottom:2.5rem; }
         .centros-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:12px; }
 
-        .proximity-notice { font-family:var(--font-mono); font-size:10px; font-weight:500; letter-spacing:0.01em; color:var(--muted); background:var(--surface); border:0.5px dashed var(--border2); border-radius:var(--radius-sm); padding:10px 16px; margin-bottom:1rem; }
+        .proximity-notice { font-family:var(--font-mono); font-size:14px; font-weight:500; letter-spacing:0.01em; color:var(--muted); background:var(--surface); border:0.5px dashed var(--border2); border-radius:var(--radius-sm); padding:10px 16px; margin-bottom:1rem; }
 
         .centro-card { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius); padding:1.1rem; display:flex; flex-direction:column; gap:8px; transition: border-color .15s, background-color .15s, color .15s; }
         .centro-card:hover { border-color:var(--border2); }
         .centro-card-header { display:flex; align-items:flex-start; justify-content:space-between; gap:8px; }
-        .tipo-badge { font-family:var(--font-display); font-size:11px; font-weight:700; letter-spacing:0.01em; padding:2px 8px; border-radius:2px; flex-shrink:0; margin-top:2px; }
+        .tipo-badge { font-family:var(--font-display); font-size:14px; font-weight:700; letter-spacing:0.01em; padding:2px 8px; border-radius:2px; flex-shrink:0; margin-top:2px; }
         .centro-nombre { font-family:var(--font-display); font-size:17px; font-weight:800; letter-spacing:-0.01em; line-height:1.15; color:var(--text); flex:1; }
         .centro-loc { display:flex; align-items:baseline; gap:6px; flex-wrap:wrap; }
-        .centro-ciudad { font-family:var(--font-mono); font-size:12px; font-weight:600; letter-spacing:0.01em; color:var(--text-muted); }
-        .centro-cp { font-family:var(--font-mono); font-size:12px; font-weight:500; color:var(--muted2); }
-        .centro-dir { font-family:var(--font-body); font-size:12px; color:var(--muted); line-height:1.5; flex:1; }
+        .centro-ciudad { font-family:var(--font-mono); font-size:14px; font-weight:600; letter-spacing:0.01em; color:var(--text-muted); }
+        .centro-cp { font-family:var(--font-mono); font-size:14px; font-weight:500; color:var(--muted2); }
+        .centro-dir { font-family:var(--font-body); font-size:14px; color:var(--muted); line-height:1.5; flex:1; }
         .centro-links { display:flex; gap:6px; flex-wrap:wrap; padding-top:8px; border-top:0.5px solid var(--border); }
-        .centro-link { display:inline-flex; align-items:center; gap:4px; font-family:var(--font-mono); font-size:11px; font-weight:600; min-height:36px; letter-spacing:0.01em; padding:4px 10px; border-radius:2px; border:0.5px solid var(--border); color:var(--muted); transition:color .15s,border-color .15s; }
+        .centro-link { display:inline-flex; align-items:center; gap:4px; font-family:var(--font-mono); font-size:14px; font-weight:600; min-height:36px; letter-spacing:0.01em; padding:4px 10px; border-radius:2px; border:0.5px solid var(--border); color:var(--muted); transition:color .15s,border-color .15s; }
         .centro-link:hover { color:var(--text); border-color:rgba(20,22,26,0.1); }
         .centro-link--web { color:var(--accent-mid); border-color:rgba(20,22,26,0.1); }
         .centro-link--web:hover { border-color:var(--accent-mid); }
@@ -301,7 +301,7 @@ export default function CentrosEntrenamiento() {
         .by-city-list { list-style:none; display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:0 1.5rem; border-top:0.5px solid var(--border); }
         .by-city-list li { border-bottom:0.5px solid var(--border); }
         .by-city-list a { display:flex; align-items:center; justify-content:space-between; min-height:44px; font-size:15px; color:var(--text); }
-        .by-city-list a span { font-family:var(--font-mono); font-size:12px; color:var(--muted2); }
+        .by-city-list a span { font-family:var(--font-mono); font-size:14px; color:var(--muted2); }
         .show-more { display:block; width:100%; min-height:44px; margin-top:10px; background:transparent; border:0.5px solid var(--border2); border-radius:var(--radius-sm); color:var(--text-muted); font-family:var(--font-body); font-size:14px; cursor:pointer; }
         .show-more:hover { color:var(--text); border-color:var(--text-muted); }
         .near-btn { min-height:44px; padding:0 14px; background:transparent; border:0.5px solid var(--border2); border-radius:var(--radius-sm); color:var(--text-muted); font-family:var(--font-body); font-size:14px; cursor:pointer; white-space:nowrap; }
@@ -312,13 +312,13 @@ export default function CentrosEntrenamiento() {
         .cta-btn:hover {  }
 
         .bottom-links { margin-top:2rem; display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center; }
-        .bottom-link { display:inline-flex; align-items:center; gap:6px; font-family:var(--font-mono); font-size:11px; font-weight:600; letter-spacing:0.01em; border-radius:2px; padding:6px 14px; }
+        .bottom-link { display:inline-flex; align-items:center; gap:6px; font-family:var(--font-mono); font-size:14px; font-weight:600; letter-spacing:0.01em; border-radius:2px; padding:6px 14px; }
         .bottom-link--accent { color:var(--text); border:0.5px solid rgba(20,22,26,0.1); }
         .bottom-link--muted { color:var(--muted); border:0.5px solid rgba(20,22,26,0.08); }
 
         @media (max-width:720px) {
           .topbar { padding:0 1rem; }
-          .topbar-nav a { font-size:9px; padding:5px 8px; }
+          .topbar-nav a { font-size:14px; padding:5px 8px; }
           .page-hero { padding:2rem 1rem 1.5rem; }
           .centros-body { padding:1.5rem 1rem 3rem; }
           .search-bar { padding:.75rem 1rem; }
@@ -436,7 +436,7 @@ export default function CentrosEntrenamiento() {
             <strong>Sin resultados exactos</strong>
             No hay centros registrados para &quot;{search}&quot; todavía.
             <br />
-            <span style={{ fontSize: 13, marginTop: 8, display: "block" }}>
+            <span style={{ fontSize: 14, marginTop: 8, display: "block" }}>
               Prueba con una ciudad cercana o un código postal de la provincia.
             </span>
           </div>
@@ -568,7 +568,7 @@ function CentroCard({ centro }) {
 
       {centro.direccion && <p className="centro-dir">{centro.direccion}</p>}
       {typeof centro.distKm === 'number' && centro.distKm >= 0 && (
-        <div className="centro-dist" style={{fontSize: 12, color: 'var(--muted)'}}>A ~{centro.distKm.toFixed(1)} km</div>
+        <div className="centro-dist" style={{fontSize: 14, color: 'var(--muted)'}}>A ~{centro.distKm.toFixed(1)} km</div>
       )}
 
       <div className="centro-links">

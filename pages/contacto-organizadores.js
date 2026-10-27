@@ -94,7 +94,7 @@ export default function ContactOrganizers() {
           align-items: center;
           gap: 6px;
           font-family: var(--font-mono);
-          font-size: 11px;
+          font-size:14px;
           font-weight: 500;
           letter-spacing:0.01em;
           color: var(--muted);
@@ -105,7 +105,7 @@ export default function ContactOrganizers() {
         .contact-hero { text-align: center; padding: 4rem 0 3rem; }
         .contact-eyebrow {
           font-family: var(--font-mono);
-          font-size: 11px;
+          font-size:14px;
           font-weight: 500;
           letter-spacing:0.01em;
           color: var(--text);
@@ -130,7 +130,7 @@ export default function ContactOrganizers() {
         .contact-email { margin-top: 1.5rem; }
         .contact-email a {
           font-family: var(--font-mono);
-          font-size: 13px;
+          font-size:14px;
           color: var(--text);
         }
 
@@ -147,7 +147,7 @@ export default function ContactOrganizers() {
         .form-label {
           display: block;
           font-family: var(--font-mono);
-          font-size: 10px;
+          font-size:14px;
           font-weight: 600;
           letter-spacing:0.01em;
           color: var(--muted);
@@ -228,7 +228,7 @@ export default function ContactOrganizers() {
           border: 1px solid var(--red);
           border-radius: var(--radius-sm);
           color: var(--red);
-          font-size: 13px;
+          font-size:14px;
           margin-top: 1rem;
           line-height: 1.5;
         }
