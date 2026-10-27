@@ -98,6 +98,7 @@ export default function CentrosCiudad(props) {
   const desc = fitDesc([
     `${centers.length} gimnasios y boxes para entrenar HYROX y OCR en ${city.fullName}, con dirección, web y teléfono.${provinceRaces[0] ? ` Próxima carrera cerca: ${provinceRaces[0].nombre}.` : ""}`,
     `${centers.length} gimnasios y boxes para entrenar HYROX y carreras de obstáculos en ${city.fullName}, con dirección, web y teléfono, y las próximas carreras cerca.`,
+    `${centers.length} gimnasios y boxes para entrenar HYROX y carreras de obstáculos en ${city.fullName}, con dirección, web, teléfono y las carreras híbridas más cercanas.`,
     `${centers.length} gimnasios y boxes para entrenar HYROX y OCR en ${city.fullName}, con dirección, web, teléfono y las carreras híbridas más cercanas en el calendario.`,
     `${centers.length} gimnasios y boxes para entrenar HYROX y carreras de obstáculos en ${city.fullName}, con dirección, web y teléfono, y las carreras más cercanas.`,
     `${centers.length} gimnasios y boxes para entrenar HYROX y OCR en ${city.fullName}, con dirección, web y teléfono, y las carreras híbridas más cercanas.`,

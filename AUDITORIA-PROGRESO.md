@@ -6,7 +6,7 @@ Si la sesión se corta: leer este archivo y `git log -5`, y seguir por la primer
 - ✅ Fase 2 — SEO técnico (sitemap, canonical, metas, schema, CWV, enlazado, 404)
 - ✅ Fase 3 — SEO de contenido (home, guía, blog, Galicia y regiones nuevas, centros por ciudad, artículos)
 - ✅ Fase 4 — SEM (lib/track.js, docs/sem/*)
-- ⏳ Fase 5 — Cierre (lint, crawler, INFORME-AUDITORIA-2026-10.md)
+- ✅ Fase 5 — Cierre (lint, crawler, INFORME-AUDITORIA-2026-10.md)
 
 ## Notas de trabajo
 - La tabla `sport_centers` no existe en Supabase (PGRST205). Los centros salen de `lib/centros-entrenamiento.json` (468 centros).
@@ -42,3 +42,8 @@ Si la sesión se corta: leer este archivo y `git log -5`, y seguir por la primer
 - `lib/track.js`: affiliate_click, race_outbound_click, contact_form_submit, search_used, region_view. Enganchado en Amazon (listener de _app), "Web oficial"/"Inscribirme", formularios de organizadores y home, buscadores de calendario y centros, y páginas de región/ciudad. Verificado con `scripts/check-tracking.mjs` (los 5 llegan al dataLayer).
 - docs/sem/GTM-CONFIG.md, PLAN-GOOGLE-ADS.md, PLAN-META-ADS.md y google-ads-editor.csv (generado y validado por `scripts/sem-build-csv.mjs`: 3 campañas en pausa, 19 RSA, 250 keywords, 34 negativas por campaña).
 - Aviso: el texto de cookies dice "solo técnicas"; hace falta CMP + Consent Mode v2 antes de lanzar campañas.
+
+### Fase 5 (hecho)
+- `npm run build` limpio (98 páginas) y `npm run lint` con 0 errores (109 avisos, sobre todo `<a>` en vez de `<Link>`).
+- Crawler local final: 96 páginas, 0 enlaces internos rotos; audit-seo: 0 incidencias en las 90 URLs del sitemap.
+- Informe: INFORME-AUDITORIA-2026-10.md.

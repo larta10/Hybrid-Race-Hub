@@ -374,7 +374,7 @@ export default function CalculadoraHyrox() {
             <p className="tips-title">Pesos reglamentarios</p>
             <div className="tip-item"><strong>Sled Push:</strong> 152kg H / 102kg M</div>
             <div className="tip-item"><strong>Sled Pull:</strong> 103kg H / 78kg M</div>
-            <div className="tip-item"><strong>Farmer's Carry:</strong> 2×24kg H / 2×16kg M</div>
+            <div className="tip-item"><strong>Farmer&apos;s Carry:</strong> 2×24kg H / 2×16kg M</div>
             <div className="tip-item"><strong>Sandbag Lunges:</strong> 20kg H / 10kg M</div>
             <div className="tip-item"><strong>Wall Balls:</strong> 9kg (3m) H / 6kg (2.7m) M</div>
           </div>

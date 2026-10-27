@@ -69,6 +69,8 @@ export default function Calendario({ initialRaces = null, season = "", years = [
   /* Read ?q param from URL on mount */
   useEffect(()=>{
     if(!router.isReady) return;
+    // La query solo está disponible tras hidratar (router.isReady): sincronizarla aquí es intencionado
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if(router.query.q) setTextQuery(decodeURIComponent(router.query.q));
     // ?modalidad=func-hyatlon (enlaces desde las guías): abre el calendario filtrado por esa modalidad
     const sub = router.query.modalidad;
