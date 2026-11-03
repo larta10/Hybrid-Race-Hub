@@ -2000,3 +2000,18 @@ input, select, textarea { font-size: 16px; }
 .oc-input { min-height: 44px; }
 .ranking-bottom a, .product-bottom a { display: inline-flex; align-items: center; min-height: 44px; }
 .ranking-more { padding: 0 14px; font-size: 15px; text-decoration: none; }
+
+/* ── Auditoría 11/2026: home ─────────────────────────────────────────────── */
+.home-count { margin-left: 6px; font-family: var(--font-mono); font-size: 14px; font-weight: 500; color: var(--text-muted); white-space: nowrap; }
+.home-next-sub + .home-next-sub { margin-top: var(--s1); }
+/* Que la lista de próximas carreras entre en el primer pantallazo del móvil */
+@media (max-width: 720px) {
+  .hero.hero--home .hero-body { padding-top: var(--s3) !important; padding-bottom: 0; }
+  .hero--home .hero-actions { margin-bottom: var(--s3); }
+  .hero--home .hero-sub { margin-bottom: var(--s2); }
+  .home-next { padding-top: var(--s3); }
+  .home-next-head { margin-bottom: var(--s2); }
+}
+.guide-dates { font-size: 16px; margin-top: calc(-1 * var(--s1)); }
+.guide-dates a { color: var(--accent); }
+.center-cps { font-size: 15px; color: var(--text-muted); font-variant-numeric: tabular-nums; }

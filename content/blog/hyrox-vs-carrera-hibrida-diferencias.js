@@ -3,9 +3,9 @@
 // y de las webs oficiales hurbax.com, hyatlon.org y hybrid-day.com (consultadas el 27-10-2026).
 export default {
   slug: "hyrox-vs-carrera-hibrida-diferencias",
-  title: "HYROX vs carrera híbrida: ¿es lo mismo? Diferencias con Spartan, Hurbax y OCR",
+  title: "HYROX vs carrera híbrida: ¿es lo mismo? Diferencias con DEKA, Spartan y OCR",
   metaTitle: "¿HYROX es lo mismo que una carrera híbrida? Diferencias",
-  h1: "HYROX vs carrera híbrida: ¿es lo mismo? Diferencias con Spartan, Hurbax y OCR",
+  h1: "HYROX vs carrera híbrida: ¿es lo mismo? Diferencias con DEKA, Spartan y OCR",
   category: "Guías",
   date: "2026-10-27",
   updated: "2026-10-27",

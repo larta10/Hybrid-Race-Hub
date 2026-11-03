@@ -6,7 +6,9 @@ import { fetchUpcomingRaces, seasonLabel, modalityLabel, priceNumber, dateParts,
 import { CITY_BY_SLUG, raceMatchesCity } from "../lib/hybrid-cities";
 
 // Fecha de la última revisión del texto (no del calendario, que se actualiza a diario)
-const CONTENT_UPDATED = "2026-10-27";
+const CONTENT_UPDATED = "2026-11-03";
+import { hubModalities } from "../lib/modalities";
+
 const PATH = "/que-es-una-carrera-hibrida";
 
 export async function getStaticProps() {
@@ -25,6 +27,8 @@ export async function getStaticProps() {
       counts,
       priced,
       season: seasonLabel(),
+      // Hubs de fechas publicados (DEKA, Spartan, OCR… con 3 o más carreras futuras)
+      hubs: Object.fromEntries(hubModalities(races).map(m => [m.slug, { href: m.hub, count: m.count }])),
     },
     revalidate: 3600,
   };
@@ -84,11 +88,15 @@ function faqData({ madrid, priced, total }) {
   return faqs.slice(0, 10);
 }
 
-export default function Guia({ upcoming, total, madrid, counts, priced, season }) {
+export default function Guia({ upcoming, total, madrid, counts, priced, season, hubs = {} }) {
+  // "Fechas: …" bajo cada modalidad, solo si su hub existe
+  const Dates = ({ slug, label }) => hubs[slug]
+    ? <p className="guide-dates"><a href={hubs[slug].href}>{label} ({hubs[slug].count} con fecha)</a></p>
+    : null;
   const url = `${SITE_URL}${PATH}`;
   const faqs = faqData({ madrid, priced, total });
   const title = "Qué es una carrera híbrida (hybrid race) y cómo funciona";
-  const desc = "Una carrera híbrida mezcla tramos de carrera con ejercicios de fuerza o con obstáculos. Te explicamos HYROX, OCR, Spartan, Hurbax e Hyatlón y sus fechas.";
+  const desc = "Una carrera híbrida mezcla tramos de carrera con ejercicios de fuerza o con obstáculos. Te explicamos HYROX, OCR, Spartan, DEKA e Hyatlón y sus fechas.";
   const updated = dateParts(CONTENT_UPDATED);
   const otherMods = Object.entries(counts).filter(([k]) => !["HYROX", "OCR", "Spartan", "DEKA", "DEKA FIT", "Hyatlón", "HURBAX"].includes(k));
 
@@ -170,6 +178,7 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
             <p className="section-label">En esta guía</p>
             <ol>
               <li><a href="#tipos">Tipos de carreras híbridas</a></li>
+              <li><a href="#primera">Tu primera carrera híbrida</a></li>
               <li><a href="#hyrox">Cómo es una prueba HYROX</a></li>
               <li><a href="#comparativa">HYROX vs OCR vs Spartan</a></li>
               <li><a href="#categorias">Categorías</a></li>
@@ -188,24 +197,31 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
             El formato más estandarizado: 8 kilómetros de carrera divididos en tramos de 1 km, y después de cada uno, una estación de trabajo funcional.
             Se corre en pabellones o recintos feriales, con el mismo recorrido y los mismos pesos en todo el mundo. Por eso tu tiempo en Valencia vale lo mismo que en Londres.
           </p>
+          <p className="guide-dates">
+            Guía completa: <a href="/blog/que-es-hyrox">qué es HYROX, estaciones y pesos</a> · Fechas: <a href="/blog/calendario-hyrox-espana-2026-2027">calendario HYROX España 2026-2027</a>
+          </p>
 
           <h3>OCR (carreras de obstáculos)</h3>
           <p>
             OCR viene de <em>Obstacle Course Racing</em>. Son carreras al aire libre, normalmente con desnivel, barro y agua, en las que hay que superar muros, cuerdas,
             arrastres, cargas y pasos de equilibrio. Cada recorrido es distinto, así que aquí importa más adaptarse al terreno que el ritmo por kilómetro.
           </p>
+          <p className="guide-dates">Guía: <a href="/blog/primera-carrera-obstaculos-guia">cómo preparar tu primera carrera de obstáculos</a></p>
+          <Dates slug="ocr" label="Carreras de obstáculos con fecha en España" />
 
           <h3>Spartan Race</h3>
           <p>
             Es la marca de OCR más extendida. Organiza tres distancias principales: Sprint (unos 5 km), Super (unos 10 km) y Beast (unos 21 km), con más obstáculos cuanto más larga.
             Si fallas un obstáculo, la penalización habitual son 30 burpees. Es la entrada típica al mundo OCR.
           </p>
+          <Dates slug="spartan" label="Fechas de Spartan Race en España" />
 
           <h3>DEKA</h3>
           <p>
             Formato de la organización Spartan con 10 zonas de trabajo funcional. En DEKA FIT se corren 500 metros entre zona y zona; DEKA MILE es más corto e intenso
             y DEKA STRONG elimina la carrera. Es una buena alternativa si te gusta HYROX y quieres algo más corto.
           </p>
+          <Dates slug="deka" label="Fechas de DEKA en España" />
 
           <h3>Hyatlón</h3>
           <p>
@@ -238,6 +254,19 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
               </p>
             </>
           )}
+
+          <h2 id="primera">Tu primera carrera híbrida</h2>
+          <p>
+            Si nunca has competido, no empieces por la más dura. Para la primera funcionan bien una OCR corta de 5 a 6 km, una HYROX en parejas (Doubles),
+            un DEKA FIT o un H6 de Hyatlón: son pruebas de una hora o menos donde puedes parar si lo necesitas. Con 8 a 12 semanas de entrenamiento y tres o cuatro
+            sesiones a la semana se llega bien.
+          </p>
+          <ul>
+            <li>Cómo elegirla según tu perfil: <a href="/blog/carreras-hibridas-principiantes-primera-prueba">carreras híbridas para principiantes</a>.</li>
+            <li>Qué comprar primero, sin gastar de más: <a href="/blog/material-hyrox-carreras-obstaculos">material para HYROX y OCR</a> y, si vas a pista o pabellón, el <a href="/productos/zapatillas-hyrox">ranking de zapatillas para HYROX</a>.</li>
+            <li>Si te tira el monte: las <a href="/productos/zapatillas-trail">zapatillas de trail con tacos para OCR</a> que elegiríamos.</li>
+            <li>Elegir fecha: el <a href="/calendario">calendario completo</a> o las de <a href="/carreras-hibridas/madrid">Madrid</a>, <a href="/carreras-hibridas/cataluna">Cataluña</a> y <a href="/carreras-hibridas/andalucia">Andalucía</a>.</li>
+          </ul>
 
           <h2 id="hyrox">Cómo es una prueba HYROX</h2>
           <p>

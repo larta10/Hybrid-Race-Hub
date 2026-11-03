@@ -2,6 +2,9 @@ import Image from "next/image";
 import { PODCASTS } from "../../data/podcasts";
 import PodcastCard from "./PodcastCard";
 import RaceList from "../RaceList";
+import { raceStatus } from "../../lib/race-ui";
+import { raceEndDate } from "../../lib/races-server";
+import { rangoFechas } from "../../lib/dates";
 
 /** Tabla resumen de podcasts */
 function PodcastTable() {
@@ -28,6 +31,31 @@ function PodcastList({ lang }) {
   const list = PODCASTS.filter(p => p.lang === lang);
   const offset = lang === "EN" ? PODCASTS.filter(p => p.lang === "ES").length : 0;
   return <div className="pod-list">{list.map((p, i) => <PodcastCard key={p.id} podcast={p} index={offset + i + 1} />)}</div>;
+}
+
+/** Tabla de sedes (fecha, ciudad, estado de inscripción y ficha) a partir de las carreras del artículo */
+function RaceTable({ races }) {
+  if (!races?.length) return <p className="races-empty">Ahora mismo no hay sedes con fecha confirmada en nuestro calendario.</p>;
+  return (
+    <div className="table-wrap" tabIndex={0} role="region" aria-label="Sedes y fechas">
+      <table>
+        <thead><tr><th>Fechas</th><th>Ciudad</th><th>Inscripción</th><th>Ficha</th></tr></thead>
+        <tbody>
+          {races.map(r => {
+            const st = raceStatus(r);
+            return (
+              <tr key={r.slug || r.id}>
+                <td><time dateTime={r.fecha_iso}>{rangoFechas(r.fecha_iso, raceEndDate(r))}</time></td>
+                <td>{r.municipio || r.ubicacion}{r.provincia && r.provincia !== r.municipio ? ` (${r.provincia})` : ""}</td>
+                <td>{st ? <span className={`st st--${st.kind}`}>{st.label}</span> : "Consultar"}</td>
+                <td>{r.slug ? <a href={`/carreras/${r.slug}`}>{r.nombre}</a> : r.nombre}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
 function Faq({ faq }) {
@@ -60,6 +88,7 @@ export default function ArticleBody({ html, faq, races = null, pageUrl, classNam
           case "podcast-table": return <PodcastTable key={i} />;
           case "podcasts": return <PodcastList key={i} lang={attrs.lang} />;
           case "faq": return <Faq key={i} faq={faq} />;
+          case "race-table": return <RaceTable key={i} races={races} />;
           case "races": return races?.length
             ? <RaceList key={i} races={races} pageUrl={pageUrl} compact />
             : <p key={i} className="races-empty">Ahora mismo no hay pruebas con fecha confirmada en nuestro calendario. En cuanto el organizador publique las nuevas fechas, aparecerán aquí.</p>;

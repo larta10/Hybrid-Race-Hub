@@ -5,7 +5,7 @@ Punto de retorno: tag `pre-auditoria-nov`.
 
 - ✅ Fase 1 — Diagnóstico (docs/seo/diagnostico-2026-11.md)
 - ✅ Fase 2 — Correcciones técnicas, SportsEvent, IndexNow
-- ⏳ Fase 3 — Refuerzo de páginas con tracción y Hurbax
+- ✅ Fase 3 — Refuerzo de páginas con tracción y Hurbax
 - ⏳ Fase 4 — Madrid, fichas, calendario mensual, hubs, confianza, organizadores
 - ⏳ Fase 5 — Rankings Amazon
 - ⏳ Fase 6 — Enlazado interno
@@ -15,3 +15,4 @@ Punto de retorno: tag `pre-auditoria-nov`.
 ## Notas
 - Fase 1: rastreo 95 URLs (0 errores, 0 duplicados, 1 huérfana /comunidad). API PageSpeed 429 (cuota sin clave) → Lighthouse 12 local contra producción: LCP móvil 3,2–3,5 s en 5 de 6 URLs. GTM v2 sin GA4 ni etiquetas (contenedor no importado). Rankings con Product inválido y canibalizados por el post de zapatillas. Madrid ya existe: falla su enlazado. Hurbax: contenido caducado (final 24/10) + canibalización del 27/10; el «1» del PDF parece clics.
 - Fase 2: ROBOTS_INDEX global (index, follow, max-image-preview:large, max-snippet:-1), html lang es-ES, og:locale único en _app. H1 rotos corregidos (productos, calculadora, plan con H1 real + texto, organizadores). /comunidad noindex y fuera del sitemap. Rankings: Product → ItemList simple. SportsEvent con endDate (deducido de las notas), organizer, image (/og), description, offers con availability, url a la ficha; solo futuros; fechas sin hora (no se inventa). Slugs de ficha (lib/race-slug.js + withSlugs). fetchUpcomingRaces incluye los eventos verificados. IndexNow: clave 93eff6d8…, scripts/indexnow.mjs, README. Rendimiento: hero q45 y 75vw en móvil, portada de artículos q55, sin precarga del logo.
+- Fase 3: home con lista en el primer pantallazo móvil (1.ª tarjeta en y=597 de 844), «Actualizado», enlaces Este mes/Próximo mes, bloques Por comunidad (todas, con nº de carreras), Por modalidad y Dónde entrenar (8 ciudades); FAQ de Madrid remite a /carreras-hibridas/madrid; fuera el «más de 140 pruebas». Guía: fechas por modalidad y sección «Tu primera carrera híbrida»; description sin «Hurbax». HURBAX: title/H1/primer párrafo con «qué es» y «2027», tabla de sedes 2026 verificada (hurbax.com/eventos), 2027 sin sedes (hurbax.com/2027); comparativo sin Hurbax en title/H1. Hyatlón: Gran Canaria 14-15/11 y Zaragoza 28-29/11 verificadas hoy → verified-events. HYROX: FAQ al día, Barcelona 11-15/11 (corrección por código + SQL en docs/datos/cambios-races-2026-11-03.sql). Calendario HYROX: tabla de sedes con estado y ficha. Centros: H1 e intro nuevos, ciudades por nº de centros arriba; Madrid/Barcelona/Valencia/Sevilla con texto propio, reparto por código postal (≥10 centros) y carreras enlazadas a su ficha.

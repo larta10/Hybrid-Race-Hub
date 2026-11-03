@@ -7,7 +7,7 @@ export default {
   h1: "Qué es el Hyatlón: formatos H6 y H8, estaciones y próximas pruebas",
   category: "Carreras",
   date: "2026-10-15",
-  updated: "2026-10-15",
+  updated: "2026-11-03",
   // Bloque dinámico de próximas pruebas (Supabase)
   racesFilter: { modalidadId: "func-hyatlon", name: "hyatl[oó]n" },
   excerpt: "El Hyatlón es la carrera híbrida oficial de la Federación Española de Triatlón: tramos de 1 km de carrera alternados con estaciones funcionales, en dos formatos, H6 y H8. Te explicamos estaciones, modalidades, diferencias con HYROX y próximas pruebas.",
@@ -21,6 +21,8 @@ export default {
   ],
   content: `
 <p><strong>El Hyatlón es la carrera híbrida oficial de la Federación Española de Triatlón (FETRI): alternas tramos de 1 km de carrera con estaciones de ejercicio funcional (SkiErg, trineo, burpees, remo, zancadas, wall balls) en un recinto cerrado.</strong> Tiene dos formatos: el <strong>H6</strong>, con 6 estaciones, y el <strong>H8</strong>, con 8. Se compite en individual, dobles, relevos y ParaHyatlón, y en 2026 se ha estrenado con un circuito de cuatro sedes en España.</p>
+
+<p><strong>Próximas pruebas:</strong> el H6 de Gran Canaria (14 y 15 de noviembre de 2026, Plaza de la Música - ExpoDeca) y el H8 de Zaragoza (28 y 29 de noviembre, Pabellón 4 de Feria de Zaragoza), comprobadas en hyatlon.org el 3 de noviembre de 2026. Las de Madrid (10 y 11 de octubre) y La Nucía (24 de octubre) ya se celebraron.</p>
 
 <p>Si vienes de HYROX, el H8 te va a resultar muy familiar. Si no has hecho nunca una carrera híbrida, el H6 es una puerta de entrada más corta. Abajo tienes el origen, los formatos con sus estaciones, las diferencias con HYROX y las próximas pruebas, sacadas de nuestro calendario. Si quieres el contexto general de estas pruebas, empieza por la <a href="/que-es-una-carrera-hibrida">guía de carreras híbridas</a>.</p>
 

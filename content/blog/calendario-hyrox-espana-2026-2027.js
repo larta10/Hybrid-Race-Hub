@@ -11,7 +11,7 @@ export default {
   h1: "Calendario HYROX España 2026-2027: sedes, fechas y alternativas",
   category: "Carreras",
   date: "2026-10-27",
-  updated: "2026-10-27",
+  updated: "2026-11-03",
   racesFilter: { modalidadId: "solo-por-nombre", name: "^HYROX" },
   cover: "https://images.unsplash.com/photo-1757147517580-90c214fc28f3?w=1200&q=80",
   imageAlt: "Público tras las vallas viendo pasar a una atleta durante una competición HYROX en un gran pabellón de hierro y cristal",
@@ -25,13 +25,13 @@ export default {
     { q: "¿Qué categoría elijo si es mi primera HYROX?", a: "Open si vas solo, o Doubles si vas con alguien: en parejas corréis juntos los 8 km y os repartís las estaciones, y es la forma más llevadera de debutar." },
   ],
   content: `
-<p><strong>A 27 de octubre de 2026, HYROX tiene cuatro sedes con fecha en España para la temporada 2026-2027: Barcelona (L'Hospitalet de Llobregat) en noviembre de 2026, Bilbao (Barakaldo) en febrero de 2027, Madrid en marzo de 2027 y Málaga en abril de 2027.</strong> Abajo tienes la lista con fechas, que se actualiza sola desde nuestro calendario, y las carreras con un formato parecido por si ninguna sede te cuadra.</p>
+<p><strong>HYROX tiene cuatro sedes pendientes en España en la temporada 2026-2027: Barcelona (L'Hospitalet de Llobregat) del 11 al 15 de noviembre de 2026, Bilbao (Barakaldo) en febrero de 2027, Madrid en marzo de 2027 y Málaga en abril de 2027.</strong> La quinta, Valencia, ya se celebró del 15 al 18 de octubre. Abajo tienes la lista con fechas, que se actualiza sola desde nuestro calendario, y las carreras con un formato parecido por si ninguna sede te cuadra.</p>
 
 <p>Si todavía no tienes claro qué es exactamente una HYROX, lee primero <a href="/blog/que-es-hyrox">qué es HYROX</a>: 8 tramos de 1 km de carrera con una estación después de cada uno, siempre en el mismo orden. Y si te preguntas si HYROX y "carrera híbrida" son lo mismo, lo explicamos en <a href="/blog/hyrox-vs-carrera-hibrida-diferencias">HYROX vs carrera híbrida</a>.</p>
 
 <h2>Sedes y fechas de HYROX en España</h2>
-<p>Estas son las HYROX con fecha confirmada en nuestro calendario, ordenadas por fecha. Cada una enlaza a su ficha en la web oficial, que es donde se compra el dorsal y se consulta el horario de cada categoría:</p>
-<div data-block="races"></div>
+<p>Estas son las HYROX con fecha confirmada en nuestro calendario, ordenadas por fecha, con el estado de la inscripción. Cada sede tiene su ficha con el recinto, el formato, cómo llegar preparado y el botón a la inscripción oficial en hyrox.es, que es donde se compra el dorsal y se consulta el horario de cada categoría:</p>
+<div data-block="race-table"></div>
 <p>Las grandes sedes de HYROX duran varios días y cada categoría compite en una jornada y una franja concretas. El horario provisional lo publica la organización en la ficha de cada evento en hyrox.es. Si una fecha cambia o se añade una sede nueva, la lista de arriba se actualiza en menos de una hora.</p>
 
 <h2>Cómo elegir sede</h2>

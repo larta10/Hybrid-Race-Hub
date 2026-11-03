@@ -242,6 +242,8 @@ export default function CentrosEntrenamiento() {
         .page-eyebrow { font-family:var(--font-mono); font-size:14px; font-weight:600; letter-spacing:0.01em; color:var(--text-muted); margin-bottom:10px; }
         .page-title { font-family:var(--font-display); font-size:clamp(36px,6vw,70px); font-weight:800; letter-spacing:-0.01em; line-height:0.95; color:var(--text); margin-bottom:14px; }
         .page-sub { font-family:var(--font-body); font-size:15px; color:var(--muted); max-width:640px; line-height:1.65; }
+        .page-sub + .page-sub { margin-top:.75rem; }
+        .page-sub--cities a { color:var(--text); text-decoration:underline; text-underline-offset:2px; }
         .stats-bar { display:flex; gap:2rem; flex-wrap:wrap; margin-top:1.5rem; }
         .stat-item { display:flex; flex-direction:column; gap:2px; }
         .stat-val { font-family:var(--font-display); font-size:32px; font-weight:800; color:var(--text); line-height:1; }
@@ -337,11 +339,19 @@ export default function CentrosEntrenamiento() {
         <div className="page-hero-inner">
           <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Centros de entrenamiento" }]} />
           <h1 className="page-title">
-            Dónde entrenar HYROX y OCR en España
+            Dónde entrenar HYROX y OCR en España: boxes y gimnasios por ciudad
           </h1>
           <p className="page-sub">
-            Boxes y gimnasios con sleds, rigs y remos en toda España.
-            Busca por ciudad o código postal y llama antes de ir: los horarios cambian.
+            {TOTAL} boxes de CrossFit y gimnasios funcionales con material para preparar una HYROX, un DEKA o una carrera de obstáculos:
+            trineo, SkiErg, remo, rig para colgarse y espacio para wall balls. Busca por ciudad o código postal y llama antes de ir,
+            porque no todos tienen trineo y los horarios de sala libre cambian.
+          </p>
+          <p className="page-sub page-sub--cities">
+            Ciudades con más centros:{" "}
+            {CENTER_CITIES.slice(0, 8).map((c, i) => (
+              <span key={c.slug}>{i > 0 && " · "}<a href={`/centros-entrenamiento/${c.slug}`}>{c.name}</a> ({c.count})</span>
+            ))}
+            {" · "}<a href="#por-ciudad">todas las ciudades</a>
           </p>
           <div className="stats-bar">
             <div className="stat-item">
@@ -473,6 +483,18 @@ export default function CentrosEntrenamiento() {
           </section>
         )}
 
+        {!search.trim() && (
+          <section className="by-city" aria-labelledby="por-ciudad">
+            <h2 id="por-ciudad" className="ccaa-title">Elige tu ciudad</h2>
+            <p className="by-city-sub">Ordenadas por número de centros. Cada ciudad tiene su página con todos los boxes y gimnasios, dirección y web, y las carreras híbridas de la provincia.</p>
+            <ul className="by-city-list">
+              {CENTER_CITIES.map((c) => (
+                <li key={c.slug}><a href={`/centros-entrenamiento/${c.slug}`}>HYROX en {c.name} <span>{c.count}</span></a></li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         {/* Grouped (no search) */}
         {grouped &&
           Object.entries(grouped)
@@ -494,17 +516,6 @@ export default function CentrosEntrenamiento() {
               </section>
             ))}
 
-        {!search.trim() && (
-          <section className="by-city" aria-labelledby="por-ciudad">
-            <h2 id="por-ciudad" className="ccaa-title">Centros por ciudad</h2>
-            <p className="by-city-sub">Páginas con todos los boxes y gimnasios de cada ciudad y las carreras híbridas más cercanas.</p>
-            <ul className="by-city-list">
-              {CENTER_CITIES.map((c) => (
-                <li key={c.slug}><a href={`/centros-entrenamiento/${c.slug}`}>HYROX en {c.name} <span>{c.count}</span></a></li>
-              ))}
-            </ul>
-          </section>
-        )}
 
         {/* CTA */}
         <div className="cta-block">

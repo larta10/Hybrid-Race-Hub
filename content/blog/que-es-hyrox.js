@@ -8,7 +8,7 @@ export default {
   category: "Guías",
   featured: true,
   date: "2026-10-15",
-  updated: "2026-10-15",
+  updated: "2026-11-03",
   excerpt: "HYROX son 8 km de carrera repartidos en 8 tramos de 1 km, con una estación de trabajo funcional después de cada uno. Te contamos las estaciones, los pesos de cada categoría, las sedes en España y cómo inscribirte.",
   description: "Qué es HYROX: 8 x 1 km de carrera y 8 estaciones (SkiErg, trineo, burpees, remo, farmer, zancadas y wall balls). Pesos por categoría, sedes en España y cómo inscribirte.",
   faq: [
@@ -16,7 +16,7 @@ export default {
     { q: "¿Hace falta clasificarse para correr una HYROX?", a: "No. Según la web oficial de HYROX España, cualquiera puede competir sin clasificación previa. Solo los Campeonatos del Mundo piden plaza, que se consigue con el tiempo en las carreras de la temporada." },
     { q: "¿Qué categoría elijo para mi primera HYROX?", a: "Open individual si quieres medirte tú solo con los pesos estándar, Doubles si prefieres repartir las estaciones con un compañero (los dos corréis los 8 km), y Relay si sois cuatro y cada uno hace 2 km y 2 estaciones. Pro solo tiene sentido si ya has hecho Open con buen tiempo, porque los pesos suben bastante." },
     { q: "¿Qué estación es la más dura de HYROX?", a: "Para la mayoría, las wall balls del final (100 repeticiones con las piernas ya cansadas) y el sled push, que con 152 kg en Open masculino exige mucha fuerza de piernas. Las zancadas con saco también castigan si no las has entrenado." },
-    { q: "¿Dónde se celebran las HYROX en España?", a: "En la temporada 2026/27 la web oficial anuncia Valencia (15-18 de octubre de 2026), Barcelona (11-15 de noviembre de 2026), Bilbao (6-7 de febrero de 2027), Madrid (17-21 de marzo de 2027) y Málaga (14-18 de abril de 2027). Las fechas actualizadas están en nuestro calendario." },
+    { q: "¿Dónde se celebran las HYROX en España?", a: "En la temporada 2026/27 la web oficial anuncia cinco sedes. Valencia ya se celebró (15-18 de octubre de 2026); quedan Barcelona (11-15 de noviembre de 2026), Bilbao (6-7 de febrero de 2027), Madrid (17-21 de marzo de 2027) y Málaga (14-18 de abril de 2027). Tienes cada sede con su estado de inscripción en el calendario HYROX España 2026-2027." },
   ],
   content: `
 <p><strong>HYROX es una carrera de fitness en la que corres 8 km divididos en 8 tramos de 1 km y, después de cada kilómetro, haces una estación de ejercicio funcional: SkiErg, empuje y arrastre de trineo, burpees con salto, remo, farmer carry, zancadas con saco y wall balls.</strong> Todos los participantes hacen exactamente el mismo recorrido y los mismos pesos según su categoría, así que tu tiempo se puede comparar con el de cualquier otra carrera HYROX del mundo.</p>
@@ -75,14 +75,14 @@ export default {
 <div class="table-wrap"><table>
   <thead><tr><th>Ciudad</th><th>Fechas</th><th>Recinto</th></tr></thead>
   <tbody>
-    <tr><td>Valencia</td><td>15-18 de octubre de 2026</td><td>Feria Valencia</td></tr>
+    <tr><td>Valencia</td><td>15-18 de octubre de 2026 (ya celebrada)</td><td>Feria Valencia</td></tr>
     <tr><td>Barcelona</td><td>11-15 de noviembre de 2026</td><td>Fira Barcelona Gran Via</td></tr>
     <tr><td>Bilbao</td><td>6-7 de febrero de 2027</td><td>Bilbao Exhibition Centre (Barakaldo)</td></tr>
     <tr><td>Madrid</td><td>17-21 de marzo de 2027</td><td>IFEMA Madrid</td></tr>
     <tr><td>Málaga</td><td>14-18 de abril de 2027</td><td>FYCMA, Palacio de Ferias y Congresos</td></tr>
   </tbody>
 </table></div>
-<p>Las fechas pueden cambiar y se añaden sedes durante la temporada. Tienes la lista actualizada, junto con DEKA, Spartan y las carreras de obstáculos, en el <a href="/calendario">calendario de carreras híbridas</a>, y por ciudad en <a href="/carreras-hibridas/madrid">carreras híbridas en Madrid</a> o <a href="/carreras-hibridas/barcelona">en Barcelona</a>.</p>
+<p>Las fechas pueden cambiar y se añaden sedes durante la temporada. Cada sede, con su estado de inscripción y su ficha, está en el <a href="/blog/calendario-hyrox-espana-2026-2027">calendario HYROX España 2026-2027</a>. Junto con DEKA, Spartan y las carreras de obstáculos, en el <a href="/calendario">calendario de carreras híbridas</a>, y por ciudad en <a href="/carreras-hibridas/madrid">carreras híbridas en Madrid</a> o <a href="/carreras-hibridas/barcelona">en Barcelona</a>.</p>
 
 <h2>¿Cómo te inscribes en una HYROX?</h2>
 <ol>

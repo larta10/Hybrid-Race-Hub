@@ -26,6 +26,27 @@ const CITY_NOTES = {
   vigo: "Vigo es la ciudad gallega con más actividad híbrida: el IFEVI acoge el Hybrid Day de diciembre de 2026 y el DEKA de junio de 2027.",
 };
 
+// Las cuatro ciudades que más tiran en Search Console: un texto propio más largo, sin fechas
+// (las fechas salen de los datos y se actualizan solas).
+const CITY_EXTRA = {
+  madrid: [
+    "Para los kilómetros de carrera, Madrid Río, el Retiro y la Casa de Campo son los sitios donde más grupos de box quedan a correr; la Casa de Campo, además, tiene cuestas de tierra que vienen bien para una OCR. Si vives al norte, el Monte de El Pardo y la sierra quedan a media hora para tiradas con desnivel.",
+    "La Comunidad de Madrid es la que más carreras híbridas tiene en nuestro calendario: HYROX en IFEMA, DEKA, Spartan Race en la sierra y ligas de box en municipios como Pinto o Majadahonda. Abajo tienes las próximas con fecha y su ficha, y todas juntas en la página de carreras híbridas en Madrid.",
+  ],
+  barcelona: [
+    "Para correr, el paseo marítimo y la carretera de les Aigües, en Collserola, son los dos clásicos: llano junto al mar para series de 1 km y pista de tierra con desnivel suave para el fondo. Si preparas una OCR de montaña, Collserola y el Garraf tienen bajadas técnicas que conviene conocer antes de la carrera.",
+    "El área de Barcelona tiene HYROX, DEKA y carreras de obstáculos en el calendario, y muchos boxes del Baix Llobregat y el Maresme quedan a pocos minutos en Rodalies. Si no encuentras trineo en tu barrio, mira también Sabadell o Mataró en la lista de ciudades cercanas.",
+  ],
+  valencia: [
+    "El jardín del Turia, de nueve kilómetros, permite hacer series de 1 km sin cruzar un semáforo, y la playa de la Malvarrosa sirve para trabajar fuerza de piernas sobre arena. Para desnivel, la Calderona y la sierra de Chiva quedan a menos de una hora.",
+    "La provincia de Valencia tiene DEKA y carreras de obstáculos en el calendario, y Alicante y Castellón suman más. Si en tu zona no hay box con trineo, mira las otras ciudades de la provincia en la lista de abajo.",
+  ],
+  sevilla: [
+    "Para correr, el parque del Alamillo y las orillas del Guadalquivir son llanos y tienen sombra en parte del recorrido; para cuestas hay que salir hacia el Aljarafe o la Sierra Norte. En verano, casi todos los boxes adelantan los turnos: si entrenas por la tarde, confirma que tienen climatización.",
+    "Sevilla tiene competiciones de carrera híbrida propias en el calendario, y Málaga, Cádiz y Granada suman HYROX, DEKA y carreras de obstáculos a pocas horas. Si buscas una OCR cerca, mira también la página de Andalucía.",
+  ],
+};
+
 export async function getStaticPaths() {
   return { paths: CENTER_CITIES.map(c => ({ params: { ciudad: c.slug } })), fallback: false };
 }
@@ -42,7 +63,7 @@ export async function getStaticProps({ params }) {
   const region =
     HYBRID_CITIES.find(h => h.kind === "ciudad" && (h.match.provincias || []).includes(city.province)) ||
     HYBRID_CITIES.find(h => h.cp.includes(city.cp)) || null;
-  const pick = r => ({ nombre: r.nombre, fecha_iso: r.fecha_iso, municipio: r.municipio || null, url: r.url || null, modalidad: r.modalidad || null });
+  const pick = r => ({ nombre: r.nombre, fecha_iso: r.fecha_iso, municipio: r.municipio || null, url: r.url || null, modalidad: r.modalidad || null, slug: r.slug || null });
   const centers = city.centers.map(c => ({
     nombre: c.nombre, tipo: c.tipo || null, direccion: c.direccion || null, cp: c.codigo_postal || null,
     telefono: c.telefono || null, web: c.web || null, lat: c.lat ?? null, lng: c.lng ?? null,
@@ -55,7 +76,9 @@ export async function getStaticProps({ params }) {
     props: {
       city: { slug: city.slug, name: city.name, fullName: city.fullName, province: city.province, ccaa: city.ccaa },
       centers, types,
-      provinceRaces: inProvince.slice(0, 6).map(pick),
+      provinceRaces: inProvince.slice(0, 10).map(pick),
+      // Reparto por código postal (los datos no traen barrio; el código postal es lo más fino que hay)
+      byCp: centers.length >= 10 ? Object.entries(centers.reduce((m, c) => { if (c.cp) m[c.cp] = (m[c.cp] || 0) + 1; return m; }, {})).sort((a, b) => a[0].localeCompare(b[0])) : [],
       provinceCount: inProvince.length,
       ccaaRaces: inProvince.length ? [] : inCcaa.slice(0, 3).map(pick),
       region: region ? { slug: region.slug, name: region.name } : null,
@@ -90,7 +113,7 @@ function intro({ city, centers, types, provinceRaces, provinceCount, ccaaRaces }
 }
 
 export default function CentrosCiudad(props) {
-  const { city, centers, provinceRaces, ccaaRaces, region, others, generated } = props;
+  const { city, centers, provinceRaces, ccaaRaces, region, others, generated, byCp = [] } = props;
   const path = `/centros-entrenamiento/${city.slug}`;
   const url = `${SITE_URL}${path}`;
   const title = cityTitle(city.name);
@@ -169,6 +192,7 @@ export default function CentrosCiudad(props) {
         <div className="guide-body">
           <p className="guide-lead">{lead}</p>
           {CITY_NOTES[city.slug] && <p>{CITY_NOTES[city.slug]}</p>}
+          {(CITY_EXTRA[city.slug] || []).map((p, i) => <p key={i}>{p}</p>)}
           <p>
             Antes de ir, llama: lo que más cuesta encontrar es trineo con pista suficiente, SkiErg y remo, que son tres de las ocho estaciones de HYROX.
             Si vas a una carrera de obstáculos, pregunta también por rig con cuerda y barras para trabajar el agarre.
@@ -185,19 +209,27 @@ export default function CentrosCiudad(props) {
               </li>
             ))}
           </ul>
+          {byCp.length > 0 && (
+            <>
+              <h3 id="zonas">Por zona (código postal)</h3>
+              <p className="center-cps">
+                {byCp.map(([cp, n], i) => <span key={cp}>{i > 0 && " · "}{cp}: {n} {n === 1 ? "centro" : "centros"}</span>)}
+              </p>
+            </>
+          )}
           <p>¿Falta tu centro o hay un dato mal? <a href="/contacto-organizadores">Escríbenos</a> y lo corregimos.</p>
 
           <h2 id="carreras">Carreras híbridas cerca de {city.name}</h2>
           {provinceRaces.length > 0 ? (
             <ul className="plain-list">
               {provinceRaces.map((r, i) => (
-                <li key={i}><strong>{r.nombre}</strong> · {dateParts(r.fecha_iso)?.long}{r.municipio ? ` · ${r.municipio}` : ""}</li>
+                <li key={i}>{r.slug ? <a href={`/carreras/${r.slug}`}><strong>{r.nombre}</strong></a> : <strong>{r.nombre}</strong>} · {dateParts(r.fecha_iso)?.long}{r.municipio ? ` · ${r.municipio}` : ""}</li>
               ))}
             </ul>
           ) : ccaaRaces.length > 0 ? (
             <ul className="plain-list">
               {ccaaRaces.map((r, i) => (
-                <li key={i}><strong>{r.nombre}</strong> · {dateParts(r.fecha_iso)?.long}{r.municipio ? ` · ${r.municipio}` : ""}</li>
+                <li key={i}>{r.slug ? <a href={`/carreras/${r.slug}`}><strong>{r.nombre}</strong></a> : <strong>{r.nombre}</strong>} · {dateParts(r.fecha_iso)?.long}{r.municipio ? ` · ${r.municipio}` : ""}</li>
               ))}
             </ul>
           ) : (

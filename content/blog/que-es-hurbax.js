@@ -1,25 +1,29 @@
 // Guía: HURBAX. Datos verificados el 15-10-2026 en hurbax.com (formato, modalidades, campeonato,
-// sedes 2026 y final de Madrid) y hurbax.com/resultados.
+// sedes 2026 y final de Madrid) y hurbax.com/resultados. Revisado el 03-11-2026 en hurbax.com/eventos
+// (fechas de las seis pruebas de 2026, todas finalizadas) y hurbax.com/2027 (sedes 2027 aún sin anunciar).
 export default {
   slug: "que-es-hurbax",
-  title: "Qué es HURBAX: formato, modalidades, campeonato y sedes",
-  metaTitle: "Qué es HURBAX: 5 km y 5 estaciones, modalidades, campeonato y sedes",
-  h1: "Qué es HURBAX: formato, modalidades, campeonato y sedes",
+  title: "Qué es HURBAX: formato, campeonato y temporada 2027",
+  metaTitle: "Qué es HURBAX y HURBAX 2027: formato, sedes y fechas",
+  h1: "Qué es HURBAX: formato, campeonato y temporada 2027",
   category: "Carreras",
   date: "2026-10-15",
-  updated: "2026-10-15",
+  updated: "2026-11-03",
   racesFilter: { modalidadId: "func-hurbax", name: "hurbax" },
-  excerpt: "HURBAX es un circuito español de carreras híbridas al aire libre: 5 km de carrera alternados con 5 estaciones funcionales, en individual, parejas o equipos de cuatro, con ranking nacional y final en Madrid.",
+  excerpt: "HURBAX es un circuito español de carreras híbridas al aire libre: 5 km de carrera alternados con 5 estaciones funcionales, en individual, parejas o equipos de cuatro, con ranking nacional y final. La temporada 2026 terminó el 24 de octubre; las sedes de HURBAX 2027 aún no están anunciadas.",
   description: "Qué es HURBAX: circuito de carreras híbridas al aire libre con 5 km de carrera y 5 estaciones. Modalidades, campeonato con ranking y clasificación de clubes, sedes 2026, diferencias con HYROX e Hyatlón y próximas pruebas.",
   faq: [
     { q: "¿Qué es HURBAX?", a: "Un circuito español de competición híbrida al aire libre en el que alternas 1 km de carrera con un workout de alta intensidad hasta completar 5 km y 5 estaciones. Tiene ranking nacional y regional, clasificación de clubes y una final nacional." },
     { q: "¿Qué estaciones tiene una prueba HURBAX?", a: "En la prueba de Gijón de 2026 las estaciones fueron remo, wall balls, sandbag lunges, farmers carry y burpee broad jumps, cada una después de 1 km de carrera. Consulta la web de cada sede porque pueden variar." },
-    { q: "¿Cómo funciona el campeonato HURBAX?", a: "Cada prueba suma a una clasificación acumulada. Los 20 mejores de cada modalidad (individual, parejas y equipos) se clasifican para la Final Nacional, que en 2026 se celebra el 24 de octubre en el Recinto Ferial de San Sebastián de los Reyes (Madrid), con premios en metálico en individual." },
+    { q: "¿Cuándo es HURBAX 2027?", a: "A 3 de noviembre de 2026, la web oficial (hurbax.com/2027) todavía no ha publicado sedes ni fechas de 2027: dice que las anunciará en las próximas semanas y tiene abierto un acceso prioritario para enterarse antes y apuntarse antes que el público. En cuanto haya fechas, saldrán en esta página y en el calendario." },
+    { q: "¿Cómo funciona el campeonato HURBAX?", a: "Cada prueba suma a una clasificación acumulada. Los 20 mejores de cada modalidad (individual, parejas y equipos) se clasifican para la Final Nacional. La de 2026 se celebró el 24 de octubre en el Recinto Ferial de San Sebastián de los Reyes (Madrid), con premios en metálico en individual." },
     { q: "¿Qué diferencia hay entre HURBAX y HYROX?", a: "HURBAX es más corto (5 km y 5 estaciones frente a 8 km y 8 estaciones), se corre al aire libre y funciona como un campeonato por puntos con final nacional. HYROX es en interior, siempre con el mismo formato, y no tiene una liga por puntos dentro de España." },
     { q: "¿Pueden competir equipos de un gimnasio o un club?", a: "Sí. Hay modalidad de equipos de 4 atletas (masculina, femenina o mixta) que corren juntos y hacen las estaciones en bloque, con el doble de repeticiones y metros, y existe una clasificación de clubes." },
   ],
   content: `
-<p><strong>HURBAX es un circuito español de carreras híbridas al aire libre: alternas 1 km de carrera con un workout de alta intensidad hasta completar 5 km y 5 estaciones, en individual, parejas o equipos de cuatro.</strong> Cada prueba suma puntos para un ranking nacional y regional, hay clasificación de clubes y los 20 mejores de cada modalidad se clasifican para la Final Nacional, que en 2026 se celebra el 24 de octubre en San Sebastián de los Reyes (Madrid).</p>
+<p><strong>HURBAX es un circuito español de carreras híbridas al aire libre: alternas 1 km de carrera con un workout de alta intensidad hasta completar 5 km y 5 estaciones, en individual, parejas o equipos de cuatro.</strong> Cada prueba suma puntos para un ranking nacional y regional, hay clasificación de clubes y los 20 mejores de cada modalidad van a la Final Nacional.</p>
+
+<p><strong>HURBAX 2027:</strong> la temporada 2026 terminó con la Final Nacional del 24 de octubre en San Sebastián de los Reyes (Madrid), después de seis pruebas por España. Para 2027 la organización aún no ha publicado sedes ni fechas: según su web, las anunciará «en las próximas semanas» y ya tiene abierto el acceso prioritario. Lo que sí está claro es el formato, que te explicamos abajo, y dónde se corrió en 2026, que da una buena pista de por dónde volverá.</p>
 
 <p>Es más corto que HYROX y se corre fuera de los pabellones, lo que lo hace muy buena opción para una primera carrera híbrida o para competir a menudo sin desplazarte lejos. Abajo tienes el formato, las modalidades, cómo funciona el campeonato y las próximas pruebas. Si estás empezando, la <a href="/que-es-una-carrera-hibrida">guía de carreras híbridas</a> te sitúa en todos los formatos.</p>
 
@@ -51,13 +55,27 @@ export default {
 <p>HURBAX funciona como una liga. Cada prueba suma a una clasificación acumulada con ranking nacional y regional, y hay también una clasificación de clubes. Al final de la temporada:</p>
 <ul>
   <li><strong>Los 20 mejores del ranking</strong> en individual, parejas y equipos se clasifican para la Final Nacional. Si alguno no se inscribe, su plaza pasa al siguiente de la clasificación.</li>
-  <li><strong>La Final Nacional 2026</strong> se celebra el sábado 24 de octubre de 2026 en el Recinto Ferial de San Sebastián de los Reyes, a partir de las 12:00, con acceso gratuito para el público.</li>
+  <li><strong>La Final Nacional 2026</strong> se celebró el sábado 24 de octubre de 2026 en el Recinto Ferial de San Sebastián de los Reyes, a partir de las 12:00. Los resultados están en <a href="https://hurbax.com/eventos" target="_blank" rel="noopener">hurbax.com/eventos</a>.</li>
   <li><strong>Premios en metálico</strong> en la general individual: 1.200, 800 y 400 euros, tanto en hombres como en mujeres.</li>
 </ul>
 <p>Al inscribirte tienes acceso a una intranet con planes de entrenamiento adaptados a tu nivel, test de marcas y una guía de técnica de cada estación para competir sin penalizaciones.</p>
 
-<h2>¿Dónde se ha corrido HURBAX?</h2>
-<p>La temporada 2026 ha pasado por Oviedo, Pontevedra, Valladolid, Santander y Gijón (26 de septiembre) antes de la final de Madrid. Para 2027 la web anuncia nuevas sedes "muy pronto"; en cuanto tengan fecha las verás en el <a href="/calendario?modalidad=func-hurbax">calendario filtrado por HURBAX</a>. Si eres de la zona centro, mira también las <a href="/carreras-hibridas/madrid">carreras híbridas en Madrid</a>.</p>
+<h2>Sedes y fechas de HURBAX 2026</h2>
+<p>Estas fueron las seis pruebas de la temporada 2026, según la página de eventos de la web oficial. Todas están finalizadas y con resultados publicados.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Fecha</th><th>Sede</th><th>Lugar</th></tr></thead>
+  <tbody>
+    <tr><td>14 de marzo de 2026</td><td>Santander</td><td>Santander</td></tr>
+    <tr><td>25 de abril de 2026</td><td>Valladolid</td><td>Valladolid</td></tr>
+    <tr><td>16 de mayo de 2026</td><td>Pontevedra</td><td>Pontevedra</td></tr>
+    <tr><td>13 de junio de 2026</td><td>Oviedo</td><td>Oviedo</td></tr>
+    <tr><td>26 de septiembre de 2026</td><td>Gijón</td><td>Jardines del Náutico</td></tr>
+    <tr><td>24 de octubre de 2026</td><td>Final Nacional</td><td>Recinto Ferial de San Sebastián de los Reyes (Madrid)</td></tr>
+  </tbody>
+</table></div>
+
+<h2>HURBAX 2027: qué se sabe</h2>
+<p>A día de hoy (3 de noviembre de 2026), solo esto: habrá temporada 2027, las sedes se anunciarán en las próximas semanas y quien se apunte al acceso prioritario en <a href="https://hurbax.com/2027" target="_blank" rel="noopener">hurbax.com/2027</a> las conocerá antes y podrá inscribirse antes que el público. En 2026 el circuito se concentró en el norte (Cantabria, Asturias, Galicia y Castilla y León) con la final en Madrid. Cuando haya fechas las añadiremos aquí y en el <a href="/calendario">calendario de carreras híbridas</a>; mientras tanto, mira las <a href="/carreras-hibridas/cantabria">carreras híbridas en Cantabria</a> o en <a href="/carreras-hibridas/galicia">Galicia</a> si eres de la zona.</p>
 
 <h2>Próximas pruebas de HURBAX</h2>
 <div data-block="races"></div>

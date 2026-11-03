@@ -5,7 +5,10 @@ import Head from "next/head";
 import Image from "next/image";
 import { SITE_URL, SITE_EMAIL, SITE_INSTAGRAM, ROBOTS_INDEX } from "../lib/site";
 import RaceList from "../components/RaceList";
-import { fetchUpcomingRaces, seasonLabel, raceEventSchema } from "../lib/races-server";
+import { fetchUpcomingRaces, seasonLabel, raceEventSchema, todayISO } from "../lib/races-server";
+import { CENTER_CITIES } from "../lib/center-cities";
+import { hubModalities } from "../lib/modalities";
+import { monthsWithCounts } from "../lib/calendar-months";
 import { HYBRID_CITIES, CITY_BY_SLUG, raceMatchesCity } from "../lib/hybrid-cities";
 import { fechaLarga } from "../lib/dates";
 import {
@@ -24,8 +27,9 @@ function buildHomeFaqs({ madridRaces, races2027, count2027 }) {
     {
       q: "¿Cuáles son las próximas carreras híbridas en Madrid?",
       a: madridRaces.length
-        ? `En el calendario tenemos ahora ${list(madridRaces)}. La lista completa, con precios y enlace de inscripción, está en la página de carreras híbridas en Madrid.`
+        ? `La próxima es ${list(madridRaces.slice(0, 1))}. Todas las de la Comunidad de Madrid, con precios, inscripción y dónde entrenar, están en la página de carreras híbridas en Madrid.`
         : "Ahora mismo no hay carreras con fecha en Madrid en el calendario. En cuanto un organizador publique una, aparecerá en la página de carreras híbridas en Madrid.",
+      link: { href: "/carreras-hibridas/madrid", label: "Carreras híbridas en Madrid" },
     },
     {
       q: "¿Qué carreras híbridas hay en 2027?",
@@ -60,7 +64,7 @@ function FAQSection({ faqs }) {
           {faqs.map((f, i) => (
             <details key={i} className="faq-d" open={i === 0}>
               <summary>{f.q}</summary>
-              <p>{f.a}</p>
+              <p>{f.a}{f.link && <> <a href={f.link.href}>{f.link.label} →</a></>}</p>
             </details>
           ))}
         </div>
@@ -160,7 +164,7 @@ function HomeSections() {
     {
       href: "/calendario",
       title: "Calendario",
-      desc: "Más de 140 pruebas de OCR, HYROX y funcional en España. Filtra por comunidad, formato y mes.",
+      desc: "Todas las pruebas de OCR, HYROX y funcional con fecha en España. Filtra por comunidad, formato y mes.",
       cta: "Ver carreras",
     },
     {
@@ -249,12 +253,17 @@ export async function getStaticProps() {
       nextRaces: races.slice(0, 6), upcomingCount: races.length, season: seasonLabel(),
       madridRaces, count2027: all2027.length,
       races2027: all2027.slice(0, 3).map(r => ({ nombre: r.nombre, fecha_iso: r.fecha_iso })),
+      generated: todayISO(),
+      regions: HYBRID_CITIES.map(c => ({ slug: c.slug, label: c.en || `en ${c.name}`, count: races.filter(r => raceMatchesCity(r, c)).length })),
+      modalities: hubModalities(races).map(m => ({ slug: m.slug, name: m.name, hub: m.hub, count: m.count })),
+      trainCities: CENTER_CITIES.slice(0, 8).map(c => ({ slug: c.slug, name: c.name, count: c.count })),
+      months: monthsWithCounts(races, todayISO()).slice(0, 2),
     },
     revalidate: 3600,
   };
 }
 
-export default function Home({ nextRaces = [], upcomingCount = 0, season, madridRaces = [], races2027 = [], count2027 = 0 }) {
+export default function Home({ nextRaces = [], upcomingCount = 0, season, madridRaces = [], races2027 = [], count2027 = 0, generated, regions = [], modalities = [], trainCities = [], months = [] }) {
   const faqs = buildHomeFaqs({ madridRaces, races2027, count2027 });
   return (
     <>
@@ -354,11 +363,23 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
           <div className="home-next-head">
             <p className="section-label">Próximas carreras</p>
             <h2 id="proximas" className="section-title">Las siguientes {nextRaces.length} carreras híbridas</h2>
-            {upcomingCount > 0 && <p className="home-next-sub">Hay {upcomingCount} carreras programadas en el calendario. Fechas y precios los publica cada organizador.</p>}
           </div>
           {nextRaces.length
             ? <RaceList races={nextRaces} pageUrl={`${SITE_URL}/`} />
             : <p className="home-next-sub">Ahora mismo no podemos cargar las próximas fechas. Las tienes en el <a href="/calendario">calendario</a>.</p>}
+          {upcomingCount > 0 && (
+            <p className="home-next-sub">
+              Hay {upcomingCount} carreras programadas en el calendario. Fechas y precios los publica cada organizador.
+              {generated && <> Actualizado: <time dateTime={generated}>{fechaLarga(generated)}</time>.</>}
+            </p>
+          )}
+          {months.length > 0 && (
+            <p className="home-next-sub">
+              {months.map((m, i) => (
+                <span key={m.key}>{i > 0 && " · "}<a href={m.href}>{i === 0 ? "Este mes" : "Próximo mes"}: carreras en {m.label}</a> ({m.count})</span>
+              ))}
+            </p>
+          )}
           <div className="home-next-more">
             <a href="/calendario" className="btn-solid">Ver todo el calendario</a>
             <a href="/que-es-una-carrera-hibrida" className="btn-line">Qué es una carrera híbrida</a>
@@ -387,13 +408,32 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
         <div className="home-cities-inner">
           <div>
             <p className="section-label">Por zona</p>
-            <h2 id="por-ciudad" className="section-title">Carreras híbridas cerca de ti</h2>
+            <h2 id="por-ciudad" className="section-title">Carreras por comunidad</h2>
           </div>
           <ul className="city-links city-links--long">
-            {HYBRID_CITIES.map(c => (
-              <li key={c.slug}><a href={`/carreras-hibridas/${c.slug}`}>Carreras híbridas {c.en || `en ${c.name}`}</a></li>
+            {regions.map(c => (
+              <li key={c.slug}><a href={`/carreras-hibridas/${c.slug}`}>Carreras híbridas {c.label}<span className="home-count">{c.count ? `${c.count} ${c.count === 1 ? "carrera" : "carreras"}` : "sin fechas"}</span></a></li>
             ))}
           </ul>
+          <div className="home-guides">
+            <p className="section-label">Por modalidad</p>
+            <ul>
+              {modalities.map(m => (
+                <li key={m.slug}><a href={m.hub}>{m.slug === "hyrox" ? "Calendario HYROX España" : `Carreras ${m.name} en España`} ({m.count})</a></li>
+              ))}
+              <li><a href="/blog/que-es-hurbax">Qué es HURBAX y sus sedes</a></li>
+              <li><a href="/blog/que-es-el-hyatlon">Qué es el Hyatlón y sus fechas</a></li>
+            </ul>
+          </div>
+          <div className="home-guides">
+            <p className="section-label">Dónde entrenar</p>
+            <ul>
+              {trainCities.map(c => (
+                <li key={c.slug}><a href={`/centros-entrenamiento/${c.slug}`}>Dónde entrenar HYROX en {c.name} ({c.count} centros)</a></li>
+              ))}
+              <li><a href="/centros-entrenamiento">Todos los centros por ciudad</a></li>
+            </ul>
+          </div>
           <div className="home-guides">
             <p className="section-label">Empieza aquí</p>
             <ul>
@@ -460,10 +500,10 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
         imgSrc="https://images.unsplash.com/photo-1741562238447-d7c44397f7e0?w=900&q=80&fit=crop&auto=format"
         imgAlt="Corredores en carrera indoor de atletismo híbrido"
         eyebrow="Calendario"
-        title="Fechas revisadas cada día"
-        body="Más de 140 pruebas en España, desde una Spartan Sprint de 5 km hasta HYROX Madrid. Revisamos fechas y enlaces de inscripción a diario para que no te enteres cuando ya no quedan dorsales."
-        cta="Ver el calendario →"
-        ctaHref="/calendario"
+        title="Fechas comprobadas con el organizador"
+        body={`${upcomingCount} pruebas con fecha en España, desde una Spartan Sprint de 5 km hasta HYROX Madrid. Comprobamos fechas y enlaces de inscripción con la web de cada organizador para que no te enteres cuando ya no quedan dorsales.`}
+        cta="Cómo verificamos las carreras →"
+        ctaHref="/como-verificamos-las-carreras"
       />
 
       <HomeSections/>
