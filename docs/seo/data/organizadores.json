@@ -1,0 +1,211 @@
+[
+ {
+  "organizer": "Spartan Race España",
+  "web": "https://es.spartan.com/",
+  "races": [
+   "DEKA FIT Tenerife 2026",
+   "Spartan Race Tenerife Nov 2026",
+   "DEKA Torremolinos 2027",
+   "DEKA Toledo 2027",
+   "DEKA Barcelona Primavera 2027",
+   "DEKA Valencia 2027",
+   "DEKA Ibiza 2027 Sant Agustí des Vedrà",
+   "Spartan Race Madrid 2027 - Sprint",
+   "Spartan Race Madrid 2027 - Beast",
+   "Spartan Race Madrid 2027 - Super",
+   "DEKA Vigo 2027",
+   "DEKA Madrid 2027",
+   "DEKA Barcelona Otoño 2027"
+  ],
+  "email": null,
+  "emailSource": null
+ },
+ {
+  "organizer": "HYROX España",
+  "web": "https://hyrox.es/",
+  "races": [
+   "HYROX Barcelona 2026",
+   "HYROX Bilbao 2027 Barakaldo",
+   "HYROX Madrid 2027",
+   "HYROX Málaga 2027"
+  ],
+  "email": "morena@hyrox.es",
+  "emailSource": "https://hyrox.es/"
+ },
+ {
+  "organizer": "Desafío de Guerreros",
+  "web": "https://www.desafiodeguerreros.com.es/",
+  "races": [
+   "Desafío de Guerreros Valencia 2027",
+   "Desafío de Guerreros Barcelona 2027",
+   "Desafío de Guerreros Gernika 2027",
+   "Desafío de Guerreros Madrid 2027"
+  ],
+  "email": "info@desafiodeguerreros.es",
+  "emailSource": "https://www.desafiodeguerreros.com.es/"
+ },
+ {
+  "organizer": "Survivor Race",
+  "web": "https://survivor-race.com/",
+  "races": [
+   "Survivor Race Alicante 2027",
+   "Survivor Race Madrid 2027",
+   "Survivor Race Barcelona 2027"
+  ],
+  "email": "info@survivor-race.com",
+  "emailSource": "https://survivor-race.com/"
+ },
+ {
+  "organizer": "Medieval Xtreme Race",
+  "web": "https://medievalxtremrace.com/",
+  "races": [
+   "Medieval Xtreme Race Peñíscola 2026",
+   "Medieval Xtreme Race Polop 2027"
+  ],
+  "email": "info@medievalxtremrace.com",
+  "emailSource": "https://medievalxtremrace.com/"
+ },
+ {
+  "organizer": "Federación Española de Triatlón (Hyatlón)",
+  "web": "https://hyatlon.org/",
+  "races": [
+   "Hyatlón H6 Gran Canaria 2026",
+   "Hyatlón H8 Zaragoza 2026"
+  ],
+  "email": "hyatlon@deporama.com",
+  "emailSource": "https://hyatlon.org/"
+ },
+ {
+  "organizer": "eventos.strongrace.com",
+  "web": "https://eventos.strongrace.com/",
+  "races": [
+   "Strong Race Otoño 2026 Palma"
+  ],
+  "email": null,
+  "emailSource": null
+ },
+ {
+  "organizer": "OCR Mencey Los Realejos 2026",
+  "web": null,
+  "races": [
+   "OCR Mencey Los Realejos 2026"
+  ],
+  "email": null
+ },
+ {
+  "organizer": "monsterace.com",
+  "web": "https://monsterace.com/",
+  "races": [
+   "Monster Race Sant Miquel de Campmajor 2026"
+  ],
+  "email": null,
+  "emailSource": null
+ },
+ {
+  "organizer": "Gollizno Race Olivares 2026",
+  "web": null,
+  "races": [
+   "Gollizno Race Olivares 2026"
+  ],
+  "email": null
+ },
+ {
+  "organizer": "Farinato Race",
+  "web": "https://farinatorace.es/",
+  "races": [
+   "Farinato Hybrid Race Madrid 2026"
+  ],
+  "email": null,
+  "emailSource": null
+ },
+ {
+  "organizer": "Desafío Costa Blanca",
+  "web": "https://desafiocostablanca.com/",
+  "races": [
+   "Desafío Vega Baja Redován 2026"
+  ],
+  "email": "info@desafiocostablanca.com",
+  "emailSource": "https://desafiocostablanca.com/"
+ },
+ {
+  "organizer": "Bestial Race",
+  "web": "https://bestialrace.com/",
+  "races": [
+   "Bestial Race Arucas 2026"
+  ],
+  "email": "info@bestialrace.com",
+  "emailSource": "https://bestialrace.com/"
+ },
+ {
+  "organizer": "weezevent.com",
+  "web": "https://my.weezevent.com/",
+  "races": [
+   "Heart Fit Challenge Hybrid Race Sevilla 2027"
+  ],
+  "email": null,
+  "emailSource": null
+ },
+ {
+  "organizer": "Hybrid League",
+  "web": "https://hybridleague.es/",
+  "races": [
+   "Hybrid League — Ronda Febrero 2027 Pinto"
+  ],
+  "email": "soporte@yacrea.com",
+  "emailSource": "https://hybridleague.es/"
+ },
+ {
+  "organizer": "Hybrid Zone",
+  "web": "https://hybridzone.es/",
+  "races": [
+   "Hybrid Zone Torrelavega 2027"
+  ],
+  "email": null,
+  "emailSource": null
+ },
+ {
+  "organizer": "sacabasummergames.com",
+  "web": "https://www.sacabasummergames.com/",
+  "races": [
+   "Sacaba Summer Games 2027 Málaga"
+  ],
+  "email": "info@sacabasummergames.com",
+  "emailSource": "https://www.sacabasummergames.com/"
+ },
+ {
+  "organizer": "madridfitnesschallenge.com",
+  "web": "https://madridfitnesschallenge.com/",
+  "races": [
+   "Madrid Fitness Challenge 2027"
+  ],
+  "email": "info@madridfitnesschallenge.com",
+  "emailSource": "https://madridfitnesschallenge.com/"
+ },
+ {
+  "organizer": "The BOLD Series",
+  "web": "https://www.theboldseries.com/",
+  "races": [
+   "BOLD Series Madrid 2027"
+  ],
+  "email": null,
+  "emailSource": null
+ },
+ {
+  "organizer": "Hybrid Day",
+  "web": "https://hybrid-day.com/",
+  "races": [
+   "Hybrid Day Vigo 2026"
+  ],
+  "email": "support@hybrid-day.com",
+  "emailSource": "https://hybrid-day.com/"
+ },
+ {
+  "organizer": "thehybridgames.fit",
+  "web": "https://thehybridgames.fit/",
+  "races": [
+   "The Hybrid Games Valencia 2027"
+  ],
+  "email": null,
+  "emailSource": null
+ }
+]

@@ -1,13 +1,10 @@
-/* Lista de carreras: el HTML sale del servidor (SEO) y cada tarjeta, entera, abre la ficha con las acciones. */
-import { useState } from "react";
-import dynamic from "next/dynamic";
+/* Lista de carreras: el HTML sale del servidor (SEO) y cada tarjeta, entera, enlaza a la ficha de la carrera
+   (/carreras/<slug>), que es donde están la inscripción oficial, el .ics y compartir. */
 import { dateParts, modalityLabel } from "../lib/races-server";
 import { raceStatus, racePrice } from "../lib/race-ui";
+import { raceSlug } from "../lib/race-slug";
 
-// La ficha solo hace falta al pulsar una tarjeta: se carga aparte
-const RaceDetail = dynamic(() => import("./RaceDetail"), { ssr: false });
-
-export function RaceCard({ race: r, onOpen, showRegion = true }) {
+export function RaceCard({ race: r, showRegion = true }) {
   const dp = dateParts(r.fecha_iso);
   const status = raceStatus(r);
   const price = racePrice(r);
@@ -20,7 +17,7 @@ export function RaceCard({ race: r, onOpen, showRegion = true }) {
         <span className="rc-mon">{dp?.m}{dp?.y && <span className="rc-year"> {dp.y}</span>}</span>
       </time>
       <div className="rc-main">
-        <h3 className="rc-name"><button type="button" className="rc-open" onClick={() => onOpen(r)}>{r.nombre}</button></h3>
+        <h3 className="rc-name"><a className="rc-open" href={`/carreras/${r.slug || raceSlug(r)}`}>{r.nombre}</a></h3>
         {place && <p className="rc-place">{place}</p>}
         <p className="rc-tags">
           <span className="rl-tag">{modalityLabel(r)}</span>
@@ -35,8 +32,7 @@ export function RaceCard({ race: r, onOpen, showRegion = true }) {
   );
 }
 
-export default function RaceList({ races, pageUrl, showRegion = true, compact = false, groupByYear = false }) {
-  const [open, setOpen] = useState(null);
+export default function RaceList({ races, showRegion = true, compact = false, groupByYear = false }) {
   if (!races || races.length === 0) return null;
   let lastYear = null;
   const items = [];
@@ -44,12 +40,7 @@ export default function RaceList({ races, pageUrl, showRegion = true, compact = 
     const y = (r.fecha_iso || "").slice(0, 4);
     if (groupByYear && y && y !== lastYear) items.push(<li key={`y${y}`} className="rc-year-head"><h2 id={`carreras-${y}`}>Carreras de {y}</h2></li>);
     lastYear = y;
-    items.push(<RaceCard key={r.id || `${r.nombre}-${r.fecha_iso}-${i}`} race={r} onOpen={setOpen} showRegion={showRegion} />);
+    items.push(<RaceCard key={r.id || `${r.nombre}-${r.fecha_iso}-${i}`} race={r} showRegion={showRegion} />);
   });
-  return (
-    <>
-      <ol className={`rcl${compact ? " rcl--compact" : ""}`}>{items}</ol>
-      {open && <RaceDetail race={open} pageUrl={pageUrl} onClose={() => setOpen(null)} />}
-    </>
-  );
+  return <ol className={`rcl${compact ? " rcl--compact" : ""}`}>{items}</ol>;
 }

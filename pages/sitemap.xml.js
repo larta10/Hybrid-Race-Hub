@@ -3,7 +3,9 @@ import { CATEGORIES } from "../lib/blog-categories";
 import { SUPABASE_URL, ANON_KEY } from "../lib/shared";
 
 import { SITE_URL } from "../lib/site";
-import { fetchUpcomingRaces, lastUpdated } from "../lib/races-server";
+import { fetchUpcomingRaces, fetchAllRaces, lastUpdated, raceEndDate } from "../lib/races-server";
+import { monthsWithCounts, MIN_MONTH_RACES } from "../lib/calendar-months";
+import { hubModalities } from "../lib/modalities";
 import { HYBRID_CITIES, raceMatchesCity } from "../lib/hybrid-cities";
 import { CENTER_CITIES } from "../lib/center-cities";
 import { upcomingVerifiedEvents } from "../lib/verified-events";
@@ -22,6 +24,8 @@ const STATIC_LASTMOD = {
   "/sobre-nosotros": "2026-10-27",
   "/contacto-organizadores": "2026-10-27",
   "/politica-cookies": "2026-10-27",
+  "/como-verificamos-las-carreras": "2026-11-03",
+  "/organizadores": "2026-11-03",
 };
 const RANKINGS_LASTMOD = "2026-10-27";
 // Fecha del último cambio de las plantillas de home, calendario y regiones
@@ -64,6 +68,11 @@ export async function getServerSideProps({ res }) {
   const blogPages = Math.max(1, Math.ceil((posts.length - 1) / PER_PAGE));
   const fromDb = await fetchUpcomingRaces();
   const races = [...fromDb, ...upcomingVerifiedEvents(todayISO(), fromDb)];
+  // Fichas indexables: futuras y pasadas hace menos de 60 días (después llevan noindex)
+  const d60 = new Date(Date.now() - 60 * 864e5).toISOString().slice(0, 10);
+  const fichas = (await fetchAllRaces()).filter(r => r.slug && (raceEndDate(r) || "") >= d60);
+  const months = monthsWithCounts(races, todayISO()).filter(m => m.count >= MIN_MONTH_RACES);
+  const hubs = hubModalities(races).filter(m => !m.fixedHub);
   const racesLastmod = max(lastUpdated(races), TEMPLATE_LASTMOD);
   // Solo ciudades con carreras futuras (las demás llevan noindex); lastmod = último cambio de sus carreras
   const cityPages = HYBRID_CITIES
@@ -85,7 +94,7 @@ export async function getServerSideProps({ res }) {
     { loc: `${BASE}/que-es-una-carrera-hibrida`, lastmod: STATIC_LASTMOD["/que-es-una-carrera-hibrida"], changefreq: "weekly",  priority: "0.9" },
     { loc: `${BASE}/calendario`,                lastmod: racesLastmod, changefreq: "daily",   priority: "0.9" },
     { loc: `${BASE}/blog`,                      lastmod: newest, changefreq: "weekly",  priority: "0.8" },
-    ...["/plan-entrenamiento", "/centros-entrenamiento", "/calculadora-hyrox", "/race-hub", "/productos", "/sobre-nosotros", "/contacto-organizadores", "/politica-cookies"]
+    ...["/plan-entrenamiento", "/centros-entrenamiento", "/calculadora-hyrox", "/race-hub", "/productos", "/sobre-nosotros", "/contacto-organizadores", "/politica-cookies", "/como-verificamos-las-carreras", "/organizadores"]
       .map((p) => ({ loc: `${BASE}${p}`, lastmod: STATIC_LASTMOD[p], changefreq: "monthly", priority: p === "/centros-entrenamiento" ? "0.8" : "0.6" })),
 
     ...PRODUCT_SLUGS.map((slug) => ({
@@ -101,6 +110,18 @@ export async function getServerSideProps({ res }) {
       changefreq: "daily",
       priority: "0.8",
     })),
+
+    // Fichas de carrera
+    ...fichas.map((r) => ({
+      loc: `${BASE}/carreras/${encodeURIComponent(r.slug)}`,
+      lastmod: max(String(r.verificado || r.updated_at || "").slice(0, 10), TEMPLATE_LASTMOD),
+      changefreq: "weekly",
+      priority: "0.7",
+    })),
+    // Calendario por meses (solo meses con 3 o más carreras; el resto lleva noindex)
+    ...months.map((m) => ({ loc: `${BASE}${m.href}`, lastmod: racesLastmod, changefreq: "daily", priority: "0.7" })),
+    // Hubs por modalidad (3 o más carreras futuras)
+    ...hubs.map((m) => ({ loc: `${BASE}${m.hub}`, lastmod: racesLastmod, changefreq: "daily", priority: "0.7" })),
 
     // Centros por ciudad (solo ciudades con 3 o más centros)
     ...CENTER_CITIES.map((c) => ({

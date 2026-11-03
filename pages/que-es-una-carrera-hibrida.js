@@ -88,11 +88,14 @@ function faqData({ madrid, priced, total }) {
   return faqs.slice(0, 10);
 }
 
-export default function Guia({ upcoming, total, madrid, counts, priced, season, hubs = {} }) {
-  // "Fechas: …" bajo cada modalidad, solo si su hub existe
-  const Dates = ({ slug, label }) => hubs[slug]
+// "Fechas: …" bajo cada modalidad, solo si su hub existe
+function Dates({ hubs, slug, label }) {
+  return hubs[slug]
     ? <p className="guide-dates"><a href={hubs[slug].href}>{label} ({hubs[slug].count} con fecha)</a></p>
     : null;
+}
+
+export default function Guia({ upcoming, total, madrid, counts, priced, season, hubs = {} }) {
   const url = `${SITE_URL}${PATH}`;
   const faqs = faqData({ madrid, priced, total });
   const title = "Qué es una carrera híbrida (hybrid race) y cómo funciona";
@@ -207,21 +210,21 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season, 
             arrastres, cargas y pasos de equilibrio. Cada recorrido es distinto, así que aquí importa más adaptarse al terreno que el ritmo por kilómetro.
           </p>
           <p className="guide-dates">Guía: <a href="/blog/primera-carrera-obstaculos-guia">cómo preparar tu primera carrera de obstáculos</a></p>
-          <Dates slug="ocr" label="Carreras de obstáculos con fecha en España" />
+          <Dates hubs={hubs} slug="ocr" label="Carreras de obstáculos con fecha en España" />
 
           <h3>Spartan Race</h3>
           <p>
             Es la marca de OCR más extendida. Organiza tres distancias principales: Sprint (unos 5 km), Super (unos 10 km) y Beast (unos 21 km), con más obstáculos cuanto más larga.
             Si fallas un obstáculo, la penalización habitual son 30 burpees. Es la entrada típica al mundo OCR.
           </p>
-          <Dates slug="spartan" label="Fechas de Spartan Race en España" />
+          <Dates hubs={hubs} slug="spartan" label="Fechas de Spartan Race en España" />
 
           <h3>DEKA</h3>
           <p>
             Formato de la organización Spartan con 10 zonas de trabajo funcional. En DEKA FIT se corren 500 metros entre zona y zona; DEKA MILE es más corto e intenso
             y DEKA STRONG elimina la carrera. Es una buena alternativa si te gusta HYROX y quieres algo más corto.
           </p>
-          <Dates slug="deka" label="Fechas de DEKA en España" />
+          <Dates hubs={hubs} slug="deka" label="Fechas de DEKA en España" />
 
           <h3>Hyatlón</h3>
           <p>

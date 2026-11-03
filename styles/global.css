@@ -2015,3 +2015,34 @@ input, select, textarea { font-size: 16px; }
 .guide-dates { font-size: 16px; margin-top: calc(-1 * var(--s1)); }
 .guide-dates a { color: var(--accent); }
 .center-cps { font-size: 15px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+
+/* ── Auditoría 11/2026: ficha de carrera, relacionado, calendario mensual ── */
+.race-facts { display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--line); margin: var(--s3) 0; }
+.race-facts > div { display: grid; grid-template-columns: 120px 1fr; gap: var(--s2); padding: 12px 0; border-bottom: 1px solid var(--line); }
+.race-facts dt { font-family: var(--font-mono); font-size: 14px; color: var(--text-muted); }
+.race-facts dd { margin: 0; font-variant-numeric: tabular-nums; }
+.race-checked { color: var(--text-muted); font-size: 14px; }
+.race-actions { display: flex; flex-wrap: wrap; gap: var(--s1); margin: var(--s3) 0; }
+.race-actions .btn-solid, .race-actions .btn-line { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; padding: 0 18px; text-decoration: none; cursor: pointer; font-size: 16px; }
+.race-actions-off { color: var(--text-muted); cursor: default; }
+.race-past { background: var(--accent-soft); border-radius: var(--radius-lg); padding: var(--s2); }
+.race-notes { color: var(--text-muted); }
+@media (max-width: 720px) {
+  .race-facts > div { grid-template-columns: 96px 1fr; }
+  .race-actions { position: sticky; bottom: 0; z-index: 5; background: var(--paper); padding: 10px 0; margin: var(--s2) 0; border-top: 1px solid var(--line); }
+  .race-actions .btn-solid { flex: 1 1 100%; }
+  .race-actions .btn-line { flex: 1 1 0; }
+}
+.related { margin-top: var(--s5); padding-top: var(--s3); border-top: 1px solid var(--line); }
+.related ul { list-style: none; padding: 0; margin: var(--s1) 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0 var(--s3); }
+.related li { border-bottom: 1px solid var(--line); }
+.related a { display: flex; align-items: center; min-height: 48px; color: var(--text); text-decoration: none; }
+.related a::after { content: "→"; margin-left: auto; padding-left: 8px; color: var(--muted2); font-family: var(--font-mono); font-size: 14px; }
+.related a:hover { color: var(--accent); }
+.month-nav { display: flex; flex-wrap: wrap; gap: var(--s1); margin: var(--s2) 0; }
+.month-nav a, .month-nav span { min-height: 44px; display: inline-flex; align-items: center; padding: 0 14px; border: 1px solid var(--border2); border-radius: var(--radius); text-decoration: none; color: var(--text); font-size: 15px; }
+.month-nav [aria-current="page"] { background: var(--accent-soft); border-color: var(--accent); }
+.org-label { display: block; font-weight: 600; margin: var(--s2) 0 var(--s1); }
+.org-select { width: 100%; min-height: 48px; font-size: 16px; padding: 0 12px; border: 1px solid var(--border2); border-radius: var(--radius); background: var(--surface); color: var(--text); }
+.org-code { white-space: pre-wrap; word-break: break-all; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--s2); font-size: 14px; margin: var(--s2) 0; }
+.org-copy { min-height: 48px; padding: 0 18px; cursor: pointer; font-size: 16px; }

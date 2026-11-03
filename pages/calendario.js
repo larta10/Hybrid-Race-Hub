@@ -7,14 +7,32 @@ import { Breadcrumbs } from "../components/PageShell";
 import { trackSearch } from "../lib/track";
 import { SITE_URL, breadcrumbLd, pageTitle, ROBOTS_INDEX } from "../lib/site";
 import { track, SiteFooter } from "../lib/shared";
-import { fetchUpcomingRaces, seasonLabel, modalityLabel, todayISO } from "../lib/races-server";
+import { fetchUpcomingRaces, fetchAllRaces, raceEndDate, seasonLabel, modalityLabel, todayISO } from "../lib/races-server";
+import { monthsWithCounts } from "../lib/calendar-months";
+import { hubModalities } from "../lib/modalities";
+import { HYBRID_CITIES, raceMatchesCity } from "../lib/hybrid-cities";
+import { fechaLarga } from "../lib/dates";
 import { withOfficialUrl } from "../lib/race-links";
 
 // El HTML sale ya con todas las carreras futuras (ISR cada hora): Google ve el calendario
 // sin ejecutar JS y los filtros trabajan en el navegador sobre estos datos, sin más consultas.
 export async function getStaticProps() {
   const races = (await fetchUpcomingRaces()).map(withOfficialUrl);
-  return { props: { races, season: seasonLabel(), today: todayISO() }, revalidate: 3600 };
+  const today = todayISO();
+  const d60 = new Date(Date.now() - 60 * 864e5).toISOString().slice(0, 10);
+  // Celebradas en los últimos 60 días: sus fichas siguen indexables y se enlazan desde aquí
+  const recent = (await fetchAllRaces()).filter(r => { const e = raceEndDate(r) || ""; return e < today && e >= d60; })
+    .sort((a, b) => b.fecha_iso.localeCompare(a.fecha_iso))
+    .map(r => ({ slug: r.slug, nombre: r.nombre, fecha_iso: r.fecha_iso, municipio: r.municipio || null }));
+  return {
+    props: {
+      races, season: seasonLabel(), today, recent,
+      months: monthsWithCounts(races, today).map(m => ({ key: m.key, href: m.href, label: m.label, n: m.count })),
+      hubs: hubModalities(races).map(m => ({ href: m.hub, label: m.fixedHub ? m.hubLabel : `Carreras ${m.name} en España`, n: m.count })),
+      regions: HYBRID_CITIES.map(c => ({ slug: c.slug, en: c.en || `en ${c.name}`, n: races.filter(r => raceMatchesCity(r, c)).length })).filter(c => c.n > 0),
+    },
+    revalidate: 3600,
+  };
 }
 
 const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
@@ -42,7 +60,7 @@ function Chips({ label, options, value, onChange }) {
 
 const counts = (races, fn) => races.reduce((m, r) => { const k = fn(r); if (k) m[k] = (m[k] || 0) + 1; return m; }, {});
 
-export default function Calendario({ races = [], season, today }) {
+export default function Calendario({ races = [], season, today, recent = [], months = [], hubs = [], regions = [] }) {
   const router = useRouter();
   const [region, setRegion] = useState("");
   const [mod, setMod] = useState("");
@@ -150,13 +168,28 @@ export default function Calendario({ races = [], season, today }) {
             </div>
           )}
 
-        <section className="cal-more" aria-labelledby="por-zona">
+        <section className="cal-more" aria-labelledby="por-mes">
+          <h2 id="por-mes">Carreras por mes</h2>
+          <nav className="month-nav" aria-label="Calendario por meses">
+            {months.map(m => <a key={m.key} href={m.href}>{m.label} ({m.n})</a>)}
+          </nav>
+          <h2 id="por-modalidad">Por modalidad</h2>
+          <ul className="city-links city-links--long">
+            {hubs.map(h => <li key={h.href}><a href={h.href}>{h.label} ({h.n})</a></li>)}
+          </ul>
           <h2 id="por-zona">Carreras híbridas por zona</h2>
           <ul className="city-links city-links--long">
-            {[["madrid", "Madrid"], ["cataluna", "Cataluña"], ["andalucia", "Andalucía"], ["comunidad-valenciana", "la Comunidad Valenciana"], ["canarias", "Canarias"], ["galicia", "Galicia"], ["baleares", "Baleares"], ["bilbao", "Bilbao"]].map(([slug, name]) => (
-              <li key={slug}><a href={`/carreras-hibridas/${slug}`}>Carreras híbridas en {name}</a></li>
-            ))}
+            {regions.map(r => <li key={r.slug}><a href={`/carreras-hibridas/${r.slug}`}>Carreras híbridas {r.en} ({r.n})</a></li>)}
           </ul>
+          {recent.length > 0 && (
+            <>
+              <h2 id="celebradas">Celebradas en los últimos 60 días</h2>
+              <p>Cada ficha tiene el aviso de edición finalizada y, si ya hay fecha, el enlace a la próxima edición.</p>
+              <ul className="plain-list">
+                {recent.map(r => <li key={r.slug}><a href={`/carreras/${r.slug}`}>{r.nombre}</a> · {fechaLarga(r.fecha_iso)}{r.municipio ? ` · ${r.municipio}` : ""}</li>)}
+              </ul>
+            </>
+          )}
         </section>
       </main>
 

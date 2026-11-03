@@ -11,6 +11,7 @@ import { HYBRID_CITIES, CITY_BY_SLUG, raceMatchesCity, centerMatchesCity } from 
 import CENTROS from "../../lib/centros-entrenamiento.json";
 import { upcomingVerifiedEvents } from "../../lib/verified-events";
 import { CENTER_CITIES } from "../../lib/center-cities";
+import { monthsWithCounts } from "../../lib/calendar-months";
 
 export async function getStaticPaths() {
   return { paths: HYBRID_CITIES.map(c => ({ params: { ciudad: c.slug } })), fallback: false };
@@ -43,7 +44,7 @@ export async function getStaticProps({ params }) {
   }
   return {
     props: {
-      city: { slug: city.slug, name: city.name, en: city.en || `en ${city.name}`, kind: city.kind, ccaa: city.ccaa, intro: city.intro },
+      city: { slug: city.slug, name: city.name, en: city.en || `en ${city.name}`, kind: city.kind, ccaa: city.ccaa, intro: city.intro, titleExtra: city.titleExtra || null },
       races,
       centers: centers.slice(0, 18),
       centersTotal: centers.length,
@@ -53,12 +54,14 @@ export async function getStaticProps({ params }) {
       totalSpain: all.length,
       generated: todayISO(),
       centerCities: CENTER_CITIES.filter(cc => city.cp.some(p => cc.cp.startsWith(p))).map(cc => ({ slug: cc.slug, name: cc.name, count: cc.count })),
+      // Este mes y el siguiente: nº de carreras de la zona y enlace al calendario del mes
+      months: monthsWithCounts(all, todayISO()).slice(0, 2).map(m => ({ key: m.key, href: m.href, label: m.label, n: races.filter(r => r.fecha_iso.startsWith(m.key)).length, names: races.filter(r => r.fecha_iso.startsWith(m.key)).slice(0, 3).map(r => r.nombre) })),
     },
     revalidate: 3600,
   };
 }
 
-function buildFaqs({ city, races, centers, centersTotal, nearby }) {
+function buildFaqs({ city, races, centers, centersTotal, nearby, months = [], centerCities = [] }) {
   const where = city.kind === "comunidad" ? `en ${city.name}` : `en ${city.name}`;
   const faqs = [];
   faqs.push({
@@ -74,11 +77,23 @@ function buildFaqs({ city, races, centers, centersTotal, nearby }) {
       a: `${r.nombre}, el ${dateParts(r.fecha_iso).long}${r.ubicacion ? ` en ${r.ubicacion}` : ""}.${r.precio ? ` Precio publicado: ${r.precio}.` : ""} Confirma fecha y precio en la web oficial antes de inscribirte.`,
     });
   }
+  if (months[0]) {
+    const [m0, m1] = months;
+    faqs.push({
+      q: `¿Qué carreras híbridas hay ${where} este mes?`,
+      a: m0.n
+        ? `En ${m0.label} hay ${m0.n} ${m0.n === 1 ? "carrera" : "carreras"} ${where}: ${m0.names.join(", ")}${m0.n > m0.names.length ? " y alguna más" : ""}.`
+        : `En ${m0.label} no hay carreras híbridas con fecha ${where}.${m1 && m1.n ? ` En ${m1.label} hay ${m1.n}: ${m1.names.join(", ")}.` : " Mira los meses siguientes en el calendario."}`,
+      link: { href: m0.n ? m0.href : (m1 ? m1.href : "/calendario"), label: `Carreras híbridas en ${m0.n || !m1 ? m0.label : m1.label} en España` },
+    });
+  }
+  const mainCenter = centerCities[0];
   faqs.push({
-    q: `¿Dónde puedo entrenar para HYROX u OCR ${where}?`,
+    q: `¿Dónde entrenar HYROX ${where}?`,
     a: centersTotal
       ? `Tenemos ${centersTotal} ${centersTotal === 1 ? "centro registrado" : "centros registrados"} ${where} en el directorio${centers.length ? `, por ejemplo ${centers.slice(0, 3).map(c => c.nombre).join(", ")}` : ""}. Antes de ir, llama para confirmar si tienen sled, SkiErg y remo, que son lo más difícil de encontrar.`
       : `Todavía no tenemos centros registrados ${where}. Busca boxes de CrossFit o gimnasios funcionales con sled y remo, o consulta el directorio de centros de entrenamiento por código postal.`,
+    link: mainCenter ? { href: `/centros-entrenamiento/${mainCenter.slug}`, label: `Dónde entrenar HYROX en ${mainCenter.name}` } : { href: "/centros-entrenamiento", label: "Directorio de centros" },
   });
   const withRaces = nearby.filter(n => n.count > 0);
   faqs.push({
@@ -91,12 +106,12 @@ function buildFaqs({ city, races, centers, centersTotal, nearby }) {
 }
 
 export default function CiudadPage(props) {
-  const { city, races, centers, centersTotal, nearby, nearbyRaces, season, totalSpain, generated, centerCities = [] } = props;
+  const { city, races, centers, centersTotal, nearby, nearbyRaces, season, totalSpain, generated, centerCities = [], months = [] } = props;
   const path = `/carreras-hibridas/${city.slug}`;
   const url = `${SITE_URL}${path}`;
   const indexable = races.length > 0;
   const faqs = buildFaqs(props);
-  const title = pageTitle(`Carreras híbridas ${city.en} ${season}`);
+  const title = pageTitle(`Carreras híbridas ${city.en} ${season}${city.titleExtra ? `: ${city.titleExtra}` : ""}`);
   const n = races.length;
   const desc = n
     ? fitDesc([
@@ -164,6 +179,11 @@ export default function CiudadPage(props) {
               : "Sin carreras programadas ahora mismo"}
             {" · "}Actualizado: <time dateTime={generated}>{fechaLarga(generated)}</time>
           </p>
+          {months.length > 0 && (
+            <nav className="month-nav" aria-label="Carreras por mes">
+              {months.map((m, i) => <a key={m.key} href={m.href}>{i === 0 ? "Este mes" : "Próximo mes"}: {m.label}{m.n ? ` (${m.n} aquí)` : ""}</a>)}
+            </nav>
+          )}
         </div>
 
         <div className="guide-body">
@@ -246,7 +266,7 @@ export default function CiudadPage(props) {
             {faqs.map((f, i) => (
               <details key={i} className="faq-d" open={i === 0}>
                 <summary>{f.q}</summary>
-                <p>{f.a}</p>
+                <p>{f.a}{f.link && <> <a href={f.link.href}>{f.link.label} →</a></>}</p>
               </details>
             ))}
           </div>
