@@ -2,7 +2,7 @@
 import SiteHeader from "../components/SiteHeader";
 import { SiteFooter, CookieBanner} from "../lib/shared";
 
-import { SITE_URL, breadcrumbLd } from "../lib/site";
+import { SITE_URL, breadcrumbLd, ROBOTS_INDEX } from "../lib/site";
 const PROGRAMS = [
   {
     title: "HYROX Foundations",
@@ -68,7 +68,7 @@ export default function RaceHub() {
         <title>Programas HYROX: de fundamentos a élite | Hybrid Race Hub</title>
         <meta name="description" content="Cinco programas HYROX por niveles, de fundamentos a élite: bloques de fuerza, ritmo por estación y semanas de puesta a punto para llegar bien a competir." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content={ROBOTS_INDEX} />
         <link rel="canonical" href={`${SITE_URL}/race-hub`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/race-hub`} />

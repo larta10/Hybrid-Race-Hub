@@ -3,7 +3,7 @@ import { CONSENT_DEFAULT_SCRIPT } from "../lib/consent";
 
 export default function Document() {
   return (
-    <Html lang="es">
+    <Html lang="es-ES">
       <Head>
         {/* Consent Mode v2: todo denegado por defecto antes de que cargue GTM (se aplica la elección guardada si existe) */}
         <script dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULT_SCRIPT }} />

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { SUPABASE_URL, ANON_KEY } from "../../lib/shared";
 
-import { SITE_URL } from "../../lib/site";
+import { SITE_URL, ROBOTS_INDEX } from "../../lib/site";
 function parseMarkdown(md) {
   if (!md) return "";
   // Escapar HTML antes de aplicar el markdown (evita XSS desde la BD)
@@ -51,7 +51,7 @@ export default function ArticlePage({ article }) {
         <title>{article.title} — Hybrid Race Hub</title>
         <meta name="description" content={article.excerpt} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content={ROBOTS_INDEX} />
         <link rel="canonical" href={`${SITE_URL}/comunidad/${article.slug}`} />
       </Head>
 

@@ -5,7 +5,7 @@ import SiteHeader from "../components/SiteHeader";
 import RaceList from "../components/RaceList";
 import { Breadcrumbs } from "../components/PageShell";
 import { trackSearch } from "../lib/track";
-import { SITE_URL, breadcrumbLd } from "../lib/site";
+import { SITE_URL, breadcrumbLd, pageTitle, ROBOTS_INDEX } from "../lib/site";
 import { track, SiteFooter } from "../lib/shared";
 import { fetchUpcomingRaces, seasonLabel, modalityLabel, todayISO } from "../lib/races-server";
 import { withOfficialUrl } from "../lib/race-links";
@@ -98,10 +98,10 @@ export default function Calendario({ races = [], season, today }) {
   return (
     <>
       <Head>
-        <title>{`Calendario de carreras híbridas ${season} | Hybrid Race Hub`}</title>
+        <title>{pageTitle(`Calendario de carreras híbridas ${season} por mes`)}</title>
         <meta name="description" content="Todas las carreras híbridas de España en un calendario: HYROX, OCR, Spartan y DEKA. Filtra por comunidad, mes y formato y guarda la fecha en tu agenda." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content={ROBOTS_INDEX} />
         <link rel="canonical" href={`${SITE_URL}/calendario`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/calendario`} />

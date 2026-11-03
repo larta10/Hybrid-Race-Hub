@@ -59,7 +59,7 @@ export default function SiteHeader({ activePath }) {
     <header className="sh">
       <div className="sh-inner">
         <a href="/" className="sh-brand" aria-label="Hybrid Race Hub, inicio">
-          <Image src="/logo-icon.svg" alt="" width={30} height={30} priority className="logo-light" />
+          <Image src="/logo-icon.svg" alt="" width={30} height={30} loading="eager" className="logo-light" />
           <Image src="/logo-icon-light.svg" alt="" width={30} height={30} className="logo-dark" />
           <span className="sh-name">Hybrid Race Hub</span>
         </a>

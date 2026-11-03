@@ -9,7 +9,7 @@ import Link from "next/link";
 import centrosJson from "../lib/centros-entrenamiento.json";
 import { CookieBanner} from "../lib/shared";
 
-import { SITE_URL, breadcrumbLd } from "../lib/site";
+import { SITE_URL, breadcrumbLd, ROBOTS_INDEX } from "../lib/site";
 /* ── Data helpers ────────────────────────────────────────────────────────── */
 const CCAA_LIST = [...new Set(centrosJson.map((c) => c.ccaa).filter(Boolean))].sort();
 const TIPO_LIST = [...new Set(centrosJson.map((c) => c.tipo).filter(Boolean))].sort();
@@ -205,7 +205,7 @@ export default function CentrosEntrenamiento() {
           name="description"
           content="Directorio de boxes y gimnasios para entrenar HYROX, OCR y fitness híbrido en España, con sled, SkiErg y remo. Busca por ciudad o código postal y llama."
         />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content={ROBOTS_INDEX} />
         <link rel="canonical" href={`${SITE_URL}/centros-entrenamiento`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/centros-entrenamiento`} />

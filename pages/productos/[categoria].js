@@ -8,7 +8,7 @@ import AffiliateLink from "../../components/AffiliateLink";
 import { dateParts } from "../../lib/races-server";
 import ProductImage from "../../components/ProductImage";
 
-import { SITE_URL } from "../../lib/site";
+import { SITE_URL, ROBOTS_INDEX } from "../../lib/site";
 export async function getStaticPaths() {
   return {
     paths: RANKINGS.map(r => ({ params: { categoria: r.slug } })),
@@ -42,12 +42,9 @@ export default function ProductoCategoria({ ranking }) {
     "itemListElement": ranking.products.map(product => ({
       "@type": "ListItem",
       "position": product.rank,
-      "item": {
-        "@type": "Product",
-        "name": product.name,
-        "description": product.desc,
-        "brand": { "@type": "Brand", "name": product.brand || product.name.split(" ")[0] },
-      },
+      // Sin Product: Google exige offers, review o aggregateRating y no publicamos precios ni notas inventadas
+      "name": product.name,
+      "url": `${SITE_URL}/productos/${ranking.slug}#${product.id}`,
     })),
   }];
 
@@ -67,7 +64,7 @@ export default function ProductoCategoria({ ranking }) {
         <title>{ranking.metaTitle}</title>
         <meta name="description" content={ranking.metaDesc} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content={ROBOTS_INDEX} />
         <link rel="canonical" href={`${SITE_URL}/productos/${ranking.slug}`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/productos/${ranking.slug}`} />
@@ -184,7 +181,7 @@ export default function ProductoCategoria({ ranking }) {
         {/* Fichas */}
         <ol className="products-list">
           {ranking.products.map(product => (
-            <li key={product.rank} className={`product-row${product.rank === 1 ? " product-row--top" : ""}`}>
+            <li key={product.rank} id={product.id} className={`product-row${product.rank === 1 ? " product-row--top" : ""}`}>
               <div className="product-rank" aria-label={`Puesto ${product.rank}`}>{String(product.rank).padStart(2, "0")}</div>
               <div className="product-main">
                 {product.brand && <p className="product-brand">{product.brand}</p>}

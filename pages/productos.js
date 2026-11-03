@@ -10,7 +10,7 @@ import AffiliateLink from "../components/AffiliateLink";
 const RANKINGS = RAW_RANKINGS.map(resolveRanking);
 
 
-import { SITE_URL, breadcrumbLd } from "../lib/site";
+import { SITE_URL, breadcrumbLd, ROBOTS_INDEX } from "../lib/site";
 /* ─── COMPONENT ─────────────────────────────────────────────────────────────── */
 
 export default function Productos() {
@@ -20,7 +20,7 @@ export default function Productos() {
         <title>{`Rankings de material OCR y HYROX ${RANKINGS_UPDATED.slice(0, 4)} | Hybrid Race Hub`}</title>
         <meta name="description" content="Rankings de relojes GPS, zapatillas de trail y de HYROX, pulsómetros y ropa para carreras híbridas, con pros y contras de cada modelo y enlace a Amazon." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content={ROBOTS_INDEX} />
         <link rel="canonical" href={`${SITE_URL}/productos`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/productos`} />
@@ -170,7 +170,7 @@ export default function Productos() {
       <div className="page-hero">
         <div className="page-hero-inner">
           <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Productos" }]} />
-          <h1 className="page-title">Rankings<br/>de Equipamiento</h1>
+          <h1 className="page-title">Rankings{" "}<br/>de material</h1>
           <p className="page-sub">
             Relojes GPS, zapatillas, pulsómetros y ropa para OCR y HYROX. Solo lo que
             usaríamos nosotros, con el precio de Amazon España al lado.

@@ -36,7 +36,7 @@ export default function Comunidad() {
         <meta name="description" content="Artículos de la comunidad sobre carreras OCR, HYROX y material híbrido en España: crónicas, consejos de entrenamiento y recomendaciones para tu carrera." />
         <meta name="keywords" content="comunidad OCR, artículos HYROX, guías entrenamiento híbrido, equipamiento OCR España" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href={`${SITE_URL}/comunidad`} />
         <script
           type="application/ld+json"

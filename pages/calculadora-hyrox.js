@@ -4,7 +4,7 @@ import { Breadcrumbs } from "../components/PageShell";
 import Head from "next/head";
 import Link from "next/link";
 
-import { SITE_URL, breadcrumbLd } from "../lib/site";
+import { SITE_URL, breadcrumbLd, ROBOTS_INDEX } from "../lib/site";
 /* ─── HYROX structure ──────────────────────────────────────────────────────── */
 const STATIONS = [
   { id:"s1",  label:"SkiErg",             detail:"1.000 m",   icon:"01",  tipo:"station" },
@@ -113,7 +113,7 @@ export default function CalculadoraHyrox() {
       <Head>
         <title>Calculadora HYROX: estima tu tiempo total | Hybrid Race Hub</title>
         <meta name="description" content="Calcula tu tiempo en HYROX con tus ritmos de carrera y tus tiempos en SkiErg, trineo, remo y wall balls. Descubre en qué estación pierdes más minutos." />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content={ROBOTS_INDEX} />
         <link rel="canonical" href={`${SITE_URL}/calculadora-hyrox`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/calculadora-hyrox`} />
@@ -226,7 +226,7 @@ export default function CalculadoraHyrox() {
       <div className="page-hero">
         <div className="page-hero-inner">
           <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Calculadora HYROX" }]} />
-          <h1 className="page-title">Calculadora<br/><span>HYROX</span></h1>
+          <h1 className="page-title">Calculadora{" "}<br/><span>HYROX</span></h1>
           <p className="page-sub">
             Mete tus 8 parciales de 1 km y tus 8 estaciones, del SkiErg a los wall balls.
             Te damos el tiempo total y en qué categoría estarías.

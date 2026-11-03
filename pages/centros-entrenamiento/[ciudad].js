@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useEffect } from "react";
 import PageShell, { Breadcrumbs } from "../../components/PageShell";
-import { SITE_URL, SITE_NAME, fitDesc, breadcrumbLd } from "../../lib/site";
+import { SITE_URL, SITE_NAME, fitDesc, breadcrumbLd, ROBOTS_INDEX } from "../../lib/site";
 import { fechaLarga } from "../../lib/dates";
 import { fetchUpcomingRaces, todayISO, dateParts } from "../../lib/races-server";
 import { upcomingVerifiedEvents } from "../../lib/verified-events";
@@ -145,7 +145,7 @@ export default function CentrosCiudad(props) {
         <title>{title}</title>
         <meta name="description" content={desc} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="robots" content={ROBOTS_INDEX} />
         <link rel="canonical" href={url} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={url} />
@@ -154,7 +154,6 @@ export default function CentrosCiudad(props) {
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:locale" content="es_ES" />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>

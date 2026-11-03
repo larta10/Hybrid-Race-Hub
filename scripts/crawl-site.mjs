@@ -27,8 +27,8 @@ function normPath(href, from) {
 function words(html) {
   const body = html
     .replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " ")
-    .replace(/<header[\s\S]*?<\/header>/gi, " ").replace(/<footer[\s\S]*?<\/footer>/gi, " ")
-    .replace(/<nav[\s\S]*?<\/nav>/gi, " ").replace(/<[^>]+>/g, " ");
+    .replace(/<header class="sh"[\s\S]*?<\/header>/gi, " ").replace(/<footer class="site-footer"[\s\S]*?<\/footer>/gi, " ")
+    .replace(/<nav class="(sh-|crumbs)[^"]*"[\s\S]*?<\/nav>/gi, " ").replace(/<[^>]+>/g, " ");
   return decode(body).split(/\s+/).filter(w => /[\p{L}\d]/u.test(w)).length;
 }
 

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import PageShell, { Breadcrumbs } from "../components/PageShell";
-import { SITE_URL, SITE_EMAIL, breadcrumbLd } from "../lib/site";
+import { SITE_URL, SITE_EMAIL, breadcrumbLd, ROBOTS_INDEX } from "../lib/site";
 import { fechaLarga } from "../lib/dates";
 import { openConsentSettings } from "../lib/consent";
 
@@ -24,7 +24,7 @@ export default function PoliticaCookies() {
         <title>Política de cookies | Hybrid Race Hub</title>
         <meta name="description" content={desc} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content={ROBOTS_INDEX} />
         <link rel="canonical" href={url} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={url} />

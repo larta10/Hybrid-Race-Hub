@@ -2,7 +2,7 @@
 import { trackContactSubmit } from "../lib/track";
 import Head from "next/head";
 
-import { SITE_URL, breadcrumbLd } from "../lib/site";
+import { SITE_URL, breadcrumbLd, ROBOTS_INDEX } from "../lib/site";
 const INITIAL_FORM = { nombre: "", email: "", tipo: "", mensaje: "" };
 
 export default function ContactOrganizers() {
@@ -57,7 +57,7 @@ export default function ContactOrganizers() {
         <title>Publica tu carrera OCR o HYROX en el calendario</title>
         <meta name="description" content="¿Organizas una carrera OCR, HYROX o de fitness funcional? Envíanos la fecha y la publicamos gratis en el calendario de carreras híbridas de España." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content={ROBOTS_INDEX} />
         <link rel="canonical" href={`${SITE_URL}/contacto-organizadores`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/contacto-organizadores`} />
@@ -245,7 +245,7 @@ export default function ContactOrganizers() {
 
         <header className="contact-hero">
           <p className="contact-eyebrow">Colaboraciones</p>
-          <h1 className="contact-title">Colabora con nosotros</h1>
+          <h1 className="contact-title">Publica tu carrera o tu centro</h1>
           <p className="contact-sub">
             ¿Organizas eventos de <strong>OCR/HYROX</strong> o gestionas un <strong>centro de entrenamiento funcional</strong>? Contacta con nosotros para aparecer destacado en la plataforma y llegar a miles de atletas interesados.
           </p>

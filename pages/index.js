@@ -3,7 +3,7 @@ import SiteHeader from "../components/SiteHeader";
 import { trackContactSubmit } from "../lib/track";
 import Head from "next/head";
 import Image from "next/image";
-import { SITE_URL, SITE_EMAIL, SITE_INSTAGRAM } from "../lib/site";
+import { SITE_URL, SITE_EMAIL, SITE_INSTAGRAM, ROBOTS_INDEX } from "../lib/site";
 import RaceList from "../components/RaceList";
 import { fetchUpcomingRaces, seasonLabel, raceEventSchema } from "../lib/races-server";
 import { HYBRID_CITIES, CITY_BY_SLUG, raceMatchesCity } from "../lib/hybrid-cities";
@@ -262,13 +262,12 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
         <title>{`Carreras híbridas en España ${season} | Hybrid Race Hub`}</title>
         <meta name="description" content={`Calendario de carreras híbridas ${season} en España: HYROX, OCR, Spartan y DEKA con fechas, precios e inscripción. Mira las de 2027 y elige la tuya.`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content={ROBOTS_INDEX} />
         <link rel="canonical" href={`${SITE_URL}/`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/`} />
         <meta property="og:title" content={`Carreras híbridas en España ${season}: calendario HYROX y OCR`} />
         <meta property="og:description" content="Todas las carreras híbridas de España en un calendario: HYROX, OCR, Spartan y DEKA. Fechas, precios, inscripción y dónde entrenar." />
-        <meta property="og:locale" content="es_ES" />
         <meta property="og:site_name" content="Hybrid Race Hub" />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
@@ -293,7 +292,7 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
                 "@id": `${SITE_URL}/#organization`,
                 "name": "Hybrid Race Hub",
                 "url": `${SITE_URL}/`,
-                "logo": { "@type": "ImageObject", "url": `${SITE_URL}/logo.svg` },
+                "logo": { "@type": "ImageObject", "url": `${SITE_URL}/icon-512.png`, "width": 512, "height": 512 },
                 "description": "Calendario y guías de carreras híbridas en España: HYROX, OCR, Spartan y DEKA.",
                 "email": SITE_EMAIL,
                 "contactPoint": { "@type": "ContactPoint", "email": SITE_EMAIL, "contactType": "customer support", "availableLanguage": ["es"] },
@@ -327,8 +326,8 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
 
       {/* ── HERO ── */}
       <section className="hero hero--home">
-        <Image src="/hero-home.webp" alt="" fill priority fetchPriority="high" quality={60}
-          sizes="(max-width: 1200px) 100vw, 1200px" className="hero-photo" />
+        <Image src="/hero-home.webp" alt="" fill priority fetchPriority="high" quality={45}
+          sizes="(max-width: 720px) 75vw, (max-width: 1200px) 100vw, 1200px" className="hero-photo" />
 
         {/* Hero body */}
         <div className="hero-body" style={{ paddingTop: 0 }}>

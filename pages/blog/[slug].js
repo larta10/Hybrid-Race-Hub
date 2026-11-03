@@ -7,7 +7,7 @@ import { Toc, ShareButtons, AuthorBox, ArticleCta, ArticleNextSteps, RelatedPost
 import { getAllSlugs } from "../../lib/posts";
 import { prepareArticle } from "../../lib/article-server";
 import { fechaLarga } from "../../lib/dates";
-import { SITE_URL, SITE_NAME, pageTitle } from "../../lib/site";
+import { SITE_URL, SITE_NAME, pageTitle, ROBOTS_INDEX } from "../../lib/site";
 import { PODCASTS } from "../../data/podcasts";
 import { fetchUpcomingRaces } from "../../lib/races-server";
 
@@ -52,6 +52,7 @@ export default function BlogPost({ post, toc, related, races }) {
       "publisher": {
         "@type": "Organization",
         "@id": `${SITE_URL}/#organization`,
+        "url": `${SITE_URL}/`,
         "name": SITE_NAME,
         "logo": { "@type": "ImageObject", "url": `${SITE_URL}/icon-512.png`, "width": 512, "height": 512 },
       },
@@ -90,14 +91,13 @@ export default function BlogPost({ post, toc, related, races }) {
         <title>{pageTitle(post.metaTitle)}</title>
         <meta name="description" content={post.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="robots" content={ROBOTS_INDEX} />
         <link rel="canonical" href={url} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={url} />
         <meta property="og:title" content={post.metaTitle} />
         <meta property="og:description" content={post.description} />
         <meta property="og:site_name" content={SITE_NAME} />
-        <meta property="og:locale" content="es_ES" />
         <meta property="og:image" content={post.ogImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -130,7 +130,7 @@ export default function BlogPost({ post, toc, related, races }) {
         {/* Foto de cabecera solo si es una foto real; la imagen generada (título sobre fondo de marca) se usa para redes y tarjetas */}
         {!post.generatedImage && (
           <div className="art-cover">
-            <Image src={post.image} alt={post.imageAlt} fill priority sizes="(min-width: 1280px) 1040px, 100vw" style={{ objectFit: "cover" }} />
+            <Image src={post.image} alt={post.imageAlt} fill priority quality={55} sizes="(min-width: 1280px) 1040px, 100vw" style={{ objectFit: "cover" }} />
           </div>
         )}
 

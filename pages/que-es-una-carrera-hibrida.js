@@ -1,7 +1,7 @@
 import Head from "next/head";
 import PageShell, { Breadcrumbs } from "../components/PageShell";
 import RaceList from "../components/RaceList";
-import { SITE_URL, SITE_NAME } from "../lib/site";
+import { SITE_URL, SITE_NAME, ROBOTS_INDEX } from "../lib/site";
 import { fetchUpcomingRaces, seasonLabel, modalityLabel, priceNumber, dateParts, raceEventSchema } from "../lib/races-server";
 import { CITY_BY_SLUG, raceMatchesCity } from "../lib/hybrid-cities";
 
@@ -133,14 +133,13 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season }
         <title>{title}</title>
         <meta name="description" content={desc} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="robots" content={ROBOTS_INDEX} />
         <link rel="canonical" href={url} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={url} />
         <meta property="og:title" content="Qué es una carrera híbrida (hybrid race) y cómo funciona" />
         <meta property="og:description" content={desc} />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
-        <meta property="og:locale" content="es_ES" />
         <meta property="article:modified_time" content={CONTENT_UPDATED} />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />

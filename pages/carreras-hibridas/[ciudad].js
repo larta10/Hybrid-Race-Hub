@@ -3,7 +3,7 @@ import { trackRegionView } from "../../lib/track";
 import { useEffect } from "react";
 import PageShell, { Breadcrumbs } from "../../components/PageShell";
 import RaceList from "../../components/RaceList";
-import { SITE_URL, SITE_NAME, pageTitle, fitDesc } from "../../lib/site";
+import { SITE_URL, SITE_NAME, pageTitle, fitDesc, ROBOTS_INDEX, ROBOTS_NOINDEX } from "../../lib/site";
 import { fechaLarga } from "../../lib/dates";
 import { track } from "../../lib/shared";
 import { fetchUpcomingRaces, seasonLabel, dateParts, raceEventSchema, todayISO } from "../../lib/races-server";
@@ -140,14 +140,13 @@ export default function CiudadPage(props) {
         <title>{title}</title>
         <meta name="description" content={desc} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content={indexable ? "index, follow, max-image-preview:large" : "noindex, follow"} />
+        <meta name="robots" content={indexable ? ROBOTS_INDEX : ROBOTS_NOINDEX} />
         <link rel="canonical" href={url} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={url} />
         <meta property="og:title" content={`Carreras híbridas ${city.en} ${season}`} />
         <meta property="og:description" content={desc} />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
-        <meta property="og:locale" content="es_ES" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />

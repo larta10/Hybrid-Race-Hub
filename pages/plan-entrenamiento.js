@@ -2,7 +2,7 @@
 import Head from "next/head";
 import { generatePlan, SESSION_TYPE_META, PHASE_META } from "../lib/training-plans";
 
-import { SITE_URL, breadcrumbLd } from "../lib/site";
+import { SITE_URL, breadcrumbLd, ROBOTS_INDEX } from "../lib/site";
 /* ─── DATA ─────────────────────────────────────────────────────────────── */
 
 const OBJECTIVES = [
@@ -372,7 +372,7 @@ export default function PlanEntrenamiento() {
       <title>Plan de entrenamiento HYROX, OCR y CrossFit gratis</title>
       <meta name="description" content="Crea gratis tu plan de entrenamiento para HYROX, OCR o CrossFit: cinco preguntas sobre tu nivel, días y puntos débiles, y lo descargas en Excel o PDF." />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content={ROBOTS_INDEX} />
       <link rel="canonical" href={`${SITE_URL}/plan-entrenamiento`} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${SITE_URL}/plan-entrenamiento`} />
@@ -433,6 +433,11 @@ export default function PlanEntrenamiento() {
     .wizard-label{font-family:var(--font-mono);font-size:10px;letter-spacing:0.01em;color:var(--muted);margin-left:auto;}
 
     .step-title{font-family:var(--font-display);font-size:clamp(28px,6vw,42px);font-weight:800;letter-spacing:-.01em;margin-bottom:.5rem;}
+    .plan-h1{font-family:var(--font-mono);font-size:14px;font-weight:600;letter-spacing:0.01em;color:var(--muted);margin-bottom:.75rem;}
+    .plan-about{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);max-width:68ch;}
+    .plan-about h2{font-family:var(--font-display);font-size:22px;font-weight:800;margin-bottom:.75rem;}
+    .plan-about p{font-size:17px;line-height:1.55;color:var(--muted);margin-bottom:.75rem;}
+    .plan-about a{color:var(--accent);text-decoration:underline;}
     .step-sub{color:var(--muted);font-size:14px;margin-bottom:2rem;}
 
     .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;margin-bottom:2rem;}
@@ -586,11 +591,12 @@ export default function PlanEntrenamiento() {
           {/* ── Step 0: Perfil físico ── */}
           {step === 0 && (
             <>
+              <h1 className="plan-h1">Plan de entrenamiento gratis para HYROX, OCR y CrossFit</h1>
               <div className="free-badge">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="6,1 7.5,4.2 11,4.6 8.5,7 9.2,10.5 6,8.8 2.8,10.5 3.5,7 1,4.6 4.5,4.2"/></svg>
                 100% GRATUITO · SIN REGISTRO
               </div>
-              <h1 className="step-title">Tu perfil físico</h1>
+              <h2 className="step-title">Tu perfil físico</h2>
               <p className="step-sub">Tres datos para calcular las cargas de entrenamiento adaptadas a ti.</p>
               <div className="profile-grid">
                 <div className="profile-field">
@@ -636,7 +642,7 @@ export default function PlanEntrenamiento() {
           {/* ── Step 1: Objetivo ── */}
           {step === 1 && (
             <>
-              <h1 className="step-title">¿Cuál es tu objetivo?</h1>
+              <h2 className="step-title">¿Cuál es tu objetivo?</h2>
               <p className="step-sub">El plan se construirá alrededor de esta disciplina.</p>
               <div className="card-grid">
                 {OBJECTIVES.map(obj => (
@@ -659,7 +665,7 @@ export default function PlanEntrenamiento() {
           {/* ── Step 2: Nivel + Días ── */}
           {step === 2 && (
             <>
-              <h1 className="step-title">Nivel y disponibilidad</h1>
+              <h2 className="step-title">Nivel y disponibilidad</h2>
               <p className="step-sub">Sé honesto. Un plan a tu nivel rinde más que uno demasiado ambicioso.</p>
               <div className="card-grid two-col" style={{ marginBottom: "1.5rem" }}>
                 {LEVELS.map(lv => (
@@ -697,7 +703,7 @@ export default function PlanEntrenamiento() {
           {/* ── Step 3: Horizonte ── */}
           {step === 3 && (
             <>
-              <h1 className="step-title">¿Cuánto tiempo tienes?</h1>
+              <h2 className="step-title">¿Cuánto tiempo tienes?</h2>
               <p className="step-sub">El plan adaptará las fases de base, desarrollo e intensidad a tu ventana de tiempo.</p>
               <div className="card-grid two-col">
                 {HORIZONS.map((h, i) => {
@@ -720,7 +726,7 @@ export default function PlanEntrenamiento() {
           {/* ── Step 4: Equipamiento ── */}
           {step === 4 && (
             <>
-              <h1 className="step-title">¿Qué tienes disponible?</h1>
+              <h2 className="step-title">¿Qué tienes disponible?</h2>
               <p className="step-sub">Ajustamos las sesiones a tu material. Si no tienes sled, hay alternativa.</p>
               <div className="card-grid two-col">
                 {EQUIPMENT_OPTIONS.map(eq => (
@@ -740,7 +746,7 @@ export default function PlanEntrenamiento() {
           {/* ── Step 5: Puntos débiles ── */}
           {step === 5 && (
             <>
-              <h1 className="step-title">¿Dónde quieres mejorar?</h1>
+              <h2 className="step-title">¿Dónde quieres mejorar?</h2>
               <p className="step-sub">Opcional. Cada semana te damos un consejo para trabajarlos.</p>
               <div className="chip-grid">
                 {WEAKNESS_OPTIONS.map(w => (
@@ -766,6 +772,29 @@ export default function PlanEntrenamiento() {
               {step === 5 ? "Generar plan →" : "Continuar →"}
             </button>
           </div>
+
+          {step === 0 && (
+            <section className="plan-about" aria-labelledby="como-funciona-plan">
+              <h2 id="como-funciona-plan">Cómo funciona el plan</h2>
+              <p>
+                Respondes seis pasos: tu peso y experiencia, la carrera que preparas (HYROX, una OCR como Spartan o el Open de CrossFit),
+                tu nivel y los días que puedes entrenar, las semanas que faltan, el material que tienes y tus puntos débiles.
+                Con eso montamos un plan por semanas con fases de base, desarrollo e intensidad, y semanas de descarga para no llegar
+                fundido a la carrera.
+              </p>
+              <p>
+                Las cargas se ajustan a tu peso y a tu nivel, y si no tienes trineo, SkiErg o remo te damos una alternativa con lo que
+                haya en tu gimnasio. Cada semana incluye un consejo para el punto débil que hayas marcado. El plan se descarga en Excel
+                o en PDF y no pedimos registro ni correo.
+              </p>
+              <p>
+                Si aún no tienes carrera, mira el <a href="/calendario">calendario de carreras híbridas</a>; si es la primera, lee
+                antes <a href="/blog/carreras-hibridas-principiantes-primera-prueba">cómo elegir tu primera prueba</a>. Para una HYROX
+                concreta tienes también el <a href="/blog/plan-entrenamiento-hyrox-12-semanas">plan HYROX de 12 semanas</a> explicado
+                sesión a sesión, y para entrenar con material, el <a href="/centros-entrenamiento">directorio de centros</a>.
+              </p>
+            </section>
+          )}
         </div>
       </>
     );
