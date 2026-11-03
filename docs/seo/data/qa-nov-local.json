@@ -1,0 +1,134 @@
+[
+ {
+  "route": "/",
+  "size": "390x844",
+  "status": 200,
+  "overflow": 0,
+  "smallTargets": 0,
+  "examples": [],
+  "banner": true,
+  "bannerHeight": 212,
+  "bannerCloses": true
+ },
+ {
+  "route": "/carreras-hibridas/madrid",
+  "size": "390x844",
+  "status": 200,
+  "overflow": 0,
+  "smallTargets": 0,
+  "examples": [],
+  "banner": true,
+  "bannerHeight": 212,
+  "bannerCloses": true
+ },
+ {
+  "route": "/carreras/hyrox-madrid-2027",
+  "size": "390x844",
+  "status": 200,
+  "overflow": 0,
+  "smallTargets": 0,
+  "examples": [],
+  "banner": true,
+  "bannerHeight": 212,
+  "bannerCloses": true
+ },
+ {
+  "route": "/calendario/2026/noviembre",
+  "size": "390x844",
+  "status": 200,
+  "overflow": 0,
+  "smallTargets": 0,
+  "examples": [],
+  "banner": true,
+  "bannerHeight": 212,
+  "bannerCloses": true
+ },
+ {
+  "route": "/productos/zapatillas-hyrox",
+  "size": "390x844",
+  "status": 200,
+  "overflow": 0,
+  "smallTargets": 0,
+  "examples": [],
+  "banner": true,
+  "bannerHeight": 212,
+  "bannerCloses": true
+ },
+ {
+  "route": "/centros-entrenamiento/madrid",
+  "size": "390x844",
+  "status": 200,
+  "overflow": 0,
+  "smallTargets": 0,
+  "examples": [],
+  "banner": true,
+  "bannerHeight": 212,
+  "bannerCloses": true
+ },
+ {
+  "route": "/",
+  "size": "1440x900",
+  "status": 200,
+  "overflow": 0,
+  "smallTargets": 0,
+  "examples": [],
+  "banner": true,
+  "bannerHeight": 212,
+  "bannerCloses": true
+ },
+ {
+  "route": "/carreras-hibridas/madrid",
+  "size": "1440x900",
+  "status": 200,
+  "overflow": 0,
+  "smallTargets": 0,
+  "examples": [],
+  "banner": true,
+  "bannerHeight": 212,
+  "bannerCloses": true
+ },
+ {
+  "route": "/carreras/hyrox-madrid-2027",
+  "size": "1440x900",
+  "status": 200,
+  "overflow": 0,
+  "smallTargets": 0,
+  "examples": [],
+  "banner": true,
+  "bannerHeight": 212,
+  "bannerCloses": true
+ },
+ {
+  "route": "/calendario/2026/noviembre",
+  "size": "1440x900",
+  "status": 200,
+  "overflow": 0,
+  "smallTargets": 0,
+  "examples": [],
+  "banner": true,
+  "bannerHeight": 212,
+  "bannerCloses": true
+ },
+ {
+  "route": "/productos/zapatillas-hyrox",
+  "size": "1440x900",
+  "status": 200,
+  "overflow": 0,
+  "smallTargets": 0,
+  "examples": [],
+  "banner": true,
+  "bannerHeight": 212,
+  "bannerCloses": true
+ },
+ {
+  "route": "/centros-entrenamiento/madrid",
+  "size": "1440x900",
+  "status": 200,
+  "overflow": 0,
+  "smallTargets": 0,
+  "examples": [],
+  "banner": true,
+  "bannerHeight": 212,
+  "bannerCloses": true
+ }
+]

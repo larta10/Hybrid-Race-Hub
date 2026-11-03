@@ -21,10 +21,18 @@ check("Ranking relojes", await events(), "affiliate_click");
 // race_outbound_click + region_view en una región
 await page.goto(`${BASE}/carreras-hibridas/madrid`, { waitUntil: "networkidle" });
 check("Región Madrid", await events(), "region_view");
+// La tarjeta lleva a la ficha (/carreras/<slug>) y allí está el botón de inscripción
 await page.locator(".rc-open").first().click();
-await page.locator(".rd-main").first().click({ noWaitAfter: true }).catch(() => {});
+await page.waitForURL(/\/carreras\//, { timeout: 15000 }).catch(() => {});
+await page.locator(".race-actions .btn-solid").first().click({ noWaitAfter: true }).catch(() => {});
 await page.waitForTimeout(500);
-check("Región Madrid", await events(), "race_outbound_click");
+check("Ficha de carrera", await events(), "race_outbound_click");
+
+// center_outbound_click en los centros de Madrid
+await page.goto(`${BASE}/centros-entrenamiento/madrid`, { waitUntil: "domcontentloaded" });
+await page.locator(".center-list a[target=_blank]").first().click({ noWaitAfter: true, modifiers: ["Control"] }).catch(() => {});
+await page.waitForTimeout(500);
+check("Centros Madrid", await events(), "center_outbound_click");
 
 // search_used en el calendario y en centros
 await page.goto(`${BASE}/calendario`, { waitUntil: "networkidle" });
