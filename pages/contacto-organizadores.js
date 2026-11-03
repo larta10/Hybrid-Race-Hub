@@ -344,6 +344,7 @@ export default function ContactOrganizers() {
                 "Enviar mensaje →"
               )}
             </button>
+            <p className="form-privacy"><strong>Protección de datos.</strong> Responsable: Hybrid Race Hub. Finalidad: responder a tu mensaje y, si nos lo pides, publicar tu carrera o tu centro. Base legal: tu consentimiento. No cedemos tus datos. Puedes ejercer tus derechos en hola@hybridracehub.com. Más información en la <a href="/privacidad">política de privacidad</a>.</p>
           </form>
         </section>
       </div>

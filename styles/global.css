@@ -2060,3 +2060,74 @@ input, select, textarea { font-size: 16px; }
 /* Estado "Por confirmar": neutro, sin color de estado */
 .st--neutral { color: var(--ink-2, var(--text-muted)); background: transparent; border: 1px solid var(--line); }
 .race-pending { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--s2); color: var(--text-muted); }
+
+/* ══════════════════════════════════════════════════════════════
+   PIE (rediseño 11/2026): 4 columnas, centrado, compacto; acordeones en móvil
+══════════════════════════════════════════════════════════════ */
+.ft { background: var(--surface); border-top: 1px solid var(--line); padding: 48px 0 24px; color: var(--ink); }
+.ft-inner { max-width: 1200px; margin: 0 auto; padding: 0 var(--s4); }
+.ft ul { list-style: none; margin: 0; padding: 0; }
+.ft p { margin: 0; }
+.ft-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: var(--s4); align-items: start; }
+.ft-head { display: block; font-family: var(--font-body); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted2); margin: 0 0 12px; }
+.ft-list, .ft-contact { display: flex; flex-direction: column; gap: 8px; }
+.ft-link { font-family: var(--font-body); font-size: 15px; line-height: 1.4; color: var(--ink); text-decoration: none; padding: 2px 0; display: inline-flex; align-items: center; }
+.ft-link:hover, .ft-link:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.ft-link:focus-visible, .ft-sum:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+.ft-more { color: var(--accent); font-weight: 600; margin-top: 8px; white-space: nowrap; }
+.ft-icon-link { gap: 8px; }
+.ft-icon-link svg { flex-shrink: 0; }
+.ft-logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); margin-bottom: 12px; }
+.ft-logo img.logo-light { display: block; }
+.ft-wordmark { font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.01em; }
+.ft-tagline { font-size: 15px; line-height: 1.5; color: var(--muted); max-width: 38ch; margin-bottom: 16px !important; }
+
+/* Grupos: <details> que en escritorio se ve siempre abierto */
+.ft-col > summary { list-style: none; }
+.ft-col > summary::-webkit-details-marker { display: none; }
+.ft-sum { cursor: default; }
+.ft-chev { display: none; }
+@media (min-width: 640px) {
+  .ft-col::details-content { content-visibility: visible; display: block; }
+  .ft-sum { pointer-events: none; }
+}
+
+/* Dónde entrenar */
+.ft-train { margin-top: var(--s5); padding-top: var(--s3); border-top: 1px solid var(--line); }
+.ft-cities { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px 16px; }
+.ft-cities .ft-link { font-size: 14px; }
+
+/* Barra inferior */
+.ft-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 24px; margin-top: var(--s4); padding-top: var(--s2); border-top: 1px solid var(--line); }
+.ft-copy { font-size: 14px; color: var(--muted2); }
+.ft-legal { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.ft-legal .ft-link { font-size: 14px; color: var(--muted); }
+.ft-btn { background: none; border: 0; cursor: pointer; font: inherit; font-size: 14px; color: var(--muted); padding: 2px 0; }
+.ft-amazon { font-size: 13px; line-height: 1.5; color: var(--muted2); margin-top: 12px !important; }
+
+@media (max-width: 1023.98px) {
+  .ft-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 639.98px) {
+  .ft { padding: 32px 0 24px; }
+  .ft-inner { padding: 0 16px; }
+  .ft-grid { grid-template-columns: 1fr; gap: 0; }
+  .ft-brand { padding-bottom: var(--s3); }
+  .ft-col { border-top: 1px solid var(--line); }
+  .ft-col:last-child { border-bottom: 1px solid var(--line); }
+  .ft-sum { display: flex; align-items: center; justify-content: space-between; min-height: 48px; cursor: pointer; }
+  .ft-sum .ft-head { margin: 0; color: var(--ink); }
+  .ft-chev { display: block; width: 10px; height: 10px; border-right: 2px solid var(--muted2); border-bottom: 2px solid var(--muted2); transform: rotate(45deg); margin-right: 6px; transition: transform .2s; }
+  .ft-col[open] .ft-chev { transform: rotate(-135deg); }
+  .ft-col nav { padding-bottom: 12px; }
+  .ft-list, .ft-contact { gap: 0; }
+  .ft-link, .ft-btn { min-height: 44px; padding: 11px 0; }
+  .ft-train { margin-top: var(--s3); border-top: 0; padding-top: 0; }
+  .ft-cities { grid-template-columns: 1fr 1fr; gap: 0 16px; }
+  .ft-bottom { flex-direction: column; align-items: flex-start; margin-top: var(--s3); }
+  .ft-legal { gap: 0 20px; }
+}
+@media (prefers-reduced-motion: reduce) { .ft-chev { transition: none; } }
+/* Información básica de protección de datos junto a los formularios (capa 1) */
+.form-privacy { font-size: 13px; line-height: 1.5; color: var(--muted2); margin-top: 12px; max-width: 70ch; }
+.form-privacy a { color: var(--muted); text-decoration: underline; }

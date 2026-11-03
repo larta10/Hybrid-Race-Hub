@@ -1,0 +1,98 @@
+[
+ {
+  "tag": "antes",
+  "page": "home",
+  "size": "360x800",
+  "height": 3429,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [],
+  "links": 57,
+  "screens": 4.29,
+  "contrastViolations": null
+ },
+ {
+  "tag": "antes",
+  "page": "home",
+  "size": "390x844",
+  "height": 2408,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [],
+  "links": 57,
+  "screens": 2.85,
+  "contrastViolations": 0
+ },
+ {
+  "tag": "antes",
+  "page": "home",
+  "size": "768x1024",
+  "height": 1994,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [],
+  "links": 57,
+  "screens": 1.95,
+  "contrastViolations": null
+ },
+ {
+  "tag": "antes",
+  "page": "home",
+  "size": "1440x900",
+  "height": 1994,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [],
+  "links": 57,
+  "screens": 2.22,
+  "contrastViolations": 0
+ },
+ {
+  "tag": "antes",
+  "page": "ficha",
+  "size": "360x800",
+  "height": 3429,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [],
+  "links": 57,
+  "screens": 4.29,
+  "contrastViolations": null
+ },
+ {
+  "tag": "antes",
+  "page": "ficha",
+  "size": "390x844",
+  "height": 2408,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [],
+  "links": 57,
+  "screens": 2.85,
+  "contrastViolations": 0
+ },
+ {
+  "tag": "antes",
+  "page": "ficha",
+  "size": "768x1024",
+  "height": 1994,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [],
+  "links": 57,
+  "screens": 1.95,
+  "contrastViolations": null
+ },
+ {
+  "tag": "antes",
+  "page": "ficha",
+  "size": "1440x900",
+  "height": 1994,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [],
+  "links": 57,
+  "screens": 2.22,
+  "contrastViolations": 0
+ }
+]

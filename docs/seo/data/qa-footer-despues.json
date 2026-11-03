@@ -1,0 +1,130 @@
+[
+ {
+  "tag": "despues",
+  "page": "home",
+  "size": "360x800",
+  "height": 1035,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [
+   11626,
+   11675,
+   11724
+  ],
+  "links": 54,
+  "screens": 1.29,
+  "contrastViolations": null
+ },
+ {
+  "tag": "despues",
+  "page": "home",
+  "size": "390x844",
+  "height": 991,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [
+   11337,
+   11386,
+   11435
+  ],
+  "links": 54,
+  "screens": 1.17,
+  "contrastViolations": 0
+ },
+ {
+  "tag": "despues",
+  "page": "home",
+  "size": "768x1024",
+  "height": 1567,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [
+   10325,
+   10793,
+   10793
+  ],
+  "links": 54,
+  "screens": 1.53,
+  "contrastViolations": null
+ },
+ {
+  "tag": "despues",
+  "page": "home",
+  "size": "1440x900",
+  "height": 1035,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [
+   8612,
+   8612,
+   8612
+  ],
+  "links": 54,
+  "screens": 1.15,
+  "contrastViolations": 0
+ },
+ {
+  "tag": "despues",
+  "page": "ficha",
+  "size": "360x800",
+  "height": 1035,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [
+   4044,
+   4093,
+   4142
+  ],
+  "links": 54,
+  "screens": 1.29,
+  "contrastViolations": null
+ },
+ {
+  "tag": "despues",
+  "page": "ficha",
+  "size": "390x844",
+  "height": 991,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [
+   3924,
+   3973,
+   4022
+  ],
+  "links": 54,
+  "screens": 1.17,
+  "contrastViolations": 0
+ },
+ {
+  "tag": "despues",
+  "page": "ficha",
+  "size": "768x1024",
+  "height": 1567,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [
+   3088,
+   3556,
+   3556
+  ],
+  "links": 54,
+  "screens": 1.53,
+  "contrastViolations": null
+ },
+ {
+  "tag": "despues",
+  "page": "ficha",
+  "size": "1440x900",
+  "height": 1035,
+  "overflowX": 0,
+  "centered": true,
+  "colTops": [
+   3113,
+   3113,
+   3113
+  ],
+  "links": 54,
+  "screens": 1.15,
+  "contrastViolations": 0
+ }
+]
