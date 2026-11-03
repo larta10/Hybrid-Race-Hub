@@ -35,7 +35,7 @@ Detalle técnico: `docs/seo/diagnostico-2026-11.md` (fase 1) y `AUDITORIA-PROGRE
 | H1 rotos: «Rankingsde Equipamiento», «CalculadoraHYROX», «Tu perfil físico», «Colabora con nosotros» | Corregidos; el plan de entrenamiento tiene H1 real y texto en el servidor |
 | `/comunidad` huérfana, con 20 palabras y en el sitemap | `noindex` y fuera del sitemap |
 | Robots desigual y `lang="es"` | `index, follow, max-image-preview:large, max-snippet:-1` en todas las indexables, `lang="es-ES"`, `og:locale` único |
-| LCP móvil 3,2-3,5 s | Imagen del hero más ligera en móvil, portada de artículos a calidad 55, fuera la precarga del logo (resultado en el punto 8) |
+| LCP móvil 3,2-3,5 s | Fuentes con `display: optional` (la causa real: el repintado al llegar la fuente), imagen del hero más ligera en móvil, portada de artículos a calidad 55, fuera la precarga del logo. Resultado en el punto 8 |
 | Home: «más de 140 pruebas» (había 37 futuras) | Cifra real, calculada |
 | HYROX Barcelona con fecha de inicio errónea (12/11; la oficial es 11/11) | Corregida en código con fuente y fecha; SQL para Supabase |
 | SQL de correcciones del 27/10 sin aplicar (Strong Race, Desafío Vega Baja, Bestial Race, Farinato…) | Correcciones aplicadas en código (`RACE_FIXES`) hasta que se ejecute el SQL |
@@ -88,7 +88,30 @@ No falta ninguna comunidad con carreras futuras: el País Vasco solo tiene carre
 
 ## 8. PageSpeed antes / después
 
-<!-- LIGHTHOUSE -->
+| URL | Disp. | Puntuación | LCP | TBT (≈INP) | CLS | Elemento LCP |
+|---|---|---|---|---|---|---|
+| / | móvil | 91 → 88 | 3,4 s → 3,4 s | 61 ms → 130 ms | 0 | `img` |
+| / | escritorio | 100 → 100 | 0,5 s → 0,5 s | 0 ms | 0,009 | `img` |
+| /centros-entrenamiento | móvil | 91 → 99 | 3,3 s → 1,9 s | 118 ms → 90 ms | 0 | `h1` |
+| /centros-entrenamiento | escritorio | 100 → 100 | 0,6 s → 0,5 s | 0 ms | 0 | `h1` |
+| /que-es-una-carrera-hibrida | móvil | 93 → 78 | 3,2 s → 3,6 s | 31 ms → 413 ms | 0 | `p` |
+| /que-es-una-carrera-hibrida | escritorio | 100 → 100 | 0,5 s → 0,4 s | 0 ms | 0 | `h1` |
+| /carreras-hibridas/andalucia | móvil | 99 → 98 | 1,9 s → 1,6 s | 9 ms → 132 ms | 0 | `p` |
+| /carreras-hibridas/andalucia | escritorio | 100 → 100 | 0,6 s → 0,5 s | 0 ms | 0 | `p` |
+| /blog/calendario-hyrox-espana-2026-2027 | móvil | 91 → 87 | 3,5 s → 2,2 s | 40 ms → 320 ms | 0 | `img` |
+| /blog/calendario-hyrox-espana-2026-2027 | escritorio | 100 → 100 | 0,6 s → 0,5 s | 0 ms | 0,016 | `img` |
+| /productos/zapatillas-hyrox | móvil | 92 → 96 | 3,4 s → 2,1 s | 11 ms → 200 ms | 0 | `p` |
+| /productos/zapatillas-hyrox | escritorio | 100 → 100 | 0,5 s → 0,5 s | 0 ms | 0 | `h1` |
+
+Medido con Lighthouse 12.6.1 en local contra producción (la API de PageSpeed dio 429 por cuota en las dos tandas). Una ejecución por URL: en este equipo la variación entre ejecuciones es de hasta ±1 s en LCP y de cientos de ms en TBT, así que hay que leer tendencias, no décimas. Sin datos de campo (CrUX necesita clave de API).
+
+Lectura:
+- **Escritorio**: 100 en todas, antes y después.
+- **Móvil, mejora clara** en centros (3,3 → 1,9 s), calendario HYROX (3,5 → 2,2 s) y ranking de zapatillas (3,4 → 2,1 s), y Andalucía sigue por debajo de 2 s. La causa era el repintado de la fuente; con `font-display: optional` la primera pintura es la definitiva.
+- **Guía `/que-es-una-carrera-hibrida`**: una medición aislada justo tras el cambio dio 2,05 s (puntuación 99) y la tanda completa, 3,6 s con TBT alto: es ruido de la máquina o el peso extra de la página (más secciones y pie más largo). Hay que confirmarlo con PageSpeed cuando vuelva la cuota.
+- **Home**: sigue en 3,4 s. El LCP es la foto del hero: pesa 10 KB y llega a los 0,25 s, pero se pinta tarde porque `next/image` la decodifica en asíncrono mientras se ejecuta el JS. Arreglarlo del todo pide quitar la foto en móvil o pasarla a fondo CSS: es un cambio de diseño y queda como propuesta.
+- **TBT** sube en móvil (de 10-120 ms a 90-410 ms) con más contenido y un pie con más enlaces. Sigue lejos de los 600 ms que penalizan mucho, pero conviene vigilarlo con datos reales de INP cuando GA4 o CrUX los tengan.
+
 
 ## 9. Estado de la medición
 
@@ -139,6 +162,8 @@ No falta ninguna comunidad con carreras futuras: el País Vasco solo tiene carre
 10. Los anuncios no llevan marcas de terceros en el texto en ninguna campaña, no solo en la B.
 11. Se añadió el evento `center_outbound_click`, necesario para medir la campaña A.
 12. El pie usa listas fijas (regiones y 10 ciudades) para no cargar los 468 centros en el JavaScript de todas las páginas.
+13. Fuentes con `font-display: optional` en lugar de `swap`: el repintado al llegar la fuente era lo que retrasaba el LCP móvil. En una primera visita muy lenta puede verse la fuente de reserva (con métricas ajustadas, sin saltos); en el resto, nada cambia.
+14. La imagen del hero de la home sigue siendo el LCP móvil. Quitarla en móvil o pasarla a fondo CSS bajaría el LCP, pero cambia el diseño o el código de imagen: se deja como propuesta.
 
 ## 13. Tareas para Pablo
 
