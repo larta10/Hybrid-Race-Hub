@@ -83,6 +83,8 @@ export default {
 </ol>
 <p>Y para el material, empieza por las zapatillas: tienes el <a href="/productos/zapatillas-hyrox">ranking de zapatillas para HYROX</a> con lo que mejor funciona sobre moqueta y en el trineo.</p>
 
+<p>Si ya tienes dorsal, quedan dos cosas por resolver: las zapatillas, que comparamos en <a href="/productos/zapatillas-hyrox">mejores zapatillas para HYROX 2026</a>, y la ropa con la que vas a sudar una hora en pabellón (<a href="/productos/ropa">mallas y shorts para competir</a>).</p>
+
 <h2>Preguntas frecuentes</h2>
 <div data-block="faq"></div>
 `,

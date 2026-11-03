@@ -6,7 +6,9 @@ import Image from "next/image";
 import { RANKINGS, RANKINGS_UPDATED, resolveRanking } from "../../lib/rankings";
 import AffiliateLink from "../../components/AffiliateLink";
 import { dateParts } from "../../lib/races-server";
-import ProductImage from "../../components/ProductImage";
+import Related from "../../components/Related";
+import { RANKINGS_SEO, RANKINGS_SEO_UPDATED } from "../../lib/rankings-seo";
+import { SiteFooter } from "../../lib/shared";
 
 import { SITE_URL, ROBOTS_INDEX } from "../../lib/site";
 export async function getStaticPaths() {
@@ -29,14 +31,30 @@ export async function getStaticProps({ params }) {
     const local = [p.id, slugify(p.name), p.product.asin].filter(Boolean).map(n => `${n}.webp`).find(f => fs.existsSync(path.join(dir, f)));
     return { ...p, img: local ? `/products/${local}` : (p.product.imagenLocal || null) };
   });
-  return { props: { ranking: JSON.parse(JSON.stringify({ ...ranking, products })) } };
+  const seo = RANKINGS_SEO[ranking.slug] || {};
+  // La columna "Nota /10" se quita: es una valoración sin método publicado
+  const noteIdx = ranking.table.headers.findIndex(h => /nota/i.test(h));
+  const table = noteIdx < 0 ? ranking.table : {
+    headers: ranking.table.headers.filter((_, i) => i !== noteIdx),
+    rows: ranking.table.rows.map(r => r.filter((_, i) => i !== noteIdx)),
+  };
+  const others = RANKINGS.filter(r => r.slug !== ranking.slug).map(r => ({ href: `/productos/${r.slug}`, label: RANKINGS_SEO[r.slug]?.h1 || r.title }));
+  return { props: { ranking: JSON.parse(JSON.stringify({ ...ranking, products, table, seo })), others } };
 }
 
-export default function ProductoCategoria({ ranking }) {
+export default function ProductoCategoria({ ranking, others = [] }) {
+  const seo = ranking.seo || {};
+  const h1 = seo.h1 || ranking.title;
+  const metaTitle = seo.metaTitle || ranking.metaTitle;
+  const faqSchema = seo.faq?.length ? [{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": seo.faq.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+  }] : [];
   const productSchemas = [{
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": ranking.title,
+    "name": h1,
     "itemListOrder": "https://schema.org/ItemListOrderAscending",
     "numberOfItems": ranking.products.length,
     "itemListElement": ranking.products.map(product => ({
@@ -54,32 +72,33 @@ export default function ProductoCategoria({ ranking }) {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Inicio", "item": `${SITE_URL}/` },
       { "@type": "ListItem", "position": 2, "name": "Productos", "item": `${SITE_URL}/productos` },
-      { "@type": "ListItem", "position": 3, "name": ranking.title, "item": `${SITE_URL}/productos/${ranking.slug}` },
+      { "@type": "ListItem", "position": 3, "name": h1, "item": `${SITE_URL}/productos/${ranking.slug}` },
     ],
   };
 
   return (
     <>
       <Head>
-        <title>{ranking.metaTitle}</title>
+        <title>{metaTitle}</title>
         <meta name="description" content={ranking.metaDesc} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content={ROBOTS_INDEX} />
         <link rel="canonical" href={`${SITE_URL}/productos/${ranking.slug}`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/productos/${ranking.slug}`} />
-        <meta property="og:title" content={ranking.metaTitle} />
+        <meta property="og:title" content={metaTitle} />
         <meta property="og:description" content={ranking.metaDesc} />
         <meta property="og:site_name" content="Hybrid Race Hub" />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={ranking.metaTitle} />
+        <meta name="twitter:title" content={metaTitle} />
         <meta name="twitter:description" content={ranking.metaDesc} />
         <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(productSchemas)}} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbSchema)}} />
+        {faqSchema.length > 0 && <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />}
       </Head>
 
       <style>{`
@@ -128,16 +147,16 @@ export default function ProductoCategoria({ ranking }) {
         <span className="breadcrumb-sep">/</span>
         <Link href="/productos">Productos</Link>
         <span className="breadcrumb-sep">/</span>
-        <span>{ranking.title}</span>
+        <span>{h1}</span>
       </div>
 
       {/* Hero */}
       <div className="page-hero">
         <div className="page-hero-inner">
-          <p className="page-eyebrow">Ranking · {RANKINGS_UPDATED.slice(0, 4)} · {ranking.eyebrow}</p>
-          <h1 className="page-title">{ranking.title}</h1>
+          <p className="page-eyebrow">Ranking · {RANKINGS_SEO_UPDATED.slice(0, 4)} · {ranking.eyebrow}</p>
+          <h1 className="page-title">{h1}</h1>
           <p className="page-sub">{ranking.metaDesc}</p>
-          <p className="ranking-updated">Última revisión: <time dateTime={RANKINGS_UPDATED}>{dateParts(RANKINGS_UPDATED).long}</time></p>
+          <p className="ranking-updated">Actualizado: <time dateTime={RANKINGS_SEO_UPDATED}>{dateParts(RANKINGS_SEO_UPDATED).long}</time> · enlaces de Amazon revisados el {dateParts(RANKINGS_UPDATED).long}</p>
           <span className="affiliate-notice">
             Como afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables.
           </span>
@@ -161,8 +180,20 @@ export default function ProductoCategoria({ ranking }) {
         </section>
 
         <div className="ranking-intro">
+          {(seo.intro || []).map((p, i) => <p key={`s${i}`}>{p}</p>)}
           {ranking.intro.map((p, i) => <p key={i}>{p}</p>)}
         </div>
+
+        {seo.criteria?.length > 0 && (
+          <section className="ranking-criteria" aria-labelledby="criterios">
+            <h2 id="criterios">Cómo las hemos elegido</h2>
+            <ul>
+              {seo.criteria.map(([t, d]) => <li key={t}><strong>{t}.</strong> {d}</li>)}
+            </ul>
+          </section>
+        )}
+
+        <h2 className="ranking-h2" id="comparativa">Comparativa rápida</h2>
 
         {/* Tabla */}
         <div className="comp-table-wrap">
@@ -186,6 +217,7 @@ export default function ProductoCategoria({ ranking }) {
               <div className="product-main">
                 {product.brand && <p className="product-brand">{product.brand}</p>}
                 <h2 className="product-name">{product.name}</h2>
+                {seo.forWho?.[product.id] && <p className="product-for"><strong>Para quién:</strong> {seo.forWho[product.id]}</p>}
                 <p className="product-desc">{product.desc}</p>
                 <div className="product-pcs">
                   <div className="product-pc pros">
@@ -202,17 +234,8 @@ export default function ProductoCategoria({ ranking }) {
                   </div>
                 </div>
               </div>
-              <div className="product-side">
-                <div className={`product-img-wrap${product.img ? "" : " product-img-wrap--ph"}`}>
-                  <ProductImage
-                    src={product.img || null}
-                    name={product.name}
-                    category={ranking.slug}
-                    width={220}
-                    height={220}
-                    className="product-img"
-                  />
-                </div>
+              {/* Sin fotos de Amazon (no se pueden descargar ni enlazar fuera de su API): tarjeta limpia con el botón */}
+              <div className="product-side product-side--noimg">
                 <AffiliateLink product={product.product} position={product.rank} className="product-cta">
                   Ver precio en Amazon
                 </AffiliateLink>
@@ -227,8 +250,29 @@ export default function ProductoCategoria({ ranking }) {
           <p>{ranking.conclusion}</p>
         </div>
 
+        {seo.faq?.length > 0 && (
+          <section className="ranking-faq" aria-labelledby="faq">
+            <h2 id="faq">Preguntas frecuentes</h2>
+            <div className="faq-plain">
+              {seo.faq.map((f, i) => (
+                <details key={i} className="faq-d" open={i === 0}>
+                  <summary>{f.q}</summary>
+                  <p>{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Enlazado interno */}
         <GuideCallout context="ranking" />
+        <Related title="Otros rankings" links={others} />
+        <Related title="Para preparar la carrera" links={[
+          { href: "/blog/material-hyrox-carreras-obstaculos", label: "Material para HYROX y OCR, por prioridad" },
+          { href: "/blog/carreras-hibridas-principiantes-primera-prueba", label: "Cómo elegir tu primera carrera híbrida" },
+          { href: "/calendario", label: "Calendario de carreras híbridas" },
+          { href: "/centros-entrenamiento", label: "Dónde entrenar: centros por ciudad" },
+        ]} />
 
         <div className="ranking-bottom" style={{ marginTop: "1.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
           <Link href="/calendario" className="btn-line ranking-more">
@@ -243,9 +287,10 @@ export default function ProductoCategoria({ ranking }) {
         </div>
 
         <p className="legal-text">
-          Como afiliado de Amazon, Hybrid Race Hub obtiene ingresos por las compras adscritas que cumplen los requisitos aplicables. Los precios indicados son orientativos y pueden variar.
+          Como afiliado de Amazon, Hybrid Race Hub obtiene ingresos por las compras adscritas que cumplen los requisitos aplicables. No mostramos precios: el precio actual está en Amazon.
         </p>
       </div>
+      <SiteFooter />
     </>
   );
 }

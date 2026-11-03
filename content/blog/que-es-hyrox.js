@@ -116,6 +116,8 @@ export default {
 </ul>
 <p>Y entre estación y estación, la Roxzone: entra y sal sin pararte a mirar el reloj. Muchos atletas populares pierden ahí varios minutos sin darse cuenta.</p>
 
+<p>Para el material, lo que más se nota en HYROX es la zapatilla: tiene que agarrar en la moqueta del trineo y aguantar 8 km. Las comparamos en <a href="/productos/zapatillas-hyrox">mejores zapatillas para HYROX</a>. Y si quieres saber cómo vas de pulso en las estaciones, donde el sensor de muñeca falla, mira las <a href="/productos/pulsometros">bandas de pecho que recomendamos</a>.</p>
+
 <h2>HYROX frente a otras carreras híbridas</h2>
 <p>HYROX es la más estandarizada: siempre igual, siempre en interior. DEKA (de Spartan) tiene un formato parecido con 10 zonas y un total de 5 km de carrera, y las carreras de obstáculos como Spartan o Desafío de Guerreros se corren al aire libre, con barro y obstáculos que cambian en cada sede. Si quieres comparar a fondo, mira <a href="/blog/hyrox-vs-ocr-diferencias">HYROX frente a OCR</a>.</p>
 

@@ -8,7 +8,7 @@ export default {
   h1: "HYROX vs carrera híbrida: ¿es lo mismo? Diferencias con DEKA, Spartan y OCR",
   category: "Guías",
   date: "2026-10-27",
-  updated: "2026-10-27",
+  updated: "2026-11-03",
   cover: "https://images.unsplash.com/photo-1741562238447-d7c44397f7e0?w=1200&q=80",
   imageAlt: "Corredores con camiseta negra recorriendo el pasillo de un pabellón durante una competición híbrida",
   excerpt: "HYROX es una carrera híbrida, pero no todas las carreras híbridas son HYROX. Te explicamos qué tienen en común y en qué se diferencian HYROX, DEKA, Hyatlón, HURBAX, Hybrid Day, Spartan y el resto de carreras de obstáculos.",
@@ -91,6 +91,8 @@ export default {
 
 <h2>Dónde encontrar fechas</h2>
 <p>Todas las pruebas que conocemos, con fecha, precio cuando lo publica el organizador y enlace a la inscripción oficial, están en el <a href="/calendario">calendario de carreras híbridas</a>. Si buscas algo cerca, entra por zona: <a href="/carreras-hibridas/madrid">Madrid</a>, <a href="/carreras-hibridas/cataluna">Cataluña</a>, <a href="/carreras-hibridas/andalucia">Andalucía</a>, <a href="/carreras-hibridas/comunidad-valenciana">Comunidad Valenciana</a> o <a href="/carreras-hibridas/galicia">Galicia</a>. Y para el material, empieza por el <a href="/productos/zapatillas-hyrox">ranking de zapatillas para HYROX</a> o el de <a href="/productos/zapatillas-trail">zapatillas de trail para OCR</a>.</p>
+
+<p>El material también cambia según el formato. Para HYROX, DEKA o Hyatlón, una zapatilla estable que agarre en moqueta (<a href="/productos/zapatillas-hyrox">comparativa de zapatillas híbridas</a>); para Spartan y OCR, una de trail con taco (<a href="/productos/zapatillas-trail">zapatillas para barro y obstáculos</a>); y para medir el esfuerzo en cualquiera de ellas, un <a href="/productos/relojes">reloj GPS con métricas de carga</a>.</p>
 
 <h2>Preguntas frecuentes</h2>
 <div data-block="faq"></div>

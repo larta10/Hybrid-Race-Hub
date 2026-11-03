@@ -2046,3 +2046,10 @@ input, select, textarea { font-size: 16px; }
 .org-select { width: 100%; min-height: 48px; font-size: 16px; padding: 0 12px; border: 1px solid var(--border2); border-radius: var(--radius); background: var(--surface); color: var(--text); }
 .org-code { white-space: pre-wrap; word-break: break-all; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--s2); font-size: 14px; margin: var(--s2) 0; }
 .org-copy { min-height: 48px; padding: 0 18px; cursor: pointer; font-size: 16px; }
+/* Rankings sin foto: el botón va arriba a la derecha en escritorio y debajo en móvil */
+.product-side--noimg { justify-content: flex-start; padding-top: 4px; }
+.product-for { font-size: 16px; margin: 4px 0 8px; color: var(--text); }
+.ranking-criteria, .ranking-faq { margin: var(--s5) 0; max-width: 70ch; }
+.ranking-criteria h2, .ranking-faq h2, .ranking-h2 { font-family: var(--font-display); font-size: 24px; font-weight: 800; margin-bottom: var(--s2); }
+.ranking-criteria ul { padding-left: 1.1em; }
+.ranking-criteria li { margin: .4em 0; font-size: 17px; line-height: 1.5; }

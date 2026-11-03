@@ -7,7 +7,7 @@ export default {
   h1: "Carreras híbridas para principiantes: cómo elegir tu primera prueba en España",
   category: "Carreras",
   date: "2026-10-15",
-  updated: "2026-10-15",
+  updated: "2026-11-03",
   excerpt: "Si es tu primera carrera híbrida, elige entre una OCR corta de 5 o 6 km, una HYROX en parejas o un DEKA. Te explicamos qué pide cada formato, cuál encaja con tu perfil y cómo encontrar fecha cerca de casa.",
   description: "Cómo elegir tu primera carrera híbrida en España: OCR corta, HYROX en parejas, DEKA o Spartan Sprint. Qué pide cada una, tabla comparativa por perfil y errores típicos de principiante.",
   faq: [
@@ -97,6 +97,9 @@ export default {
 
 <h2>Qué esperar en tu primera carrera de obstáculos</h2>
 <p>En una OCR popular el ambiente es más de fiesta. Sales en oleadas, normalmente cada pocos minutos, y el recorrido mezcla tramos de carrera con muros, arrastres, cuerdas, barro y agua. En las categorías populares nadie te va a reñir por andar en las cuestas o por ayudar a otro participante en un muro; en las élite y las clasificatorias las normas sobre obstáculos fallados son más estrictas. Lo que más sorprende la primera vez es lo que cuesta correr con la ropa y las zapatillas empapadas: por eso se insiste tanto en que no lleves algodón. Al llegar a meta suele haber duchas o mangueras para quitarte el barro, pero lleva ropa de recambio completa y una bolsa para la mojada.</p>
+
+<h2>Qué material necesitas para la primera</h2>
+<p>Menos del que parece. Lo único que conviene resolver antes son las zapatillas: para una prueba en pabellón, unas que agarren en el trineo y aguanten los kilómetros (las tienes comparadas en el <a href="/productos/zapatillas-hyrox">ranking de zapatillas para HYROX</a>); para una OCR, unas de trail con taco que no patinen en barro (<a href="/productos/zapatillas-trail">las que elegiríamos para carreras de obstáculos</a>). Un reloj ayuda a no salir demasiado rápido, pero no hace falta el más caro: en el <a href="/productos/relojes">comparativo de relojes GPS</a> está ordenado de más completo a más barato. El resto, con lo que ya usas en el gimnasio.</p>
 
 <h2>Checklist del día de la carrera</h2>
 <ul>

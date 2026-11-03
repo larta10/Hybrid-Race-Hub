@@ -27,7 +27,7 @@ const STATIC_LASTMOD = {
   "/como-verificamos-las-carreras": "2026-11-03",
   "/organizadores": "2026-11-03",
 };
-const RANKINGS_LASTMOD = "2026-10-27";
+const RANKINGS_LASTMOD = "2026-11-03";
 // Fecha del último cambio de las plantillas de home, calendario y regiones
 const TEMPLATE_LASTMOD = "2026-11-03";
 

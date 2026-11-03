@@ -7,7 +7,7 @@ export default {
   h1: "Material para HYROX y carreras de obstáculos: lo que de verdad necesitas",
   category: "Material",
   date: "2026-10-15",
-  updated: "2026-10-15",
+  updated: "2026-11-03",
   excerpt: "Para tu primera HYROX te bastan unas zapatillas estables que sirvan para correr. Para una OCR, zapatillas con tacos y ropa que no absorba agua. Aquí separamos lo imprescindible de lo que puede esperar, con pros y contras de cada producto.",
   description: "Qué material necesitas para HYROX y carreras de obstáculos (OCR): zapatillas, guantes, reloj, ropa y material para entrenar en casa, ordenado por necesidad y con pros y contras honestos.",
   faq: [
@@ -164,6 +164,8 @@ export default {
 
 <h2>Antes de comprar, elige la carrera</h2>
 <p>El material depende de la prueba. Si todavía no sabes cuál hacer, lee cómo <a href="/blog/carreras-hibridas-principiantes-primera-prueba">elegir tu primera carrera híbrida</a> y busca fecha en el <a href="/calendario">calendario de carreras híbridas</a>.</p>
+
+<p>Si entrenas sobre todo en box y compites poco, tiene más sentido empezar por unas <a href="/productos/zapatillas-crossfit">zapatillas de entrenamiento funcional</a> que por unas de competición. Y para la ropa, en la <a href="/productos/ropa">selección de mallas y shorts</a> está lo que no roza ni pesa mojado.</p>
 
 <h2>Preguntas frecuentes</h2>
 <div data-block="faq"></div>
