@@ -131,6 +131,10 @@ export default function Ficha({ race, past, noindex, schema, organizer, mod, reg
   const desc = fitDesc([
     `${h1}: ${when}${race.municipio ? ` en ${race.municipio}` : ""}. ${modalityLabel(race)}${race.formato ? `, ${race.formato.toLowerCase()}` : ""}${price ? `, ${price.toLowerCase()}` : ""}. Inscripción oficial, cómo prepararla y dónde entrenar.`,
     `${h1}: ${when}${race.municipio ? ` en ${race.municipio}` : ""}. Fecha, sede, precio, estado de la inscripción y enlace oficial, y dónde entrenar cerca.`,
+    `${h1}, ${when}${race.municipio ? ` en ${race.municipio}` : ""}: sede, formato, precio, estado de la inscripción, enlace oficial, cómo prepararla y dónde entrenar cerca.`,
+    `${h1}, ${when}: sede, formato, precio, estado de la inscripción, enlace a la web oficial, cómo prepararla y centros donde entrenar cerca.`,
+    `${h1}, ${when}: sede, precio, estado de la inscripción, enlace oficial, cómo prepararla y dónde entrenar cerca.`,
+    `${h1}, ${when}: sede, precio, inscripción oficial, cómo prepararla y dónde entrenar cerca.`,
     `${h1}: ${when}. Fecha, sede, precio, inscripción oficial y dónde entrenar.`,
   ]);
   const ld = [breadcrumbLd(crumbs, url), ...(schema ? [{ "@context": "https://schema.org", ...schema }] : [])];
@@ -139,7 +143,7 @@ export default function Ficha({ race, past, noindex, schema, organizer, mod, reg
   return (
     <PageShell activePath="/calendario">
       <Head>
-        <title>{pageTitle(`${h1}: fecha e inscripción`)}</title>
+        <title>{pageTitle([`${h1}: fecha e inscripción`, `${h1}: inscripción`, h1].find(t => t.length <= 60) || h1)}</title>
         <meta name="description" content={desc} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content={noindex ? ROBOTS_NOINDEX : ROBOTS_INDEX} />

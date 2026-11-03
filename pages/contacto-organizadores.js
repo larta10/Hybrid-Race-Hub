@@ -249,6 +249,11 @@ export default function ContactOrganizers() {
           <p className="contact-sub">
             ¿Organizas eventos de <strong>OCR/HYROX</strong> o gestionas un <strong>centro de entrenamiento funcional</strong>? Contacta con nosotros para aparecer destacado en la plataforma y llegar a miles de atletas interesados.
           </p>
+          <p className="contact-sub">
+            Publicamos gratis carreras híbridas, HYROX-like, DEKA, ligas de box y carreras de obstáculos que se celebren en España, y centros con
+            material para prepararlas. Cuéntanos nombre, fecha, sede y enlace de inscripción: la comprobamos en tu web y te mandamos el enlace de su ficha.
+            En la <a href="/organizadores">página de organizadores</a> tienes cómo funciona y el sello «Carrera verificada» para tu web.
+          </p>
           <p className="contact-email">
             <a href="mailto:hola@hybridracehub.com">hola@hybridracehub.com</a>
           </p>

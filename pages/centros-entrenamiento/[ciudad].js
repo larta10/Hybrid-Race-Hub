@@ -198,6 +198,13 @@ export default function CentrosCiudad(props) {
             Si vas a una carrera de obstáculos, pregunta también por rig con cuerda y barras para trabajar el agarre.
           </p>
 
+          <h2 id="elegir">Qué mirar al elegir box para HYROX u OCR</h2>
+          <p>
+            Para HYROX, que haya trineo con pista de al menos 12 metros, SkiErg, remo y balones de wall ball, y que te dejen usarlos fuera de clase.
+            Para una carrera de obstáculos importa más el rig: barras, anillas y cuerda para trabajar el agarre, y espacio para burpees y arrastres.
+            Pregunta también si hacen sesiones específicas de carrera híbrida o grupos que entrenan juntos para una prueba concreta.
+          </p>
+
           <h2 id="centros">Gimnasios y boxes en {city.fullName}</h2>
           <ul className="center-list">
             {centers.map((c, i) => (

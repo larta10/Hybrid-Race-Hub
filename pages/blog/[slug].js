@@ -9,7 +9,10 @@ import { prepareArticle } from "../../lib/article-server";
 import { fechaLarga } from "../../lib/dates";
 import { SITE_URL, SITE_NAME, pageTitle, ROBOTS_INDEX } from "../../lib/site";
 import { PODCASTS } from "../../data/podcasts";
-import { fetchUpcomingRaces } from "../../lib/races-server";
+import { fetchUpcomingRaces, todayISO } from "../../lib/races-server";
+import Related from "../../components/Related";
+import { relatedForPost } from "../../lib/related";
+import { HYBRID_CITIES, raceMatchesCity } from "../../lib/hybrid-cities";
 
 export async function getStaticPaths() {
   return { paths: getAllSlugs(), fallback: false };
@@ -20,15 +23,20 @@ export async function getStaticProps({ params }) {
   if (!data) return { notFound: true };
   // Artículos con bloque de próximas carreras (Supabase): se regeneran cada hora
   const f = data.post.racesFilter;
+  const upcoming = await fetchUpcomingRaces();
+  // Relacionado: 2 regiones con carreras + 1 ranking + calendario del mes (lib/related.js)
+  const regions = HYBRID_CITIES.map(c => ({ slug: c.slug, en: c.en || `en ${c.name}`, count: upcoming.filter(r => raceMatchesCity(r, c)).length }))
+    .sort((a, b) => b.count - a.count);
+  const relatedLinks = relatedForPost(data.post, regions, todayISO());
   if (f) {
     const re = new RegExp(f.name, "i");
-    const races = (await fetchUpcomingRaces()).filter(r => r.modalidad_id === f.modalidadId || re.test(r.nombre || ""));
-    return { props: { ...data, races }, revalidate: 3600 };
+    const races = upcoming.filter(r => r.modalidad_id === f.modalidadId || re.test(r.nombre || ""));
+    return { props: { ...data, races, relatedLinks }, revalidate: 3600 };
   }
-  return { props: { ...data, races: null } };
+  return { props: { ...data, races: null, relatedLinks }, revalidate: 86400 };
 }
 
-export default function BlogPost({ post, toc, related, races }) {
+export default function BlogPost({ post, toc, related, races, relatedLinks = [] }) {
   const url = `${SITE_URL}/blog/${post.slug}`;
   const crumbs = [
     { name: "Inicio", href: "/" },
@@ -146,6 +154,7 @@ export default function BlogPost({ post, toc, related, races }) {
             <ShareButtons url={url} title={post.h1} />
             <ArticleCta category={post.category} />
             <ArticleNextSteps category={post.category} />
+            <Related links={relatedLinks} />
             <AuthorBox />
           </div>
           <aside className="art-side">

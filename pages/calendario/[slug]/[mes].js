@@ -109,6 +109,17 @@ export default function Mes({ year, mes, key, races, regions, mods, past, months
             </p>
           )}
           {n > 0 && <RaceList races={races} />}
+          {n > 0 && (
+            <>
+              <h2 id="elegir">Cómo elegir entre las carreras de {mes}</h2>
+              <p>
+                Si es tu primera, mira primero el formato: una OCR corta o un DEKA FIT duran menos de una hora y se pueden hacer con dos o tres meses
+                de preparación; una HYROX individual o una Spartan Super piden más. Antes de pagar, comprueba en la ficha el estado de la inscripción y
+                la fecha de la última verificación, y confirma en la web oficial el horario de tu categoría, porque las pruebas de varios días reparten
+                a cada grupo en una jornada distinta. Si viajas, las fichas enlazan también a los centros de la ciudad para hacer una última sesión.
+              </p>
+            </>
+          )}
 
           {regions.length > 0 && (
             <>
