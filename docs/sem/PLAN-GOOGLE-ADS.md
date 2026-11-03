@@ -1,3 +1,5 @@
+> **Sustituido por `PLAN-SEM-NOV-2026.md` (3/11/2026).** Se conserva como histórico.
+
 # Plan de Google Ads — Hybrid Race Hub (octubre 2026)
 
 Presupuesto: **150-200 €/mes**, solo **España**, idioma **español**, solo red de **Búsqueda** (sin Display ni Partners de búsqueda).

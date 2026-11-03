@@ -7,7 +7,7 @@ import { fetchUpcomingRaces, todayISO, dateParts } from "../../lib/races-server"
 import { upcomingVerifiedEvents } from "../../lib/verified-events";
 import { HYBRID_CITIES } from "../../lib/hybrid-cities";
 import { CENTER_CITIES, CENTER_CITY_BY_SLUG } from "../../lib/center-cities";
-import { trackRegionView } from "../../lib/track";
+import { trackRegionView, trackCenterOutbound } from "../../lib/track";
 
 // Frases propias de las ciudades con más búsquedas. El resto de la intro sale de los datos.
 const CITY_NOTES = {
@@ -211,8 +211,8 @@ export default function CentrosCiudad(props) {
               <li key={i}>
                 <span className="center-name">{c.nombre}</span>
                 <span className="center-meta">{[c.tipo, c.direccion && c.direccion.replace(/<[^>]+>/g, " "), c.cp].filter(Boolean).join(" · ")}</span>
-                {c.web && <a href={c.web.startsWith("http") ? c.web : `https://${c.web}`} target="_blank" rel="nofollow noopener noreferrer">Web</a>}
-                {c.telefono && <a href={`tel:${c.telefono.replace(/[\s-]/g, "")}`}>Llamar</a>}
+                {c.web && <a href={c.web.startsWith("http") ? c.web : `https://${c.web}`} target="_blank" rel="nofollow noopener noreferrer" onClick={() => trackCenterOutbound({ center: c.nombre, city: city.slug, link_type: "web" })}>Web</a>}
+                {c.telefono && <a href={`tel:${c.telefono.replace(/[\s-]/g, "")}`} onClick={() => trackCenterOutbound({ center: c.nombre, city: city.slug, link_type: "telefono" })}>Llamar</a>}
               </li>
             ))}
           </ul>

@@ -1,6 +1,6 @@
 {
   "exportFormatVersion": 2,
-  "exportTime": "2026-10-27 21:00:00",
+  "exportTime": "2026-11-03 12:00:00",
   "containerVersion": {
     "path": "accounts/0/containers/0/versions/0",
     "accountId": "0",
@@ -20,7 +20,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "10",
+        "tagId": "14",
         "name": "Etiqueta de Google - GA4",
         "type": "googtag",
         "parameter": [
@@ -50,7 +50,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "12",
+        "tagId": "16",
         "name": "GA4 - affiliate_click",
         "type": "gaawe",
         "parameter": [
@@ -122,7 +122,7 @@
           }
         ],
         "firingTriggerId": [
-          "11"
+          "15"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -141,7 +141,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "14",
+        "tagId": "18",
         "name": "GA4 - race_outbound_click",
         "type": "gaawe",
         "parameter": [
@@ -198,7 +198,7 @@
           }
         ],
         "firingTriggerId": [
-          "13"
+          "17"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -217,7 +217,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "16",
+        "tagId": "20",
         "name": "GA4 - contact_form_submit",
         "type": "gaawe",
         "parameter": [
@@ -259,7 +259,7 @@
           }
         ],
         "firingTriggerId": [
-          "15"
+          "19"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -278,7 +278,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "18",
+        "tagId": "22",
         "name": "GA4 - search_used",
         "type": "gaawe",
         "parameter": [
@@ -335,7 +335,7 @@
           }
         ],
         "firingTriggerId": [
-          "17"
+          "21"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -354,7 +354,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "tagId": "20",
+        "tagId": "24",
         "name": "GA4 - region_view",
         "type": "gaawe",
         "parameter": [
@@ -396,7 +396,7 @@
           }
         ],
         "firingTriggerId": [
-          "19"
+          "23"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -411,13 +411,260 @@
             ]
           }
         }
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "26",
+        "name": "GA4 - center_outbound_click",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "sendEcommerceData",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "center_outbound_click"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementIdOverride",
+            "value": "{{GA4 Measurement ID}}"
+          },
+          {
+            "type": "LIST",
+            "key": "eventSettingsTable",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "center"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{DLV - center}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "city"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{DLV - city}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "link_type"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{DLV - link_type}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": [
+          "25"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "consentSettings": {
+          "consentStatus": "NEEDED",
+          "consentType": {
+            "type": "LIST",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "value": "analytics_storage"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "27",
+        "name": "Meta Pixel - base (PageView)",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\n!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};\nif(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;\nt.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');\nfbq('init','{{Meta Pixel ID}}');fbq('track','PageView');\n</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "firingTriggerId": [
+          "2147479553"
+        ],
+        "tagFiringOption": "ONCE_PER_LOAD",
+        "consentSettings": {
+          "consentStatus": "NEEDED",
+          "consentType": {
+            "type": "LIST",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "value": "ad_storage"
+              },
+              {
+                "type": "TEMPLATE",
+                "value": "ad_user_data"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "28",
+        "name": "Meta Pixel - contact_form_submit",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>if(window.fbq){fbq('track','Lead',{content_name:'{{DLV - form}}'});}</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "firingTriggerId": [
+          "19"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "consentSettings": {
+          "consentStatus": "NEEDED",
+          "consentType": {
+            "type": "LIST",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "value": "ad_storage"
+              },
+              {
+                "type": "TEMPLATE",
+                "value": "ad_user_data"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "29",
+        "name": "Meta Pixel - race_outbound_click",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>if(window.fbq){fbq('trackCustom','RaceOutboundClick',{race_name:'{{DLV - race_name}}',region:'{{DLV - region}}'});}</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "firingTriggerId": [
+          "17"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "consentSettings": {
+          "consentStatus": "NEEDED",
+          "consentType": {
+            "type": "LIST",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "value": "ad_storage"
+              },
+              {
+                "type": "TEMPLATE",
+                "value": "ad_user_data"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "30",
+        "name": "Meta Pixel - affiliate_click",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>if(window.fbq){fbq('trackCustom','AffiliateClick',{product:'{{DLV - product}}',ranking:'{{DLV - ranking}}'});}</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "firingTriggerId": [
+          "15"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "consentSettings": {
+          "consentStatus": "NEEDED",
+          "consentType": {
+            "type": "LIST",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "value": "ad_storage"
+              },
+              {
+                "type": "TEMPLATE",
+                "value": "ad_user_data"
+              }
+            ]
+          }
+        }
       }
     ],
     "trigger": [
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "11",
+        "triggerId": "15",
         "name": "CE - affiliate_click",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -441,7 +688,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "13",
+        "triggerId": "17",
         "name": "CE - race_outbound_click",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -465,7 +712,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "15",
+        "triggerId": "19",
         "name": "CE - contact_form_submit",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -489,7 +736,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "17",
+        "triggerId": "21",
         "name": "CE - search_used",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -513,7 +760,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "triggerId": "19",
+        "triggerId": "23",
         "name": "CE - region_view",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -529,6 +776,30 @@
                 "type": "TEMPLATE",
                 "key": "arg1",
                 "value": "region_view"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "25",
+        "name": "CE - center_outbound_click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "center_outbound_click"
               }
             ]
           }
@@ -554,6 +825,20 @@
         "accountId": "0",
         "containerId": "0",
         "variableId": "2",
+        "name": "Meta Pixel ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "PIXEL_ID_AQUI"
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "3",
         "name": "DLV - product",
         "type": "v",
         "parameter": [
@@ -577,7 +862,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "variableId": "3",
+        "variableId": "4",
         "name": "DLV - ranking",
         "type": "v",
         "parameter": [
@@ -601,7 +886,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "variableId": "4",
+        "variableId": "5",
         "name": "DLV - position",
         "type": "v",
         "parameter": [
@@ -625,7 +910,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "variableId": "5",
+        "variableId": "6",
         "name": "DLV - race_name",
         "type": "v",
         "parameter": [
@@ -649,7 +934,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "variableId": "6",
+        "variableId": "7",
         "name": "DLV - region",
         "type": "v",
         "parameter": [
@@ -673,7 +958,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "variableId": "7",
+        "variableId": "8",
         "name": "DLV - term",
         "type": "v",
         "parameter": [
@@ -697,7 +982,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "variableId": "8",
+        "variableId": "9",
         "name": "DLV - search_location",
         "type": "v",
         "parameter": [
@@ -721,7 +1006,7 @@
       {
         "accountId": "0",
         "containerId": "0",
-        "variableId": "9",
+        "variableId": "10",
         "name": "DLV - form",
         "type": "v",
         "parameter": [
@@ -739,6 +1024,78 @@
             "type": "TEMPLATE",
             "key": "name",
             "value": "form"
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "11",
+        "name": "DLV - center",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "center"
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "12",
+        "name": "DLV - city",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "city"
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "13",
+        "name": "DLV - link_type",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "link_type"
           }
         ]
       }

@@ -1,3 +1,5 @@
+> **Sustituido por `PLAN-SEM-NOV-2026.md` (3/11/2026).** Se conserva como histórico.
+
 # Plan de Meta Ads (Instagram y Facebook) — Hybrid Race Hub (octubre 2026)
 
 ## Cuándo NO invertir

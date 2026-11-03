@@ -3,9 +3,11 @@
 //   node scripts/gtm-build-container.mjs [G-XXXXXXXXXX]
 import { writeFileSync } from "node:fs";
 
-// A 27/10/2026 el contenedor publicado GTM-5D5D2CH9 no contiene ninguna etiqueta ni ID "G-",
-// así que se incluye la etiqueta de Google y el ID queda como marcador para sustituir en GTM.
+// A 27/10/2026 y otra vez el 03/11/2026 el contenedor publicado GTM-5D5D2CH9 no contiene ninguna etiqueta
+// ni ID "G-", así que se incluye la etiqueta de Google y el ID queda como marcador para sustituir en GTM.
+// También va la plantilla del píxel de Meta, que solo se dispara con consentimiento de publicidad (ad_storage).
 const MEASUREMENT_ID = process.argv[2] || "G-XXXXXXXXXX";
+const META_PIXEL_ID = process.argv[3] || "PIXEL_ID_AQUI";
 const INCLUDE_GOOGLE_TAG = true;
 const ALL_PAGES = "2147479553"; // activador integrado "All Pages"
 
@@ -19,7 +21,8 @@ const tags = [];
 let n = 1;
 
 variables.push({ ...base, variableId: String(n++), name: "GA4 Measurement ID", type: "c", parameter: [T("value", MEASUREMENT_ID)] });
-const DLV = ["product", "ranking", "position", "race_name", "region", "term", "search_location", "form"];
+variables.push({ ...base, variableId: String(n++), name: "Meta Pixel ID", type: "c", parameter: [T("value", META_PIXEL_ID)] });
+const DLV = ["product", "ranking", "position", "race_name", "region", "term", "search_location", "form", "center", "city", "link_type"];
 for (const k of DLV) {
   variables.push({ ...base, variableId: String(n++), name: `DLV - ${k}`, type: "v", parameter: [
     { type: "INTEGER", key: "dataLayerVersion", value: "2" },
@@ -34,6 +37,7 @@ const EVENTS = {
   contact_form_submit: ["form"],
   search_used: ["term", "search_location"],
   region_view: ["region"],
+  center_outbound_click: ["center", "city", "link_type"],
 };
 const consent = { consentStatus: "NEEDED", consentType: { type: "LIST", list: [{ type: "TEMPLATE", value: "analytics_storage" }] } };
 
@@ -56,9 +60,32 @@ for (const [ev, params] of Object.entries(EVENTS)) {
     firingTriggerId: [triggerId], tagFiringOption: "ONCE_PER_EVENT", consentSettings: consent });
 }
 
+// ── Píxel de Meta: plantilla en HTML personalizado. Exige ad_storage (el banner lo concede con "Publicidad").
+const adConsent = { consentStatus: "NEEDED", consentType: { type: "LIST", list: [{ type: "TEMPLATE", value: "ad_storage" }, { type: "TEMPLATE", value: "ad_user_data" }] } };
+const html = (code) => [T("html", code), { type: "BOOLEAN", key: "supportDocumentWrite", value: "false" }];
+const PIXEL_BASE = `<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','{{Meta Pixel ID}}');fbq('track','PageView');
+</script>`;
+tags.push({ ...base, tagId: String(n++), name: "Meta Pixel - base (PageView)", type: "html", parameter: html(PIXEL_BASE),
+  firingTriggerId: [ALL_PAGES], tagFiringOption: "ONCE_PER_LOAD", consentSettings: adConsent });
+// Eventos de Meta reutilizando los activadores de GA4
+const META_EVENTS = {
+  contact_form_submit: "fbq('track','Lead',{content_name:'{{DLV - form}}'});",
+  race_outbound_click: "fbq('trackCustom','RaceOutboundClick',{race_name:'{{DLV - race_name}}',region:'{{DLV - region}}'});",
+  affiliate_click: "fbq('trackCustom','AffiliateClick',{product:'{{DLV - product}}',ranking:'{{DLV - ranking}}'});",
+};
+for (const [ev, code] of Object.entries(META_EVENTS)) {
+  const trig = triggers.find(t => t.name === `CE - ${ev}`);
+  tags.push({ ...base, tagId: String(n++), name: `Meta Pixel - ${ev}`, type: "html", parameter: html(`<script>if(window.fbq){${code}}</script>`),
+    firingTriggerId: [trig.triggerId], tagFiringOption: "ONCE_PER_EVENT", consentSettings: adConsent });
+}
+
 const container = {
   exportFormatVersion: 2,
-  exportTime: "2026-10-27 21:00:00",
+  exportTime: "2026-11-03 12:00:00",
   containerVersion: {
     path: "accounts/0/containers/0/versions/0", ...base, containerVersionId: "0",
     container: { path: "accounts/0/containers/0", ...base, name: "hybridracehub.com", publicId: "GTM-5D5D2CH9", usageContext: ["WEB"] },
@@ -82,4 +109,4 @@ const json = JSON.stringify(container, null, 2);
 JSON.parse(json);
 if (errs.length) { console.error(errs.join("\n")); process.exit(1); }
 writeFileSync("docs/sem/gtm-container-import.json", json + "\n");
-console.log(`OK: ${tags.length} etiquetas, ${triggers.length} activadores, ${variables.length} variables. ID de medición: ${MEASUREMENT_ID}`);
+console.log(`OK: ${tags.length} etiquetas, ${triggers.length} activadores, ${variables.length} variables. ID de medición: ${MEASUREMENT_ID} · píxel de Meta: ${META_PIXEL_ID}`);
