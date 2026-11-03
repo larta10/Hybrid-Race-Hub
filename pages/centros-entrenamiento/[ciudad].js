@@ -4,7 +4,6 @@ import PageShell, { Breadcrumbs } from "../../components/PageShell";
 import { SITE_URL, SITE_NAME, fitDesc, breadcrumbLd, ROBOTS_INDEX } from "../../lib/site";
 import { fechaLarga } from "../../lib/dates";
 import { fetchUpcomingRaces, todayISO, dateParts } from "../../lib/races-server";
-import { upcomingVerifiedEvents } from "../../lib/verified-events";
 import { HYBRID_CITIES } from "../../lib/hybrid-cities";
 import { CENTER_CITIES, CENTER_CITY_BY_SLUG } from "../../lib/center-cities";
 import { trackRegionView, trackCenterOutbound } from "../../lib/track";
@@ -55,8 +54,7 @@ export async function getStaticProps({ params }) {
   const city = CENTER_CITY_BY_SLUG[params.ciudad];
   if (!city) return { notFound: true };
   const today = todayISO();
-  const fromDb = await fetchUpcomingRaces();
-  const all = [...fromDb, ...upcomingVerifiedEvents(today, fromDb)].sort((a, b) => a.fecha_iso.localeCompare(b.fecha_iso));
+  const all = await fetchUpcomingRaces();
   const inProvince = city.province ? all.filter(r => r.provincia === city.province) : [];
   const inCcaa = city.ccaa ? all.filter(r => !inProvince.includes(r) && city.ccaa.includes(r.comunidad || "—")) : [];
   // Página de carreras de la zona: primero la ciudad, si no la comunidad

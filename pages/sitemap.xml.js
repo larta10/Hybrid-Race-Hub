@@ -8,7 +8,6 @@ import { monthsWithCounts, MIN_MONTH_RACES } from "../lib/calendar-months";
 import { hubModalities } from "../lib/modalities";
 import { HYBRID_CITIES, raceMatchesCity } from "../lib/hybrid-cities";
 import { CENTER_CITIES } from "../lib/center-cities";
-import { upcomingVerifiedEvents } from "../lib/verified-events";
 import { todayISO } from "../lib/races-server";
 const BASE = `${SITE_URL}`;
 
@@ -66,8 +65,7 @@ export async function getServerSideProps({ res }) {
   const posts = allSummaries();
   const newest = posts.reduce((m, p) => (p.updated > m ? p.updated : m), "2026-01-01");
   const blogPages = Math.max(1, Math.ceil((posts.length - 1) / PER_PAGE));
-  const fromDb = await fetchUpcomingRaces();
-  const races = [...fromDb, ...upcomingVerifiedEvents(todayISO(), fromDb)];
+  const races = await fetchUpcomingRaces();
   // Fichas indexables: futuras y pasadas hace menos de 60 días (después llevan noindex)
   const d60 = new Date(Date.now() - 60 * 864e5).toISOString().slice(0, 10);
   const fichas = (await fetchAllRaces()).filter(r => r.slug && (raceEndDate(r) || "") >= d60);
@@ -114,7 +112,7 @@ export async function getServerSideProps({ res }) {
     // Fichas de carrera
     ...fichas.map((r) => ({
       loc: `${BASE}/carreras/${encodeURIComponent(r.slug)}`,
-      lastmod: max(String(r.verificado || r.updated_at || "").slice(0, 10), TEMPLATE_LASTMOD),
+      lastmod: max(String(r.updated_at || "").slice(0, 10), TEMPLATE_LASTMOD),
       changefreq: "weekly",
       priority: "0.7",
     })),

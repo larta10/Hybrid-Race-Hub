@@ -22,7 +22,7 @@ export function RaceCard({ race: r, showRegion = true }) {
         <p className="rc-tags">
           <span className="rl-tag">{modalityLabel(r)}</span>
           {price && <span className="rc-price">{price}</span>}
-          {status && <span className={`st st--${status.kind}`}>{status.label}</span>}
+          <span className={`st st--${status.kind}`}>{status.label}</span>
         </p>
       </div>
       <span className="rc-chev" aria-hidden="true">

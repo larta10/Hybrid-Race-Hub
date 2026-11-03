@@ -47,7 +47,7 @@ function RaceTable({ races }) {
               <tr key={r.slug || r.id}>
                 <td><time dateTime={r.fecha_iso}>{rangoFechas(r.fecha_iso, raceEndDate(r))}</time></td>
                 <td>{r.municipio || r.ubicacion}{r.provincia && r.provincia !== r.municipio ? ` (${r.provincia})` : ""}</td>
-                <td>{st ? <span className={`st st--${st.kind}`}>{st.label}</span> : "Consultar"}</td>
+                <td><span className={`st st--${st.kind}`}>{st.label}</span></td>
                 <td>{r.slug ? <a href={`/carreras/${r.slug}`}>{r.nombre}</a> : r.nombre}</td>
               </tr>
             );

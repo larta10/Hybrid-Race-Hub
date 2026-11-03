@@ -2056,3 +2056,7 @@ input, select, textarea { font-size: 16px; }
 /* Táctiles ≥ 44 px en listas de enlaces (fichas, centros, guías) */
 .plain-list li a, .guide-callout-more a { display: inline-flex; align-items: center; min-height: 44px; }
 .plain-list li { margin: 0; }
+
+/* Estado "Por confirmar": neutro, sin color de estado */
+.st--neutral { color: var(--ink-2, var(--text-muted)); background: transparent; border: 1px solid var(--line); }
+.race-pending { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--s2); color: var(--text-muted); }

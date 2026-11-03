@@ -59,11 +59,10 @@ export async function getStaticProps({ params }) {
   const centerCities = CENTER_CITIES.filter(c => race.provincia && c.province === race.provincia).slice(0, 4);
   const topCity = centerCities[0] ? CENTER_CITY_BY_SLUG[centerCities[0].slug] : null;
   const centers = topCity ? topCity.centers.slice(0, 5).map(c => ({ nombre: c.nombre, tipo: c.tipo || null })) : [];
-  const verified = race.verificado || null;
   const updated = String(race.updated_at || race.created_at || "").slice(0, 10) || null;
   return {
     props: {
-      race: { ...lite(race), url: race.url || null, formato: race.formato || null, distancia: race.distancia || null, notas: race.notas || null, fecha_fin_iso: end, fuente: race.fuente || null },
+      race: { ...lite(race), url: race.url || null, formato: race.formato || null, distancia: race.distancia || null, notas: race.notas || null, fecha_fin_iso: end },
       past,
       noindex: addDays(end, NOINDEX_AFTER_DAYS) < today,
       schema: past ? null : raceEventSchema(race, SITE_URL),
@@ -75,7 +74,7 @@ export async function getStaticProps({ params }) {
       nextEdition: nextEdition ? lite(nextEdition) : null,
       centerCities: centerCities.map(c => ({ slug: c.slug, name: c.name, count: c.count })),
       centers,
-      verified, updated,
+      updated,
       related: relatedForRace({ race, mod, regions, centerCities, todayIso: today }),
       generated: today,
     },
@@ -93,7 +92,7 @@ function MiniList({ races }) {
   );
 }
 
-function Actions({ race, url }) {
+function Actions({ race, url, pending }) {
   const [copied, setCopied] = useState(false);
   async function share() {
     const text = `${race.nombre} · ${fechaLarga(race.fecha_iso)}`;
@@ -104,16 +103,19 @@ function Actions({ race, url }) {
   }
   return (
     <div className="race-actions">
-      {race.url
+      {/* Por confirmar: sin botón destacado; el enlace al organizador queda como secundario */}
+      {race.url && !pending
         ? <a className="btn-solid" href={race.url} target="_blank" rel="nofollow noopener noreferrer" onClick={() => onOrganizerClick(race)}>Inscribirme en la web oficial</a>
-        : <span className="btn-line race-actions-off">Sin web oficial publicada</span>}
+        : race.url
+          ? <a className="btn-line" href={race.url} target="_blank" rel="nofollow noopener noreferrer" onClick={() => onOrganizerClick(race)}>Web del organizador</a>
+          : <span className="btn-line race-actions-off">Sin web oficial publicada</span>}
       <button type="button" className="btn-line" onClick={() => downloadIcs(race, url)}>Añadir al calendario</button>
       <button type="button" className="btn-line" onClick={share}>{copied ? "Enlace copiado" : "Compartir"}</button>
     </div>
   );
 }
 
-export default function Ficha({ race, past, noindex, schema, organizer, mod, regions, sameMod, sameRegion, nextEdition, centerCities, centers, verified, updated, related }) {
+export default function Ficha({ race, past, noindex, schema, organizer, mod, regions, sameMod, sameRegion, nextEdition, centerCities, centers, updated, related }) {
   const path = `/carreras/${race.slug}`;
   const url = `${SITE_URL}${path}`;
   const h1 = raceDisplayName(race);
@@ -165,9 +167,7 @@ export default function Ficha({ race, past, noindex, schema, organizer, mod, reg
           <p className="section-label">{modalityLabel(race)}{race.comunidad ? ` · ${race.comunidad}` : ""}</p>
           <h1 className="guide-title">{h1}</h1>
           <p className="guide-updated">
-            {verified
-              ? <>Verificado el <time dateTime={verified}>{fechaLarga(verified)}</time>{race.fuente ? ` en ${race.fuente}` : ""}</>
-              : updated ? <>Dato actualizado el <time dateTime={updated}>{fechaLarga(updated)}</time></> : null}
+            {updated ? <>Dato actualizado el <time dateTime={updated}>{fechaLarga(updated)}</time></> : null}
             {" · "}<a href="/como-verificamos-las-carreras">Cómo verificamos las carreras</a>
           </p>
         </div>
@@ -189,11 +189,17 @@ export default function Ficha({ race, past, noindex, schema, organizer, mod, reg
             {race.formato && <div><dt>Formato</dt><dd>{race.formato}</dd></div>}
             {race.distancia && <div><dt>Distancia</dt><dd>{race.distancia}</dd></div>}
             <div><dt>Precio</dt><dd>{price || "Consultar en la web oficial"}</dd></div>
-            <div><dt>Inscripción</dt><dd>{status ? <span className={`st st--${status.kind}`}>{status.label}</span> : "Consultar en la web oficial"}{(verified || updated) && <span className="race-checked"> (comprobado el {fechaLarga(verified || updated)})</span>}</dd></div>
+            <div><dt>Inscripción</dt><dd><span className={`st st--${status.kind}`}>{status.label}</span>{updated && status.key !== "por_confirmar" && <span className="race-checked"> (comprobado el {fechaLarga(updated)})</span>}</dd></div>
             {organizer && <div><dt>Organiza</dt><dd><a href={organizer.url} target="_blank" rel="nofollow noopener noreferrer">{organizer.name}</a></dd></div>}
           </dl>
 
-          {!past && <Actions race={race} url={url} />}
+          {!past && status.key === "por_confirmar" && (
+            <p className="race-pending">
+              <strong>Por confirmar.</strong> No hemos podido comprobar la fecha, la sede o la inscripción en una web oficial.
+              No la des por segura hasta que el organizador la confirme.
+            </p>
+          )}
+          {!past && <Actions race={race} url={url} pending={status.key === "por_confirmar"} />}
           {race.notas && <p className="race-notes">{race.notas}</p>}
           <p className="guide-note">Fecha, precio y plazas los publica el organizador y pueden cambiar: confírmalos en su web antes de pagar.</p>
 

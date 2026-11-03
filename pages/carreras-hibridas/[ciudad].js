@@ -9,7 +9,6 @@ import { track } from "../../lib/shared";
 import { fetchUpcomingRaces, seasonLabel, dateParts, raceEventSchema, todayISO } from "../../lib/races-server";
 import { HYBRID_CITIES, CITY_BY_SLUG, raceMatchesCity, centerMatchesCity } from "../../lib/hybrid-cities";
 import CENTROS from "../../lib/centros-entrenamiento.json";
-import { upcomingVerifiedEvents } from "../../lib/verified-events";
 import { CENTER_CITIES } from "../../lib/center-cities";
 import { monthsWithCounts } from "../../lib/calendar-months";
 
@@ -20,10 +19,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const city = CITY_BY_SLUG[params.ciudad];
   if (!city) return { notFound: true };
-  // Supabase + eventos comprobados a mano en la web oficial (lib/verified-events.js)
-  const fromDb = await fetchUpcomingRaces();
-  const all = [...fromDb, ...upcomingVerifiedEvents(todayISO(), fromDb)]
-    .sort((a, b) => a.fecha_iso.localeCompare(b.fecha_iso));
+  const all = await fetchUpcomingRaces();
   const races = all.filter(r => raceMatchesCity(r, city));
   const centers = CENTROS.filter(c => centerMatchesCity(c, city))
     .map(c => ({ nombre: c.nombre, tipo: c.tipo || null, ciudad: c.ciudad || null, direccion: c.direccion || null, web: c.web || null }));
@@ -194,11 +190,6 @@ export default function CiudadPage(props) {
             <>
               <p>Ordenadas por fecha. Precio y formato son los que publica cada organizador; confirma siempre en su web antes de inscribirte.</p>
               <RaceList races={races} pageUrl={url} showRegion={city.kind === "comunidad"} />
-              {races.some(r => r.fuente) && (
-                <p className="guide-note">
-                  {races.filter(r => r.fuente).map(r => `${r.nombre}: fecha y sede comprobadas el ${fechaLarga(r.verificado)} en ${r.fuente}`).join(". ")}.
-                </p>
-              )}
             </>
           ) : (
             <>

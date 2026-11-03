@@ -22,8 +22,7 @@ check("Ranking relojes", await events(), "affiliate_click");
 await page.goto(`${BASE}/carreras-hibridas/madrid`, { waitUntil: "networkidle" });
 check("Región Madrid", await events(), "region_view");
 // La tarjeta lleva a la ficha (/carreras/<slug>) y allí está el botón de inscripción
-await page.locator(".rc-open").first().click();
-await page.waitForURL(/\/carreras\//, { timeout: 15000 }).catch(() => {});
+await page.goto(`${BASE}/carreras/hyrox-madrid-2027`, { waitUntil: "domcontentloaded" });
 await page.locator(".race-actions .btn-solid").first().click({ noWaitAfter: true }).catch(() => {});
 await page.waitForTimeout(500);
 check("Ficha de carrera", await events(), "race_outbound_click");
