@@ -9,10 +9,12 @@ import localFont from "next/font/local";
 import "../styles/global.css";
 
 // Tipografía (rediseño 10/2026): Archivo variable con eje de anchura para titulares
-// y Source Sans 3 para el texto. Solo se precargan estas dos; display swap y métricas de reserva ajustadas (sin CLS).
+// y Source Sans 3 para el texto. Solo se precargan estas dos, con métricas de reserva ajustadas (sin CLS).
+// display "optional" (11/2026): con swap, el repintado al llegar la fuente ocurría después del JS y retrasaba el LCP
+// móvil a más de 3 s; con optional la primera pintura es la definitiva. Al estar precargadas, casi siempre llegan a tiempo.
 // Archivo: solo la instancia que se usa (anchura 112 %, peso 800, latín), 37 KB en vez de 88 KB de la variable completa
-const display = localFont({ src: "../assets/fonts/archivo-112-800-latin.woff2", weight: "800", style: "normal", display: "swap", adjustFontFallback: "Arial", variable: "--ff-archivo" });
-const body = Source_Sans_3({ subsets: ["latin"], weight: ["400", "600"], display: "swap", adjustFontFallback: true });
+const display = localFont({ src: "../assets/fonts/archivo-112-800-latin.woff2", weight: "800", style: "normal", display: "optional", adjustFontFallback: "Arial", variable: "--ff-archivo" });
+const body = Source_Sans_3({ subsets: ["latin"], weight: ["400", "600"], display: "optional", adjustFontFallback: true });
 
 const GTM_ID = "GTM-5D5D2CH9";
 // El aviso de cookies no es crítico para el primer pintado: se carga aparte, solo en el navegador
