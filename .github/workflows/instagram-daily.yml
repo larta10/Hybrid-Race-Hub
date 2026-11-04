@@ -1,0 +1,58 @@
+name: Instagram diario
+
+on:
+  schedule:
+    # 17:47 UTC = 18:47 en Madrid en horario de invierno (19:47 en verano)
+    - cron: "47 17 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Prueba sin publicar (sube imágenes y registra dry_run)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Publicar carrusel
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'true' || 'false' }}
+        run: node scripts/instagram/publish.mjs
+
+      # GitHub desactiva los cron de repos sin actividad en 60 días: un commit vacío lo evita
+      - name: Keepalive
+        if: always()
+        run: |
+          last=$(git log -1 --format=%ct)
+          age=$(( ($(date +%s) - last) / 86400 ))
+          echo "Último commit hace $age días"
+          if [ "$age" -gt 50 ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit --allow-empty -m "chore: keepalive instagram"
+            git push
+          fi
