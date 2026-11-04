@@ -1,0 +1,55 @@
+{
+  "id": "036-ocr-cuerda",
+  "pilar": "ocr",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Subir la cuerda: los pies hacen el trabajo",
+      "subtitulo": "Si subes solo con brazos, llegarás arriba muy pocas veces."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Atrapa la cuerda con los pies",
+      "texto": "Aprende un bloqueo de pies: la cuerda pasa por un pie y se pisa con el otro. Así puedes apoyarte y descansar los brazos."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Sube con las piernas",
+      "texto": "Encoge las rodillas, bloquea la cuerda con los pies, estira las piernas y vuelve a subir las manos. Repite."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Practícalo *abajo*",
+      "texto": "Entrena el bloqueo de pies a poca altura hasta que salga sin pensar. Arriba no es el sitio para aprender."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Baja con cuidado",
+      "texto": "Baja mano a mano usando el bloqueo de pies para frenar. Deslizarte rápido puede quemarte las manos."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Subir la cuerda: los pies hacen el trabajo. Si subes solo con brazos, llegarás arriba muy pocas veces.",
+    "01. Atrapa la cuerda con los pies. Aprende un bloqueo de pies: la cuerda pasa por un pie y se pisa con el otro. Así puedes apoyarte y descansar los brazos.",
+    "02. Sube con las piernas. Encoge las rodillas, bloquea la cuerda con los pies, estira las piernas y vuelve a subir las manos. Repite.",
+    "03. Practícalo abajo. Entrena el bloqueo de pies a poca altura hasta que salga sin pensar. Arriba no es el sitio para aprender.",
+    "04. Baja con cuidado. Baja mano a mano usando el bloqueo de pies para frenar. Deslizarte rápido puede quemarte las manos.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "En la cuerda, los brazos solo guían. Los pies son los que suben.\n\nSin bloqueo de pies, subir una cuerda en carrera es casi imposible para la mayoría.\n\nAprende a bloquear la cuerda con los pies.\nSube con las piernas, no a pulso.\nPractica a poca altura.\nY baja sin deslizarte.\n\n¿Ya dominas el bloqueo de pies?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#ocr",
+    "#ocrspain",
+    "#carrerasdeobstaculos",
+    "#entrenamientohibrido"
+  ]
+}

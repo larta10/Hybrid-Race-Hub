@@ -1,0 +1,60 @@
+{
+  "id": "045-nada-nuevo-dia-carrera",
+  "pilar": "nutricion",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Nada nuevo el día de la carrera",
+      "subtitulo": "La regla más repetida en el deporte de resistencia. Y la que más se salta."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Comida y bebida",
+      "texto": "Ese gel o esa bebida que dan en la bolsa del corredor puede sentarte mal. Si no la has probado, no la tomes."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Desayuno",
+      "texto": "El mismo desayuno que antes de tus entrenos duros. Hoteles y viajes son la trampa más típica."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "*Suplementos*",
+      "texto": "Cafeína u otros productos que no hayas probado antes pueden darte problemas de estómago o de nervios."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Planifícalo",
+      "texto": "Si viajas, lleva tu desayuno o localiza dónde conseguirlo. Que no dependa de lo que encuentres esa mañana."
+    },
+    {
+      "tipo": "cita",
+      "texto": "El día de la carrera se ejecuta. Se prueba antes."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Nada nuevo el día de la carrera. La regla más repetida en el deporte de resistencia. Y la que más se salta.",
+    "01. Comida y bebida. Ese gel o esa bebida que dan en la bolsa del corredor puede sentarte mal. Si no la has probado, no la tomes.",
+    "02. Desayuno. El mismo desayuno que antes de tus entrenos duros. Hoteles y viajes son la trampa más típica.",
+    "03. Suplementos. Cafeína u otros productos que no hayas probado antes pueden darte problemas de estómago o de nervios.",
+    "04. Planifícalo. Si viajas, lleva tu desayuno o localiza dónde conseguirlo. Que no dependa de lo que encuentres esa mañana.",
+    "Frase destacada: El día de la carrera se ejecuta. Se prueba antes.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "\"Nada nuevo el día de la carrera.\" Todos lo sabemos y casi todos lo hemos incumplido alguna vez.\n\nEl gel de la bolsa del corredor, el desayuno del hotel o un café más fuerte de lo normal.\n\nCome y bebe lo que ya has probado.\nRepite tu desayuno de entreno.\nCuidado con los suplementos nuevos.\nY si viajas, lleva tu comida.\n\n¿Qué es lo que más te cuesta controlar cuando compites fuera?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#nutriciondeportiva",
+    "#carrerashibridas",
+    "#hyrox",
+    "#ocrspain"
+  ]
+}

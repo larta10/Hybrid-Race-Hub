@@ -1,0 +1,55 @@
+{
+  "id": "038-ocr-barro-bajadas",
+  "pilar": "ocr",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Correr en barro y bajadas sin caerte",
+      "subtitulo": "El terreno de una OCR no se parece al asfalto."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Pasos cortos",
+      "texto": "En barro y en terreno suelto, las zancadas cortas te dan más control. Si resbalas, recuperas antes."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Pies debajo del cuerpo",
+      "texto": "Apoya los pies cerca de tu centro de gravedad. Estirarte para llegar lejos es la forma más fácil de acabar en el suelo."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Bajadas con la *mirada* adelante",
+      "texto": "Mira unos metros por delante para elegir dónde pisar. Brazos algo abiertos para el equilibrio."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Entrena fuera del asfalto",
+      "texto": "Si puedes, mete algún rodaje por monte o caminos. El tobillo y la pisada se adaptan con la práctica."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Correr en barro y bajadas sin caerte. El terreno de una OCR no se parece al asfalto.",
+    "01. Pasos cortos. En barro y en terreno suelto, las zancadas cortas te dan más control. Si resbalas, recuperas antes.",
+    "02. Pies debajo del cuerpo. Apoya los pies cerca de tu centro de gravedad. Estirarte para llegar lejos es la forma más fácil de acabar en el suelo.",
+    "03. Bajadas con la mirada adelante. Mira unos metros por delante para elegir dónde pisar. Brazos algo abiertos para el equilibrio.",
+    "04. Entrena fuera del asfalto. Si puedes, mete algún rodaje por monte o caminos. El tobillo y la pisada se adaptan con la práctica.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "En una carrera de obstáculos, el terreno también es un obstáculo.\n\nBarro, piedras y bajadas no se corren como el asfalto.\n\nPasos cortos para tener control.\nPies debajo del cuerpo.\nMirada unos metros por delante.\nY entrena fuera del asfalto cuando puedas.\n\n¿Barro o polvo, qué prefieres?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#ocr",
+    "#ocrspain",
+    "#trailrunning",
+    "#carrerasdeobstaculos"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "041-ocr-cargas",
+  "pilar": "ocr",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Cargas en OCR: sacos, cubos y troncos",
+      "subtitulo": "Llevar peso por terreno irregular es un obstáculo en sí mismo."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Pegado al cuerpo",
+      "texto": "Cuanto más cerca del cuerpo lleves la carga, menos te cuesta. Abrazada o sobre el hombro, nunca con los brazos estirados."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Cambia de posición",
+      "texto": "Si se te cansan los brazos o el hombro, cambia la carga de lado. Mejor antes de que no puedas más."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Pasos *cortos* en cuesta",
+      "texto": "En las subidas, pasos cortos y constantes. En las bajadas, más cuidado con dónde pisas que con la velocidad."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Entrénalo",
+      "texto": "Carga una mochila, un saco o un cubo con peso y sal a caminar por cuestas. Es sencillo y se parece mucho a la carrera."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Cargas en OCR: sacos, cubos y troncos. Llevar peso por terreno irregular es un obstáculo en sí mismo.",
+    "01. Pegado al cuerpo. Cuanto más cerca del cuerpo lleves la carga, menos te cuesta. Abrazada o sobre el hombro, nunca con los brazos estirados.",
+    "02. Cambia de posición. Si se te cansan los brazos o el hombro, cambia la carga de lado. Mejor antes de que no puedas más.",
+    "03. Pasos cortos en cuesta. En las subidas, pasos cortos y constantes. En las bajadas, más cuidado con dónde pisas que con la velocidad.",
+    "04. Entrénalo. Carga una mochila, un saco o un cubo con peso y sal a caminar por cuestas. Es sencillo y se parece mucho a la carrera.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "En las OCR, los porteos de carga castigan más de lo que parece.\n\nSacos, cubos o troncos por subidas y bajadas.\n\nLleva la carga pegada al cuerpo.\nCambia de lado antes de quedarte sin fuerza.\nPasos cortos en las cuestas.\nY entrénalo con una mochila o un saco y una buena cuesta.\n\n¿Qué carga se te hace más pesada?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#ocr",
+    "#ocrspain",
+    "#spartanrace",
+    "#entrenamientohibrido"
+  ]
+}

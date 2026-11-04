@@ -1,0 +1,56 @@
+{
+  "id": "039-ocr-ropa",
+  "pilar": "ocr",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Qué ropa llevar a una carrera de obstáculos",
+      "subtitulo": "Lo que se moja y pesa te acompaña todo el recorrido."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Fuera el algodón",
+      "texto": "El algodón absorbe agua y barro y pesa cada vez más. Mejor tejidos técnicos que se secan rápido."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Ajustado, no suelto",
+      "texto": "La ropa suelta se engancha en redes, alambres y muros. Ropa ceñida y sin cordones colgando."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Calcetines *técnicos*",
+      "texto": "Buenos calcetines evitan rozaduras cuando los pies llevan horas mojados. Pruébalos antes."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Lo justo",
+      "texto": "Cuanto menos lleves, menos peso arrastras. Piensa en el tiempo que hará y en si hay agua en el recorrido."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Qué ropa llevar a una carrera de obstáculos. Lo que se moja y pesa te acompaña todo el recorrido.",
+    "01. Fuera el algodón. El algodón absorbe agua y barro y pesa cada vez más. Mejor tejidos técnicos que se secan rápido.",
+    "02. Ajustado, no suelto. La ropa suelta se engancha en redes, alambres y muros. Ropa ceñida y sin cordones colgando.",
+    "03. Calcetines técnicos. Buenos calcetines evitan rozaduras cuando los pies llevan horas mojados. Pruébalos antes.",
+    "04. Lo justo. Cuanto menos lleves, menos peso arrastras. Piensa en el tiempo que hará y en si hay agua en el recorrido.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "En una OCR, la ropa equivocada pesa más con cada charco.\n\nNo hace falta material caro, pero sí elegir con cabeza:\n\nNada de algodón.\nRopa ajustada que no se enganche.\nCalcetines técnicos probados antes.\nY solo lo que necesites.\n\n¿Cuál es la prenda que nunca falta en tu bolsa de carrera?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#ocr",
+    "#ocrspain",
+    "#carrerasdeobstaculos",
+    "#spartanrace"
+  ],
+  "url_destino": "/productos/ropa"
+}

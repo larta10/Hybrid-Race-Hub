@@ -1,0 +1,56 @@
+{
+  "id": "032-mito-cardio-musculo",
+  "pilar": "errores",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Mito: correr te hace perder fuerza",
+      "subtitulo": "Con una buena organización, puedes ganar las dos cosas."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "De dónde viene",
+      "texto": "Durante años se ha dicho que el trabajo de resistencia frena las ganancias de fuerza. Mal organizado, puede interferir."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Lo que se suele aceptar",
+      "texto": "Combinando bien carrera y fuerza, y comiendo y descansando lo suficiente, se puede mejorar en las dos a la vez."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Cómo *organizarlo*",
+      "texto": "Separa las sesiones duras de fuerza y de carrera cuando puedas. Si van el mismo día, deja tiempo entre una y otra."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Lo que de verdad frena",
+      "texto": "Dormir poco, comer poco y no descansar. Eso sí afecta a la fuerza y a la resistencia."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Mito: correr te hace perder fuerza. Con una buena organización, puedes ganar las dos cosas.",
+    "01. De dónde viene. Durante años se ha dicho que el trabajo de resistencia frena las ganancias de fuerza. Mal organizado, puede interferir.",
+    "02. Lo que se suele aceptar. Combinando bien carrera y fuerza, y comiendo y descansando lo suficiente, se puede mejorar en las dos a la vez.",
+    "03. Cómo organizarlo. Separa las sesiones duras de fuerza y de carrera cuando puedas. Si van el mismo día, deja tiempo entre una y otra.",
+    "04. Lo que de verdad frena. Dormir poco, comer poco y no descansar. Eso sí afecta a la fuerza y a la resistencia.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "\"Si corro, pierdo músculo.\" Es uno de los mitos más repetidos en el gimnasio.\n\nBien organizado, el entrenamiento híbrido permite mejorar fuerza y resistencia a la vez.\n\nSepara las sesiones duras de cada tipo cuando puedas.\nCome y duerme lo suficiente.\nY no conviertas cada día en un día de todo.\n\n¿Lo has notado en tu propio entrenamiento?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#atletahibrido",
+    "#entrenamientohibrido",
+    "#mitosfitness",
+    "#hyrox"
+  ],
+  "url_destino": "/blog/que-es-ser-un-atleta-hibrido"
+}

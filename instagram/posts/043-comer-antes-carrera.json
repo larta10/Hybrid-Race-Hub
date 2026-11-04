@@ -1,0 +1,55 @@
+{
+  "id": "043-comer-antes-carrera",
+  "pilar": "nutricion",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Qué comer antes de una carrera híbrida",
+      "subtitulo": "Lo de siempre, a su hora y sin experimentos."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Con tiempo",
+      "texto": "Haz la última comida principal con unas horas de margen. Llegar a la salida con la digestión a medias pesa mucho."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Hidratos fáciles",
+      "texto": "Arroz, pan, pasta o fruta. Alimentos que conoces y que digieres bien, con poca grasa y poca fibra antes de competir."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Lo que ya has *probado*",
+      "texto": "Come antes de la carrera lo mismo que comes antes de tus entrenos duros. El día de la prueba no es para inventar."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Si sales tarde",
+      "texto": "Si tu salida es por la tarde, haz tus comidas normales y añade algo ligero que te siente bien un rato antes."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Qué comer antes de una carrera híbrida. Lo de siempre, a su hora y sin experimentos.",
+    "01. Con tiempo. Haz la última comida principal con unas horas de margen. Llegar a la salida con la digestión a medias pesa mucho.",
+    "02. Hidratos fáciles. Arroz, pan, pasta o fruta. Alimentos que conoces y que digieres bien, con poca grasa y poca fibra antes de competir.",
+    "03. Lo que ya has probado. Come antes de la carrera lo mismo que comes antes de tus entrenos duros. El día de la prueba no es para inventar.",
+    "04. Si sales tarde. Si tu salida es por la tarde, haz tus comidas normales y añade algo ligero que te siente bien un rato antes.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Lo que comas antes de una carrera no te va a hacer ganar. Pero sí puede hacerte perder.\n\nLa regla es sencilla: lo de siempre, a su hora.\n\nÚltima comida principal con margen.\nHidratos que conoces y digieres bien.\nPoca grasa y poca fibra justo antes.\nY nada que no hayas probado en un entreno duro.\n\n¿Qué comes tú antes de competir?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#nutriciondeportiva",
+    "#hyrox",
+    "#carrerashibridas",
+    "#entrenamientohibrido"
+  ]
+}

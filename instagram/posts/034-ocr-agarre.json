@@ -1,0 +1,61 @@
+{
+  "id": "034-ocr-agarre",
+  "pilar": "ocr",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Agarre para OCR: entrena las manos",
+      "subtitulo": "En muchas carreras de obstáculos te frenan las manos antes que las piernas."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Cuélgate",
+      "texto": "Colgarte de una barra el máximo tiempo posible es el ejercicio más sencillo y uno de los más útiles. Hazlo a menudo."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Cambia de agarre",
+      "texto": "Toallas, cuerdas, discos o barras gruesas. En carrera te encuentras de todo y la mano tiene que adaptarse."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Mojado y *embarrado*",
+      "texto": "En muchas OCR las manos llegan mojadas a los obstáculos. Entrena también con las manos húmedas si puedes."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Carga con las manos",
+      "texto": "Paseos con peso y dominadas trabajan el agarre de forma natural. No hace falta nada sofisticado."
+    },
+    {
+      "tipo": "cita",
+      "texto": "Unas piernas fuertes te llevan al obstáculo. Un buen agarre te lo hace pasar."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Agarre para OCR: entrena las manos. En muchas carreras de obstáculos te frenan las manos antes que las piernas.",
+    "01. Cuélgate. Colgarte de una barra el máximo tiempo posible es el ejercicio más sencillo y uno de los más útiles. Hazlo a menudo.",
+    "02. Cambia de agarre. Toallas, cuerdas, discos o barras gruesas. En carrera te encuentras de todo y la mano tiene que adaptarse.",
+    "03. Mojado y embarrado. En muchas OCR las manos llegan mojadas a los obstáculos. Entrena también con las manos húmedas si puedes.",
+    "04. Carga con las manos. Paseos con peso y dominadas trabajan el agarre de forma natural. No hace falta nada sofisticado.",
+    "Frase destacada: Unas piernas fuertes te llevan al obstáculo. Un buen agarre te lo hace pasar.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "En una OCR, muchas veces lo primero que falla son las manos.\n\nPasamanos, cuerdas, anillas o cargas. Casi todos los obstáculos piden agarre.\n\nCuélgate de una barra a menudo.\nVaría el tipo de agarre.\nEntrena alguna vez con las manos mojadas.\nY haz paseos con peso.\n\n¿Qué obstáculo se te atraganta más?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#ocr",
+    "#ocrspain",
+    "#spartanrace",
+    "#carrerasdeobstaculos"
+  ],
+  "url_destino": "/blog/primera-carrera-obstaculos-guia"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "035-ocr-muro",
+  "pilar": "ocr",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Cómo pasar un muro sin dejarte la energía",
+      "subtitulo": "La técnica gana a la fuerza bruta."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Llega con impulso",
+      "texto": "Acércate con unos pasos rápidos para convertir la carrera en subida. Parar delante del muro te obliga a hacerlo todo con los brazos."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Usa el pie",
+      "texto": "Apoya un pie en la pared para impulsarte hacia arriba y agarrar el borde. Las piernas son mucho más fuertes que los brazos."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Cadera *arriba*",
+      "texto": "Una vez agarrado, sube la cadera hacia el borde y pasa una pierna por encima. Desde ahí, el resto es fácil."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Baja con control",
+      "texto": "Descuélgate antes de soltarte para caer desde menos altura. Una mala caída puede acabar con tu carrera."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Cómo pasar un muro sin dejarte la energía. La técnica gana a la fuerza bruta.",
+    "01. Llega con impulso. Acércate con unos pasos rápidos para convertir la carrera en subida. Parar delante del muro te obliga a hacerlo todo con los brazos.",
+    "02. Usa el pie. Apoya un pie en la pared para impulsarte hacia arriba y agarrar el borde. Las piernas son mucho más fuertes que los brazos.",
+    "03. Cadera arriba. Una vez agarrado, sube la cadera hacia el borde y pasa una pierna por encima. Desde ahí, el resto es fácil.",
+    "04. Baja con control. Descuélgate antes de soltarte para caer desde menos altura. Una mala caída puede acabar con tu carrera.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Pasar un muro no va de tener brazos enormes. Va de técnica.\n\nLlega con impulso.\nApoya un pie en la pared para subir.\nLleva la cadera hacia el borde y pasa una pierna.\nY baja descolgándote, no saltando desde arriba.\n\n¿Te atreves con los muros altos o pides ayuda?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#ocr",
+    "#ocrspain",
+    "#carrerasdeobstaculos",
+    "#spartanrace"
+  ],
+  "url_destino": "/blog/primera-carrera-obstaculos-guia"
+}

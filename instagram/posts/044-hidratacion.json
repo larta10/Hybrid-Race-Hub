@@ -1,0 +1,55 @@
+{
+  "id": "044-hidratacion",
+  "pilar": "nutricion",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Hidratación: ni de menos ni de más",
+      "subtitulo": "Beber bien empieza los días antes, no en la salida."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Llega hidratado",
+      "texto": "Bebe con normalidad los días previos. Intentar compensar bebiendo mucho la mañana de la carrera solo te manda al baño."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Durante la carrera",
+      "texto": "En pruebas cortas, mucha gente no necesita beber. En pruebas largas o con calor, ten un plan y pruébalo en los entrenos."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Calor y *sudor*",
+      "texto": "Si sudas mucho o hace calor, además de agua pierdes sales. En esfuerzos largos, una bebida con electrolitos puede ayudar."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Después",
+      "texto": "Bebe con calma después de entrenar o competir para recuperar lo que has perdido. Sin prisas y sin pasarte."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Hidratación: ni de menos ni de más. Beber bien empieza los días antes, no en la salida.",
+    "01. Llega hidratado. Bebe con normalidad los días previos. Intentar compensar bebiendo mucho la mañana de la carrera solo te manda al baño.",
+    "02. Durante la carrera. En pruebas cortas, mucha gente no necesita beber. En pruebas largas o con calor, ten un plan y pruébalo en los entrenos.",
+    "03. Calor y sudor. Si sudas mucho o hace calor, además de agua pierdes sales. En esfuerzos largos, una bebida con electrolitos puede ayudar.",
+    "04. Después. Bebe con calma después de entrenar o competir para recuperar lo que has perdido. Sin prisas y sin pasarte.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Beber mucho el día de la carrera no compensa no haber bebido bien antes.\n\nLa hidratación se trabaja con tiempo:\n\nBebe con normalidad los días previos.\nTen un plan para pruebas largas o con calor.\nPiensa también en las sales si sudas mucho.\nY recupera líquidos con calma al terminar.\n\n¿Bebes durante una Hyrox o llegas sin parar?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#nutriciondeportiva",
+    "#hidratacion",
+    "#carrerashibridas",
+    "#hyrox"
+  ]
+}

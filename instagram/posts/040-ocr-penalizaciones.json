@@ -1,0 +1,55 @@
+{
+  "id": "040-ocr-penalizaciones",
+  "pilar": "ocr",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Penalizaciones: el obstáculo que no pasas",
+      "subtitulo": "Saber qué pasa si fallas también es parte de la estrategia."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Cada carrera tiene sus reglas",
+      "texto": "Según la organización, fallar un obstáculo puede suponer burpees, una vuelta extra, perder una pulsera o quedar fuera de clasificación."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Léelas antes",
+      "texto": "Revisa el reglamento de tu carrera y tu categoría. No es igual competir en élite que en una tanda popular."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Decide con *cabeza*",
+      "texto": "A veces es mejor un intento bien hecho que tres a la desesperada. Cada intento fallido también cansa."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Entrena la penalización",
+      "texto": "Si en tu carrera se penaliza con burpees, inclúyelos en tus entrenos. Que no sea lo primero que te hunda."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Penalizaciones: el obstáculo que no pasas. Saber qué pasa si fallas también es parte de la estrategia.",
+    "01. Cada carrera tiene sus reglas. Según la organización, fallar un obstáculo puede suponer burpees, una vuelta extra, perder una pulsera o quedar fuera de clasificación.",
+    "02. Léelas antes. Revisa el reglamento de tu carrera y tu categoría. No es igual competir en élite que en una tanda popular.",
+    "03. Decide con cabeza. A veces es mejor un intento bien hecho que tres a la desesperada. Cada intento fallido también cansa.",
+    "04. Entrena la penalización. Si en tu carrera se penaliza con burpees, inclúyelos en tus entrenos. Que no sea lo primero que te hunda.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Fallar un obstáculo no es el final. Pero conviene saber qué te espera.\n\nCada organización tiene sus propias penalizaciones y cambian según la categoría.\n\nLee el reglamento de tu carrera.\nPiensa antes de repetir intentos a la desesperada.\nY si la penalización son burpees, entrénalos.\n\n¿Qué obstáculo te cuesta más penalizaciones?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#ocr",
+    "#ocrspain",
+    "#spartanrace",
+    "#carrerasdeobstaculos"
+  ]
+}

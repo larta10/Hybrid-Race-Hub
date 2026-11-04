@@ -1,0 +1,55 @@
+{
+  "id": "033-error-calentar-mal",
+  "pilar": "errores",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Error: calentar de menos o de más",
+      "subtitulo": "Ni salir en frío ni llegar cansado a la salida."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Calentar de menos",
+      "texto": "El primer kilómetro y la primera estación se convierten en tu calentamiento. Y lo haces con el pulso por las nubes."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Calentar de más",
+      "texto": "Un calentamiento largo e intenso te quita energía que vas a echar de menos en las últimas estaciones."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "El punto *medio*",
+      "texto": "Trote suave, movilidad dinámica y unos pocos gestos de carrera. Suficiente para sudar un poco, no para cansarte."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Pruébalo antes",
+      "texto": "Usa el mismo calentamiento antes de tus simulaciones. Así sabes cómo te sienta antes del día importante."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Error: calentar de menos o de más. Ni salir en frío ni llegar cansado a la salida.",
+    "01. Calentar de menos. El primer kilómetro y la primera estación se convierten en tu calentamiento. Y lo haces con el pulso por las nubes.",
+    "02. Calentar de más. Un calentamiento largo e intenso te quita energía que vas a echar de menos en las últimas estaciones.",
+    "03. El punto medio. Trote suave, movilidad dinámica y unos pocos gestos de carrera. Suficiente para sudar un poco, no para cansarte.",
+    "04. Pruébalo antes. Usa el mismo calentamiento antes de tus simulaciones. Así sabes cómo te sienta antes del día importante.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "El calentamiento puede jugar en tu contra, por poco o por mucho.\n\nSi calientas poco, el primer kilómetro hace de calentamiento. Si calientas demasiado, llegas cansado.\n\nTrote suave.\nMovilidad dinámica.\nUnos gestos de la carrera.\nY pruébalo antes de una simulación.\n\n¿Cuál es tu calentamiento antes de competir?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#carrerashibridas",
+    "#calentamiento",
+    "#entrenamientohibrido"
+  ]
+}

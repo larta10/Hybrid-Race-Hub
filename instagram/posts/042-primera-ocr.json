@@ -1,0 +1,57 @@
+{
+  "id": "042-primera-ocr",
+  "pilar": "ocr",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Tu primera carrera de obstáculos",
+      "subtitulo": "Lo que conviene saber antes de la salida."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Elige bien la distancia",
+      "texto": "Empieza por un formato corto. Tienes tiempo de sobra para ir a más cuando sepas cómo responde tu cuerpo."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Entrena correr y agarre",
+      "texto": "Para empezar, poder correr la distancia sin problema y tener algo de agarre te lleva muy lejos."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Ve a *disfrutar*",
+      "texto": "En la primera, el objetivo es terminar y aprender. Ayudar y dejarse ayudar forma parte de muchas carreras populares."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Ropa de cambio y bolsa",
+      "texto": "Lleva ropa seca, una toalla y una bolsa para lo mojado. Lo agradecerás al cruzar la meta."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Tu primera carrera de obstáculos. Lo que conviene saber antes de la salida.",
+    "01. Elige bien la distancia. Empieza por un formato corto. Tienes tiempo de sobra para ir a más cuando sepas cómo responde tu cuerpo.",
+    "02. Entrena correr y agarre. Para empezar, poder correr la distancia sin problema y tener algo de agarre te lleva muy lejos.",
+    "03. Ve a disfrutar. En la primera, el objetivo es terminar y aprender. Ayudar y dejarse ayudar forma parte de muchas carreras populares.",
+    "04. Ropa de cambio y bolsa. Lleva ropa seca, una toalla y una bolsa para lo mojado. Lo agradecerás al cruzar la meta.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Tu primera OCR no va de marca. Va de terminar con una sonrisa y ganas de repetir.\n\nUnas pocas cosas te lo ponen más fácil:\n\nEmpieza por una distancia corta.\nEntrena correr y algo de agarre.\nVe a aprender y a disfrutar.\nY lleva ropa de cambio y una bolsa para lo mojado.\n\nEn la web tienes la guía completa y el calendario de carreras.\n\n¿Cuál fue tu primera carrera de obstáculos?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#ocr",
+    "#ocrspain",
+    "#carrerasdeobstaculos",
+    "#spartanrace",
+    "#carrerashibridas"
+  ],
+  "url_destino": "/blog/primera-carrera-obstaculos-guia"
+}

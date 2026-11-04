@@ -1,0 +1,55 @@
+{
+  "id": "031-error-ignorar-roxzone",
+  "pilar": "errores",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Error: pensar que la Roxzone es descanso",
+      "subtitulo": "Es parte de la carrera y el crono no se para."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Lo que pasa",
+      "texto": "Sales de una estación, te relajas, caminas mirando a los lados y vuelves a la pista. Parece poco, pero se repite muchas veces."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Por qué importa",
+      "texto": "Unos segundos de más en cada transición se convierten en minutos al final. Y nadie entrena para ganarlos."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Qué hacer en su *lugar*",
+      "texto": "Muévete con intención: trote suave o caminar rápido. Respira, pero sin pararte."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Cómo entrenarlo",
+      "texto": "En tus simulaciones, cronometra también el paso entre estación y carrera. Lo que se mide, se mejora."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Error: pensar que la Roxzone es descanso. Es parte de la carrera y el crono no se para.",
+    "01. Lo que pasa. Sales de una estación, te relajas, caminas mirando a los lados y vuelves a la pista. Parece poco, pero se repite muchas veces.",
+    "02. Por qué importa. Unos segundos de más en cada transición se convierten en minutos al final. Y nadie entrena para ganarlos.",
+    "03. Qué hacer en su lugar. Muévete con intención: trote suave o caminar rápido. Respira, pero sin pararte.",
+    "04. Cómo entrenarlo. En tus simulaciones, cronometra también el paso entre estación y carrera. Lo que se mide, se mejora.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "La Roxzone no es zona de descanso. El reloj sigue corriendo.\n\nEntre estación y carrera, muchos aprovechan para pasear. Unos segundos cada vez acaban siendo minutos.\n\nMuévete con intención, aunque sea caminando rápido.\nRespira sin pararte.\nY cronometra también las transiciones en tus simulaciones.\n\n¿Has mirado alguna vez tu tiempo en la Roxzone?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#roxzone",
+    "#hyroxspain",
+    "#carrerashibridas"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "037-ocr-pasamanos",
+  "pilar": "ocr",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Pasamanos: balancea, no tires",
+      "subtitulo": "Moverte a base de fuerza de brazos te deja sin agarre a mitad."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Usa el balanceo",
+      "texto": "Deja que el cuerpo se balancee y aprovecha ese movimiento para llegar a la siguiente barra. Es menos esfuerzo que tirar en cada paso."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Brazos casi estirados",
+      "texto": "Colgado con los brazos estirados gastas menos que con los brazos flexionados. Guarda la fuerza para cuando la necesites."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Mira la *siguiente* barra",
+      "texto": "Fija la vista donde vas a agarrar, no donde estás. Te ayuda a calcular la distancia y el momento."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Manos secas",
+      "texto": "Si puedes, sécate las manos antes de empezar. En pasamanos, la mano mojada es la que antes resbala."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Pasamanos: balancea, no tires. Moverte a base de fuerza de brazos te deja sin agarre a mitad.",
+    "01. Usa el balanceo. Deja que el cuerpo se balancee y aprovecha ese movimiento para llegar a la siguiente barra. Es menos esfuerzo que tirar en cada paso.",
+    "02. Brazos casi estirados. Colgado con los brazos estirados gastas menos que con los brazos flexionados. Guarda la fuerza para cuando la necesites.",
+    "03. Mira la siguiente barra. Fija la vista donde vas a agarrar, no donde estás. Te ayuda a calcular la distancia y el momento.",
+    "04. Manos secas. Si puedes, sécate las manos antes de empezar. En pasamanos, la mano mojada es la que antes resbala.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "En el pasamanos, quien más tira de brazos suele ser quien antes se cae.\n\nEl movimiento eficiente se parece más a un péndulo que a una dominada.\n\nUsa el balanceo del cuerpo.\nCuélgate con los brazos casi estirados.\nMira la siguiente barra.\nY sécate las manos antes si puedes.\n\n¿Cuántas barras pasas sin caerte?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#ocr",
+    "#ocrspain",
+    "#spartanrace",
+    "#carrerasdeobstaculos"
+  ]
+}
