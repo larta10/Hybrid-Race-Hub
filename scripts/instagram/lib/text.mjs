@@ -34,11 +34,13 @@ export function measure(text, fontKey, size, letterSpacing = 0) {
  */
 export function tokens(text, upper = false) {
   const out = [];
-  const re = /\*([^*]+)\*|(\S+)/g;
+  // La puntuación pegada al destacado (*palabra*.) va en la misma palabra, sin color
+  const re = /(\S*?)\*([^*]+)\*(\S*)|(\S+)/g;
+  const up = (s) => (upper ? s.toUpperCase() : s);
   let m;
   while ((m = re.exec(text))) {
-    if (m[1]) for (const w of m[1].split(/\s+/)) out.push({ text: upper ? w.toUpperCase() : w, hi: true });
-    else out.push({ text: upper ? m[2].toUpperCase() : m[2], hi: false });
+    if (m[2] !== undefined) out.push({ text: up(m[1] + m[2] + m[3]), parts: [{ text: up(m[1]), hi: false }, { text: up(m[2]), hi: true }, { text: up(m[3]), hi: false }].filter((p) => p.text) });
+    else out.push({ text: up(m[4]), hi: false });
   }
   return out;
 }

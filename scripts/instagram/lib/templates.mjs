@@ -47,7 +47,11 @@ function textBlock(f, color, extra = {}) {
       h(
         "div",
         { height: f.size * f.lineHeight, alignItems: "center", ...font(f.font), fontSize: f.size, letterSpacing: f.letterSpacing, color, whiteSpace: "nowrap" },
-        line.map((t, i) => h("span", { color: t.hi ? C.accent : color, marginRight: i < line.length - 1 ? space : 0 }, t.text)),
+        line.map((t, i) => {
+          const mr = i < line.length - 1 ? space : 0;
+          if (!t.parts) return h("span", { color, marginRight: mr }, t.text);
+          return h("span", { marginRight: mr }, t.parts.map((p) => h("span", { color: p.hi ? C.accent : color }, p.text)));
+        }),
       ),
     ),
   );
@@ -163,12 +167,10 @@ function cita(s) {
   const el = h(
     "div",
     { flexDirection: "column", justifyContent: "center", height: CH },
-    h("div", { ...font("body-500"), fontSize: 240, lineHeight: 1, height: 130, color: C.rule, marginTop: -10 }, "“"),
-    gap(24),
-    textBlock(quote, C.text),
-    gap(52),
     accentLine(80),
-    s.autor ? gap(28) : null,
+    gap(56),
+    textBlock(quote, C.text),
+    s.autor ? gap(40) : null,
     s.autor ? h("div", { ...font("body-500"), fontSize: 30, letterSpacing: 3, color: C.muted }, s.autor.toUpperCase()) : null,
   );
   return { el, issues };
