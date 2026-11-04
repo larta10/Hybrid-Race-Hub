@@ -1,0 +1,55 @@
+{
+  "id": "050-cafeina",
+  "pilar": "nutricion",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Cafeína antes de competir: pruébala antes",
+      "subtitulo": "A unos les sienta bien. A otros les revuelve el estómago."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Cada persona es distinta",
+      "texto": "La cafeína le sienta a cada uno de una manera. Lo que a tu compañero le va bien, a ti puede darte nervios o problemas de estómago."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Pruébala en entreno",
+      "texto": "Si quieres tomarla antes de competir, pruébala antes de una sesión dura con la misma cantidad y a la misma hora."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Cuidado con *acumular*",
+      "texto": "Café, refrescos, geles con cafeína y preentrenos. Si sumas varios, puedes tomar mucho más de lo que crees."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Y el sueño",
+      "texto": "Tomada tarde puede costarte la noche. Si compites o entrenas por la tarde, tenlo en cuenta."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Cafeína antes de competir: pruébala antes. A unos les sienta bien. A otros les revuelve el estómago.",
+    "01. Cada persona es distinta. La cafeína le sienta a cada uno de una manera. Lo que a tu compañero le va bien, a ti puede darte nervios o problemas de estómago.",
+    "02. Pruébala en entreno. Si quieres tomarla antes de competir, pruébala antes de una sesión dura con la misma cantidad y a la misma hora.",
+    "03. Cuidado con acumular. Café, refrescos, geles con cafeína y preentrenos. Si sumas varios, puedes tomar mucho más de lo que crees.",
+    "04. Y el sueño. Tomada tarde puede costarte la noche. Si compites o entrenas por la tarde, tenlo en cuenta.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "La cafeína antes de competir no es para todo el mundo. Y no se prueba el día de la carrera.\n\nA unos les sienta bien y a otros les da nervios o problemas de estómago.\n\nPruébala antes de un entreno duro.\nOjo con sumar café, geles y preentrenos.\nY piensa en cómo dormirás después.\n\n¿Tomas café antes de competir?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#nutriciondeportiva",
+    "#hyrox",
+    "#carrerashibridas",
+    "#entrenamientohibrido"
+  ]
+}

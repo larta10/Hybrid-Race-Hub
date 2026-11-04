@@ -1,0 +1,60 @@
+{
+  "id": "047-dormir-rendimiento",
+  "pilar": "nutricion",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Dormir también es entrenar",
+      "subtitulo": "La herramienta de recuperación más barata que existe."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Mientras duermes, te adaptas",
+      "texto": "El cuerpo aprovecha el descanso para recuperarse del trabajo del día. Si duermes poco, el entreno rinde menos."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Horarios regulares",
+      "texto": "Acostarte y levantarte a horas parecidas ayuda a dormir mejor. También los fines de semana, en la medida de lo posible."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Cuida la *noche*",
+      "texto": "Pantallas, cenas muy pesadas o entrenos muy intensos justo antes de dormir pueden dificultar el sueño."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Ajusta el entreno",
+      "texto": "Si una noche duermes muy mal, rebaja la sesión del día siguiente. Una sesión dura sin descanso suma poco."
+    },
+    {
+      "tipo": "cita",
+      "texto": "Ningún suplemento compensa dormir mal."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Dormir también es entrenar. La herramienta de recuperación más barata que existe.",
+    "01. Mientras duermes, te adaptas. El cuerpo aprovecha el descanso para recuperarse del trabajo del día. Si duermes poco, el entreno rinde menos.",
+    "02. Horarios regulares. Acostarte y levantarte a horas parecidas ayuda a dormir mejor. También los fines de semana, en la medida de lo posible.",
+    "03. Cuida la noche. Pantallas, cenas muy pesadas o entrenos muy intensos justo antes de dormir pueden dificultar el sueño.",
+    "04. Ajusta el entreno. Si una noche duermes muy mal, rebaja la sesión del día siguiente. Una sesión dura sin descanso suma poco.",
+    "Frase destacada: Ningún suplemento compensa dormir mal.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Puedes tener el mejor plan de entrenamiento del mundo. Si duermes mal, rendirás menos.\n\nDormir es cuando el cuerpo se recupera del trabajo del día.\n\nHorarios regulares.\nCuidado con pantallas y cenas pesadas antes de acostarte.\nY si una noche duermes fatal, rebaja la sesión del día siguiente.\n\n¿Cuántas horas duermes de media?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#recuperacion",
+    "#descanso",
+    "#entrenamientohibrido",
+    "#atletahibrido"
+  ]
+}

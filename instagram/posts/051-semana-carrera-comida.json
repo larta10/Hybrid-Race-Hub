@@ -1,0 +1,55 @@
+{
+  "id": "051-semana-carrera-comida",
+  "pilar": "nutricion",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "La semana de la carrera en la cocina",
+      "subtitulo": "Comer normal, con algo más de hidratos al final."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Sin dietas de última hora",
+      "texto": "La semana de la carrera no es momento para quitar alimentos ni para probar una dieta nueva."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Hidratos los días previos",
+      "texto": "En los últimos días, da un poco más de protagonismo a los hidratos que ya comes habitualmente."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Ligero el *día* antes",
+      "texto": "La cena previa, conocida y fácil de digerir. Nada de comidas copiosas, picantes o muy grasas."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Fuera de casa",
+      "texto": "Si compites lejos, piensa dónde vas a comer y desayunar. Lleva lo básico por si no encuentras lo que buscas."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: La semana de la carrera en la cocina. Comer normal, con algo más de hidratos al final.",
+    "01. Sin dietas de última hora. La semana de la carrera no es momento para quitar alimentos ni para probar una dieta nueva.",
+    "02. Hidratos los días previos. En los últimos días, da un poco más de protagonismo a los hidratos que ya comes habitualmente.",
+    "03. Ligero el día antes. La cena previa, conocida y fácil de digerir. Nada de comidas copiosas, picantes o muy grasas.",
+    "04. Fuera de casa. Si compites lejos, piensa dónde vas a comer y desayunar. Lleva lo básico por si no encuentras lo que buscas.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "La semana de la carrera no es momento para experimentos en la cocina.\n\nCome como siempre, sin dietas nuevas.\nDa algo más de peso a los hidratos los últimos días.\nCena ligera y conocida la noche antes.\nY si viajas, ten pensado dónde y qué vas a comer.\n\n¿Tienes una cena fija antes de competir?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#nutriciondeportiva",
+    "#hyrox",
+    "#ocrspain",
+    "#carrerashibridas"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "055-zapatillas-trail-ocr",
+  "pilar": "producto",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Zapatillas para OCR: barro, agua y piedras",
+      "subtitulo": "En una carrera de obstáculos, el agarre lo es todo."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Taco profundo",
+      "texto": "En barro y terreno suelto, una suela con tacos marcados agarra mucho mejor que una de asfalto."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Que desagüe",
+      "texto": "Vas a pisar charcos y cruzar agua. Una zapatilla que suelte el agua rápido pesa menos el resto de la carrera."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Ajuste *firme*",
+      "texto": "El pie no debe moverse dentro de la zapatilla. Un buen ajuste evita perderla en el barro y torceduras."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Protección justa",
+      "texto": "Algo de protección en la puntera ayuda con piedras y raíces, sin que la zapatilla se vuelva pesada."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Zapatillas para OCR: barro, agua y piedras. En una carrera de obstáculos, el agarre lo es todo.",
+    "01. Taco profundo. En barro y terreno suelto, una suela con tacos marcados agarra mucho mejor que una de asfalto.",
+    "02. Que desagüe. Vas a pisar charcos y cruzar agua. Una zapatilla que suelte el agua rápido pesa menos el resto de la carrera.",
+    "03. Ajuste firme. El pie no debe moverse dentro de la zapatilla. Un buen ajuste evita perderla en el barro y torceduras.",
+    "04. Protección justa. Algo de protección en la puntera ayuda con piedras y raíces, sin que la zapatilla se vuelva pesada.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "En una OCR, unas zapatillas de asfalto se convierten en patines en el primer barrizal.\n\nLo que conviene mirar:\n\nSuela con tacos marcados.\nQue suelte el agua rápido.\nAjuste firme para no perderla en el barro.\nY algo de protección para piedras y raíces.\n\nEn la web tenemos una selección de zapatillas de trail y OCR.\n\n¿Con qué zapatillas corres tus carreras de obstáculos?\n\nMás en hybridracehub.com (enlace en la bio)\n\nComo afiliado de Amazon, gano con las compras que cumplen los requisitos.",
+  "hashtags": [
+    "#ocr",
+    "#ocrspain",
+    "#trailrunning",
+    "#spartanrace"
+  ],
+  "url_destino": "/productos/zapatillas-trail"
+}

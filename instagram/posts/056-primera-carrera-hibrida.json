@@ -1,0 +1,61 @@
+{
+  "id": "056-primera-carrera-hibrida",
+  "pilar": "comunidad",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Tu primera carrera híbrida",
+      "subtitulo": "Lo que te gustaría haber sabido antes de la salida."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Vas a ir más lento de lo que crees",
+      "texto": "Correr después de una estación cuesta. Es normal que tus kilómetros sean bastante más lentos que entrenando."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Los nervios son normales",
+      "texto": "Casi todo el mundo los tiene en la primera. Se van en cuanto empiezas a moverte."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Nadie te *mira*",
+      "texto": "Cada uno está en su carrera. Si tienes que parar en una estación, para, respira y sigue."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Terminar ya es un logro",
+      "texto": "La primera sirve para aprender. La marca la mejoras en la siguiente."
+    },
+    {
+      "tipo": "cita",
+      "texto": "La primera no se corre para ganar. Se corre para saber de qué estás hecho."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Tu primera carrera híbrida. Lo que te gustaría haber sabido antes de la salida.",
+    "01. Vas a ir más lento de lo que crees. Correr después de una estación cuesta. Es normal que tus kilómetros sean bastante más lentos que entrenando.",
+    "02. Los nervios son normales. Casi todo el mundo los tiene en la primera. Se van en cuanto empiezas a moverte.",
+    "03. Nadie te mira. Cada uno está en su carrera. Si tienes que parar en una estación, para, respira y sigue.",
+    "04. Terminar ya es un logro. La primera sirve para aprender. La marca la mejoras en la siguiente.",
+    "Frase destacada: La primera no se corre para ganar. Se corre para saber de qué estás hecho.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Si estás a punto de hacer tu primera carrera híbrida, esto es para ti.\n\nVas a ir más lento de lo que crees y no pasa nada.\nLos nervios se van en cuanto empiezas.\nNadie está mirando cuánto paras.\nY terminar ya es un logro.\n\n¿Cuándo es tu primera? Cuéntalo en comentarios.\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#carrerashibridas",
+    "#hyroxspain",
+    "#ocrspain",
+    "#hyrox"
+  ],
+  "url_destino": "/blog/carreras-hibridas-principiantes-primera-prueba"
+}

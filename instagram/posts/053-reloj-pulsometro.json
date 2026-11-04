@@ -1,0 +1,56 @@
+{
+  "id": "053-reloj-pulsometro",
+  "pilar": "producto",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Reloj o pulsómetro: lo que de verdad usas",
+      "subtitulo": "Antes de comprar, piensa para qué lo quieres."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "GPS para correr fuera",
+      "texto": "Si entrenas en la calle o en el monte, el GPS te da ritmo y distancia. En pabellón cubierto suele ser menos preciso."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Pulso: muñeca o banda",
+      "texto": "La lectura en la muñeca es cómoda. Una banda de pecho suele responder mejor en cambios bruscos de intensidad."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Batería y *botones*",
+      "texto": "Que aguante tus semanas de entreno y que los botones se usen con las manos sudadas o con guantes."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "No hace falta lo más caro",
+      "texto": "Muchas funciones avanzadas no las vas a usar. Elige por lo que necesitas hoy, no por la ficha técnica."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Reloj o pulsómetro: lo que de verdad usas. Antes de comprar, piensa para qué lo quieres.",
+    "01. GPS para correr fuera. Si entrenas en la calle o en el monte, el GPS te da ritmo y distancia. En pabellón cubierto suele ser menos preciso.",
+    "02. Pulso: muñeca o banda. La lectura en la muñeca es cómoda. Una banda de pecho suele responder mejor en cambios bruscos de intensidad.",
+    "03. Batería y botones. Que aguante tus semanas de entreno y que los botones se usen con las manos sudadas o con guantes.",
+    "04. No hace falta lo más caro. Muchas funciones avanzadas no las vas a usar. Elige por lo que necesitas hoy, no por la ficha técnica.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Un reloj no te hace más rápido. Pero el adecuado te ayuda a entrenar con cabeza.\n\nAntes de comprar, piensa en tu uso:\n\nGPS si entrenas en la calle o en el monte.\nBanda de pecho si quieres más precisión en esfuerzos cortos.\nBatería y botones que funcionen con las manos sudadas.\nY nada de pagar por funciones que no usarás.\n\nEn la web tenemos una selección de relojes y pulsómetros.\n\n¿Entrenas con banda de pecho o con la muñeca?\n\nMás en hybridracehub.com (enlace en la bio)\n\nComo afiliado de Amazon, gano con las compras que cumplen los requisitos.",
+  "hashtags": [
+    "#entrenamientohibrido",
+    "#running",
+    "#hyrox",
+    "#carrerashibridas"
+  ],
+  "url_destino": "/productos/relojes"
+}

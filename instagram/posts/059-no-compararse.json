@@ -1,0 +1,60 @@
+{
+  "id": "059-no-compararse",
+  "pilar": "comunidad",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "No te compares con el de al lado",
+      "subtitulo": "Tu carrera empieza en tu historia, no en la suya."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Cada uno viene de un sitio",
+      "texto": "Años entrenando, lesiones, trabajo, familia. Comparar tu tiempo con el de otro ignora todo eso."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Tu referencia eres tú",
+      "texto": "Tu carrera anterior, tus parciales y tus sensaciones. Ahí es donde se ve si estás mejorando."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Redes sociales",
+      "texto": "Lo que ves en las redes es lo mejor de cada uno. Los días malos de los demás casi nunca se publican."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Inspírate, no te *castigues*",
+      "texto": "Fíjate en otros para aprender, no para sentirte peor. Saca ideas y vuelve a tu plan."
+    },
+    {
+      "tipo": "cita",
+      "texto": "La única comparación que sirve es con quien eras hace un año."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: No te compares con el de al lado. Tu carrera empieza en tu historia, no en la suya.",
+    "01. Cada uno viene de un sitio. Años entrenando, lesiones, trabajo, familia. Comparar tu tiempo con el de otro ignora todo eso.",
+    "02. Tu referencia eres tú. Tu carrera anterior, tus parciales y tus sensaciones. Ahí es donde se ve si estás mejorando.",
+    "03. Redes sociales. Lo que ves en las redes es lo mejor de cada uno. Los días malos de los demás casi nunca se publican.",
+    "04. Inspírate, no te castigues. Fíjate en otros para aprender, no para sentirte peor. Saca ideas y vuelve a tu plan.",
+    "Frase destacada: La única comparación que sirve es con quien eras hace un año.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Siempre habrá alguien más rápido. Y siempre habrá alguien que sueña con tu tiempo.\n\nCada uno viene de un sitio distinto y entrena en una vida distinta.\n\nCompárate con tu carrera anterior.\nRecuerda que en las redes solo se ven los días buenos.\nY usa a los demás para aprender, no para castigarte.\n\n¿Qué has mejorado respecto al año pasado?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#comunidadhibrida",
+    "#atletahibrido",
+    "#carrerashibridas",
+    "#hyrox"
+  ]
+}

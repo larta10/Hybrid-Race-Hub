@@ -1,0 +1,55 @@
+{
+  "id": "048-dias-descanso",
+  "pilar": "nutricion",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "El día de descanso no es un día perdido",
+      "subtitulo": "Es el día en el que el entreno se convierte en mejora."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Para qué sirve",
+      "texto": "Músculos, tendones y articulaciones necesitan tiempo para recuperarse de la carga. Sin ese tiempo, se acumula el cansancio."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Descanso activo",
+      "texto": "Un paseo, algo de movilidad o una vuelta tranquila en bici. Moverte suave puede ayudarte a sentirte mejor."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Sin *culpa*",
+      "texto": "Descansar es parte del plan. Saltarte el descanso para meter otra sesión suele salir caro unas semanas después."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Escucha al cuerpo",
+      "texto": "Si estás muy cargado, un día extra de descanso no te hace perder forma. Una lesión, sí."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: El día de descanso no es un día perdido. Es el día en el que el entreno se convierte en mejora.",
+    "01. Para qué sirve. Músculos, tendones y articulaciones necesitan tiempo para recuperarse de la carga. Sin ese tiempo, se acumula el cansancio.",
+    "02. Descanso activo. Un paseo, algo de movilidad o una vuelta tranquila en bici. Moverte suave puede ayudarte a sentirte mejor.",
+    "03. Sin culpa. Descansar es parte del plan. Saltarte el descanso para meter otra sesión suele salir caro unas semanas después.",
+    "04. Escucha al cuerpo. Si estás muy cargado, un día extra de descanso no te hace perder forma. Una lesión, sí.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Si te sientes culpable los días de descanso, este carrusel es para ti.\n\nEl descanso es cuando el cuerpo se recupera y se adapta al trabajo.\n\nPuede ser descanso activo: paseo, movilidad o bici suave.\nNo es un día perdido, es parte del plan.\nY un día extra de descanso pesa mucho menos que una lesión.\n\n¿Qué haces tus días de descanso?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#recuperacion",
+    "#descanso",
+    "#entrenamientohibrido",
+    "#hyrox"
+  ]
+}

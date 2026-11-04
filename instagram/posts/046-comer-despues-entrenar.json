@@ -1,0 +1,55 @@
+{
+  "id": "046-comer-despues-entrenar",
+  "pilar": "nutricion",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Qué comer después de entrenar",
+      "subtitulo": "Recuperar también se hace en la cocina."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Proteína",
+      "texto": "Ayuda a reparar y construir músculo. Huevos, carne, pescado, legumbres o lácteos, lo que te siente bien y tengas a mano."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Hidratos",
+      "texto": "Reponen la energía gastada. Si mañana vuelves a entrenar, son tan importantes como la proteína."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Sin *obsesionarte* con el reloj",
+      "texto": "No hace falta comer en el minuto exacto. Lo que de verdad cuenta es lo que comes a lo largo del día."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Comida real primero",
+      "texto": "Un plato normal y completo suele bastar. Los batidos son cómodos, pero no son imprescindibles."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Qué comer después de entrenar. Recuperar también se hace en la cocina.",
+    "01. Proteína. Ayuda a reparar y construir músculo. Huevos, carne, pescado, legumbres o lácteos, lo que te siente bien y tengas a mano.",
+    "02. Hidratos. Reponen la energía gastada. Si mañana vuelves a entrenar, son tan importantes como la proteína.",
+    "03. Sin obsesionarte con el reloj. No hace falta comer en el minuto exacto. Lo que de verdad cuenta es lo que comes a lo largo del día.",
+    "04. Comida real primero. Un plato normal y completo suele bastar. Los batidos son cómodos, pero no son imprescindibles.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Después de entrenar no necesitas nada mágico. Necesitas comer bien.\n\nProteína para recuperar el músculo.\nHidratos para reponer energía, sobre todo si mañana vuelves a entrenar.\nSin agobiarte con el minuto exacto.\nY comida real antes que suplementos.\n\n¿Qué sueles comer al terminar de entrenar?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#nutriciondeportiva",
+    "#recuperacion",
+    "#entrenamientohibrido",
+    "#atletahibrido"
+  ]
+}

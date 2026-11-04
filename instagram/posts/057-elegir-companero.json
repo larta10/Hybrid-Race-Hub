@@ -1,0 +1,56 @@
+{
+  "id": "057-elegir-companero",
+  "pilar": "comunidad",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Cómo elegir compañero para competir",
+      "subtitulo": "Doubles y relevos se ganan antes de la salida."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Nivel parecido",
+      "texto": "No hace falta que seáis iguales, pero sí que el ritmo de carrera no sea muy distinto. Vais a correr juntos."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Puntos fuertes distintos",
+      "texto": "Si uno es mejor en las estaciones de fuerza y el otro en las de resistencia, repartir es más fácil."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Que os *entendáis*",
+      "texto": "Con el pulso a tope hay que comunicarse con pocas palabras. Entrenad juntos antes para conoceros."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Mismo objetivo",
+      "texto": "Si uno quiere marca y el otro disfrutar, alguien acabará frustrado. Habladlo antes de inscribiros."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Cómo elegir compañero para competir. Doubles y relevos se ganan antes de la salida.",
+    "01. Nivel parecido. No hace falta que seáis iguales, pero sí que el ritmo de carrera no sea muy distinto. Vais a correr juntos.",
+    "02. Puntos fuertes distintos. Si uno es mejor en las estaciones de fuerza y el otro en las de resistencia, repartir es más fácil.",
+    "03. Que os entendáis. Con el pulso a tope hay que comunicarse con pocas palabras. Entrenad juntos antes para conoceros.",
+    "04. Mismo objetivo. Si uno quiere marca y el otro disfrutar, alguien acabará frustrado. Habladlo antes de inscribiros.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "En una carrera por parejas, elegir compañero es la primera decisión de carrera.\n\nNivel de carrera parecido.\nPuntos fuertes que se complementen.\nEntrenamientos juntos antes para entenderos.\nY el mismo objetivo para el día de la prueba.\n\n¿Con quién compartirías carrera? Etiquétalo.\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyroxdoubles",
+    "#carrerashibridas",
+    "#hyroxspain",
+    "#comunidadhibrida"
+  ],
+  "url_destino": "/blog/formato-individual-parejas-mixtas-equipo"
+}

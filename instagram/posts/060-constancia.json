@@ -1,0 +1,56 @@
+{
+  "id": "060-constancia",
+  "pilar": "comunidad",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "La constancia gana a la motivación",
+      "subtitulo": "Las ganas van y vienen. El hábito se queda."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Días sin ganas",
+      "texto": "Todos los tienen. La diferencia está en presentarte igual, aunque sea para una sesión más corta."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Sesiones que *caben*",
+      "texto": "Un plan realista que encaje en tu semana se cumple. Uno perfecto que no encaja, se abandona."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Mira el mes, no el día",
+      "texto": "Un mal entreno no cambia nada. Lo que suma son muchas semanas seguidas haciendo lo que toca."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Apúntate a algo",
+      "texto": "Tener una carrera en el calendario da un motivo concreto para entrenar cuando la motivación baja."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: La constancia gana a la motivación. Las ganas van y vienen. El hábito se queda.",
+    "01. Días sin ganas. Todos los tienen. La diferencia está en presentarte igual, aunque sea para una sesión más corta.",
+    "02. Sesiones que caben. Un plan realista que encaje en tu semana se cumple. Uno perfecto que no encaja, se abandona.",
+    "03. Mira el mes, no el día. Un mal entreno no cambia nada. Lo que suma son muchas semanas seguidas haciendo lo que toca.",
+    "04. Apúntate a algo. Tener una carrera en el calendario da un motivo concreto para entrenar cuando la motivación baja.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "La motivación te hace empezar. La constancia te lleva a la meta.\n\nHabrá días sin ganas, y es normal.\n\nPresentarte aunque sea para una sesión corta.\nUn plan que quepa en tu semana real.\nMirar el mes, no el día.\nY tener una carrera en el calendario.\n\n¿Ya tienes tu próxima carrera elegida?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#entrenamientohibrido",
+    "#comunidadhibrida",
+    "#carrerashibridas",
+    "#motivacion"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

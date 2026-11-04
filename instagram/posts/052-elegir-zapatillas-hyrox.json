@@ -1,0 +1,56 @@
+{
+  "id": "052-elegir-zapatillas-hyrox",
+  "pilar": "producto",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Zapatillas para Hyrox: qué mirar",
+      "subtitulo": "No buscas la más rápida, buscas la más versátil."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Agarre en suelo interior",
+      "texto": "Las carreras se hacen en pabellones. Una suela que agarre bien en suelos lisos te ayuda en el trineo y en los giros."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Estabilidad",
+      "texto": "Zancadas, burpees y wall balls piden una zapatilla que no se hunda demasiado. Las muy blandas pueden resultar inestables."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Amortiguación *justa*",
+      "texto": "Tienes que correr 8 km. Busca un punto medio entre comodidad para correr y firmeza para las estaciones."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Pruébalas entrenando",
+      "texto": "La mejor zapatilla es la que ya has probado en una sesión con carrera y estaciones sin rozaduras."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Zapatillas para Hyrox: qué mirar. No buscas la más rápida, buscas la más versátil.",
+    "01. Agarre en suelo interior. Las carreras se hacen en pabellones. Una suela que agarre bien en suelos lisos te ayuda en el trineo y en los giros.",
+    "02. Estabilidad. Zancadas, burpees y wall balls piden una zapatilla que no se hunda demasiado. Las muy blandas pueden resultar inestables.",
+    "03. Amortiguación justa. Tienes que correr 8 km. Busca un punto medio entre comodidad para correr y firmeza para las estaciones.",
+    "04. Pruébalas entrenando. La mejor zapatilla es la que ya has probado en una sesión con carrera y estaciones sin rozaduras.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Para Hyrox no necesitas la zapatilla más rápida para correr. Necesitas la que mejor se adapta a todo.\n\nAgarre en suelo de pabellón.\nEstabilidad para zancadas y burpees.\nAmortiguación suficiente para los 8 km.\nY probada en entrenos antes del día de la carrera.\n\nEn la web tenemos una selección de zapatillas para carreras híbridas.\n\n¿Con qué zapatillas compites tú?\n\nMás en hybridracehub.com (enlace en la bio)\n\nComo afiliado de Amazon, gano con las compras que cumplen los requisitos.",
+  "hashtags": [
+    "#hyrox",
+    "#zapatillas",
+    "#hyroxspain",
+    "#carrerashibridas"
+  ],
+  "url_destino": "/productos/zapatillas-hyrox"
+}

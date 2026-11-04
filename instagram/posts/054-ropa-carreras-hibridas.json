@@ -1,0 +1,56 @@
+{
+  "id": "054-ropa-carreras-hibridas",
+  "pilar": "producto",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Ropa para carreras híbridas: lo práctico",
+      "subtitulo": "Que se mueva contigo y no te estorbe en ninguna estación."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Que no se suba",
+      "texto": "Burpees, zancadas y wall balls. Una camiseta o top que se sube en cada repetición te distrae y te quita tiempo."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Tejido técnico",
+      "texto": "Vas a sudar mucho. Mejor tejidos que se sequen rápido que algodón que se empapa y pesa."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Sin *roces*",
+      "texto": "Costuras planas y prendas ajustadas en las zonas de roce. Después de más de una hora de esfuerzo, se nota."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Probada antes",
+      "texto": "Haz una simulación con la ropa de carrera. Si algo molesta en el entreno, en la carrera molestará más."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Ropa para carreras híbridas: lo práctico. Que se mueva contigo y no te estorbe en ninguna estación.",
+    "01. Que no se suba. Burpees, zancadas y wall balls. Una camiseta o top que se sube en cada repetición te distrae y te quita tiempo.",
+    "02. Tejido técnico. Vas a sudar mucho. Mejor tejidos que se sequen rápido que algodón que se empapa y pesa.",
+    "03. Sin roces. Costuras planas y prendas ajustadas en las zonas de roce. Después de más de una hora de esfuerzo, se nota.",
+    "04. Probada antes. Haz una simulación con la ropa de carrera. Si algo molesta en el entreno, en la carrera molestará más.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "La ropa de carrera no tiene que ser cara. Tiene que no molestarte.\n\nQue no se suba en burpees y wall balls.\nTejido técnico que se seque rápido.\nCosturas planas y sin roces.\nY probada en una simulación antes de la carrera.\n\nEn la web tenemos una selección de ropa para entrenar y competir.\n\n¿Qué es lo que más te molesta de la ropa cuando compites?\n\nMás en hybridracehub.com (enlace en la bio)\n\nComo afiliado de Amazon, gano con las compras que cumplen los requisitos.",
+  "hashtags": [
+    "#hyrox",
+    "#ocrspain",
+    "#carrerashibridas",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/productos/ropa"
+}

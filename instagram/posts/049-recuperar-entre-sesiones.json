@@ -1,0 +1,55 @@
+{
+  "id": "049-recuperar-entre-sesiones",
+  "pilar": "nutricion",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Recuperar entre dos sesiones del mismo día",
+      "subtitulo": "Si entrenas doble, lo que hagas entre medias cuenta."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Come pronto",
+      "texto": "Después de la primera sesión, come algo con hidratos y proteína. Llegar vacío a la segunda la hace mucho peor."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Bebe",
+      "texto": "Repón líquidos poco a poco entre sesiones, sobre todo si has sudado mucho o hace calor."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Ordénalas con *cabeza*",
+      "texto": "Si vas a hacer fuerza y carrera, separa todo lo que puedas las dos sesiones y pon primero la que más te importe ese día."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "No todo puede ser duro",
+      "texto": "Si una sesión es intensa, la otra debería ser suave o técnica. Dos sesiones al máximo el mismo día rara vez salen bien."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Recuperar entre dos sesiones del mismo día. Si entrenas doble, lo que hagas entre medias cuenta.",
+    "01. Come pronto. Después de la primera sesión, come algo con hidratos y proteína. Llegar vacío a la segunda la hace mucho peor.",
+    "02. Bebe. Repón líquidos poco a poco entre sesiones, sobre todo si has sudado mucho o hace calor.",
+    "03. Ordénalas con cabeza. Si vas a hacer fuerza y carrera, separa todo lo que puedas las dos sesiones y pon primero la que más te importe ese día.",
+    "04. No todo puede ser duro. Si una sesión es intensa, la otra debería ser suave o técnica. Dos sesiones al máximo el mismo día rara vez salen bien.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Entrenar dos veces al día puede funcionar. Pero lo que hagas entre sesiones marca la diferencia.\n\nCome pronto después de la primera.\nBebe con calma entre medias.\nSepara las sesiones todo lo que puedas.\nY no hagas dos sesiones duras el mismo día.\n\n¿Entrenas doble algún día de la semana?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#recuperacion",
+    "#entrenamientohibrido",
+    "#nutriciondeportiva",
+    "#atletahibrido"
+  ]
+}

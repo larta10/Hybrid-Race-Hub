@@ -1,0 +1,56 @@
+{
+  "id": "058-ambiente-carrera",
+  "pilar": "comunidad",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Lo que no sale en el crono",
+      "subtitulo": "Gritos de ánimo, desconocidos que te empujan y un abrazo en meta."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "La grada",
+      "texto": "En las carreras híbridas, el público suele estar a pocos metros. Ese grito en las wall balls se nota."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Los de al lado",
+      "texto": "Gente que no conoces te anima en la estación de al lado. En muchas carreras se ve más complicidad que rivalidad."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Tu *gente*",
+      "texto": "Entrenar con un grupo y viajar juntos a una carrera hace que la experiencia sea mucho más que un tiempo."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Devuélvelo",
+      "texto": "Cuando termines, quédate a animar a los que siguen. Tú también lo agradeciste."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Lo que no sale en el crono. Gritos de ánimo, desconocidos que te empujan y un abrazo en meta.",
+    "01. La grada. En las carreras híbridas, el público suele estar a pocos metros. Ese grito en las wall balls se nota.",
+    "02. Los de al lado. Gente que no conoces te anima en la estación de al lado. En muchas carreras se ve más complicidad que rivalidad.",
+    "03. Tu gente. Entrenar con un grupo y viajar juntos a una carrera hace que la experiencia sea mucho más que un tiempo.",
+    "04. Devuélvelo. Cuando termines, quédate a animar a los que siguen. Tú también lo agradeciste.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "El crono te dice cuánto tardaste. No te dice cómo lo viviste.\n\nLa grada a pocos metros.\nDesconocidos que te animan en la estación de al lado.\nTu grupo de entreno viajando contigo.\nY quedarte a animar a los que vienen detrás.\n\n¿Con quién vas a tu próxima carrera? Etiquétalos.\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#carrerashibridas",
+    "#comunidadhibrida",
+    "#hyroxspain",
+    "#ocrspain"
+  ],
+  "url_destino": "/calendario"
+}
