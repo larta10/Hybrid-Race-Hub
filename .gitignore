@@ -28,3 +28,6 @@ audit-screenshots/
 audit-report-*.json
 audit-seo-*.json
 lighthouse-*.json
+
+# Vista previa local de Instagram
+instagram-preview/
