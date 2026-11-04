@@ -1,0 +1,56 @@
+{
+  "id": "012-formato-hyrox-completo",
+  "pilar": "estaciones",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Hyrox de principio a fin en un carrusel",
+      "subtitulo": "8 kilómetros de carrera y 8 estaciones, siempre en el mismo orden."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "El esquema",
+      "texto": "Corres 1 km y haces una estación. Así ocho veces. El orden de las estaciones no cambia nunca, da igual la ciudad."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Estaciones 1 a 4",
+      "texto": "SkiErg 1000 m, Sled Push 50 m, Sled Pull 50 m y Burpee Broad Jumps 80 m. La primera mitad castiga sobre todo empuje, tirón y piernas."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Estaciones 5 a 8",
+      "texto": "Remo 1000 m, Farmers Carry 200 m, Sandbag Lunges 100 m y Wall Balls 100 repeticiones. La segunda mitad pone a prueba el agarre y las piernas ya *cansadas*."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Pesos según categoría",
+      "texto": "Las cargas del trineo, las pesas, el saco y el balón dependen de tu categoría. Consúltalas en la web oficial antes de entrenar con ellas."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Hyrox de principio a fin en un carrusel. 8 kilómetros de carrera y 8 estaciones, siempre en el mismo orden.",
+    "01. El esquema. Corres 1 km y haces una estación. Así ocho veces. El orden de las estaciones no cambia nunca, da igual la ciudad.",
+    "02. Estaciones 1 a 4. SkiErg 1000 m, Sled Push 50 m, Sled Pull 50 m y Burpee Broad Jumps 80 m. La primera mitad castiga sobre todo empuje, tirón y piernas.",
+    "03. Estaciones 5 a 8. Remo 1000 m, Farmers Carry 200 m, Sandbag Lunges 100 m y Wall Balls 100 repeticiones. La segunda mitad pone a prueba el agarre y las piernas ya cansadas.",
+    "04. Pesos según categoría. Las cargas del trineo, las pesas, el saco y el balón dependen de tu categoría. Consúltalas en la web oficial antes de entrenar con ellas.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Si estás pensando en tu primera Hyrox, guarda este esquema.\n\nSon 8 tramos de 1 km de carrera y, después de cada uno, una estación:\n\nSkiErg 1000 m, Sled Push 50 m, Sled Pull 50 m, Burpee Broad Jumps 80 m, Remo 1000 m, Farmers Carry 200 m, Sandbag Lunges 100 m y Wall Balls 100 repeticiones.\n\nLos pesos dependen de la categoría. Míralos siempre en la web oficial.\n\n¿Cuál de las ocho es la que más te preocupa?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#carrerashibridas",
+    "#fitnessrace"
+  ],
+  "url_destino": "/blog/que-es-hyrox"
+}

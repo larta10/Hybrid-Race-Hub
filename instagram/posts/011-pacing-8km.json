@@ -1,0 +1,61 @@
+{
+  "id": "011-pacing-8km",
+  "pilar": "estaciones",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Pacing: cómo repartir los 8 kilómetros",
+      "subtitulo": "El primer kilómetro no se gana. El último sí se puede perder."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Ritmo de carrera, no de 10K",
+      "texto": "Tus kilómetros en una carrera híbrida van a ser más lentos que en un 10K. Si sales a tu ritmo de 10K, lo pagarás en las estaciones."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "El primero, el más *tranquilo*",
+      "texto": "Todos hemos visto al que sale disparado el primer kilómetro y llega muerto al SkiErg. Sal controlado y deja que la carrera te ponga en tu sitio."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Busca kilómetros parecidos",
+      "texto": "El objetivo es que tus ocho kilómetros se parezcan entre sí. Si el último es mucho más lento que el primero, saliste demasiado rápido."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Calcula tus parciales",
+      "texto": "Ponte un tiempo objetivo y reparte kilómetros y estaciones antes de la carrera. Con números delante es más fácil no dejarse llevar."
+    },
+    {
+      "tipo": "cita",
+      "texto": "Si el último kilómetro es tu peor kilómetro, el error estuvo en el primero."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Pacing: cómo repartir los 8 kilómetros. El primer kilómetro no se gana. El último sí se puede perder.",
+    "01. Ritmo de carrera, no de 10K. Tus kilómetros en una carrera híbrida van a ser más lentos que en un 10K. Si sales a tu ritmo de 10K, lo pagarás en las estaciones.",
+    "02. El primero, el más tranquilo. Todos hemos visto al que sale disparado el primer kilómetro y llega muerto al SkiErg. Sal controlado y deja que la carrera te ponga en tu sitio.",
+    "03. Busca kilómetros parecidos. El objetivo es que tus ocho kilómetros se parezcan entre sí. Si el último es mucho más lento que el primero, saliste demasiado rápido.",
+    "04. Calcula tus parciales. Ponte un tiempo objetivo y reparte kilómetros y estaciones antes de la carrera. Con números delante es más fácil no dejarse llevar.",
+    "Frase destacada: Si el último kilómetro es tu peor kilómetro, el error estuvo en el primero.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Todos hemos visto al que sale disparado el primer kilómetro y llega muerto al SkiErg.\n\nEn una carrera híbrida corres 8 veces 1 km, siempre con una estación en medio. El ritmo no puede ser el de un 10K.\n\nSal controlado en el primer kilómetro.\nBusca que los ocho se parezcan.\nY calcula tus parciales antes de la carrera, no durante.\n\n¿Cuánto se te cae el ritmo del primer al último kilómetro?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#pacing",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/calculadora-hyrox"
+}

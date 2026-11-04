@@ -1,0 +1,60 @@
+{
+  "id": "015-fuerza-para-hyrox",
+  "pilar": "entrenamiento",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Fuerza para Hyrox: lo básico que funciona",
+      "subtitulo": "No necesitas un programa de culturista. Necesitas piernas y espalda fuertes."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Sentadilla",
+      "texto": "Empuje del trineo, zancadas y wall balls dependen de unas piernas fuertes. La sentadilla, en cualquiera de sus variantes, es la base."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Peso muerto",
+      "texto": "Fortalece la cadena posterior y el agarre. Te ayuda en el sled pull, el farmers carry y a mantener la postura cuando llega el cansancio."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Empujes y *tirones*",
+      "texto": "Press, remos con mancuerna y dominadas o jalones. Mantienen equilibrados hombros y espalda para el SkiErg y el remo."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Técnica antes que kilos",
+      "texto": "Sube la carga poco a poco y solo cuando el movimiento sale limpio. Lesionarte por un kilo de más te cuesta semanas."
+    },
+    {
+      "tipo": "cita",
+      "texto": "La fuerza no te hace más lento. Te hace llegar entero."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Fuerza para Hyrox: lo básico que funciona. No necesitas un programa de culturista. Necesitas piernas y espalda fuertes.",
+    "01. Sentadilla. Empuje del trineo, zancadas y wall balls dependen de unas piernas fuertes. La sentadilla, en cualquiera de sus variantes, es la base.",
+    "02. Peso muerto. Fortalece la cadena posterior y el agarre. Te ayuda en el sled pull, el farmers carry y a mantener la postura cuando llega el cansancio.",
+    "03. Empujes y tirones. Press, remos con mancuerna y dominadas o jalones. Mantienen equilibrados hombros y espalda para el SkiErg y el remo.",
+    "04. Técnica antes que kilos. Sube la carga poco a poco y solo cuando el movimiento sale limpio. Lesionarte por un kilo de más te cuesta semanas.",
+    "Frase destacada: La fuerza no te hace más lento. Te hace llegar entero.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Para una carrera híbrida no hace falta un programa de fuerza complicado.\n\nCon pocos ejercicios bien hechos cubres casi todo lo que piden las estaciones:\n\nSentadilla para piernas.\nPeso muerto para espalda y agarre.\nEmpujes y tirones para tener hombros equilibrados.\n\nY la técnica siempre antes que los kilos.\n\n¿Cuántos días de fuerza haces a la semana?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#entrenamientohibrido",
+    "#hyrox",
+    "#fuerza",
+    "#hyroxspain"
+  ]
+}

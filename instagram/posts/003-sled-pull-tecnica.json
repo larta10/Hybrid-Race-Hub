@@ -1,0 +1,56 @@
+{
+  "id": "003-sled-pull-tecnica",
+  "pilar": "estaciones",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Sled Pull: tira con el cuerpo, no con los brazos",
+      "subtitulo": "50 metros de cuerda que castigan la espalda y el agarre."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Pies firmes y cadera baja",
+      "texto": "Planta bien los pies y siéntate un poco hacia atrás. Si tiras de pie y recto, todo el trabajo cae en brazos y espalda baja."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Tira y da un paso atrás",
+      "texto": "Combina el tirón de brazos con pasos cortos hacia atrás dentro de tu zona. El cuerpo entero mueve el trineo mucho mejor que los bíceps solos."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Recoge la cuerda con *orden*",
+      "texto": "Deja la cuerda a un lado y no la pises ni te enredes con ella. Perder segundos desenredando es más habitual de lo que parece."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Cuida el agarre",
+      "texto": "Después vienen los burpees, el remo y el farmers carry. Agarra la cuerda lo justo y suelta las manos entre tirones si puedes."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Sled Pull: tira con el cuerpo, no con los brazos. 50 metros de cuerda que castigan la espalda y el agarre.",
+    "01. Pies firmes y cadera baja. Planta bien los pies y siéntate un poco hacia atrás. Si tiras de pie y recto, todo el trabajo cae en brazos y espalda baja.",
+    "02. Tira y da un paso atrás. Combina el tirón de brazos con pasos cortos hacia atrás dentro de tu zona. El cuerpo entero mueve el trineo mucho mejor que los bíceps solos.",
+    "03. Recoge la cuerda con orden. Deja la cuerda a un lado y no la pises ni te enredes con ella. Perder segundos desenredando es más habitual de lo que parece.",
+    "04. Cuida el agarre. Después vienen los burpees, el remo y el farmers carry. Agarra la cuerda lo justo y suelta las manos entre tirones si puedes.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "En el Sled Pull no ganas por tener más brazo, ganas por usar el cuerpo entero.\n\nEs la tercera estación y llega con las piernas ya tocadas por el empuje del trineo.\n\nCadera baja y pies firmes.\nTirón de brazos combinado con pasos hacia atrás.\nCuerda recogida a un lado, sin enredos.\nY agarre justo: quedan estaciones que también tiran de antebrazo.\n\n¿Qué se te hace más duro, empujar o arrastrar?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#sledpull",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/blog/que-es-hyrox"
+}

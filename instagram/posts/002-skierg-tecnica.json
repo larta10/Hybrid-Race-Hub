@@ -1,0 +1,61 @@
+{
+  "id": "002-skierg-tecnica",
+  "pilar": "estaciones",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "SkiErg: 1000 metros sin quemarte",
+      "subtitulo": "La primera estación marca el tono de toda la carrera."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Las piernas también tiran",
+      "texto": "El SkiErg no es solo de brazos. Flexiona un poco las rodillas y la cadera en cada tirón y deja que el peso del cuerpo baje con las asas. Los brazos solos se cansan mucho antes."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Termina el tirón abajo",
+      "texto": "Lleva las asas hasta pasar la cadera y deja que los brazos suban relajados. Un recorrido corto obliga a hacer muchos más tirones para los mismos metros."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Ritmo que puedas *repetir*",
+      "texto": "Venir del primer kilómetro con ganas invita a salir a tope. Elige un ritmo que podrías mantener otra vez justo después: te quedan siete estaciones y siete kilómetros."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Mira el monitor, no al vecino",
+      "texto": "Tu ritmo por cada 500 m te dice si vas bien. El de la máquina de al lado no te dice nada de tu carrera."
+    },
+    {
+      "tipo": "cita",
+      "texto": "Los primeros 1000 metros de estación no se ganan. Se administran."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: SkiErg: 1000 metros sin quemarte. La primera estación marca el tono de toda la carrera.",
+    "01. Las piernas también tiran. El SkiErg no es solo de brazos. Flexiona un poco las rodillas y la cadera en cada tirón y deja que el peso del cuerpo baje con las asas. Los brazos solos se cansan mucho antes.",
+    "02. Termina el tirón abajo. Lleva las asas hasta pasar la cadera y deja que los brazos suban relajados. Un recorrido corto obliga a hacer muchos más tirones para los mismos metros.",
+    "03. Ritmo que puedas repetir. Venir del primer kilómetro con ganas invita a salir a tope. Elige un ritmo que podrías mantener otra vez justo después: te quedan siete estaciones y siete kilómetros.",
+    "04. Mira el monitor, no al vecino. Tu ritmo por cada 500 m te dice si vas bien. El de la máquina de al lado no te dice nada de tu carrera.",
+    "Frase destacada: Los primeros 1000 metros de estación no se ganan. Se administran.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "El SkiErg es la primera estación y la más fácil de pasarte de vueltas.\n\nSon 1000 metros justo después del primer kilómetro, con la adrenalina de la salida todavía encima.\n\nUsa las piernas y la cadera, no solo los brazos.\nTermina cada tirón abajo, pasando la cadera.\nY elige un ritmo que podrías repetir: queda casi toda la carrera.\n\n¿Cuál es tu ritmo objetivo en el SkiErg?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#skierg",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/blog/que-es-hyrox"
+}

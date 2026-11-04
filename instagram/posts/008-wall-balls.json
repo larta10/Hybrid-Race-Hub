@@ -1,0 +1,61 @@
+{
+  "id": "008-wall-balls",
+  "pilar": "estaciones",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Wall Balls: las 100 repeticiones finales",
+      "subtitulo": "Llegan al final y deciden más carreras de lo que crees."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Sentadilla completa",
+      "texto": "Baja hasta que la cadera quede por debajo de las rodillas. Las repeticiones a medias no cuentan y repetirlas cuesta mucho más que hacerlas bien."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Usa las piernas para lanzar",
+      "texto": "El balón sube con el impulso de la sentadilla, no con los brazos. Los hombros solo acompañan el último tramo."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Bloques desde el *inicio*",
+      "texto": "Decide antes de empezar cómo vas a partir las 100: por ejemplo, series de 10 o de 20 con pausas cortas. Mejor un plan desde el principio que improvisar con el pulso a tope."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Pausas cortas y de pie",
+      "texto": "Si descansas, que sea con el balón cerca y solo unas respiraciones. Sentarte o alejarte alarga la pausa sin que te des cuenta."
+    },
+    {
+      "tipo": "cita",
+      "texto": "Las wall balls no se aguantan. Se reparten."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Wall Balls: las 100 repeticiones finales. Llegan al final y deciden más carreras de lo que crees.",
+    "01. Sentadilla completa. Baja hasta que la cadera quede por debajo de las rodillas. Las repeticiones a medias no cuentan y repetirlas cuesta mucho más que hacerlas bien.",
+    "02. Usa las piernas para lanzar. El balón sube con el impulso de la sentadilla, no con los brazos. Los hombros solo acompañan el último tramo.",
+    "03. Bloques desde el inicio. Decide antes de empezar cómo vas a partir las 100: por ejemplo, series de 10 o de 20 con pausas cortas. Mejor un plan desde el principio que improvisar con el pulso a tope.",
+    "04. Pausas cortas y de pie. Si descansas, que sea con el balón cerca y solo unas respiraciones. Sentarte o alejarte alarga la pausa sin que te des cuenta.",
+    "Frase destacada: Las wall balls no se aguantan. Se reparten.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Las wall balls son 100 repeticiones con las piernas ya vacías. Llévalas planeadas.\n\nSon la última estación de la carrera y donde más se nota quién ha entrenado cansado.\n\nSentadilla completa en cada repetición.\nLanza con las piernas, no con los hombros.\nDecide los bloques antes de empezar.\nY pausas cortas, de pie y junto al balón.\n\n¿En qué bloques partes tú las 100?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#wallballs",
+    "#carrerashibridas"
+  ],
+  "url_destino": "/blog/que-es-hyrox"
+}

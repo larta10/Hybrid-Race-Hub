@@ -1,0 +1,56 @@
+{
+  "id": "013-correr-con-piernas-cansadas",
+  "pilar": "entrenamiento",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Correr con las piernas cansadas se entrena",
+      "subtitulo": "En carrera nunca vas a correr fresco. En el entreno, tampoco deberías siempre."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Qué es",
+      "texto": "Correr justo después de un ejercicio que carga las piernas o el cuerpo. Es exactamente lo que pasa en una carrera híbrida en cada kilómetro."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Cómo empezar",
+      "texto": "Alterna un ejercicio corto, como zancadas o remo, con un tramo de carrera de pocos minutos. Repite varias rondas a ritmo cómodo."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Fíjate en la *sensación*",
+      "texto": "Los primeros metros después del ejercicio cuestan. El objetivo es que tu cuerpo aprenda a encontrar su ritmo antes."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Sin pasarte",
+      "texto": "Con una o dos sesiones así por semana suele ser suficiente. El resto de días, rodajes suaves y fuerza."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Correr con las piernas cansadas se entrena. En carrera nunca vas a correr fresco. En el entreno, tampoco deberías siempre.",
+    "01. Qué es. Correr justo después de un ejercicio que carga las piernas o el cuerpo. Es exactamente lo que pasa en una carrera híbrida en cada kilómetro.",
+    "02. Cómo empezar. Alterna un ejercicio corto, como zancadas o remo, con un tramo de carrera de pocos minutos. Repite varias rondas a ritmo cómodo.",
+    "03. Fíjate en la sensación. Los primeros metros después del ejercicio cuestan. El objetivo es que tu cuerpo aprenda a encontrar su ritmo antes.",
+    "04. Sin pasarte. Con una o dos sesiones así por semana suele ser suficiente. El resto de días, rodajes suaves y fuerza.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Correr fresco y correr después de un trineo son dos deportes distintos.\n\nEn una carrera híbrida todos los kilómetros llegan después de una estación. Si solo entrenas a correr fresco, la carrera te pilla por sorpresa.\n\nAlterna un ejercicio con un tramo de carrera.\nEmpieza a ritmo cómodo.\nUna o dos sesiones a la semana son suficientes.\n\n¿Ya metes este tipo de sesiones en tu semana?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#entrenamientohibrido",
+    "#hyrox",
+    "#running",
+    "#hyroxspain"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

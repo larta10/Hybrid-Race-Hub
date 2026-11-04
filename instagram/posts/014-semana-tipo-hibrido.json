@@ -1,0 +1,56 @@
+{
+  "id": "014-semana-tipo-hibrido",
+  "pilar": "entrenamiento",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Una semana tipo de atleta híbrido",
+      "subtitulo": "Carrera, fuerza y estaciones sin vivir en el gimnasio."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Rodaje suave",
+      "texto": "Un día de carrera tranquila, a un ritmo al que puedas hablar. Construye base sin dejarte reventado para el resto de la semana."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Fuerza",
+      "texto": "Uno o dos días de fuerza con básicos: sentadilla, peso muerto, empujes y tirones. Las estaciones lo agradecen."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Series o *calidad*",
+      "texto": "Un día de trabajo más intenso, como series de 1 km o un circuito con estaciones y carrera."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Descanso de verdad",
+      "texto": "Al menos un día sin entrenar o con algo muy suave. Sin descanso no hay adaptación, solo cansancio acumulado."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Una semana tipo de atleta híbrido. Carrera, fuerza y estaciones sin vivir en el gimnasio.",
+    "01. Rodaje suave. Un día de carrera tranquila, a un ritmo al que puedas hablar. Construye base sin dejarte reventado para el resto de la semana.",
+    "02. Fuerza. Uno o dos días de fuerza con básicos: sentadilla, peso muerto, empujes y tirones. Las estaciones lo agradecen.",
+    "03. Series o calidad. Un día de trabajo más intenso, como series de 1 km o un circuito con estaciones y carrera.",
+    "04. Descanso de verdad. Al menos un día sin entrenar o con algo muy suave. Sin descanso no hay adaptación, solo cansancio acumulado.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "No hace falta entrenar dos veces al día para hacer una buena carrera híbrida.\n\nUna semana bien repartida puede tener:\n\nUn rodaje suave para construir base.\nUno o dos días de fuerza con básicos.\nUna sesión de calidad con series o estaciones.\nY al menos un día de descanso real.\n\nAjusta los días a tu vida, no al revés.\n\n¿Cuántos días entrenas a la semana?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#entrenamientohibrido",
+    "#hyrox",
+    "#atletahibrido",
+    "#hyroxspain"
+  ],
+  "url_destino": "/blog/plan-entrenamiento-hyrox-12-semanas"
+}

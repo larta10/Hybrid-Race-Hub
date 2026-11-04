@@ -1,0 +1,55 @@
+{
+  "id": "010-transiciones-estaciones",
+  "pilar": "estaciones",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Transiciones: entra y sal de cada estación",
+      "subtitulo": "Los segundos que se pierden entre correr y trabajar."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Llega sabiendo qué toca",
+      "texto": "Repasa el orden de las estaciones antes de la carrera. En cada kilómetro, ten claro qué viene y cómo lo vas a empezar."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Primeros metros a ritmo *suave*",
+      "texto": "Al salir de una estación, las piernas pesan. Deja que el primer tramo del kilómetro sea un poco más tranquilo y luego coge tu ritmo."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Entra sin frenar en seco",
+      "texto": "Baja el ritmo en los últimos metros de carrera para llegar a la estación con la respiración algo más controlada."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Ensáyalo en el entreno",
+      "texto": "Pasa de correr a una estación y de la estación a correr en tus sesiones. La transición también se entrena."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Transiciones: entra y sal de cada estación. Los segundos que se pierden entre correr y trabajar.",
+    "01. Llega sabiendo qué toca. Repasa el orden de las estaciones antes de la carrera. En cada kilómetro, ten claro qué viene y cómo lo vas a empezar.",
+    "02. Primeros metros a ritmo suave. Al salir de una estación, las piernas pesan. Deja que el primer tramo del kilómetro sea un poco más tranquilo y luego coge tu ritmo.",
+    "03. Entra sin frenar en seco. Baja el ritmo en los últimos metros de carrera para llegar a la estación con la respiración algo más controlada.",
+    "04. Ensáyalo en el entreno. Pasa de correr a una estación y de la estación a correr en tus sesiones. La transición también se entrena.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Correr y hacer estaciones lo entrenas. ¿Y el paso de una cosa a otra?\n\nEn una carrera híbrida cambias de esfuerzo muchas veces y en cada cambio se pierde tiempo.\n\nLlega a cada estación sabiendo qué toca.\nBaja un poco el ritmo antes de entrar.\nSal suave los primeros metros y luego aprieta.\nY ensaya esos cambios en tus entrenos.\n\n¿Qué transición se te hace más dura?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#carrerashibridas",
+    "#entrenamientohibrido",
+    "#hyroxspain"
+  ]
+}

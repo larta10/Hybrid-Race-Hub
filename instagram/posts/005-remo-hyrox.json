@@ -1,0 +1,56 @@
+{
+  "id": "005-remo-hyrox",
+  "pilar": "estaciones",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Remo: 1000 metros para recuperar sin parar",
+      "subtitulo": "Bien remado, el ergómetro te deja respirar."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Piernas, cuerpo, brazos",
+      "texto": "El orden es empujar con las piernas, abrir el tronco y terminar con los brazos. Al volver, al revés. Si tiras primero de brazos, pierdes casi toda la potencia."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Menos paladas, más largas",
+      "texto": "Una palada larga y potente con una vuelta tranquila rinde más que muchas paladas cortas y rápidas que suben las pulsaciones."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Ajusta los pies *rápido*",
+      "texto": "Practica atarte y soltarte las cintas del ergómetro. En carrera, esos segundos se pierden cada vez que dudas."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Piensa en lo que viene",
+      "texto": "Después del remo llegan el farmers carry, las zancadas y las wall balls. Sal del ergómetro con algo en la recámara."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Remo: 1000 metros para recuperar sin parar. Bien remado, el ergómetro te deja respirar.",
+    "01. Piernas, cuerpo, brazos. El orden es empujar con las piernas, abrir el tronco y terminar con los brazos. Al volver, al revés. Si tiras primero de brazos, pierdes casi toda la potencia.",
+    "02. Menos paladas, más largas. Una palada larga y potente con una vuelta tranquila rinde más que muchas paladas cortas y rápidas que suben las pulsaciones.",
+    "03. Ajusta los pies rápido. Practica atarte y soltarte las cintas del ergómetro. En carrera, esos segundos se pierden cada vez que dudas.",
+    "04. Piensa en lo que viene. Después del remo llegan el farmers carry, las zancadas y las wall balls. Sal del ergómetro con algo en la recámara.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "El remo puede ser tu respiro o tu tumba. Depende de cómo reemes.\n\nSon 1000 metros en la quinta estación, cuando ya llevas más de media carrera.\n\nPiernas, cuerpo y brazos, en ese orden.\nPaladas largas con una vuelta tranquila.\nPractica atarte los pies sin pensar.\nY sal del ergómetro con energía para el tramo final.\n\n¿Qué ritmo por 500 m llevas en carrera?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#remo",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/blog/que-es-hyrox"
+}

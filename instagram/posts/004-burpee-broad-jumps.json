@@ -1,0 +1,61 @@
+{
+  "id": "004-burpee-broad-jumps",
+  "pilar": "estaciones",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Burpee Broad Jumps: 80 metros a tu ritmo",
+      "subtitulo": "La estación donde más gente se pasa de rosca."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Encuentra un ritmo *fijo*",
+      "texto": "Burpee, salto, burpee, salto. Mejor un ritmo constante que puedas mantener los 80 metros que tres burpees rapidísimos y una parada larga."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Salto útil, no récord",
+      "texto": "Salta lejos, pero sin que cada salto te deje sin aire. Un salto medio bien aterrizado te deja listo para el siguiente burpee."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Bájate sin dar golpes",
+      "texto": "Llega al suelo de forma controlada. Dejarte caer de golpe cansa y castiga el pecho y las muñecas en cada repetición."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Respira en el mismo punto",
+      "texto": "Coge aire siempre en el mismo momento, por ejemplo al levantarte. Un patrón fijo evita que te ahogues a mitad de estación."
+    },
+    {
+      "tipo": "cita",
+      "texto": "Lento y sin parar gana a rápido y a trompicones."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Burpee Broad Jumps: 80 metros a tu ritmo. La estación donde más gente se pasa de rosca.",
+    "01. Encuentra un ritmo fijo. Burpee, salto, burpee, salto. Mejor un ritmo constante que puedas mantener los 80 metros que tres burpees rapidísimos y una parada larga.",
+    "02. Salto útil, no récord. Salta lejos, pero sin que cada salto te deje sin aire. Un salto medio bien aterrizado te deja listo para el siguiente burpee.",
+    "03. Bájate sin dar golpes. Llega al suelo de forma controlada. Dejarte caer de golpe cansa y castiga el pecho y las muñecas en cada repetición.",
+    "04. Respira en el mismo punto. Coge aire siempre en el mismo momento, por ejemplo al levantarte. Un patrón fijo evita que te ahogues a mitad de estación.",
+    "Frase destacada: Lento y sin parar gana a rápido y a trompicones.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Los Burpee Broad Jumps se ganan con un ritmo que no se rompe.\n\nSon 80 metros de burpee y salto hacia delante. Mucha gente arranca a tope y acaba haciendo pausas largas de pie.\n\nRitmo fijo desde el primer metro.\nSaltos medios y bien aterrizados.\nBajada controlada al suelo.\nY la respiración siempre en el mismo punto del movimiento.\n\n¿Los entrenas enteros o por tramos?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#burpees",
+    "#carrerashibridas"
+  ],
+  "url_destino": "/blog/que-es-hyrox"
+}

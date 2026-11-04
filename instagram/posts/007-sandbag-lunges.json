@@ -1,0 +1,56 @@
+{
+  "id": "007-sandbag-lunges",
+  "pilar": "estaciones",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Sandbag Lunges: 100 metros que se hacen eternos",
+      "subtitulo": "La penúltima estación pone a prueba las piernas y la cabeza."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Saco bien colocado",
+      "texto": "Ponte el saco sobre los hombros, pegado al cuello, y sujétalo firme. Si se mueve en cada zancada, gastas energía solo en recolocarlo."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "La rodilla toca el suelo",
+      "texto": "La rodilla de atrás tiene que tocar el suelo en cada zancada. Acostúmbrate a hacerlo bien en los entrenos para no sumar repeticiones que no valen."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Tronco recto, paso *medio*",
+      "texto": "Zancadas medias con el tronco erguido. Un paso muy largo cansa más de lo que avanzas y uno muy corto multiplica las repeticiones."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Divide la distancia",
+      "texto": "Piensa en tramos cortos y cuenta de diez en diez. Cien metros de golpe asustan, diez tramos se llevan mejor."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Sandbag Lunges: 100 metros que se hacen eternos. La penúltima estación pone a prueba las piernas y la cabeza.",
+    "01. Saco bien colocado. Ponte el saco sobre los hombros, pegado al cuello, y sujétalo firme. Si se mueve en cada zancada, gastas energía solo en recolocarlo.",
+    "02. La rodilla toca el suelo. La rodilla de atrás tiene que tocar el suelo en cada zancada. Acostúmbrate a hacerlo bien en los entrenos para no sumar repeticiones que no valen.",
+    "03. Tronco recto, paso medio. Zancadas medias con el tronco erguido. Un paso muy largo cansa más de lo que avanzas y uno muy corto multiplica las repeticiones.",
+    "04. Divide la distancia. Piensa en tramos cortos y cuenta de diez en diez. Cien metros de golpe asustan, diez tramos se llevan mejor.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "En las zancadas con saco se pierde mucho tiempo por zancadas que no cuentan.\n\nSon 100 metros con el saco sobre los hombros, cuando ya tienes siete kilómetros y seis estaciones encima.\n\nSaco pegado al cuello y bien sujeto.\nRodilla de atrás al suelo en cada paso.\nZancada media y tronco recto.\nY la distancia dividida en tramos en tu cabeza.\n\n¿Haces pausas o las sacas del tirón?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#lunges",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/blog/que-es-hyrox"
+}

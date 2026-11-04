@@ -1,0 +1,61 @@
+{
+  "id": "006-farmers-carry",
+  "pilar": "estaciones",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Farmers Carry: 200 metros de agarre",
+      "subtitulo": "Parece sencillo hasta que se te abren las manos."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Coge bien desde el principio",
+      "texto": "Agarra las kettlebells por el centro del asa y aprieta antes de levantarlas. Recolocarlas a mitad de recorrido te obliga a soltarlas."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Hombros abajo y atrás",
+      "texto": "Pecho alto y hombros lejos de las orejas. Encorvarte hace que el peso tire de la espalda y canse antes."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Pasos cortos y *rápidos*",
+      "texto": "Camina deprisa con pasos cortos para que las pesas no se balanceen. Cuanto antes llegues, menos tiempo aguantan las manos."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Si paras, para bien",
+      "texto": "Si necesitas soltar, deja las pesas con control, sacude las manos unos segundos y vuelve a cogerlas. Mejor una parada corta que dos largas."
+    },
+    {
+      "tipo": "cita",
+      "texto": "El agarre se entrena antes de la carrera. El día de la carrera solo se usa."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Farmers Carry: 200 metros de agarre. Parece sencillo hasta que se te abren las manos.",
+    "01. Coge bien desde el principio. Agarra las kettlebells por el centro del asa y aprieta antes de levantarlas. Recolocarlas a mitad de recorrido te obliga a soltarlas.",
+    "02. Hombros abajo y atrás. Pecho alto y hombros lejos de las orejas. Encorvarte hace que el peso tire de la espalda y canse antes.",
+    "03. Pasos cortos y rápidos. Camina deprisa con pasos cortos para que las pesas no se balanceen. Cuanto antes llegues, menos tiempo aguantan las manos.",
+    "04. Si paras, para bien. Si necesitas soltar, deja las pesas con control, sacude las manos unos segundos y vuelve a cogerlas. Mejor una parada corta que dos largas.",
+    "Frase destacada: El agarre se entrena antes de la carrera. El día de la carrera solo se usa.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "El Farmers Carry se decide en las manos, no en las piernas.\n\nSon 200 metros con dos kettlebells, después del remo y con el agarre ya trabajado por el trineo y la cuerda.\n\nCoge las pesas por el centro del asa.\nHombros abajo y pecho alto.\nPasos cortos y rápidos.\nY si paras, que sea una vez y corta.\n\n¿Cuántas veces sueltas en los 200 metros?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#farmerscarry",
+    "#carrerashibridas"
+  ],
+  "url_destino": "/blog/que-es-hyrox"
+}

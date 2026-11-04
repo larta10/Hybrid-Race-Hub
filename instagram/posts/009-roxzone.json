@@ -1,0 +1,56 @@
+{
+  "id": "009-roxzone",
+  "pilar": "estaciones",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Roxzone: el tiempo que no ves pasar",
+      "subtitulo": "Las transiciones también cuentan en el crono."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Qué es la Roxzone",
+      "texto": "Es la zona de transición entre la pista de carrera y las estaciones. Entras y sales de ella dieciséis veces, y todo ese tiempo suma en tu marca final."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Camina con un *propósito*",
+      "texto": "Si necesitas caminar, que sea rápido y hacia donde vas. Pasear mirando a los lados es el error más común."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Conoce el recorrido",
+      "texto": "Antes de la salida, mira por dónde se entra y se sale de cada estación. Dudar en carrera cuesta segundos cada vez."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Respira mientras te mueves",
+      "texto": "Aprovecha la Roxzone para bajar pulsaciones sin pararte. Recuperar andando ligero es mejor que recuperar quieto."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Roxzone: el tiempo que no ves pasar. Las transiciones también cuentan en el crono.",
+    "01. Qué es la Roxzone. Es la zona de transición entre la pista de carrera y las estaciones. Entras y sales de ella dieciséis veces, y todo ese tiempo suma en tu marca final.",
+    "02. Camina con un propósito. Si necesitas caminar, que sea rápido y hacia donde vas. Pasear mirando a los lados es el error más común.",
+    "03. Conoce el recorrido. Antes de la salida, mira por dónde se entra y se sale de cada estación. Dudar en carrera cuesta segundos cada vez.",
+    "04. Respira mientras te mueves. Aprovecha la Roxzone para bajar pulsaciones sin pararte. Recuperar andando ligero es mejor que recuperar quieto.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Mucha gente pierde minutos en la Roxzone sin darse cuenta.\n\nEs la zona de transición entre la pista y las estaciones, y el tiempo que pasas ahí cuenta en tu marca.\n\nMírate el recorrido antes de salir.\nSi caminas, camina rápido y con un destino.\nY usa ese tramo para respirar sin pararte.\n\n¿Alguna vez has mirado cuánto tiempo pierdes en las transiciones?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#roxzone",
+    "#carrerashibridas"
+  ],
+  "url_destino": "/blog/que-es-hyrox"
+}
