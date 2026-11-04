@@ -1,0 +1,25 @@
+{
+  "id": "001-sled-push-tecnica",
+  "pilar": "estaciones",
+  "slides": [
+    { "tipo": "portada", "titulo": "Sled Push: técnica que ahorra minutos", "subtitulo": "50 metros que deciden cómo llegas al resto de la carrera." },
+    { "tipo": "punto", "numero": "01", "titulo": "Cuerpo bajo, brazos largos", "texto": "Inclina el tronco hasta que quede casi paralelo al suelo y empuja con los brazos estirados o casi. Cuanto más alineado vaya tu cuerpo con el trineo, más fuerza llega a él y menos se pierde en los hombros." },
+    { "tipo": "punto", "numero": "02", "titulo": "Pasos cortos y *constantes*", "texto": "Zancadas cortas y rápidas, empujando con la parte delantera del pie. Un trineo parado cuesta mucho más volver a moverlo que mantenerlo en marcha, así que evita frenar a mitad de calle." },
+    { "tipo": "punto", "numero": "03", "titulo": "Respira antes de empezar", "texto": "Llegas del kilómetro con las pulsaciones altas. Coge dos o tres respiraciones profundas al agarrar el trineo y arranca. Esos segundos se recuperan con creces en los primeros metros." },
+    { "tipo": "punto", "numero": "04", "titulo": "Entrénalo con piernas cansadas", "texto": "Empujar fresco no se parece a empujar después de correr. Mete series de trineo justo después de un tramo de carrera para acostumbrarte a la sensación real de competición." },
+    { "tipo": "cita", "texto": "El trineo no se gana con fuerza bruta. Se gana sin pararse.", "autor": "Hybrid Race Hub" },
+    { "tipo": "cta", "titulo": "Guárdalo para tu próximo entreno", "texto": "Más guías en hybridracehub.com · enlace en la bio" }
+  ],
+  "alt_text": [
+    "Portada: Sled Push, técnica que ahorra minutos.",
+    "Consejo 1: cuerpo bajo y brazos largos para empujar el trineo.",
+    "Consejo 2: pasos cortos y constantes, sin frenar a mitad de calle.",
+    "Consejo 3: respira profundo antes de empezar a empujar.",
+    "Consejo 4: entrena el trineo justo después de correr.",
+    "Frase: el trineo no se gana con fuerza bruta, se gana sin pararse.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com."
+  ],
+  "caption": "El Sled Push se gana sin pararte, no empujando más fuerte.\n\nSon 50 metros, pero llegan después del segundo kilómetro y marcan cómo te vas a sentir en el resto de la carrera.\n\nCuerpo bajo y brazos casi estirados.\nPasos cortos con la parte delantera del pie.\nUn trineo parado cuesta mucho más volver a moverlo.\nY entrénalo con las piernas ya cansadas, que es como lo vas a encontrar en carrera.\n\n¿Tú empujas con brazos estirados o flexionados?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": ["#hyrox", "#hyroxspain", "#sledpush", "#entrenamientohibrido"],
+  "url_destino": "/blog/que-es-hyrox"
+}
