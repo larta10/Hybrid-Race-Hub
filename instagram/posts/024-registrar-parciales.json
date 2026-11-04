@@ -1,0 +1,56 @@
+{
+  "id": "024-registrar-parciales",
+  "pilar": "entrenamiento",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Apunta tus parciales y entrena lo que falla",
+      "subtitulo": "Tu tiempo final te dice poco. Los parciales te lo dicen todo."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Tramo a tramo",
+      "texto": "Después de cada carrera o simulación, apunta los ocho kilómetros, las ocho estaciones y las transiciones por separado."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Busca el patrón",
+      "texto": "Si siempre se te dispara la misma estación o se te cae el ritmo después de ella, ahí está tu margen de mejora."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Ponte un *objetivo* realista",
+      "texto": "Con tus parciales, reparte un tiempo objetivo entre carrera y estaciones. Una calculadora te ayuda a ver si cuadra."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Compara contigo",
+      "texto": "La referencia útil es tu carrera anterior, no la de otra persona con otra historia y otro nivel."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Apunta tus parciales y entrena lo que falla. Tu tiempo final te dice poco. Los parciales te lo dicen todo.",
+    "01. Tramo a tramo. Después de cada carrera o simulación, apunta los ocho kilómetros, las ocho estaciones y las transiciones por separado.",
+    "02. Busca el patrón. Si siempre se te dispara la misma estación o se te cae el ritmo después de ella, ahí está tu margen de mejora.",
+    "03. Ponte un objetivo realista. Con tus parciales, reparte un tiempo objetivo entre carrera y estaciones. Una calculadora te ayuda a ver si cuadra.",
+    "04. Compara contigo. La referencia útil es tu carrera anterior, no la de otra persona con otra historia y otro nivel.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Tu tiempo final te dice cómo te fue. Tus parciales te dicen por qué.\n\nDespués de cada carrera o simulación:\n\nApunta kilómetros, estaciones y transiciones por separado.\nBusca qué se repite.\nReparte tu próximo objetivo con números realistas.\nY compárate solo contigo.\n\nEn la web tienes una calculadora para repartir tu tiempo objetivo.\n\n¿Ya tienes claro dónde pierdes más tiempo?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#entrenamientohibrido",
+    "#carrerashibridas"
+  ],
+  "url_destino": "/calculadora-hyrox"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "022-semanas-antes-carrera",
+  "pilar": "entrenamiento",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Las semanas antes de la carrera",
+      "subtitulo": "Lo que hagas al final no te pone en forma. Te deja llegar fresco."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Baja el volumen",
+      "texto": "En los últimos días, entrena menos tiempo pero mantén algo de intensidad. Así llegas con las piernas frescas y sin perder chispa."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Nada nuevo",
+      "texto": "Ni ejercicios nuevos, ni zapatillas nuevas, ni comidas nuevas. Lo que no hayas probado antes, no lo pruebes ahora."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Repasa la *logística*",
+      "texto": "Horario de tu salida, categoría, cómo llegar y qué llevar. Llegar con prisas a la salida te cuesta energía antes de empezar."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Duerme",
+      "texto": "Las noches previas importan más que la de antes de la carrera, que suele dormirse mal por los nervios. Es normal."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Las semanas antes de la carrera. Lo que hagas al final no te pone en forma. Te deja llegar fresco.",
+    "01. Baja el volumen. En los últimos días, entrena menos tiempo pero mantén algo de intensidad. Así llegas con las piernas frescas y sin perder chispa.",
+    "02. Nada nuevo. Ni ejercicios nuevos, ni zapatillas nuevas, ni comidas nuevas. Lo que no hayas probado antes, no lo pruebes ahora.",
+    "03. Repasa la logística. Horario de tu salida, categoría, cómo llegar y qué llevar. Llegar con prisas a la salida te cuesta energía antes de empezar.",
+    "04. Duerme. Las noches previas importan más que la de antes de la carrera, que suele dormirse mal por los nervios. Es normal.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "En las últimas semanas antes de la carrera no vas a ganar forma. Puedes perderla por hacer de más.\n\nMenos volumen, algo de intensidad.\nNada nuevo: ni material, ni comida, ni ejercicios.\nLa logística revisada con tiempo.\nY dormir bien las noches previas.\n\n¿Cómo llevas la última semana antes de competir?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#carrerashibridas",
+    "#entrenamientohibrido",
+    "#hyroxspain"
+  ],
+  "url_destino": "/calendario"
+}

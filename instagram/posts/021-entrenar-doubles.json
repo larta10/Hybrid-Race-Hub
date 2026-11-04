@@ -1,0 +1,56 @@
+{
+  "id": "021-entrenar-doubles",
+  "pilar": "entrenamiento",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Doubles: entrenad como pareja, no por separado",
+      "subtitulo": "Los dos corréis todo. Las estaciones se reparten."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Cómo funciona",
+      "texto": "En Doubles los dos corréis los ocho kilómetros juntos y repartís el trabajo de cada estación como queráis."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Decidid el reparto antes",
+      "texto": "Hablad quién hace qué parte de cada estación según vuestros puntos fuertes. En carrera no hay tiempo para negociar."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Cambios *rápidos*",
+      "texto": "Practicad los relevos dentro de la estación. Cambios cortos y frecuentes suelen funcionar mejor que bloques largos."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Ritmo del más lento",
+      "texto": "En la carrera vais juntos. El ritmo lo marca quien más sufre corriendo, no quien más corre."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Doubles: entrenad como pareja, no por separado. Los dos corréis todo. Las estaciones se reparten.",
+    "01. Cómo funciona. En Doubles los dos corréis los ocho kilómetros juntos y repartís el trabajo de cada estación como queráis.",
+    "02. Decidid el reparto antes. Hablad quién hace qué parte de cada estación según vuestros puntos fuertes. En carrera no hay tiempo para negociar.",
+    "03. Cambios rápidos. Practicad los relevos dentro de la estación. Cambios cortos y frecuentes suelen funcionar mejor que bloques largos.",
+    "04. Ritmo del más lento. En la carrera vais juntos. El ritmo lo marca quien más sufre corriendo, no quien más corre.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "En Doubles no gana la pareja más fuerte. Gana la que mejor se organiza.\n\nLos dos corréis todos los kilómetros y repartís el trabajo de las estaciones.\n\nDecidid el reparto antes de la carrera.\nEntrenad los cambios dentro de cada estación.\nY corred al ritmo de quien más sufre.\n\n¿Con quién harías tu próxima Doubles?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxdoubles",
+    "#hyroxspain",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/blog/formato-individual-parejas-mixtas-equipo"
+}

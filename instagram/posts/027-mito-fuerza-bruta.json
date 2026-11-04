@@ -1,0 +1,56 @@
+{
+  "id": "027-mito-fuerza-bruta",
+  "pilar": "errores",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Mito: para Hyrox hay que ser muy fuerte",
+      "subtitulo": "La fuerza ayuda. Pero la carrera es sobre todo resistencia."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Lo que dice el formato",
+      "texto": "Ocho kilómetros de carrera más ocho estaciones. Buena parte del tiempo total lo pasas corriendo o moviéndote sin parar."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Dónde ayuda la fuerza",
+      "texto": "En el trineo, las zancadas o el farmers carry, ser fuerte te hace sufrir menos. Pero no compensa no saber correr."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "El *equilibrio*",
+      "texto": "Un atleta que corre bien y tiene una fuerza decente suele hacer mejor carrera que uno muy fuerte que no corre."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Si estás empezando",
+      "texto": "No hace falta esperar a ser fuerte para apuntarte. Elige la categoría adecuada y ve mejorando carrera y fuerza a la vez."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Mito: para Hyrox hay que ser muy fuerte. La fuerza ayuda. Pero la carrera es sobre todo resistencia.",
+    "01. Lo que dice el formato. Ocho kilómetros de carrera más ocho estaciones. Buena parte del tiempo total lo pasas corriendo o moviéndote sin parar.",
+    "02. Dónde ayuda la fuerza. En el trineo, las zancadas o el farmers carry, ser fuerte te hace sufrir menos. Pero no compensa no saber correr.",
+    "03. El equilibrio. Un atleta que corre bien y tiene una fuerza decente suele hacer mejor carrera que uno muy fuerte que no corre.",
+    "04. Si estás empezando. No hace falta esperar a ser fuerte para apuntarte. Elige la categoría adecuada y ve mejorando carrera y fuerza a la vez.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "\"Yo no hago Hyrox, no soy tan fuerte.\" Lo oímos a menudo y no es así.\n\nLa fuerza ayuda en estaciones como el trineo o las zancadas, pero la mayor parte de la carrera es resistencia.\n\nCorrer bien pesa mucho en el tiempo final.\nUna fuerza decente es suficiente para empezar.\nY hay categorías con cargas distintas para cada nivel.\n\n¿Qué te frena para apuntarte a tu primera?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#carrerashibridas",
+    "#mitosfitness"
+  ],
+  "url_destino": "/blog/carreras-hibridas-principiantes-primera-prueba"
+}

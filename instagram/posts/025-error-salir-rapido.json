@@ -1,0 +1,60 @@
+{
+  "id": "025-error-salir-rapido",
+  "pilar": "errores",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Error: salir como si fuera un 10K",
+      "subtitulo": "El primer kilómetro más rápido suele ser el peor negocio de la carrera."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Lo que pasa",
+      "texto": "La salida emociona, todos corren y tú también. Llegas al SkiErg con el pulso disparado y el resto de la carrera se hace cuesta arriba."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Por qué cuesta tanto",
+      "texto": "Cada estación se hace mejor con el pulso controlado. Si empiezas por encima de tu ritmo, lo arrastras durante toda la carrera."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Qué hacer en su *lugar*",
+      "texto": "Sal a un ritmo que te parezca demasiado fácil. Si al final te sobra, lo usas en los últimos kilómetros."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Una pista",
+      "texto": "Si los primeros kilómetros son claramente tus mejores y los últimos tus peores, saliste demasiado rápido."
+    },
+    {
+      "tipo": "cita",
+      "texto": "Todos hemos visto al que sale a tope el primer kilómetro. Casi nunca es el que mejor termina."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Error: salir como si fuera un 10K. El primer kilómetro más rápido suele ser el peor negocio de la carrera.",
+    "01. Lo que pasa. La salida emociona, todos corren y tú también. Llegas al SkiErg con el pulso disparado y el resto de la carrera se hace cuesta arriba.",
+    "02. Por qué cuesta tanto. Cada estación se hace mejor con el pulso controlado. Si empiezas por encima de tu ritmo, lo arrastras durante toda la carrera.",
+    "03. Qué hacer en su lugar. Sal a un ritmo que te parezca demasiado fácil. Si al final te sobra, lo usas en los últimos kilómetros.",
+    "04. Una pista. Si los primeros kilómetros son claramente tus mejores y los últimos tus peores, saliste demasiado rápido.",
+    "Frase destacada: Todos hemos visto al que sale a tope el primer kilómetro. Casi nunca es el que mejor termina.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Todos hemos visto al que sale a tope el primer kilómetro y llega muerto al SkiErg.\n\nLa salida engancha. Pero una carrera híbrida es larga y cada estación se hace peor con el pulso disparado.\n\nSal a un ritmo que te parezca fácil.\nSi te sobra, úsalo al final.\nY revisa tus parciales: si el primer kilómetro fue el mejor, ya sabes lo que pasó.\n\n¿Te ha pasado alguna vez?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#pacing",
+    "#carrerashibridas"
+  ]
+}

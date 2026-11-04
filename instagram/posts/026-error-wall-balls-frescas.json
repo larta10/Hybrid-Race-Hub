@@ -1,0 +1,55 @@
+{
+  "id": "026-error-wall-balls-frescas",
+  "pilar": "errores",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Error: entrenar las wall balls siempre frescas",
+      "subtitulo": "En carrera llegan al final. En el entreno, también deberían a veces."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "El problema",
+      "texto": "Hacer 100 wall balls al principio de la sesión no tiene nada que ver con hacerlas después de siete kilómetros y siete estaciones."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Qué cambia",
+      "texto": "Con las piernas cansadas, la sentadilla se acorta y el balón no llega. Ahí aparecen las repeticiones que no cuentan."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Cómo *entrenarlas*",
+      "texto": "Ponlas al final de algunas sesiones, después de correr o de zancadas. Practica los bloques que vas a usar en carrera."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "La técnica no se negocia",
+      "texto": "Aunque estés cansado, sentadilla completa y balón al objetivo. Si se rompe la técnica, para y respira."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Error: entrenar las wall balls siempre frescas. En carrera llegan al final. En el entreno, también deberían a veces.",
+    "01. El problema. Hacer 100 wall balls al principio de la sesión no tiene nada que ver con hacerlas después de siete kilómetros y siete estaciones.",
+    "02. Qué cambia. Con las piernas cansadas, la sentadilla se acorta y el balón no llega. Ahí aparecen las repeticiones que no cuentan.",
+    "03. Cómo entrenarlas. Ponlas al final de algunas sesiones, después de correr o de zancadas. Practica los bloques que vas a usar en carrera.",
+    "04. La técnica no se negocia. Aunque estés cansado, sentadilla completa y balón al objetivo. Si se rompe la técnica, para y respira.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Si solo entrenas las wall balls frescas, la carrera te va a sorprender.\n\nEn Hyrox son la última estación, con todo el cansancio acumulado. Ahí se acortan las sentadillas y el balón deja de llegar.\n\nMételas al final de algunas sesiones.\nPractica tus bloques con las piernas cansadas.\nY mantén la técnica aunque cueste.\n\n¿Cómo terminas tus sesiones de entreno?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#wallballs",
+    "#hyroxspain",
+    "#entrenamientohibrido"
+  ]
+}

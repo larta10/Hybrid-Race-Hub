@@ -1,0 +1,56 @@
+{
+  "id": "030-error-no-leer-reglas",
+  "pilar": "errores",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Error: no leerte el reglamento",
+      "subtitulo": "Repeticiones que no cuentan y penalizaciones que no ves venir."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Cada estación tiene estándar",
+      "texto": "Profundidad de la sentadilla, rodilla al suelo en las zancadas, cómo hacer el burpee. Los jueces lo revisan."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Lo que pasa si no lo cumples",
+      "texto": "Las repeticiones mal hechas no cuentan y te toca repetirlas. Con las piernas cansadas, eso duele."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Léelo antes de *entrenar*",
+      "texto": "Si entrenas los movimientos con el estándar de carrera desde el principio, no tienes que corregir nada el día de la prueba."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Pregunta si dudas",
+      "texto": "En el briefing o en la web oficial. Mejor una duda resuelta antes que una sorpresa en la estación."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Error: no leerte el reglamento. Repeticiones que no cuentan y penalizaciones que no ves venir.",
+    "01. Cada estación tiene estándar. Profundidad de la sentadilla, rodilla al suelo en las zancadas, cómo hacer el burpee. Los jueces lo revisan.",
+    "02. Lo que pasa si no lo cumples. Las repeticiones mal hechas no cuentan y te toca repetirlas. Con las piernas cansadas, eso duele.",
+    "03. Léelo antes de entrenar. Si entrenas los movimientos con el estándar de carrera desde el principio, no tienes que corregir nada el día de la prueba.",
+    "04. Pregunta si dudas. En el briefing o en la web oficial. Mejor una duda resuelta antes que una sorpresa en la estación.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Pocas cosas duelen más que repetir wall balls porque no contaban.\n\nCada estación tiene su estándar y los jueces lo revisan. Si no lo cumples, la repetición no vale.\n\nLéete el reglamento de tu carrera.\nEntrena los movimientos con ese estándar desde el principio.\nY pregunta lo que no tengas claro antes de salir.\n\n¿Te han anulado alguna repetición en carrera?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#carrerashibridas",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/blog/que-es-hyrox"
+}

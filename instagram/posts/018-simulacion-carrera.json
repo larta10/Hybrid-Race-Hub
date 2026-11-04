@@ -1,0 +1,55 @@
+{
+  "id": "018-simulacion-carrera",
+  "pilar": "entrenamiento",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Simulaciones de carrera: cuándo y cuántas",
+      "subtitulo": "Hacer la carrera entera cada semana no es la mejor idea."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "No hace falta la carrera completa",
+      "texto": "Una simulación de media carrera o de varias estaciones seguidas te da información sin dejarte varios días hundido."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Pocas y con un objetivo",
+      "texto": "Hazlas de vez en cuando y con algo concreto que probar: ritmo, transiciones, qué comer antes o el material."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Apunta tus *parciales*",
+      "texto": "Anota el tiempo de cada tramo y cada estación. Así sabes dónde pierdes tiempo de verdad y qué toca entrenar."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Lejos del día de carrera",
+      "texto": "La última simulación larga, con margen suficiente antes de la competición. Las semanas finales son para llegar fresco."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Simulaciones de carrera: cuándo y cuántas. Hacer la carrera entera cada semana no es la mejor idea.",
+    "01. No hace falta la carrera completa. Una simulación de media carrera o de varias estaciones seguidas te da información sin dejarte varios días hundido.",
+    "02. Pocas y con un objetivo. Hazlas de vez en cuando y con algo concreto que probar: ritmo, transiciones, qué comer antes o el material.",
+    "03. Apunta tus parciales. Anota el tiempo de cada tramo y cada estación. Así sabes dónde pierdes tiempo de verdad y qué toca entrenar.",
+    "04. Lejos del día de carrera. La última simulación larga, con margen suficiente antes de la competición. Las semanas finales son para llegar fresco.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Simular la carrera entera todas las semanas te cansa más de lo que te enseña.\n\nLas simulaciones son útiles, pero con medida.\n\nMejor partes de la carrera que la carrera entera.\nPocas, y cada una con algo que probar.\nApunta tiempos de tramos y estaciones.\nY la última, con margen antes del día de la competición.\n\n¿Cada cuánto haces una simulación?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#entrenamientohibrido",
+    "#hyrox",
+    "#hyroxspain",
+    "#carrerashibridas"
+  ]
+}

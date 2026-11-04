@@ -1,0 +1,55 @@
+{
+  "id": "023-calentamiento-carrera",
+  "pilar": "entrenamiento",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Cómo calentar antes de una carrera híbrida",
+      "subtitulo": "Ni salir en frío ni gastar la mitad de la energía antes."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Empieza suave",
+      "texto": "Unos minutos de trote o bici muy tranquila para subir la temperatura. Sin prisa."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Movilidad de lo que vas a usar",
+      "texto": "Cadera, tobillos, hombros y espalda. Movimientos dinámicos, no estiramientos largos y estáticos."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Activa con *gestos* de carrera",
+      "texto": "Unas sentadillas, zancadas, algún burpee y un par de aceleraciones cortas. Que el cuerpo reconozca lo que viene."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Calcula los tiempos",
+      "texto": "Termina el calentamiento cerca de tu hora de salida. Calentar y luego esperar mucho rato en frío le quita sentido."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Cómo calentar antes de una carrera híbrida. Ni salir en frío ni gastar la mitad de la energía antes.",
+    "01. Empieza suave. Unos minutos de trote o bici muy tranquila para subir la temperatura. Sin prisa.",
+    "02. Movilidad de lo que vas a usar. Cadera, tobillos, hombros y espalda. Movimientos dinámicos, no estiramientos largos y estáticos.",
+    "03. Activa con gestos de carrera. Unas sentadillas, zancadas, algún burpee y un par de aceleraciones cortas. Que el cuerpo reconozca lo que viene.",
+    "04. Calcula los tiempos. Termina el calentamiento cerca de tu hora de salida. Calentar y luego esperar mucho rato en frío le quita sentido.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Salir en frío a una carrera híbrida te cuesta el primer kilómetro y parte del SkiErg.\n\nUn buen calentamiento no tiene que ser largo:\n\nUnos minutos de trote suave.\nMovilidad dinámica de cadera, tobillos y hombros.\nAlgunos gestos de la carrera y aceleraciones cortas.\nY terminarlo cerca de tu hora de salida.\n\n¿Cuánto tiempo calientas antes de competir?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#entrenamientohibrido",
+    "#calentamiento",
+    "#carrerashibridas"
+  ]
+}

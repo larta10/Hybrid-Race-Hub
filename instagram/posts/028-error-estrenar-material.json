@@ -1,0 +1,56 @@
+{
+  "id": "028-error-estrenar-material",
+  "pilar": "errores",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Error: estrenar material el día de la carrera",
+      "subtitulo": "Zapatillas, ropa o guantes nuevos son una lotería."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Zapatillas",
+      "texto": "Unas zapatillas nuevas pueden rozar, apretar o resbalar en el suelo del recinto. Úsalas antes en varios entrenos, también en estaciones."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Ropa",
+      "texto": "Costuras que rozan o prendas que se suben al hacer burpees. Pruébala en una sesión dura, no en el salón de casa."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Guantes y *accesorios*",
+      "texto": "Si los vas a usar, entrena con ellos. Si no los has probado, es mejor no llevarlos."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "La regla",
+      "texto": "El día de carrera solo llevas lo que ya ha funcionado en un entreno parecido a la competición."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Error: estrenar material el día de la carrera. Zapatillas, ropa o guantes nuevos son una lotería.",
+    "01. Zapatillas. Unas zapatillas nuevas pueden rozar, apretar o resbalar en el suelo del recinto. Úsalas antes en varios entrenos, también en estaciones.",
+    "02. Ropa. Costuras que rozan o prendas que se suben al hacer burpees. Pruébala en una sesión dura, no en el salón de casa.",
+    "03. Guantes y accesorios. Si los vas a usar, entrena con ellos. Si no los has probado, es mejor no llevarlos.",
+    "04. La regla. El día de carrera solo llevas lo que ya ha funcionado en un entreno parecido a la competición.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Las zapatillas nuevas para el día de la carrera son una mala idea, por bonitas que sean.\n\nEl material se prueba antes, en sesiones que se parezcan a la carrera:\n\nZapatillas con varios entrenos encima.\nRopa probada en burpees y zancadas.\nGuantes solo si ya entrenas con ellos.\n\nEl día de carrera, nada que no conozcas.\n\n¿Has estrenado algo en carrera y te ha salido mal?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#carrerashibridas",
+    "#ocrspain",
+    "#hyroxspain"
+  ],
+  "url_destino": "/productos/zapatillas-hyrox"
+}

@@ -1,0 +1,61 @@
+{
+  "id": "017-series-1km",
+  "pilar": "entrenamiento",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Series de 1 km para carreras híbridas",
+      "subtitulo": "La distancia exacta que vas a correr ocho veces."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Por qué 1 km",
+      "texto": "En una Hyrox corres en tramos de 1 km. Entrenar esa distancia te ayuda a conocer tu ritmo y a sentirlo sin mirar el reloj."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Ritmo objetivo, no máximo",
+      "texto": "Haz las series al ritmo que quieres llevar en carrera o un poco más rápido. No es un test: tienen que salir todas parecidas."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Recupera con *cabeza*",
+      "texto": "Descansa caminando o trotando entre series. Si la última sale mucho más lenta que la primera, la recuperación era corta o el ritmo alto."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Añade una estación",
+      "texto": "Cuando ya las controles, mete un ejercicio entre series: wall balls, remo o zancadas. Así se parecen más a la carrera."
+    },
+    {
+      "tipo": "cita",
+      "texto": "Si todas tus series salen iguales, has elegido bien el ritmo."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Series de 1 km para carreras híbridas. La distancia exacta que vas a correr ocho veces.",
+    "01. Por qué 1 km. En una Hyrox corres en tramos de 1 km. Entrenar esa distancia te ayuda a conocer tu ritmo y a sentirlo sin mirar el reloj.",
+    "02. Ritmo objetivo, no máximo. Haz las series al ritmo que quieres llevar en carrera o un poco más rápido. No es un test: tienen que salir todas parecidas.",
+    "03. Recupera con cabeza. Descansa caminando o trotando entre series. Si la última sale mucho más lenta que la primera, la recuperación era corta o el ritmo alto.",
+    "04. Añade una estación. Cuando ya las controles, mete un ejercicio entre series: wall balls, remo o zancadas. Así se parecen más a la carrera.",
+    "Frase destacada: Si todas tus series salen iguales, has elegido bien el ritmo.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "Si vas a correr ocho veces 1 km, entrena el kilómetro.\n\nLas series de 1 km te dan el ritmo de carrera en el cuerpo, no solo en el reloj.\n\nRitmo objetivo, no a tope.\nTodas las series parecidas.\nRecuperación suficiente para mantener el ritmo.\nY cuando las domines, una estación entre series.\n\n¿Cuántas series de 1 km haces en tu sesión?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#entrenamientohibrido",
+    "#hyrox",
+    "#series",
+    "#running"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

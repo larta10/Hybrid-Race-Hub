@@ -1,0 +1,56 @@
+{
+  "id": "016-rodaje-suave",
+  "pilar": "entrenamiento",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "El rodaje suave que casi nadie hace suave",
+      "subtitulo": "Correr lento también es entrenar."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Ritmo de conversación",
+      "texto": "Si puedes hablar en frases completas mientras corres, vas bien. Si solo te salen palabras sueltas, ya no es un rodaje suave."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Para qué sirve",
+      "texto": "Construye la base aeróbica que te permite recuperar entre estaciones y aguantar los ocho kilómetros sin hundirte."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Deja el ego en *casa*",
+      "texto": "Nadie mira tu ritmo en un rodaje. Ir más rápido no lo hace mejor, solo te deja más cansado para la sesión dura."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Cuánto",
+      "texto": "La mayoría de tus kilómetros de la semana pueden ser así. La intensidad se guarda para uno o dos días concretos."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: El rodaje suave que casi nadie hace suave. Correr lento también es entrenar.",
+    "01. Ritmo de conversación. Si puedes hablar en frases completas mientras corres, vas bien. Si solo te salen palabras sueltas, ya no es un rodaje suave.",
+    "02. Para qué sirve. Construye la base aeróbica que te permite recuperar entre estaciones y aguantar los ocho kilómetros sin hundirte.",
+    "03. Deja el ego en casa. Nadie mira tu ritmo en un rodaje. Ir más rápido no lo hace mejor, solo te deja más cansado para la sesión dura.",
+    "04. Cuánto. La mayoría de tus kilómetros de la semana pueden ser así. La intensidad se guarda para uno o dos días concretos.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "La mayoría de la gente corre sus rodajes suaves demasiado rápido.\n\nY luego llega cansada a la sesión que sí tenía que ser dura.\n\nUn rodaje suave es a ritmo de conversación.\nSirve para construir la base que te hace recuperar entre estaciones.\nY puede ser la mayor parte de tu volumen semanal.\n\n¿Te cuesta correr lento?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#entrenamientohibrido",
+    "#running",
+    "#hyrox",
+    "#atletahibrido"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

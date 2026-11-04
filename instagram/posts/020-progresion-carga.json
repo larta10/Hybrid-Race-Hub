@@ -1,0 +1,60 @@
+{
+  "id": "020-progresion-carga",
+  "pilar": "entrenamiento",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "No subas todo a la vez",
+      "subtitulo": "Más kilómetros, más kilos y más días a la vez es mala idea."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Una cosa cada vez",
+      "texto": "Si subes kilómetros, mantén la fuerza. Si subes la fuerza, no subas también las series. Cambios pequeños y de uno en uno."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Semanas de descarga",
+      "texto": "Cada pocas semanas, baja el volumen para asimilar el trabajo. Es cuando el cuerpo se adapta de verdad."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Escucha las *señales*",
+      "texto": "Dolores que no se van, sueño malo o ganas cero de entrenar suelen indicar que te has pasado. Para antes de que te pare una lesión."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Paciencia",
+      "texto": "Mejorar en un deporte híbrido es lento porque trabajas varias cualidades a la vez. Lo constante gana a lo intenso."
+    },
+    {
+      "tipo": "cita",
+      "texto": "Lo que haces cada semana importa más que lo que haces un día."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: No subas todo a la vez. Más kilómetros, más kilos y más días a la vez es mala idea.",
+    "01. Una cosa cada vez. Si subes kilómetros, mantén la fuerza. Si subes la fuerza, no subas también las series. Cambios pequeños y de uno en uno.",
+    "02. Semanas de descarga. Cada pocas semanas, baja el volumen para asimilar el trabajo. Es cuando el cuerpo se adapta de verdad.",
+    "03. Escucha las señales. Dolores que no se van, sueño malo o ganas cero de entrenar suelen indicar que te has pasado. Para antes de que te pare una lesión.",
+    "04. Paciencia. Mejorar en un deporte híbrido es lento porque trabajas varias cualidades a la vez. Lo constante gana a lo intenso.",
+    "Frase destacada: Lo que haces cada semana importa más que lo que haces un día.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "La forma más rápida de lesionarte es subir todo a la vez.\n\nMás kilómetros, más kilos y más días en la misma semana es una apuesta que casi siempre sale mal.\n\nSube una cosa cada vez.\nMete semanas de descarga.\nY presta atención a las señales de cansancio.\n\n¿Te ha pasado alguna vez por meter demasiado de golpe?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#entrenamientohibrido",
+    "#atletahibrido",
+    "#hyrox",
+    "#prevenciondelesiones"
+  ]
+}

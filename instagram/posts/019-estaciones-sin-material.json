@@ -1,0 +1,56 @@
+{
+  "id": "019-estaciones-sin-material",
+  "pilar": "entrenamiento",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Tu gimnasio no tiene trineo. Y qué",
+      "subtitulo": "Alternativas para entrenar las estaciones con lo que tengas."
+    },
+    {
+      "tipo": "punto",
+      "numero": "01",
+      "titulo": "Sin trineo",
+      "texto": "Empuja un disco grande sobre una superficie que deslice, o haz sentadillas y zancadas pesadas. Buscas fuerza de piernas en posición de empuje."
+    },
+    {
+      "tipo": "punto",
+      "numero": "02",
+      "titulo": "Sin SkiErg",
+      "texto": "Tirones de polea alta con los brazos casi estirados y flexión de cadera. El patrón se parece bastante."
+    },
+    {
+      "tipo": "punto",
+      "numero": "03",
+      "titulo": "Sin kettlebells *pesadas*",
+      "texto": "Camina con mancuernas o discos en las manos. El agarre se entrena igual sujetando cualquier peso."
+    },
+    {
+      "tipo": "punto",
+      "numero": "04",
+      "titulo": "Sin saco",
+      "texto": "Zancadas con una barra o una mochila cargada. Lo importante es acostumbrar las piernas al movimiento con peso."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo entreno",
+      "texto": "Más guías en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Tu gimnasio no tiene trineo. Y qué. Alternativas para entrenar las estaciones con lo que tengas.",
+    "01. Sin trineo. Empuja un disco grande sobre una superficie que deslice, o haz sentadillas y zancadas pesadas. Buscas fuerza de piernas en posición de empuje.",
+    "02. Sin SkiErg. Tirones de polea alta con los brazos casi estirados y flexión de cadera. El patrón se parece bastante.",
+    "03. Sin kettlebells pesadas. Camina con mancuernas o discos en las manos. El agarre se entrena igual sujetando cualquier peso.",
+    "04. Sin saco. Zancadas con una barra o una mochila cargada. Lo importante es acostumbrar las piernas al movimiento con peso.",
+    "Cierre: guárdalo para tu próximo entreno. Más guías en hybridracehub.com, enlace en la bio."
+  ],
+  "caption": "No tener trineo ni SkiErg no es excusa para no entrenar las estaciones.\n\nCon lo que hay en casi cualquier gimnasio puedes trabajar los mismos patrones:\n\nEmpujar un disco o hacer piernas pesadas.\nPolea alta para el SkiErg.\nMancuernas o discos para el farmers carry.\nMochila cargada para las zancadas.\n\nY cuando puedas, alguna sesión con el material real.\n\n¿Qué estación te cuesta más entrenar donde vas?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#entrenamientohibrido",
+    "#hyrox",
+    "#gimnasio",
+    "#hyroxspain"
+  ],
+  "url_destino": "/blog/donde-como-entrenar-prueba-hibrida"
+}
