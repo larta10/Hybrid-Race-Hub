@@ -59,7 +59,9 @@ async function upcomingRaces() {
 
 function pickStatic(posts, done, pilar) {
   const pending = posts.filter((p) => !done.has(p.id));
-  return pending.find((p) => p.pilar === pilar) || pending[0] || null;
+  // Si no quedan posts de material el primer sábado, sale el de nutrición/recuperación que tocaba
+  const alt = pilar === "producto" ? "nutricion" : null;
+  return pending.find((p) => p.pilar === pilar) || (alt && pending.find((p) => p.pilar === alt)) || pending[0] || null;
 }
 
 async function uploadImages(post, images) {
