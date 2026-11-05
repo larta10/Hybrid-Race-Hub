@@ -22,6 +22,12 @@ export const SATORI_FONTS = Object.entries(FILES).map(([key, [name, weight, file
 
 export const FONT = Object.fromEntries(Object.entries(FILES).map(([k, [name, weight]]) => [k, { family: name, weight }]));
 
+/** Caracteres del texto que no existen en la fuente (se verían como un cuadro) */
+export function missingGlyphs(text, fontKey) {
+  const f = parsed[fontKey];
+  return [...new Set([...String(text)].filter((ch) => ch.trim() && f.charToGlyphIndex(ch) === 0))];
+}
+
 /** Ancho en px de un texto con una fuente, tamaño y espaciado de letras dados */
 export function measure(text, fontKey, size, letterSpacing = 0) {
   const f = parsed[fontKey];

@@ -31,3 +31,6 @@ lighthouse-*.json
 
 # Vista previa local de Instagram
 instagram-preview/
+
+# utilidades locales de revisión de Instagram
+scripts/instagram/_*.mjs
