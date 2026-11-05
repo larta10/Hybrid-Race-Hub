@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="43 113 514 374">
+<path d="M300 470 C 210 400 120 330 120 240 C 120 170 170 130 225 130 C 262 130 288 150 300 180 C 312 150 338 130 375 130 C 430 130 480 170 480 240 C 480 330 390 400 300 470 Z" fill="#0B0C0F" stroke="#F2F0EB" stroke-width="6" stroke-linejoin="round" class="z-corazon"/>
+<polyline class="guia" points="60,300 190,300 225,300 250,230 280,380 310,260 335,300 540,300" fill="none" stroke="#FB923C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
