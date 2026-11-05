@@ -1,0 +1,119 @@
+{
+  "id": "104-sled-push-postura",
+  "pilar": "estaciones",
+  "titulo_interno": "Sled push: postura correcta e incorrecta",
+  "fuentes": [
+    {
+      "autores": "Brandt T, Ebel C, Lebahn C, Schmidt A",
+      "anio": 2025,
+      "titulo": "Acute physiological responses and performance determinants in Hyrox - a new running-focused high intensity functional fitness trend",
+      "revista": "Frontiers in Physiology",
+      "doi": "10.3389/fphys.2025.1519240",
+      "pmid": "40230601",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40230601/",
+      "verificado": true,
+      "que_dice": "En una simulación de HYROX con 11 atletas recreativos, las estaciones con más carga fueron las que se completaron antes: sled push en una mediana de 128 s y sled pull en 155 s.",
+      "limitaciones": "Solo 11 participantes recreativos en una simulación. El estudio no analiza la técnica de empuje: los tiempos sirven de contexto, no prueban qué postura es mejor."
+    }
+  ],
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Sled push: empuja con la *cadera*",
+      "subtitulo": "Cómo colocarte para que el trineo avance con las piernas y no con la espalda.",
+      "svg": "sled-push-correcto",
+      "resaltar": [
+        "gluteos",
+        "cuadriceps"
+      ]
+    },
+    {
+      "tipo": "correcto_incorrecto",
+      "titulo": "La postura lo decide",
+      "correcto": {
+        "svg": "sled-push-correcto",
+        "texto": "Tronco inclinado, espalda neutra, brazos largos y pasos cortos y rápidos."
+      },
+      "incorrecto": {
+        "svg": "sled-push-incorrecto",
+        "texto": "Cadera alta, piernas casi rectas y espalda redonda: la fuerza se pierde por el camino."
+      }
+    },
+    {
+      "tipo": "ilustracion",
+      "titulo": "Quién empuja de verdad",
+      "svg": "sled-push-correcto",
+      "resaltar": [
+        "gluteos",
+        "cuadriceps",
+        "gemelos"
+      ],
+      "leyenda": "Motor del empuje",
+      "texto": "Glúteos, cuádriceps y gemelos. Los brazos solo transmiten: si los doblas, absorben la fuerza que debería llegar al trineo."
+    },
+    {
+      "tipo": "comparativa",
+      "titulo": "Lo que dura cada trineo",
+      "texto": "Tiempo mediano en una simulación de HYROX con atletas recreativos.",
+      "etiqueta": "estudio",
+      "fuente": "Brandt et al., 2025, Frontiers in Physiology",
+      "a": {
+        "etiqueta": "Sled Push",
+        "valor": 128,
+        "unidad": "s",
+        "nota": "50 m"
+      },
+      "b": {
+        "etiqueta": "Sled Pull",
+        "valor": 155,
+        "unidad": "s",
+        "nota": "50 m"
+      },
+      "destacar": "a",
+      "simbolo": "vs",
+      "lectura": "Son las estaciones más pesadas y, aun así, de las más cortas. Dos minutos en los que cada paso mal dado cuenta."
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Ángulo antes",
+        "que *fuerza*"
+      ],
+      "texto": "Con el tronco bien inclinado y la espalda neutra, el empuje viaja de las piernas al trineo sin fugas."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Grábate de lado empujando: busca el tronco inclinado y la espalda recta, sin joroba.",
+        "Pasos cortos y continuos. Parar y volver a arrancar el trineo cuesta mucho más.",
+        "Mete empujes cortos después de correr: así es como llega en carrera."
+      ]
+    },
+    {
+      "tipo": "referencias"
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo trineo",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Sled push: empuja con la cadera. Cómo colocarte para que el trineo avance con las piernas y no con la espalda. Ilustración: atleta empujando el trineo con el tronco inclinado, la espalda neutra y los brazos extendidos, con glúteos y cuádriceps resaltados en naranja",
+    "La postura lo decide. Así: atleta empujando el trineo con el tronco inclinado, la espalda neutra y los brazos extendidos. Tronco inclinado, espalda neutra, brazos largos y pasos cortos y rápidos. Así no: atleta empujando el trineo con la cadera alta, las piernas casi rectas y la espalda redondeada. Cadera alta, piernas casi rectas y espalda redonda: la fuerza se pierde por el camino.",
+    "Quién empuja de verdad. Ilustración: atleta empujando el trineo con el tronco inclinado, la espalda neutra y los brazos extendidos, con glúteos y cuádriceps y gemelos resaltados en naranja. Glúteos, cuádriceps y gemelos. Los brazos solo transmiten: si los doblas, absorben la fuerza que debería llegar al trineo.",
+    "Comparativa (Datos del estudio): Lo que dura cada trineo. Tiempo mediano en una simulación de HYROX con atletas recreativos. Sled Push: 128 s (50 m). Sled Pull: 155 s (50 m). Son las estaciones más pesadas y, aun así, de las más cortas. Dos minutos en los que cada paso mal dado cuenta. Fuente: Brandt et al., 2025, Frontiers in Physiology",
+    "Conclusión: Ángulo antes que fuerza. Con el tronco bien inclinado y la espalda neutra, el empuje viaja de las piernas al trineo sin fugas.",
+    "Qué hacer en tu entreno. 1: Grábate de lado empujando: busca el tronco inclinado y la espalda recta, sin joroba. 2: Pasos cortos y continuos. Parar y volver a arrancar el trineo cuesta mucho más. 3: Mete empujes cortos después de correr: así es como llega en carrera.",
+    "Fuentes. Brandt T, Ebel C, Lebahn C, Schmidt A (2025). Acute physiological responses and performance determinants in Hyrox - a new running-focused high intensity functional fitness trend. Frontiers in Physiology",
+    "Cierre: Guárdalo para tu próximo trineo. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "El trineo no se mueve con los brazos. Se mueve con la cadera.\n\nLa postura que funciona: tronco inclinado hacia delante, espalda neutra, brazos largos que solo transmiten y pasos cortos y rápidos. La que no: cadera alta, piernas casi rectas y espalda redonda. Ahí la fuerza de las piernas se pierde antes de llegar al trineo.\n\nUn dato para ponerlo en contexto: en el primer estudio sobre HYROX, 11 atletas recreativos tardaron una mediana de 128 segundos en el sled push y 155 en el sled pull durante una simulación. Las estaciones más pesadas fueron de las más cortas. Ojo: el estudio no analizó la técnica, así que el dato sirve para dimensionar la estación, no para decir qué postura es mejor. Lo de la postura es biomecánica básica de empuje.\n\nPara entrenarlo:\nGrábate de lado y revisa el ángulo del tronco.\nPasos cortos, sin paradas.\nEmpujes cortos justo después de correr.\n\n¿Qué te cuesta más, arrancar el trineo o mantenerlo en marcha?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nBrandt T, et al. (2025). Acute physiological responses and performance determinants in Hyrox. Frontiers in Physiology.",
+  "hashtags": [
+    "#hyrox",
+    "#sledpush",
+    "#hyroxspain",
+    "#hyroxtraining"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

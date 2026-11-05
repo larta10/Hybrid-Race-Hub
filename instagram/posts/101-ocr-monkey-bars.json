@@ -1,0 +1,102 @@
+{
+  "id": "101-ocr-monkey-bars",
+  "pilar": "ocr",
+  "titulo_interno": "Monkey bars: cuélgate largo y usa la cadera",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Las monkey bars no se *cruzan* a pulso",
+      "subtitulo": "Se cruzan con brazos largos, ritmo y cadera. Así gastas menos antebrazo.",
+      "svg": "ocr-monkey-bars"
+    },
+    {
+      "tipo": "contexto",
+      "titulo": "Por qué te caes a mitad",
+      "texto": "Casi nadie se cae por falta de bíceps. Te caes porque el agarre se vacía: brazos doblados todo el rato, paradas largas entre barra y barra y cada mano aguantando más tiempo del necesario.",
+      "svg": "cuerpo-zonas",
+      "resaltar": [
+        "antebrazos",
+        "manos"
+      ]
+    },
+    {
+      "tipo": "ilustracion",
+      "titulo": "Cuélgate de los huesos",
+      "svg": "ocr-monkey-bars",
+      "resaltar": [
+        "brazos",
+        "core"
+      ],
+      "leyenda": "Lo que trabaja de verdad",
+      "texto": "Brazos casi estirados y hombros activos. Doblar los codos te cuesta fuerza en cada barra. La cadera marca el balanceo y te lleva a la siguiente."
+    },
+    {
+      "tipo": "linea_temporal",
+      "titulo": "Una barra en cuatro tiempos",
+      "etiqueta": "ilustrativo",
+      "fuente": "Elaboración propia",
+      "fases": [
+        {
+          "etiqueta": "1",
+          "titulo": "Agarre completo",
+          "texto": "Toda la mano alrededor de la barra, sin colgarte de los dedos"
+        },
+        {
+          "etiqueta": "2",
+          "titulo": "Balanceo",
+          "texto": "La cadera va hacia la barra siguiente, no los brazos",
+          "destacar": true
+        },
+        {
+          "etiqueta": "3",
+          "titulo": "Suelta en el punto alto",
+          "texto": "Cuando el cuerpo ya va hacia delante"
+        },
+        {
+          "etiqueta": "4",
+          "titulo": "Sin parar",
+          "texto": "Cada pausa colgado vacía el antebrazo"
+        }
+      ]
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Más ritmo,",
+        "menos *fuerza*"
+      ],
+      "texto": "El agarre es un depósito pequeño. Cuanto menos tiempo pases colgado de una mano, más barras te quedan."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Colgado pasivo y activo en barra: 3 series al final de dos sesiones por semana.",
+        "Practica el balanceo con los pies cerca del suelo antes de subir a barras altas.",
+        "Entrena el agarre cansado: después de remo o farmers carry, un par de pasadas por barras."
+      ]
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próxima OCR",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Las monkey bars no se cruzan a pulso. Se cruzan con brazos largos, ritmo y cadera. Así gastas menos antebrazo. Ilustración: atleta colgado de unas monkey bars con los brazos estirados",
+    "Por qué te caes a mitad. Casi nadie se cae por falta de bíceps. Te caes porque el agarre se vacía: brazos doblados todo el rato, paradas largas entre barra y barra y cada mano aguantando más tiempo del necesario. Ilustración: mapa del cuerpo humano visto de frente y de espaldas, con antebrazos y manos resaltados en naranja",
+    "Cuélgate de los huesos. Ilustración: atleta colgado de unas monkey bars con los brazos estirados, con brazos y abdomen resaltados en naranja. Brazos casi estirados y hombros activos. Doblar los codos te cuesta fuerza en cada barra. La cadera marca el balanceo y te lleva a la siguiente.",
+    "Línea temporal (Ejemplo ilustrativo): Una barra en cuatro tiempos. 1: Agarre completo, Toda la mano alrededor de la barra, sin colgarte de los dedos; 2: Balanceo, La cadera va hacia la barra siguiente, no los brazos; 3: Suelta en el punto alto, Cuando el cuerpo ya va hacia delante; 4: Sin parar, Cada pausa colgado vacía el antebrazo. Fuente: Elaboración propia",
+    "Conclusión: Más ritmo, menos fuerza. El agarre es un depósito pequeño. Cuanto menos tiempo pases colgado de una mano, más barras te quedan.",
+    "Qué hacer en tu entreno. 1: Colgado pasivo y activo en barra: 3 series al final de dos sesiones por semana. 2: Practica el balanceo con los pies cerca del suelo antes de subir a barras altas. 3: Entrena el agarre cansado: después de remo o farmers carry, un par de pasadas por barras.",
+    "Cierre: Guárdalo para tu próxima OCR. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "Si te caes a mitad de las monkey bars, casi nunca es por falta de fuerza.\n\nEs el agarre, que se vacía. Brazos doblados todo el rato, paradas colgado de una mano y cada barra pagada con antebrazo. En una OCR llegas a este obstáculo con las manos ya cargadas del muro, la cuerda o los transportes, así que cada segundo colgado cuenta.\n\nLo que funciona: brazos casi estirados con los hombros activos, balanceo desde la cadera y soltar la mano en el punto alto del vaivén, cuando el cuerpo ya va hacia la siguiente barra. Sin pausas.\n\nEsto es técnica, no un estudio: no hay investigación seria sobre monkey bars en OCR, así que te lo contamos como lo que es, principios de movimiento de toda la vida.\n\nCómo entrenarlo:\nColgado pasivo y activo al final de dos sesiones por semana.\nBalanceo con los pies cerca del suelo antes de ir a barras altas.\nAlguna pasada por barras justo después de remo o farmers carry, con el agarre ya cansado.\n\n¿Las monkey bars son tu obstáculo maldito o el que más disfrutas?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#ocr",
+    "#ocrspain",
+    "#carrerasdeobstaculos",
+    "#monkeybars",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/blog/carreras-hibridas-principiantes-primera-prueba"
+}

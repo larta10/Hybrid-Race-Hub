@@ -1,6 +1,6 @@
 // Carga de posts (instagram/posts/*.json), validación y post dinámico de calendario.
 // Esquema v2: carruseles de 7-10 slides con gráficas/ilustraciones y fuentes verificadas.
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { POSTS_DIR } from "./config.mjs";
 import { CHART_TYPES, VISUAL_TYPES, SLIDE_TYPES, svgZones } from "./design.mjs";
@@ -43,6 +43,14 @@ const LIM = {
 };
 const len = (v) => String(v ?? "").replace(/\*/g, "").length;
 const DOI = /^10\.\d{4,9}\/\S+$/;
+/** La ruta existe en pages/ o es un artículo de content/blog */
+function routeExists(url) {
+  const root = path.resolve(POSTS_DIR, "../..");
+  const u = url.replace(/\/$/, "") || "/";
+  const blog = u.match(/^\/blog\/([a-z0-9-]+)$/);
+  if (blog) return existsSync(path.join(root, "content/blog", `${blog[1]}.js`));
+  return [`pages${u}.js`, `pages${u}/index.js`].some((f) => existsSync(path.join(root, f)));
+}
 const surname = (autores) => String(autores).trim().split(/[ ,]/)[0].toLowerCase();
 
 /** Lista de errores del post (vacía si es válido) */
@@ -176,6 +184,7 @@ export function validatePost(p) {
   req(Array.isArray(p.hashtags) && p.hashtags.length >= 3 && p.hashtags.length <= 5, "entre 3 y 5 hashtags");
   req((p.hashtags || []).every((h) => /^#[\p{L}\p{N}_]+$/u.test(h)), "hashtags mal formados");
   req(!p.url_destino || /^\/[a-z0-9\-/]*$/.test(p.url_destino), "url_destino debe ser una ruta /…");
+  if (p.url_destino) req(routeExists(p.url_destino), `url_destino no existe en la web: ${p.url_destino}`);
   return e;
 }
 

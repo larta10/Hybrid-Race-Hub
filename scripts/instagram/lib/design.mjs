@@ -211,7 +211,7 @@ function heading(s, issues, { maxTitle = 220, maxText = 200, titleMax = 76, text
  * Tarjeta de gráfica con etiqueta de procedencia, fuente al pie y lectura opcional debajo.
  * draw(x, y, w, h) devuelve el SVG del interior.
  */
-function chartSlide(s, issues, draw, { minCard = 420 } = {}) {
+function chartSlide(s, issues, draw, { minCard = 420, maxCard = Infinity } = {}) {
   const head = heading(s, issues);
   let lectura = null;
   const srcH = 40;
@@ -222,8 +222,10 @@ function chartSlide(s, issues, draw, { minCard = 420 } = {}) {
     bottom -= lh + 28;
     lectura = { y: bottom + srcH + 24, h: lh };
   }
-  const cy = head.y;
-  const ch = bottom - cy;
+  const ch = Math.min(bottom - head.y, maxCard);
+  // si la tarjeta es más baja que el hueco, se centra en vertical
+  const cy = head.y + Math.max(0, (bottom - head.y - ch) / 2 - 20);
+  if (lectura) lectura.y = cy + ch + srcH + 24;
   if (ch < minCard) issues.push(`la gráfica queda demasiado baja (${Math.round(ch)} px): acorta título o texto`);
   let out = head.svg + card(X, cy, CW, ch) + dataTag(s.etiqueta, X + CW - 24, cy + 24);
   if (s.unidad_eje) out += t(s.unidad_eje.toUpperCase(), X + 32, cy + 49, { font: "cond-600", size: 20, color: C.muted, ls: 2.5 });
@@ -350,7 +352,9 @@ function barChart(s, issues) {
     bars.forEach((b, i) => {
       const cx = x + slot * i + slot / 2;
       const bh = Math.max(6, (b.valor / max) * ph);
-      out += `<path d="M${r1(cx - bw / 2)} ${r1(py + ph)} V${r1(py + ph - bh + 6)} Q${r1(cx - bw / 2)} ${r1(py + ph - bh)} ${r1(cx - bw / 2 + 6)} ${r1(py + ph - bh)} H${r1(cx + bw / 2 - 6)} Q${r1(cx + bw / 2)} ${r1(py + ph - bh)} ${r1(cx + bw / 2)} ${r1(py + ph - bh + 6)} V${r1(py + ph)} Z" fill="${b.destacar ? C.accent : C.steel}"/>`;
+      const d = `M${r1(cx - bw / 2)} ${r1(py + ph)} V${r1(py + ph - bh + 6)} Q${r1(cx - bw / 2)} ${r1(py + ph - bh)} ${r1(cx - bw / 2 + 6)} ${r1(py + ph - bh)} H${r1(cx + bw / 2 - 6)} Q${r1(cx + bw / 2)} ${r1(py + ph - bh)} ${r1(cx + bw / 2)} ${r1(py + ph - bh + 6)} V${r1(py + ph)} Z`;
+      // referencia: barra hueca con trazo discontinuo (umbral, valor de partida...)
+      out += b.referencia ? `<path d="${d}" fill="none" stroke="${C.text}" stroke-width="3" stroke-dasharray="10 8"/>` : `<path d="${d}" fill="${b.destacar ? C.accent : C.steel}"/>`;
       out += t(fmt(b.valor) + unit, cx, py + ph - bh - 16, { font: "cond-700", size: n > 5 ? 32 : 40, color: b.destacar ? C.accent : C.text, anchor: "middle" });
       out += block(b.etiqueta, cx, py + ph + 14, { font: "body-500", max: 24, min: 18, maxWidth: slot - 12, maxHeight: labH, lineHeight: 1.15, color: C.text, anchor: "middle" }, issues, "etiqueta").svg;
     });
@@ -429,7 +433,7 @@ function comparativa(s, issues) {
       out += rect(mid - dw / 2, cy + 56, dw, 50, { fill: C.accent, stroke: null, rx: 25 }) + t(s.diferencia, mid, cy + 93, { font: "cond-800", size: 34, color: C.bg, anchor: "middle" });
     }
     return out;
-  });
+ }, { maxCard: 560 });
 }
 
 // ---------- Donut / porcentaje ----------
@@ -656,7 +660,8 @@ function ilustracion(s, issues) {
   const ch = BOTTOM - textH - cy;
   let out = head.svg + card(X, cy, CW, ch);
   if (s.etiqueta) out += dataTag(s.etiqueta, X + CW - 24, cy + 24);
-  out += illustration(s.svg, X + 50, cy + (s.etiqueta ? 70 : 40), CW - 100, ch - (s.etiqueta ? 100 : 80), { resaltar: s.resaltar, surface: C.card }, issues);
+  const off = s.etiqueta || s.leyenda ? 84 : 40;
+  out += illustration(s.svg, X + 50, cy + off, CW - 100, ch - off - 36, { resaltar: s.resaltar, surface: C.card }, issues);
   if (s.leyenda) {
     // pequeña leyenda del resaltado
     out += `<rect x="${X + 32}" y="${r1(cy + 34)}" width="22" height="22" rx="4" fill="${C.accent}"/>` + t(s.leyenda, X + 66, cy + 53, { font: "body-500", size: 24, color: C.text });

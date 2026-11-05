@@ -1,0 +1,102 @@
+{
+  "id": "107-ocr-muro",
+  "pilar": "ocr",
+  "titulo_interno": "El muro: se sube con las piernas",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "El muro se sube con las *piernas*",
+      "subtitulo": "Los brazos solo te sujetan. Lo que te sube es el impulso y el talón.",
+      "svg": "ocr-muro"
+    },
+    {
+      "tipo": "contexto",
+      "titulo": "Por qué te quedas colgado",
+      "texto": "Llegas parado, te agarras arriba e intentas subir a pulso. Es la forma más cara de pasar un muro: todo el peso cuelga de los brazos y el agarre se funde para los obstáculos que quedan.",
+      "svg": "cuerpo-zonas",
+      "resaltar": [
+        "gluteos",
+        "cuadriceps",
+        "isquios"
+      ]
+    },
+    {
+      "tipo": "ilustracion",
+      "titulo": "El pie hace el trabajo",
+      "svg": "ocr-muro",
+      "resaltar": [
+        "cuadriceps",
+        "gluteos"
+      ],
+      "leyenda": "Lo que te sube",
+      "texto": "Un pie empuja la pared hacia abajo mientras las manos llegan al borde. Así subes la cadera sin colgarte."
+    },
+    {
+      "tipo": "linea_temporal",
+      "titulo": "El muro en cuatro pasos",
+      "etiqueta": "ilustrativo",
+      "fuente": "Elaboración propia",
+      "fases": [
+        {
+          "etiqueta": "1",
+          "titulo": "Aproximación",
+          "texto": "Unos pasos rápidos: la velocidad es altura gratis"
+        },
+        {
+          "etiqueta": "2",
+          "titulo": "Pie a la pared",
+          "texto": "Empuja hacia abajo, a media altura del muro",
+          "destacar": true
+        },
+        {
+          "etiqueta": "3",
+          "titulo": "Manos al borde",
+          "texto": "Codos por encima del borde en cuanto puedas"
+        },
+        {
+          "etiqueta": "4",
+          "titulo": "Talón arriba",
+          "texto": "Engancha un talón en el borde y pasa la cadera"
+        }
+      ]
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Impulso y talón,",
+        "no *pulso*"
+      ],
+      "texto": "Cuanto menos tiempo estés colgado, más agarre te queda para el resto de la carrera."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Practica el paso 2 en un muro bajo o un cajón alto: pie a la pared y manos arriba en un solo gesto.",
+        "Trabaja el gancho de talón en una barra baja hasta que salga sin pensar.",
+        "Dominadas y colgados te ayudan, pero no sustituyen a practicar el gesto."
+      ]
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próxima OCR",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: El muro se sube con las piernas. Los brazos solo te sujetan. Lo que te sube es el impulso y el talón. Ilustración: atleta colgado del borde de un muro de obstáculos con un pie apoyado en la pared",
+    "Por qué te quedas colgado. Llegas parado, te agarras arriba e intentas subir a pulso. Es la forma más cara de pasar un muro: todo el peso cuelga de los brazos y el agarre se funde para los obstáculos que quedan. Ilustración: mapa del cuerpo humano visto de frente y de espaldas, con glúteos y cuádriceps y isquiotibiales resaltados en naranja",
+    "El pie hace el trabajo. Ilustración: atleta colgado del borde de un muro de obstáculos con un pie apoyado en la pared, con cuádriceps y glúteos resaltados en naranja. Un pie empuja la pared hacia abajo mientras las manos llegan al borde. Así subes la cadera sin colgarte.",
+    "Línea temporal (Ejemplo ilustrativo): El muro en cuatro pasos. 1: Aproximación, Unos pasos rápidos: la velocidad es altura gratis; 2: Pie a la pared, Empuja hacia abajo, a media altura del muro; 3: Manos al borde, Codos por encima del borde en cuanto puedas; 4: Talón arriba, Engancha un talón en el borde y pasa la cadera. Fuente: Elaboración propia",
+    "Conclusión: Impulso y talón, no pulso. Cuanto menos tiempo estés colgado, más agarre te queda para el resto de la carrera.",
+    "Qué hacer en tu entreno. 1: Practica el paso 2 en un muro bajo o un cajón alto: pie a la pared y manos arriba en un solo gesto. 2: Trabaja el gancho de talón en una barra baja hasta que salga sin pensar. 3: Dominadas y colgados te ayudan, pero no sustituyen a practicar el gesto.",
+    "Cierre: Guárdalo para tu próxima OCR. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "Si subes el muro a pulso, lo estás pagando con el agarre de los obstáculos que vienen.\n\nEl error típico es llegar parado, agarrarse arriba e intentar subir con los brazos. Todo el peso cuelga de las manos. La alternativa: unos pasos rápidos de aproximación, un pie que empuja la pared hacia abajo a media altura, las manos al borde y el talón enganchado arriba para pasar la cadera. Los brazos sujetan, las piernas suben.\n\nEsto es técnica de movimiento, no un estudio. No hay investigación que compare formas de pasar un muro en OCR, así que no te vamos a dar cifras que no existen.\n\nCómo practicarlo:\nEl pie a la pared y las manos al borde en un solo gesto, primero en un muro bajo.\nEl gancho de talón en una barra baja.\nDominadas sí, pero sin olvidar el gesto.\n\n¿Muro alto con impulso o prefieres el clásico pie en el apoyo?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#ocr",
+    "#ocrspain",
+    "#carrerasdeobstaculos",
+    "#ocrtraining"
+  ],
+  "url_destino": "/blog/carreras-hibridas-principiantes-primera-prueba"
+}

@@ -1,0 +1,125 @@
+{
+  "id": "102-carbohidratos-en-carrera",
+  "pilar": "nutricion",
+  "titulo_interno": "Carbohidratos en carrera: cuánto según lo que dura",
+  "fuentes": [
+    {
+      "autores": "Jeukendrup A",
+      "anio": 2014,
+      "titulo": "A step towards personalized sports nutrition: carbohydrate intake during exercise",
+      "revista": "Sports Medicine",
+      "doi": "10.1007/s40279-014-0148-z",
+      "pmid": "24791914",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24791914/",
+      "verificado": true,
+      "que_dice": "Propone pautas de carbohidrato durante el ejercicio según la duración: en esfuerzos de unos 30-60 min basta un enjuague bucal o pequeñas cantidades; en 2-3 h, hasta unos 60 g/h; en ultrafondo, unos 90 g/h con mezcla de azúcares.",
+      "limitaciones": "Es una revisión narrativa, no un metaanálisis. Las pautas salen sobre todo de estudios en ciclismo y carrera continua, no de pruebas con estaciones de fuerza como HYROX."
+    }
+  ],
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "¿Gel en HYROX? Depende del *reloj*",
+      "subtitulo": "Lo que dice la evidencia sobre carbohidratos durante el esfuerzo, según lo que vayas a tardar.",
+      "svg": "deposito-glucogeno",
+      "resaltar": [
+        "nivel-1",
+        "nivel-2"
+      ]
+    },
+    {
+      "tipo": "contexto",
+      "titulo": "La duración manda",
+      "texto": "Tu cuerpo guarda carbohidrato en forma de glucógeno, en músculos e hígado. En esfuerzos cortos llega de sobra. Cuanto más dura la prueba, más sentido tiene ir reponiendo por el camino.",
+      "svg": "plato",
+      "resaltar": [
+        "carbohidratos"
+      ]
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Cuánto tomar según la duración",
+      "texto": "Pautas de una revisión sobre carbohidratos durante el ejercicio.",
+      "etiqueta": "estudio",
+      "fuente": "Jeukendrup, 2014, Sports Medicine",
+      "columnas": [
+        "Duración",
+        "Cantidad",
+        "Tipo"
+      ],
+      "filas": [
+        [
+          "30-60 min",
+          "Enjuague o muy poca",
+          "Cualquiera"
+        ],
+        [
+          "2-3 h",
+          "Hasta ~60 g/h",
+          "Una fuente vale"
+        ],
+        [
+          "Ultrafondo",
+          "~90 g/h",
+          "Glucosa + fructosa"
+        ]
+      ],
+      "destacar_fila": 0,
+      "lectura": "Un HYROX de 60-90 minutos queda entre la primera y la segunda fila."
+    },
+    {
+      "tipo": "ilustracion",
+      "titulo": "Lo que más gasta",
+      "svg": "cuerpo-zonas",
+      "resaltar": [
+        "cuadriceps",
+        "gluteos",
+        "isquios"
+      ],
+      "leyenda": "Músculos grandes de la pierna",
+      "texto": "Correr y empujar el trineo tiran sobre todo de piernas y cadera, que es donde está la mayor parte de tu glucógeno muscular."
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Primero, llegar",
+        "con el depósito *lleno*"
+      ],
+      "texto": "En una prueba de una hora y poco, lo que comes los días previos importa tanto como lo que tomes en carrera."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Las 24-48 h previas, que el carbohidrato no falte en tus comidas principales.",
+        "Si vas a estar más de una hora, prueba en entreno una toma pequeña (gel o bebida) y mira cómo la toleras.",
+        "Nunca estrenes en carrera un gel o una bebida que no hayas probado entrenando."
+      ]
+    },
+    {
+      "tipo": "referencias"
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para el día de carrera",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: ¿Gel en HYROX? Depende del reloj. Lo que dice la evidencia sobre carbohidratos durante el esfuerzo, según lo que vayas a tardar. Ilustración: depósito de glucógeno dividido en cuatro niveles, con nivel más bajo y segundo nivel resaltados en naranja",
+    "La duración manda. Tu cuerpo guarda carbohidrato en forma de glucógeno, en músculos e hígado. En esfuerzos cortos llega de sobra. Cuanto más dura la prueba, más sentido tiene ir reponiendo por el camino. Ilustración: plato dividido en tres partes, con carbohidratos resaltados en naranja",
+    "Tabla (Datos del estudio): Cuánto tomar según la duración. Pautas de una revisión sobre carbohidratos durante el ejercicio. Columnas: Duración, Cantidad, Tipo. 30-60 min, Enjuague o muy poca, Cualquiera; 2-3 h, Hasta ~60 g/h, Una fuente vale; Ultrafondo, ~90 g/h, Glucosa + fructosa. Un HYROX de 60-90 minutos queda entre la primera y la segunda fila. Fuente: Jeukendrup, 2014, Sports Medicine",
+    "Lo que más gasta. Ilustración: mapa del cuerpo humano visto de frente y de espaldas, con cuádriceps y glúteos y isquiotibiales resaltados en naranja. Correr y empujar el trineo tiran sobre todo de piernas y cadera, que es donde está la mayor parte de tu glucógeno muscular.",
+    "Conclusión: Primero, llegar con el depósito lleno. En una prueba de una hora y poco, lo que comes los días previos importa tanto como lo que tomes en carrera.",
+    "Qué hacer en tu entreno. 1: Las 24-48 h previas, que el carbohidrato no falte en tus comidas principales. 2: Si vas a estar más de una hora, prueba en entreno una toma pequeña (gel o bebida) y mira cómo la toleras. 3: Nunca estrenes en carrera un gel o una bebida que no hayas probado entrenando.",
+    "Fuentes. Jeukendrup A (2014). A step towards personalized sports nutrition: carbohydrate intake during exercise. Sports Medicine",
+    "Cierre: Guárdalo para el día de carrera. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "¿Gel en mitad de un HYROX? La respuesta depende de cuánto vayas a tardar.\n\nUna revisión de Asker Jeukendrup ordenó las pautas de carbohidratos durante el ejercicio según la duración. En esfuerzos de entre media hora y una hora, un enjuague bucal o una cantidad pequeña ya puede ayudar. En pruebas de 2-3 horas la cifra sube hasta unos 60 gramos por hora, y en ultrafondo a unos 90, mezclando glucosa y fructosa para absorber más.\n\nUn HYROX de 60-90 minutos cae entre la primera y la segunda fila. No necesitas un plan de ultramaratoniano: necesitas llegar con el depósito lleno y, si vas a estar más de una hora, probar en entrenos una toma pequeña.\n\nOjo con las limitaciones: es una revisión, no un metaanálisis, y casi todo sale de ciclismo y carrera continua. Nadie ha medido todavía esto en pruebas con estaciones de fuerza.\n\nCómo aplicarlo:\nCarbohidrato en tus comidas principales las 24-48 h previas.\nSi pruebas un gel o una bebida, hazlo primero en una simulación.\nNada nuevo el día de carrera.\n\n¿Tomas algo durante la carrera o vas a palo seco?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nJeukendrup A. (2014). A step towards personalized sports nutrition: carbohydrate intake during exercise. Sports Medicine.",
+  "hashtags": [
+    "#nutriciondeportiva",
+    "#hyrox",
+    "#hyroxspain",
+    "#carbohidratos"
+  ],
+  "url_destino": "/blog/que-es-hyrox"
+}

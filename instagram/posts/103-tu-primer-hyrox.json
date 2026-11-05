@@ -1,0 +1,134 @@
+{
+  "id": "103-tu-primer-hyrox",
+  "pilar": "comunidad",
+  "titulo_interno": "Tu primer HYROX: cuánto dura y dónde se va el tiempo",
+  "fuentes": [
+    {
+      "autores": "Brandt T, Ebel C, Lebahn C, Schmidt A",
+      "anio": 2025,
+      "titulo": "Acute physiological responses and performance determinants in Hyrox - a new running-focused high intensity functional fitness trend",
+      "revista": "Frontiers in Physiology",
+      "doi": "10.3389/fphys.2025.1519240",
+      "pmid": "40230601",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40230601/",
+      "verificado": true,
+      "que_dice": "En una simulación de HYROX (Individual Open), 11 atletas recreativos tardaron una mediana de 86,5 min: 51,2 min corriendo y 32,8 min en estaciones. Los valores más altos de pulso, lactato y esfuerzo percibido aparecieron en los wall balls. Terminar antes se asoció con más VO2máx y más volumen de entrenamiento de resistencia.",
+      "limitaciones": "Solo 11 participantes, recreativos, en una simulación y no en una competición oficial. Son correlaciones, no causa y efecto."
+    }
+  ],
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Tu primer HYROX, *minuto* a minuto",
+      "subtitulo": "Cuánto se tarda, dónde se va el tiempo y en qué momento duele más.",
+      "svg": "cronometro"
+    },
+    {
+      "tipo": "contexto",
+      "titulo": "El formato",
+      "texto": "8 tramos de 1 km. Tras cada uno, una estación: SkiErg 1000 m, Sled Push 50 m, Sled Pull 50 m, Burpee Broad Jumps 80 m, Remo 1000 m, Farmers Carry 200 m, Sandbag Lunges 100 m y 100 Wall Balls. Pesos según categoría."
+    },
+    {
+      "tipo": "linea_temporal",
+      "titulo": "Cómo se vive por dentro",
+      "etiqueta": "ilustrativo",
+      "fuente": "Elaboración propia",
+      "fases": [
+        {
+          "etiqueta": "Km 1-2",
+          "titulo": "SkiErg y Sled Push",
+          "texto": "Vas fresco: el momento más fácil para pasarte de ritmo"
+        },
+        {
+          "etiqueta": "Km 3-4",
+          "titulo": "Sled Pull y Burpees",
+          "texto": "Las piernas empiezan a notar el trineo"
+        },
+        {
+          "etiqueta": "Km 5-6",
+          "titulo": "Remo y Farmers Carry",
+          "texto": "Mitad de carrera: el agarre entra en juego"
+        },
+        {
+          "etiqueta": "Km 7-8",
+          "titulo": "Lunges y Wall Balls",
+          "texto": "El tramo más duro. Aquí se gana o se pierde",
+          "destacar": true
+        }
+      ]
+    },
+    {
+      "tipo": "dato_grande",
+      "titulo": "Lo que se tarda",
+      "etiqueta": "estudio",
+      "fuente": "Brandt et al., 2025, Frontiers in Physiology",
+      "cifra": "86,5",
+      "unidad": "min",
+      "texto": "Tiempo mediano de 11 atletas recreativos en una simulación completa, categoría individual Open."
+    },
+    {
+      "tipo": "comparativa",
+      "titulo": "Dónde se va el tiempo",
+      "etiqueta": "estudio",
+      "fuente": "Brandt et al., 2025, Frontiers in Physiology",
+      "a": {
+        "etiqueta": "Carrera",
+        "valor": 51.2,
+        "unidad": "min",
+        "nota": "Los 8 tramos de 1 km"
+      },
+      "b": {
+        "etiqueta": "Estaciones",
+        "valor": 32.8,
+        "unidad": "min",
+        "nota": "Las 8 estaciones"
+      },
+      "destacar": "a",
+      "simbolo": "vs",
+      "lectura": "Los picos de pulso, lactato y esfuerzo percibido llegaron en los wall balls, la última estación."
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Corres más tiempo",
+        "del que *crees*"
+      ],
+      "texto": "HYROX parece una prueba de estaciones, pero la mayor parte del reloj se va corriendo."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Que la carrera tenga su sitio fijo en tu semana, no solo las estaciones.",
+        "Haz al menos una simulación completa antes de tu debut para conocer tus tiempos.",
+        "Guarda algo para el final: los wall balls llegan cuando más cansado estás."
+      ]
+    },
+    {
+      "tipo": "referencias"
+    },
+    {
+      "tipo": "cta",
+      "titulo": "¿Primer dorsal? Guárdalo",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Tu primer HYROX, minuto a minuto. Cuánto se tarda, dónde se va el tiempo y en qué momento duele más. Ilustración: cronómetro con un tramo de tiempo marcado",
+    "El formato. 8 tramos de 1 km. Tras cada uno, una estación: SkiErg 1000 m, Sled Push 50 m, Sled Pull 50 m, Burpee Broad Jumps 80 m, Remo 1000 m, Farmers Carry 200 m, Sandbag Lunges 100 m y 100 Wall Balls. Pesos según categoría.",
+    "Línea temporal (Ejemplo ilustrativo): Cómo se vive por dentro. Km 1-2: SkiErg y Sled Push, Vas fresco: el momento más fácil para pasarte de ritmo; Km 3-4: Sled Pull y Burpees, Las piernas empiezan a notar el trineo; Km 5-6: Remo y Farmers Carry, Mitad de carrera: el agarre entra en juego; Km 7-8: Lunges y Wall Balls, El tramo más duro. Aquí se gana o se pierde. Fuente: Elaboración propia",
+    "Dato destacado (Datos del estudio): Lo que se tarda. 86,5 min. Tiempo mediano de 11 atletas recreativos en una simulación completa, categoría individual Open. Fuente: Brandt et al., 2025, Frontiers in Physiology",
+    "Comparativa (Datos del estudio): Dónde se va el tiempo. Carrera: 51,2 min (Los 8 tramos de 1 km). Estaciones: 32,8 min (Las 8 estaciones). Los picos de pulso, lactato y esfuerzo percibido llegaron en los wall balls, la última estación. Fuente: Brandt et al., 2025, Frontiers in Physiology",
+    "Conclusión: Corres más tiempo del que crees. HYROX parece una prueba de estaciones, pero la mayor parte del reloj se va corriendo.",
+    "Qué hacer en tu entreno. 1: Que la carrera tenga su sitio fijo en tu semana, no solo las estaciones. 2: Haz al menos una simulación completa antes de tu debut para conocer tus tiempos. 3: Guarda algo para el final: los wall balls llegan cuando más cansado estás.",
+    "Fuentes. Brandt T, Ebel C, Lebahn C, Schmidt A (2025). Acute physiological responses and performance determinants in Hyrox - a new running-focused high intensity functional fitness trend. Frontiers in Physiology",
+    "Cierre: ¿Primer dorsal? Guárdalo. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "Tu primer HYROX dura más corriendo que haciendo estaciones. Y no por poco.\n\nEn 2025 se publicó el primer estudio científico sobre HYROX. Un grupo alemán midió a 11 atletas recreativos en una simulación completa de la categoría individual Open. Tardaron una mediana de 86,5 minutos: 51,2 corriendo y 32,8 en estaciones. El pulso, el lactato y el esfuerzo percibido tocaron techo en los wall balls, la última estación. Y los que terminaron antes tenían más VO2máx y más volumen de entrenamiento de resistencia.\n\nLimitaciones: 11 personas, una simulación y no una carrera oficial. Y que algo vaya asociado a terminar antes no prueba que sea la causa. Aun así, encaja con lo que ves en cualquier clasificación.\n\nSi debutas pronto:\nNo abandones la carrera a pie por meter más estaciones.\nHaz una simulación completa antes para conocer tus tiempos.\nGuarda algo para los wall balls.\n\n¿Cuánto tardaste en tu primer HYROX, o cuánto te gustaría tardar?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nBrandt T, et al. (2025). Acute physiological responses and performance determinants in Hyrox. Frontiers in Physiology.",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#primerhyrox",
+    "#carrerashibridas"
+  ],
+  "url_destino": "/blog/que-es-hyrox"
+}
