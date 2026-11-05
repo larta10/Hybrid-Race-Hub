@@ -1,0 +1,167 @@
+{
+  "id": "121-proteina-diaria",
+  "pilar": "nutricion",
+  "titulo_interno": "Proteína diaria: a partir de 1,6 g/kg ya no suma (Morton 2018)",
+  "fuentes": [
+    {
+      "autores": "Morton RW, Murphy KT, McKellar SR, Schoenfeld BJ, Henselmans M, Helms E, Aragon AA, Devries MC, Banfield L, Krieger JW, Phillips SM",
+      "anio": 2018,
+      "titulo": "A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults",
+      "revista": "British Journal of Sports Medicine",
+      "doi": "10.1136/bjsports-2017-097608",
+      "pmid": "28698222",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28698222/",
+      "verificado": true,
+      "que_dice": "Con 49 estudios y 1.863 participantes que hacían fuerza al menos 6 semanas, suplementar proteína aumentó algo más la fuerza (1RM, +2,49 kg) y la masa libre de grasa (+0,30 kg). Por encima de unos 1,62 g de proteína por kg de peso y día, no hubo más ganancia de masa libre de grasa. El efecto fue menor con la edad y mayor en personas ya entrenadas.",
+      "limitaciones": "Estudia entrenamiento de fuerza, no deportes híbridos ni de resistencia. 1,6 g/kg es una media: algunas personas pueden beneficiarse de algo más. Uno de los autores ha recibido financiación de la industria láctea."
+    }
+  ],
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Proteína: más no es *mejor*",
+      "subtitulo": "Cuánta necesitas al día si entrenas fuerza, según un metaanálisis de 49 estudios.",
+      "svg": "plato",
+      "resaltar": [
+        "proteina"
+      ]
+    },
+    {
+      "tipo": "dato_grande",
+      "titulo": "El punto donde deja de sumar",
+      "etiqueta": "estudio",
+      "fuente": "Morton et al., 2018, Br J Sports Med",
+      "cifra": "1,6",
+      "unidad": "g/kg/día",
+      "texto": "Por encima de esta ingesta total de proteína, la masa muscular no aumentó más con el entrenamiento de fuerza."
+    },
+    {
+      "tipo": "grafica_linea",
+      "titulo": "Sube y se aplana",
+      "texto": "Ganancia de masa muscular según la proteína diaria, en forma de esquema.",
+      "etiqueta": "ilustrativo",
+      "fuente": "Esquema basado en Morton et al., 2018",
+      "unidad_eje": "Ganancia relativa, %",
+      "x": [
+        "0,8",
+        "1,0",
+        "1,2",
+        "1,4",
+        "1,6",
+        "1,8",
+        "2,0",
+        "2,2"
+      ],
+      "series": [
+        {
+          "nombre": "Ganancia",
+          "valores": [
+            55,
+            66,
+            77,
+            89,
+            100,
+            100,
+            100,
+            100
+          ]
+        }
+      ],
+      "y": {
+        "min": 0,
+        "max": 100,
+        "marcas": [
+          0,
+          25,
+          50,
+          75,
+          100
+        ],
+        "sufijo": " %"
+      },
+      "etiquetar": false,
+      "destacar": {
+        "serie": 0,
+        "indice": 4,
+        "texto": "≈ 1,6 g/kg"
+      },
+      "lectura": "Eje horizontal: gramos de proteína por kg de peso y día. La forma es orientativa; el punto de corte es el del estudio."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "En tu plato",
+      "texto": "Proteína total al día con 1,6 g/kg, sumando todas las comidas.",
+      "etiqueta": "ilustrativo",
+      "fuente": "Ejemplo basado en Morton et al., 2018",
+      "columnas": [
+        "Peso",
+        "Al día",
+        "En 4 comidas"
+      ],
+      "filas": [
+        [
+          "60 kg",
+          "≈ 96 g",
+          "≈ 24 g cada una"
+        ],
+        [
+          "70 kg",
+          "≈ 112 g",
+          "≈ 28 g cada una"
+        ],
+        [
+          "80 kg",
+          "≈ 128 g",
+          "≈ 32 g cada una"
+        ],
+        [
+          "90 kg",
+          "≈ 144 g",
+          "≈ 36 g cada una"
+        ]
+      ]
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Suficiente",
+        "> *excesiva*"
+      ],
+      "texto": "Llegar a tu cifra con comida normal suele bastar. El batido es una comodidad, no una obligación."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Calcula tu cifra: tu peso por 1,6. Ese es tu objetivo diario aproximado.",
+        "Repártela en 3-4 comidas en lugar de concentrarla en una.",
+        "Si con comida normal ya llegas, no necesitas suplementos de proteína."
+      ]
+    },
+    {
+      "tipo": "referencias"
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próxima compra",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Proteína: más no es mejor. Cuánta necesitas al día si entrenas fuerza, según un metaanálisis de 49 estudios. Ilustración: plato dividido en tres partes, con proteína resaltados en naranja",
+    "Dato destacado (Datos del estudio): El punto donde deja de sumar. 1,6 g/kg/día. Por encima de esta ingesta total de proteína, la masa muscular no aumentó más con el entrenamiento de fuerza. Fuente: Morton et al., 2018, Br J Sports Med",
+    "Gráfica de líneas (Ejemplo ilustrativo): Sube y se aplana. Ganancia de masa muscular según la proteína diaria, en forma de esquema. Ganancia: 0,8, 55 %; 1,0, 66 %; 1,2, 77 %; 1,4, 89 %; 1,6, 100 %; 1,8, 100 %; 2,0, 100 %; 2,2, 100 %. Eje horizontal: gramos de proteína por kg de peso y día. La forma es orientativa; el punto de corte es el del estudio. Fuente: Esquema basado en Morton et al., 2018",
+    "Tabla (Ejemplo ilustrativo): En tu plato. Proteína total al día con 1,6 g/kg, sumando todas las comidas. Columnas: Peso, Al día, En 4 comidas. 60 kg, ≈ 96 g, ≈ 24 g cada una; 70 kg, ≈ 112 g, ≈ 28 g cada una; 80 kg, ≈ 128 g, ≈ 32 g cada una; 90 kg, ≈ 144 g, ≈ 36 g cada una. Fuente: Ejemplo basado en Morton et al., 2018",
+    "Conclusión: Suficiente > excesiva. Llegar a tu cifra con comida normal suele bastar. El batido es una comodidad, no una obligación.",
+    "Qué hacer en tu entreno. 1: Calcula tu cifra: tu peso por 1,6. Ese es tu objetivo diario aproximado. 2: Repártela en 3-4 comidas en lugar de concentrarla en una. 3: Si con comida normal ya llegas, no necesitas suplementos de proteína.",
+    "Fuentes. Morton RW, Murphy KT, McKellar SR, Schoenfeld BJ, Henselmans M, Helms E, Aragon AA, Devries MC, Banfield L, Krieger JW, Phillips SM (2018). A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults. British Journal of Sports Medicine",
+    "Cierre: Guárdalo para tu próxima compra. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "¿Cuánta proteína necesitas si entrenas fuerza? Menos de lo que te dicen en el gimnasio.\n\nUn metaanálisis de 2018 reunió 49 estudios con 1.863 personas que hacían entrenamiento de fuerza durante al menos 6 semanas. Añadir proteína ayudó a ganar algo más de fuerza y de masa muscular. Pero por encima de unos 1,6 gramos por kilo de peso al día, la masa muscular dejó de aumentar más. El efecto fue mayor en gente ya entrenada y menor con la edad.\n\nLimitaciones: el estudio va de entrenamiento de fuerza, no de deportes híbridos, y 1,6 es una media: algunas personas pueden beneficiarse de algo más. Uno de los autores declara financiación de la industria láctea.\n\nCómo aplicarlo:\nTu peso por 1,6: esa es tu cifra aproximada al día.\nRepártela en 3-4 comidas.\nSi llegas comiendo normal, el batido es opcional.\n\n¿Llevas la cuenta de la proteína o vas a ojo?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nMorton RW, et al. (2018). A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults. British Journal of Sports Medicine.",
+  "hashtags": [
+    "#nutriciondeportiva",
+    "#proteina",
+    "#entrenamientohibrido",
+    "#hyrox"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

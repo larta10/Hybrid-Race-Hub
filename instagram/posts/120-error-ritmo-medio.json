@@ -1,0 +1,124 @@
+{
+  "id": "120-error-ritmo-medio",
+  "pilar": "errores",
+  "titulo_interno": "Error: entrenar siempre a ritmo medio (Stöggl y Sperlich 2014)",
+  "fuentes": [
+    {
+      "autores": "Stöggl T, Sperlich B",
+      "anio": 2014,
+      "titulo": "Polarized training has greater impact on key endurance variables than threshold, high intensity, or high volume training",
+      "revista": "Frontiers in Physiology",
+      "doi": "10.3389/fphys.2014.00033",
+      "pmid": "24550842",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24550842/",
+      "verificado": true,
+      "que_dice": "48 deportistas de resistencia bien entrenados siguieron 9 semanas uno de cuatro modelos. El polarizado (68 % del tiempo a intensidad baja, 6 % en umbral y 26 % alta) mejoró más el VO2pico (+11,7 %), el tiempo hasta el agotamiento y la velocidad o potencia máxima. Entrenar sobre todo en umbral (54 % del tiempo) o con mucho volumen suave no aportó mejoras adicionales.",
+      "limitaciones": "48 participantes repartidos en cuatro grupos y solo 9 semanas. Corredores, ciclistas, triatletas y esquiadores de fondo, no atletas híbridos con trabajo de fuerza."
+    }
+  ],
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Siempre a ritmo *medio*, siempre igual",
+      "subtitulo": "Qué pasó cuando deportistas entrenados cambiaron cómo repartían la intensidad durante 9 semanas.",
+      "svg": "corazon"
+    },
+    {
+      "tipo": "contexto",
+      "titulo": "La zona gris",
+      "texto": "Ni suave ni duro: ese ritmo en el que sales cansado pero no reventado. Se siente productivo, así que acaba ocupando casi toda la semana. El problema es lo que dejas de hacer.",
+      "svg": "corredor"
+    },
+    {
+      "tipo": "barras_agrupadas",
+      "titulo": "Cómo repartían la intensidad",
+      "texto": "Porcentaje del tiempo de entrenamiento en cada zona.",
+      "etiqueta": "estudio",
+      "fuente": "Stöggl y Sperlich, 2014, Frontiers in Physiology",
+      "series": [
+        "Polarizado",
+        "Umbral"
+      ],
+      "grupos": [
+        {
+          "etiqueta": "Baja",
+          "valores": [
+            68,
+            46
+          ]
+        },
+        {
+          "etiqueta": "Umbral",
+          "valores": [
+            6,
+            54
+          ]
+        },
+        {
+          "etiqueta": "Alta",
+          "valores": [
+            26,
+            0
+          ]
+        }
+      ],
+      "destacar": [
+        2,
+        0
+      ],
+      "sufijo": " %",
+      "lectura": "El grupo de umbral pasaba más de la mitad del tiempo en la zona media y nada en alta intensidad."
+    },
+    {
+      "tipo": "dato_grande",
+      "titulo": "El resultado",
+      "etiqueta": "estudio",
+      "fuente": "Stöggl y Sperlich, 2014, Frontiers in Physiology",
+      "cifra": "+11,7 %",
+      "unidad": "VO2pico",
+      "texto": "Mejora del grupo polarizado en 9 semanas, la mayor de los cuatro modelos. El de umbral no mejoró de forma adicional."
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Suave de verdad,",
+        "duro de *verdad*"
+      ],
+      "texto": "La mayoría del tiempo, fácil. Una parte, muy intensa. Y poco tiempo en tierra de nadie."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Que tus rodajes suaves sean suaves: deberías poder hablar sin esfuerzo.",
+        "Reserva 1-2 sesiones a la semana para trabajo intenso de verdad.",
+        "Revisa tu reloj de las últimas semanas: si casi todo cae en zona media, ahí tienes margen."
+      ]
+    },
+    {
+      "tipo": "referencias"
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo y revisa tu semana",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Siempre a ritmo medio, siempre igual. Qué pasó cuando deportistas entrenados cambiaron cómo repartían la intensidad durante 9 semanas. Ilustración: corazón con una línea de pulsaciones",
+    "La zona gris. Ni suave ni duro: ese ritmo en el que sales cansado pero no reventado. Se siente productivo, así que acaba ocupando casi toda la semana. El problema es lo que dejas de hacer. Ilustración: corredor en plena zancada",
+    "Gráfica de barras agrupadas (Datos del estudio): Cómo repartían la intensidad. Porcentaje del tiempo de entrenamiento en cada zona. Baja: Polarizado 68 %, Umbral 46 %; Umbral: Polarizado 6 %, Umbral 54 %; Alta: Polarizado 26 %, Umbral 0 %. El grupo de umbral pasaba más de la mitad del tiempo en la zona media y nada en alta intensidad. Fuente: Stöggl y Sperlich, 2014, Frontiers in Physiology",
+    "Dato destacado (Datos del estudio): El resultado. +11,7 % VO2pico. Mejora del grupo polarizado en 9 semanas, la mayor de los cuatro modelos. El de umbral no mejoró de forma adicional. Fuente: Stöggl y Sperlich, 2014, Frontiers in Physiology",
+    "Conclusión: Suave de verdad, duro de verdad. La mayoría del tiempo, fácil. Una parte, muy intensa. Y poco tiempo en tierra de nadie.",
+    "Qué hacer en tu entreno. 1: Que tus rodajes suaves sean suaves: deberías poder hablar sin esfuerzo. 2: Reserva 1-2 sesiones a la semana para trabajo intenso de verdad. 3: Revisa tu reloj de las últimas semanas: si casi todo cae en zona media, ahí tienes margen.",
+    "Fuentes. Stöggl T, Sperlich B (2014). Polarized training has greater impact on key endurance variables than threshold, high intensity, or high volume training. Frontiers in Physiology",
+    "Cierre: Guárdalo y revisa tu semana. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "Si todos tus entrenos acaban al mismo ritmo, ni fácil ni duro, tienes margen de mejora.\n\nEn un estudio de 2014, 48 deportistas de resistencia bien entrenados (corredores, ciclistas, triatletas y esquiadores de fondo) siguieron durante 9 semanas uno de cuatro modelos. El polarizado, con el 68 % del tiempo suave, un 6 % en umbral y un 26 % intenso, mejoró el VO2pico un 11,7 %, además del tiempo hasta el agotamiento y la velocidad máxima. El grupo que pasaba más de la mitad del tiempo en umbral no consiguió mejoras adicionales.\n\nLimitaciones: son 48 personas repartidas en cuatro grupos y solo 9 semanas. Y no eran atletas híbridos con trabajo de fuerza, así que tómalo como una pista sobre cómo repartir la intensidad, no como una receta cerrada.\n\nCómo aplicarlo:\nRodajes suaves de verdad, hablando sin esfuerzo.\n1-2 sesiones intensas de verdad a la semana.\nRevisa tus zonas: si todo es zona media, ahí está tu margen.\n\n¿Cómo son tus rodajes suaves, suaves de verdad?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nStöggl T, Sperlich B. (2014). Polarized training has greater impact on key endurance variables than threshold, high intensity, or high volume training. Frontiers in Physiology.",
+  "hashtags": [
+    "#entrenamientopolarizado",
+    "#running",
+    "#hyrox",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

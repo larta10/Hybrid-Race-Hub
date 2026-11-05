@@ -1,0 +1,145 @@
+{
+  "id": "115-habitos-constancia",
+  "pilar": "comunidad",
+  "titulo_interno": "Cuánto tarda un hábito en asentarse (Lally 2010)",
+  "fuentes": [
+    {
+      "autores": "Lally P, van Jaarsveld CHM, Potts HWW, Wardle J",
+      "anio": 2010,
+      "titulo": "How are habits formed: modelling habit formation in the real world",
+      "revista": "European Journal of Social Psychology",
+      "doi": "10.1002/ejsp.674",
+      "url": "https://doi.org/10.1002/ejsp.674",
+      "verificado": true,
+      "que_dice": "96 voluntarios repitieron cada día un hábito de comida, bebida o actividad durante 12 semanas. La automaticidad creció siguiendo una curva que se aplana con el tiempo. El tiempo hasta llegar casi a su máximo (95 %) varió entre 18 y 254 días según la persona. Saltarse una oportunidad no afectó de forma importante al proceso.",
+      "limitaciones": "Muestra pequeña y voluntaria; el modelo solo se ajustó bien en 39 personas. Hábitos sencillos y autoinformados, no planes de entrenamiento."
+    }
+  ],
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Un mal día no rompe un *hábito*",
+      "subtitulo": "Lo que encontró un estudio que siguió durante 12 semanas cómo se forman los hábitos en la vida real.",
+      "svg": "cronometro"
+    },
+    {
+      "tipo": "contexto",
+      "titulo": "La trampa del todo o nada",
+      "texto": "Te saltas un entreno, luego otro, y la semana ya está perdida. Muchos dejan de entrenar no por un mal día, sino por creer que un mal día lo estropea todo.",
+      "svg": "corredor"
+    },
+    {
+      "tipo": "grafica_area",
+      "titulo": "Cómo se asienta un hábito",
+      "texto": "La facilidad para hacerlo sin pensar sube rápido al principio y luego se aplana.",
+      "etiqueta": "ilustrativo",
+      "fuente": "Esquema basado en Lally et al., 2010",
+      "unidad_eje": "Automatismo, % de su máximo",
+      "x": [
+        "Sem 0",
+        "2",
+        "4",
+        "6",
+        "8",
+        "10",
+        "12"
+      ],
+      "series": [
+        {
+          "nombre": "Automatismo",
+          "valores": [
+            0,
+            35,
+            58,
+            73,
+            83,
+            89,
+            93
+          ]
+        }
+      ],
+      "y": {
+        "min": 0,
+        "max": 100,
+        "marcas": [
+          0,
+          25,
+          50,
+          75,
+          100
+        ],
+        "sufijo": " %"
+      },
+      "etiquetar": false,
+      "destacar": {
+        "serie": 0,
+        "indice": 2,
+        "texto": "Lo más duro: las primeras semanas"
+      }
+    },
+    {
+      "tipo": "grafica_barras",
+      "orientacion": "horizontal",
+      "titulo": "No hay un número mágico",
+      "texto": "Días hasta llegar casi al máximo de automatismo.",
+      "etiqueta": "estudio",
+      "fuente": "Lally et al., 2010, Eur J Soc Psychol",
+      "sufijo": " días",
+      "max": 300,
+      "barras": [
+        {
+          "etiqueta": "El más rápido",
+          "valor": 18
+        },
+        {
+          "etiqueta": "El más lento",
+          "valor": 254,
+          "destacar": true
+        }
+      ],
+      "lectura": "Eran hábitos sencillos de comida, bebida o actividad. Entrenar es más complejo: date margen."
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Constancia ≠",
+        "*perfección*"
+      ],
+      "texto": "En el estudio, saltarse una oportunidad no afectó de forma importante al proceso. Lo que cuenta es volver."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Ata el entreno a un momento fijo del día, como hicieron los participantes.",
+        "Si fallas un día, la regla es sencilla: que no sean dos seguidos.",
+        "Mide semanas cumplidas, no días perfectos."
+      ]
+    },
+    {
+      "tipo": "referencias"
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Compártelo con tu compañero de entreno",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Un mal día no rompe un hábito. Lo que encontró un estudio que siguió durante 12 semanas cómo se forman los hábitos en la vida real. Ilustración: cronómetro con un tramo de tiempo marcado",
+    "La trampa del todo o nada. Te saltas un entreno, luego otro, y la semana ya está perdida. Muchos dejan de entrenar no por un mal día, sino por creer que un mal día lo estropea todo. Ilustración: corredor en plena zancada",
+    "Gráfica de área (Ejemplo ilustrativo): Cómo se asienta un hábito. La facilidad para hacerlo sin pensar sube rápido al principio y luego se aplana. Automatismo: Sem 0, 0 %; 2, 35 %; 4, 58 %; 6, 73 %; 8, 83 %; 10, 89 %; 12, 93 %. Fuente: Esquema basado en Lally et al., 2010",
+    "Gráfica de barras (Datos del estudio): No hay un número mágico. Días hasta llegar casi al máximo de automatismo. El más rápido: 18 días; El más lento: 254 días. Eran hábitos sencillos de comida, bebida o actividad. Entrenar es más complejo: date margen. Fuente: Lally et al., 2010, Eur J Soc Psychol",
+    "Conclusión: Constancia ≠ perfección. En el estudio, saltarse una oportunidad no afectó de forma importante al proceso. Lo que cuenta es volver.",
+    "Qué hacer en tu entreno. 1: Ata el entreno a un momento fijo del día, como hicieron los participantes. 2: Si fallas un día, la regla es sencilla: que no sean dos seguidos. 3: Mide semanas cumplidas, no días perfectos.",
+    "Fuentes. Lally P, van Jaarsveld CHM, Potts HWW, Wardle J (2010). How are habits formed: modelling habit formation in the real world. European Journal of Social Psychology",
+    "Cierre: Compártelo con tu compañero de entreno. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "Saltarte un entreno no rompe tu hábito. Lo que lo rompe es pensar que sí.\n\nUn grupo de investigadores pidió a 96 voluntarios que repitieran cada día un hábito sencillo de comida, bebida o actividad física, siempre en el mismo contexto (por ejemplo, después de desayunar), durante 12 semanas. El automatismo creció rápido al principio y luego se fue aplanando. Pero el tiempo hasta asentarlo varió muchísimo: de 18 a 254 días según la persona. Y saltarse un día suelto no cambió el resultado de forma importante.\n\nLimitaciones: muestra pequeña y voluntaria, el modelo solo encajó bien en una parte de los participantes y eran hábitos simples, no un plan de entrenamiento. Entrenar es más complejo, así que date margen.\n\nLo que nos llevamos:\nEntrena a una hora fija.\nSi fallas un día, que no sean dos.\nCuenta semanas cumplidas, no días perfectos.\n\n¿Qué te ha ayudado más a ser constante?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nLally P, et al. (2010). How are habits formed: modelling habit formation in the real world. European Journal of Social Psychology.",
+  "hashtags": [
+    "#comunidadhyrox",
+    "#constancia",
+    "#entrenamientohibrido",
+    "#hyroxspain"
+  ],
+  "url_destino": "/comunidad"
+}

@@ -1,0 +1,120 @@
+{
+  "id": "118-error-calentar-mal",
+  "pilar": "errores",
+  "titulo_interno": "Error: salir sin calentar (Fradkin 2010)",
+  "fuentes": [
+    {
+      "autores": "Fradkin AJ, Zazryn TR, Smoliga JM",
+      "anio": 2010,
+      "titulo": "Effects of warming-up on physical performance: a systematic review with meta-analysis",
+      "revista": "Journal of Strength and Conditioning Research",
+      "doi": "10.1519/JSC.0b013e3181c643a0",
+      "pmid": "19996770",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19996770/",
+      "verificado": true,
+      "que_dice": "Revisión sistemática con metaanálisis de 32 estudios de buena calidad: el calentamiento, con actividades que no eran solo estirar, mejoró el rendimiento en el 79 % de los criterios analizados, y apenas hubo evidencia de que perjudique.",
+      "limitaciones": "Pocos ensayos aleatorizados bien hechos, como reconocen los autores. Los estudios usan pruebas y calentamientos muy distintos, ninguno en carreras híbridas."
+    }
+  ],
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Salir en frío te cuesta el *primer* km",
+      "subtitulo": "Lo que dice una revisión de 32 estudios sobre calentar antes de un esfuerzo intenso.",
+      "svg": "corazon"
+    },
+    {
+      "tipo": "contexto",
+      "titulo": "El error típico",
+      "texto": "Llegas justo a tu tanda, das dos saltitos y sales. O te pasas 10 minutos estirando de pie. En HYROX el primer kilómetro y el SkiErg llegan enseguida, y el cuerpo aún está arrancando.",
+      "svg": "cronometro"
+    },
+    {
+      "tipo": "donut",
+      "titulo": "Lo que encontraron",
+      "texto": "Criterios de rendimiento que mejoraron con un calentamiento que no era solo estirar.",
+      "etiqueta": "estudio",
+      "fuente": "Fradkin et al., 2010, J Strength Cond Res",
+      "valor": 79,
+      "etiqueta_centro": "de los criterios mejoraron",
+      "lectura": "Apenas hubo evidencia de que calentar perjudique el rendimiento."
+    },
+    {
+      "tipo": "linea_temporal",
+      "titulo": "Un calentamiento de carrera",
+      "texto": "Un ejemplo de 25-30 minutos. Ajústalo a tu tanda y pruébalo antes en una simulación.",
+      "etiqueta": "ilustrativo",
+      "fuente": "Elaboración propia",
+      "fases": [
+        {
+          "etiqueta": "−30 min",
+          "titulo": "Trote suave",
+          "texto": "8-10 minutos, muy cómodo"
+        },
+        {
+          "etiqueta": "−20 min",
+          "titulo": "Movilidad dinámica",
+          "texto": "Zancadas, balanceos de pierna y cadera"
+        },
+        {
+          "etiqueta": "−15 min",
+          "titulo": "Activación",
+          "texto": "Unas sentadillas, saltos suaves y empujes"
+        },
+        {
+          "etiqueta": "−8 min",
+          "titulo": "Progresivos",
+          "texto": "2-3 aceleraciones hasta tu ritmo de carrera",
+          "destacar": true
+        },
+        {
+          "etiqueta": "Salida",
+          "titulo": "A tu ritmo",
+          "texto": "Ni antes ni más rápido"
+        }
+      ]
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Calentar no gasta,",
+        "*prepara*"
+      ],
+      "texto": "Un calentamiento progresivo no te quita energía para la carrera. Te deja listo para el ritmo desde el primer metro."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Llega con tiempo a tu tanda: calcula 30 minutos de calentamiento antes de la salida.",
+        "Que sea progresivo y en movimiento. Estirar de pie no sustituye a trotar y activar.",
+        "Termina con un par de aceleraciones a ritmo de carrera para que la salida no te pille en frío."
+      ]
+    },
+    {
+      "tipo": "referencias"
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para el día de carrera",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Salir en frío te cuesta el primer km. Lo que dice una revisión de 32 estudios sobre calentar antes de un esfuerzo intenso. Ilustración: corazón con una línea de pulsaciones",
+    "El error típico. Llegas justo a tu tanda, das dos saltitos y sales. O te pasas 10 minutos estirando de pie. En HYROX el primer kilómetro y el SkiErg llegan enseguida, y el cuerpo aún está arrancando. Ilustración: cronómetro con un tramo de tiempo marcado",
+    "Gráfico circular (Datos del estudio): Lo que encontraron. Criterios de rendimiento que mejoraron con un calentamiento que no era solo estirar. 79 % de los criterios mejoraron. Apenas hubo evidencia de que calentar perjudique el rendimiento. Fuente: Fradkin et al., 2010, J Strength Cond Res",
+    "Línea temporal (Ejemplo ilustrativo): Un calentamiento de carrera. Un ejemplo de 25-30 minutos. Ajústalo a tu tanda y pruébalo antes en una simulación. −30 min: Trote suave, 8-10 minutos, muy cómodo; −20 min: Movilidad dinámica, Zancadas, balanceos de pierna y cadera; −15 min: Activación, Unas sentadillas, saltos suaves y empujes; −8 min: Progresivos, 2-3 aceleraciones hasta tu ritmo de carrera; Salida: A tu ritmo, Ni antes ni más rápido. Fuente: Elaboración propia",
+    "Conclusión: Calentar no gasta, prepara. Un calentamiento progresivo no te quita energía para la carrera. Te deja listo para el ritmo desde el primer metro.",
+    "Qué hacer en tu entreno. 1: Llega con tiempo a tu tanda: calcula 30 minutos de calentamiento antes de la salida. 2: Que sea progresivo y en movimiento. Estirar de pie no sustituye a trotar y activar. 3: Termina con un par de aceleraciones a ritmo de carrera para que la salida no te pille en frío.",
+    "Fuentes. Fradkin AJ, Zazryn TR, Smoliga JM (2010). Effects of warming-up on physical performance: a systematic review with meta-analysis. Journal of Strength and Conditioning Research",
+    "Cierre: Guárdalo para el día de carrera. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "Calentar no es perder energía. En la mayoría de estudios, fue ganar rendimiento.\n\nUna revisión sistemática con metaanálisis reunió 32 estudios de buena calidad sobre calentamiento y rendimiento físico. Con calentamientos que no eran solo estirar, el rendimiento mejoró en el 79 % de los criterios analizados, y apenas hubo evidencia de que calentar perjudique. En HYROX, donde el primer kilómetro y el SkiErg llegan enseguida, salir en frío es regalar los primeros minutos.\n\nLimitaciones: los propios autores piden más ensayos aleatorizados bien hechos, y los estudios usaban pruebas y calentamientos muy distintos. Ninguno era de carreras híbridas, así que el calentamiento del carrusel es un ejemplo práctico nuestro, no algo medido.\n\nCómo aplicarlo:\nLlega con tiempo: unos 30 minutos antes de tu tanda.\nTrote suave, movilidad dinámica y activación.\nUn par de aceleraciones a ritmo de carrera al final.\n\n¿Cuánto calientas antes de una carrera?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nFradkin AJ, et al. (2010). Effects of warming-up on physical performance: a systematic review with meta-analysis. Journal of Strength and Conditioning Research.",
+  "hashtags": [
+    "#hyrox",
+    "#calentamiento",
+    "#hyroxspain",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

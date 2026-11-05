@@ -1,0 +1,107 @@
+{
+  "id": "116-farmers-carry",
+  "pilar": "estaciones",
+  "titulo_interno": "Farmers carry: agarre, postura y paradas",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Farmers carry: el agarre se *gestiona*",
+      "subtitulo": "200 metros con un peso en cada mano. Postura, pasos y cuándo parar antes de que se te abran las manos.",
+      "svg": "farmers-carry-correcto",
+      "resaltar": [
+        "antebrazos",
+        "manos"
+      ]
+    },
+    {
+      "tipo": "contexto",
+      "titulo": "Qué se cansa primero",
+      "texto": "Las piernas aguantan. Lo que suele fallar es el agarre y, detrás, unos hombros que se van hacia delante. Cuando el antebrazo se llena, los pesos se caen solos.",
+      "svg": "cuerpo-zonas",
+      "resaltar": [
+        "antebrazos",
+        "manos",
+        "hombros"
+      ]
+    },
+    {
+      "tipo": "correcto_incorrecto",
+      "titulo": "Alto y largo",
+      "correcto": {
+        "svg": "farmers-carry-correcto",
+        "texto": "Erguido, hombros atrás y abajo, brazos largos y pasos cortos y rápidos."
+      },
+      "incorrecto": {
+        "svg": "farmers-carry-incorrecto",
+        "texto": "Encorvado y con los hombros delante: la espalda sufre y el agarre dura menos."
+      }
+    },
+    {
+      "tipo": "linea_temporal",
+      "titulo": "Tus 200 metros",
+      "etiqueta": "ilustrativo",
+      "fuente": "Elaboración propia",
+      "fases": [
+        {
+          "etiqueta": "Coges",
+          "titulo": "Agarre centrado",
+          "texto": "Mano en el centro del asa para que el peso no gire"
+        },
+        {
+          "etiqueta": "Sales",
+          "titulo": "Pasos cortos",
+          "texto": "Rápidos y sin balanceo. No es un paseo"
+        },
+        {
+          "etiqueta": "Notas",
+          "titulo": "Para antes",
+          "texto": "Suelta cuando lo notes, no cuando se te abran las manos",
+          "destacar": true
+        },
+        {
+          "etiqueta": "Retomas",
+          "titulo": "Pausa corta",
+          "texto": "Unas respiraciones, sacude las manos y sigue"
+        }
+      ]
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Parar a tiempo",
+        "> parar *tarde*"
+      ],
+      "texto": "Una pausa elegida dura segundos. Que se te abran las manos te obliga a parar más y en peor estado."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Paseos con peso al final de tus sesiones de fuerza, con más peso del de carrera y menos distancia.",
+        "Practica la parada: deja y vuelve a coger los pesos rápido, sin perder la postura.",
+        "Entrénalo también después de correr, que es como te llega en carrera."
+      ]
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo carry",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Farmers carry: el agarre se gestiona. 200 metros con un peso en cada mano. Postura, pasos y cuándo parar antes de que se te abran las manos. Ilustración: atleta caminando erguido con un peso en cada mano, hombros atrás y brazos largos, con antebrazos y manos resaltados en naranja",
+    "Qué se cansa primero. Las piernas aguantan. Lo que suele fallar es el agarre y, detrás, unos hombros que se van hacia delante. Cuando el antebrazo se llena, los pesos se caen solos. Ilustración: mapa del cuerpo humano visto de frente y de espaldas, con antebrazos, manos y hombros resaltados en naranja",
+    "Alto y largo. Así: atleta caminando erguido con un peso en cada mano, hombros atrás y brazos largos. Erguido, hombros atrás y abajo, brazos largos y pasos cortos y rápidos. Así no: atleta encorvado con los hombros hacia delante cargando un peso en cada mano. Encorvado y con los hombros delante: la espalda sufre y el agarre dura menos.",
+    "Línea temporal (Ejemplo ilustrativo): Tus 200 metros. Coges: Agarre centrado, Mano en el centro del asa para que el peso no gire; Sales: Pasos cortos, Rápidos y sin balanceo. No es un paseo; Notas: Para antes, Suelta cuando lo notes, no cuando se te abran las manos; Retomas: Pausa corta, Unas respiraciones, sacude las manos y sigue. Fuente: Elaboración propia",
+    "Conclusión: Parar a tiempo > parar tarde. Una pausa elegida dura segundos. Que se te abran las manos te obliga a parar más y en peor estado.",
+    "Qué hacer en tu entreno. 1: Paseos con peso al final de tus sesiones de fuerza, con más peso del de carrera y menos distancia. 2: Practica la parada: deja y vuelve a coger los pesos rápido, sin perder la postura. 3: Entrénalo también después de correr, que es como te llega en carrera.",
+    "Cierre: Guárdalo para tu próximo carry. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "En el farmers carry casi nunca fallan las piernas. Falla el agarre.\n\nSon 200 metros con un peso en cada mano, según categoría. La postura que te ayuda: erguido, hombros atrás y abajo, brazos largos y pasos cortos y rápidos. La que te frena: encorvado y con los hombros hacia delante. Y una regla que cuesta aceptar: es mejor parar unos segundos cuando notas que el agarre se va que esperar a que se te abran las manos.\n\nEsto es técnica y estrategia, no un estudio. No te vamos a dar cifras de tiempos ni de pesos que no podamos respaldar.\n\nCómo entrenarlo:\nPaseos con peso al final de tus sesiones de fuerza.\nPractica soltar y retomar sin perder la postura.\nHazlo también con las piernas cansadas de correr.\n\n¿Paras en el farmers carry o lo haces del tirón?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#hyrox",
+    "#farmerscarry",
+    "#hyroxspain",
+    "#hyroxtraining"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

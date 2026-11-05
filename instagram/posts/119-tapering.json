@@ -1,0 +1,168 @@
+{
+  "id": "119-tapering",
+  "pilar": "entrenamiento",
+  "titulo_interno": "Tapering: las dos semanas antes de la carrera (Bosquet 2007)",
+  "fuentes": [
+    {
+      "autores": "Bosquet L, Montpetit J, Arvisais D, Mujika I",
+      "anio": 2007,
+      "titulo": "Effects of tapering on performance: a meta-analysis",
+      "revista": "Medicine & Science in Sports & Exercise",
+      "doi": "10.1249/mss.0b013e31806010e0",
+      "pmid": "17762369",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17762369/",
+      "verificado": true,
+      "que_dice": "Metaanálisis de 27 estudios en deportistas de competición. La estrategia más eficaz fue una puesta a punto de unas 2 semanas (efecto 0,59) con el volumen reducido de forma progresiva un 41-60 % (efecto 0,72), sin tocar la intensidad (0,33) ni la frecuencia de entrenamiento (0,35).",
+      "limitaciones": "Es de 2007, antes de que existieran las pruebas híbridas, así que ningún estudio es de HYROX u OCR. Los efectos son medias: cada atleta puede necesitar ajustes."
+    }
+  ],
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Antes de la carrera, *menos* volumen",
+      "subtitulo": "Cómo bajar la carga las dos últimas semanas sin perder lo ganado, según un metaanálisis de 27 estudios.",
+      "cifra": "−41-60 %",
+      "cifra_texto": "de volumen en la puesta a punto"
+    },
+    {
+      "tipo": "contexto",
+      "titulo": "El miedo a perder forma",
+      "texto": "Llevas meses entrenando y, a dos semanas de la carrera, bajar la carga da vértigo. Muchos hacen lo contrario: un último bloque duro \"para llegar fuertes\". Y llegan cansados.",
+      "svg": "deposito-glucogeno",
+      "resaltar": [
+        "nivel-1",
+        "nivel-2",
+        "nivel-3"
+      ]
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "La receta que mejor funcionó",
+      "texto": "Tamaño del efecto sobre el rendimiento: cuanto más alto, mayor mejora.",
+      "etiqueta": "estudio",
+      "fuente": "Bosquet et al., 2007, Med Sci Sports Exerc",
+      "columnas": [
+        "Variable",
+        "Qué hacer",
+        "Efecto"
+      ],
+      "filas": [
+        [
+          "Duración",
+          "Unas 2 semanas",
+          "0,59"
+        ],
+        [
+          "Volumen",
+          "Bajar un 41-60 %",
+          "0,72"
+        ],
+        [
+          "Intensidad",
+          "Mantenerla",
+          "0,33"
+        ],
+        [
+          "Frecuencia",
+          "Mantenerla",
+          "0,35"
+        ]
+      ],
+      "destacar_fila": 1
+    },
+    {
+      "tipo": "grafica_area",
+      "titulo": "Bajar poco a poco",
+      "texto": "Un ejemplo de reducción progresiva del volumen semanal hasta el día de carrera.",
+      "etiqueta": "ilustrativo",
+      "fuente": "Ejemplo basado en Bosquet et al., 2007",
+      "unidad_eje": "Volumen, % de lo habitual",
+      "x": [
+        "−14 d",
+        "−12",
+        "−10",
+        "−8",
+        "−6",
+        "−4",
+        "−2",
+        "Carrera"
+      ],
+      "series": [
+        {
+          "nombre": "Volumen",
+          "valores": [
+            100,
+            86,
+            75,
+            66,
+            58,
+            52,
+            47,
+            45
+          ]
+        }
+      ],
+      "y": {
+        "min": 0,
+        "max": 100,
+        "marcas": [
+          0,
+          25,
+          50,
+          75,
+          100
+        ],
+        "sufijo": " %"
+      },
+      "etiquetar": false,
+      "destacar": {
+        "serie": 0,
+        "indice": 7,
+        "texto": "Unos 55 % menos"
+      },
+      "lectura": "Lo que baja es la cantidad. Las series siguen teniendo su intensidad."
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Menos volumen,",
+        "misma *chispa*"
+      ],
+      "texto": "Mantén la intensidad y los días de entreno. Lo que recortas es la cantidad."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Empieza a bajar el volumen unas dos semanas antes de la carrera.",
+        "Conserva tus sesiones de calidad, más cortas: menos series al mismo ritmo.",
+        "Entrena los mismos días de siempre. Bajar volumen no es parar."
+      ]
+    },
+    {
+      "tipo": "referencias"
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próxima puesta a punto",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Antes de la carrera, menos volumen. Cómo bajar la carga las dos últimas semanas sin perder lo ganado, según un metaanálisis de 27 estudios. −41-60 % de volumen en la puesta a punto",
+    "El miedo a perder forma. Llevas meses entrenando y, a dos semanas de la carrera, bajar la carga da vértigo. Muchos hacen lo contrario: un último bloque duro \"para llegar fuertes\". Y llegan cansados. Ilustración: depósito de glucógeno dividido en cuatro niveles, con nivel más bajo, segundo nivel y tercer nivel resaltados en naranja",
+    "Tabla (Datos del estudio): La receta que mejor funcionó. Tamaño del efecto sobre el rendimiento: cuanto más alto, mayor mejora. Columnas: Variable, Qué hacer, Efecto. Duración, Unas 2 semanas, 0,59; Volumen, Bajar un 41-60 %, 0,72; Intensidad, Mantenerla, 0,33; Frecuencia, Mantenerla, 0,35. Fuente: Bosquet et al., 2007, Med Sci Sports Exerc",
+    "Gráfica de área (Ejemplo ilustrativo): Bajar poco a poco. Un ejemplo de reducción progresiva del volumen semanal hasta el día de carrera. Volumen: −14 d, 100 %; −12, 86 %; −10, 75 %; −8, 66 %; −6, 58 %; −4, 52 %; −2, 47 %; Carrera, 45 %. Lo que baja es la cantidad. Las series siguen teniendo su intensidad. Fuente: Ejemplo basado en Bosquet et al., 2007",
+    "Conclusión: Menos volumen, misma chispa. Mantén la intensidad y los días de entreno. Lo que recortas es la cantidad.",
+    "Qué hacer en tu entreno. 1: Empieza a bajar el volumen unas dos semanas antes de la carrera. 2: Conserva tus sesiones de calidad, más cortas: menos series al mismo ritmo. 3: Entrena los mismos días de siempre. Bajar volumen no es parar.",
+    "Fuentes. Bosquet L, Montpetit J, Arvisais D, Mujika I (2007). Effects of tapering on performance: a meta-analysis. Medicine & Science in Sports & Exercise",
+    "Cierre: Guárdalo para tu próxima puesta a punto. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "Dos semanas antes de la carrera, entrenar menos te hace llegar mejor. Pero solo si recortas lo que toca.\n\nUn metaanálisis de 27 estudios en deportistas de competición analizó cómo hacer la puesta a punto. Lo que mejor funcionó: unas 2 semanas, bajando el volumen de forma progresiva entre un 41 y un 60 %, sin tocar la intensidad ni el número de días de entrenamiento. La clave fue recortar cantidad, no intensidad ni frecuencia.\n\nLimitaciones: es un trabajo de 2007, anterior a las pruebas híbridas, así que ningún estudio es de HYROX ni OCR. Y son efectos medios: cada atleta puede necesitar ajustes.\n\nCómo aplicarlo:\nEmpieza a bajar unas dos semanas antes.\nMismas sesiones de calidad, pero más cortas.\nMismos días de entreno. Bajar volumen no es parar.\n\n¿Cuántos días antes de una carrera empiezas a bajar la carga?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nBosquet L, et al. (2007). Effects of tapering on performance: a meta-analysis. Medicine & Science in Sports & Exercise.",
+  "hashtags": [
+    "#hyrox",
+    "#tapering",
+    "#entrenamientohibrido",
+    "#hyroxspain"
+  ],
+  "url_destino": "/blog/plan-entrenamiento-hyrox-12-semanas"
+}

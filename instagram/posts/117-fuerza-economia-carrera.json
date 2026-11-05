@@ -1,0 +1,130 @@
+{
+  "id": "117-fuerza-economia-carrera",
+  "pilar": "entrenamiento",
+  "titulo_interno": "La fuerza mejora la economía de carrera (Balsalobre-Fernández 2016)",
+  "fuentes": [
+    {
+      "autores": "Balsalobre-Fernández C, Santos-Concejero J, Grivas GV",
+      "anio": 2016,
+      "titulo": "Effects of strength training on running economy in highly trained runners: a systematic review with meta-analysis of controlled trials",
+      "revista": "Journal of Strength and Conditioning Research",
+      "doi": "10.1519/JSC.0000000000001316",
+      "pmid": "26694507",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26694507/",
+      "verificado": true,
+      "que_dice": "En 5 ensayos controlados con 93 corredores de medio fondo y fondo de alto nivel (VO2máx > 60), añadir fuerza mejoró la economía de carrera con un efecto grande (diferencia estandarizada -1,42). Los programas: 2-3 sesiones por semana durante 8-12 semanas, con 2-4 ejercicios de pierna, cargas sobre todo del 40-70 % de 1RM, hasta 200 saltos y 5-10 sprints cortos.",
+      "limitaciones": "Solo 5 estudios y 93 corredores, todos de alto nivel. Mide economía de carrera, no tiempos en competición, y no incluye pruebas híbridas."
+    }
+  ],
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "La fuerza te hace correr más *barato*",
+      "subtitulo": "Lo que pasó cuando corredores de alto nivel añadieron fuerza a su plan, según un metaanálisis.",
+      "svg": "corredor",
+      "resaltar": [
+        "gemelos",
+        "cuadriceps",
+        "gluteos"
+      ]
+    },
+    {
+      "tipo": "contexto",
+      "titulo": "Qué es correr barato",
+      "texto": "La economía de carrera es la energía que gastas para ir a un ritmo dado. Con mejor economía, el mismo ritmo te cuesta menos oxígeno. En HYROX, eso es margen para llegar más entero a las estaciones.",
+      "svg": "corazon"
+    },
+    {
+      "tipo": "ilustracion",
+      "titulo": "Dónde se nota",
+      "svg": "corredor",
+      "resaltar": [
+        "gemelos",
+        "cuadriceps",
+        "gluteos"
+      ],
+      "leyenda": "Lo que trabajaron los programas",
+      "texto": "Ejercicios de pierna, saltos y sprints cortos. La idea habitual: tendones y músculos que devuelven mejor la energía en cada apoyo."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Lo que hicieron",
+      "texto": "Programas de fuerza de los estudios incluidos, en corredores con VO2máx por encima de 60.",
+      "etiqueta": "estudio",
+      "fuente": "Balsalobre-Fernández et al., 2016, J Strength Cond Res",
+      "columnas": [
+        "Variable",
+        "Programa"
+      ],
+      "anchos": [
+        0.42,
+        0.58
+      ],
+      "filas": [
+        [
+          "Frecuencia",
+          "2-3 sesiones por semana"
+        ],
+        [
+          "Duración",
+          "8-12 semanas"
+        ],
+        [
+          "Carga",
+          "Sobre todo 40-70 % de 1RM"
+        ],
+        [
+          "Ejercicios",
+          "2-4 de pierna"
+        ],
+        [
+          "Extra",
+          "Hasta 200 saltos y 5-10 sprints cortos"
+        ]
+      ],
+      "lectura": "Resultado: mejora grande de la economía de carrera frente a los grupos que solo corrían."
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Más fuerte,",
+        "más *económico*"
+      ],
+      "texto": "No hace falta levantar como un halterófilo. Cargas moderadas, saltos y sprints, dos o tres veces por semana."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Dos sesiones de fuerza de pierna por semana durante al menos 8 semanas.",
+        "Combina cargas moderadas con saltos y unos pocos sprints cortos.",
+        "Ponlas lejos de tus sesiones de carrera más importantes, para llegar fresco a ambas."
+      ]
+    },
+    {
+      "tipo": "referencias"
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próximo bloque",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: La fuerza te hace correr más barato. Lo que pasó cuando corredores de alto nivel añadieron fuerza a su plan, según un metaanálisis. Ilustración: corredor en plena zancada, con gemelos, cuádriceps y glúteos resaltados en naranja",
+    "Qué es correr barato. La economía de carrera es la energía que gastas para ir a un ritmo dado. Con mejor economía, el mismo ritmo te cuesta menos oxígeno. En HYROX, eso es margen para llegar más entero a las estaciones. Ilustración: corazón con una línea de pulsaciones",
+    "Dónde se nota. Ilustración: corredor en plena zancada, con gemelos, cuádriceps y glúteos resaltados en naranja. Ejercicios de pierna, saltos y sprints cortos. La idea habitual: tendones y músculos que devuelven mejor la energía en cada apoyo.",
+    "Tabla (Datos del estudio): Lo que hicieron. Programas de fuerza de los estudios incluidos, en corredores con VO2máx por encima de 60. Columnas: Variable, Programa. Frecuencia, 2-3 sesiones por semana; Duración, 8-12 semanas; Carga, Sobre todo 40-70 % de 1RM; Ejercicios, 2-4 de pierna; Extra, Hasta 200 saltos y 5-10 sprints cortos. Resultado: mejora grande de la economía de carrera frente a los grupos que solo corrían. Fuente: Balsalobre-Fernández et al., 2016, J Strength Cond Res",
+    "Conclusión: Más fuerte, más económico. No hace falta levantar como un halterófilo. Cargas moderadas, saltos y sprints, dos o tres veces por semana.",
+    "Qué hacer en tu entreno. 1: Dos sesiones de fuerza de pierna por semana durante al menos 8 semanas. 2: Combina cargas moderadas con saltos y unos pocos sprints cortos. 3: Ponlas lejos de tus sesiones de carrera más importantes, para llegar fresco a ambas.",
+    "Fuentes. Balsalobre-Fernández C, Santos-Concejero J, Grivas GV (2016). Effects of strength training on running economy in highly trained runners: a systematic review with meta-analysis of controlled trials. Journal of Strength and Conditioning Research",
+    "Cierre: Guárdalo para tu próximo bloque. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "Hacer fuerza no te hace más lento corriendo. En corredores de alto nivel, les hizo correr más barato.\n\nUn metaanálisis de 2016 con participación española reunió 5 ensayos controlados con 93 corredores de medio fondo y fondo muy entrenados. Al añadir fuerza a su plan, su economía de carrera, la energía que gastas para ir a un ritmo concreto, mejoró con un efecto grande frente a los que solo corrían. Los programas eran asequibles: 2-3 sesiones por semana durante 8-12 semanas, 2-4 ejercicios de pierna con cargas moderadas, saltos y algunos sprints cortos.\n\nLimitaciones: son pocos estudios y pocos corredores, todos de alto nivel. Se midió la economía, no el tiempo en carrera, y nadie lo ha probado todavía en pruebas híbridas.\n\nCómo aplicarlo:\nDos sesiones de fuerza de pierna por semana, al menos 8 semanas.\nCargas moderadas, saltos y sprints cortos.\nLejos de tus sesiones de carrera clave.\n\n¿Cuántos días de fuerza metes ahora mismo en tu semana?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nBalsalobre-Fernández C, et al. (2016). Effects of strength training on running economy in highly trained runners. Journal of Strength and Conditioning Research.",
+  "hashtags": [
+    "#entrenamientodefuerza",
+    "#running",
+    "#hyrox",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}
