@@ -1,5 +1,5 @@
-// Fuentes y medición de texto. El salto de línea lo calculamos nosotros (no satori):
-// así sabemos exactamente cuántas líneas ocupa cada bloque y el texto nunca desborda.
+// Fuentes y medición de texto. El salto de línea lo calculamos nosotros con las métricas reales
+// de la fuente: así sabemos exactamente cuántas líneas ocupa cada bloque y el texto nunca desborda.
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import opentype from "@shuding/opentype.js";
@@ -14,7 +14,7 @@ const FILES = {
 };
 
 const parsed = {};
-export const SATORI_FONTS = Object.entries(FILES).map(([key, [name, weight, file]]) => {
+export const FONT_DATA = Object.entries(FILES).map(([key, [name, weight, file]]) => {
   const buf = readFileSync(path.join(FONTS_DIR, file));
   parsed[key] = opentype.parse(buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.length));
   return { name, weight, style: "normal", data: buf };

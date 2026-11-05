@@ -321,6 +321,7 @@ function lineChart(s, issues, area = false) {
 // ---------- Barras ----------
 function barChart(s, issues) {
   const horiz = s.orientacion === "horizontal";
+  const maxCard = horiz ? 170 + (s.barras || []).length * 150 : Infinity;
   return chartSlide(s, issues, (x, y, w, h) => {
     const bars = s.barras || [];
     const max = s.max ?? Math.max(...bars.map((b) => b.valor)) * 1.12;
@@ -359,7 +360,7 @@ function barChart(s, issues) {
       out += block(b.etiqueta, cx, py + ph + 14, { font: "body-500", max: 24, min: 18, maxWidth: slot - 12, maxHeight: labH, lineHeight: 1.15, color: C.text, anchor: "middle" }, issues, "etiqueta").svg;
     });
     return out;
-  });
+  }, { maxCard });
 }
 
 function groupedBars(s, issues) {
@@ -630,8 +631,21 @@ function portada(s, issues) {
 // ---------- Contexto (texto) ----------
 function contexto(s, issues) {
   let out = "";
-  let y = TOP + 20;
   const hasArt = !!s.svg;
+  let y = TOP + 20;
+  if (!hasArt) {
+    // sin ilustración: texto más grande y bloque centrado en vertical
+    const tt = fit(s.titulo, { font: "cond-800", max: 110, min: 60, maxWidth: CW, maxHeight: 340, lineHeight: 1.0, upper: true });
+    const tb = fit(s.texto, { font: "body-400", max: 48, min: 30, maxWidth: CW, maxHeight: 640, lineHeight: 1.36 });
+    const total = tt.lines.length * tt.size + 74 + tb.lines.length * tb.size * 1.36;
+    y = Math.max(TOP + 20, (TOP + BOTTOM) / 2 - total / 2 - 30);
+    out += block(s.titulo, X, y, { font: "cond-800", max: 110, min: 60, maxWidth: CW, maxHeight: 340, lineHeight: 1.0, upper: true }, issues, "contexto.titulo").svg;
+    y += tt.lines.length * tt.size + 34;
+    out += `<rect x="${X}" y="${r1(y)}" width="120" height="6" fill="${C.accent}"/>`;
+    y += 40;
+    out += block(s.texto, X, y, { font: "body-400", max: 48, min: 30, maxWidth: CW, maxHeight: 640, lineHeight: 1.36 }, issues, "contexto.texto").svg;
+    return out;
+  }
   const title = block(s.titulo, X, y, { font: "cond-800", max: 96, min: 60, maxWidth: CW, maxHeight: 300, lineHeight: 1.0, upper: true }, issues, "contexto.titulo");
   out += title.svg;
   y += title.height + 34;

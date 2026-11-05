@@ -20,7 +20,10 @@
     "ig:preview": "node scripts/instagram/preview.mjs",
     "ig:validate": "node scripts/instagram/validate.mjs",
     "ig:publish": "node scripts/instagram/publish.mjs",
-    "ig:whoami": "node scripts/instagram/whoami.mjs"
+    "ig:whoami": "node scripts/instagram/whoami.mjs",
+    "ig:sources": "node scripts/instagram/verify-sources.mjs",
+    "ig:alt": "node scripts/instagram/fill-alt.mjs",
+    "ig:illustrations": "node scripts/instagram/build-illustrations.mjs"
   },
   "dependencies": {
     "exceljs": "^4.4.0",
@@ -43,7 +46,6 @@
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.4.0",
     "pg": "^8.20.0",
-    "satori": "^0.63.2",
     "sharp": "^0.33.5"
   }
 }

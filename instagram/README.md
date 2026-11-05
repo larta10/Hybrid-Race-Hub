@@ -14,13 +14,13 @@ Cada día se publica solo un carrusel en Instagram. No hay que hacer nada a mano
    | Miércoles | Entrenamiento |
    | Jueves | Errores y mitos |
    | Viernes | OCR |
-   | Sábado | Nutrición y recuperación (el primer sábado de cada mes, producto) |
+   | Sábado | Nutrición y recuperación (el primer sábado de cada mes, producto si hay alguno; si no, nutrición) |
    | Domingo | Comunidad |
 
    Coge el primer post de ese tema que aún no se haya publicado (por orden de número). Si ya no quedan de ese tema, coge el primero que quede de cualquier otro.
 3. Dibuja las imágenes (1080x1350), las sube a Supabase Storage (bucket `instagram`) y las publica como carrusel con la API de Instagram.
 4. Apunta el resultado en la tabla `ig_posts_log` de Supabase. Si ese día ya se publicó algo, no vuelve a publicar.
-5. Los domingos, si quedan menos de 10 posts sin publicar, llega un email a hola@hybridracehub.com con un texto listo para pedirle a Claude 30 posts más.
+5. Los domingos, si quedan menos de 10 posts sin publicar, llega un email a hola@hybridracehub.com con un texto listo para pedirle a Claude la siguiente tanda.
 
 ## Ver cómo quedan los posts (en tu ordenador)
 
@@ -42,10 +42,17 @@ GitHub → pestaña *Actions* → *Instagram diario* → botón **"···"** arr
 
 ## Añadir posts
 
-1. Crea un archivo nuevo en `instagram/posts/` con el siguiente número libre, por ejemplo `061-mi-tema.json` (copia uno existente como plantilla).
-2. Reglas: de 5 a 8 slides; la primera `portada` y la última `cta`; título de portada de 60 caracteres como mucho; texto de cada punto de 260 como mucho; un `alt_text` por slide; de 3 a 5 hashtags; caption de 2000 caracteres como mucho. Para destacar **una** palabra en naranja, ponla entre asteriscos: `*palabra*`.
-3. `npm run ig:validate` y `npm run ig:preview` para comprobarlo.
-4. Haz commit y push. El sistema lo cogerá cuando le toque.
+Los posts siguen el formato de carrusel científico (7-10 slides con gráficas, ilustraciones y fuentes comprobadas). Las reglas completas, la lista de posts pendientes y el texto para pedirle a Claude la siguiente tanda están en **`instagram/PROGRESO.md`**.
+
+Resumen:
+
+1. Crea `instagram/posts/NNN-slug.json` con el siguiente número libre (copia uno de los posts 101-121 como plantilla).
+2. `npm run ig:alt` rellena los textos alternativos de cada slide.
+3. `npm run ig:validate` comprueba estructura, límites de texto, etiquetas y fuentes de las gráficas, y que nada se salga al maquetar.
+4. `npm run ig:sources` comprueba cada estudio citado contra PubMed, Crossref y doi.org.
+5. `npm run ig:preview` y revisa las imágenes. Después, commit y push.
+
+Los posts antiguos (formato de texto) están en `instagram/posts/_legacy/` y el que ya se publicó en `instagram/posts/_publicados/`. El publicador no los usa.
 
 ## Si algo falla
 
@@ -60,6 +67,8 @@ GitHub → pestaña *Actions* → *Instagram diario* → botón **"···"** arr
 ## Archivos
 
 - `instagram/posts/`: un JSON por post.
+- `instagram/assets/svg/`: ilustraciones (atletas en cada estación, cuerpo humano con zonas, obstáculos OCR...). Se regeneran con `npm run ig:illustrations`.
 - `instagram/fonts/`: tipografías Barlow y Barlow Condensed (licencia OFL).
-- `scripts/instagram/`: `publish.mjs` (publicar), `render.mjs` (dibujar), `preview.mjs` (vista previa), `validate.mjs` (validar), `whoami.mjs` (comprobar token y cuenta).
+- `instagram/PROGRESO.md`: estado de los carruseles, pendientes y reglas.
+- `scripts/instagram/`: `publish.mjs` (publicar), `render.mjs` (dibujar), `lib/design.mjs` (diseño de las slides y gráficas), `preview.mjs` (vista previa), `validate.mjs` (validar), `verify-sources.mjs` (comprobar fuentes), `fill-alt.mjs` (textos alternativos), `build-illustrations.mjs` (ilustraciones), `whoami.mjs` (comprobar token y cuenta).
 - `supabase/migrations/20261104_create_ig_posts_log.sql`: tabla de registro y bucket.
