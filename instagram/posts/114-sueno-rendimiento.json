@@ -1,0 +1,155 @@
+{
+  "id": "114-sueno-rendimiento",
+  "pilar": "nutricion",
+  "titulo_interno": "Sueño y rendimiento: lo que cuesta dormir poco (Craven 2022, Mah 2011)",
+  "fuentes": [
+    {
+      "autores": "Craven J, McCartney D, Desbrow B, Sabapathy S, Bellinger P, Roberts L, Irwin C",
+      "anio": 2022,
+      "titulo": "Effects of acute sleep loss on physical performance: a systematic and meta-analytical review",
+      "revista": "Sports Medicine",
+      "doi": "10.1007/s40279-022-01706-y",
+      "pmid": "35708888",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35708888/",
+      "verificado": true,
+      "que_dice": "Con 227 medidas de 69 publicaciones, dormir 6 horas o menos empeoró el rendimiento de media un 7,56 %, en todas las categorías de ejercicio. En la privación y en el recorte por despertar antes, el rendimiento bajó alrededor de un 0,4 % por cada hora despierto antes del ejercicio. Las tareas de tarde se resintieron; las de mañana, apenas.",
+      "limitaciones": "El 89 % de los participantes eran hombres y la heterogeneidad entre estudios fue muy alta. Mide noches puntuales de poco sueño, no el sueño crónico."
+    },
+    {
+      "autores": "Mah CD, Mah KE, Kezirian EJ, Dement WC",
+      "anio": 2011,
+      "titulo": "The effects of sleep extension on the athletic performance of collegiate basketball players",
+      "revista": "Sleep",
+      "doi": "10.5665/SLEEP.1132",
+      "pmid": "21731144",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21731144/",
+      "verificado": true,
+      "que_dice": "11 jugadores de baloncesto universitario intentaron pasar al menos 10 h en la cama durante 5-7 semanas. Durmieron unos 111 min más por noche y su sprint pasó de 16,2 a 15,5 s; también mejoraron el tiro, el tiempo de reacción y el estado de ánimo.",
+      "limitaciones": "Solo 11 participantes, sin grupo control y en baloncesto. Los jugadores sabían que se estudiaba su sueño."
+    }
+  ],
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Dormir poco te resta *rendimiento*",
+      "subtitulo": "Cuánto, según un metaanálisis de 69 publicaciones. Y qué pasó cuando unos deportistas durmieron más.",
+      "svg": "cama"
+    },
+    {
+      "tipo": "dato_grande",
+      "titulo": "Una noche corta",
+      "etiqueta": "estudio",
+      "fuente": "Craven et al., 2022, Sports Medicine",
+      "cifra": "−7,6 %",
+      "texto": "Cambio medio del rendimiento físico tras dormir 6 horas o menos. Afectó a la fuerza, la resistencia, los sprints y la habilidad."
+    },
+    {
+      "tipo": "grafica_linea",
+      "titulo": "Cada hora despierto suma",
+      "texto": "Caída aproximada del rendimiento según las horas que llevas despierto de más antes de entrenar.",
+      "etiqueta": "ilustrativo",
+      "fuente": "Ejemplo basado en Craven et al., 2022",
+      "unidad_eje": "Cambio del rendimiento",
+      "x": [
+        "0 h",
+        "2 h",
+        "4 h",
+        "6 h",
+        "8 h"
+      ],
+      "series": [
+        {
+          "nombre": "Rendimiento",
+          "valores": [
+            0,
+            -0.8,
+            -1.6,
+            -2.4,
+            -3.2
+          ]
+        }
+      ],
+      "y": {
+        "min": -4,
+        "max": 0,
+        "marcas": [
+          -4,
+          -3,
+          -2,
+          -1,
+          0
+        ],
+        "sufijo": " %"
+      },
+      "destacar": {
+        "serie": 0,
+        "indice": 4,
+        "texto": "≈ 0,4 % por hora"
+      },
+      "lectura": "Se vio en noches en vela y al madrugar más de lo normal. Entrenar por la mañana amortiguó el efecto."
+    },
+    {
+      "tipo": "comparativa",
+      "titulo": "Y al revés: dormir más",
+      "texto": "11 jugadores de baloncesto intentaron pasar 10 h en la cama durante 5-7 semanas.",
+      "etiqueta": "estudio",
+      "fuente": "Mah et al., 2011, Sleep",
+      "a": {
+        "etiqueta": "Sprint antes",
+        "valor": 16.2,
+        "unidad": "s",
+        "nota": "Su sueño habitual"
+      },
+      "b": {
+        "etiqueta": "Sprint después",
+        "valor": 15.5,
+        "unidad": "s",
+        "nota": "Unos 111 min más de sueño por noche"
+      },
+      "destacar": "b",
+      "diferencia": "−0,7 s"
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "El sueño también",
+        "se *entrena*"
+      ],
+      "texto": "No puedes recuperar en la carrera lo que no recuperaste en la cama."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "La semana de la carrera, prioriza horarios fijos de dormir antes que cualquier suplemento.",
+        "Si sabes que vas a dormir poco, mejor entrena por la mañana que por la noche.",
+        "Si la carrera es temprano, adelanta poco a poco la hora de acostarte los días previos."
+      ]
+    },
+    {
+      "tipo": "referencias"
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo y vete a dormir",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Dormir poco te resta rendimiento. Cuánto, según un metaanálisis de 69 publicaciones. Y qué pasó cuando unos deportistas durmieron más. Ilustración: cama con una persona durmiendo",
+    "Dato destacado (Datos del estudio): Una noche corta. −7,6 %. Cambio medio del rendimiento físico tras dormir 6 horas o menos. Afectó a la fuerza, la resistencia, los sprints y la habilidad. Fuente: Craven et al., 2022, Sports Medicine",
+    "Gráfica de líneas (Ejemplo ilustrativo): Cada hora despierto suma. Caída aproximada del rendimiento según las horas que llevas despierto de más antes de entrenar. Rendimiento: 0 h, 0 %; 2 h, −0,8 %; 4 h, −1,6 %; 6 h, −2,4 %; 8 h, −3,2 %. Se vio en noches en vela y al madrugar más de lo normal. Entrenar por la mañana amortiguó el efecto. Fuente: Ejemplo basado en Craven et al., 2022",
+    "Comparativa (Datos del estudio): Y al revés: dormir más. 11 jugadores de baloncesto intentaron pasar 10 h en la cama durante 5-7 semanas. Sprint antes: 16,2 s (Su sueño habitual). Sprint después: 15,5 s (Unos 111 min más de sueño por noche). Diferencia: −0,7 s. Fuente: Mah et al., 2011, Sleep",
+    "Conclusión: El sueño también se entrena. No puedes recuperar en la carrera lo que no recuperaste en la cama.",
+    "Qué hacer en tu entreno. 1: La semana de la carrera, prioriza horarios fijos de dormir antes que cualquier suplemento. 2: Si sabes que vas a dormir poco, mejor entrena por la mañana que por la noche. 3: Si la carrera es temprano, adelanta poco a poco la hora de acostarte los días previos.",
+    "Fuentes. Craven J, McCartney D, Desbrow B, Sabapathy S, Bellinger P, Roberts L, Irwin C (2022). Effects of acute sleep loss on physical performance: a systematic and meta-analytical review. Sports Medicine. Mah CD, Mah KE, Kezirian EJ, Dement WC (2011). The effects of sleep extension on the athletic performance of collegiate basketball players. Sleep",
+    "Cierre: Guárdalo y vete a dormir. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "Una noche de 6 horas o menos te quita de media un 7,6 % de rendimiento. Así, sin entrenar menos.\n\nUn metaanálisis de 2022 juntó 69 publicaciones sobre poco sueño y ejercicio. Dormir 6 horas o menos empeoró el rendimiento en todo lo que midieron: fuerza, resistencia, sprints y habilidad. Al pasar la noche en vela o al levantarse antes de lo normal, la caída rondó el 0,4 % por cada hora despierto antes de entrenar (acostarse tarde dio resultados menos claros). Y lo que se hizo por la mañana apenas se resintió.\n\nEl otro lado: en un estudio clásico de Stanford, 11 jugadores de baloncesto intentaron pasar 10 horas en la cama durante 5-7 semanas. Durmieron casi dos horas más por noche y su sprint bajó de 16,2 a 15,5 segundos.\n\nLimitaciones: en el metaanálisis, casi 9 de cada 10 participantes eran hombres y los estudios eran muy distintos entre sí. El de baloncesto tenía 11 jugadores y ningún grupo de comparación.\n\nCómo aplicarlo:\nHorarios fijos de sueño la semana de la carrera.\nSi vas a dormir poco, entrena por la mañana.\nCarrera temprano: adelanta la hora de acostarte poco a poco.\n\n¿Cuántas horas duermes la noche antes de competir?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nCraven J, et al. (2022). Effects of acute sleep loss on physical performance. Sports Medicine.\nMah CD, et al. (2011). The effects of sleep extension on the athletic performance of collegiate basketball players. Sleep.",
+  "hashtags": [
+    "#recuperacion",
+    "#sueño",
+    "#hyrox",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

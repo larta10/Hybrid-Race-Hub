@@ -1,0 +1,119 @@
+{
+  "id": "112-mito-estirar-lesiones",
+  "pilar": "errores",
+  "titulo_interno": "Mito: estirar previene lesiones. La fuerza sí (Lauersen 2014)",
+  "fuentes": [
+    {
+      "autores": "Lauersen JB, Bertelsen DM, Andersen LB",
+      "anio": 2014,
+      "titulo": "The effectiveness of exercise interventions to prevent sports injuries: a systematic review and meta-analysis of randomised controlled trials",
+      "revista": "British Journal of Sports Medicine",
+      "doi": "10.1136/bjsports-2013-092538",
+      "pmid": "24100287",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24100287/",
+      "verificado": true,
+      "que_dice": "Metaanálisis de 25 ensayos con 26.610 participantes. Los estiramientos no redujeron las lesiones (riesgo relativo 0,963, no significativo). La propiocepción (0,550) y los programas combinados (0,655) sí, y el entrenamiento de fuerza fue lo más eficaz (0,315): redujo las lesiones a menos de un tercio.",
+      "limitaciones": "Ensayos de deportes y poblaciones distintas, con resultados heterogéneos. Ninguno en HYROX ni OCR. El intervalo de confianza del entrenamiento de fuerza es amplio (riesgo relativo entre 0,207 y 0,480)."
+    }
+  ],
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Estirar no te protege. La fuerza *sí*",
+      "subtitulo": "Lo que encontró un metaanálisis de 25 ensayos y más de 26.000 deportistas.",
+      "svg": "cuerpo-zonas",
+      "resaltar": [
+        "gluteos",
+        "cuadriceps",
+        "isquios",
+        "gemelos"
+      ]
+    },
+    {
+      "tipo": "contexto",
+      "titulo": "El ritual de siempre",
+      "texto": "Diez minutos de estiramientos antes de entrenar \"para no lesionarte\". Lo hemos hecho todos. La pregunta es si de verdad reduce lesiones, comparado con otras cosas que podrías hacer en ese rato.",
+      "svg": "corredor"
+    },
+    {
+      "tipo": "grafica_barras",
+      "orientacion": "horizontal",
+      "titulo": "Cuánto bajan las lesiones",
+      "texto": "Reducción del riesgo frente a los grupos control, calculada a partir del riesgo relativo de cada tipo de programa.",
+      "etiqueta": "estudio",
+      "fuente": "Lauersen et al., 2014, Br J Sports Med",
+      "sufijo": " %",
+      "max": 80,
+      "barras": [
+        {
+          "etiqueta": "Fuerza",
+          "valor": 68.5,
+          "destacar": true
+        },
+        {
+          "etiqueta": "Propiocepción",
+          "valor": 45
+        },
+        {
+          "etiqueta": "Programas combinados",
+          "valor": 34.5
+        },
+        {
+          "etiqueta": "Estiramientos",
+          "valor": 3.7
+        }
+      ],
+      "lectura": "El efecto de los estiramientos no fue estadísticamente significativo."
+    },
+    {
+      "tipo": "dato_grande",
+      "titulo": "El dato que importa",
+      "etiqueta": "estudio",
+      "fuente": "Lauersen et al., 2014, Br J Sports Med",
+      "cifra": "< 1/3",
+      "texto": "El entrenamiento de fuerza redujo las lesiones deportivas a menos de un tercio. Las de sobrecarga casi se redujeron a la mitad."
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Estirar ≠",
+        "*prevenir*"
+      ],
+      "texto": "Estirar puede servirte para moverte mejor o sentirte bien. Para no lesionarte, el tiempo rinde más en fuerza."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Dos sesiones de fuerza a la semana, también en plena preparación de carrera.",
+        "Prioriza tren inferior: sentadilla, peso muerto, zancadas, gemelos.",
+        "Si te gusta estirar, sigue haciéndolo. Solo no lo cambies por la fuerza."
+      ]
+    },
+    {
+      "tipo": "referencias"
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Compártelo con quien solo estira",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Estirar no te protege. La fuerza sí. Lo que encontró un metaanálisis de 25 ensayos y más de 26.000 deportistas. Ilustración: mapa del cuerpo humano visto de frente y de espaldas, con glúteos, cuádriceps, isquiotibiales y gemelos resaltados en naranja",
+    "El ritual de siempre. Diez minutos de estiramientos antes de entrenar \"para no lesionarte\". Lo hemos hecho todos. La pregunta es si de verdad reduce lesiones, comparado con otras cosas que podrías hacer en ese rato. Ilustración: corredor en plena zancada",
+    "Gráfica de barras (Datos del estudio): Cuánto bajan las lesiones. Reducción del riesgo frente a los grupos control, calculada a partir del riesgo relativo de cada tipo de programa. Fuerza: 68,5 %; Propiocepción: 45 %; Programas combinados: 34,5 %; Estiramientos: 3,7 %. El efecto de los estiramientos no fue estadísticamente significativo. Fuente: Lauersen et al., 2014, Br J Sports Med",
+    "Dato destacado (Datos del estudio): El dato que importa. < 1/3. El entrenamiento de fuerza redujo las lesiones deportivas a menos de un tercio. Las de sobrecarga casi se redujeron a la mitad. Fuente: Lauersen et al., 2014, Br J Sports Med",
+    "Conclusión: Estirar ≠ prevenir. Estirar puede servirte para moverte mejor o sentirte bien. Para no lesionarte, el tiempo rinde más en fuerza.",
+    "Qué hacer en tu entreno. 1: Dos sesiones de fuerza a la semana, también en plena preparación de carrera. 2: Prioriza tren inferior: sentadilla, peso muerto, zancadas, gemelos. 3: Si te gusta estirar, sigue haciéndolo. Solo no lo cambies por la fuerza.",
+    "Fuentes. Lauersen JB, Bertelsen DM, Andersen LB (2014). The effectiveness of exercise interventions to prevent sports injuries: a systematic review and meta-analysis of randomised controlled trials. British Journal of Sports Medicine",
+    "Cierre: Compártelo con quien solo estira. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "Los estiramientos no evitaron lesiones. El entrenamiento de fuerza las redujo a menos de un tercio.\n\nEs la conclusión de un metaanálisis de 25 ensayos controlados con más de 26.000 deportistas. Compararon distintos programas de prevención: estirar no cambió el riesgo de lesión de forma significativa, el trabajo de propiocepción lo bajó alrededor de un 45 % y la fuerza, alrededor de un 68 %. Las lesiones por sobrecarga, las típicas de quien corre mucho, casi se redujeron a la mitad con los programas de ejercicio.\n\nLimitaciones: los ensayos venían de deportes y poblaciones muy distintas, con resultados heterogéneos, y ninguno era de HYROX ni OCR. La cifra exacta de la fuerza tiene un margen amplio. La dirección, en cambio, es clara.\n\nCómo aplicarlo:\nDos sesiones de fuerza a la semana, también cerca de la carrera.\nPrioriza piernas y cadera.\nSi te gusta estirar, adelante, pero no a costa de la fuerza.\n\n¿Sigues estirando antes de entrenar o ya lo cambiaste por otra cosa?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nLauersen JB, et al. (2014). The effectiveness of exercise interventions to prevent sports injuries. British Journal of Sports Medicine.",
+  "hashtags": [
+    "#prevenciondelesiones",
+    "#entrenamientodefuerza",
+    "#hyrox",
+    "#ocrspain"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

@@ -193,7 +193,7 @@ mkdirSync(OUT, { recursive: true });
 
 // --- Wall ball: pared con diana a la derecha
 function wallTarget(x = 520) {
-  return line([x, GROUND], [x, 40], 'opacity=".45"') + `<circle cx="${x - 2}" cy="120" r="26" fill="none" stroke="${NARANJA}" stroke-width="5"/>`;
+  return line([x, GROUND], [x, 170], 'opacity=".45"') + `<circle cx="${x - 2}" cy="215" r="24" fill="none" stroke="${NARANJA}" stroke-width="5"/>`;
 }
 {
   // correcto: sentadilla profunda, pecho arriba, balón pegado al pecho

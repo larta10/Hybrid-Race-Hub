@@ -1,0 +1,105 @@
+{
+  "id": "109-lesiones-hyrox",
+  "pilar": "comunidad",
+  "titulo_interno": "Lesiones en HYROX: qué es habitual y qué hacer (Chittenden 2026)",
+  "fuentes": [
+    {
+      "autores": "Chittenden E, Bell A, Forbes G, Tooth P, Porter R, Van Der Vliet R, Shouman K, Williams S",
+      "anio": 2026,
+      "titulo": "Prevalence, burden and risk markers of health problems in HYROX athletes: a 12-week prospective cohort study",
+      "revista": "Frontiers in Sports and Active Living",
+      "doi": "10.3389/fspor.2026.1937574",
+      "pmid": "42780891",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42780891/",
+      "verificado": true,
+      "que_dice": "89 atletas de HYROX reportaron su salud cada semana durante 12 semanas. De media, el 30 % tenía algún problema de salud cada semana y el 18 % uno importante. El 73 % de las lesiones fueron por sobrecarga y la rodilla fue la zona más afectada (22 % de los episodios). Haber tenido una lesión previa fue el marcador de riesgo más fuerte.",
+      "limitaciones": "Muestra de 89 atletas y respuesta semanal del 62 %. El análisis de factores de riesgo es exploratorio y los autores piden confirmarlo en grupos más grandes."
+    }
+  ],
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "¿Te duele algo? No eres el *único*",
+      "subtitulo": "Qué molestias son habituales en HYROX, según el primer estudio que las ha seguido semana a semana.",
+      "svg": "corredor"
+    },
+    {
+      "tipo": "contexto",
+      "titulo": "Qué se midió",
+      "texto": "Un grupo de la Universidad de Bath siguió a 89 atletas de HYROX durante 12 semanas. Cada semana contaban si tenían algún problema de salud, cuánto les afectaba y cuántas horas entrenaban.",
+      "svg": "cronometro"
+    },
+    {
+      "tipo": "donut",
+      "titulo": "Semanas con algún problema",
+      "texto": "Prevalencia semanal media de cualquier problema de salud.",
+      "etiqueta": "estudio",
+      "fuente": "Chittenden et al., 2026, Front Sports Act Living",
+      "valor": 30,
+      "etiqueta_centro": "de los atletas cada semana",
+      "lectura": "El 18 % tenía un problema importante, que limitaba el entreno o el rendimiento."
+    },
+    {
+      "tipo": "dato_grande",
+      "titulo": "De dónde vienen",
+      "etiqueta": "estudio",
+      "fuente": "Chittenden et al., 2026, Front Sports Act Living",
+      "cifra": "73 %",
+      "texto": "de las lesiones fueron por sobrecarga, no por un golpe o un mal gesto puntual. Se fueron acumulando con el entreno."
+    },
+    {
+      "tipo": "ilustracion",
+      "titulo": "Dónde duele",
+      "svg": "cuerpo-zonas",
+      "resaltar": [
+        "rodillas",
+        "gemelos"
+      ],
+      "leyenda": "Mayor carga de lesión",
+      "texto": "La rodilla fue la zona más afectada (22 % de los episodios) y, junto con la pierna, la que más pesó. Encaja con la cantidad de carrera del deporte."
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Lo que duele",
+        "se *acumula*"
+      ],
+      "texto": "La mayoría de problemas llegan poco a poco. Y haber tenido una lesión antes fue la señal de riesgo más clara."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Sube el volumen de carrera de forma gradual, sobre todo si vienes de una lesión.",
+        "Apunta cada semana si algo te molesta. Una molestia que se repite es un aviso.",
+        "Si arrastras una lesión antigua, que un fisio revise tu plan antes de cargar más."
+      ]
+    },
+    {
+      "tipo": "referencias"
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Compártelo con tu grupo",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: ¿Te duele algo? No eres el único. Qué molestias son habituales en HYROX, según el primer estudio que las ha seguido semana a semana. Ilustración: corredor en plena zancada",
+    "Qué se midió. Un grupo de la Universidad de Bath siguió a 89 atletas de HYROX durante 12 semanas. Cada semana contaban si tenían algún problema de salud, cuánto les afectaba y cuántas horas entrenaban. Ilustración: cronómetro con un tramo de tiempo marcado",
+    "Gráfico circular (Datos del estudio): Semanas con algún problema. Prevalencia semanal media de cualquier problema de salud. 30 % de los atletas cada semana. El 18 % tenía un problema importante, que limitaba el entreno o el rendimiento. Fuente: Chittenden et al., 2026, Front Sports Act Living",
+    "Dato destacado (Datos del estudio): De dónde vienen. 73 %. de las lesiones fueron por sobrecarga, no por un golpe o un mal gesto puntual. Se fueron acumulando con el entreno. Fuente: Chittenden et al., 2026, Front Sports Act Living",
+    "Dónde duele. Ilustración: mapa del cuerpo humano visto de frente y de espaldas, con rodillas y gemelos resaltados en naranja. La rodilla fue la zona más afectada (22 % de los episodios) y, junto con la pierna, la que más pesó. Encaja con la cantidad de carrera del deporte.",
+    "Conclusión: Lo que duele se acumula. La mayoría de problemas llegan poco a poco. Y haber tenido una lesión antes fue la señal de riesgo más clara.",
+    "Qué hacer en tu entreno. 1: Sube el volumen de carrera de forma gradual, sobre todo si vienes de una lesión. 2: Apunta cada semana si algo te molesta. Una molestia que se repite es un aviso. 3: Si arrastras una lesión antigua, que un fisio revise tu plan antes de cargar más.",
+    "Fuentes. Chittenden E, Bell A, Forbes G, Tooth P, Porter R, Van Der Vliet R, Shouman K, Williams S (2026). Prevalence, burden and risk markers of health problems in HYROX athletes: a 12-week prospective cohort study. Frontiers in Sports and Active Living",
+    "Cierre: Compártelo con tu grupo. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "3 de cada 10 atletas de HYROX tienen alguna molestia en una semana cualquiera. Si te pasa, no estás solo.\n\nInvestigadores de la Universidad de Bath siguieron a 89 atletas de HYROX durante 12 semanas con un cuestionario semanal. De media, el 30 % tenía algún problema de salud cada semana y el 18 % uno importante. El 73 % de las lesiones fueron por sobrecarga, la rodilla fue la zona más afectada y haber tenido una lesión previa fue la señal de riesgo más fuerte. Otro dato: solo la mitad de los problemas hicieron perder días de entreno, así que mucha gente entrena con molestias.\n\nLimitaciones: 89 personas, no todas respondieron todas las semanas, y la parte de factores de riesgo es exploratoria. Habrá que confirmarlo con más atletas.\n\nLo que nos llevamos:\nSubir la carrera poco a poco.\nApuntar las molestias, no solo los entrenos.\nSi vienes de una lesión, que alguien revise tu plan.\n\n¿Cuál es la molestia que más se repite en tu grupo de entreno?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nChittenden E, et al. (2026). Prevalence, burden and risk markers of health problems in HYROX athletes: a 12-week prospective cohort study. Frontiers in Sports and Active Living.",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#prevenciondelesiones",
+    "#comunidadhyrox"
+  ],
+  "url_destino": "/comunidad"
+}

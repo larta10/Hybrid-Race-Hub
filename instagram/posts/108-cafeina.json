@@ -1,0 +1,150 @@
+{
+  "id": "108-cafeina",
+  "pilar": "nutricion",
+  "titulo_interno": "Cafeína: dosis, momento y quién debe ir con cuidado",
+  "fuentes": [
+    {
+      "autores": "Guest NS, VanDusseldorp TA, Nelson MT, Grgic J, Schoenfeld BJ, Jenkins NDM, Arent SM, Antonio J, Stout JR, Trexler ET, Smith-Ryan AE, Goldstein ER, Kalman DS, Campbell BI",
+      "anio": 2021,
+      "titulo": "International society of sports nutrition position stand: caffeine and exercise performance",
+      "revista": "Journal of the International Society of Sports Nutrition",
+      "doi": "10.1186/s12970-020-00383-4",
+      "pmid": "33388079",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33388079/",
+      "verificado": true,
+      "que_dice": "La cafeína mejora el rendimiento de forma consistente con dosis de 3-6 mg/kg de peso; la mínima eficaz podría estar en unos 2 mg/kg. Lo más habitual es tomarla 60 min antes, aunque el chicle con cafeína puede necesitar menos espera. El beneficio más constante aparece en resistencia aeróbica y la respuesta varía mucho entre personas.",
+      "limitaciones": "Es un posicionamiento de expertos, no un estudio nuevo. Varios autores declaran vínculos con empresas de suplementos. La respuesta individual (genética, consumo habitual, sueño, ansiedad) cambia mucho el efecto."
+    }
+  ],
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Cafeína: cuánta y *cuándo*",
+      "subtitulo": "La dosis que usan los estudios, el momento y por qué a tu compañero le sienta distinto.",
+      "cifra": "3-6",
+      "cifra_texto": "mg por kg de peso"
+    },
+    {
+      "tipo": "contexto",
+      "titulo": "Una de las más estudiadas",
+      "texto": "La cafeína es una de las ayudas más investigadas en deporte. La Sociedad Internacional de Nutrición Deportiva revisó la evidencia en 2021. El beneficio más constante: la resistencia aeróbica.",
+      "svg": "corazon"
+    },
+    {
+      "tipo": "dato_grande",
+      "titulo": "La dosis de los estudios",
+      "etiqueta": "estudio",
+      "fuente": "Guest et al., 2021, J Int Soc Sports Nutr",
+      "cifra": "3-6",
+      "unidad": "mg/kg",
+      "texto": "Rango con el que la cafeína ha mejorado el rendimiento de forma consistente. La dosis mínima eficaz podría estar en unos 2 mg/kg."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Qué significa en tu caso",
+      "texto": "Miligramos de cafeína según tu peso.",
+      "etiqueta": "ilustrativo",
+      "fuente": "Ejemplo basado en Guest et al., 2021",
+      "columnas": [
+        "Peso",
+        "3 mg/kg",
+        "6 mg/kg"
+      ],
+      "filas": [
+        [
+          "60 kg",
+          "180 mg",
+          "360 mg"
+        ],
+        [
+          "70 kg",
+          "210 mg",
+          "420 mg"
+        ],
+        [
+          "80 kg",
+          "240 mg",
+          "480 mg"
+        ],
+        [
+          "90 kg",
+          "270 mg",
+          "540 mg"
+        ]
+      ],
+      "lectura": "Empieza por la parte baja del rango: si con eso te funciona, no necesitas más."
+    },
+    {
+      "tipo": "linea_temporal",
+      "titulo": "El momento",
+      "etiqueta": "ilustrativo",
+      "fuente": "Esquema basado en Guest et al., 2021",
+      "fases": [
+        {
+          "etiqueta": "−60 min",
+          "titulo": "Cápsula o café",
+          "texto": "El momento más usado en los estudios",
+          "destacar": true
+        },
+        {
+          "etiqueta": "−15 min",
+          "titulo": "Chicle con cafeína",
+          "texto": "Puede necesitar menos tiempo de espera"
+        },
+        {
+          "etiqueta": "Salida",
+          "titulo": "A competir",
+          "texto": "Sin tomas nuevas que no hayas probado"
+        },
+        {
+          "etiqueta": "Noche",
+          "titulo": "Ojo al sueño",
+          "texto": "En algunas personas empeora el descanso"
+        }
+      ]
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Funciona, pero",
+        "no a todos *igual*"
+      ],
+      "texto": "Genética, consumo habitual y sueño cambian la respuesta. Tu dosis buena la encuentras entrenando, no en carrera."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Pruébala antes de una sesión dura y apunta cómo te sientes, cómo rindes y cómo duermes esa noche.",
+        "Empieza por unos 3 mg/kg o menos. Si con eso te va bien, no hace falta subir.",
+        "Si tienes problemas de corazón, ansiedad o tomas medicación, consúltalo antes con tu médico."
+      ]
+    },
+    {
+      "tipo": "referencias"
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próxima carrera",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Cafeína: cuánta y cuándo. La dosis que usan los estudios, el momento y por qué a tu compañero le sienta distinto. 3-6 mg por kg de peso",
+    "Una de las más estudiadas. La cafeína es una de las ayudas más investigadas en deporte. La Sociedad Internacional de Nutrición Deportiva revisó la evidencia en 2021. El beneficio más constante: la resistencia aeróbica. Ilustración: corazón con una línea de pulsaciones",
+    "Dato destacado (Datos del estudio): La dosis de los estudios. 3-6 mg/kg. Rango con el que la cafeína ha mejorado el rendimiento de forma consistente. La dosis mínima eficaz podría estar en unos 2 mg/kg. Fuente: Guest et al., 2021, J Int Soc Sports Nutr",
+    "Tabla (Ejemplo ilustrativo): Qué significa en tu caso. Miligramos de cafeína según tu peso. Columnas: Peso, 3 mg/kg, 6 mg/kg. 60 kg, 180 mg, 360 mg; 70 kg, 210 mg, 420 mg; 80 kg, 240 mg, 480 mg; 90 kg, 270 mg, 540 mg. Empieza por la parte baja del rango: si con eso te funciona, no necesitas más. Fuente: Ejemplo basado en Guest et al., 2021",
+    "Línea temporal (Ejemplo ilustrativo): El momento. −60 min: Cápsula o café, El momento más usado en los estudios; −15 min: Chicle con cafeína, Puede necesitar menos tiempo de espera; Salida: A competir, Sin tomas nuevas que no hayas probado; Noche: Ojo al sueño, En algunas personas empeora el descanso. Fuente: Esquema basado en Guest et al., 2021",
+    "Conclusión: Funciona, pero no a todos igual. Genética, consumo habitual y sueño cambian la respuesta. Tu dosis buena la encuentras entrenando, no en carrera.",
+    "Qué hacer en tu entreno. 1: Pruébala antes de una sesión dura y apunta cómo te sientes, cómo rindes y cómo duermes esa noche. 2: Empieza por unos 3 mg/kg o menos. Si con eso te va bien, no hace falta subir. 3: Si tienes problemas de corazón, ansiedad o tomas medicación, consúltalo antes con tu médico.",
+    "Fuentes. Guest NS, VanDusseldorp TA, Nelson MT, Grgic J, Schoenfeld BJ, Jenkins NDM, Arent SM, Antonio J, Stout JR, Trexler ET, Smith-Ryan AE, Goldstein ER, Kalman DS, Campbell BI (2021). International society of sports nutrition position stand: caffeine and exercise performance. Journal of the International Society of Sports Nutrition",
+    "Cierre: Guárdalo para tu próxima carrera. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "El café antes de la carrera tiene base científica. La dosis y el momento, también.\n\nLa Sociedad Internacional de Nutrición Deportiva (ISSN) revisó en 2021 todo lo publicado sobre cafeína y rendimiento. Su conclusión: con 3-6 mg por kilo de peso mejora el rendimiento de forma consistente, sobre todo en resistencia aeróbica, y la dosis mínima útil podría estar en unos 2 mg/kg. Lo más habitual es tomarla una hora antes; el chicle con cafeína puede necesitar menos espera. Para alguien de 70 kg, 3 mg/kg son unos 210 mg.\n\nLimitaciones: es un posicionamiento de expertos, no un estudio nuevo, y varios autores declaran vínculos con empresas de suplementos. Además, la respuesta cambia mucho entre personas: genética, cuánto café tomas a diario, cómo duermes. A algunos les quita el sueño o les dispara los nervios.\n\nCómo aplicarlo:\nPruébala en un entreno duro antes que en carrera.\nEmpieza por la parte baja del rango.\nSi tienes problemas de corazón, ansiedad o tomas medicación, pregunta antes a tu médico.\n\n¿Eres de café antes de competir o lo evitas?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nGuest NS, et al. (2021). International society of sports nutrition position stand: caffeine and exercise performance. Journal of the International Society of Sports Nutrition.",
+  "hashtags": [
+    "#nutriciondeportiva",
+    "#cafeina",
+    "#hyrox",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/blog/que-es-hyrox"
+}

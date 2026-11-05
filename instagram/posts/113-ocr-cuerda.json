@@ -1,0 +1,101 @@
+{
+  "id": "113-ocr-cuerda",
+  "pilar": "ocr",
+  "titulo_interno": "Cuerda: el bloqueo de pies",
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "La cuerda se sube con los *pies*",
+      "subtitulo": "Si trepas solo con los brazos, llegas arriba vacío o no llegas. El bloqueo de pies lo cambia todo.",
+      "svg": "ocr-cuerda"
+    },
+    {
+      "tipo": "contexto",
+      "titulo": "El error más caro",
+      "texto": "Saltar, agarrarse y tirar a pulso. Los brazos y el agarre hacen todo el trabajo y en tres o cuatro tirones se acaban. Si encima te deslizas al bajar, te quemas las manos para el resto de la carrera.",
+      "svg": "cuerpo-zonas",
+      "resaltar": [
+        "antebrazos",
+        "biceps"
+      ]
+    },
+    {
+      "tipo": "ilustracion",
+      "titulo": "El bloqueo de pies",
+      "svg": "ocr-cuerda",
+      "resaltar": [
+        "cuadriceps",
+        "pies"
+      ],
+      "leyenda": "Lo que te sube",
+      "texto": "La cuerda pasa por fuera de un pie y por encima del otro, que la pisa. Al estirar las piernas, subes. Los brazos solo sujetan."
+    },
+    {
+      "tipo": "linea_temporal",
+      "titulo": "Un ciclo de subida",
+      "etiqueta": "ilustrativo",
+      "fuente": "Elaboración propia",
+      "fases": [
+        {
+          "etiqueta": "1",
+          "titulo": "Agarre alto",
+          "texto": "Manos juntas, brazos casi estirados"
+        },
+        {
+          "etiqueta": "2",
+          "titulo": "Rodillas al pecho",
+          "texto": "Sube los pies con la cuerda entre ellos"
+        },
+        {
+          "etiqueta": "3",
+          "titulo": "Bloqueo",
+          "texto": "Un pie pisa la cuerda sobre el otro",
+          "destacar": true
+        },
+        {
+          "etiqueta": "4",
+          "titulo": "Ponte de pie",
+          "texto": "Estira las piernas y sube las manos"
+        }
+      ]
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Piernas suben,",
+        "brazos *sujetan*"
+      ],
+      "texto": "Con el bloqueo, cada ciclo es casi una sentadilla con los pies. Y para bajar, el mismo bloqueo te frena sin quemarte las manos."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Practica el bloqueo sentado en un banco con la cuerda colgando, sin subir.",
+        "Después, ciclos de un metro: subir, bloquear, ponerte de pie, bajar con control.",
+        "Termina con colgados en cuerda o toalla para el agarre."
+      ]
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tu próxima cuerda",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: La cuerda se sube con los pies. Si trepas solo con los brazos, llegas arriba vacío o no llegas. El bloqueo de pies lo cambia todo. Ilustración: atleta trepando una cuerda con la cuerda bloqueada entre los pies",
+    "El error más caro. Saltar, agarrarse y tirar a pulso. Los brazos y el agarre hacen todo el trabajo y en tres o cuatro tirones se acaban. Si encima te deslizas al bajar, te quemas las manos para el resto de la carrera. Ilustración: mapa del cuerpo humano visto de frente y de espaldas, con antebrazos y bíceps resaltados en naranja",
+    "El bloqueo de pies. Ilustración: atleta trepando una cuerda con la cuerda bloqueada entre los pies, con cuádriceps y pies resaltados en naranja. La cuerda pasa por fuera de un pie y por encima del otro, que la pisa. Al estirar las piernas, subes. Los brazos solo sujetan.",
+    "Línea temporal (Ejemplo ilustrativo): Un ciclo de subida. 1: Agarre alto, Manos juntas, brazos casi estirados; 2: Rodillas al pecho, Sube los pies con la cuerda entre ellos; 3: Bloqueo, Un pie pisa la cuerda sobre el otro; 4: Ponte de pie, Estira las piernas y sube las manos. Fuente: Elaboración propia",
+    "Conclusión: Piernas suben, brazos sujetan. Con el bloqueo, cada ciclo es casi una sentadilla con los pies. Y para bajar, el mismo bloqueo te frena sin quemarte las manos.",
+    "Qué hacer en tu entreno. 1: Practica el bloqueo sentado en un banco con la cuerda colgando, sin subir. 2: Después, ciclos de un metro: subir, bloquear, ponerte de pie, bajar con control. 3: Termina con colgados en cuerda o toalla para el agarre.",
+    "Cierre: Guárdalo para tu próxima cuerda. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "Si subes la cuerda solo con los brazos, el problema no es tu fuerza. Es que no estás usando los pies.\n\nEl bloqueo de pies es la diferencia entre llegar arriba con agarre de sobra o quedarte a mitad. La cuerda pasa por fuera de un pie y el otro la pisa por encima. Subes las rodillas, bloqueas y te pones de pie: las piernas hacen el trabajo y los brazos solo sujetan. Para bajar, el mismo bloqueo te frena sin quemarte las manos.\n\nEsto es técnica, no un estudio. No conocemos investigación que compare formas de subir cuerda en OCR, así que te lo explicamos sin cifras.\n\nCómo aprenderlo:\nPrimero el bloqueo sentado, con la cuerda colgando.\nLuego ciclos cortos de un metro.\nAgarre al final, con colgados en cuerda o toalla.\n\n¿Ya dominas el bloqueo o sigues subiendo a pulso?\n\nMás en hybridracehub.com (enlace en la bio)",
+  "hashtags": [
+    "#ocr",
+    "#ocrspain",
+    "#carrerasdeobstaculos",
+    "#ropeclimb"
+  ],
+  "url_destino": "/blog/carreras-hibridas-principiantes-primera-prueba"
+}

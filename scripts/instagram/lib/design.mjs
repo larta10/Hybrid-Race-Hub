@@ -513,7 +513,7 @@ function tabla(s, issues) {
       if (i < rows.length - 1 && !hi && s.destacar_fila !== i + 1) out += lineEl(x, ry + rowH, x + w, ry + rowH, C.border, 2);
     });
     return out;
-  });
+ }, { maxCard: 56 + (s.filas || []).length * 150 + 130 });
 }
 
 // ---------- Dato grande ----------
@@ -534,7 +534,7 @@ function datoGrande(s, issues) {
       if (s.texto) out += block(s.texto, x, top + size * 0.82 + 74, { font: "body-500", max: 40, min: 28, maxWidth: w, maxHeight: h - size * 0.82 - 100, lineHeight: 1.3 }, issues, "dato.texto").svg;
       return out;
     },
-    { minCard: 600 },
+    { minCard: 560, maxCard: 760 },
   );
 }
 
@@ -585,7 +585,9 @@ function referencias(s, issues, ctx) {
   const each = avail / Math.max(fuentes.length, 1);
   fuentes.forEach((f, i) => {
     const id = f.doi ? `doi.org/${f.doi}` : f.pmid ? `PMID ${f.pmid}` : f.url || "";
-    const head2 = `${f.autores} (${f.anio})`;
+    // Más de 6 autores: los 3 primeros + et al. (como en las normas de citación habituales)
+    const autores = String(f.autores).split(/,\s*/);
+    const head2 = `${autores.length > 6 ? `${autores.slice(0, 3).join(", ")}, et al.` : f.autores} (${f.anio})`;
     out += t(String(i + 1).padStart(2, "0"), X, y + 34, { font: "cond-800", size: 34, color: C.accent });
     const a = block(head2, X + 70, y, { font: "body-500", max: 28, min: 22, maxWidth: CW - 70, maxHeight: 80, lineHeight: 1.28 }, issues, "referencia.autores");
     out += a.svg;

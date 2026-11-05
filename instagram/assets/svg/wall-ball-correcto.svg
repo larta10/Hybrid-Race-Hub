@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="183 23 378 537">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="183 153 376 407">
 <!--SUELO-->
-<line x1="520" y1="540" x2="520" y2="40" stroke="#F2F0EB" stroke-width="6" stroke-linecap="round" opacity=".45"/><circle cx="518" cy="120" r="26" fill="none" stroke="#FB923C" stroke-width="5"/>
+<line x1="520" y1="540" x2="520" y2="170" stroke="#F2F0EB" stroke-width="6" stroke-linecap="round" opacity=".45"/><circle cx="518" cy="215" r="24" fill="none" stroke="#FB923C" stroke-width="5"/>
 <g fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="316.8,327.4 304.9,400.4" stroke="#9A9894" stroke-width="38"/><polyline points="304.9,400.4 372.9,402.8" stroke="#9A9894" stroke-width="34"/><circle cx="382.9" cy="403.2" r="17" fill="#9A9894"/><polyline class="z-brazos" points="316.8,327.4 304.9,400.4" stroke="#0B0C0F" stroke-width="26"/><polyline class="z-antebrazos" points="304.9,400.4 372.9,402.8" stroke="#0B0C0F" stroke-width="22"/><circle class="z-manos" cx="382.9" cy="403.2" r="11" fill="#0B0C0F"/></g>
 <g fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="250,450.6 349.5,440.1" stroke="#9A9894" stroke-width="50"/><polyline points="349.5,440.1 311.2,526" stroke="#9A9894" stroke-width="40"/><polyline points="311.2,526 341.2,526" stroke="#9A9894" stroke-width="28"/><polyline class="z-cuadriceps" points="250,450.6 349.5,440.1" stroke="#0B0C0F" stroke-width="38"/><polyline class="z-gemelos" points="349.5,440.1 311.2,526" stroke="#0B0C0F" stroke-width="28"/><polyline class="z-pies" points="311.2,526 341.2,526" stroke="#0B0C0F" stroke-width="16"/></g>
 

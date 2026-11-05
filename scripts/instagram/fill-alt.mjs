@@ -45,7 +45,7 @@ const join = (...xs) => xs.filter((x) => x && String(x).trim()).map(clean).join(
 const art = (name, resaltar = []) => {
   if (!name) return "";
   const z = (resaltar || []).map((r) => ZONAS[r] || r);
-  return `Ilustración: ${SVG[name] || name}${z.length ? `, con ${z.join(" y ")} resaltados en naranja` : ""}`;
+  return `Ilustración: ${SVG[name] || name}${z.length ? `, con ${z.length > 1 ? `${z.slice(0, -1).join(", ")} y ${z.at(-1)}` : z[0]} resaltados en naranja` : ""}`;
 };
 const tag = (s) => (s.etiqueta === "estudio" ? "Datos del estudio" : "Ejemplo ilustrativo");
 const src = (s) => (s.fuente ? (/^fuente/i.test(s.fuente) ? s.fuente : `Fuente: ${s.fuente}`) : "");

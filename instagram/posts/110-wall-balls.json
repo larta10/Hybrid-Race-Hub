@@ -1,0 +1,166 @@
+{
+  "id": "110-wall-balls",
+  "pilar": "estaciones",
+  "titulo_interno": "Wall balls: técnica, respiración y bloques",
+  "fuentes": [
+    {
+      "autores": "Brandt T, Ebel C, Lebahn C, Schmidt A",
+      "anio": 2025,
+      "titulo": "Acute physiological responses and performance determinants in Hyrox - a new running-focused high intensity functional fitness trend",
+      "revista": "Frontiers in Physiology",
+      "doi": "10.3389/fphys.2025.1519240",
+      "pmid": "40230601",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40230601/",
+      "verificado": true,
+      "que_dice": "En una simulación de HYROX con 11 atletas recreativos, el lactato máximo fue mayor en las estaciones (mediana 8,5 mmol/L) que en la carrera (7,7 mmol/L) y el esfuerzo percibido máximo también (18 frente a 16 en la escala de Borg). Los valores más altos de pulso, lactato y esfuerzo aparecieron en los wall balls.",
+      "limitaciones": "Solo 11 participantes recreativos en una simulación. El estudio no analiza la técnica ni la estrategia de bloques: eso es aplicación práctica nuestra."
+    }
+  ],
+  "slides": [
+    {
+      "tipo": "portada",
+      "titulo": "Wall balls: donde se *rompe* tu carrera",
+      "subtitulo": "La última estación es la más dura. Técnica, respiración y bloques para no quedarte clavado.",
+      "svg": "wall-ball-correcto",
+      "resaltar": [
+        "gluteos",
+        "cuadriceps"
+      ]
+    },
+    {
+      "tipo": "comparativa",
+      "titulo": "Lactato máximo",
+      "texto": "Mediana en una simulación de HYROX con atletas recreativos.",
+      "etiqueta": "estudio",
+      "fuente": "Brandt et al., 2025, Frontiers in Physiology",
+      "unidad_eje": "mmol/L",
+      "a": {
+        "etiqueta": "En la carrera",
+        "valor": 7.7,
+        "unidad": "mmol/L"
+      },
+      "b": {
+        "etiqueta": "En las estaciones",
+        "valor": 8.5,
+        "unidad": "mmol/L"
+      },
+      "destacar": "b",
+      "simbolo": "vs",
+      "lectura": "Pulso, lactato y esfuerzo percibido tocaron techo en los wall balls, la última estación."
+    },
+    {
+      "tipo": "correcto_incorrecto",
+      "titulo": "La sentadilla lo es todo",
+      "correcto": {
+        "svg": "wall-ball-correcto",
+        "texto": "Bajas con el pecho arriba y el balón pegado. Las piernas lanzan, los brazos guían."
+      },
+      "incorrecto": {
+        "svg": "wall-ball-incorrecto",
+        "texto": "Talones arriba, tronco caído y balón lejos: lanzas con hombros y te fundes antes."
+      }
+    },
+    {
+      "tipo": "linea_temporal",
+      "titulo": "Respira con el balón",
+      "etiqueta": "ilustrativo",
+      "fuente": "Elaboración propia",
+      "fases": [
+        {
+          "etiqueta": "Recibes",
+          "titulo": "Coge aire",
+          "texto": "Mientras el balón baja hacia ti"
+        },
+        {
+          "etiqueta": "Bajas",
+          "titulo": "Bloquea el tronco",
+          "texto": "Abdomen firme, pecho arriba"
+        },
+        {
+          "etiqueta": "Subes",
+          "titulo": "Suelta el aire",
+          "texto": "En el empuje, a la vez que lanzas",
+          "destacar": true
+        },
+        {
+          "etiqueta": "Pausa",
+          "titulo": "Balón en el pecho",
+          "texto": "Si paras, de pie y con el balón agarrado, sin dejarlo en el suelo"
+        }
+      ]
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "100 repeticiones en bloques",
+      "texto": "Tres formas de repartirlas. Elige según tu nivel y pruébalas antes de competir.",
+      "etiqueta": "ilustrativo",
+      "fuente": "Elaboración propia",
+      "columnas": [
+        "Nivel",
+        "Bloques",
+        "Pausa"
+      ],
+      "filas": [
+        [
+          "Empezando",
+          "10 x 10",
+          "3-4 respiraciones"
+        ],
+        [
+          "Intermedio",
+          "4 x 25",
+          "4-5 respiraciones"
+        ],
+        [
+          "Avanzado",
+          "50 + 30 + 20",
+          "Lo justo"
+        ]
+      ],
+      "destacar_fila": 1
+    },
+    {
+      "tipo": "conclusion",
+      "lineas": [
+        "Pausas cortas",
+        "> fallo *largo*"
+      ],
+      "texto": "Parar poco y a tiempo cuesta menos que vaciarte y quedarte clavado con 30 repeticiones por delante."
+    },
+    {
+      "tipo": "aplicacion",
+      "puntos": [
+        "Entrena wall balls con las piernas cansadas: después de zancadas o de un tramo de carrera.",
+        "Decide tus bloques antes de la carrera y cúmplelos aunque al principio te sientas bien.",
+        "Graba una serie de lado y revisa profundidad, talones y balón pegado al pecho."
+      ]
+    },
+    {
+      "tipo": "referencias"
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Guárdalo para tus 100 wall balls",
+      "texto": "Más en hybridracehub.com · enlace en la bio"
+    }
+  ],
+  "alt_text": [
+    "Portada: Wall balls: donde se rompe tu carrera. La última estación es la más dura. Técnica, respiración y bloques para no quedarte clavado. Ilustración: atleta en sentadilla profunda con el pecho arriba y el balón pegado al pecho, frente a la diana, con glúteos y cuádriceps resaltados en naranja",
+    "Comparativa (Datos del estudio): Lactato máximo. Mediana en una simulación de HYROX con atletas recreativos. En la carrera: 7,7 mmol/L. En las estaciones: 8,5 mmol/L. Pulso, lactato y esfuerzo percibido tocaron techo en los wall balls, la última estación. Fuente: Brandt et al., 2025, Frontiers in Physiology",
+    "La sentadilla lo es todo. Así: atleta en sentadilla profunda con el pecho arriba y el balón pegado al pecho, frente a la diana. Bajas con el pecho arriba y el balón pegado. Las piernas lanzan, los brazos guían. Así no: atleta con los talones levantados, el tronco caído hacia delante y el balón lejos del cuerpo. Talones arriba, tronco caído y balón lejos: lanzas con hombros y te fundes antes.",
+    "Línea temporal (Ejemplo ilustrativo): Respira con el balón. Recibes: Coge aire, Mientras el balón baja hacia ti; Bajas: Bloquea el tronco, Abdomen firme, pecho arriba; Subes: Suelta el aire, En el empuje, a la vez que lanzas; Pausa: Balón en el pecho, Si paras, de pie y con el balón agarrado, sin dejarlo en el suelo. Fuente: Elaboración propia",
+    "Tabla (Ejemplo ilustrativo): 100 repeticiones en bloques. Tres formas de repartirlas. Elige según tu nivel y pruébalas antes de competir. Columnas: Nivel, Bloques, Pausa. Empezando, 10 x 10, 3-4 respiraciones; Intermedio, 4 x 25, 4-5 respiraciones; Avanzado, 50 + 30 + 20, Lo justo. Fuente: Elaboración propia",
+    "Conclusión: Pausas cortas > fallo largo. Parar poco y a tiempo cuesta menos que vaciarte y quedarte clavado con 30 repeticiones por delante.",
+    "Qué hacer en tu entreno. 1: Entrena wall balls con las piernas cansadas: después de zancadas o de un tramo de carrera. 2: Decide tus bloques antes de la carrera y cúmplelos aunque al principio te sientas bien. 3: Graba una serie de lado y revisa profundidad, talones y balón pegado al pecho.",
+    "Fuentes. Brandt T, Ebel C, Lebahn C, Schmidt A (2025). Acute physiological responses and performance determinants in Hyrox - a new running-focused high intensity functional fitness trend. Frontiers in Physiology",
+    "Cierre: Guárdalo para tus 100 wall balls. Más en hybridracehub.com, enlace en la bio"
+  ],
+  "caption": "Los wall balls son la estación donde más se dispara todo. Y llegan al final.\n\nEn el primer estudio sobre HYROX, 11 atletas recreativos hicieron una simulación completa. El lactato máximo fue más alto en las estaciones que corriendo (8,5 frente a 7,7 mmol/L de mediana) y el esfuerzo percibido también. El pico de pulso, lactato y esfuerzo llegó en la última estación: los wall balls.\n\nLimitaciones: 11 personas, simulación y no competición. Y el estudio no analizó técnica ni bloques: lo que te proponemos en el carrusel es aplicación práctica nuestra, no algo que se haya medido.\n\nLo que te ayuda:\nSentadilla con el pecho arriba y el balón pegado. Las piernas lanzan.\nCoge aire cuando el balón baja y suéltalo al lanzar.\nBloques decididos antes de salir, con pausas cortas de pie y con el balón en las manos.\n\n¿Cómo repartes tus 100 wall balls?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nBrandt T, et al. (2025). Acute physiological responses and performance determinants in Hyrox. Frontiers in Physiology.",
+  "hashtags": [
+    "#hyrox",
+    "#wallballs",
+    "#hyroxspain",
+    "#hyroxtraining"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}
