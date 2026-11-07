@@ -28,7 +28,8 @@ const addDays = (iso, n) => {
 };
 const weekday = (iso) => new Date(`${iso}T12:00:00Z`).getUTCDay(); // 0 = domingo
 
-const TODAY = process.env.IG_DATE || madridISO(); // IG_DATE solo para pruebas
+// IG_DATE simula otro día, solo en pruebas (DRY_RUN): en real siempre manda la fecha de hoy
+const TODAY = (DRY_RUN && process.env.IG_DATE) || madridISO();
 const DOW = weekday(TODAY);
 const FIRST_SATURDAY = DOW === 6 && Number(TODAY.slice(8, 10)) <= 7;
 const PILAR_DEL_DIA = FIRST_SATURDAY ? "producto" : ["comunidad", "calendario", "estaciones", "entrenamiento", "errores", "ocr", "nutricion"][DOW];
@@ -132,8 +133,7 @@ async function renderReelFor(reel, { exigirClips }) {
 /** Caption del reel: el del guion + atribución de la música si es CC BY ("Música: Título – Autor (CC BY)") */
 function reelCaption(reel) {
   const m = reel.__musica;
-  const linea = m?.atribucion ? `
-Música: ${m.atribucion}` : "";
+  const linea = m?.atribucion ? `\nMúsica: ${m.atribucion}` : "";
   return fullCaption({ ...reel, caption: `${reel.caption.trim()}${linea}` });
 }
 
@@ -157,10 +157,7 @@ async function tryReel(topicId, reel, listo) {
     const r = await renderReelFor(reel, { exigirClips: !DRY_RUN });
     console.log(`  render: ${r.duracion.toFixed(1)} s de vídeo, ${r.mb.toFixed(1)} MB, ${Math.round((Date.now() - t0) / 1000)} s${r.musica ? ` · música: ${r.musica}` : ""}`);
     reel.__musica = r.pista;
-    console.log(`  caption (final):
-${reelCaption(reel).split("
-").slice(-3).join("
-")}`);
+    console.log(`  caption (final, últimas líneas):\n${reelCaption(reel).split("\n").slice(-3).join("\n")}`);
     const base = `reels/${TODAY}/${reel.id}`;
     const videoUrl = await uploadPublic(`${base}.mp4`, readFileSync(r.mp4), "video/mp4");
     const coverUrl = await uploadPublic(`${base}.jpg`, readFileSync(r.jpg), "image/jpeg");

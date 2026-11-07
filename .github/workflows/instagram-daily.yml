@@ -10,6 +10,10 @@ on:
         description: "Prueba sin publicar (renderiza y sube el reel o las imágenes y registra dry_run)"
         type: boolean
         default: true
+      fecha:
+        description: "Solo en prueba: simular otro día (YYYY-MM-DD)"
+        type: string
+        required: false
 
 permissions:
   contents: write
@@ -71,6 +75,7 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          IG_DATE: ${{ inputs.fecha }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'true' || 'false' }}
         run: node scripts/instagram/publish.mjs
 
