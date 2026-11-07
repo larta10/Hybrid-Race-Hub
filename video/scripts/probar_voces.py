@@ -50,23 +50,8 @@ def texto_muestra() -> str:
     return " ".join(r["narracion"]["escenas"][:5])
 
 
-UNID = "cero uno dos tres cuatro cinco seis siete ocho nueve diez once doce trece catorce quince dieciséis diecisiete dieciocho diecinueve veinte veintiuno veintidós veintitrés veinticuatro veinticinco veintiséis veintisiete veintiocho veintinueve".split()
-DECENAS = {3: "treinta", 4: "cuarenta", 5: "cincuenta", 6: "sesenta", 7: "setenta", 8: "ochenta", 9: "noventa"}
-
-
-def en_letras(n: int) -> str:
-    if n < 30:
-        return UNID[n]
-    if n < 100:
-        return DECENAS[n // 10] + ("" if n % 10 == 0 else " y " + UNID[n % 10])
-    if n == 100:
-        return "cien"
-    cent = {1: "ciento", 5: "quinientos", 7: "setecientos", 9: "novecientos"}.get(n // 100, UNID[n // 100] + "cientos")
-    return cent + ("" if n % 100 == 0 else " " + en_letras(n % 100))
-
-
 def cifras_a_letras(t: str) -> str:
-    return re.sub(r"\d+", lambda m: en_letras(int(m.group())) if int(m.group()) < 1000 else m.group(), t)
+    return re.sub(r"\d+", lambda m: narrar.en_letras(int(m.group())), t)
 
 
 def canonico(t: str) -> str:

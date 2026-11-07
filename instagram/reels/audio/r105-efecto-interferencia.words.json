@@ -1,75 +1,83 @@
 {
- "hash": "066bbfb021ec03e8",
- "voz": "es_ES-davefx-medium",
- "duracion": 35.2,
+ "hash": "283428b62d65dca5",
+ "voz": "kokoro-em_alex",
+ "duracion": 37.234,
  "segmentos": [
   {
    "tipo": "gancho",
    "i": 0,
    "voz_desde": 0.0,
-   "voz_hasta": 2.67,
+   "voz_hasta": 3.144,
    "desde": 0.0,
-   "hasta": 2.92,
+   "hasta": 3.394,
+   "coincidencia": 1.0,
    "transcripcion": "Correr te quita fuerza. Vamos a los datos."
   },
   {
    "tipo": "texto",
    "i": 1,
-   "voz_desde": 2.92,
-   "voz_hasta": 6.379,
-   "desde": 2.92,
-   "hasta": 6.629,
-   "transcripcion": "Fuerza y carrera en el mismo plan, ¿se pisan las ganancias?"
+   "voz_desde": 3.394,
+   "voz_hasta": 6.879,
+   "desde": 3.394,
+   "hasta": 7.129,
+   "coincidencia": 1.0,
+   "transcripcion": "Fuerza y carrera en el mismo plan se pisan las ganancias."
   },
   {
    "tipo": "grafica",
    "i": 2,
-   "voz_desde": 6.629,
-   "voz_hasta": 13.491,
-   "desde": 6.629,
-   "hasta": 13.741,
+   "voz_desde": 7.129,
+   "voz_hasta": 14.412,
+   "desde": 7.129,
+   "hasta": 14.662,
+   "coincidencia": 1.0,
    "transcripcion": "Un metaanálisis de cuarenta y tres estudios no encontró diferencias claras ni en fuerza máxima ni en masa muscular."
   },
   {
    "tipo": "texto",
    "i": 3,
-   "voz_desde": 13.741,
-   "voz_hasta": 19.43,
-   "desde": 13.741,
-   "hasta": 19.68,
-   "transcripcion": "La fuerza explosiva sí mejoró algo menos, sobre todo al hacer las dos cosas en la misma sesión."
+   "voz_desde": 14.662,
+   "voz_hasta": 20.425,
+   "desde": 14.662,
+   "hasta": 20.675,
+   "coincidencia": 1.0,
+   "transcripcion": "La fuerza explosiva si mejoró algo menos, sobre todo al hacer las dos cosas en la misma sesión."
   },
   {
    "tipo": "texto",
    "i": 4,
-   "voz_desde": 19.68,
-   "voz_hasta": 22.815,
-   "desde": 19.68,
-   "hasta": 23.065,
-   "transcripcion": "¡Suscríbete!"
+   "voz_desde": 20.675,
+   "voz_hasta": 24.181,
+   "desde": 20.675,
+   "hasta": 24.431,
+   "coincidencia": 1.0,
+   "transcripcion": "Así que, si puedes, haz cada cosa en una sesión distinta."
   },
   {
    "tipo": "conclusion",
-   "voz_desde": 23.065,
-   "voz_hasta": 24.806,
-   "desde": 23.065,
-   "hasta": 25.265,
+   "voz_desde": 24.431,
+   "voz_hasta": 26.242,
+   "desde": 24.431,
+   "hasta": 26.631,
+   "coincidencia": 1.0,
    "transcripcion": "Fuerza y carrera sí suman."
   },
   {
    "tipo": "aplicacion",
-   "voz_desde": 25.265,
-   "voz_hasta": 31.035,
-   "desde": 25.265,
-   "hasta": 31.285,
-   "transcripcion": "Sepáralas cuando puedas, haz primero lo que más te importe ese día y no recortes kilómetros por miedo."
+   "voz_desde": 26.631,
+   "voz_hasta": 32.82,
+   "desde": 26.631,
+   "hasta": 33.07,
+   "coincidencia": 1.0,
+   "transcripcion": "Sepáralas cuando puedas. Haz primero lo que más te importe ese día y no recortes kilómetros por miedo."
   },
   {
    "tipo": "cierre",
-   "voz_desde": 31.285,
-   "voz_hasta": 33.7,
-   "desde": 31.285,
-   "hasta": 35.2,
+   "voz_desde": 33.07,
+   "voz_hasta": 35.734,
+   "desde": 33.07,
+   "hasta": 37.234,
+   "coincidencia": 1.0,
    "transcripcion": "Guárdalo y pruébalo en tu próximo entreno."
   }
  ],
@@ -77,583 +85,583 @@
   {
    "w": "¿Correr",
    "desde": 0.0,
-   "hasta": 0.28,
+   "hasta": 0.4,
    "seg": 0
   },
   {
    "w": "te",
-   "desde": 0.28,
-   "hasta": 0.42,
+   "desde": 0.4,
+   "hasta": 0.58,
    "seg": 0
   },
   {
    "w": "quita",
-   "desde": 0.42,
-   "hasta": 0.66,
+   "desde": 0.58,
+   "hasta": 0.92,
    "seg": 0
   },
   {
    "w": "fuerza?",
-   "desde": 0.66,
-   "hasta": 0.88,
+   "desde": 0.92,
+   "hasta": 1.2,
    "seg": 0
   },
   {
    "w": "Vamos",
-   "desde": 1.3,
-   "hasta": 1.64,
+   "desde": 1.8,
+   "hasta": 2.14,
    "seg": 0
   },
   {
    "w": "a",
-   "desde": 1.64,
-   "hasta": 1.82,
+   "desde": 2.14,
+   "hasta": 2.42,
    "seg": 0
   },
   {
    "w": "los",
-   "desde": 1.82,
-   "hasta": 1.96,
+   "desde": 2.42,
+   "hasta": 2.56,
    "seg": 0
   },
   {
    "w": "datos.",
-   "desde": 1.96,
-   "hasta": 2.2,
+   "desde": 2.56,
+   "hasta": 2.86,
    "seg": 0
   },
   {
    "w": "Fuerza",
-   "desde": 2.92,
-   "hasta": 3.3,
+   "desde": 3.394,
+   "hasta": 3.814,
    "seg": 1
   },
   {
    "w": "y",
-   "desde": 3.3,
-   "hasta": 3.46,
+   "desde": 3.814,
+   "hasta": 3.934,
    "seg": 1
   },
   {
    "w": "carrera",
-   "desde": 3.46,
-   "hasta": 3.86,
+   "desde": 3.934,
+   "hasta": 4.354,
    "seg": 1
   },
   {
    "w": "en",
-   "desde": 3.86,
-   "hasta": 3.96,
+   "desde": 4.354,
+   "hasta": 4.454,
    "seg": 1
   },
   {
    "w": "el",
-   "desde": 3.96,
-   "hasta": 4.08,
+   "desde": 4.454,
+   "hasta": 4.554,
    "seg": 1
   },
   {
    "w": "mismo",
-   "desde": 4.08,
-   "hasta": 4.3,
+   "desde": 4.554,
+   "hasta": 4.814,
    "seg": 1
   },
   {
    "w": "plan:",
-   "desde": 4.3,
-   "hasta": 4.62,
+   "desde": 4.814,
+   "hasta": 5.194,
    "seg": 1
   },
   {
    "w": "¿se",
-   "desde": 4.86,
-   "hasta": 4.94,
+   "desde": 5.194,
+   "hasta": 5.594,
    "seg": 1
   },
   {
    "w": "pisan",
-   "desde": 4.94,
-   "hasta": 5.26,
+   "desde": 5.594,
+   "hasta": 6.014,
    "seg": 1
   },
   {
    "w": "las",
-   "desde": 5.26,
-   "hasta": 5.42,
+   "desde": 6.014,
+   "hasta": 6.174,
    "seg": 1
   },
   {
    "w": "ganancias?",
-   "desde": 5.42,
-   "hasta": 5.92,
+   "desde": 6.174,
+   "hasta": 6.694,
    "seg": 1
   },
   {
    "w": "Un",
-   "desde": 6.629,
-   "hasta": 6.769,
+   "desde": 7.129,
+   "hasta": 7.228,
    "seg": 2
   },
   {
    "w": "metaanálisis",
-   "desde": 6.769,
-   "hasta": 7.369,
+   "desde": 7.228,
+   "hasta": 7.908,
    "seg": 2
   },
   {
    "w": "de",
-   "desde": 7.369,
-   "hasta": 7.549,
+   "desde": 7.908,
+   "hasta": 8.088,
    "seg": 2
   },
   {
    "w": "cuarenta",
-   "desde": 7.549,
-   "hasta": 8.329,
+   "desde": 8.088,
+   "hasta": 8.268,
    "seg": 2
   },
   {
    "w": "y",
-   "desde": 8.329,
-   "hasta": 8.469,
+   "desde": 8.268,
+   "hasta": 8.449,
    "seg": 2
   },
   {
    "w": "tres",
-   "desde": 8.469,
-   "hasta": 8.729,
+   "desde": 8.449,
+   "hasta": 8.628,
    "seg": 2
   },
   {
    "w": "estudios",
-   "desde": 8.729,
-   "hasta": 9.249,
+   "desde": 8.628,
+   "hasta": 9.648,
    "seg": 2
   },
   {
    "w": "no",
-   "desde": 9.249,
-   "hasta": 9.449,
+   "desde": 9.648,
+   "hasta": 10.068,
    "seg": 2
   },
   {
    "w": "encontró",
-   "desde": 9.449,
-   "hasta": 10.009,
+   "desde": 10.068,
+   "hasta": 10.509,
    "seg": 2
   },
   {
    "w": "diferencias",
-   "desde": 10.009,
-   "hasta": 10.609,
+   "desde": 10.509,
+   "hasta": 11.068,
    "seg": 2
   },
   {
    "w": "claras",
-   "desde": 10.609,
-   "hasta": 11.129,
+   "desde": 11.068,
+   "hasta": 11.808,
    "seg": 2
   },
   {
    "w": "ni",
-   "desde": 11.129,
-   "hasta": 11.289,
+   "desde": 11.808,
+   "hasta": 12.009,
    "seg": 2
   },
   {
    "w": "en",
-   "desde": 11.289,
-   "hasta": 11.429,
+   "desde": 12.009,
+   "hasta": 12.169,
    "seg": 2
   },
   {
    "w": "fuerza",
-   "desde": 11.429,
-   "hasta": 11.589,
+   "desde": 12.169,
+   "hasta": 12.388,
    "seg": 2
   },
   {
    "w": "máxima",
-   "desde": 11.589,
-   "hasta": 12.249,
+   "desde": 12.388,
+   "hasta": 13.128,
    "seg": 2
   },
   {
    "w": "ni",
-   "desde": 12.249,
-   "hasta": 12.369,
+   "desde": 13.128,
+   "hasta": 13.369,
    "seg": 2
   },
   {
    "w": "en",
-   "desde": 12.369,
-   "hasta": 12.529,
+   "desde": 13.369,
+   "hasta": 13.509,
    "seg": 2
   },
   {
    "w": "masa",
-   "desde": 12.529,
-   "hasta": 12.749,
+   "desde": 13.509,
+   "hasta": 13.728,
    "seg": 2
   },
   {
    "w": "muscular.",
-   "desde": 12.749,
-   "hasta": 13.109,
+   "desde": 13.728,
+   "hasta": 14.189,
    "seg": 2
   },
   {
    "w": "La",
-   "desde": 13.741,
-   "hasta": 13.881,
+   "desde": 14.662,
+   "hasta": 14.782,
    "seg": 3
   },
   {
    "w": "fuerza",
-   "desde": 13.881,
-   "hasta": 14.121,
+   "desde": 14.782,
+   "hasta": 15.062,
    "seg": 3
   },
   {
    "w": "explosiva",
-   "desde": 14.121,
-   "hasta": 14.881,
+   "desde": 15.062,
+   "hasta": 15.762,
    "seg": 3
   },
   {
    "w": "sí",
-   "desde": 14.881,
-   "hasta": 15.021,
+   "desde": 15.762,
+   "hasta": 15.922,
    "seg": 3
   },
   {
    "w": "mejoró",
-   "desde": 15.021,
-   "hasta": 15.481,
+   "desde": 15.922,
+   "hasta": 16.382,
    "seg": 3
   },
   {
    "w": "algo",
-   "desde": 15.481,
-   "hasta": 15.681,
+   "desde": 16.382,
+   "hasta": 16.602,
    "seg": 3
   },
   {
    "w": "menos,",
-   "desde": 15.681,
-   "hasta": 15.981,
+   "desde": 16.602,
+   "hasta": 16.922,
    "seg": 3
   },
   {
    "w": "sobre",
-   "desde": 16.461,
-   "hasta": 16.741,
+   "desde": 17.462,
+   "hasta": 17.602,
    "seg": 3
   },
   {
    "w": "todo",
-   "desde": 16.741,
-   "hasta": 17.121,
+   "desde": 17.602,
+   "hasta": 17.902,
    "seg": 3
   },
   {
    "w": "al",
-   "desde": 17.121,
-   "hasta": 17.241,
+   "desde": 17.902,
+   "hasta": 18.062,
    "seg": 3
   },
   {
    "w": "hacer",
-   "desde": 17.241,
-   "hasta": 17.481,
+   "desde": 18.062,
+   "hasta": 18.362,
    "seg": 3
   },
   {
    "w": "las",
-   "desde": 17.481,
-   "hasta": 17.641,
+   "desde": 18.362,
+   "hasta": 18.542,
    "seg": 3
   },
   {
    "w": "dos",
-   "desde": 17.641,
-   "hasta": 17.781,
+   "desde": 18.542,
+   "hasta": 18.722,
    "seg": 3
   },
   {
    "w": "cosas",
-   "desde": 17.781,
-   "hasta": 18.141,
+   "desde": 18.722,
+   "hasta": 19.182,
    "seg": 3
   },
   {
    "w": "en",
-   "desde": 18.141,
-   "hasta": 18.321,
+   "desde": 19.182,
+   "hasta": 19.442,
    "seg": 3
   },
   {
    "w": "la",
-   "desde": 18.321,
-   "hasta": 18.421,
+   "desde": 19.442,
+   "hasta": 19.562,
    "seg": 3
   },
   {
    "w": "misma",
-   "desde": 18.421,
-   "hasta": 18.561,
+   "desde": 19.562,
+   "hasta": 19.802,
    "seg": 3
   },
   {
    "w": "sesión.",
-   "desde": 18.561,
-   "hasta": 19.121,
+   "desde": 19.802,
+   "hasta": 20.342,
    "seg": 3
   },
   {
    "w": "Así",
-   "desde": 21.44,
-   "hasta": 21.567,
+   "desde": 20.675,
+   "hasta": 20.875,
    "seg": 4
   },
   {
    "w": "que,",
-   "desde": 21.567,
-   "hasta": 21.694,
+   "desde": 20.875,
+   "hasta": 21.075,
    "seg": 4
   },
   {
    "w": "si",
-   "desde": 21.694,
-   "hasta": 21.822,
+   "desde": 21.155,
+   "hasta": 21.235,
    "seg": 4
   },
   {
    "w": "puedes,",
-   "desde": 21.822,
-   "hasta": 21.949,
+   "desde": 21.235,
+   "hasta": 21.595,
    "seg": 4
   },
   {
    "w": "haz",
-   "desde": 21.949,
-   "hasta": 22.076,
+   "desde": 21.915,
+   "hasta": 22.055,
    "seg": 4
   },
   {
    "w": "cada",
-   "desde": 22.076,
-   "hasta": 22.204,
+   "desde": 22.055,
+   "hasta": 22.315,
    "seg": 4
   },
   {
    "w": "cosa",
-   "desde": 22.204,
-   "hasta": 22.331,
+   "desde": 22.315,
+   "hasta": 22.675,
    "seg": 4
   },
   {
    "w": "en",
-   "desde": 22.331,
-   "hasta": 22.458,
+   "desde": 22.675,
+   "hasta": 22.875,
    "seg": 4
   },
   {
    "w": "una",
-   "desde": 22.458,
-   "hasta": 22.585,
+   "desde": 22.875,
+   "hasta": 23.035,
    "seg": 4
   },
   {
    "w": "sesión",
-   "desde": 22.585,
-   "hasta": 22.713,
+   "desde": 23.035,
+   "hasta": 23.455,
    "seg": 4
   },
   {
    "w": "distinta.",
-   "desde": 22.713,
-   "hasta": 22.84,
+   "desde": 23.455,
+   "hasta": 24.035,
    "seg": 4
   },
   {
    "w": "Fuerza",
-   "desde": 23.065,
-   "hasta": 23.385,
+   "desde": 24.431,
+   "hasta": 24.891,
    "seg": 5
   },
   {
    "w": "y",
-   "desde": 23.385,
-   "hasta": 23.505,
+   "desde": 24.891,
+   "hasta": 25.031,
    "seg": 5
   },
   {
    "w": "carrera",
-   "desde": 23.505,
-   "hasta": 23.905,
+   "desde": 25.031,
+   "hasta": 25.471,
    "seg": 5
   },
   {
    "w": "sí",
-   "desde": 23.905,
-   "hasta": 24.065,
+   "desde": 25.471,
+   "hasta": 25.671,
    "seg": 5
   },
   {
    "w": "suman.",
-   "desde": 24.065,
-   "hasta": 24.445,
+   "desde": 25.671,
+   "hasta": 26.151,
    "seg": 5
   },
   {
    "w": "Sepáralas",
-   "desde": 25.265,
-   "hasta": 25.765,
+   "desde": 26.631,
+   "hasta": 27.191,
    "seg": 6
   },
   {
    "w": "cuando",
-   "desde": 25.765,
-   "hasta": 25.925,
+   "desde": 27.191,
+   "hasta": 27.331,
    "seg": 6
   },
   {
    "w": "puedas,",
-   "desde": 25.925,
-   "hasta": 26.525,
+   "desde": 27.331,
+   "hasta": 27.971,
    "seg": 6
   },
   {
    "w": "haz",
-   "desde": 26.825,
-   "hasta": 26.965,
+   "desde": 28.331,
+   "hasta": 28.471,
    "seg": 6
   },
   {
    "w": "primero",
-   "desde": 26.965,
-   "hasta": 27.305,
+   "desde": 28.471,
+   "hasta": 28.831,
    "seg": 6
   },
   {
    "w": "lo",
-   "desde": 27.305,
-   "hasta": 27.505,
+   "desde": 28.831,
+   "hasta": 29.051,
    "seg": 6
   },
   {
    "w": "que",
-   "desde": 27.505,
-   "hasta": 27.605,
+   "desde": 29.051,
+   "hasta": 29.191,
    "seg": 6
   },
   {
    "w": "más",
-   "desde": 27.605,
-   "hasta": 27.805,
+   "desde": 29.191,
+   "hasta": 29.431,
    "seg": 6
   },
   {
    "w": "te",
-   "desde": 27.805,
-   "hasta": 27.945,
+   "desde": 29.431,
+   "hasta": 29.611,
    "seg": 6
   },
   {
    "w": "importe",
-   "desde": 27.945,
-   "hasta": 28.425,
+   "desde": 29.611,
+   "hasta": 30.111,
    "seg": 6
   },
   {
    "w": "ese",
-   "desde": 28.425,
-   "hasta": 28.565,
+   "desde": 30.111,
+   "hasta": 30.291,
    "seg": 6
   },
   {
    "w": "día",
-   "desde": 28.565,
-   "hasta": 28.865,
+   "desde": 30.291,
+   "hasta": 30.651,
    "seg": 6
   },
   {
    "w": "y",
-   "desde": 28.865,
-   "hasta": 29.045,
+   "desde": 30.651,
+   "hasta": 30.911,
    "seg": 6
   },
   {
    "w": "no",
-   "desde": 29.045,
-   "hasta": 29.185,
+   "desde": 30.911,
+   "hasta": 31.051,
    "seg": 6
   },
   {
    "w": "recortes",
-   "desde": 29.185,
-   "hasta": 29.725,
+   "desde": 31.051,
+   "hasta": 31.611,
    "seg": 6
   },
   {
    "w": "kilómetros",
-   "desde": 29.725,
-   "hasta": 30.265,
+   "desde": 31.611,
+   "hasta": 32.131,
    "seg": 6
   },
   {
    "w": "por",
-   "desde": 30.265,
-   "hasta": 30.545,
+   "desde": 32.131,
+   "hasta": 32.411,
    "seg": 6
   },
   {
    "w": "miedo.",
-   "desde": 30.545,
-   "hasta": 30.785,
+   "desde": 32.411,
+   "hasta": 32.691,
    "seg": 6
   },
   {
    "w": "Guárdalo",
-   "desde": 31.285,
-   "hasta": 31.725,
+   "desde": 33.07,
+   "hasta": 33.55,
    "seg": 7
   },
   {
    "w": "y",
-   "desde": 31.725,
-   "hasta": 31.865,
+   "desde": 33.55,
+   "hasta": 33.71,
    "seg": 7
   },
   {
    "w": "pruébalo",
-   "desde": 31.865,
-   "hasta": 32.365,
+   "desde": 33.71,
+   "hasta": 34.33,
    "seg": 7
   },
   {
    "w": "en",
-   "desde": 32.365,
-   "hasta": 32.485,
+   "desde": 34.33,
+   "hasta": 34.57,
    "seg": 7
   },
   {
    "w": "tu",
-   "desde": 32.485,
-   "hasta": 32.665,
+   "desde": 34.57,
+   "hasta": 34.71,
    "seg": 7
   },
   {
    "w": "próximo",
-   "desde": 32.665,
-   "hasta": 32.925,
+   "desde": 34.71,
+   "hasta": 35.09,
    "seg": 7
   },
   {
    "w": "entreno.",
-   "desde": 32.925,
-   "hasta": 33.545,
+   "desde": 35.09,
+   "hasta": 35.75,
    "seg": 7
   }
  ]

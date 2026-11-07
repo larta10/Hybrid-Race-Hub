@@ -1,75 +1,83 @@
 {
- "hash": "005c4038c8f92a6c",
- "voz": "es_ES-davefx-medium",
- "duracion": 35.095,
+ "hash": "ee2acc490dbfae60",
+ "voz": "kokoro-em_alex",
+ "duracion": 37.102,
  "segmentos": [
   {
    "tipo": "gancho",
    "i": 0,
    "voz_desde": 0.0,
-   "voz_hasta": 2.298,
+   "voz_hasta": 2.72,
    "desde": 0.0,
-   "hasta": 2.548,
-   "transcripcion": "¿Te duele algo? No eres el único."
+   "hasta": 2.97,
+   "coincidencia": 1.0,
+   "transcripcion": "Te duele algo, no eres el único."
   },
   {
    "tipo": "texto",
    "i": 1,
-   "voz_desde": 2.548,
-   "voz_hasta": 7.03,
-   "desde": 2.548,
-   "hasta": 7.28,
+   "voz_desde": 2.97,
+   "voz_hasta": 7.703,
+   "desde": 2.97,
+   "hasta": 7.953,
+   "coincidencia": 1.0,
    "transcripcion": "Un estudio siguió a ochenta y nueve atletas de HYROX durante doce semanas."
   },
   {
    "tipo": "grafica",
    "i": 2,
-   "voz_desde": 7.28,
-   "voz_hasta": 11.088,
-   "desde": 7.28,
-   "hasta": 11.338,
-   "transcripcion": "De media, cada semana, tres de cada diez tenían algún problema de salud."
+   "voz_desde": 7.953,
+   "voz_hasta": 12.46,
+   "desde": 7.953,
+   "hasta": 12.71,
+   "coincidencia": 1.0,
+   "transcripcion": "De media cada semana, tres de cada diez tenían algún problema de salud."
   },
   {
    "tipo": "grafica",
    "i": 3,
-   "voz_desde": 11.338,
-   "voz_hasta": 17.352,
-   "desde": 11.338,
-   "hasta": 17.602,
-   "transcripcion": "Y el setenta y tres por ciento de las lesiones fueron por sobrecarga se acumularon con el entreno."
+   "voz_desde": 12.71,
+   "voz_hasta": 18.617,
+   "desde": 12.71,
+   "hasta": 18.867,
+   "coincidencia": 1.0,
+   "transcripcion": "Y el setenta y tres por ciento de las lesiones fueron por sobrecarga, se acumularon con el entreno."
   },
   {
    "tipo": "texto",
    "i": 4,
-   "voz_desde": 17.602,
-   "voz_hasta": 22.013,
-   "desde": 17.602,
-   "hasta": 22.263,
+   "voz_desde": 18.867,
+   "voz_hasta": 23.926,
+   "desde": 18.867,
+   "hasta": 24.176,
+   "coincidencia": 1.0,
    "transcripcion": "La zona más afectada fue la rodilla, con el veintidós por ciento de los episodios."
   },
   {
    "tipo": "conclusion",
-   "voz_desde": 22.263,
-   "voz_hasta": 23.61,
-   "desde": 22.263,
-   "hasta": 24.463,
-   "transcripcion": "Lo que duele, se acumula."
+   "voz_desde": 24.176,
+   "voz_hasta": 25.792,
+   "desde": 24.176,
+   "hasta": 26.376,
+   "coincidencia": 1.0,
+   "transcripcion": "Lo que duele se acumula."
   },
   {
    "tipo": "aplicacion",
-   "voz_desde": 24.463,
-   "voz_hasta": 31.279,
-   "desde": 24.463,
-   "hasta": 31.529,
+   "voz_desde": 26.376,
+   "voz_hasta": 33.138,
+   "desde": 26.376,
+   "hasta": 33.388,
+   "coincidencia": 1.0,
    "transcripcion": "Sube la carrera poco a poco, apunta cada semana lo que te molesta y, si arrastras una lesión, que la vea un fisio."
   },
   {
    "tipo": "cierre",
-   "voz_desde": 31.529,
-   "voz_hasta": 33.595,
-   "desde": 31.529,
-   "hasta": 35.095,
+   "voz_desde": 33.388,
+   "voz_hasta": 35.602,
+   "desde": 33.388,
+   "hasta": 37.102,
+   "coincidencia": 1.0,
    "transcripcion": "Guárdalo y compártelo con tu grupo."
   }
  ],
@@ -77,601 +85,601 @@
   {
    "w": "¿Te",
    "desde": 0.0,
-   "hasta": 0.1,
+   "hasta": 0.14,
    "seg": 0
   },
   {
    "w": "duele",
-   "desde": 0.1,
-   "hasta": 0.44,
+   "desde": 0.14,
+   "hasta": 0.58,
    "seg": 0
   },
   {
    "w": "algo?",
-   "desde": 0.44,
-   "hasta": 0.74,
+   "desde": 0.58,
+   "hasta": 0.94,
    "seg": 0
   },
   {
    "w": "No",
-   "desde": 1.16,
-   "hasta": 1.38,
+   "desde": 1.42,
+   "hasta": 1.56,
    "seg": 0
   },
   {
    "w": "eres",
-   "desde": 1.38,
-   "hasta": 1.58,
+   "desde": 1.56,
+   "hasta": 1.86,
    "seg": 0
   },
   {
    "w": "el",
-   "desde": 1.58,
-   "hasta": 1.76,
+   "desde": 1.86,
+   "hasta": 2.1,
    "seg": 0
   },
   {
    "w": "único.",
-   "desde": 1.76,
-   "hasta": 1.98,
+   "desde": 2.1,
+   "hasta": 2.4,
    "seg": 0
   },
   {
    "w": "Un",
-   "desde": 2.548,
-   "hasta": 2.728,
+   "desde": 2.97,
+   "hasta": 3.07,
    "seg": 1
   },
   {
    "w": "estudio",
-   "desde": 2.728,
-   "hasta": 3.048,
+   "desde": 3.07,
+   "hasta": 3.39,
    "seg": 1
   },
   {
    "w": "siguió",
-   "desde": 3.048,
-   "hasta": 3.528,
+   "desde": 3.39,
+   "hasta": 3.89,
    "seg": 1
   },
   {
    "w": "a",
-   "desde": 3.528,
-   "hasta": 3.608,
+   "desde": 3.89,
+   "hasta": 3.91,
    "seg": 1
   },
   {
    "w": "ochenta",
-   "desde": 3.608,
-   "hasta": 4.088,
+   "desde": 3.91,
+   "hasta": 4.41,
    "seg": 1
   },
   {
    "w": "y",
-   "desde": 4.088,
-   "hasta": 4.328,
+   "desde": 4.41,
+   "hasta": 4.79,
    "seg": 1
   },
   {
    "w": "nueve",
-   "desde": 4.328,
-   "hasta": 4.648,
+   "desde": 4.79,
+   "hasta": 5.11,
    "seg": 1
   },
   {
    "w": "atletas",
-   "desde": 4.648,
-   "hasta": 5.148,
+   "desde": 5.11,
+   "hasta": 5.61,
    "seg": 1
   },
   {
    "w": "de",
-   "desde": 5.148,
-   "hasta": 5.248,
+   "desde": 5.61,
+   "hasta": 5.73,
    "seg": 1
   },
   {
    "w": "HYROX",
-   "desde": 5.248,
-   "hasta": 5.668,
+   "desde": 5.73,
+   "hasta": 6.35,
    "seg": 1
   },
   {
    "w": "durante",
-   "desde": 5.668,
-   "hasta": 5.928,
+   "desde": 6.35,
+   "hasta": 6.79,
    "seg": 1
   },
   {
    "w": "doce",
-   "desde": 5.928,
-   "hasta": 6.268,
+   "desde": 6.79,
+   "hasta": 7.13,
    "seg": 1
   },
   {
    "w": "semanas.",
-   "desde": 6.268,
-   "hasta": 6.488,
+   "desde": 7.13,
+   "hasta": 7.43,
    "seg": 1
   },
   {
    "w": "De",
-   "desde": 7.28,
-   "hasta": 7.38,
+   "desde": 7.953,
+   "hasta": 8.073,
    "seg": 2
   },
   {
    "w": "media,",
-   "desde": 7.38,
-   "hasta": 7.64,
+   "desde": 8.073,
+   "hasta": 8.413,
    "seg": 2
   },
   {
    "w": "cada",
-   "desde": 7.74,
-   "hasta": 7.88,
+   "desde": 8.413,
+   "hasta": 8.713,
    "seg": 2
   },
   {
    "w": "semana,",
-   "desde": 7.88,
-   "hasta": 8.18,
+   "desde": 8.713,
+   "hasta": 9.213,
    "seg": 2
   },
   {
    "w": "tres",
-   "desde": 8.18,
-   "hasta": 8.72,
+   "desde": 9.633,
+   "hasta": 9.773,
    "seg": 2
   },
   {
    "w": "de",
-   "desde": 8.72,
-   "hasta": 8.86,
+   "desde": 9.773,
+   "hasta": 9.913,
    "seg": 2
   },
   {
    "w": "cada",
-   "desde": 8.86,
-   "hasta": 9.02,
+   "desde": 9.913,
+   "hasta": 10.113,
    "seg": 2
   },
   {
    "w": "diez",
-   "desde": 9.02,
-   "hasta": 9.26,
+   "desde": 10.113,
+   "hasta": 10.413,
    "seg": 2
   },
   {
    "w": "tenían",
-   "desde": 9.26,
-   "hasta": 9.7,
+   "desde": 10.413,
+   "hasta": 10.953,
    "seg": 2
   },
   {
    "w": "algún",
-   "desde": 9.7,
-   "hasta": 9.92,
+   "desde": 10.953,
+   "hasta": 11.333,
    "seg": 2
   },
   {
    "w": "problema",
-   "desde": 9.92,
-   "hasta": 10.32,
+   "desde": 11.333,
+   "hasta": 11.873,
    "seg": 2
   },
   {
    "w": "de",
-   "desde": 10.32,
-   "hasta": 10.5,
+   "desde": 11.873,
+   "hasta": 12.033,
    "seg": 2
   },
   {
    "w": "salud.",
-   "desde": 10.5,
-   "hasta": 10.72,
+   "desde": 12.033,
+   "hasta": 12.333,
    "seg": 2
   },
   {
    "w": "Y",
-   "desde": 11.338,
-   "hasta": 11.458,
+   "desde": 12.71,
+   "hasta": 12.81,
    "seg": 3
   },
   {
    "w": "el",
-   "desde": 11.458,
-   "hasta": 11.578,
+   "desde": 12.81,
+   "hasta": 12.93,
    "seg": 3
   },
   {
    "w": "setenta",
-   "desde": 11.578,
-   "hasta": 12.158,
+   "desde": 12.93,
+   "hasta": 13.47,
    "seg": 3
   },
   {
    "w": "y",
-   "desde": 12.158,
-   "hasta": 12.638,
+   "desde": 13.47,
+   "hasta": 13.61,
    "seg": 3
   },
   {
    "w": "tres",
-   "desde": 12.638,
-   "hasta": 12.878,
+   "desde": 13.61,
+   "hasta": 13.81,
    "seg": 3
   },
   {
    "w": "por",
-   "desde": 12.878,
-   "hasta": 13.078,
+   "desde": 13.81,
+   "hasta": 14.05,
    "seg": 3
   },
   {
    "w": "ciento",
-   "desde": 13.078,
-   "hasta": 13.358,
+   "desde": 14.05,
+   "hasta": 14.39,
    "seg": 3
   },
   {
    "w": "de",
-   "desde": 13.358,
-   "hasta": 13.558,
+   "desde": 14.39,
+   "hasta": 14.59,
    "seg": 3
   },
   {
    "w": "las",
-   "desde": 13.558,
-   "hasta": 13.658,
+   "desde": 14.59,
+   "hasta": 14.71,
    "seg": 3
   },
   {
    "w": "lesiones",
-   "desde": 13.658,
-   "hasta": 14.078,
+   "desde": 14.71,
+   "hasta": 15.13,
    "seg": 3
   },
   {
    "w": "fueron",
-   "desde": 14.078,
-   "hasta": 14.378,
+   "desde": 15.13,
+   "hasta": 15.53,
    "seg": 3
   },
   {
    "w": "por",
-   "desde": 14.378,
-   "hasta": 14.638,
+   "desde": 15.53,
+   "hasta": 15.83,
    "seg": 3
   },
   {
    "w": "sobrecarga:",
-   "desde": 14.638,
-   "hasta": 15.318,
+   "desde": 15.83,
+   "hasta": 16.55,
    "seg": 3
   },
   {
    "w": "se",
-   "desde": 15.318,
-   "hasta": 15.798,
+   "desde": 16.93,
+   "hasta": 17.09,
    "seg": 3
   },
   {
    "w": "acumularon",
-   "desde": 15.798,
-   "hasta": 16.478,
+   "desde": 17.09,
+   "hasta": 17.75,
    "seg": 3
   },
   {
    "w": "con",
-   "desde": 16.478,
-   "hasta": 16.618,
+   "desde": 17.75,
+   "hasta": 17.93,
    "seg": 3
   },
   {
    "w": "el",
-   "desde": 16.618,
-   "hasta": 16.758,
+   "desde": 17.93,
+   "hasta": 18.09,
    "seg": 3
   },
   {
    "w": "entreno.",
-   "desde": 16.758,
-   "hasta": 17.178,
+   "desde": 18.09,
+   "hasta": 18.59,
    "seg": 3
   },
   {
    "w": "La",
-   "desde": 17.602,
-   "hasta": 17.742,
+   "desde": 18.867,
+   "hasta": 18.967,
    "seg": 4
   },
   {
    "w": "zona",
-   "desde": 17.742,
-   "hasta": 17.742,
+   "desde": 18.967,
+   "hasta": 19.247,
    "seg": 4
   },
   {
    "w": "más",
-   "desde": 17.742,
-   "hasta": 18.002,
+   "desde": 19.247,
+   "hasta": 19.527,
    "seg": 4
   },
   {
    "w": "afectada",
-   "desde": 18.002,
-   "hasta": 18.582,
+   "desde": 19.527,
+   "hasta": 20.127,
    "seg": 4
   },
   {
    "w": "fue",
-   "desde": 18.582,
-   "hasta": 18.782,
+   "desde": 20.127,
+   "hasta": 20.347,
    "seg": 4
   },
   {
    "w": "la",
-   "desde": 18.782,
-   "hasta": 18.942,
+   "desde": 20.347,
+   "hasta": 20.487,
    "seg": 4
   },
   {
    "w": "rodilla,",
-   "desde": 18.942,
-   "hasta": 19.382,
+   "desde": 20.487,
+   "hasta": 21.007,
    "seg": 4
   },
   {
    "w": "con",
-   "desde": 19.522,
-   "hasta": 19.682,
+   "desde": 21.307,
+   "hasta": 21.527,
    "seg": 4
   },
   {
    "w": "el",
-   "desde": 19.682,
-   "hasta": 19.822,
+   "desde": 21.527,
+   "hasta": 21.667,
    "seg": 4
   },
   {
    "w": "veintidós",
-   "desde": 19.822,
-   "hasta": 20.242,
+   "desde": 21.667,
+   "hasta": 22.247,
    "seg": 4
   },
   {
    "w": "por",
-   "desde": 20.242,
-   "hasta": 20.422,
+   "desde": 22.247,
+   "hasta": 22.427,
    "seg": 4
   },
   {
    "w": "ciento",
-   "desde": 20.422,
-   "hasta": 20.662,
+   "desde": 22.427,
+   "hasta": 22.807,
    "seg": 4
   },
   {
    "w": "de",
-   "desde": 20.662,
-   "hasta": 20.902,
+   "desde": 22.807,
+   "hasta": 23.047,
    "seg": 4
   },
   {
    "w": "los",
-   "desde": 20.902,
-   "hasta": 21.022,
+   "desde": 23.047,
+   "hasta": 23.167,
    "seg": 4
   },
   {
    "w": "episodios.",
-   "desde": 21.022,
-   "hasta": 21.642,
+   "desde": 23.167,
+   "hasta": 23.827,
    "seg": 4
   },
   {
    "w": "Lo",
-   "desde": 22.263,
-   "hasta": 22.363,
+   "desde": 24.176,
+   "hasta": 24.296,
    "seg": 5
   },
   {
    "w": "que",
-   "desde": 22.363,
-   "hasta": 22.483,
+   "desde": 24.296,
+   "hasta": 24.436,
    "seg": 5
   },
   {
    "w": "duele,",
-   "desde": 22.483,
-   "hasta": 22.863,
+   "desde": 24.436,
+   "hasta": 24.896,
    "seg": 5
   },
   {
    "w": "se",
-   "desde": 22.863,
-   "hasta": 22.963,
+   "desde": 24.896,
+   "hasta": 25.116,
    "seg": 5
   },
   {
    "w": "acumula.",
-   "desde": 22.963,
-   "hasta": 23.383,
+   "desde": 25.116,
+   "hasta": 25.636,
    "seg": 5
   },
   {
    "w": "Sube",
-   "desde": 24.463,
-   "hasta": 24.703,
+   "desde": 26.376,
+   "hasta": 26.596,
    "seg": 6
   },
   {
    "w": "la",
-   "desde": 24.703,
-   "hasta": 24.843,
+   "desde": 26.596,
+   "hasta": 26.756,
    "seg": 6
   },
   {
    "w": "carrera",
-   "desde": 24.843,
-   "hasta": 25.223,
+   "desde": 26.756,
+   "hasta": 27.116,
    "seg": 6
   },
   {
    "w": "poco",
-   "desde": 25.223,
-   "hasta": 25.443,
+   "desde": 27.116,
+   "hasta": 27.356,
    "seg": 6
   },
   {
    "w": "a",
-   "desde": 25.443,
-   "hasta": 25.603,
+   "desde": 27.356,
+   "hasta": 27.556,
    "seg": 6
   },
   {
    "w": "poco,",
-   "desde": 25.603,
-   "hasta": 25.823,
+   "desde": 27.556,
+   "hasta": 27.836,
    "seg": 6
   },
   {
    "w": "apunta",
-   "desde": 26.223,
-   "hasta": 26.623,
+   "desde": 28.236,
+   "hasta": 28.616,
    "seg": 6
   },
   {
    "w": "cada",
-   "desde": 26.623,
-   "hasta": 26.803,
+   "desde": 28.616,
+   "hasta": 28.836,
    "seg": 6
   },
   {
    "w": "semana",
-   "desde": 26.803,
-   "hasta": 27.203,
+   "desde": 28.836,
+   "hasta": 29.176,
    "seg": 6
   },
   {
    "w": "lo",
-   "desde": 27.203,
-   "hasta": 27.463,
+   "desde": 29.176,
+   "hasta": 29.476,
    "seg": 6
   },
   {
    "w": "que",
-   "desde": 27.463,
-   "hasta": 27.563,
+   "desde": 29.476,
+   "hasta": 29.616,
    "seg": 6
   },
   {
    "w": "te",
-   "desde": 27.563,
-   "hasta": 27.683,
+   "desde": 29.616,
+   "hasta": 29.776,
    "seg": 6
   },
   {
    "w": "molesta",
-   "desde": 27.683,
-   "hasta": 28.143,
+   "desde": 29.776,
+   "hasta": 30.316,
    "seg": 6
   },
   {
    "w": "y,",
-   "desde": 28.143,
-   "hasta": 28.343,
+   "desde": 30.316,
+   "hasta": 30.656,
    "seg": 6
   },
   {
    "w": "si",
-   "desde": 28.443,
-   "hasta": 28.483,
+   "desde": 30.716,
+   "hasta": 30.796,
    "seg": 6
   },
   {
    "w": "arrastras",
-   "desde": 28.483,
-   "hasta": 28.943,
+   "desde": 30.796,
+   "hasta": 31.236,
    "seg": 6
   },
   {
    "w": "una",
-   "desde": 28.943,
-   "hasta": 29.163,
+   "desde": 31.236,
+   "hasta": 31.456,
    "seg": 6
   },
   {
    "w": "lesión,",
-   "desde": 29.163,
-   "hasta": 29.583,
+   "desde": 31.456,
+   "hasta": 31.916,
    "seg": 6
   },
   {
    "w": "que",
-   "desde": 30.003,
-   "hasta": 30.083,
+   "desde": 32.096,
+   "hasta": 32.156,
    "seg": 6
   },
   {
    "w": "la",
-   "desde": 30.083,
-   "hasta": 30.203,
+   "desde": 32.156,
+   "hasta": 32.276,
    "seg": 6
   },
   {
    "w": "vea",
-   "desde": 30.203,
-   "hasta": 30.443,
+   "desde": 32.276,
+   "hasta": 32.516,
    "seg": 6
   },
   {
    "w": "un",
-   "desde": 30.443,
-   "hasta": 30.583,
+   "desde": 32.516,
+   "hasta": 32.636,
    "seg": 6
   },
   {
    "w": "fisio.",
-   "desde": 30.583,
-   "hasta": 31.003,
+   "desde": 32.636,
+   "hasta": 33.116,
    "seg": 6
   },
   {
    "w": "Guárdalo",
-   "desde": 31.529,
-   "hasta": 31.929,
+   "desde": 33.388,
+   "hasta": 33.908,
    "seg": 7
   },
   {
    "w": "y",
-   "desde": 31.929,
-   "hasta": 32.069,
+   "desde": 33.908,
+   "hasta": 34.088,
    "seg": 7
   },
   {
    "w": "compártelo",
-   "desde": 32.069,
-   "hasta": 32.669,
+   "desde": 34.088,
+   "hasta": 34.728,
    "seg": 7
   },
   {
    "w": "con",
-   "desde": 32.669,
-   "hasta": 32.849,
+   "desde": 34.728,
+   "hasta": 34.948,
    "seg": 7
   },
   {
    "w": "tu",
-   "desde": 32.849,
-   "hasta": 33.049,
+   "desde": 34.948,
+   "hasta": 35.088,
    "seg": 7
   },
   {
    "w": "grupo.",
-   "desde": 33.049,
-   "hasta": 33.249,
+   "desde": 35.088,
+   "hasta": 35.368,
    "seg": 7
   }
  ]

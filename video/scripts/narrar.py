@@ -111,6 +111,70 @@ def alinear(originales: list[str], transcritas: list[dict], t0: float, t1: float
     return [{"w": w, **r} for w, r in zip(originales, res)]
 
 
+UNIDADES = ("cero uno dos tres cuatro cinco seis siete ocho nueve diez once doce trece catorce quince dieciséis diecisiete "
+            "dieciocho diecinueve veinte veintiuno veintidós veintitrés veinticuatro veinticinco veintiséis veintisiete "
+            "veintiocho veintinueve").split()
+DECENAS = {3: "treinta", 4: "cuarenta", 5: "cincuenta", 6: "sesenta", 7: "setenta", 8: "ochenta", 9: "noventa"}
+CENTENAS = {1: "ciento", 5: "quinientos", 7: "setecientos", 9: "novecientos"}
+
+
+def en_letras(n: int) -> str:
+    """Número (0-999 999) en letras, en castellano."""
+    if n < 30:
+        return UNIDADES[n]
+    if n < 100:
+        return DECENAS[n // 10] + ("" if n % 10 == 0 else " y " + UNIDADES[n % 10])
+    if n < 1000:
+        if n == 100:
+            return "cien"
+        c = CENTENAS.get(n // 100, UNIDADES[n // 100] + "cientos")
+        return c + ("" if n % 100 == 0 else " " + en_letras(n % 100))
+    m = "mil" if n // 1000 == 1 else en_letras(n // 1000) + " mil"
+    return m + ("" if n % 1000 == 0 else " " + en_letras(n % 1000))
+
+
+def expandir_cifras(trans: list[dict]) -> list[dict]:
+    """Whisper escribe "86" o "73%": se pasan a palabras repartiendo el tiempo, para casarlas con el guion."""
+    out = []
+    for x in trans:
+        m = re.fullmatch(r"([¿¡(]*)(\d{1,6})(%?)([.,;:!?)]*)", x["w"].replace(".", "") if re.fullmatch(r"\d{1,3}(\.\d{3})+[.,]?", x["w"]) else x["w"])
+        if not m:
+            out.append(x)
+            continue
+        ws = en_letras(int(m.group(2))).split() + (["por", "ciento"] if m.group(3) else [])
+        paso = (x["hasta"] - x["desde"]) / len(ws)
+        out += [{"w": w, "desde": x["desde"] + paso * k, "hasta": x["desde"] + paso * (k + 1)} for k, w in enumerate(ws)]
+    return out
+
+
+def coincidencia(originales: list[str], trans: list[dict]) -> float:
+    a = [norm(w) for w in originales]
+    b = [norm(x["w"]) for x in trans]
+    iguales = sum(i2 - i1 for tag, i1, i2, _, _ in SequenceMatcher(a=a, b=b, autojunk=False).get_opcodes() if tag == "equal")
+    extra = max(0, len(b) - len(a))  # palabras inventadas (alucinaciones) restan
+    return (iguales - extra) / max(1, len(a))
+
+
+def transcribir_segmento(modelo, audio, texto: str, t0: float) -> tuple[list[dict], float]:
+    """Transcribe un segmento con y sin el texto como pista y se queda con la versión que mejor casa con el guion.
+    Se antepone medio segundo de silencio, que evita las alucinaciones de Whisper al empezar en seco."""
+    import numpy as np
+
+    pre = 0.5
+    audio = np.concatenate([np.zeros(int(16000 * pre), dtype=np.float32), audio])
+    orig = texto.split()
+    mejor, mejor_c = [], -1.0
+    for pista in (None, texto):
+        res, _ = modelo.transcribe(audio, language="es", word_timestamps=True, beam_size=5, vad_filter=False, initial_prompt=pista, condition_on_previous_text=False)
+        trans = expandir_cifras([{"w": w.word.strip(), "desde": max(t0, t0 + w.start - pre), "hasta": max(t0, t0 + w.end - pre)} for r in res for w in (r.words or [])])
+        c = coincidencia(orig, trans)
+        if c > mejor_c:
+            mejor, mejor_c = trans, c
+        if c >= 0.95:
+            break
+    return mejor, round(mejor_c, 3)
+
+
 def segmentos(reel: dict) -> list[dict]:
     n = reel["narracion"]
     segs = []
@@ -209,17 +273,26 @@ def narrar(reel_id: str, forzar=False, voz_path: Path | None = None):
     for idx, s in enumerate(segs):
         seg_wav = tmp / f"seg{idx}.wav"
         ffmpeg("-ss", f"{s['voz_desde']:.3f}", "-t", f"{s['voz_hasta'] - s['voz_desde'] + 0.05:.3f}", "-i", str(crudo), str(seg_wav))
-        res, _ = modelo.transcribe(audio_16k(seg_wav), language="es", word_timestamps=True, beam_size=5, vad_filter=False, initial_prompt=s["texto"])
-        trans = [{"w": w.word.strip(), "desde": s["voz_desde"] + w.start, "hasta": s["voz_desde"] + w.end} for r in res for w in (r.words or [])]
+        trans, s["coincidencia"] = transcribir_segmento(modelo, audio_16k(seg_wav), s["texto"], s["voz_desde"])
         transcrito_total.append(" ".join(x["w"] for x in trans))
         orig = s["texto"].split()
         for p in alinear(orig, trans, s["voz_desde"], s["voz_hasta"]):
             palabras.append({**p, "seg": idx})
+        if s["coincidencia"] < 0.7:
+            print(f"   AVISO [{s['tipo']}]: Whisper solo casa el {s['coincidencia']:.0%} de las palabras; tiempos repartidos")
         s["transcripcion"] = transcrito_total[-1]
 
-    # Postproceso: corte < 80 Hz, presencia 2-4 kHz, compresión ligera, casi sin reverberación, -14 LUFS
-    filtro = "highpass=f=80,equalizer=f=3000:width_type=o:width=1.2:g=2.5,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2,aecho=0.8:0.3:22:0.06,loudnorm=I=-14:TP=-1.5:LRA=9"
-    ffmpeg("-i", str(crudo), "-af", filtro, "-ar", "44100", "-ac", "1", "-c:a", "libmp3lame", "-b:a", "128k", str(mp3))
+    # Postproceso: corte < 80 Hz, presencia 2-4 kHz, compresión ligera, casi sin reverberación, -14 LUFS.
+    # loudnorm sola se queda ~1 LU corta con tantas pausas: se mide el resultado y se corrige con una ganancia fija
+    # (con un limitador a -1,5 dBFS para los picos sueltos)
+    base = "highpass=f=80,equalizer=f=3000:width_type=o:width=1.2:g=2.5,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2,aecho=0.8:0.3:22:0.06,loudnorm=I=-14:TP=-1.5:LRA=11"
+    pre = tmp / "post.wav"
+    ffmpeg("-i", str(crudo), "-af", base, "-ar", "44100", "-ac", "1", str(pre))
+    log = ffmpeg("-i", str(pre), "-af", "loudnorm=I=-14:TP=-1.5:print_format=json", "-f", "null", "-")
+    med = json.loads(log[log.rindex("{") : log.rindex("}") + 1])
+    gan = max(-6.0, min(6.0, -14.0 - float(med["input_i"])))
+    fin = f"volume={gan:.2f}dB,alimiter=limit=0.84:attack=2:release=50:level=false"
+    ffmpeg("-i", str(pre), "-af", fin, "-ar", "44100", "-ac", "1", "-c:a", "libmp3lame", "-b:a", "128k", str(mp3))
 
     out = {
         "hash": h,
