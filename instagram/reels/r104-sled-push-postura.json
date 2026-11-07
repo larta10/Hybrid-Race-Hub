@@ -9,17 +9,14 @@
       "duracion": 2,
       "clip": {
         "query": "sled push",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.3,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "sin_clip": true
       },
       "texto": []
     },
@@ -27,17 +24,14 @@
       "duracion": 3,
       "clip": {
         "query": "sled push gym",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
+        "inicio": 5,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.3,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "sin_clip": true
       },
       "texto": [
         "Tronco inclinado, espalda neutra",
@@ -64,17 +58,14 @@
       "duracion": 3,
       "clip": {
         "query": "pushing sled turf",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "sin_clip": true
       },
       "texto": [
         "Error: cadera alta, espalda redonda",
@@ -85,17 +76,14 @@
       "duracion": 3,
       "clip": {
         "query": "sled push legs",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
+        "inicio": 10,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.3,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "sin_clip": true
       },
       "texto": [
         "Glúteos, cuádriceps y gemelos empujan",
@@ -115,17 +103,23 @@
       "duracion": 4.5,
       "clip": {
         "query": "sled push athlete",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "fuente": "pixabay",
+        "id": "65163",
+        "url_pagina": "https://pixabay.com/videos/id-65163/",
+        "autor": "tixonov_valentin",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.62,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "autor_url": "https://pixabay.com/users/tixonov_valentin-10389207/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2021/02/13/65163-513048313_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 32,
+        "archivo": "clips/pixabay-65163-087b2bca.mp4"
       },
       "texto": [],
       "grafica": {
@@ -161,21 +155,27 @@
   ],
   "clip_final": {
     "query": "gym crossfit training",
-    "fuente": null,
-    "id": null,
-    "url_pagina": null,
-    "autor": null,
+    "fuente": "pixabay",
+    "id": "13134",
+    "url_pagina": "https://pixabay.com/videos/id-13134/",
+    "autor": "tacofleur",
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": true,
+    "autor_url": "https://pixabay.com/users/tacofleur-2688180/",
+    "archivo_origen": "https://cdn.pixabay.com/video/2017/12/01/13134-245530646_large.mp4",
+    "ancho": 1920,
+    "alto": 1080,
+    "duracion_clip": 51,
+    "archivo": "clips/pixabay-13134-19152a1a.mp4"
   },
   "musica": "auto",
   "portada_segundo": 1.2,
-  "qa_ok": false,
+  "qa_ok": true,
   "caption": "El trineo no se mueve con los brazos. Se mueve con la cadera.\n\nLa postura que funciona: tronco inclinado hacia delante, espalda neutra, brazos largos que solo transmiten y pasos cortos y rápidos. La que no: cadera alta, piernas casi rectas y espalda redonda. Ahí la fuerza de las piernas se pierde antes de llegar al trineo.\n\nUn dato para ponerlo en contexto: en el primer estudio sobre HYROX, 11 atletas recreativos tardaron una mediana de 128 segundos en el sled push y 155 en el sled pull durante una simulación. Las estaciones más pesadas fueron de las más cortas. Ojo: el estudio no analizó la técnica, así que el dato sirve para dimensionar la estación, no para decir qué postura es mejor. Lo de la postura es biomecánica básica de empuje.\n\nPara entrenarlo:\nGrábate de lado y revisa el ángulo del tronco.\nPasos cortos, sin paradas.\nEmpujes cortos justo después de correr.\n\n¿Qué te cuesta más, arrancar el trineo o mantenerlo en marcha?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nBrandt T, et al. (2025). Acute physiological responses and performance determinants in Hyrox. Frontiers in Physiology.\n\nVídeo: Pixabay",
   "hashtags": [
     "#hyrox",

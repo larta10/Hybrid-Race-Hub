@@ -52,6 +52,7 @@ async function cmdBuscar(id) {
       for (let j = 0; j < n; j++) blank(path.join(dir, `c${String(k++).padStart(3, "0")}.jpg`), CELL_W, CELL_H);
       continue;
     }
+    if (rehacer && opt("q")) c.query = opt("q");
     if (!c.sin_clip && (!c.id || rehacer)) {
       const minDur = Math.ceil((c.inicio ?? 1) + s.duracion + 0.5);
       const excluir = new Set([...usados, ...(c.descartados || [])]);
@@ -87,7 +88,8 @@ async function cmdElegir(id, picks) {
     const s = slots[Number(h) - 1];
     if (!s) throw new Error(`No existe el hueco ${h}`);
     const c = s.clip;
-    const v = c.candidatos?.[Number(cand) - 1];
+    // <candidato> es su número en ese hueco o un id "pixabay-123" de cualquier hueco del guion
+    const v = cand.includes("-") ? slots.flatMap((x) => [x.clip, ...(x.clip.candidatos || [])]).find((x) => `${x.fuente}-${x.id}` === cand && x.archivo_origen) : c.candidatos?.[Number(cand) - 1];
     if (cand !== "0") {
       if (!v) throw new Error(`Hueco ${h}: no hay candidato ${cand}`);
       for (const k of META) c[k] = v[k];

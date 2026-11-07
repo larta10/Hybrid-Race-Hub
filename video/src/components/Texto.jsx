@@ -5,7 +5,7 @@ import { C, F, SAFE, SPRING, palabras } from "../theme.js";
 const SOMBRA = "0 2px 18px rgba(0,0,0,0.55)";
 
 /** Palabra que entra desde abajo dentro de una máscara (sin rebote) */
-function Palabra({ w, destacado, retraso, size, peso = 800 }) {
+function Palabra({ w, sufijo, destacado, retraso, size, peso = 800 }) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const p = spring({ frame: frame - retraso, fps, config: SPRING, durationInFrames: 14 });
@@ -21,6 +21,7 @@ function Palabra({ w, destacado, retraso, size, peso = 800 }) {
         }}
       >
         {w}
+        {sufijo && <span style={{ color: C.hueso }}>{sufijo}</span>}
       </span>
     </span>
   );

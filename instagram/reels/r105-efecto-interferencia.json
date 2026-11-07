@@ -9,17 +9,23 @@
       "duracion": 2,
       "clip": {
         "query": "runner sprint",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "fuente": "pixabay",
+        "id": "33781",
+        "url_pagina": "https://pixabay.com/videos/id-33781/",
+        "autor": "ninosouza",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.55,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "autor_url": "https://pixabay.com/users/ninosouza-8385382/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2020/03/16/33781-399148466_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 30,
+        "archivo": "clips/pixabay-33781-aa7eab55.mp4"
       },
       "texto": []
     },
@@ -27,17 +33,23 @@
       "duracion": 3,
       "clip": {
         "query": "barbell squat gym",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
+        "fuente": "pixabay",
+        "id": "18369",
+        "url_pagina": "https://pixabay.com/videos/id-18369/",
+        "autor": "tacofleur",
+        "inicio": 20,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.45,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "autor_url": "https://pixabay.com/users/tacofleur-2688180/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2018/09/23/18369-291382852_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 54,
+        "archivo": "clips/pixabay-18369-f04b7041.mp4"
       },
       "texto": [
         "Fuerza y carrera en el mismo plan",
@@ -48,17 +60,23 @@
       "duracion": 5,
       "clip": {
         "query": "weightlifting athlete",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
+        "fuente": "pixabay",
+        "id": "65163",
+        "url_pagina": "https://pixabay.com/videos/id-65163/",
+        "autor": "tixonov_valentin",
+        "inicio": 8,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "autor_url": "https://pixabay.com/users/tixonov_valentin-10389207/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2021/02/13/65163-513048313_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 32,
+        "archivo": "clips/pixabay-65163-b2d2e0ba.mp4"
       },
       "texto": [],
       "grafica": {
@@ -89,17 +107,14 @@
       "duracion": 3,
       "clip": {
         "query": "box jump athlete",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "sin_clip": true
       },
       "texto": [
         "La fuerza explosiva sí pierde *algo*",
@@ -111,17 +126,23 @@
       "duracion": 3,
       "clip": {
         "query": "running track athlete",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
+        "fuente": "pixabay",
+        "id": "206632",
+        "url_pagina": "https://pixabay.com/videos/id-206632/",
+        "autor": "ThomaLutfpv",
+        "inicio": 0,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.52,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "autor_url": "https://pixabay.com/users/ThomaLutfpv-41986546/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2024/04/02/206632_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 6,
+        "archivo": "clips/pixabay-206632-cb6aff34.mp4"
       },
       "texto": [
         "Si puedes, sepáralas",
@@ -140,21 +161,27 @@
   ],
   "clip_final": {
     "query": "runner road",
-    "fuente": null,
-    "id": null,
-    "url_pagina": null,
-    "autor": null,
+    "fuente": "pixabay",
+    "id": "239060",
+    "url_pagina": "https://pixabay.com/videos/id-239060/",
+    "autor": "videohive",
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": true,
+    "autor_url": "https://pixabay.com/users/videohive-23153887/",
+    "archivo_origen": "https://cdn.pixabay.com/video/2024/10/30/239060_large.mp4",
+    "ancho": 3840,
+    "alto": 2160,
+    "duracion_clip": 14,
+    "archivo": "clips/pixabay-239060-8932f346.mp4"
   },
   "musica": "auto",
   "portada_segundo": 1.2,
-  "qa_ok": false,
+  "qa_ok": true,
   "caption": "Correr no te va a robar la fuerza. La potencia, un poco, y depende de cómo lo organices.\n\nUn metaanálisis de 2022 reunió 43 estudios que comparaban entrenar solo fuerza con combinar fuerza y trabajo aeróbico durante al menos 4 semanas. Resultado: ni la fuerza máxima ni la masa muscular se resintieron de forma clara. La fuerza explosiva sí mejoró algo menos, y sobre todo cuando las dos cosas iban en la misma sesión. Separándolas al menos 3 horas, esa diferencia dejó de ser significativa.\n\nLimitaciones: muchos participantes eran personas no entrenadas o simplemente activas, y se midieron adaptaciones del músculo, no tiempos en carrera. En atletas muy avanzados la historia puede cambiar.\n\nCómo aplicarlo:\nSi puedes, fuerza por la mañana y carrera por la tarde, o al revés.\nSi van juntas, primero lo prioritario de ese día.\nNo recortes kilómetros por miedo a perder fuerza.\n\n¿Haces fuerza y carrera el mismo día o en días separados?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nSchumann M, et al. (2022). Compatibility of concurrent aerobic and strength training for skeletal muscle size and function. Sports Medicine.\n\nVídeo: Pixabay",
   "hashtags": [
     "#entrenamientohibrido",

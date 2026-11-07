@@ -9,7 +9,7 @@ Proyecto aparte de la web: tiene su propio `package.json` y no entra en el build
 
 ## Regla de oro
 
-El humano **siempre** es vídeo real de stock con licencia (Pexels). Está prohibido dibujar o animar
+El humano **siempre** es vídeo real de stock con licencia (Pixabay). Está prohibido dibujar o animar
 personas con código (SVG, siluetas, muñecos, avatares). Si no hay un clip bueno para un movimiento,
 la escena pasa a texto y gráfica sobre un fondo neutro sin personas.
 
@@ -17,9 +17,8 @@ la escena pasa a texto y gráfica sobre un fondo neutro sin personas.
 
 ```bash
 npm ci
-node scripts/fetch-clips.mjs r102-carbohidratos-en-carrera   # busca y descarga clips en Pexels (necesita PEXELS_API_KEY)
-node scripts/fetch-clips.mjs --all
-node scripts/frames.mjs clips r102-carbohidratos-en-carrera  # 3 fotogramas por clip para revisarlos
+node scripts/fetch-clips.mjs buscar r102-carbohidratos-en-carrera   # candidatos de Pixabay (PIXABAY_API_KEY)
+node scripts/fetch-clips.mjs elegir/aprobar/sinclip …          # ver instagram/PROGRESO.md
 node scripts/render.mjs r102-carbohidratos-en-carrera         # MP4 + portada JPG en video/out/
 node scripts/frames.mjs video out/r102-carbohidratos-en-carrera.mp4   # 1 fotograma por segundo (control de calidad)
 npm run studio                                                # editor visual de Remotion
@@ -31,9 +30,10 @@ npm run studio                                                # editor visual de
   empresas de hasta 3 empleados; Hybrid Race Hub es un proyecto de una persona (menos de 4),
   así que no necesita licencia de empresa. Si el equipo creciera a 4 personas o más, habría que
   comprar la Company License (https://www.remotion.dev/license).
-- **Pexels**: uso comercial y modificación permitidos sin atribución obligatoria
-  (https://www.pexels.com/license/). Aun así el caption lleva "Vídeo: Pexels" y nunca se insinúa
-  que las personas que salen recomiendan Hybrid Race Hub. Los clips no se suben al repo
-  (`video/cache/`, ignorado): se descargan en cada render a partir del id guardado en el guion.
+- **Pixabay** (vídeo): licencia de contenido de Pixabay, uso comercial y modificación permitidos sin
+  atribución obligatoria (https://pixabay.com/service/license-summary/). Normas de la API: búsquedas
+  cacheadas 24 h y nada de enlazar a sus URLs: cada clip aprobado se descarga, se recorta y se sube a
+  nuestro bucket (`clips/`). El caption lleva "Vídeo: Pixabay" y nunca se insinúa que las personas que
+  salen recomiendan Hybrid Race Hub. Pexels sigue soportado si algún día hay `PEXELS_API_KEY`.
 - **Música**: ver `instagram/music/LICENCIAS.md`.
 - **Fuentes**: Barlow y Barlow Condensed (SIL Open Font License), copiadas de `instagram/fonts/`.

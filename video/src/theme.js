@@ -53,6 +53,15 @@ export function partes(texto) {
 /** Palabras con su marca de destacado (para animar palabra a palabra) */
 export function palabras(texto) {
   const out = [];
-  for (const p of partes(texto)) for (const w of p.t.split(/\s+/).filter(Boolean)) out.push({ w, destacado: p.destacado });
+  let finConEspacio = true;
+  for (const p of partes(texto)) {
+    // Un signo pegado al trozo anterior ("*fuerza*?") va con esa palabra, sin destacar
+    const pegado = !finConEspacio && !/^\s/.test(p.t) && out.length > 0;
+    finConEspacio = /\s$/.test(p.t);
+    p.t.split(/\s+/).filter(Boolean).forEach((w, i) => {
+      if (i === 0 && pegado) out[out.length - 1].sufijo = (out[out.length - 1].sufijo || "") + w;
+      else out.push({ w, destacado: p.destacado });
+    });
+  }
   return out;
 }

@@ -6,39 +6,44 @@ Actualizado: 7 de noviembre de 2026. Objetivo: 60 carruseles en el formato nuevo
 
 Cada tema puede salir como Reel de 20-40 s en vez de carrusel. Proyecto de vídeo en `video/` (Remotion, ver `video/README.md`), guiones en `instagram/reels/`, música en `instagram/music/`.
 
-**Regla de oro:** el humano siempre es vídeo real de stock (Pexels). Nunca se dibujan ni se animan personas con código. Si no hay un clip bueno para un movimiento, esa escena se queda en texto y gráfica sobre fondo neutro (`"sin_clip": true` en el clip).
+**Regla de oro:** el humano siempre es vídeo real de stock (Pixabay). Nunca se dibujan ni se animan personas con código. Si no hay un clip bueno para un movimiento, esa escena se queda en texto y gráfica sobre fondo neutro (`"sin_clip": true`).
 
 ### Estado
 
 | Qué | Estado |
 |---|---|
-| Guiones de Reel | 21 de 21 (`r101` a `r121`), uno por carrusel, mismas fuentes verificadas. `npm run ig:validate` los comprueba |
-| Clips de Pexels elegidos y revisados | **0 de 21**: falta `PEXELS_API_KEY` (no estaba en `.env.local` ni en los secretos) |
-| Coordenadas de músculos | Pendientes: cada escena con `musculo` tiene los nombres, falta colocar `x`, `y` y `pexels_id` sobre el clip elegido |
-| Control de calidad del vídeo final (`qa_ok`) | 0 de 21 |
-| Calendario de los lunes (`_calendario.json`) | Composición lista; clips de competición pendientes |
-| Música | 3 pistas de reserva generadas por código (sin derechos). Pistas de Pixabay pendientes: ver `instagram/music/LICENCIAS.md` |
-| Publicador | Listo. Un reel solo se publica si todos sus clips tienen `"revisado": true` y el guion tiene `"qa_ok": true`. Si no, ese día sale el carrusel del mismo tema, como hasta ahora |
+| Guiones de Reel | 21 de 21 (`r101` a `r121`), mismas fuentes verificadas que los carruseles. `npm run ig:validate` los comprueba |
+| Reels listos (clips revisados + control de calidad, `qa_ok`) | **4 + calendario**: r103, r104, r105, r109 y `_calendario` |
+| Pendientes de clips y control de calidad | r102 (sale hoy como carrusel), r107, r108, r110-r121. r101 y r106 ya salieron como carrusel: sus reels no se publicarán |
+| Fuente de vídeo | Pixabay (API con `PIXABAY_API_KEY`, búsquedas cacheadas 24 h). Pexels sigue soportado, desactivado sin `PEXELS_API_KEY` |
+| Copia propia de los clips | Cada clip aprobado se recorta a 9:16 en su tramo y se sube al bucket `instagram/clips/`. El render nunca enlaza a Pixabay |
+| Anillos de músculo | Colocados y verificados en r109 (rodilla, con keyframes). El resto de escenas con `musculo` tiene el nombre y espera clip |
+| Música | 8 pistas de Openverse (5 CC0, 3 CC BY), ver `instagram/music/LICENCIAS.md`. Las CC BY añaden la atribución al caption |
 
-Vistas previas (sin metraje todavía, con fondo neutro): `instagram-preview/reels/` (r102, r103, r104 y un calendario de prueba).
+Fechas previstas con el calendario semanal (el reel sale si está listo; si no, el carrusel del mismo tema): dom 8 nov r103 · lun 9 calendario · mar 10 r104 · mié 11 r105 · jue 12 al sáb 14 carruseles (112, 107, 108) · dom 15 r109.
 
-Como 101 y 106 ya salieron como carrusel, sus reels no se publicarán (el tema cuenta como hecho). El primer reel que podría salir es el del siguiente tema pendiente en cuanto tenga sus clips revisados.
+Notas de metraje:
+- Pixabay casi no tiene estaciones de HYROX (trineo, wall balls, sandbag lunges, farmers carry con mancuernas). Esas escenas van sin clip. r104 (sled push) tiene sus 11 primeros segundos sin metraje: mejoraría mucho con vídeo propio de un trineo.
+- Descarta clips con logos de marcas visibles, con la persona encuadrada solo de cuello para abajo cuando no hace falta, o que no enseñen el movimiento del texto.
+
+Vistas previas: `instagram-preview/reels/` (r103, r104, r105, r109 y `calendario-prueba`). Los archivos están en `D:\hrh-video\preview-reels`.
 
 ### Cómo continuar (instrucciones para la siguiente sesión)
 
 Pega esto en Claude Code dentro del repo:
 
-> Continúa los Reels siguiendo instagram/PROGRESO.md: elige y revisa los clips de Pexels de los próximos reels pendientes, coloca los músculos, renderiza, haz el control de calidad y marca qa_ok.
+> Continúa los Reels siguiendo instagram/PROGRESO.md: elige y revisa los clips de Pixabay de los próximos reels pendientes, coloca los músculos, renderiza, haz el control de calidad y marca qa_ok.
 
-Pasos por reel (empieza por los que tocan antes en el calendario):
+Pasos por reel (empieza por los que tocan antes en el calendario), desde `video/`:
 
-1. `cd video && node scripts/fetch-clips.mjs r1NN-slug` (necesita `PEXELS_API_KEY` en `.env.local`). Elige el primer candidato de cada escena y lo descarga a `video/cache/`.
-2. `node scripts/frames.mjs clips r1NN-slug` y abre los fotogramas de `video/out/frames/clips/`. Descarta (`--cambiar=N`) los que no enseñen claramente el movimiento del guion, tengan mala técnica (salvo en escenas de "Error:"), estén borrosos o tengan logos o texto. Si no hay ninguno bueno tras varios intentos, cambia la `query` o pon `"sin_clip": true`. Ajusta `inicio` y `recorte.centro_x` para que el atleta quede dentro del 9:16. Marca `"revisado": true` en los buenos.
-3. Músculos: en las escenas con `musculo`, pon `pexels_id` del clip y `x`, `y` (0-1 sobre el fotograma 1080x1920 recortado) y, si el atleta se mueve, `keyframes: [{t, x, y}]`. Comprueba fotograma a fotograma que el anillo cae sobre el músculo.
-4. `node scripts/render.mjs r1NN-slug --solo-revisados` y `node scripts/frames.mjs video out/r1NN-slug.mp4`. Revisa la hoja de contactos y los fotogramas: texto legible y dentro de la zona segura, anillos bien puestos, clips coherentes con el texto, ningún humano dibujado.
-5. Si todo está bien, `"qa_ok": true` en el guion, `npm run ig:validate` y commit.
+1. `node scripts/fetch-clips.mjs buscar r1NN-slug` → hoja de candidatos en `video/out/frames/candidatos/r1NN-slug.jpg` (una fila por escena, el último hueco es el fondo final). Para repetir un hueco con otra búsqueda: `--rehacer=N --q="otra búsqueda"`.
+2. `node scripts/fetch-clips.mjs elegir r1NN-slug 1=3:0.5 2=pixabay-12345:0.4:2 …` (hueco=candidato o id:centro_x:inicio:zoom) → hoja de 3 fotogramas por clip vertical en `video/out/frames/clips/`. Revísala: movimiento claro, sin borrosidad, sin logos, coherente con el texto. `sinclip r1NN-slug N` si no hay nada adecuado.
+3. Músculos: en las escenas con `musculo`, pon `clip` ("pixabay-ID"), `x`, `y` (0-1 sobre el fotograma vertical) y `keyframes: [{t, x, y}]`. Verifica renderizando y sacando un fotograma cada 0,25 s de la escena.
+4. `node scripts/fetch-clips.mjs aprobar r1NN-slug todos` (recorta y sube a nuestro bucket).
+5. `node scripts/render.mjs r1NN-slug --out=../instagram-preview/reels --solo-revisados` y `node scripts/frames.mjs video ../instagram-preview/reels/r1NN-slug.mp4`. Revisa la hoja de contactos.
+6. Si todo está bien, `"qa_ok": true` en el guion, `npm run ig:validate` y commit.
 
-En Windows, el disco C: de este equipo estaba lleno: las dependencias de vídeo, el navegador de Remotion, la caché de clips, los renders y `instagram-preview/reels` están en `D:\hrh-video` con enlaces de directorio. Renderiza con `TEMP` y `TMP` apuntando a `D:\hrh-video\tmp`.
+En este equipo el disco C: va justo: todo lo pesado está en `D:\hrh-video` (dependencias de vídeo, navegador de Remotion, caché de clips, renders, vistas previas y un Node portátil en `D:\hrh-video\node`). Renderiza con `TEMP` y `TMP` apuntando a `D:\hrh-video\tmp`.
 
 ## Qué hay ahora
 

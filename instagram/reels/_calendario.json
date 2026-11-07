@@ -6,69 +6,94 @@
       "duracion": 2,
       "clip": {
         "query": "obstacle course race",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "fuente": "pixabay",
+        "id": "138443",
+        "url_pagina": "https://pixabay.com/videos/id-138443/",
+        "autor": "aerofotografialincoln",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.68,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "autor_url": "https://pixabay.com/users/aerofotografialincoln-30880543/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2022/11/10/138443-769724615_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 12,
+        "archivo": "clips/pixabay-138443-c319a603.mp4"
       }
     },
     {
       "duracion": 10,
       "clip": {
-        "query": "fitness competition crowd",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
+        "query": "running race people",
+        "fuente": "pixabay",
+        "id": "120450",
+        "url_pagina": "https://pixabay.com/videos/id-120450/",
+        "autor": "Matthias_Groeneveld",
+        "inicio": 4,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "autor_url": "https://pixabay.com/users/Matthias_Groeneveld-4535957/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2022/06/15/120450-720880556_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 41,
+        "archivo": "clips/pixabay-120450-e0bcbdf7.mp4"
       }
     },
     {
       "duracion": 3,
       "clip": {
         "query": "trail running race",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
+        "fuente": "pixabay",
+        "id": "206632",
+        "url_pagina": "https://pixabay.com/videos/id-206632/",
+        "autor": "ThomaLutfpv",
+        "inicio": 0,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.52,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "autor_url": "https://pixabay.com/users/ThomaLutfpv-41986546/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2024/04/02/206632_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 6,
+        "archivo": "clips/pixabay-206632-cb6aff34.mp4"
       }
     },
     {
       "duracion": 2,
       "clip": {
         "query": "runners race start",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
+        "fuente": "pixabay",
+        "id": "120450",
+        "url_pagina": "https://pixabay.com/videos/id-120450/",
+        "autor": "Matthias_Groeneveld",
+        "inicio": 20,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "autor_url": "https://pixabay.com/users/Matthias_Groeneveld-4535957/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2022/06/15/120450-720880556_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 41,
+        "archivo": "clips/pixabay-120450-11a4c861.mp4"
       }
     }
-  ]
+  ],
+  "qa_ok": true
 }

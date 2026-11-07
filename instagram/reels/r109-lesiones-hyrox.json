@@ -9,17 +9,23 @@
       "duracion": 2,
       "clip": {
         "query": "athlete knee pain",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "fuente": "pixabay",
+        "id": "200657",
+        "url_pagina": "https://pixabay.com/videos/id-200657/",
+        "autor": "MULTIPLECONTENTHERE",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.72,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "autor_url": "https://pixabay.com/users/MULTIPLECONTENTHERE-30762907/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2024/02/15/200657-913478674_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 10,
+        "archivo": "clips/pixabay-200657-08e83832.mp4"
       },
       "texto": []
     },
@@ -27,17 +33,23 @@
       "duracion": 3,
       "clip": {
         "query": "crossfit training gym",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
+        "fuente": "pixabay",
+        "id": "43542",
+        "url_pagina": "https://pixabay.com/videos/id-43542/",
+        "autor": "tixonov_valentin",
+        "inicio": 2,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.27,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "autor_url": "https://pixabay.com/users/tixonov_valentin-10389207/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2020/07/01/43542-436237457_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 28,
+        "archivo": "clips/pixabay-43542-1c942941.mp4"
       },
       "texto": [
         "89 atletas de HYROX",
@@ -49,17 +61,23 @@
       "duracion": 4,
       "clip": {
         "query": "athlete resting gym",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "fuente": "pixabay",
+        "id": "293079",
+        "url_pagina": "https://pixabay.com/videos/id-293079/",
+        "autor": "RainMeditateHub",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "autor_url": "https://pixabay.com/users/RainMeditateHub-51172146/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2025/07/23/293079_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 25,
+        "archivo": "clips/pixabay-293079-4941b1ff.mp4"
       },
       "texto": [],
       "grafica": {
@@ -76,17 +94,23 @@
       "duracion": 4,
       "clip": {
         "query": "runner training",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
+        "fuente": "pixabay",
+        "id": "32934",
+        "url_pagina": "https://pixabay.com/videos/id-32934/",
+        "autor": "Stuck1",
+        "inicio": 2,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.6,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "autor_url": "https://pixabay.com/users/Stuck1-15406262/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2020/02/27/32934-395456365_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 13,
+        "archivo": "clips/pixabay-32934-59ae496f.mp4"
       },
       "texto": [],
       "grafica": {
@@ -102,18 +126,24 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "runner knee",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
+        "query": "sports training close-up foot runner",
+        "fuente": "pixabay",
+        "id": "189729",
+        "url_pagina": "https://pixabay.com/videos/id-189729/",
+        "autor": "Amorn_mimi",
+        "inicio": 2,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.28,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "autor_url": "https://pixabay.com/users/Amorn_mimi-27759397/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2023/11/19/189729-886596145_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 14,
+        "archivo": "clips/pixabay-189729-f890c2a4.mp4"
       },
       "texto": [
         "La rodilla, la zona más *afectada*",
@@ -123,12 +153,51 @@
       "musculo": [
         {
           "nombre": "Rodilla",
-          "clip": null,
-          "x": null,
-          "y": null,
-          "keyframes": []
+          "clip": "pixabay-189729",
+          "x": 0.38,
+          "y": 0.62,
+          "radio": 52,
+          "desde": 0.2,
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 0.38,
+              "y": 0.62
+            },
+            {
+              "t": 0.5,
+              "x": 0.26,
+              "y": 0.67
+            },
+            {
+              "t": 1,
+              "x": 0.32,
+              "y": 0.62
+            },
+            {
+              "t": 1.5,
+              "x": 0.34,
+              "y": 0.62
+            },
+            {
+              "t": 2,
+              "x": 0.37,
+              "y": 0.56
+            },
+            {
+              "t": 2.5,
+              "x": 0.6,
+              "y": 0.6
+            },
+            {
+              "t": 2.9,
+              "x": 0.71,
+              "y": 0.48
+            }
+          ]
         }
-      ]
+      ],
+      "texto_posicion": "arriba"
     }
   ],
   "conclusion": [
@@ -142,21 +211,27 @@
   ],
   "clip_final": {
     "query": "gym crossfit training",
-    "fuente": null,
-    "id": null,
-    "url_pagina": null,
-    "autor": null,
+    "fuente": "pixabay",
+    "id": "65654",
+    "url_pagina": "https://pixabay.com/videos/id-65654/",
+    "autor": "tixonov_valentin",
     "inicio": 1,
     "recorte": {
-      "centro_x": 0.5,
+      "centro_x": 0.6,
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": true,
+    "autor_url": "https://pixabay.com/users/tixonov_valentin-10389207/",
+    "archivo_origen": "https://cdn.pixabay.com/video/2021/02/19/65654-515098479_large.mp4",
+    "ancho": 1920,
+    "alto": 1080,
+    "duracion_clip": 24,
+    "archivo": "clips/pixabay-65654-7af3be66.mp4"
   },
   "musica": "auto",
   "portada_segundo": 1.2,
-  "qa_ok": false,
+  "qa_ok": true,
   "caption": "3 de cada 10 atletas de HYROX tienen alguna molestia en una semana cualquiera. Si te pasa, no estás solo.\n\nInvestigadores de la Universidad de Bath siguieron a 89 atletas de HYROX durante 12 semanas con un cuestionario semanal. De media, el 30 % tenía algún problema de salud cada semana y el 18 % uno importante. El 73 % de las lesiones fueron por sobrecarga, la rodilla fue la zona más afectada y haber tenido una lesión previa fue la señal de riesgo más fuerte. Otro dato: solo la mitad de los problemas hicieron perder días de entreno, así que mucha gente entrena con molestias.\n\nLimitaciones: 89 personas, no todas respondieron todas las semanas, y la parte de factores de riesgo es exploratoria. Habrá que confirmarlo con más atletas.\n\nLo que nos llevamos:\nSubir la carrera poco a poco.\nApuntar las molestias, no solo los entrenos.\nSi vienes de una lesión, que alguien revise tu plan.\n\n¿Cuál es la molestia que más se repite en tu grupo de entreno?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nChittenden E, et al. (2026). Prevalence, burden and risk markers of health problems in HYROX athletes: a 12-week prospective cohort study. Frontiers in Sports and Active Living.\n\nVídeo: Pixabay",
   "hashtags": [
     "#hyrox",
