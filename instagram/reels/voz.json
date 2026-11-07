@@ -1,0 +1,12 @@
+{
+  "modelo": "es_ES-davefx-medium",
+  "length_scale": 1.06,
+  "noise_scale": 0.62,
+  "noise_w": 0.85,
+  "pausa_frases": 0.22,
+  "whisper": "small",
+  "activa": false,
+  "motivo_inactiva": "La voz se entrenó partiendo del modelo inglés lessac, cuyos datos solo permiten investigación. Hasta que Pablo confirme que acepta ese riesgo, los reels se publican sin voz. Para activarla: \"activa\": true.",
+  "licencia": "Datos de davefx: CC0. Modelo base lessac: licencia de investigación (Blizzard 2013). Ver instagram/reels/VOCES.md",
+  "atribucion": null
+}
