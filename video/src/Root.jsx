@@ -17,7 +17,7 @@ export const Root = () => (
       fps={FPS}
       durationInFrames={900}
       defaultProps={{ reel: ejemplo, assets: {} }}
-      calculateMetadata={({ props }) => ({ durationInFrames: totalFrames(buildTimeline(props.reel, props.assets?.music)) })}
+      calculateMetadata={({ props }) => ({ durationInFrames: totalFrames(buildTimeline(props.reel, props.assets?.music, props.assets?.voz?.words)) })}
     />
     <Composition
       id="Calendario"

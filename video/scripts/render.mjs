@@ -4,12 +4,12 @@
 //   node scripts/render.mjs <reel_id> [--out=<carpeta>] [--fecha=YYYY-MM-DD]
 //
 // También se usa como módulo desde scripts/instagram/publish.mjs (renderReel, renderCalendar).
-import { copyFileSync, readdirSync, rmSync, statSync } from "node:fs";
+import { copyFileSync, readdirSync, rmSync, statSync, existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { bundle } from "@remotion/bundler";
 import { renderMedia, renderStill, selectComposition, ensureBrowser } from "@remotion/renderer";
-import { VIDEO, PUBLIC, OUT, FONTS_DIR, mkdirp, ffmpeg, mediaDuration, loadReel, clipSlots, clipListo } from "./lib/common.mjs";
+import { VIDEO, PUBLIC, OUT, FONTS_DIR, REELS_DIR, mkdirp, ffmpeg, mediaDuration, loadReel, clipSlots, clipListo } from "./lib/common.mjs";
 import { localClip, prepareVertical, clipKey } from "./lib/clips.mjs";
 import { pickTrack } from "./lib/music.mjs";
 
@@ -17,7 +17,7 @@ const RUNTIME = path.join(PUBLIC, "runtime");
 const MAX_MB = 50;
 
 /** Copia fuentes, clips y música a public/ (Remotion solo sirve archivos de esa carpeta) */
-export function preparePublic({ clipFiles = {}, musicFile = null } = {}) {
+export function preparePublic({ clipFiles = {}, musicFile = null, voz = null, clipSeg = {} } = {}) {
   const fonts = mkdirp(path.join(PUBLIC, "fonts"));
   for (const f of readdirSync(FONTS_DIR).filter((x) => x.endsWith(".ttf"))) copyFileSync(path.join(FONTS_DIR, f), path.join(fonts, f));
   rmSync(RUNTIME, { recursive: true, force: true });
@@ -32,7 +32,28 @@ export function preparePublic({ clipFiles = {}, musicFile = null } = {}) {
     copyFileSync(musicFile.path, path.join(RUNTIME, path.basename(musicFile.path)));
     music = { file: `runtime/${path.basename(musicFile.path)}`, bpm: musicFile.bpm, offset: musicFile.offset || 0, inicio: musicFile.inicio || 0 };
   }
-  return { clips, music };
+  let vozOut = null;
+  if (voz) {
+    copyFileSync(voz.mp3, path.join(RUNTIME, "voz.mp3"));
+    vozOut = { file: "runtime/voz.mp3", words: voz.words };
+  }
+  return { clips, music, voz: vozOut, clipSeg };
+}
+
+/**
+ * Narración ya generada (instagram/reels/audio/<id>.mp3 + .words.json, ver narrar.py).
+ * Si falta o no casa con el guion, el reel sale sin voz (texto y música), como respaldo.
+ */
+export function cargarNarracion(reel) {
+  if (!reel.narracion) return null;
+  const mp3 = path.join(REELS_DIR, "audio", `${reel.id}.mp3`);
+  const wj = path.join(REELS_DIR, "audio", `${reel.id}.words.json`);
+  if (!existsSync(mp3) || !existsSync(wj)) return null;
+  const words = JSON.parse(readFileSync(wj, "utf8"));
+  const n = reel.narracion;
+  const esperadas = [...n.escenas, n.conclusion, n.aplicacion, n.cierre].join(" ").split(/\s+/).filter(Boolean).length;
+  if (words.palabras?.length !== esperadas || words.segmentos?.length !== n.escenas.length + 3) return null;
+  return { mp3, words };
 }
 
 /**
@@ -123,7 +144,7 @@ async function renderCompositionIn({ compId, inputProps, outBase, coverSecond })
  *  - soloRevisados: los clips sin "revisado": true no se usan (fondo neutro en su lugar)
  *  - exigirClips: falla si falta algún clip (para publicar de verdad)
  */
-export async function renderReel(reelOrId, { outDir = OUT, fecha, soloRevisados = false, exigirClips = false } = {}) {
+export async function renderReel(reelOrId, { outDir = OUT, fecha, soloRevisados = false, exigirClips = false, conVoz = true } = {}) {
   const reel = typeof reelOrId === "string" ? loadReel(reelOrId) : reelOrId;
   console.log(`Reel ${reel.id}`);
   const { clipFiles, faltan } = await gatherClips(clipSlots(reel), { soloRevisados });
@@ -134,10 +155,15 @@ export async function renderReel(reelOrId, { outDir = OUT, fecha, soloRevisados 
   }
   const track = pickTrack(reel.musica, fecha);
   if (track) console.log(`  música: ${track.titulo}`);
-  const assets = preparePublic({ clipFiles, musicFile: track });
+  const voz = conVoz ? cargarNarracion(reel) : null;
+  if (conVoz && reel.narracion && !voz) console.warn("  Aviso: falta la narración o no coincide con el guion. Sale sin voz.");
+  if (voz) console.log(`  voz: ${voz.words.voz}, ${voz.words.duracion} s`);
+  // Segundos útiles de cada clip recortado (duración de la escena en el guion + 0,5 s)
+  const clipSeg = Object.fromEntries(clipSlots(reel).map((s) => [s.clave, s.duracion + 0.5]));
+  const assets = preparePublic({ clipFiles, musicFile: track, voz, clipSeg });
   mkdirp(outDir);
   const res = await renderComposition({ compId: "Reel", inputProps: { reel, assets }, outBase: path.join(outDir, reel.id), coverSecond: reel.portada_segundo ?? 1.2 });
-  return { ...res, faltan, musica: track?.titulo || null, pista: track };
+  return { ...res, faltan, musica: track?.titulo || null, pista: track, conVoz: Boolean(voz) };
 }
 
 /** Reel del calendario dinámico: carreras [{dia, mes, nombre, ciudad}] */
@@ -161,7 +187,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     console.log("Uso: node scripts/render.mjs <reel_id> [--out=carpeta] [--fecha=YYYY-MM-DD] [--solo-revisados]");
     process.exit(1);
   }
-  renderReel(id, { outDir: opt("out") ? path.resolve(opt("out")) : OUT, fecha: opt("fecha"), soloRevisados: args.includes("--solo-revisados") })
+  renderReel(id, { outDir: opt("out") ? path.resolve(opt("out")) : OUT, fecha: opt("fecha"), soloRevisados: args.includes("--solo-revisados"), conVoz: !args.includes("--sin-voz") })
     .then(() => process.exit(0))
     .catch((e) => {
       console.error(`ERROR: ${e.message}`);

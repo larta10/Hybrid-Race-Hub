@@ -18,12 +18,13 @@ function posicion(m, seg) {
   return { x: interpolate(seg, ts, all.map((k) => k.x), opt), y: interpolate(seg, ts, all.map((k) => k.y), opt) };
 }
 
-function Marcador({ m, indice }) {
+function Marcador({ m, indice, ritmo = 1 }) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const local = frame - (m.desde ?? 0.3) * fps - indice * 8;
   if (local < 0) return null;
-  const { x, y } = posicion(m, frame / fps);
+  // Los keyframes van en tiempo del clip: si el clip va más lento, se escalan igual
+  const { x, y } = posicion(m, (frame / fps) * ritmo);
   const px = x * W;
   const py = y * H;
   const r = m.radio || 46;
@@ -63,11 +64,11 @@ function Marcador({ m, indice }) {
   );
 }
 
-export function SenalarMusculo({ musculos }) {
+export function SenalarMusculo({ musculos, ritmo = 1 }) {
   return (
     <AbsoluteFill>
       {musculos.map((m, i) => (
-        <Marcador key={i} m={m} indice={i} />
+        <Marcador key={i} m={m} indice={i} ritmo={ritmo} />
       ))}
     </AbsoluteFill>
   );

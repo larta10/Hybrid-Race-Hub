@@ -17,7 +17,18 @@ export function snapper(bpm, offset = 0) {
  * Segmentos [{tipo, desde, hasta, escena?, items?}] en fotogramas.
  * Escenas del guion → conclusión → qué hacer → tarjeta final.
  */
-export function buildTimeline(reel, music = {}) {
+export function buildTimeline(reel, music = {}, narr = null) {
+  // Con narración, cada escena dura lo que tarda la voz en decir su parte (cortes al final de frase)
+  if (narr?.segmentos?.length) {
+    return narr.segmentos.map((s) => ({
+      tipo: s.tipo,
+      desde: Math.round(s.desde * FPS),
+      hasta: Math.round(s.hasta * FPS),
+      ...(s.i !== undefined ? { escena: reel.escenas[s.i], i: s.i } : {}),
+      ...(s.tipo === "conclusion" ? { lineas: reel.conclusion } : {}),
+      ...(s.tipo === "aplicacion" ? { puntos: reel.aplicacion } : {}),
+    }));
+  }
   const snap = snapper(music.bpm, music.offset);
   const segs = [];
   let t = 0; // segundos acumulados (sin redondear, para no arrastrar error)

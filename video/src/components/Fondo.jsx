@@ -18,7 +18,7 @@ function Capas({ oscuro = 0.4 }) {
 }
 
 /** Clip real de stock (Pixabay), recortado a 9:16 alrededor del atleta, con un leve acercamiento */
-export function Clip({ src, inicio = 0, recorte = {}, duracion, oscuro = 0.4, desenfoque = 0 }) {
+export function Clip({ src, inicio = 0, recorte = {}, duracion, oscuro = 0.4, desenfoque = 0, ritmo = 1 }) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const zoom = (recorte.zoom || 1) * interpolate(frame, [0, duracion || 90], [1, 1.05], { extrapolateRight: "clamp" });
@@ -29,6 +29,7 @@ export function Clip({ src, inicio = 0, recorte = {}, duracion, oscuro = 0.4, de
       <OffthreadVideo
         src={staticFile(src)}
         startFrom={Math.round(inicio * fps)}
+        playbackRate={ritmo}
         muted
         style={{
           width: "100%",
@@ -81,7 +82,9 @@ export function FondoAbstracto({ semilla = 0 }) {
 }
 
 /** src: copia vertical 1080x1920 ya recortada al tramo usado (ver scripts/lib/clips.mjs) */
-export function Fondo({ src, duracion, semilla, oscuro, desenfoque }) {
-  if (src) return <Clip src={src} inicio={0} duracion={duracion} oscuro={oscuro} desenfoque={desenfoque} />;
+export function Fondo({ src, duracion, semilla, oscuro, desenfoque, clipSeg }) {
+  // Si la escena dura más que el clip recortado (por la voz), el clip va algo más lento, nunca más rápido
+  const ritmo = clipSeg && duracion ? Math.min(1, clipSeg / (duracion / 30)) : 1;
+  if (src) return <Clip src={src} inicio={0} duracion={duracion} oscuro={oscuro} desenfoque={desenfoque} ritmo={ritmo} />;
   return <FondoAbstracto semilla={semilla} />;
 }
