@@ -38,7 +38,8 @@ export const clamp01 = (t) => Math.max(0, Math.min(1, t));
 /** Número en formato español: 16.13 → "16,13" */
 export function fmt(n, decimales = null) {
   const d = decimales ?? (Number.isInteger(n) ? 0 : String(n).split(".")[1]?.length || 0);
-  return Number(n).toLocaleString("es-ES", { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: Math.abs(n) >= 10000 });
+  const s = Number(n).toLocaleString("es-ES", { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: Math.abs(n) >= 10000 });
+  return s.replace("-", "−").replace(/^−(0(,0+)?)$/, "$1"); // signo menos tipográfico y sin "−0"
 }
 
 /** Divide "texto con *dato*" en trozos {t, destacado} */
