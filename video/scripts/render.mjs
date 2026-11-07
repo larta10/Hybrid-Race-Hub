@@ -65,7 +65,18 @@ async function getBundle() {
   return bundleCache;
 }
 
-async function renderComposition({ compId, inputProps, outBase, coverSecond }) {
+// Remotion guarda el navegador en node_modules/.remotion del directorio actual: se trabaja desde video/
+async function renderComposition(opts) {
+  const prev = process.cwd();
+  process.chdir(VIDEO);
+  try {
+    return await renderCompositionIn(opts);
+  } finally {
+    process.chdir(prev);
+  }
+}
+
+async function renderCompositionIn({ compId, inputProps, outBase, coverSecond }) {
   await ensureBrowser();
   const serveUrl = await getBundle();
   const composition = await selectComposition({ serveUrl, id: compId, inputProps });

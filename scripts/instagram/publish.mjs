@@ -1,11 +1,18 @@
-// Publica el carrusel del día en Instagram (Graph API) a partir de instagram/posts o del calendario.
+// Publica el contenido del día en Instagram (Graph API): el Reel del tema si está listo y, si no
+// lo está o falla, el carrusel del mismo tema (instagram/posts) o el del calendario.
 // GitHub Actions lo ejecuta cada día; en local: DRY_RUN=true node scripts/instagram/publish.mjs
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { createClient } from "@supabase/supabase-js";
 import { env, supabaseKey, mask, STORAGE_BUCKET } from "./lib/config.mjs";
 import { graph } from "./lib/graph.mjs";
 import { loadPosts, buildCalendarPost, fullCaption } from "./lib/posts.mjs";
+import { loadReels, reelReady, calendarReady } from "./lib/reels.mjs";
 import { renderPost } from "./render.mjs";
 import { sendReserveEmail } from "./lib/reserve.mjs";
+
+const VIDEO_DAYS_KEPT = 14;
+const REEL_TIMEOUT_MIN = 15;
 
 const DRY_RUN = String(process.env.DRY_RUN || "").toLowerCase() === "true";
 const SUPABASE_URL = process.env.SUPABASE_URL || "https://ssyljhtganuaanczxeep.supabase.co";
@@ -34,7 +41,7 @@ if (!supabaseKeyValue) throw new Error("Falta SUPABASE_SERVICE_ROLE_KEY");
 const db = createClient(SUPABASE_URL, supabaseKeyValue, { auth: { persistSession: false } });
 
 async function logRun(post_id, status, extra = {}) {
-  const { error } = await db.from("ig_posts_log").insert({ post_id, fecha: TODAY, status, ...extra });
+  const { error } = await db.from("ig_posts_log").insert({ post_id, fecha: TODAY, status, tipo: "carrusel", ...extra });
   if (error) console.error(`No se pudo registrar en ig_posts_log: ${error.message}`);
 }
 
@@ -85,14 +92,94 @@ async function uploadImages(post, images) {
   return urls;
 }
 
-async function waitFinished(containerId, token, label) {
-  const deadline = Date.now() + 3 * 60 * 1000;
+async function waitFinished(containerId, token, label, { minutes = 3, every = 5000 } = {}) {
+  const deadline = Date.now() + minutes * 60 * 1000;
   for (;;) {
     const { status_code, status } = await graph("GET", `/${containerId}`, { fields: "status_code,status" }, token);
     if (status_code === "FINISHED") return;
     if (status_code === "ERROR" || status_code === "EXPIRED") throw new Error(`Contenedor ${label} en estado ${status_code}: ${status || ""}`);
-    if (Date.now() > deadline) throw new Error(`Contenedor ${label} sin terminar tras 3 minutos (${status_code})`);
-    await sleep(5000);
+    if (Date.now() > deadline) throw new Error(`Contenedor ${label} sin terminar tras ${minutes} minutos (${status_code})`);
+    await sleep(every);
+  }
+}
+
+// ---------- Reels ----------
+
+/** Sube un archivo al bucket y comprueba que la URL pública responde 200 con el tipo correcto */
+async function uploadPublic(key, buffer, contentType) {
+  const { error } = await db.storage.from(STORAGE_BUCKET).upload(key, buffer, { contentType, upsert: true, cacheControl: "3600" });
+  if (error) throw new Error(`Storage (${key}): ${error.message}`);
+  const url = db.storage.from(STORAGE_BUCKET).getPublicUrl(key).data.publicUrl;
+  let ok = false;
+  for (let a = 0; a < 3 && !ok; a++) {
+    const r = await fetch(url, { method: "HEAD" }).catch(() => null);
+    ok = r?.status === 200 && (r.headers.get("content-type") || "").includes(contentType.split("/")[1]);
+    if (!ok) await sleep(3000 * (a + 1));
+  }
+  if (!ok) throw new Error(`El archivo no es público o no responde 200: ${url}`);
+  return url;
+}
+
+/** Renderiza el Reel del tema (o el del calendario) con Remotion. Solo usa clips revisados. */
+async function renderReelFor(reel, { exigirClips }) {
+  // Import dinámico: si las dependencias de video/ no están instaladas, falla aquí y salta el respaldo
+  const video = await import("../../video/scripts/render.mjs");
+  const outDir = fileURLToPath(new URL("../../video/out/publish/", import.meta.url));
+  if (reel.calendario) return video.renderCalendar({ id: reel.id, carreras: reel.carreras, rango: reel.rango, outDir, fecha: TODAY, soloRevisados: true, exigirClips });
+  return video.renderReel(reel, { outDir, fecha: TODAY, soloRevisados: true, exigirClips });
+}
+
+async function publishReel(reel, videoUrl, coverUrl) {
+  const token = env("IG_ACCESS_TOKEN");
+  const igUser = env("IG_USER_ID");
+  const c = await graph("POST", `/${igUser}/media`, { media_type: "REELS", video_url: videoUrl, cover_url: coverUrl, caption: fullCaption(reel), share_to_feed: true }, token);
+  console.log(`  contenedor del reel: ${c.id}`);
+  await waitFinished(c.id, token, "reel", { minutes: REEL_TIMEOUT_MIN, every: 10000 });
+  const published = await graph("POST", `/${igUser}/media_publish`, { creation_id: c.id }, token);
+  return published.id;
+}
+
+/**
+ * Intenta el Reel del día. Devuelve true si queda hecho (publicado, o subido en DRY_RUN).
+ * Si falla, registra el fallo con tipo 'reel' y devuelve false para que salga el carrusel.
+ */
+async function tryReel(topicId, reel, listo) {
+  const t0 = Date.now();
+  try {
+    const r = await renderReelFor(reel, { exigirClips: !DRY_RUN });
+    console.log(`  render: ${r.duracion.toFixed(1)} s de vídeo, ${r.mb.toFixed(1)} MB, ${Math.round((Date.now() - t0) / 1000)} s${r.musica ? ` · música: ${r.musica}` : ""}`);
+    const base = `reels/${TODAY}/${reel.id}`;
+    const videoUrl = await uploadPublic(`${base}.mp4`, readFileSync(r.mp4), "video/mp4");
+    const coverUrl = await uploadPublic(`${base}.jpg`, readFileSync(r.jpg), "image/jpeg");
+    console.log(`  ${videoUrl}\n  ${coverUrl}`);
+    if (DRY_RUN) {
+      console.log(`DRY_RUN: reel renderizado y subido. No se publica.${listo ? "" : " (En real hoy saldría el carrusel: el reel aún no está listo.)"}`);
+      await logRun(topicId, "dry_run", { tipo: "reel" });
+      return true;
+    }
+    const mediaId = await publishReel(reel, videoUrl, coverUrl);
+    console.log(`Reel publicado: ${mediaId}`);
+    await logRun(topicId, "published", { ig_media_id: mediaId, tipo: "reel" });
+    return true;
+  } catch (e) {
+    console.warn(`AVISO: el reel ha fallado (${e.message}). Se publica el carrusel del mismo tema.`);
+    await logRun(topicId, "failed", { tipo: "reel", error: String(e.message).slice(0, 2000) });
+    return false;
+  }
+}
+
+/** Borra del bucket los vídeos de reels/{fecha}/ con más de 14 días */
+async function cleanupOldVideos() {
+  const limite = addDays(TODAY, -VIDEO_DAYS_KEPT);
+  const { data: dias, error } = await db.storage.from(STORAGE_BUCKET).list("reels", { limit: 1000 });
+  if (error) return console.warn(`  Limpieza: ${error.message}`);
+  for (const d of dias || []) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d.name) || d.name >= limite) continue;
+    const { data: files } = await db.storage.from(STORAGE_BUCKET).list(`reels/${d.name}`, { limit: 1000 });
+    const paths = (files || []).map((f) => `reels/${d.name}/${f.name}`);
+    if (!paths.length) continue;
+    const { error: e2 } = await db.storage.from(STORAGE_BUCKET).remove(paths);
+    console.log(e2 ? `  Limpieza reels/${d.name}: ${e2.message}` : `  Limpieza: borrados ${paths.length} archivos de reels/${d.name}`);
   }
 }
 
@@ -178,8 +265,32 @@ async function main() {
     await checkReserve(posts, done);
     return;
   }
-  console.log(`Post: ${post.id} (${post.pilar}, ${post.slides.length} slides)`);
+  console.log(`Tema: ${post.id} (${post.pilar})`);
 
+  // ---- Reel del mismo tema ----
+  let reel = null;
+  let estado = { listo: false, motivos: ["no hay guion de Reel para este tema"] };
+  if (post.pilar === "calendario") {
+    const cal = post.slides[1];
+    reel = { id: post.id, calendario: true, carreras: cal.carreras, rango: cal.subtitulo, caption: `${post.caption}\n\nVídeo: Pexels`, hashtags: post.hashtags };
+    estado = calendarReady();
+  } else {
+    reel = loadReels().find((r) => r.post_carrusel_id === post.id) || null;
+    if (reel) estado = reelReady(reel);
+  }
+  if (reel && (estado.listo || DRY_RUN)) {
+    console.log(`Reel: ${reel.id}${estado.listo ? "" : ` (prueba: ${estado.motivos.join("; ")})`}`);
+    if (await tryReel(post.id, reel, estado.listo)) {
+      if (!DRY_RUN) done.add(post.id);
+      await cleanupOldVideos();
+      await checkReserve(posts, done);
+      return;
+    }
+  } else if (reel) {
+    console.log(`Reel ${reel.id} sin publicar todavía: ${estado.motivos.join("; ")}. Sale el carrusel.`);
+  }
+
+  console.log(`Carrusel: ${post.id} (${post.slides.length} slides)`);
   try {
     const images = await renderPost(post);
     const urls = await uploadImages(post, images);
@@ -200,6 +311,7 @@ async function main() {
     process.exitCode = 1;
     return;
   }
+  await cleanupOldVideos();
   await checkReserve(posts, done);
 }
 
