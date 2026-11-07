@@ -47,7 +47,7 @@ export const loadReel = (id) => JSON.parse(readFileSync(reelPath(id), "utf8"));
 export const saveReel = (reel) => writeFileSync(reelPath(reel.id), JSON.stringify(reel, null, 2) + "\n");
 export const reelIds = () =>
   readdirSync(REELS_DIR)
-    .filter((f) => f.endsWith(".json") && !f.startsWith("_"))
+    .filter((f) => /^r\d{3}-[a-z0-9-]+\.json$/.test(f))
     .map((f) => f.replace(/\.json$/, ""))
     .sort();
 

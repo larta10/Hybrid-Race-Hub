@@ -189,5 +189,17 @@
     "#entrenamientoconcurrente",
     "#fuerzayresistencia"
   ],
-  "url_destino": "/plan-entrenamiento"
+  "url_destino": "/plan-entrenamiento",
+  "narracion": {
+    "escenas": [
+      "¿Correr te quita fuerza? Vamos a los datos.",
+      "Fuerza y carrera en el mismo plan: ¿se pisan las ganancias?",
+      "Un metaanálisis de cuarenta y tres estudios no encontró diferencias claras ni en fuerza máxima ni en masa muscular.",
+      "La fuerza explosiva sí mejoró algo menos, sobre todo al hacer las dos cosas en la misma sesión.",
+      "Así que, si puedes, haz cada cosa en una sesión distinta."
+    ],
+    "conclusion": "Fuerza y carrera sí suman.",
+    "aplicacion": "Sepáralas cuando puedas, haz primero lo que más te importe ese día y no recortes kilómetros por miedo.",
+    "cierre": "Guárdalo y pruébalo en tu próximo entreno."
+  }
 }

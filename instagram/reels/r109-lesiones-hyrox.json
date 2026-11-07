@@ -239,5 +239,17 @@
     "#prevenciondelesiones",
     "#comunidadhyrox"
   ],
-  "url_destino": "/comunidad"
+  "url_destino": "/comunidad",
+  "narracion": {
+    "escenas": [
+      "¿Te duele algo? No eres el único.",
+      "Un estudio siguió a ochenta y nueve atletas de HYROX durante doce semanas.",
+      "De media, cada semana, tres de cada diez tenían algún problema de salud.",
+      "Y el setenta y tres por ciento de las lesiones fueron por sobrecarga: se acumularon con el entreno.",
+      "La zona más afectada fue la rodilla, con el veintidós por ciento de los episodios."
+    ],
+    "conclusion": "Lo que duele, se acumula.",
+    "aplicacion": "Sube la carrera poco a poco, apunta cada semana lo que te molesta y, si arrastras una lesión, que la vea un fisio.",
+    "cierre": "Guárdalo y compártelo con tu grupo."
+  }
 }

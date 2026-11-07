@@ -16,7 +16,7 @@ const surname = (autores) => String(autores).trim().split(/[ ,]/)[0].toLowerCase
 export function loadReels() {
   if (!existsSync(REELS_DIR)) return [];
   return readdirSync(REELS_DIR)
-    .filter((f) => f.endsWith(".json") && !f.startsWith("_"))
+    .filter((f) => /^r\d{3}-[a-z0-9-]+\.json$/.test(f))
     .sort()
     .map((f) => ({ ...JSON.parse(readFileSync(path.join(REELS_DIR, f), "utf8")), __file: f }));
 }
@@ -121,6 +121,19 @@ export function validateReel(r, post) {
     EMOJI.lastIndex = 0;
     for (const b of BANNED) req(!b.test(all), `${n}: expresión prohibida ${b}`);
   });
+
+  // Narración (opcional): una frase por escena + conclusión, qué hacer y cierre, 75-100 palabras
+  if (r.narracion) {
+    const n = r.narracion;
+    req(Array.isArray(n.escenas) && n.escenas.length === (r.escenas || []).length, "narración: un texto por escena");
+    for (const k of ["conclusion", "aplicacion", "cierre"]) req(typeof n[k] === "string" && n[k].trim(), `narración: falta ${k}`);
+    const todo = [...(n.escenas || []), n.conclusion, n.aplicacion, n.cierre].join(" ");
+    const nw = words(todo);
+    req(nw >= 75 && nw <= 100, `narración: ${nw} palabras (75-100)`);
+    req(/^Guárdalo/.test(n.cierre || ""), 'narración: el cierre empieza por "Guárdalo"');
+    req(!/\d/.test(todo), "narración: los números van escritos como se dicen (sin cifras)");
+    for (const b of BANNED) req(!b.test(todo), `narración: expresión prohibida ${b}`);
+  }
 
   // Caption: mismas reglas que los carruseles + crédito del vídeo
   const cap = r.caption;

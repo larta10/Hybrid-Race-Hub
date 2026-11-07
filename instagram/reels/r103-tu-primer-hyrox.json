@@ -191,5 +191,17 @@
     "#primerhyrox",
     "#carrerashibridas"
   ],
-  "url_destino": "/blog/que-es-hyrox"
+  "url_destino": "/blog/que-es-hyrox",
+  "narracion": {
+    "escenas": [
+      "¿Tu primer HYROX? Esto es lo que te espera.",
+      "Ocho kilómetros de carrera y, tras cada uno, una estación.",
+      "En una simulación con once atletas populares, el tiempo mediano fue de ochenta y seis minutos y medio.",
+      "Unos cincuenta y un minutos, corriendo. En las estaciones, unos treinta y tres.",
+      "El pulso y el lactato tocaron techo al final, en los wall balls."
+    ],
+    "conclusion": "Vas a correr más de lo que crees.",
+    "aplicacion": "Dale a la carrera un sitio fijo en tu semana, haz una simulación completa antes de debutar y guarda algo para el final.",
+    "cierre": "Guárdalo y pruébalo en tu próximo entreno."
+  }
 }

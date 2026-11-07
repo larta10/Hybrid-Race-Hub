@@ -183,5 +183,17 @@
     "#hyroxspain",
     "#hyroxtraining"
   ],
-  "url_destino": "/plan-entrenamiento"
+  "url_destino": "/plan-entrenamiento",
+  "narracion": {
+    "escenas": [
+      "El trineo no se empuja con la espalda.",
+      "Tronco inclinado, espalda neutra, brazos largos y pasos cortos y rápidos.",
+      "El error típico: cadera alta y espalda redonda. Así la fuerza se pierde.",
+      "Empujan los glúteos, los cuádriceps y los gemelos. Los brazos solo transmiten.",
+      "En una simulación con atletas populares, empujar el trineo llevó una mediana de ciento veintiocho segundos. Arrastrarlo, ciento cincuenta y cinco."
+    ],
+    "conclusion": "Primero el ángulo, después la fuerza.",
+    "aplicacion": "Grábate de lado, no pares el trineo y mete empujes cortos después de correr.",
+    "cierre": "Guárdalo y pruébalo en tu próximo entreno."
+  }
 }
