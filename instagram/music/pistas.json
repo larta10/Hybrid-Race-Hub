@@ -1,0 +1,32 @@
+[
+  {
+    "archivo": "reserva-1-am.m4a",
+    "titulo": "Pista de reserva 1 (generada)",
+    "autor": "Hybrid Race Hub (síntesis por código, video/scripts/make-music.mjs)",
+    "url": null,
+    "licencia": "Propia, sin derechos de terceros",
+    "bpm": 120,
+    "offset": 0,
+    "reserva": true
+  },
+  {
+    "archivo": "reserva-2-dm.m4a",
+    "titulo": "Pista de reserva 2 (generada)",
+    "autor": "Hybrid Race Hub (síntesis por código, video/scripts/make-music.mjs)",
+    "url": null,
+    "licencia": "Propia, sin derechos de terceros",
+    "bpm": 120,
+    "offset": 0,
+    "reserva": true
+  },
+  {
+    "archivo": "reserva-3-em.m4a",
+    "titulo": "Pista de reserva 3 (generada)",
+    "autor": "Hybrid Race Hub (síntesis por código, video/scripts/make-music.mjs)",
+    "url": null,
+    "licencia": "Propia, sin derechos de terceros",
+    "bpm": 120,
+    "offset": 0,
+    "reserva": true
+  }
+]
