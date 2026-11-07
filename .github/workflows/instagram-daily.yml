@@ -25,7 +25,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
@@ -66,37 +66,60 @@ jobs:
           key: video-clips-${{ hashFiles('instagram/reels/*.json') }}
           restore-keys: video-clips-
 
-      # Narración: Piper (voz local) y faster-whisper (tiempos por palabra), gratis y sin claves
+      # Narración: Kokoro-82M (voz local, Apache-2.0) y faster-whisper (tiempos por palabra), gratis y sin claves.
+      # Solo hace falta si cambia un guion o la voz: el audio ya generado está en el repo.
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
           cache-dependency-path: video/requirements-voz.txt
 
-      - name: Instalar Piper y faster-whisper
+      - name: Instalar Kokoro, Piper y faster-whisper
         run: pip install -q -r video/requirements-voz.txt
 
-      - name: Caché de voces y modelo de Whisper
+      # Modelo de Kokoro (~350 MB, releases públicas de GitHub, SHA-256 fijado en motores.py), voces de Piper y Whisper
+      - name: Caché de modelos de voz y de Whisper
         uses: actions/cache@v4
         with:
           path: |
+            ~/.cache/hrh-modelos
             ~/.cache/hrh-voces
             ~/.cache/hrh-whisper
-          key: voz-modelos-${{ hashFiles('instagram/reels/voz.json') }}
-          restore-keys: voz-modelos-
+          key: voz-modelos-v2-${{ hashFiles('instagram/reels/voz.json', 'video/scripts/motores.py') }}
+          restore-keys: voz-modelos-v2-
 
       # Solo genera el audio si falta o si cambió el texto o la voz (el hash está en words.json).
       # Si falla, el reel sale sin voz: el paso no bloquea la publicación.
       - name: Narración de los reels
         continue-on-error: true
+        timeout-minutes: 45
         env:
           PIPER_VOICES_DIR: ~/.cache/hrh-voces
           WHISPER_MODELS_DIR: ~/.cache/hrh-whisper
           FFMPEG_PATH: /usr/bin/ffmpeg
         run: |
-          export PIPER_VOICES_DIR="$HOME/.cache/hrh-voces" WHISPER_MODELS_DIR="$HOME/.cache/hrh-whisper"
+          export PIPER_VOICES_DIR="$HOME/.cache/hrh-voces" WHISPER_MODELS_DIR="$HOME/.cache/hrh-whisper" HRH_MODELS_DIR="$HOME/.cache/hrh-modelos"
           ids=$(grep -l '"narracion"' instagram/reels/r[0-9]*.json | xargs -n1 basename | sed 's/\.json$//')
           [ -n "$ids" ] && python video/scripts/narrar.py $ids
+
+      # Solo en pruebas: comprueba que la voz configurada genera audio en Linux (por si un día hay que regenerar)
+      - name: Prueba de la voz
+        if: github.event_name == 'workflow_dispatch' && inputs.dry_run
+        continue-on-error: true
+        timeout-minutes: 15
+        run: |
+          export PIPER_VOICES_DIR="$HOME/.cache/hrh-voces" HRH_MODELS_DIR="$HOME/.cache/hrh-modelos"
+          python -I - <<'EOF'
+          import json, sys, time
+          sys.path.insert(0, "video/scripts")
+          import motores
+          cfg = json.load(open("instagram/reels/voz.json", encoding="utf-8"))
+          t = time.time()
+          m = motores.cargar_motor(cfg)
+          sr, pcm = motores.sintetizar_frase(m, cfg, "¿Tu primer Jai rox? Esto te espera.")
+          print(f"{motores.nombre_voz(cfg)}: {len(pcm) / 2 / sr:.1f} s de audio a {sr} Hz en {time.time() - t:.0f} s")
+          assert len(pcm) / 2 / sr > 1.0
+          EOF
 
       - name: Publicar reel o carrusel
         env:
