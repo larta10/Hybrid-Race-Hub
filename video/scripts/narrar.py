@@ -1,4 +1,4 @@
-"""Narración de un Reel con Piper (voz local) y tiempos por palabra con faster-whisper.
+"""Narración de un Reel con una voz local (Kokoro o Piper, ver motores.py) y tiempos por palabra con faster-whisper.
 
     python video/scripts/narrar.py <reel_id> [<reel_id>…] [--forzar] [--voz=<archivo de voz.json>]
 
@@ -20,6 +20,7 @@ import wave
 from difflib import SequenceMatcher
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 ROOT = Path(__file__).resolve().parents[2]
 REELS = ROOT / "instagram" / "reels"
 AUDIO = REELS / "audio"
@@ -27,6 +28,9 @@ VOCES_DIR = Path(os.environ.get("PIPER_VOICES_DIR", ROOT / "video" / "cache" / "
 WHISPER_DIR = Path(os.environ.get("WHISPER_MODELS_DIR", ROOT / "video" / "cache" / "whisper"))
 FFMPEG = os.environ.get("FFMPEG_PATH") or str(ROOT / "video" / "node_modules" / "ffmpeg-static" / ("ffmpeg.exe" if os.name == "nt" else "ffmpeg"))
 HF = "https://huggingface.co/rhasspy/piper-voices/resolve/main"
+
+# Parámetros de la voz que cambian el audio (forman parte del hash)
+CLAVES_VOZ = ("motor", "voz", "velocidad", "modelo", "length_scale", "noise_scale", "noise_w", "pausa_frases")
 
 # Pausas entre bloques (s): tras cada escena y antes del cierre
 PAUSA_ESCENA = 0.25
@@ -63,21 +67,8 @@ def asegurar_voz(modelo: str) -> Path:
     return onnx
 
 
-def sintetizar(voz, texto: str, cfg: dict, wav_path: Path):
-    from piper import SynthesisConfig
-
-    sc = SynthesisConfig(length_scale=cfg["length_scale"], noise_scale=cfg["noise_scale"], noise_w_scale=cfg["noise_w"], normalize_audio=True)
-    with wave.open(str(wav_path), "wb") as w:
-        voz.synthesize_wav(texto, w, syn_config=sc)
-
-
 def frases(texto: str) -> list[str]:
     return [f.strip() for f in re.split(r"(?<=[.!?…])\s+", texto.strip()) if f.strip()]
-
-
-def leer_pcm(path: Path):
-    with wave.open(str(path), "rb") as w:
-        return w.getframerate(), w.getnchannels(), w.getsampwidth(), w.readframes(w.getnframes())
 
 
 def silencio(sr: int, s: float, ancho=2, canales=1) -> bytes:
@@ -160,9 +151,11 @@ def narrar(reel_id: str, forzar=False, voz_path: Path | None = None):
     if not reel.get("narracion"):
         print(f"{reel_id}: sin narración en el guion")
         return
+    import motores
+
     voz_cfg = cargar(voz_path or REELS / "voz.json")
-    dic = cargar(REELS / "pronunciacion.json")
-    h = huella(reel, {k: voz_cfg[k] for k in ("modelo", "length_scale", "noise_scale", "noise_w", "pausa_frases")}, dic)
+    dic = motores.diccionario(cargar(REELS / "pronunciacion.json"), voz_cfg)
+    h = huella(reel, {k: voz_cfg[k] for k in CLAVES_VOZ if k in voz_cfg}, dic)
     AUDIO.mkdir(parents=True, exist_ok=True)
     mp3 = AUDIO / f"{reel_id}.mp3"
     words_p = AUDIO / f"{reel_id}.words.json"
@@ -170,10 +163,9 @@ def narrar(reel_id: str, forzar=False, voz_path: Path | None = None):
         print(f"{reel_id}: audio al día ({h})")
         return
 
-    from piper import PiperVoice
     from faster_whisper import WhisperModel
 
-    voz = PiperVoice.load(str(asegurar_voz(voz_cfg["modelo"])))
+    voz = motores.cargar_motor(voz_cfg)
     tmp = Path(tempfile.mkdtemp(prefix="narra-"))
     sr = None
     pcm = b""
@@ -181,10 +173,8 @@ def narrar(reel_id: str, forzar=False, voz_path: Path | None = None):
     segs = segmentos(reel)
     for s in segs:
         trozos = []
-        for k, f in enumerate(frases(s["texto"])):
-            wp = tmp / f"s{len(trozos)}-{k}.wav"
-            sintetizar(voz, fonetica(f, dic), voz_cfg, wp)
-            sr_, ch, sw, data = leer_pcm(wp)
+        for f in frases(s["texto"]):
+            sr_, data = motores.sintetizar_frase(voz, voz_cfg, fonetica(f, dic))
             sr = sr or sr_
             trozos.append(data)
         # Pausa natural entre frases (150-300 ms)
@@ -233,7 +223,7 @@ def narrar(reel_id: str, forzar=False, voz_path: Path | None = None):
 
     out = {
         "hash": h,
-        "voz": voz_cfg["modelo"],
+        "voz": motores.nombre_voz(voz_cfg),
         "duracion": round(total, 3),
         "segmentos": [{k: (round(v, 3) if isinstance(v, float) else v) for k, v in s.items() if k != "texto"} for s in segs],
         "palabras": [{**p, "desde": round(p["desde"], 3), "hasta": round(p["hasta"], 3)} for p in palabras],

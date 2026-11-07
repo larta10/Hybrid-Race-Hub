@@ -40,6 +40,16 @@ export function preparePublic({ clipFiles = {}, musicFile = null, voz = null, cl
   return { clips, music, voz: vozOut, clipSeg };
 }
 
+/** Nombre de la voz configurada en voz.json, igual que motores.nombre_voz() en Python */
+function vozEsperada() {
+  try {
+    const v = JSON.parse(readFileSync(path.join(REELS_DIR, "voz.json"), "utf8"));
+    return v.motor === "kokoro" ? `kokoro-${v.voz}` : v.modelo || null;
+  } catch {
+    return null;
+  }
+}
+
 /**
  * Narración ya generada (instagram/reels/audio/<id>.mp3 + .words.json, ver narrar.py).
  * Si falta o no casa con el guion, el reel sale sin voz (texto y música), como respaldo.
@@ -53,6 +63,12 @@ export function cargarNarracion(reel) {
   const n = reel.narracion;
   const esperadas = [...n.escenas, n.conclusion, n.aplicacion, n.cierre].join(" ").split(/\s+/).filter(Boolean).length;
   if (words.palabras?.length !== esperadas || words.segmentos?.length !== n.escenas.length + 3) return null;
+  // El audio tiene que ser de la voz configurada ahora (nunca de una voz anterior)
+  const esperada = vozEsperada();
+  if (esperada && words.voz !== esperada) {
+    console.warn(`  Aviso: la narración de ${reel.id} es de otra voz (${words.voz}, se espera ${esperada}).`);
+    return null;
+  }
   return { mp3, words };
 }
 

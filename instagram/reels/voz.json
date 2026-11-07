@@ -1,12 +1,10 @@
 {
-  "modelo": "es_ES-davefx-medium",
-  "length_scale": 1.06,
-  "noise_scale": 0.62,
-  "noise_w": 0.85,
+  "motor": "kokoro",
+  "voz": "em_alex",
+  "velocidad": 0.9,
   "pausa_frases": 0.22,
   "whisper": "small",
-  "activa": false,
-  "motivo_inactiva": "La voz se entrenó partiendo del modelo inglés lessac, cuyos datos solo permiten investigación. Hasta que Pablo confirme que acepta ese riesgo, los reels se publican sin voz. Para activarla: \"activa\": true.",
-  "licencia": "Datos de davefx: CC0. Modelo base lessac: licencia de investigación (Blizzard 2013). Ver instagram/reels/VOCES.md",
+  "activa": true,
+  "licencia": "Kokoro-82M: pesos Apache-2.0; modelo base StyleTTS2-LJSpeech (código MIT, datos LJSpeech de dominio público); datos de entrenamiento permisivos o sin copyright según su model card. Programas: kokoro-onnx (MIT), onnxruntime (MIT), espeak-ng y phonemizer (GPL-3.0, solo se ejecutan). Ver instagram/reels/VOCES.md",
   "atribucion": null
 }
