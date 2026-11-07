@@ -9,7 +9,10 @@
       "duracion": 2,
       "clip": {
         "query": "runner sprint",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -24,7 +27,10 @@
       "duracion": 3,
       "clip": {
         "query": "barbell squat gym",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -42,7 +48,10 @@
       "duracion": 5,
       "clip": {
         "query": "weightlifting athlete",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -80,7 +89,10 @@
       "duracion": 3,
       "clip": {
         "query": "box jump athlete",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -99,7 +111,10 @@
       "duracion": 3,
       "clip": {
         "query": "running track athlete",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -125,7 +140,10 @@
   ],
   "clip_final": {
     "query": "runner road",
-    "pexels_id": null,
+    "fuente": null,
+    "id": null,
+    "url_pagina": null,
+    "autor": null,
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
@@ -137,7 +155,7 @@
   "musica": "auto",
   "portada_segundo": 1.2,
   "qa_ok": false,
-  "caption": "Correr no te va a robar la fuerza. La potencia, un poco, y depende de cómo lo organices.\n\nUn metaanálisis de 2022 reunió 43 estudios que comparaban entrenar solo fuerza con combinar fuerza y trabajo aeróbico durante al menos 4 semanas. Resultado: ni la fuerza máxima ni la masa muscular se resintieron de forma clara. La fuerza explosiva sí mejoró algo menos, y sobre todo cuando las dos cosas iban en la misma sesión. Separándolas al menos 3 horas, esa diferencia dejó de ser significativa.\n\nLimitaciones: muchos participantes eran personas no entrenadas o simplemente activas, y se midieron adaptaciones del músculo, no tiempos en carrera. En atletas muy avanzados la historia puede cambiar.\n\nCómo aplicarlo:\nSi puedes, fuerza por la mañana y carrera por la tarde, o al revés.\nSi van juntas, primero lo prioritario de ese día.\nNo recortes kilómetros por miedo a perder fuerza.\n\n¿Haces fuerza y carrera el mismo día o en días separados?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nSchumann M, et al. (2022). Compatibility of concurrent aerobic and strength training for skeletal muscle size and function. Sports Medicine.\n\nVídeo: Pexels",
+  "caption": "Correr no te va a robar la fuerza. La potencia, un poco, y depende de cómo lo organices.\n\nUn metaanálisis de 2022 reunió 43 estudios que comparaban entrenar solo fuerza con combinar fuerza y trabajo aeróbico durante al menos 4 semanas. Resultado: ni la fuerza máxima ni la masa muscular se resintieron de forma clara. La fuerza explosiva sí mejoró algo menos, y sobre todo cuando las dos cosas iban en la misma sesión. Separándolas al menos 3 horas, esa diferencia dejó de ser significativa.\n\nLimitaciones: muchos participantes eran personas no entrenadas o simplemente activas, y se midieron adaptaciones del músculo, no tiempos en carrera. En atletas muy avanzados la historia puede cambiar.\n\nCómo aplicarlo:\nSi puedes, fuerza por la mañana y carrera por la tarde, o al revés.\nSi van juntas, primero lo prioritario de ese día.\nNo recortes kilómetros por miedo a perder fuerza.\n\n¿Haces fuerza y carrera el mismo día o en días separados?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nSchumann M, et al. (2022). Compatibility of concurrent aerobic and strength training for skeletal muscle size and function. Sports Medicine.\n\nVídeo: Pixabay",
   "hashtags": [
     "#entrenamientohibrido",
     "#hyrox",

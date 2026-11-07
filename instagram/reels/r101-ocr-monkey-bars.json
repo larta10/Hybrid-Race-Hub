@@ -9,7 +9,10 @@
       "duracion": 2,
       "clip": {
         "query": "monkey bars obstacle",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -24,7 +27,10 @@
       "duracion": 3,
       "clip": {
         "query": "obstacle course race",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -42,7 +48,10 @@
       "duracion": 3,
       "clip": {
         "query": "hanging from bar grip",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -58,7 +67,7 @@
       "musculo": [
         {
           "nombre": "Antebrazo",
-          "pexels_id": null,
+          "clip": null,
           "x": null,
           "y": null,
           "keyframes": []
@@ -69,7 +78,10 @@
       "duracion": 4.5,
       "clip": {
         "query": "monkey bars swing",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -88,7 +100,10 @@
       "duracion": 3,
       "clip": {
         "query": "obstacle course race",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -114,7 +129,10 @@
   ],
   "clip_final": {
     "query": "obstacle course race mud",
-    "pexels_id": null,
+    "fuente": null,
+    "id": null,
+    "url_pagina": null,
+    "autor": null,
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
@@ -126,7 +144,7 @@
   "musica": "auto",
   "portada_segundo": 1.2,
   "qa_ok": false,
-  "caption": "Si te caes a mitad de las monkey bars, casi nunca es por falta de fuerza.\n\nEs el agarre, que se vacía. Brazos doblados todo el rato, paradas colgado de una mano y cada barra pagada con antebrazo. En una OCR llegas a este obstáculo con las manos ya cargadas del muro, la cuerda o los transportes, así que cada segundo colgado cuenta.\n\nLo que funciona: brazos casi estirados con los hombros activos, balanceo desde la cadera y soltar la mano en el punto alto del vaivén, cuando el cuerpo ya va hacia la siguiente barra. Sin pausas.\n\nEsto es técnica, no un estudio: no conocemos estudios sobre cómo cruzar monkey bars en OCR, así que te lo contamos como lo que es: principios de movimiento de toda la vida.\n\nCómo entrenarlo:\nColgado pasivo y activo al final de dos sesiones por semana.\nBalanceo con los pies cerca del suelo antes de ir a barras altas.\nAlguna pasada por barras justo después de remo o farmers carry, con el agarre ya cansado.\n\n¿Las monkey bars son tu obstáculo maldito o el que más disfrutas?\n\nMás en hybridracehub.com (enlace en la bio)\n\nVídeo: Pexels",
+  "caption": "Si te caes a mitad de las monkey bars, casi nunca es por falta de fuerza.\n\nEs el agarre, que se vacía. Brazos doblados todo el rato, paradas colgado de una mano y cada barra pagada con antebrazo. En una OCR llegas a este obstáculo con las manos ya cargadas del muro, la cuerda o los transportes, así que cada segundo colgado cuenta.\n\nLo que funciona: brazos casi estirados con los hombros activos, balanceo desde la cadera y soltar la mano en el punto alto del vaivén, cuando el cuerpo ya va hacia la siguiente barra. Sin pausas.\n\nEsto es técnica, no un estudio: no conocemos estudios sobre cómo cruzar monkey bars en OCR, así que te lo contamos como lo que es: principios de movimiento de toda la vida.\n\nCómo entrenarlo:\nColgado pasivo y activo al final de dos sesiones por semana.\nBalanceo con los pies cerca del suelo antes de ir a barras altas.\nAlguna pasada por barras justo después de remo o farmers carry, con el agarre ya cansado.\n\n¿Las monkey bars son tu obstáculo maldito o el que más disfrutas?\n\nMás en hybridracehub.com (enlace en la bio)\n\nVídeo: Pixabay",
   "hashtags": [
     "#ocr",
     "#ocrspain",

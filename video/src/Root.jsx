@@ -31,7 +31,6 @@ export const Root = () => (
           { dia: "21", mes: "NOV", nombre: "Otra carrera", ciudad: "Bilbao" },
         ],
         rango: "Del 9 al 30 de noviembre",
-        clips: [],
         assets: {},
       }}
       calculateMetadata={({ props }) => ({ durationInFrames: buildCalendarTimeline(props.carreras.length, props.assets?.music).at(-1).hasta })}

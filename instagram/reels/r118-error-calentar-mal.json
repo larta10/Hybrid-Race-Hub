@@ -9,7 +9,10 @@
       "duracion": 2,
       "clip": {
         "query": "runners race start",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -24,7 +27,10 @@
       "duracion": 3,
       "clip": {
         "query": "athlete stretching",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -42,7 +48,10 @@
       "duracion": 4.5,
       "clip": {
         "query": "jogging warm up",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -66,7 +75,10 @@
       "duracion": 4.5,
       "clip": {
         "query": "jogging warm up",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -85,7 +97,10 @@
       "duracion": 3,
       "clip": {
         "query": "runner track",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -111,7 +126,10 @@
   ],
   "clip_final": {
     "query": "runner road",
-    "pexels_id": null,
+    "fuente": null,
+    "id": null,
+    "url_pagina": null,
+    "autor": null,
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
@@ -123,7 +141,7 @@
   "musica": "auto",
   "portada_segundo": 1.2,
   "qa_ok": false,
-  "caption": "Calentar no es perder energía. En la mayoría de estudios, fue ganar rendimiento.\n\nUna revisión sistemática con metaanálisis reunió 32 estudios de buena calidad sobre calentamiento y rendimiento físico. Con calentamientos que no eran solo estirar, el rendimiento mejoró en el 79 % de los criterios analizados, y apenas hubo evidencia de que calentar perjudique. En HYROX, donde el primer kilómetro y el SkiErg llegan enseguida, salir en frío es regalar los primeros minutos.\n\nLimitaciones: los propios autores piden más ensayos aleatorizados bien hechos, y los estudios usaban pruebas y calentamientos muy distintos. Ninguno era de carreras híbridas, así que el calentamiento del vídeo es un ejemplo práctico nuestro, no algo medido.\n\nCómo aplicarlo:\nLlega con tiempo: unos 30 minutos antes de tu tanda.\nTrote suave, movilidad dinámica y activación.\nUn par de aceleraciones a ritmo de carrera al final.\n\n¿Cuánto calientas antes de una carrera?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nFradkin AJ, et al. (2010). Effects of warming-up on physical performance: a systematic review with meta-analysis. Journal of Strength and Conditioning Research.\n\nVídeo: Pexels",
+  "caption": "Calentar no es perder energía. En la mayoría de estudios, fue ganar rendimiento.\n\nUna revisión sistemática con metaanálisis reunió 32 estudios de buena calidad sobre calentamiento y rendimiento físico. Con calentamientos que no eran solo estirar, el rendimiento mejoró en el 79 % de los criterios analizados, y apenas hubo evidencia de que calentar perjudique. En HYROX, donde el primer kilómetro y el SkiErg llegan enseguida, salir en frío es regalar los primeros minutos.\n\nLimitaciones: los propios autores piden más ensayos aleatorizados bien hechos, y los estudios usaban pruebas y calentamientos muy distintos. Ninguno era de carreras híbridas, así que el calentamiento del vídeo es un ejemplo práctico nuestro, no algo medido.\n\nCómo aplicarlo:\nLlega con tiempo: unos 30 minutos antes de tu tanda.\nTrote suave, movilidad dinámica y activación.\nUn par de aceleraciones a ritmo de carrera al final.\n\n¿Cuánto calientas antes de una carrera?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nFradkin AJ, et al. (2010). Effects of warming-up on physical performance: a systematic review with meta-analysis. Journal of Strength and Conditioning Research.\n\nVídeo: Pixabay",
   "hashtags": [
     "#hyrox",
     "#calentamiento",

@@ -9,7 +9,10 @@
       "duracion": 2,
       "clip": {
         "query": "weightlifting gym",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -24,7 +27,10 @@
       "duracion": 4,
       "clip": {
         "query": "healthy meal",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -48,7 +54,10 @@
       "duracion": 4.5,
       "clip": {
         "query": "barbell training",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -106,7 +115,10 @@
       "duracion": 4.5,
       "clip": {
         "query": "cooking meal kitchen",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -149,7 +161,10 @@
       "duracion": 3,
       "clip": {
         "query": "healthy food",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -175,7 +190,10 @@
   ],
   "clip_final": {
     "query": "gym crossfit training",
-    "pexels_id": null,
+    "fuente": null,
+    "id": null,
+    "url_pagina": null,
+    "autor": null,
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
@@ -187,7 +205,7 @@
   "musica": "auto",
   "portada_segundo": 1.2,
   "qa_ok": false,
-  "caption": "¿Cuánta proteína necesitas si entrenas fuerza? Menos de lo que te dicen en el gimnasio.\n\nUn metaanálisis de 2018 reunió 49 estudios con 1.863 personas que hacían entrenamiento de fuerza durante al menos 6 semanas. Añadir proteína ayudó a ganar algo más de fuerza y de masa muscular. Pero por encima de unos 1,6 gramos por kilo de peso al día, la masa muscular dejó de aumentar más. El efecto fue mayor en gente ya entrenada y menor con la edad.\n\nLimitaciones: el estudio va de entrenamiento de fuerza, no de deportes híbridos, y 1,6 es una media: algunas personas pueden beneficiarse de algo más. Uno de los autores declara financiación de la industria láctea.\n\nCómo aplicarlo:\nTu peso por 1,6: esa es tu cifra aproximada al día.\nRepártela en 3-4 comidas.\nSi llegas comiendo normal, el batido es opcional.\n\n¿Llevas la cuenta de la proteína o vas a ojo?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nMorton RW, et al. (2018). A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults. British Journal of Sports Medicine.\n\nVídeo: Pexels",
+  "caption": "¿Cuánta proteína necesitas si entrenas fuerza? Menos de lo que te dicen en el gimnasio.\n\nUn metaanálisis de 2018 reunió 49 estudios con 1.863 personas que hacían entrenamiento de fuerza durante al menos 6 semanas. Añadir proteína ayudó a ganar algo más de fuerza y de masa muscular. Pero por encima de unos 1,6 gramos por kilo de peso al día, la masa muscular dejó de aumentar más. El efecto fue mayor en gente ya entrenada y menor con la edad.\n\nLimitaciones: el estudio va de entrenamiento de fuerza, no de deportes híbridos, y 1,6 es una media: algunas personas pueden beneficiarse de algo más. Uno de los autores declara financiación de la industria láctea.\n\nCómo aplicarlo:\nTu peso por 1,6: esa es tu cifra aproximada al día.\nRepártela en 3-4 comidas.\nSi llegas comiendo normal, el batido es opcional.\n\n¿Llevas la cuenta de la proteína o vas a ojo?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nMorton RW, et al. (2018). A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults. British Journal of Sports Medicine.\n\nVídeo: Pixabay",
   "hashtags": [
     "#nutriciondeportiva",
     "#proteina",

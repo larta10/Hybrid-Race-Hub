@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 import { bundle } from "@remotion/bundler";
 import { renderMedia, renderStill, selectComposition, ensureBrowser } from "@remotion/renderer";
 import { VIDEO, PUBLIC, OUT, FONTS_DIR, mkdirp, ffmpeg, mediaDuration, loadReel, clipSlots, clipListo } from "./lib/common.mjs";
-import { downloadClip } from "./lib/clips.mjs";
+import { localClip, prepareVertical, clipKey } from "./lib/clips.mjs";
 import { pickTrack } from "./lib/music.mjs";
 
 const RUNTIME = path.join(PUBLIC, "runtime");
@@ -23,9 +23,9 @@ export function preparePublic({ clipFiles = {}, musicFile = null } = {}) {
   rmSync(RUNTIME, { recursive: true, force: true });
   mkdirp(path.join(RUNTIME, "clips"));
   const clips = {};
-  for (const [id, file] of Object.entries(clipFiles)) {
-    copyFileSync(file, path.join(RUNTIME, "clips", `${id}.mp4`));
-    clips[id] = `runtime/clips/${id}.mp4`;
+  for (const [slot, file] of Object.entries(clipFiles)) {
+    copyFileSync(file, path.join(RUNTIME, "clips", `${slot}.mp4`));
+    clips[slot] = `runtime/clips/${slot}.mp4`;
   }
   let music = null;
   if (musicFile) {
@@ -45,12 +45,13 @@ async function gatherClips(slots, { soloRevisados }) {
   for (const s of slots) {
     const c = s.clip;
     if (c.sin_clip) continue;
-    if (!c.pexels_id || !c.archivo_url || (soloRevisados && !clipListo(c))) {
+    if (!clipKey(c) || (soloRevisados && !clipListo(c))) {
       faltan.push(s.donde);
       continue;
     }
     try {
-      clipFiles[c.pexels_id] = await downloadClip(c);
+      // Revisado: copia propia (caché o nuestro bucket). Sin revisar (solo vista previa local): se recorta aquí
+      clipFiles[s.clave] = c.archivo && c.revisado ? await localClip(c) : (await prepareVertical(c, s.duracion)).file;
     } catch (e) {
       console.warn(`  ${s.donde}: ${e.message}`);
       faltan.push(s.donde);
@@ -59,11 +60,8 @@ async function gatherClips(slots, { soloRevisados }) {
   return { clipFiles, faltan };
 }
 
-let bundleCache = null;
-async function getBundle() {
-  if (!bundleCache) bundleCache = await bundle({ entryPoint: path.join(VIDEO, "src/index.jsx"), publicDir: PUBLIC, onProgress: () => {} });
-  return bundleCache;
-}
+// El bundle copia public/ en el momento de crearlo: uno por render, después de preparar public/
+const getBundle = () => bundle({ entryPoint: path.join(VIDEO, "src/index.jsx"), publicDir: PUBLIC, onProgress: () => {} });
 
 // Remotion guarda el navegador en node_modules/.remotion del directorio actual: se trabaja desde video/
 async function renderComposition(opts) {
@@ -139,7 +137,7 @@ export async function renderReel(reelOrId, { outDir = OUT, fecha, soloRevisados 
   const assets = preparePublic({ clipFiles, musicFile: track });
   mkdirp(outDir);
   const res = await renderComposition({ compId: "Reel", inputProps: { reel, assets }, outBase: path.join(outDir, reel.id), coverSecond: reel.portada_segundo ?? 1.2 });
-  return { ...res, faltan, musica: track?.titulo || null };
+  return { ...res, faltan, musica: track?.titulo || null, pista: track };
 }
 
 /** Reel del calendario dinámico: carreras [{dia, mes, nombre, ciudad}] */
@@ -150,9 +148,8 @@ export async function renderCalendar({ id, carreras, rango, outDir = OUT, fecha,
   const track = pickTrack("auto", fecha);
   const assets = preparePublic({ clipFiles, musicFile: track });
   mkdirp(outDir);
-  const clips = cal.escenas.map((e) => e.clip);
-  const res = await renderComposition({ compId: "Calendario", inputProps: { carreras, rango, clips, assets }, outBase: path.join(outDir, id), coverSecond: 3.5 });
-  return { ...res, faltan, musica: track?.titulo || null };
+  const res = await renderComposition({ compId: "Calendario", inputProps: { carreras, rango, assets }, outBase: path.join(outDir, id), coverSecond: 3.5 });
+  return { ...res, faltan, musica: track?.titulo || null, pista: track };
 }
 
 // ---------- CLI ----------

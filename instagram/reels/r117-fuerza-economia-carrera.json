@@ -9,7 +9,10 @@
       "duracion": 2,
       "clip": {
         "query": "runner track",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -24,7 +27,10 @@
       "duracion": 3,
       "clip": {
         "query": "runner breathing",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -42,7 +48,10 @@
       "duracion": 4,
       "clip": {
         "query": "barbell squat gym",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -65,7 +74,10 @@
       "duracion": 4.5,
       "clip": {
         "query": "squat jump training",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -85,7 +97,10 @@
       "duracion": 3,
       "clip": {
         "query": "sprint start athlete",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -111,7 +126,10 @@
   ],
   "clip_final": {
     "query": "runner road",
-    "pexels_id": null,
+    "fuente": null,
+    "id": null,
+    "url_pagina": null,
+    "autor": null,
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
@@ -123,7 +141,7 @@
   "musica": "auto",
   "portada_segundo": 1.2,
   "qa_ok": false,
-  "caption": "Hacer fuerza no te hace más lento corriendo. En corredores de alto nivel, les hizo correr más barato.\n\nUn metaanálisis de 2016 con participación española reunió 5 ensayos controlados con 93 corredores de medio fondo y fondo muy entrenados. Al añadir fuerza a su plan, su economía de carrera, la energía que gastas para ir a un ritmo concreto, mejoró con un efecto grande frente a los que solo corrían. Los programas eran asequibles: 2-3 sesiones por semana durante 8-12 semanas, 2-4 ejercicios de pierna con cargas moderadas, saltos y algunos sprints cortos.\n\nLimitaciones: son pocos estudios y pocos corredores, todos de alto nivel. Se midió la economía, no el tiempo en carrera, y nadie lo ha probado todavía en pruebas híbridas.\n\nCómo aplicarlo:\nDos sesiones de fuerza de pierna por semana, al menos 8 semanas.\nCargas moderadas, saltos y sprints cortos.\nLejos de tus sesiones de carrera clave.\n\n¿Cuántos días de fuerza metes ahora mismo en tu semana?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nBalsalobre-Fernández C, et al. (2016). Effects of strength training on running economy in highly trained runners. Journal of Strength and Conditioning Research.\n\nVídeo: Pexels",
+  "caption": "Hacer fuerza no te hace más lento corriendo. En corredores de alto nivel, les hizo correr más barato.\n\nUn metaanálisis de 2016 con participación española reunió 5 ensayos controlados con 93 corredores de medio fondo y fondo muy entrenados. Al añadir fuerza a su plan, su economía de carrera, la energía que gastas para ir a un ritmo concreto, mejoró con un efecto grande frente a los que solo corrían. Los programas eran asequibles: 2-3 sesiones por semana durante 8-12 semanas, 2-4 ejercicios de pierna con cargas moderadas, saltos y algunos sprints cortos.\n\nLimitaciones: son pocos estudios y pocos corredores, todos de alto nivel. Se midió la economía, no el tiempo en carrera, y nadie lo ha probado todavía en pruebas híbridas.\n\nCómo aplicarlo:\nDos sesiones de fuerza de pierna por semana, al menos 8 semanas.\nCargas moderadas, saltos y sprints cortos.\nLejos de tus sesiones de carrera clave.\n\n¿Cuántos días de fuerza metes ahora mismo en tu semana?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nBalsalobre-Fernández C, et al. (2016). Effects of strength training on running economy in highly trained runners. Journal of Strength and Conditioning Research.\n\nVídeo: Pixabay",
   "hashtags": [
     "#entrenamientodefuerza",
     "#running",

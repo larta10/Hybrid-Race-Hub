@@ -9,7 +9,10 @@
       "duracion": 2,
       "clip": {
         "query": "morning run",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -24,7 +27,10 @@
       "duracion": 3,
       "clip": {
         "query": "gym training alone",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -42,7 +48,10 @@
       "duracion": 4.5,
       "clip": {
         "query": "runner city",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -97,7 +106,10 @@
       "duracion": 4.5,
       "clip": {
         "query": "gym training",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -132,7 +144,10 @@
       "duracion": 3,
       "clip": {
         "query": "runner city morning",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -159,7 +174,10 @@
   ],
   "clip_final": {
     "query": "runner road",
-    "pexels_id": null,
+    "fuente": null,
+    "id": null,
+    "url_pagina": null,
+    "autor": null,
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
@@ -171,7 +189,7 @@
   "musica": "auto",
   "portada_segundo": 1.2,
   "qa_ok": false,
-  "caption": "Saltarte un entreno no rompe tu hábito. Lo que lo rompe es pensar que sí.\n\nUn grupo de investigadores pidió a 96 voluntarios que repitieran cada día un hábito sencillo de comida, bebida o actividad física, siempre en el mismo contexto (por ejemplo, después de desayunar), durante 12 semanas. El automatismo creció rápido al principio y luego se fue aplanando. Pero el tiempo hasta asentarlo varió muchísimo: de 18 a 254 días según la persona. Y saltarse un día suelto no cambió el resultado de forma importante.\n\nLimitaciones: muestra pequeña y voluntaria, el modelo solo encajó bien en una parte de los participantes y eran hábitos simples, no un plan de entrenamiento. Entrenar es más complejo, así que date margen.\n\nLo que nos llevamos:\nEntrena a una hora fija.\nSi fallas un día, que no sean dos.\nCuenta semanas cumplidas, no días perfectos.\n\n¿Qué te ha ayudado más a ser constante?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nLally P, et al. (2010). How are habits formed: modelling habit formation in the real world. European Journal of Social Psychology.\n\nVídeo: Pexels",
+  "caption": "Saltarte un entreno no rompe tu hábito. Lo que lo rompe es pensar que sí.\n\nUn grupo de investigadores pidió a 96 voluntarios que repitieran cada día un hábito sencillo de comida, bebida o actividad física, siempre en el mismo contexto (por ejemplo, después de desayunar), durante 12 semanas. El automatismo creció rápido al principio y luego se fue aplanando. Pero el tiempo hasta asentarlo varió muchísimo: de 18 a 254 días según la persona. Y saltarse un día suelto no cambió el resultado de forma importante.\n\nLimitaciones: muestra pequeña y voluntaria, el modelo solo encajó bien en una parte de los participantes y eran hábitos simples, no un plan de entrenamiento. Entrenar es más complejo, así que date margen.\n\nLo que nos llevamos:\nEntrena a una hora fija.\nSi fallas un día, que no sean dos.\nCuenta semanas cumplidas, no días perfectos.\n\n¿Qué te ha ayudado más a ser constante?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nLally P, et al. (2010). How are habits formed: modelling habit formation in the real world. European Journal of Social Psychology.\n\nVídeo: Pixabay",
   "hashtags": [
     "#comunidadhyrox",
     "#constancia",

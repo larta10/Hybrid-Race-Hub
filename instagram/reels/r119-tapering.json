@@ -9,7 +9,10 @@
       "duracion": 2,
       "clip": {
         "query": "runner",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -24,7 +27,10 @@
       "duracion": 3,
       "clip": {
         "query": "athlete tired",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -42,7 +48,10 @@
       "duracion": 5,
       "clip": {
         "query": "runner road",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -84,7 +93,10 @@
       "duracion": 4.5,
       "clip": {
         "query": "running track",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -141,7 +153,10 @@
       "duracion": 3,
       "clip": {
         "query": "running intervals",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -167,7 +182,10 @@
   ],
   "clip_final": {
     "query": "runner road",
-    "pexels_id": null,
+    "fuente": null,
+    "id": null,
+    "url_pagina": null,
+    "autor": null,
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
@@ -179,7 +197,7 @@
   "musica": "auto",
   "portada_segundo": 1.2,
   "qa_ok": false,
-  "caption": "Dos semanas antes de la carrera, entrenar menos te hace llegar mejor. Pero solo si recortas lo que toca.\n\nUn metaanálisis de 27 estudios en deportistas de competición analizó cómo hacer la puesta a punto. Lo que mejor funcionó: unas 2 semanas, bajando el volumen de forma progresiva entre un 41 y un 60 %, sin tocar la intensidad ni el número de días de entrenamiento. La clave fue recortar cantidad, no intensidad ni frecuencia.\n\nLimitaciones: es un trabajo de 2007, anterior a las pruebas híbridas, así que ningún estudio es de HYROX ni OCR. Y son efectos medios: cada atleta puede necesitar ajustes.\n\nCómo aplicarlo:\nEmpieza a bajar unas dos semanas antes.\nMismas sesiones de calidad, pero más cortas.\nMismos días de entreno. Bajar volumen no es parar.\n\n¿Cuántos días antes de una carrera empiezas a bajar la carga?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nBosquet L, et al. (2007). Effects of tapering on performance: a meta-analysis. Medicine & Science in Sports & Exercise.\n\nVídeo: Pexels",
+  "caption": "Dos semanas antes de la carrera, entrenar menos te hace llegar mejor. Pero solo si recortas lo que toca.\n\nUn metaanálisis de 27 estudios en deportistas de competición analizó cómo hacer la puesta a punto. Lo que mejor funcionó: unas 2 semanas, bajando el volumen de forma progresiva entre un 41 y un 60 %, sin tocar la intensidad ni el número de días de entrenamiento. La clave fue recortar cantidad, no intensidad ni frecuencia.\n\nLimitaciones: es un trabajo de 2007, anterior a las pruebas híbridas, así que ningún estudio es de HYROX ni OCR. Y son efectos medios: cada atleta puede necesitar ajustes.\n\nCómo aplicarlo:\nEmpieza a bajar unas dos semanas antes.\nMismas sesiones de calidad, pero más cortas.\nMismos días de entreno. Bajar volumen no es parar.\n\n¿Cuántos días antes de una carrera empiezas a bajar la carga?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nBosquet L, et al. (2007). Effects of tapering on performance: a meta-analysis. Medicine & Science in Sports & Exercise.\n\nVídeo: Pixabay",
   "hashtags": [
     "#hyrox",
     "#tapering",

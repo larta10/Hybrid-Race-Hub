@@ -129,10 +129,18 @@ async function renderReelFor(reel, { exigirClips }) {
   return video.renderReel(reel, { outDir, fecha: TODAY, soloRevisados: true, exigirClips });
 }
 
+/** Caption del reel: el del guion + atribución de la música si es CC BY ("Música: Título – Autor (CC BY)") */
+function reelCaption(reel) {
+  const m = reel.__musica;
+  const linea = m?.atribucion ? `
+Música: ${m.atribucion}` : "";
+  return fullCaption({ ...reel, caption: `${reel.caption.trim()}${linea}` });
+}
+
 async function publishReel(reel, videoUrl, coverUrl) {
   const token = env("IG_ACCESS_TOKEN");
   const igUser = env("IG_USER_ID");
-  const c = await graph("POST", `/${igUser}/media`, { media_type: "REELS", video_url: videoUrl, cover_url: coverUrl, caption: fullCaption(reel), share_to_feed: true }, token);
+  const c = await graph("POST", `/${igUser}/media`, { media_type: "REELS", video_url: videoUrl, cover_url: coverUrl, caption: reelCaption(reel), share_to_feed: true }, token);
   console.log(`  contenedor del reel: ${c.id}`);
   await waitFinished(c.id, token, "reel", { minutes: REEL_TIMEOUT_MIN, every: 10000 });
   const published = await graph("POST", `/${igUser}/media_publish`, { creation_id: c.id }, token);
@@ -148,6 +156,11 @@ async function tryReel(topicId, reel, listo) {
   try {
     const r = await renderReelFor(reel, { exigirClips: !DRY_RUN });
     console.log(`  render: ${r.duracion.toFixed(1)} s de vídeo, ${r.mb.toFixed(1)} MB, ${Math.round((Date.now() - t0) / 1000)} s${r.musica ? ` · música: ${r.musica}` : ""}`);
+    reel.__musica = r.pista;
+    console.log(`  caption (final):
+${reelCaption(reel).split("
+").slice(-3).join("
+")}`);
     const base = `reels/${TODAY}/${reel.id}`;
     const videoUrl = await uploadPublic(`${base}.mp4`, readFileSync(r.mp4), "video/mp4");
     const coverUrl = await uploadPublic(`${base}.jpg`, readFileSync(r.jpg), "image/jpeg");
@@ -272,7 +285,7 @@ async function main() {
   let estado = { listo: false, motivos: ["no hay guion de Reel para este tema"] };
   if (post.pilar === "calendario") {
     const cal = post.slides[1];
-    reel = { id: post.id, calendario: true, carreras: cal.carreras, rango: cal.subtitulo, caption: `${post.caption}\n\nVídeo: Pexels`, hashtags: post.hashtags };
+    reel = { id: post.id, calendario: true, carreras: cal.carreras, rango: cal.subtitulo, caption: `${post.caption}\n\nVídeo: Pixabay`, hashtags: post.hashtags };
     estado = calendarReady();
   } else {
     reel = loadReels().find((r) => r.post_carrusel_id === post.id) || null;

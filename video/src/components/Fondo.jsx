@@ -17,7 +17,7 @@ function Capas({ oscuro = 0.4 }) {
   );
 }
 
-/** Clip real de Pexels, recortado a 9:16 alrededor del atleta, con un leve acercamiento */
+/** Clip real de stock (Pixabay), recortado a 9:16 alrededor del atleta, con un leve acercamiento */
 export function Clip({ src, inicio = 0, recorte = {}, duracion, oscuro = 0.4, desenfoque = 0 }) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -80,8 +80,8 @@ export function FondoAbstracto({ semilla = 0 }) {
   );
 }
 
-export function Fondo({ clip, assets, duracion, semilla, oscuro, desenfoque }) {
-  const src = clip?.pexels_id && assets?.clips?.[clip.pexels_id];
-  if (src) return <Clip src={src} inicio={clip.inicio} recorte={clip.recorte} duracion={duracion} oscuro={oscuro} desenfoque={desenfoque} />;
+/** src: copia vertical 1080x1920 ya recortada al tramo usado (ver scripts/lib/clips.mjs) */
+export function Fondo({ src, duracion, semilla, oscuro, desenfoque }) {
+  if (src) return <Clip src={src} inicio={0} duracion={duracion} oscuro={oscuro} desenfoque={desenfoque} />;
   return <FondoAbstracto semilla={semilla} />;
 }

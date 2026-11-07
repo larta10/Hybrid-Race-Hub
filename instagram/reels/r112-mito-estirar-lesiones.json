@@ -9,7 +9,10 @@
       "duracion": 2,
       "clip": {
         "query": "athlete stretching",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -24,7 +27,10 @@
       "duracion": 3,
       "clip": {
         "query": "stretching before running",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -42,7 +48,10 @@
       "duracion": 5,
       "clip": {
         "query": "athlete stretching legs",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -85,7 +94,10 @@
       "duracion": 3,
       "clip": {
         "query": "barbell squat gym",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -104,7 +116,10 @@
       "duracion": 3,
       "clip": {
         "query": "deadlift gym",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -130,7 +145,10 @@
   ],
   "clip_final": {
     "query": "gym crossfit training",
-    "pexels_id": null,
+    "fuente": null,
+    "id": null,
+    "url_pagina": null,
+    "autor": null,
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
@@ -142,7 +160,7 @@
   "musica": "auto",
   "portada_segundo": 1.2,
   "qa_ok": false,
-  "caption": "Los estiramientos no evitaron lesiones. El entrenamiento de fuerza las redujo a menos de un tercio.\n\nEs la conclusión de un metaanálisis de 25 ensayos controlados con más de 26.000 deportistas. Compararon distintos programas de prevención: estirar no cambió el riesgo de lesión de forma significativa, el trabajo de propiocepción lo bajó alrededor de un 45 % y la fuerza, alrededor de un 68 %. Las lesiones por sobrecarga, las típicas de quien corre mucho, casi se redujeron a la mitad con los programas de ejercicio.\n\nLimitaciones: los ensayos venían de deportes y poblaciones muy distintas, con resultados heterogéneos, y ninguno era de HYROX ni OCR. La cifra exacta de la fuerza tiene un margen amplio. La dirección, en cambio, es clara.\n\nCómo aplicarlo:\nDos sesiones de fuerza a la semana, también cerca de la carrera.\nPrioriza piernas y cadera.\nSi te gusta estirar, adelante, pero no a costa de la fuerza.\n\n¿Sigues estirando antes de entrenar o ya lo cambiaste por otra cosa?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nLauersen JB, et al. (2014). The effectiveness of exercise interventions to prevent sports injuries. British Journal of Sports Medicine.\n\nVídeo: Pexels",
+  "caption": "Los estiramientos no evitaron lesiones. El entrenamiento de fuerza las redujo a menos de un tercio.\n\nEs la conclusión de un metaanálisis de 25 ensayos controlados con más de 26.000 deportistas. Compararon distintos programas de prevención: estirar no cambió el riesgo de lesión de forma significativa, el trabajo de propiocepción lo bajó alrededor de un 45 % y la fuerza, alrededor de un 68 %. Las lesiones por sobrecarga, las típicas de quien corre mucho, casi se redujeron a la mitad con los programas de ejercicio.\n\nLimitaciones: los ensayos venían de deportes y poblaciones muy distintas, con resultados heterogéneos, y ninguno era de HYROX ni OCR. La cifra exacta de la fuerza tiene un margen amplio. La dirección, en cambio, es clara.\n\nCómo aplicarlo:\nDos sesiones de fuerza a la semana, también cerca de la carrera.\nPrioriza piernas y cadera.\nSi te gusta estirar, adelante, pero no a costa de la fuerza.\n\n¿Sigues estirando antes de entrenar o ya lo cambiaste por otra cosa?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nLauersen JB, et al. (2014). The effectiveness of exercise interventions to prevent sports injuries. British Journal of Sports Medicine.\n\nVídeo: Pixabay",
   "hashtags": [
     "#prevenciondelesiones",
     "#entrenamientodefuerza",

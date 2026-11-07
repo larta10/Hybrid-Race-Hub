@@ -1,86 +1,27 @@
-// Pexels Video API: búsqueda con filtros y descarga en caché (video/cache/{id}.mp4).
-import { existsSync, createWriteStream, renameSync, statSync, unlinkSync } from "node:fs";
+// Clips de stock: original en video/cache/ (D:\hrh-video), versión vertical recortada al tramo usado
+// y subida a NUESTRO almacenamiento (Supabase, bucket "instagram", carpeta clips/).
+// Nunca se enlaza a las URLs de Pixabay: el render usa siempre la copia propia.
+import { existsSync, createWriteStream, renameSync, statSync, unlinkSync, readFileSync } from "node:fs";
 import { Readable } from "node:stream";
 import { pipeline } from "node:stream/promises";
+import { createHash } from "node:crypto";
 import path from "node:path";
-import { CACHE, mkdirp } from "./common.mjs";
+import { CACHE, mkdirp, ffmpeg } from "./common.mjs";
 
-const API = "https://api.pexels.com/videos";
+const SUPABASE_URL = process.env.SUPABASE_URL || "https://ssyljhtganuaanczxeep.supabase.co";
+const BUCKET = "instagram";
+export const W = 1080;
+export const H = 1920;
 
-function key() {
-  const k = process.env.PEXELS_API_KEY;
-  if (!k) throw new Error("Falta PEXELS_API_KEY (en .env.local o como secreto de GitHub)");
-  return k;
-}
+export const clipKey = (c) => (c?.fuente && c?.id ? `${c.fuente}-${c.id}` : null);
+export const origenPath = (c) => path.join(CACHE, `${clipKey(c)}.mp4`);
 
-async function api(pathname, params = {}) {
-  const url = new URL(API + pathname);
-  for (const [k, v] of Object.entries(params)) url.searchParams.set(k, String(v));
-  for (let a = 0; ; a++) {
-    const r = await fetch(url, { headers: { Authorization: key() } });
-    if (r.status === 429 && a < 3) {
-      await new Promise((ok) => setTimeout(ok, 5000 * (a + 1)));
-      continue;
-    }
-    if (!r.ok) throw new Error(`Pexels ${r.status} en ${url.pathname}`);
-    return r.json();
-  }
-}
-
-/** Mejor archivo del vídeo: lado corto ≥ 1080 si existe (sin pasar de 4K), mp4 */
-export function bestFile(video) {
-  const files = (video.video_files || []).filter((f) => f.file_type === "video/mp4" && f.width && f.height);
-  const corto = (f) => Math.min(f.width, f.height);
-  const hd = files.filter((f) => corto(f) >= 1080 && corto(f) <= 2160).sort((a, b) => corto(a) - corto(b));
-  if (hd.length) return hd[0];
-  const ok = files.filter((f) => corto(f) >= 720).sort((a, b) => corto(b) - corto(a));
-  return ok[0] || null;
-}
-
-/**
- * Candidatos para una escena, mejor primero. Filtros: mínimo HD, duración suficiente,
- * vertical primero y luego horizontal (recortable a 9:16 ajustando centro_x).
- */
-export async function searchCandidates(query, minDur, excluir = new Set()) {
-  const out = [];
-  for (const orientation of ["portrait", "landscape"]) {
-    const data = await api("/search", { query, orientation, size: "medium", per_page: 40 });
-    for (const v of data.videos || []) {
-      if (excluir.has(String(v.id)) || out.some((o) => o.id === v.id)) continue;
-      if (v.duration < minDur) continue;
-      const f = bestFile(v);
-      if (!f) continue;
-      out.push({ ...v, file: f, orientation });
-    }
-  }
-  return out;
-}
-
-export function toClip(v, query, previo = {}) {
-  return {
-    query,
-    pexels_id: String(v.id),
-    url: v.url,
-    autor: v.user?.name || "",
-    autor_url: v.user?.url || "",
-    archivo_url: v.file.link,
-    ancho: v.file.width,
-    alto: v.file.height,
-    duracion_clip: v.duration,
-    inicio: previo.inicio ?? (v.duration > 8 ? 1 : 0),
-    recorte: previo.recorte || { centro_x: 0.5, centro_y: 0.5, zoom: 1 },
-    revisado: false,
-  };
-}
-
-/** Descarga (con caché) y devuelve la ruta local */
-export async function downloadClip(clip) {
-  mkdirp(CACHE);
-  const dest = path.join(CACHE, `${clip.pexels_id}.mp4`);
+async function download(url, dest) {
   if (existsSync(dest) && statSync(dest).size > 10000) return dest;
+  mkdirp(path.dirname(dest));
   const tmp = `${dest}.part`;
-  const r = await fetch(clip.archivo_url, { redirect: "follow" });
-  if (!r.ok || !r.body) throw new Error(`No se pudo descargar el clip ${clip.pexels_id} (${r.status})`);
+  const r = await fetch(url, { redirect: "follow" });
+  if (!r.ok || !r.body) throw new Error(`Descarga fallida (${r.status}) ${path.basename(dest)}`);
   try {
     await pipeline(Readable.fromWeb(r.body), createWriteStream(tmp));
     renameSync(tmp, dest);
@@ -89,4 +30,60 @@ export async function downloadClip(clip) {
     throw e;
   }
   return dest;
+}
+
+/** Original (máxima calidad elegida) en la caché local */
+export const downloadOrigen = (c) => download(c.archivo_origen, origenPath(c));
+export const downloadPreview = (cand) => download(cand.preview, path.join(CACHE, "prev", `${cand.fuente}-${cand.id}.mp4`));
+
+/** Ventana de recorte 9:16 sobre el original, centrada en centro_x/centro_y y con zoom */
+export function cropBox(c) {
+  const { ancho: w, alto: h } = c;
+  const r = c.recorte || {};
+  const zoom = Math.max(1, r.zoom || 1);
+  let cw, ch;
+  if (w / h > 9 / 16) [ch, cw] = [h, (h * 9) / 16];
+  else [cw, ch] = [w, (w * 16) / 9];
+  cw = Math.floor(cw / zoom / 2) * 2;
+  ch = Math.floor(ch / zoom / 2) * 2;
+  const x = Math.round(Math.min(w - cw, Math.max(0, (r.centro_x ?? 0.5) * w - cw / 2)));
+  const y = Math.round(Math.min(h - ch, Math.max(0, (r.centro_y ?? 0.5) * h - ch / 2)));
+  return { cw, ch, x, y };
+}
+
+/** Huella del recorte: si cambian el clip, el inicio, la duración o el encuadre, se regenera */
+export const prepHash = (c, dur) => createHash("sha1").update(JSON.stringify([clipKey(c), c.inicio, dur, c.recorte])).digest("hex").slice(0, 8);
+
+/**
+ * Versión vertical 1080x1920 del tramo [inicio, inicio + dur + 0,5 s], sin audio.
+ * Devuelve la ruta local (video/cache/v/...).
+ */
+export async function prepareVertical(c, dur) {
+  await downloadOrigen(c);
+  const name = `${clipKey(c)}-${prepHash(c, dur)}.mp4`;
+  const out = path.join(mkdirp(path.join(CACHE, "v")), name);
+  if (!existsSync(out)) {
+    const { cw, ch, x, y } = cropBox(c);
+    ffmpeg(["-ss", String(c.inicio || 0), "-t", String(dur + 0.5), "-i", origenPath(c), "-an", "-vf", `crop=${cw}:${ch}:${x}:${y},scale=${W}:${H}:flags=lanczos,fps=30,format=yuv420p`, "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-movflags", "+faststart", out]);
+  }
+  return { file: out, archivo: `clips/${name}` };
+}
+
+/** Sube la versión vertical a nuestro bucket (necesita la service role key) */
+export async function uploadClip(file, archivo) {
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY;
+  if (!key) throw new Error("Falta SUPABASE_SERVICE_ROLE_KEY para subir el clip");
+  const r = await fetch(`${SUPABASE_URL}/storage/v1/object/${BUCKET}/${archivo}`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${key}`, apikey: key, "Content-Type": "video/mp4", "x-upsert": "true", "cache-control": "31536000" },
+    body: readFileSync(file),
+  });
+  if (!r.ok) throw new Error(`Subida del clip ${archivo}: ${r.status} ${await r.text()}`);
+}
+
+/** Copia local del clip vertical: de la caché o, si no está, de nuestro bucket público */
+export async function localClip(c) {
+  if (!c?.archivo) throw new Error("clip sin preparar");
+  const dest = path.join(CACHE, "v", path.basename(c.archivo));
+  return download(`${SUPABASE_URL}/storage/v1/object/public/${BUCKET}/${c.archivo}`, dest);
 }

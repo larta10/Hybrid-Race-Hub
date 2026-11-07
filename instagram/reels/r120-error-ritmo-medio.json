@@ -9,7 +9,10 @@
       "duracion": 2,
       "clip": {
         "query": "runner",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -24,7 +27,10 @@
       "duracion": 3,
       "clip": {
         "query": "jogging",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -42,7 +48,10 @@
       "duracion": 5,
       "clip": {
         "query": "runner track",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -96,7 +105,10 @@
       "duracion": 4,
       "clip": {
         "query": "interval sprint track",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -123,7 +135,10 @@
       "duracion": 3,
       "clip": {
         "query": "runner road",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -149,7 +164,10 @@
   ],
   "clip_final": {
     "query": "runner road",
-    "pexels_id": null,
+    "fuente": null,
+    "id": null,
+    "url_pagina": null,
+    "autor": null,
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
@@ -161,7 +179,7 @@
   "musica": "auto",
   "portada_segundo": 1.2,
   "qa_ok": false,
-  "caption": "Si todos tus entrenos acaban al mismo ritmo, ni fácil ni duro, tienes margen de mejora.\n\nEn un estudio de 2014, 48 deportistas de resistencia bien entrenados (corredores, ciclistas, triatletas y esquiadores de fondo) siguieron durante 9 semanas uno de cuatro modelos. El polarizado, con el 68 % del tiempo suave, un 6 % en umbral y un 26 % intenso, mejoró el VO2pico un 11,7 %, además del tiempo hasta el agotamiento y la velocidad máxima. El grupo que pasaba más de la mitad del tiempo en umbral no consiguió mejoras adicionales.\n\nLimitaciones: son 48 personas repartidas en cuatro grupos y solo 9 semanas. Y no eran atletas híbridos con trabajo de fuerza, así que tómalo como una pista sobre cómo repartir la intensidad, no como una receta cerrada.\n\nCómo aplicarlo:\nRodajes suaves de verdad, hablando sin esfuerzo.\n1-2 sesiones intensas de verdad a la semana.\nRevisa tus zonas: si todo es zona media, ahí está tu margen.\n\n¿Cómo son tus rodajes suaves, suaves de verdad?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nStöggl T, Sperlich B. (2014). Polarized training has greater impact on key endurance variables than threshold, high intensity, or high volume training. Frontiers in Physiology.\n\nVídeo: Pexels",
+  "caption": "Si todos tus entrenos acaban al mismo ritmo, ni fácil ni duro, tienes margen de mejora.\n\nEn un estudio de 2014, 48 deportistas de resistencia bien entrenados (corredores, ciclistas, triatletas y esquiadores de fondo) siguieron durante 9 semanas uno de cuatro modelos. El polarizado, con el 68 % del tiempo suave, un 6 % en umbral y un 26 % intenso, mejoró el VO2pico un 11,7 %, además del tiempo hasta el agotamiento y la velocidad máxima. El grupo que pasaba más de la mitad del tiempo en umbral no consiguió mejoras adicionales.\n\nLimitaciones: son 48 personas repartidas en cuatro grupos y solo 9 semanas. Y no eran atletas híbridos con trabajo de fuerza, así que tómalo como una pista sobre cómo repartir la intensidad, no como una receta cerrada.\n\nCómo aplicarlo:\nRodajes suaves de verdad, hablando sin esfuerzo.\n1-2 sesiones intensas de verdad a la semana.\nRevisa tus zonas: si todo es zona media, ahí está tu margen.\n\n¿Cómo son tus rodajes suaves, suaves de verdad?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nStöggl T, Sperlich B. (2014). Polarized training has greater impact on key endurance variables than threshold, high intensity, or high volume training. Frontiers in Physiology.\n\nVídeo: Pixabay",
   "hashtags": [
     "#entrenamientopolarizado",
     "#running",

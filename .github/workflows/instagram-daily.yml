@@ -54,7 +54,7 @@ jobs:
         working-directory: video
         run: npm ci
 
-      # Clips de Pexels ya descargados (se vuelven a bajar por id si faltan)
+      # Clips verticales ya preparados (si faltan, se bajan de nuestro bucket, nunca de Pixabay)
       - name: Caché de clips
         uses: actions/cache@v4
         with:
@@ -69,6 +69,7 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'true' || 'false' }}
         run: node scripts/instagram/publish.mjs

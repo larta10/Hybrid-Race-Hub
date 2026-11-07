@@ -26,7 +26,7 @@ export const loadCalendarClips = () => {
   return existsSync(f) ? JSON.parse(readFileSync(f, "utf8")) : null;
 };
 
-const clipOk = (c) => Boolean(c?.sin_clip || (c?.pexels_id && c?.archivo_url && c?.revisado === true));
+const clipOk = (c) => Boolean(c?.sin_clip || (c?.fuente && c?.id && c?.archivo && c?.revisado === true));
 const slots = (r) => [...(r.escenas || []).map((e) => e.clip), ...(r.clip_final ? [r.clip_final] : [])];
 
 /**
@@ -111,8 +111,8 @@ export function validateReel(r, post) {
     }
     for (const m of s.musculo || []) {
       req(m.nombre, `${n}: músculo sin nombre`);
-      if (m.pexels_id) {
-        req(m.pexels_id === s.clip?.pexels_id, `${n}: el músculo ${m.nombre} se colocó para otro clip`);
+      if (m.clip) {
+        req(m.clip === `${s.clip?.fuente}-${s.clip?.id}`, `${n}: el músculo ${m.nombre} se colocó para otro clip`);
         req(typeof m.x === "number" && typeof m.y === "number" && m.x >= 0 && m.x <= 1 && m.y >= 0 && m.y <= 1, `${n}: coordenadas de ${m.nombre} entre 0 y 1`);
       }
     }
@@ -131,7 +131,7 @@ export function validateReel(r, post) {
     req((cap.match(EMOJI) || []).length <= 2, "máximo 2 emojis en el caption");
     req(cap.includes("Más en hybridracehub.com (enlace en la bio)"), 'falta "Más en hybridracehub.com (enlace en la bio)"');
     req(/\?/.test(cap), "el caption debe incluir una pregunta");
-    req(/\nVídeo: Pexels\s*$/.test(cap), 'el caption debe terminar con "Vídeo: Pexels"');
+    req(/\nVídeo: Pixabay\s*$/.test(cap), 'el caption debe terminar con "Vídeo: Pixabay" (la música CC BY se añade al publicar)');
     req(!/carrusel|desliza/i.test(cap), "el caption habla de carrusel o de deslizar");
     if (fuentes.length) {
       req(/\nFuentes?:/.test(cap), 'falta el bloque "Fuentes:"');

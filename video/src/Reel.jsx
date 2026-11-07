@@ -26,11 +26,13 @@ export function Musica({ music, total }) {
 function Escena({ s, assets, reel }) {
   const dur = s.hasta - s.desde;
   const e = s.escena;
+  const src = assets?.clips?.[String(s.i)];
   // Los anillos solo se dibujan sobre el clip para el que se colocaron a mano
-  const musculos = (e.musculo || []).filter((m) => m.pexels_id && m.pexels_id === e.clip?.pexels_id && assets?.clips?.[m.pexels_id]);
+  const clave = e.clip?.fuente && e.clip?.id ? `${e.clip.fuente}-${e.clip.id}` : null;
+  const musculos = (e.musculo || []).filter((m) => src && m.clip && m.clip === clave && typeof m.x === "number");
   return (
     <AbsoluteFill>
-      <Fondo clip={e.clip} assets={assets} duracion={dur} semilla={s.i} oscuro={s.tipo === "grafica" ? 0.5 : 0.4} desenfoque={s.tipo === "grafica" ? 6 : 0} />
+      <Fondo src={src} duracion={dur} semilla={s.i} oscuro={s.tipo === "grafica" ? 0.5 : 0.4} desenfoque={s.tipo === "grafica" ? 6 : 0} />
       {musculos.length > 0 && <SenalarMusculo musculos={musculos} />}
       {s.tipo === "gancho" && <Gancho texto={reel.gancho} duracion={dur} />}
       {s.tipo === "grafica" && <GraficaAnimada grafica={e.grafica} duracion={dur} />}
@@ -48,7 +50,6 @@ export function Reel({ reel, assets }) {
   const frame = useCurrentFrame();
   const segs = buildTimeline(reel, assets?.music);
   const total = totalFrames(segs);
-  const fondoFinal = reel.clip_final || reel.escenas[reel.escenas.length - 1].clip;
   const cierre = segs.find((s) => s.tipo === "cierre");
   return (
     <AbsoluteFill style={{ backgroundColor: "#0B0C0F" }}>
@@ -58,7 +59,7 @@ export function Reel({ reel, assets }) {
             <Escena s={s} assets={assets} reel={reel} />
           ) : (
             <AbsoluteFill>
-              <Fondo clip={fondoFinal} assets={assets} duracion={s.hasta - s.desde} semilla={k} oscuro={0.5} desenfoque={8} />
+              <Fondo src={assets?.clips?.final} duracion={s.hasta - s.desde} semilla={k} oscuro={0.5} desenfoque={8} />
               {s.tipo === "conclusion" && <Conclusion lineas={reel.conclusion} duracion={s.hasta - s.desde} />}
               {s.tipo === "aplicacion" && <Aplicacion puntos={reel.aplicacion} duracion={s.hasta - s.desde} />}
               {s.tipo === "cierre" && <TarjetaFinal duracion={s.hasta - s.desde} />}

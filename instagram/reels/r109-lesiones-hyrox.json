@@ -9,7 +9,10 @@
       "duracion": 2,
       "clip": {
         "query": "athlete knee pain",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -24,7 +27,10 @@
       "duracion": 3,
       "clip": {
         "query": "crossfit training gym",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -43,7 +49,10 @@
       "duracion": 4,
       "clip": {
         "query": "athlete resting gym",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -67,7 +76,10 @@
       "duracion": 4,
       "clip": {
         "query": "runner training",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -91,7 +103,10 @@
       "duracion": 3,
       "clip": {
         "query": "runner knee",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -108,7 +123,7 @@
       "musculo": [
         {
           "nombre": "Rodilla",
-          "pexels_id": null,
+          "clip": null,
           "x": null,
           "y": null,
           "keyframes": []
@@ -127,7 +142,10 @@
   ],
   "clip_final": {
     "query": "gym crossfit training",
-    "pexels_id": null,
+    "fuente": null,
+    "id": null,
+    "url_pagina": null,
+    "autor": null,
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
@@ -139,7 +157,7 @@
   "musica": "auto",
   "portada_segundo": 1.2,
   "qa_ok": false,
-  "caption": "3 de cada 10 atletas de HYROX tienen alguna molestia en una semana cualquiera. Si te pasa, no estás solo.\n\nInvestigadores de la Universidad de Bath siguieron a 89 atletas de HYROX durante 12 semanas con un cuestionario semanal. De media, el 30 % tenía algún problema de salud cada semana y el 18 % uno importante. El 73 % de las lesiones fueron por sobrecarga, la rodilla fue la zona más afectada y haber tenido una lesión previa fue la señal de riesgo más fuerte. Otro dato: solo la mitad de los problemas hicieron perder días de entreno, así que mucha gente entrena con molestias.\n\nLimitaciones: 89 personas, no todas respondieron todas las semanas, y la parte de factores de riesgo es exploratoria. Habrá que confirmarlo con más atletas.\n\nLo que nos llevamos:\nSubir la carrera poco a poco.\nApuntar las molestias, no solo los entrenos.\nSi vienes de una lesión, que alguien revise tu plan.\n\n¿Cuál es la molestia que más se repite en tu grupo de entreno?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nChittenden E, et al. (2026). Prevalence, burden and risk markers of health problems in HYROX athletes: a 12-week prospective cohort study. Frontiers in Sports and Active Living.\n\nVídeo: Pexels",
+  "caption": "3 de cada 10 atletas de HYROX tienen alguna molestia en una semana cualquiera. Si te pasa, no estás solo.\n\nInvestigadores de la Universidad de Bath siguieron a 89 atletas de HYROX durante 12 semanas con un cuestionario semanal. De media, el 30 % tenía algún problema de salud cada semana y el 18 % uno importante. El 73 % de las lesiones fueron por sobrecarga, la rodilla fue la zona más afectada y haber tenido una lesión previa fue la señal de riesgo más fuerte. Otro dato: solo la mitad de los problemas hicieron perder días de entreno, así que mucha gente entrena con molestias.\n\nLimitaciones: 89 personas, no todas respondieron todas las semanas, y la parte de factores de riesgo es exploratoria. Habrá que confirmarlo con más atletas.\n\nLo que nos llevamos:\nSubir la carrera poco a poco.\nApuntar las molestias, no solo los entrenos.\nSi vienes de una lesión, que alguien revise tu plan.\n\n¿Cuál es la molestia que más se repite en tu grupo de entreno?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nChittenden E, et al. (2026). Prevalence, burden and risk markers of health problems in HYROX athletes: a 12-week prospective cohort study. Frontiers in Sports and Active Living.\n\nVídeo: Pixabay",
   "hashtags": [
     "#hyrox",
     "#hyroxspain",

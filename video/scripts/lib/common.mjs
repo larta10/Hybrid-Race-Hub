@@ -53,10 +53,10 @@ export const reelIds = () =>
 
 /** Todos los clips de un guion (escenas + fondo final), con la duración que necesita cada uno */
 export function clipSlots(reel) {
-  const slots = (reel.escenas || []).map((e, i) => ({ clip: e.clip, duracion: e.duracion, donde: `escena ${i + 1}` }));
-  if (reel.clip_final) slots.push({ clip: reel.clip_final, duracion: 9.5, donde: "fondo final" });
+  const slots = (reel.escenas || []).map((e, i) => ({ clip: e.clip, duracion: e.duracion, donde: `escena ${i + 1}`, clave: String(i) }));
+  if (reel.clip_final) slots.push({ clip: reel.clip_final, duracion: 9.5, donde: "fondo final", clave: "final" });
   return slots.filter((s) => s.clip);
 }
 
-/** Un clip está listo para publicarse si tiene id, archivo y lo ha revisado una persona (o Claude) a ojo */
-export const clipListo = (c) => Boolean(c?.pexels_id && c?.archivo_url && c?.revisado === true);
+/** Un clip está listo si tiene fuente, id, copia propia recortada (archivo) y se ha revisado a ojo */
+export const clipListo = (c) => Boolean(c?.sin_clip || (c?.fuente && c?.id && c?.archivo && c?.revisado === true));

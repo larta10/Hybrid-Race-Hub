@@ -9,7 +9,10 @@
       "duracion": 2,
       "clip": {
         "query": "rope climb",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -24,7 +27,10 @@
       "duracion": 3,
       "clip": {
         "query": "rope climb gym",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -42,7 +48,10 @@
       "duracion": 4.5,
       "clip": {
         "query": "rope climb crossfit",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -59,7 +68,7 @@
       "musculo": [
         {
           "nombre": "Cuádriceps",
-          "pexels_id": null,
+          "clip": null,
           "x": null,
           "y": null,
           "keyframes": []
@@ -70,7 +79,10 @@
       "duracion": 3,
       "clip": {
         "query": "climbing rope",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -88,7 +100,10 @@
       "duracion": 3,
       "clip": {
         "query": "obstacle course race",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -114,7 +129,10 @@
   ],
   "clip_final": {
     "query": "obstacle course race mud",
-    "pexels_id": null,
+    "fuente": null,
+    "id": null,
+    "url_pagina": null,
+    "autor": null,
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
@@ -126,7 +144,7 @@
   "musica": "auto",
   "portada_segundo": 1.2,
   "qa_ok": false,
-  "caption": "Si subes la cuerda solo con los brazos, el problema no es tu fuerza. Es que no estás usando los pies.\n\nEl bloqueo de pies es la diferencia entre llegar arriba con agarre de sobra o quedarte a mitad. La cuerda pasa por fuera de un pie y el otro la pisa por encima. Subes las rodillas, bloqueas y te pones de pie: las piernas hacen el trabajo y los brazos solo sujetan. Para bajar, el mismo bloqueo te frena sin quemarte las manos.\n\nEsto es técnica, no un estudio. No conocemos investigación que compare formas de subir cuerda en OCR, así que te lo explicamos sin cifras.\n\nCómo aprenderlo:\nPrimero el bloqueo sentado, con la cuerda colgando.\nLuego ciclos cortos de un metro.\nAgarre al final, con colgados en cuerda o toalla.\n\n¿Ya dominas el bloqueo o sigues subiendo a pulso?\n\nMás en hybridracehub.com (enlace en la bio)\n\nVídeo: Pexels",
+  "caption": "Si subes la cuerda solo con los brazos, el problema no es tu fuerza. Es que no estás usando los pies.\n\nEl bloqueo de pies es la diferencia entre llegar arriba con agarre de sobra o quedarte a mitad. La cuerda pasa por fuera de un pie y el otro la pisa por encima. Subes las rodillas, bloqueas y te pones de pie: las piernas hacen el trabajo y los brazos solo sujetan. Para bajar, el mismo bloqueo te frena sin quemarte las manos.\n\nEsto es técnica, no un estudio. No conocemos investigación que compare formas de subir cuerda en OCR, así que te lo explicamos sin cifras.\n\nCómo aprenderlo:\nPrimero el bloqueo sentado, con la cuerda colgando.\nLuego ciclos cortos de un metro.\nAgarre al final, con colgados en cuerda o toalla.\n\n¿Ya dominas el bloqueo o sigues subiendo a pulso?\n\nMás en hybridracehub.com (enlace en la bio)\n\nVídeo: Pixabay",
   "hashtags": [
     "#ocr",
     "#ocrspain",

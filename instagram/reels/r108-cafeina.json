@@ -9,7 +9,10 @@
       "duracion": 2,
       "clip": {
         "query": "runner intense training",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -24,7 +27,10 @@
       "duracion": 3,
       "clip": {
         "query": "espresso coffee cup",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -43,7 +49,10 @@
       "duracion": 4,
       "clip": {
         "query": "coffee beans",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -67,7 +76,10 @@
       "duracion": 4.5,
       "clip": {
         "query": "gym training",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -110,7 +122,10 @@
       "duracion": 3,
       "clip": {
         "query": "runner warm up",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -136,7 +151,10 @@
   ],
   "clip_final": {
     "query": "runner road",
-    "pexels_id": null,
+    "fuente": null,
+    "id": null,
+    "url_pagina": null,
+    "autor": null,
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
@@ -148,7 +166,7 @@
   "musica": "auto",
   "portada_segundo": 1.2,
   "qa_ok": false,
-  "caption": "El café antes de la carrera tiene base científica. La dosis y el momento, también.\n\nLa Sociedad Internacional de Nutrición Deportiva (ISSN) revisó en 2021 todo lo publicado sobre cafeína y rendimiento. Su conclusión: con 3-6 mg por kilo de peso mejora el rendimiento de forma consistente, sobre todo en resistencia aeróbica, y la dosis mínima útil podría estar en unos 2 mg/kg. Lo más habitual es tomarla una hora antes; el chicle con cafeína puede necesitar menos espera. Para alguien de 70 kg, 3 mg/kg son unos 210 mg.\n\nLimitaciones: es un posicionamiento de expertos, no un estudio nuevo, y varios autores declaran vínculos con empresas de suplementos. Además, la respuesta cambia mucho entre personas: genética, cuánto café tomas a diario, cómo duermes. A algunos les quita el sueño o les dispara los nervios.\n\nCómo aplicarlo:\nPruébala en un entreno duro antes que en carrera.\nEmpieza por la parte baja del rango.\nSi tienes problemas de corazón, ansiedad o tomas medicación, pregunta antes a tu médico.\n\n¿Eres de café antes de competir o lo evitas?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nGuest NS, et al. (2021). International society of sports nutrition position stand: caffeine and exercise performance. Journal of the International Society of Sports Nutrition.\n\nVídeo: Pexels",
+  "caption": "El café antes de la carrera tiene base científica. La dosis y el momento, también.\n\nLa Sociedad Internacional de Nutrición Deportiva (ISSN) revisó en 2021 todo lo publicado sobre cafeína y rendimiento. Su conclusión: con 3-6 mg por kilo de peso mejora el rendimiento de forma consistente, sobre todo en resistencia aeróbica, y la dosis mínima útil podría estar en unos 2 mg/kg. Lo más habitual es tomarla una hora antes; el chicle con cafeína puede necesitar menos espera. Para alguien de 70 kg, 3 mg/kg son unos 210 mg.\n\nLimitaciones: es un posicionamiento de expertos, no un estudio nuevo, y varios autores declaran vínculos con empresas de suplementos. Además, la respuesta cambia mucho entre personas: genética, cuánto café tomas a diario, cómo duermes. A algunos les quita el sueño o les dispara los nervios.\n\nCómo aplicarlo:\nPruébala en un entreno duro antes que en carrera.\nEmpieza por la parte baja del rango.\nSi tienes problemas de corazón, ansiedad o tomas medicación, pregunta antes a tu médico.\n\n¿Eres de café antes de competir o lo evitas?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nGuest NS, et al. (2021). International society of sports nutrition position stand: caffeine and exercise performance. Journal of the International Society of Sports Nutrition.\n\nVídeo: Pixabay",
   "hashtags": [
     "#nutriciondeportiva",
     "#cafeina",

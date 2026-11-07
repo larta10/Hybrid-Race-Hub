@@ -39,16 +39,15 @@ function Lista({ carreras, rango }) {
   );
 }
 
-export function Calendario({ carreras, rango, clips = [], assets }) {
+export function Calendario({ carreras, rango, assets }) {
   const frame = useCurrentFrame();
   const segs = buildCalendarTimeline(carreras.length, assets?.music);
   const total = segs[segs.length - 1].hasta;
-  const clip = (k) => clips[k % Math.max(1, clips.length)];
   return (
     <AbsoluteFill style={{ backgroundColor: "#0B0C0F" }}>
       {segs.map((s, k) => (
         <Sequence key={k} from={s.desde} durationInFrames={s.hasta - s.desde}>
-          <Fondo clip={clip(k)} assets={assets} duracion={s.hasta - s.desde} semilla={k} oscuro={s.tipo === "gancho" ? 0.4 : 0.55} desenfoque={s.tipo === "gancho" ? 0 : 6} />
+          <Fondo src={assets?.clips?.[String(k)]} duracion={s.hasta - s.desde} semilla={k} oscuro={s.tipo === "gancho" ? 0.4 : 0.55} desenfoque={s.tipo === "gancho" ? 0 : 6} />
           {s.tipo === "gancho" && <Gancho texto={`${carreras.length} carreras *híbridas* en 3 semanas`} duracion={s.hasta - s.desde} />}
           {s.tipo === "lista" && <Lista carreras={carreras} rango={rango} />}
           {s.tipo === "conclusion" && <Conclusion lineas={["¿Ya tienes", "*dorsal*?"]} duracion={s.hasta - s.desde} />}

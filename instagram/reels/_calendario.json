@@ -6,7 +6,10 @@
       "duracion": 2,
       "clip": {
         "query": "obstacle course race",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -20,7 +23,10 @@
       "duracion": 10,
       "clip": {
         "query": "fitness competition crowd",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -34,7 +40,10 @@
       "duracion": 3,
       "clip": {
         "query": "trail running race",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
@@ -48,7 +57,10 @@
       "duracion": 2,
       "clip": {
         "query": "runners race start",
-        "pexels_id": null,
+        "fuente": null,
+        "id": null,
+        "url_pagina": null,
+        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
