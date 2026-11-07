@@ -1,0 +1,172 @@
+{
+  "id": "r120-error-ritmo-medio",
+  "pilar": "errores",
+  "post_carrusel_id": "120-error-ritmo-medio",
+  "duracion_objetivo": 26.5,
+  "gancho": "Siempre a ritmo *medio*, siempre igual",
+  "escenas": [
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "runner",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": []
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "jogging",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Ni suave ni duro",
+        "La zona gris se come tu semana"
+      ]
+    },
+    {
+      "duracion": 5,
+      "clip": {
+        "query": "runner track",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "agrupadas",
+        "titulo": "Cómo repartían la intensidad",
+        "subtitulo": "% del tiempo de entrenamiento en cada zona",
+        "etiqueta": "estudio",
+        "fuente": "Stöggl y Sperlich, 2014, Frontiers in Physiology",
+        "series": [
+          "Polarizado",
+          "Umbral"
+        ],
+        "sufijo": " %",
+        "grupos": [
+          {
+            "etiqueta": "Baja",
+            "valores": [
+              68,
+              46
+            ]
+          },
+          {
+            "etiqueta": "Umbral",
+            "valores": [
+              6,
+              54
+            ]
+          },
+          {
+            "etiqueta": "Alta",
+            "valores": [
+              26,
+              0
+            ]
+          }
+        ],
+        "destacar": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "duracion": 4,
+      "clip": {
+        "query": "interval sprint track",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "contador",
+        "titulo": "Polarizado en 9 semanas",
+        "etiqueta": "estudio",
+        "fuente": "Stöggl y Sperlich, 2014, Frontiers in Physiology",
+        "valor": 11.7,
+        "prefijo": "+",
+        "sufijo": " %",
+        "unidad": "VO2pico",
+        "grande": false,
+        "texto": "La mayor mejora de los cuatro modelos. El de umbral no mejoró más."
+      }
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "runner road",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Mucho fácil, algo muy duro",
+        "y poco en tierra de nadie"
+      ]
+    }
+  ],
+  "conclusion": [
+    "Suave de verdad,",
+    "duro de *verdad*"
+  ],
+  "aplicacion": [
+    "Rodajes en los que puedas hablar",
+    "1-2 sesiones duras de verdad",
+    "Revisa tus zonas en el reloj"
+  ],
+  "clip_final": {
+    "query": "runner road",
+    "pexels_id": null,
+    "inicio": 1,
+    "recorte": {
+      "centro_x": 0.5,
+      "centro_y": 0.5,
+      "zoom": 1
+    },
+    "revisado": false
+  },
+  "musica": "auto",
+  "portada_segundo": 1.2,
+  "qa_ok": false,
+  "caption": "Si todos tus entrenos acaban al mismo ritmo, ni fácil ni duro, tienes margen de mejora.\n\nEn un estudio de 2014, 48 deportistas de resistencia bien entrenados (corredores, ciclistas, triatletas y esquiadores de fondo) siguieron durante 9 semanas uno de cuatro modelos. El polarizado, con el 68 % del tiempo suave, un 6 % en umbral y un 26 % intenso, mejoró el VO2pico un 11,7 %, además del tiempo hasta el agotamiento y la velocidad máxima. El grupo que pasaba más de la mitad del tiempo en umbral no consiguió mejoras adicionales.\n\nLimitaciones: son 48 personas repartidas en cuatro grupos y solo 9 semanas. Y no eran atletas híbridos con trabajo de fuerza, así que tómalo como una pista sobre cómo repartir la intensidad, no como una receta cerrada.\n\nCómo aplicarlo:\nRodajes suaves de verdad, hablando sin esfuerzo.\n1-2 sesiones intensas de verdad a la semana.\nRevisa tus zonas: si todo es zona media, ahí está tu margen.\n\n¿Cómo son tus rodajes suaves, suaves de verdad?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nStöggl T, Sperlich B. (2014). Polarized training has greater impact on key endurance variables than threshold, high intensity, or high volume training. Frontiers in Physiology.\n\nVídeo: Pexels",
+  "hashtags": [
+    "#entrenamientopolarizado",
+    "#running",
+    "#hyrox",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

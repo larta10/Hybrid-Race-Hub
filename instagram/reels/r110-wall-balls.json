@@ -1,0 +1,158 @@
+{
+  "id": "r110-wall-balls",
+  "pilar": "estaciones",
+  "post_carrusel_id": "110-wall-balls",
+  "duracion_objetivo": 25,
+  "gancho": "Wall balls: aquí se *rompe* tu carrera",
+  "escenas": [
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "wall ball squat",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": []
+    },
+    {
+      "duracion": 4.5,
+      "clip": {
+        "query": "wall ball crossfit",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "comparativa",
+        "titulo": "Lactato máximo",
+        "subtitulo": "Mediana en una simulación con atletas recreativos",
+        "etiqueta": "estudio",
+        "fuente": "Brandt et al., 2025, Frontiers in Physiology",
+        "a": {
+          "etiqueta": "En la carrera",
+          "valor": 7.7,
+          "unidad": "mmol/L"
+        },
+        "b": {
+          "etiqueta": "En las estaciones",
+          "valor": 8.5,
+          "unidad": "mmol/L"
+        },
+        "destacar": "b"
+      }
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "wall ball exercise",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Pecho arriba, balón pegado",
+        "Las piernas *lanzan*"
+      ],
+      "musculo": [
+        {
+          "nombre": "Cuádriceps",
+          "pexels_id": null,
+          "x": null,
+          "y": null,
+          "keyframes": []
+        },
+        {
+          "nombre": "Glúteo mayor",
+          "pexels_id": null,
+          "x": null,
+          "y": null,
+          "keyframes": []
+        }
+      ]
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "medicine ball throw squat",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Error: talones arriba, balón lejos",
+        "Lanzas con hombros y te fundes"
+      ]
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "athlete breathing tired",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Coge aire mientras baja",
+        "Suéltalo al lanzar"
+      ]
+    }
+  ],
+  "conclusion": [
+    "Pausas cortas",
+    "> fallo *largo*"
+  ],
+  "aplicacion": [
+    "Decide tus bloques: 10x10 o 4x25",
+    "Entrénalos con piernas cansadas",
+    "Graba una serie de lado"
+  ],
+  "clip_final": {
+    "query": "gym crossfit training",
+    "pexels_id": null,
+    "inicio": 1,
+    "recorte": {
+      "centro_x": 0.5,
+      "centro_y": 0.5,
+      "zoom": 1
+    },
+    "revisado": false
+  },
+  "musica": "auto",
+  "portada_segundo": 1.2,
+  "qa_ok": false,
+  "caption": "Los wall balls son la estación donde más se dispara todo. Y llegan al final.\n\nEn el primer estudio sobre HYROX, 11 atletas recreativos hicieron una simulación completa. El lactato máximo fue más alto en las estaciones que corriendo (8,5 frente a 7,7 mmol/L de mediana) y el esfuerzo percibido también. El pico de pulso, lactato y esfuerzo llegó en la última estación: los wall balls.\n\nLimitaciones: 11 personas, simulación y no competición. Y el estudio no analizó técnica ni bloques: lo que te proponemos en el vídeo es aplicación práctica nuestra, no algo que se haya medido.\n\nLo que te ayuda:\nSentadilla con el pecho arriba y el balón pegado. Las piernas lanzan.\nCoge aire cuando el balón baja y suéltalo al lanzar.\nBloques decididos antes de salir, con pausas cortas de pie y con el balón en las manos.\n\n¿Cómo repartes tus 100 wall balls?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nBrandt T, et al. (2025). Acute physiological responses and performance determinants in Hyrox. Frontiers in Physiology.\n\nVídeo: Pexels",
+  "hashtags": [
+    "#hyrox",
+    "#wallballs",
+    "#hyroxspain",
+    "#hyroxtraining"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

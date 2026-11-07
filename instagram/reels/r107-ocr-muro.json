@@ -1,0 +1,137 @@
+{
+  "id": "r107-ocr-muro",
+  "pilar": "ocr",
+  "post_carrusel_id": "107-ocr-muro",
+  "duracion_objetivo": 25,
+  "gancho": "El muro se sube con las *piernas*",
+  "escenas": [
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "obstacle course wall climb",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": []
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "obstacle race wall",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Llegas parado y subes a pulso",
+        "Así se funde el agarre"
+      ]
+    },
+    {
+      "duracion": 4.5,
+      "clip": {
+        "query": "climbing wall obstacle",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "1. Aproximación rápida",
+        "2. Un pie empuja la pared",
+        "3. Codos sobre el borde"
+      ],
+      "musculo": [
+        {
+          "nombre": "Cuádriceps",
+          "pexels_id": null,
+          "x": null,
+          "y": null,
+          "keyframes": []
+        }
+      ]
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "obstacle course race",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "La velocidad es altura *gratis*",
+        "Engancha el talón y pasa la cadera"
+      ]
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "obstacle course race mud",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Menos tiempo colgado",
+        "más agarre para lo que queda"
+      ]
+    }
+  ],
+  "conclusion": [
+    "Impulso y talón,",
+    "no *pulso*"
+  ],
+  "aplicacion": [
+    "Pie a la pared en un cajón alto",
+    "Gancho de talón en barra baja",
+    "Practica el gesto, no solo dominadas"
+  ],
+  "clip_final": {
+    "query": "obstacle course race",
+    "pexels_id": null,
+    "inicio": 1,
+    "recorte": {
+      "centro_x": 0.5,
+      "centro_y": 0.5,
+      "zoom": 1
+    },
+    "revisado": false
+  },
+  "musica": "auto",
+  "portada_segundo": 1.2,
+  "qa_ok": false,
+  "caption": "Si subes el muro a pulso, lo estás pagando con el agarre de los obstáculos que vienen.\n\nEl error típico es llegar parado, agarrarse arriba e intentar subir con los brazos. Todo el peso cuelga de las manos. La alternativa: unos pasos rápidos de aproximación, un pie que empuja la pared hacia abajo a media altura, las manos al borde y el talón enganchado arriba para pasar la cadera. Los brazos sujetan, las piernas suben.\n\nEsto es técnica de movimiento, no un estudio. No conocemos ningún estudio que compare formas de pasar un muro en OCR, así que no te vamos a dar cifras inventadas.\n\nCómo practicarlo:\nEl pie a la pared y las manos al borde en un solo gesto, primero en un muro bajo.\nEl gancho de talón en una barra baja.\nDominadas sí, pero sin olvidar el gesto.\n\n¿Muro alto con impulso o prefieres el clásico pie en el apoyo?\n\nMás en hybridracehub.com (enlace en la bio)\n\nVídeo: Pexels",
+  "hashtags": [
+    "#ocr",
+    "#ocrspain",
+    "#carrerasdeobstaculos",
+    "#ocrtraining"
+  ],
+  "url_destino": "/blog/carreras-hibridas-principiantes-primera-prueba"
+}

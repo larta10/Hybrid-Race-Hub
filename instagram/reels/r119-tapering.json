@@ -1,0 +1,190 @@
+{
+  "id": "r119-tapering",
+  "pilar": "entrenamiento",
+  "post_carrusel_id": "119-tapering",
+  "duracion_objetivo": 27,
+  "gancho": "Antes de la carrera, *menos* volumen",
+  "escenas": [
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "runner",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": []
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "athlete tired",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Un último bloque duro",
+        "y llegas *cansado*"
+      ]
+    },
+    {
+      "duracion": 5,
+      "clip": {
+        "query": "runner road",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "barras",
+        "titulo": "La receta que mejor funcionó",
+        "subtitulo": "Tamaño del efecto en 27 estudios: más alto, más mejora",
+        "etiqueta": "estudio",
+        "fuente": "Bosquet et al., 2007, Med Sci Sports Exerc",
+        "max": 0.8,
+        "barras": [
+          {
+            "etiqueta": "Bajar el volumen un 41-60 %",
+            "valor": 0.72,
+            "destacar": true
+          },
+          {
+            "etiqueta": "Unas 2 semanas",
+            "valor": 0.59
+          },
+          {
+            "etiqueta": "Mantener la frecuencia",
+            "valor": 0.35
+          },
+          {
+            "etiqueta": "Mantener la intensidad",
+            "valor": 0.33
+          }
+        ]
+      }
+    },
+    {
+      "duracion": 4.5,
+      "clip": {
+        "query": "running track",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "area",
+        "titulo": "Bajar poco a poco",
+        "subtitulo": "Volumen semanal, % de lo habitual",
+        "etiqueta": "ilustrativo",
+        "fuente": "Ejemplo basado en Bosquet et al., 2007",
+        "x": [
+          "−14 d",
+          "−12",
+          "−10",
+          "−8",
+          "−6",
+          "−4",
+          "−2",
+          "Día"
+        ],
+        "series": [
+          {
+            "nombre": "Volumen",
+            "valores": [
+              100,
+              86,
+              75,
+              66,
+              58,
+              52,
+              47,
+              45
+            ]
+          }
+        ],
+        "y": {
+          "min": 0,
+          "max": 100,
+          "marcas": [
+            0,
+            50,
+            100
+          ],
+          "sufijo": " %"
+        }
+      }
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "running intervals",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Mantén intensidad y días",
+        "Recorta la *cantidad*"
+      ]
+    }
+  ],
+  "conclusion": [
+    "Menos volumen,",
+    "misma *chispa*"
+  ],
+  "aplicacion": [
+    "Empieza a bajar dos semanas antes",
+    "Calidad sí, pero más corta",
+    "Los mismos días de siempre"
+  ],
+  "clip_final": {
+    "query": "runner road",
+    "pexels_id": null,
+    "inicio": 1,
+    "recorte": {
+      "centro_x": 0.5,
+      "centro_y": 0.5,
+      "zoom": 1
+    },
+    "revisado": false
+  },
+  "musica": "auto",
+  "portada_segundo": 1.2,
+  "qa_ok": false,
+  "caption": "Dos semanas antes de la carrera, entrenar menos te hace llegar mejor. Pero solo si recortas lo que toca.\n\nUn metaanálisis de 27 estudios en deportistas de competición analizó cómo hacer la puesta a punto. Lo que mejor funcionó: unas 2 semanas, bajando el volumen de forma progresiva entre un 41 y un 60 %, sin tocar la intensidad ni el número de días de entrenamiento. La clave fue recortar cantidad, no intensidad ni frecuencia.\n\nLimitaciones: es un trabajo de 2007, anterior a las pruebas híbridas, así que ningún estudio es de HYROX ni OCR. Y son efectos medios: cada atleta puede necesitar ajustes.\n\nCómo aplicarlo:\nEmpieza a bajar unas dos semanas antes.\nMismas sesiones de calidad, pero más cortas.\nMismos días de entreno. Bajar volumen no es parar.\n\n¿Cuántos días antes de una carrera empiezas a bajar la carga?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nBosquet L, et al. (2007). Effects of tapering on performance: a meta-analysis. Medicine & Science in Sports & Exercise.\n\nVídeo: Pexels",
+  "hashtags": [
+    "#hyrox",
+    "#tapering",
+    "#entrenamientohibrido",
+    "#hyroxspain"
+  ],
+  "url_destino": "/blog/plan-entrenamiento-hyrox-12-semanas"
+}

@@ -1,0 +1,198 @@
+{
+  "id": "r121-proteina-diaria",
+  "pilar": "nutricion",
+  "post_carrusel_id": "121-proteina-diaria",
+  "duracion_objetivo": 27.5,
+  "gancho": "Proteína: más no es *mejor*",
+  "escenas": [
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "weightlifting gym",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": []
+    },
+    {
+      "duracion": 4,
+      "clip": {
+        "query": "healthy meal",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "contador",
+        "titulo": "Donde deja de sumar",
+        "etiqueta": "estudio",
+        "fuente": "Morton et al., 2018, Br J Sports Med",
+        "valor": 1.6,
+        "unidad": "g/kg/día",
+        "texto": "Por encima, la masa muscular no aumentó más con el entrenamiento de fuerza."
+      }
+    },
+    {
+      "duracion": 4.5,
+      "clip": {
+        "query": "barbell training",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "linea",
+        "titulo": "Sube y se aplana",
+        "subtitulo": "Ganancia de masa muscular según g/kg de proteína al día",
+        "etiqueta": "ilustrativo",
+        "fuente": "Esquema basado en Morton et al., 2018",
+        "x": [
+          "0,8",
+          "1,0",
+          "1,2",
+          "1,4",
+          "1,6",
+          "1,8",
+          "2,0",
+          "2,2"
+        ],
+        "series": [
+          {
+            "nombre": "Ganancia",
+            "valores": [
+              55,
+              66,
+              77,
+              89,
+              100,
+              100,
+              100,
+              100
+            ]
+          }
+        ],
+        "y": {
+          "min": 0,
+          "max": 100,
+          "marcas": [
+            0,
+            50,
+            100
+          ],
+          "sufijo": " %"
+        },
+        "destacar_punto": 4
+      }
+    },
+    {
+      "duracion": 4.5,
+      "clip": {
+        "query": "cooking meal kitchen",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "barras",
+        "titulo": "Tu cifra al día",
+        "subtitulo": "Tu peso × 1,6, sumando todas las comidas",
+        "etiqueta": "ilustrativo",
+        "fuente": "Ejemplo basado en Morton et al., 2018",
+        "sufijo": " g",
+        "max": 160,
+        "barras": [
+          {
+            "etiqueta": "60 kg",
+            "valor": 96
+          },
+          {
+            "etiqueta": "70 kg",
+            "valor": 112
+          },
+          {
+            "etiqueta": "80 kg",
+            "valor": 128,
+            "destacar": true
+          },
+          {
+            "etiqueta": "90 kg",
+            "valor": 144
+          }
+        ]
+      }
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "healthy food",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Con comida normal suele bastar",
+        "El batido es *opcional*"
+      ]
+    }
+  ],
+  "conclusion": [
+    "Suficiente",
+    "> *excesiva*"
+  ],
+  "aplicacion": [
+    "Tu peso por 1,6: tu objetivo",
+    "Repártela en 3-4 comidas",
+    "¿Llegas comiendo? Sin suplementos"
+  ],
+  "clip_final": {
+    "query": "gym crossfit training",
+    "pexels_id": null,
+    "inicio": 1,
+    "recorte": {
+      "centro_x": 0.5,
+      "centro_y": 0.5,
+      "zoom": 1
+    },
+    "revisado": false
+  },
+  "musica": "auto",
+  "portada_segundo": 1.2,
+  "qa_ok": false,
+  "caption": "¿Cuánta proteína necesitas si entrenas fuerza? Menos de lo que te dicen en el gimnasio.\n\nUn metaanálisis de 2018 reunió 49 estudios con 1.863 personas que hacían entrenamiento de fuerza durante al menos 6 semanas. Añadir proteína ayudó a ganar algo más de fuerza y de masa muscular. Pero por encima de unos 1,6 gramos por kilo de peso al día, la masa muscular dejó de aumentar más. El efecto fue mayor en gente ya entrenada y menor con la edad.\n\nLimitaciones: el estudio va de entrenamiento de fuerza, no de deportes híbridos, y 1,6 es una media: algunas personas pueden beneficiarse de algo más. Uno de los autores declara financiación de la industria láctea.\n\nCómo aplicarlo:\nTu peso por 1,6: esa es tu cifra aproximada al día.\nRepártela en 3-4 comidas.\nSi llegas comiendo normal, el batido es opcional.\n\n¿Llevas la cuenta de la proteína o vas a ojo?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nMorton RW, et al. (2018). A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults. British Journal of Sports Medicine.\n\nVídeo: Pexels",
+  "hashtags": [
+    "#nutriciondeportiva",
+    "#proteina",
+    "#entrenamientohibrido",
+    "#hyrox"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

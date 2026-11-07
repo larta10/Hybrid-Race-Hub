@@ -1,0 +1,137 @@
+{
+  "id": "r113-ocr-cuerda",
+  "pilar": "ocr",
+  "post_carrusel_id": "113-ocr-cuerda",
+  "duracion_objetivo": 25,
+  "gancho": "La cuerda se sube con los *pies*",
+  "escenas": [
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "rope climb",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": []
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "rope climb gym",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Subir a pulso funde el agarre",
+        "Bajar resbalando quema las manos"
+      ]
+    },
+    {
+      "duracion": 4.5,
+      "clip": {
+        "query": "rope climb crossfit",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "1. Agarre alto, brazos largos",
+        "2. Rodillas al pecho",
+        "3. Un pie pisa la cuerda"
+      ],
+      "musculo": [
+        {
+          "nombre": "Cuádriceps",
+          "pexels_id": null,
+          "x": null,
+          "y": null,
+          "keyframes": []
+        }
+      ]
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "climbing rope",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Al estirar las piernas, *subes*",
+        "Los brazos solo sujetan"
+      ]
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "obstacle course race",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Para bajar, el mismo bloqueo",
+        "te frena sin quemarte"
+      ]
+    }
+  ],
+  "conclusion": [
+    "Piernas suben,",
+    "brazos *sujetan*"
+  ],
+  "aplicacion": [
+    "Bloqueo sentado, sin subir",
+    "Ciclos de un metro con control",
+    "Colgados en cuerda para el agarre"
+  ],
+  "clip_final": {
+    "query": "obstacle course race mud",
+    "pexels_id": null,
+    "inicio": 1,
+    "recorte": {
+      "centro_x": 0.5,
+      "centro_y": 0.5,
+      "zoom": 1
+    },
+    "revisado": false
+  },
+  "musica": "auto",
+  "portada_segundo": 1.2,
+  "qa_ok": false,
+  "caption": "Si subes la cuerda solo con los brazos, el problema no es tu fuerza. Es que no estás usando los pies.\n\nEl bloqueo de pies es la diferencia entre llegar arriba con agarre de sobra o quedarte a mitad. La cuerda pasa por fuera de un pie y el otro la pisa por encima. Subes las rodillas, bloqueas y te pones de pie: las piernas hacen el trabajo y los brazos solo sujetan. Para bajar, el mismo bloqueo te frena sin quemarte las manos.\n\nEsto es técnica, no un estudio. No conocemos investigación que compare formas de subir cuerda en OCR, así que te lo explicamos sin cifras.\n\nCómo aprenderlo:\nPrimero el bloqueo sentado, con la cuerda colgando.\nLuego ciclos cortos de un metro.\nAgarre al final, con colgados en cuerda o toalla.\n\n¿Ya dominas el bloqueo o sigues subiendo a pulso?\n\nMás en hybridracehub.com (enlace en la bio)\n\nVídeo: Pexels",
+  "hashtags": [
+    "#ocr",
+    "#ocrspain",
+    "#carrerasdeobstaculos",
+    "#ropeclimb"
+  ],
+  "url_destino": "/blog/carreras-hibridas-principiantes-primera-prueba"
+}

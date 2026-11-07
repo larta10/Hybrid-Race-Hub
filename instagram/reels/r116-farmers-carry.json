@@ -1,0 +1,136 @@
+{
+  "id": "r116-farmers-carry",
+  "pilar": "estaciones",
+  "post_carrusel_id": "116-farmers-carry",
+  "duracion_objetivo": 23.5,
+  "gancho": "Farmers carry: el agarre se *gestiona*",
+  "escenas": [
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "kettlebell farmers carry",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": []
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "farmers walk dumbbells",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Las piernas aguantan",
+        "Lo que falla es el *agarre*"
+      ],
+      "musculo": [
+        {
+          "nombre": "Antebrazo",
+          "pexels_id": null,
+          "x": null,
+          "y": null,
+          "keyframes": []
+        }
+      ]
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "farmers carry gym",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Erguido, hombros atrás y abajo",
+        "Pasos cortos y rápidos"
+      ]
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "carrying kettlebells",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Error: encorvado, hombros delante",
+        "El agarre dura menos"
+      ]
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "kettlebell carry",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Suelta cuando lo notes",
+        "no cuando se te abran las manos"
+      ]
+    }
+  ],
+  "conclusion": [
+    "Parar a tiempo",
+    "> parar *tarde*"
+  ],
+  "aplicacion": [
+    "Paseos con más peso y menos metros",
+    "Practica soltar y volver a coger",
+    "Hazlo también después de correr"
+  ],
+  "clip_final": {
+    "query": "gym crossfit training",
+    "pexels_id": null,
+    "inicio": 1,
+    "recorte": {
+      "centro_x": 0.5,
+      "centro_y": 0.5,
+      "zoom": 1
+    },
+    "revisado": false
+  },
+  "musica": "auto",
+  "portada_segundo": 1.2,
+  "qa_ok": false,
+  "caption": "En el farmers carry casi nunca fallan las piernas. Falla el agarre.\n\nSon 200 metros con un peso en cada mano, según categoría. La postura que te ayuda: erguido, hombros atrás y abajo, brazos largos y pasos cortos y rápidos. La que te frena: encorvado y con los hombros hacia delante. Y una regla que cuesta aceptar: es mejor parar unos segundos cuando notas que el agarre se va que esperar a que se te abran las manos.\n\nEsto es técnica y estrategia, no un estudio. No te vamos a dar cifras de tiempos ni de pesos que no podamos respaldar.\n\nCómo entrenarlo:\nPaseos con peso al final de tus sesiones de fuerza.\nPractica soltar y retomar sin perder la postura.\nHazlo también con las piernas cansadas de correr.\n\n¿Paras en el farmers carry o lo haces del tirón?\n\nMás en hybridracehub.com (enlace en la bio)\n\nVídeo: Pexels",
+  "hashtags": [
+    "#hyrox",
+    "#farmerscarry",
+    "#hyroxspain",
+    "#hyroxtraining"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

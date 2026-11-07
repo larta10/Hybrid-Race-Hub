@@ -1,0 +1,162 @@
+{
+  "id": "r111-correr-mitad-hyrox",
+  "pilar": "entrenamiento",
+  "post_carrusel_id": "111-correr-mitad-hyrox",
+  "duracion_objetivo": 26.5,
+  "gancho": "La mitad de tu HYROX es *correr*",
+  "escenas": [
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "running race",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": []
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "sled push gym",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Las estaciones son lo vistoso",
+        "Pero el reloj no corre igual"
+      ]
+    },
+    {
+      "duracion": 4,
+      "clip": {
+        "query": "runner road",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "donut",
+        "titulo": "Lo que pesa la carrera",
+        "subtitulo": "Resultados PRO y ELITE de siete temporadas",
+        "etiqueta": "estudio",
+        "fuente": "Rappelt et al., 2026, Frontiers in Physiology",
+        "valor": 50,
+        "etiqueta_centro": "del tiempo total, aprox."
+      }
+    },
+    {
+      "duracion": 5,
+      "clip": {
+        "query": "runner track",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "agrupadas",
+        "titulo": "De dónde salió la mejora",
+        "subtitulo": "Minutos ganados por el Top 100 en siete temporadas (aprox.)",
+        "etiqueta": "estudio",
+        "fuente": "Rappelt et al., 2026, Frontiers in Physiology",
+        "series": [
+          "Tiempo total",
+          "Solo corriendo"
+        ],
+        "sufijo": " min",
+        "grupos": [
+          {
+            "etiqueta": "Hombres",
+            "valores": [
+              13,
+              8
+            ]
+          },
+          {
+            "etiqueta": "Mujeres",
+            "valores": [
+              17,
+              10
+            ]
+          }
+        ],
+        "destacar": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "runner athlete",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "La mayor parte de la mejora",
+        "llegó *corriendo*"
+      ]
+    }
+  ],
+  "conclusion": [
+    "Las estaciones lucen.",
+    "Correr *gana*"
+  ],
+  "aplicacion": [
+    "2-3 sesiones de carrera por semana",
+    "Una con las piernas ya cargadas",
+    "Mide tus 8 km en cada simulación"
+  ],
+  "clip_final": {
+    "query": "runner road",
+    "pexels_id": null,
+    "inicio": 1,
+    "recorte": {
+      "centro_x": 0.5,
+      "centro_y": 0.5,
+      "zoom": 1
+    },
+    "revisado": false
+  },
+  "musica": "auto",
+  "portada_segundo": 1.2,
+  "qa_ok": false,
+  "caption": "En HYROX, cerca de la mitad del tiempo se va corriendo. Y es donde más se ha mejorado.\n\nUn grupo de universidades alemanas analizó casi 40.000 resultados de las categorías PRO y ELITE de las siete primeras temporadas. La carrera supuso de forma constante alrededor del 50 % del tiempo total. En el Top 100, el tiempo bajó unos 13 minutos en hombres y 17 en mujeres, y la mayor parte de esa mejora (unos 8 y 10 minutos) llegó de correr más rápido. Las estaciones de fuerza pesaron más entre los atletas más lentos.\n\nLimitaciones: son atletas PRO y ELITE, no la categoría Open en la que compite la mayoría. Y un análisis de resultados no dice qué entrenamiento produjo la mejora, solo dónde apareció.\n\nCómo aplicarlo:\n2-3 sesiones de carrera a la semana, también en bloques de estaciones.\nUna con ritmos de carrera y piernas cargadas.\nMide tus 8 km en cada simulación.\n\n¿Cuántos días corres a la semana preparando HYROX?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nRappelt L, et al. (2026). Longitudinal performance development in PRO and ELITE HYROX competitions across the first seven competitive seasons. Frontiers in Physiology.\n\nVídeo: Pexels",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#running",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "_calendario",
+  "nota": "Clips de fondo del Reel dinámico de los lunes. Mismo proceso que los guiones: fetch-clips y revisión a ojo.",
+  "escenas": [
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "obstacle course race",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      }
+    },
+    {
+      "duracion": 10,
+      "clip": {
+        "query": "fitness competition crowd",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      }
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "trail running race",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      }
+    },
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "runners race start",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      }
+    }
+  ]
+}

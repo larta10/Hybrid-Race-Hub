@@ -1,0 +1,148 @@
+{
+  "id": "r105-efecto-interferencia",
+  "pilar": "entrenamiento",
+  "post_carrusel_id": "105-efecto-interferencia",
+  "duracion_objetivo": 25.5,
+  "gancho": "¿Correr te roba *fuerza*?",
+  "escenas": [
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "runner sprint",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": []
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "barbell squat gym",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Fuerza y carrera en el mismo plan",
+        "¿Se pisan las ganancias?"
+      ]
+    },
+    {
+      "duracion": 5,
+      "clip": {
+        "query": "weightlifting athlete",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "barras",
+        "titulo": "Fuerza + cardio vs solo fuerza",
+        "subtitulo": "Diferencia estandarizada en 43 estudios. Cerca de cero: sin interferencia",
+        "etiqueta": "estudio",
+        "fuente": "Schumann et al., 2022, Sports Medicine",
+        "max": 0.4,
+        "barras": [
+          {
+            "etiqueta": "Fuerza máxima",
+            "valor": -0.06
+          },
+          {
+            "etiqueta": "Masa muscular",
+            "valor": -0.01
+          },
+          {
+            "etiqueta": "Fuerza explosiva",
+            "valor": -0.28,
+            "destacar": true
+          }
+        ]
+      }
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "box jump athlete",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "La fuerza explosiva sí pierde *algo*",
+        "sobre todo en la misma sesión"
+      ],
+      "fuente": "Schumann et al., 2022, Sports Medicine"
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "running track athlete",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Si puedes, sepáralas",
+        "al menos 3 horas"
+      ]
+    }
+  ],
+  "conclusion": [
+    "Fuerza + cardio",
+    "sí *suman*"
+  ],
+  "aplicacion": [
+    "Fuerza y carrera, mejor separadas",
+    "Juntas: primero lo prioritario",
+    "No recortes kilómetros por miedo"
+  ],
+  "clip_final": {
+    "query": "runner road",
+    "pexels_id": null,
+    "inicio": 1,
+    "recorte": {
+      "centro_x": 0.5,
+      "centro_y": 0.5,
+      "zoom": 1
+    },
+    "revisado": false
+  },
+  "musica": "auto",
+  "portada_segundo": 1.2,
+  "qa_ok": false,
+  "caption": "Correr no te va a robar la fuerza. La potencia, un poco, y depende de cómo lo organices.\n\nUn metaanálisis de 2022 reunió 43 estudios que comparaban entrenar solo fuerza con combinar fuerza y trabajo aeróbico durante al menos 4 semanas. Resultado: ni la fuerza máxima ni la masa muscular se resintieron de forma clara. La fuerza explosiva sí mejoró algo menos, y sobre todo cuando las dos cosas iban en la misma sesión. Separándolas al menos 3 horas, esa diferencia dejó de ser significativa.\n\nLimitaciones: muchos participantes eran personas no entrenadas o simplemente activas, y se midieron adaptaciones del músculo, no tiempos en carrera. En atletas muy avanzados la historia puede cambiar.\n\nCómo aplicarlo:\nSi puedes, fuerza por la mañana y carrera por la tarde, o al revés.\nSi van juntas, primero lo prioritario de ese día.\nNo recortes kilómetros por miedo a perder fuerza.\n\n¿Haces fuerza y carrera el mismo día o en días separados?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nSchumann M, et al. (2022). Compatibility of concurrent aerobic and strength training for skeletal muscle size and function. Sports Medicine.\n\nVídeo: Pexels",
+  "hashtags": [
+    "#entrenamientohibrido",
+    "#hyrox",
+    "#entrenamientoconcurrente",
+    "#fuerzayresistencia"
+  ],
+  "url_destino": "/plan-entrenamiento"
+}

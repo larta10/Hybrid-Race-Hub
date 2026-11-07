@@ -1,0 +1,163 @@
+{
+  "id": "r102-carbohidratos-en-carrera",
+  "pilar": "nutricion",
+  "post_carrusel_id": "102-carbohidratos-en-carrera",
+  "duracion_objetivo": 25,
+  "gancho": "¿Gel en HYROX? Depende del *reloj*",
+  "escenas": [
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "runner race",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": []
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "athlete tired gym",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Tu glucógeno es un depósito limitado",
+        "Cuanto más dura, más sentido tiene reponer"
+      ]
+    },
+    {
+      "duracion": 4.5,
+      "clip": {
+        "query": "runner drinking water",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "30-60 min: basta enjuagarse o muy poco"
+      ],
+      "grafica": {
+        "tipo": "barras",
+        "titulo": "Carbohidrato por hora",
+        "subtitulo": "Pautas de una revisión según la duración del esfuerzo",
+        "etiqueta": "estudio",
+        "fuente": "Jeukendrup, 2014, Sports Medicine",
+        "sufijo": " g/h",
+        "max": 100,
+        "barras": [
+          {
+            "etiqueta": "2-3 horas",
+            "prefijo": "hasta",
+            "valor": 60
+          },
+          {
+            "etiqueta": "Ultrafondo",
+            "prefijo": "unos",
+            "valor": 90,
+            "destacar": true
+          }
+        ]
+      }
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "running legs closeup",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Piernas y cadera tiran del glucógeno"
+      ],
+      "musculo": [
+        {
+          "nombre": "Cuádriceps",
+          "pexels_id": null,
+          "x": null,
+          "y": null,
+          "keyframes": []
+        },
+        {
+          "nombre": "Glúteo mayor",
+          "pexels_id": null,
+          "x": null,
+          "y": null,
+          "keyframes": []
+        }
+      ]
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "pasta meal carbohydrates",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "En una hora y poco",
+        "pesan más los días *previos*"
+      ]
+    }
+  ],
+  "conclusion": [
+    "Primero, llegar",
+    "con el depósito *lleno*"
+  ],
+  "aplicacion": [
+    "Carbohidrato en las comidas 24-48 h antes",
+    "Prueba geles entrenando, no en carrera",
+    "Nada nuevo el día de la carrera"
+  ],
+  "clip_final": {
+    "query": "runner road",
+    "pexels_id": null,
+    "inicio": 1,
+    "recorte": {
+      "centro_x": 0.5,
+      "centro_y": 0.5,
+      "zoom": 1
+    },
+    "revisado": false
+  },
+  "musica": "auto",
+  "portada_segundo": 1.2,
+  "qa_ok": false,
+  "caption": "¿Gel en mitad de un HYROX? La respuesta depende de cuánto vayas a tardar.\n\nUna revisión de Asker Jeukendrup ordenó las pautas de carbohidratos durante el ejercicio según la duración. En esfuerzos de entre media hora y una hora, un enjuague bucal o una cantidad pequeña ya puede ayudar. En pruebas de 2-3 horas la cifra sube hasta unos 60 gramos por hora, y en ultrafondo a unos 90, mezclando glucosa y fructosa para absorber más.\n\nUn HYROX de 60-90 minutos cae entre la primera y la segunda fila. No necesitas un plan de ultramaratoniano: necesitas llegar con el depósito lleno y, si vas a estar más de una hora, probar en entrenos una toma pequeña.\n\nOjo con las limitaciones: es una revisión, no un metaanálisis, y casi todo sale de ciclismo y carrera continua. Nadie ha medido todavía esto en pruebas con estaciones de fuerza.\n\nCómo aplicarlo:\nCarbohidrato en tus comidas principales las 24-48 h previas.\nSi pruebas un gel o una bebida, hazlo primero en una simulación.\nNada nuevo el día de carrera.\n\n¿Tomas algo durante la carrera o vas a palo seco?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nJeukendrup A. (2014). A step towards personalized sports nutrition: carbohydrate intake during exercise. Sports Medicine.\n\nVídeo: Pexels",
+  "hashtags": [
+    "#nutriciondeportiva",
+    "#hyrox",
+    "#hyroxspain",
+    "#carbohidratos"
+  ],
+  "url_destino": "/blog/que-es-hyrox"
+}

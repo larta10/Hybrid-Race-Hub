@@ -1,0 +1,150 @@
+{
+  "id": "r103-tu-primer-hyrox",
+  "pilar": "comunidad",
+  "post_carrusel_id": "103-tu-primer-hyrox",
+  "duracion_objetivo": 26,
+  "gancho": "Tu primer HYROX, *minuto* a minuto",
+  "escenas": [
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "fitness competition athlete",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": []
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "running athlete",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "8 tramos de 1 km",
+        "y una estación tras cada uno"
+      ]
+    },
+    {
+      "duracion": 4,
+      "clip": {
+        "query": "gym crossfit training",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "contador",
+        "titulo": "Lo que se tarda",
+        "subtitulo": "Mediana de 11 atletas recreativos en una simulación, Individual Open",
+        "etiqueta": "estudio",
+        "fuente": "Brandt et al., 2025, Frontiers in Physiology",
+        "valor": 86.5,
+        "unidad": "min"
+      }
+    },
+    {
+      "duracion": 4.5,
+      "clip": {
+        "query": "runner fatigue",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "comparativa",
+        "titulo": "Dónde se va el tiempo",
+        "etiqueta": "estudio",
+        "fuente": "Brandt et al., 2025, Frontiers in Physiology",
+        "a": {
+          "etiqueta": "Corriendo",
+          "valor": 51.2,
+          "unidad": "min",
+          "nota": "Los 8 tramos de 1 km"
+        },
+        "b": {
+          "etiqueta": "Estaciones",
+          "valor": 32.8,
+          "unidad": "min",
+          "nota": "Las 8 estaciones"
+        },
+        "destacar": "a"
+      }
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "wall ball squat",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Pulso y lactato tocaron techo",
+        "en los *wall balls*"
+      ],
+      "fuente": "Brandt et al., 2025, Frontiers in Physiology"
+    }
+  ],
+  "conclusion": [
+    "Corres más tiempo",
+    "del que *crees*"
+  ],
+  "aplicacion": [
+    "La carrera, fija en tu semana",
+    "Una simulación completa antes de debutar",
+    "Guarda algo para los wall balls"
+  ],
+  "clip_final": {
+    "query": "athlete breathing tired",
+    "pexels_id": null,
+    "inicio": 1,
+    "recorte": {
+      "centro_x": 0.5,
+      "centro_y": 0.5,
+      "zoom": 1
+    },
+    "revisado": false
+  },
+  "musica": "auto",
+  "portada_segundo": 1.2,
+  "qa_ok": false,
+  "caption": "Tu primer HYROX dura más corriendo que haciendo estaciones. Y no por poco.\n\nEn 2025 se publicó el primer estudio científico sobre HYROX. Un grupo alemán midió a 11 atletas recreativos en una simulación completa de la categoría individual Open. Tardaron una mediana de 86,5 minutos: 51,2 corriendo y 32,8 en estaciones. El pulso, el lactato y el esfuerzo percibido tocaron techo en los wall balls, la última estación. Y los que terminaron antes tenían más VO2máx y más volumen de entrenamiento de resistencia.\n\nLimitaciones: 11 personas, una simulación y no una carrera oficial. Y que algo vaya asociado a terminar antes no prueba que sea la causa. Aun así, encaja con lo que ves en cualquier clasificación.\n\nSi debutas pronto:\nNo abandones la carrera a pie por meter más estaciones.\nHaz una simulación completa antes para conocer tus tiempos.\nGuarda algo para los wall balls.\n\n¿Cuánto tardaste en tu primer HYROX, o cuánto te gustaría tardar?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nBrandt T, et al. (2025). Acute physiological responses and performance determinants in Hyrox. Frontiers in Physiology.\n\nVídeo: Pexels",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#primerhyrox",
+    "#carrerashibridas"
+  ],
+  "url_destino": "/blog/que-es-hyrox"
+}

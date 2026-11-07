@@ -2,6 +2,7 @@
 // Uso: npm run ig:validate
 import { loadPosts, validatePost, fullCaption } from "./lib/posts.mjs";
 import { layoutIssues } from "./render.mjs";
+import { loadReels, validateReel, reelReady } from "./lib/reels.mjs";
 
 const posts = loadPosts();
 let errors = 0;
@@ -22,6 +23,21 @@ for (const p of posts) {
 const byPilar = posts.reduce((acc, p) => ((acc[p.pilar] = (acc[p.pilar] || 0) + 1), acc), {});
 console.log(`\n${posts.length} posts · ${Object.entries(byPilar).map(([k, v]) => `${k} ${v}`).join(" · ")}`);
 console.log(`Caption más largo: ${Math.max(0, ...posts.map((p) => (p.caption ? fullCaption(p).length : 0)))} caracteres`);
+
+// ---- Guiones de Reel ----
+const reels = loadReels();
+const byId = new Map(posts.map((p) => [p.id, p]));
+let listos = 0;
+for (const r of reels) {
+  const errs = validateReel(r, byId.get(r.post_carrusel_id));
+  if (reelReady(r).listo) listos++;
+  if (errs.length) {
+    errors += errs.length;
+    console.log(`✗ reels/${r.__file}`);
+    for (const e of errs) console.log(`    - ${e}`);
+  }
+}
+console.log(`${reels.length} guiones de Reel · ${listos} listos para publicar (clips revisados y control de calidad hecho)`);
 
 if (errors) {
   console.log(`\n${errors} error(es)`);

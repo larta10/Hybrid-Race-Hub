@@ -1,0 +1,172 @@
+{
+  "id": "r106-error-primer-km",
+  "pilar": "errores",
+  "post_carrusel_id": "106-error-primer-km",
+  "duracion_objetivo": 26.5,
+  "gancho": "El primer km te *engaña*",
+  "escenas": [
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "runners race start",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": []
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "marathon runners crowd",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Piernas frescas, público, adrenalina",
+        "El primer km vuela"
+      ]
+    },
+    {
+      "duracion": 5,
+      "clip": {
+        "query": "runner fatigue",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "barras",
+        "titulo": "Velocidad en carrera",
+        "subtitulo": "24 atletas PRO masculinos, HYROX Madrid 2025",
+        "etiqueta": "estudio",
+        "fuente": "Gutiérrez-Hellín et al., 2026, Int J Sports Physiol Perform",
+        "sufijo": " km/h",
+        "max": 18,
+        "barras": [
+          {
+            "etiqueta": "Su umbral (referencia)",
+            "valor": 16.41,
+            "referencia": true
+          },
+          {
+            "etiqueta": "Carrera 1",
+            "valor": 16.13,
+            "destacar": true
+          },
+          {
+            "etiqueta": "Carrera 8",
+            "valor": 13.58
+          },
+          {
+            "etiqueta": "Roxzone",
+            "valor": 10.52
+          }
+        ]
+      }
+    },
+    {
+      "duracion": 4,
+      "clip": {
+        "query": "runner tired",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "comparativa",
+        "titulo": "Del km 1 al km 8",
+        "subtitulo": "Ritmos y porcentaje calculados por nosotros con las medias del estudio",
+        "etiqueta": "estudio",
+        "fuente": "Gutiérrez-Hellín et al., 2026, Int J Sports Physiol Perform",
+        "a": {
+          "etiqueta": "Carrera 1",
+          "valor": 16.13,
+          "unidad": "km/h",
+          "nota": "Unos 3:43 min/km"
+        },
+        "b": {
+          "etiqueta": "Carrera 8",
+          "valor": 13.58,
+          "unidad": "km/h",
+          "nota": "Unos 4:25 min/km"
+        },
+        "destacar": "b",
+        "diferencia": "−16 %"
+      }
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "athlete breathing tired",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "Los que sostuvieron más intensidad",
+        "hicieron mejor *tiempo*"
+      ],
+      "fuente": "Gutiérrez-Hellín et al., 2026, Int J Sports Physiol Perform"
+    }
+  ],
+  "conclusion": [
+    "El km 1 no gana",
+    "la *carrera*"
+  ],
+  "aplicacion": [
+    "Primer km, un pelo por debajo",
+    "Mira el reloj los primeros 300 m",
+    "Compara tu km 1 con tu km 8"
+  ],
+  "clip_final": {
+    "query": "runner road",
+    "pexels_id": null,
+    "inicio": 1,
+    "recorte": {
+      "centro_x": 0.5,
+      "centro_y": 0.5,
+      "zoom": 1
+    },
+    "revisado": false
+  },
+  "musica": "auto",
+  "portada_segundo": 1.2,
+  "qa_ok": false,
+  "caption": "Hasta los PRO pierden un 16 % de velocidad entre el primer y el último kilómetro.\n\nUn equipo de investigadores de Madrid midió a 24 atletas de la categoría PRO masculina en el laboratorio y luego en HYROX Madrid 2025. En la primera carrera iban de media a 16,13 km/h, casi a la velocidad de su segundo umbral (16,41). En la octava, a 13,58 km/h. En la Roxzone, a 10,52. Y algo importante: los que mantuvieron una intensidad relativa más alta hicieron mejor tiempo total de carrera.\n\nLo que el estudio no dice: no compara estrategias de salida, así que no demuestra que salir más lento sea mejor. Son 24 hombres de élite en una sola carrera. Lo que sí deja claro es que el ritmo cae en todos, y que el primer kilómetro, fresco y con público, es el más fácil de pasar de rosca.\n\nNuestra recomendación:\nRitmo objetivo decidido antes de salir.\nPrimer kilómetro un pelo por debajo.\nEn las simulaciones, compara tu km 1 con tu km 8.\n\n¿Cuánto se te cae el ritmo entre el primer y el último kilómetro?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nGutiérrez-Hellín J, et al. (2026). Relative running intensity and pacing during an official HYROX PRO MEN competition: the HYScience study. International Journal of Sports Physiology and Performance.\n\nVídeo: Pexels",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#pacing",
+    "#entrenamientohibrido"
+  ],
+  "url_destino": "/calculadora-hyrox"
+}

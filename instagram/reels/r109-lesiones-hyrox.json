@@ -1,0 +1,150 @@
+{
+  "id": "r109-lesiones-hyrox",
+  "pilar": "comunidad",
+  "post_carrusel_id": "109-lesiones-hyrox",
+  "duracion_objetivo": 25.5,
+  "gancho": "¿Te duele algo? No eres el *único*",
+  "escenas": [
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "athlete knee pain",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": []
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "crossfit training gym",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "89 atletas de HYROX",
+        "12 semanas apuntando molestias"
+      ],
+      "fuente": "Chittenden et al., 2026, Front Sports Act Living"
+    },
+    {
+      "duracion": 4,
+      "clip": {
+        "query": "athlete resting gym",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "donut",
+        "titulo": "Con algún problema",
+        "subtitulo": "Prevalencia semanal media de cualquier problema de salud",
+        "etiqueta": "estudio",
+        "fuente": "Chittenden et al., 2026, Front Sports Act Living",
+        "valor": 30,
+        "etiqueta_centro": "de los atletas, cada semana"
+      }
+    },
+    {
+      "duracion": 4,
+      "clip": {
+        "query": "runner training",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [],
+      "grafica": {
+        "tipo": "contador",
+        "titulo": "Lesiones por sobrecarga",
+        "etiqueta": "estudio",
+        "fuente": "Chittenden et al., 2026, Front Sports Act Living",
+        "valor": 73,
+        "sufijo": " %",
+        "texto": "No vinieron de un golpe: se fueron acumulando con el entreno."
+      }
+    },
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "runner knee",
+        "pexels_id": null,
+        "inicio": 1,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "revisado": false
+      },
+      "texto": [
+        "La rodilla, la zona más *afectada*",
+        "22 % de los episodios"
+      ],
+      "fuente": "Chittenden et al., 2026, Front Sports Act Living",
+      "musculo": [
+        {
+          "nombre": "Rodilla",
+          "pexels_id": null,
+          "x": null,
+          "y": null,
+          "keyframes": []
+        }
+      ]
+    }
+  ],
+  "conclusion": [
+    "Lo que duele",
+    "se *acumula*"
+  ],
+  "aplicacion": [
+    "Sube la carrera poco a poco",
+    "Apunta cada semana qué te molesta",
+    "¿Lesión antigua? Que la vea un fisio"
+  ],
+  "clip_final": {
+    "query": "gym crossfit training",
+    "pexels_id": null,
+    "inicio": 1,
+    "recorte": {
+      "centro_x": 0.5,
+      "centro_y": 0.5,
+      "zoom": 1
+    },
+    "revisado": false
+  },
+  "musica": "auto",
+  "portada_segundo": 1.2,
+  "qa_ok": false,
+  "caption": "3 de cada 10 atletas de HYROX tienen alguna molestia en una semana cualquiera. Si te pasa, no estás solo.\n\nInvestigadores de la Universidad de Bath siguieron a 89 atletas de HYROX durante 12 semanas con un cuestionario semanal. De media, el 30 % tenía algún problema de salud cada semana y el 18 % uno importante. El 73 % de las lesiones fueron por sobrecarga, la rodilla fue la zona más afectada y haber tenido una lesión previa fue la señal de riesgo más fuerte. Otro dato: solo la mitad de los problemas hicieron perder días de entreno, así que mucha gente entrena con molestias.\n\nLimitaciones: 89 personas, no todas respondieron todas las semanas, y la parte de factores de riesgo es exploratoria. Habrá que confirmarlo con más atletas.\n\nLo que nos llevamos:\nSubir la carrera poco a poco.\nApuntar las molestias, no solo los entrenos.\nSi vienes de una lesión, que alguien revise tu plan.\n\n¿Cuál es la molestia que más se repite en tu grupo de entreno?\n\nMás en hybridracehub.com (enlace en la bio)\n\nFuentes:\nChittenden E, et al. (2026). Prevalence, burden and risk markers of health problems in HYROX athletes: a 12-week prospective cohort study. Frontiers in Sports and Active Living.\n\nVídeo: Pexels",
+  "hashtags": [
+    "#hyrox",
+    "#hyroxspain",
+    "#prevenciondelesiones",
+    "#comunidadhyrox"
+  ],
+  "url_destino": "/comunidad"
+}
