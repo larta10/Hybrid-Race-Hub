@@ -1,6 +1,44 @@
-# Instagram · progreso de los carruseles científicos
+# Instagram · progreso de los carruseles científicos y los Reels
 
-Actualizado: 5 de noviembre de 2026. Objetivo: 60 carruseles en el formato nuevo. Hechos: 21. Pendientes: 39.
+Actualizado: 7 de noviembre de 2026. Objetivo: 60 carruseles en el formato nuevo. Hechos: 21. Pendientes: 39.
+
+## Reels (desde el 7 de noviembre de 2026)
+
+Cada tema puede salir como Reel de 20-40 s en vez de carrusel. Proyecto de vídeo en `video/` (Remotion, ver `video/README.md`), guiones en `instagram/reels/`, música en `instagram/music/`.
+
+**Regla de oro:** el humano siempre es vídeo real de stock (Pexels). Nunca se dibujan ni se animan personas con código. Si no hay un clip bueno para un movimiento, esa escena se queda en texto y gráfica sobre fondo neutro (`"sin_clip": true` en el clip).
+
+### Estado
+
+| Qué | Estado |
+|---|---|
+| Guiones de Reel | 21 de 21 (`r101` a `r121`), uno por carrusel, mismas fuentes verificadas. `npm run ig:validate` los comprueba |
+| Clips de Pexels elegidos y revisados | **0 de 21**: falta `PEXELS_API_KEY` (no estaba en `.env.local` ni en los secretos) |
+| Coordenadas de músculos | Pendientes: cada escena con `musculo` tiene los nombres, falta colocar `x`, `y` y `pexels_id` sobre el clip elegido |
+| Control de calidad del vídeo final (`qa_ok`) | 0 de 21 |
+| Calendario de los lunes (`_calendario.json`) | Composición lista; clips de competición pendientes |
+| Música | 3 pistas de reserva generadas por código (sin derechos). Pistas de Pixabay pendientes: ver `instagram/music/LICENCIAS.md` |
+| Publicador | Listo. Un reel solo se publica si todos sus clips tienen `"revisado": true` y el guion tiene `"qa_ok": true`. Si no, ese día sale el carrusel del mismo tema, como hasta ahora |
+
+Vistas previas (sin metraje todavía, con fondo neutro): `instagram-preview/reels/` (r102, r103, r104 y un calendario de prueba).
+
+Como 101 y 106 ya salieron como carrusel, sus reels no se publicarán (el tema cuenta como hecho). El primer reel que podría salir es el del siguiente tema pendiente en cuanto tenga sus clips revisados.
+
+### Cómo continuar (instrucciones para la siguiente sesión)
+
+Pega esto en Claude Code dentro del repo:
+
+> Continúa los Reels siguiendo instagram/PROGRESO.md: elige y revisa los clips de Pexels de los próximos reels pendientes, coloca los músculos, renderiza, haz el control de calidad y marca qa_ok.
+
+Pasos por reel (empieza por los que tocan antes en el calendario):
+
+1. `cd video && node scripts/fetch-clips.mjs r1NN-slug` (necesita `PEXELS_API_KEY` en `.env.local`). Elige el primer candidato de cada escena y lo descarga a `video/cache/`.
+2. `node scripts/frames.mjs clips r1NN-slug` y abre los fotogramas de `video/out/frames/clips/`. Descarta (`--cambiar=N`) los que no enseñen claramente el movimiento del guion, tengan mala técnica (salvo en escenas de "Error:"), estén borrosos o tengan logos o texto. Si no hay ninguno bueno tras varios intentos, cambia la `query` o pon `"sin_clip": true`. Ajusta `inicio` y `recorte.centro_x` para que el atleta quede dentro del 9:16. Marca `"revisado": true` en los buenos.
+3. Músculos: en las escenas con `musculo`, pon `pexels_id` del clip y `x`, `y` (0-1 sobre el fotograma 1080x1920 recortado) y, si el atleta se mueve, `keyframes: [{t, x, y}]`. Comprueba fotograma a fotograma que el anillo cae sobre el músculo.
+4. `node scripts/render.mjs r1NN-slug --solo-revisados` y `node scripts/frames.mjs video out/r1NN-slug.mp4`. Revisa la hoja de contactos y los fotogramas: texto legible y dentro de la zona segura, anillos bien puestos, clips coherentes con el texto, ningún humano dibujado.
+5. Si todo está bien, `"qa_ok": true` en el guion, `npm run ig:validate` y commit.
+
+En Windows, el disco C: de este equipo estaba lleno: las dependencias de vídeo, el navegador de Remotion, la caché de clips, los renders y `instagram-preview/reels` están en `D:\hrh-video` con enlaces de directorio. Renderiza con `TEMP` y `TMP` apuntando a `D:\hrh-video\tmp`.
 
 ## Qué hay ahora
 
