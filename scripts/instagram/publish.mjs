@@ -127,14 +127,33 @@ async function renderReelFor(reel, { exigirClips }) {
   const video = await import("../../video/scripts/render.mjs");
   const outDir = fileURLToPath(new URL("../../video/out/publish/", import.meta.url));
   if (reel.calendario) return video.renderCalendar({ id: reel.id, carreras: reel.carreras, rango: reel.rango, outDir, fecha: TODAY, soloRevisados: true, exigirClips });
-  return video.renderReel(reel, { outDir, fecha: TODAY, soloRevisados: true, exigirClips });
+  return video.renderReel(reel, { outDir, fecha: TODAY, soloRevisados: true, exigirClips, conVoz: vozActiva() });
 }
 
-/** Caption del reel: el del guion + atribución de la música si es CC BY ("Música: Título – Autor (CC BY)") */
+/** Configuración de la voz (instagram/reels/voz.json). En pruebas se usa siempre para poder revisarla. */
+function vozConfig() {
+  try {
+    return JSON.parse(readFileSync(new URL("../../instagram/reels/voz.json", import.meta.url), "utf8"));
+  } catch {
+    return {};
+  }
+}
+const vozActiva = () => DRY_RUN || vozConfig().activa === true;
+
+/**
+ * Caption del reel: el del guion + atribución de la música si es CC BY ("Música: Título – Autor (CC BY)")
+ * + "Voz generada con IA." (y la atribución de la voz si su licencia la pide) cuando lleva narración.
+ */
 function reelCaption(reel) {
   const m = reel.__musica;
-  const linea = m?.atribucion ? `\nMúsica: ${m.atribucion}` : "";
-  return fullCaption({ ...reel, caption: `${reel.caption.trim()}${linea}` });
+  const lineas = [];
+  if (m?.atribucion) lineas.push(`Música: ${m.atribucion}`);
+  if (reel.__conVoz) {
+    lineas.push("Voz generada con IA.");
+    const at = vozConfig().atribucion;
+    if (at) lineas.push(at);
+  }
+  return fullCaption({ ...reel, caption: [reel.caption.trim(), ...lineas].join("\n") });
 }
 
 async function publishReel(reel, videoUrl, coverUrl) {
@@ -157,6 +176,8 @@ async function tryReel(topicId, reel, listo) {
     const r = await renderReelFor(reel, { exigirClips: !DRY_RUN });
     console.log(`  render: ${r.duracion.toFixed(1)} s de vídeo, ${r.mb.toFixed(1)} MB, ${Math.round((Date.now() - t0) / 1000)} s${r.musica ? ` · música: ${r.musica}` : ""}`);
     reel.__musica = r.pista;
+    reel.__conVoz = Boolean(r.conVoz);
+    if (reel.narracion && !r.conVoz) console.warn("  AVISO: el reel sale sin voz (narración desactivada, ausente o desactualizada).");
     console.log(`  caption (final, últimas líneas):\n${reelCaption(reel).split("\n").slice(-3).join("\n")}`);
     const base = `reels/${TODAY}/${reel.id}`;
     const videoUrl = await uploadPublic(`${base}.mp4`, readFileSync(r.mp4), "video/mp4");
