@@ -1,0 +1,25 @@
+{
+  "name": "hybrid-race-hub-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reels de Instagram de Hybrid Race Hub (Remotion). Independiente de la web.",
+  "type": "module",
+  "scripts": {
+    "studio": "node scripts/prepare-public.mjs && remotion studio src/index.jsx",
+    "fetch-clips": "node scripts/fetch-clips.mjs",
+    "render": "node scripts/render.mjs",
+    "frames": "node scripts/frames.mjs",
+    "music": "node scripts/make-music.mjs"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.541",
+    "@remotion/cli": "4.0.541",
+    "@remotion/media-utils": "4.0.541",
+    "@remotion/renderer": "4.0.541",
+    "dotenv": "18.0.9",
+    "ffmpeg-static": "5.3.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.541"
+  }
+}

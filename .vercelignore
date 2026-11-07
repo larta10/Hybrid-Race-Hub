@@ -1,0 +1,5 @@
+# La web no usa el proyecto de vídeo ni las pistas de música de los Reels
+video/
+instagram/music/
+instagram/reels/
+instagram-preview/

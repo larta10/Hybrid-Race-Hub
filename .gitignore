@@ -34,3 +34,10 @@ instagram-preview/
 
 # utilidades locales de revisión de Instagram
 scripts/instagram/_*.mjs
+
+# Proyecto de vídeo (Remotion): dependencias, metraje descargado y renders
+video/node_modules/
+video/out/
+video/cache/
+video/public/runtime/
+video/public/fonts/

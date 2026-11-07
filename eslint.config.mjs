@@ -11,7 +11,7 @@ const config = [
       "@next/next/no-html-link-for-pages": "warn",
     },
   },
-  { ignores: [".next/**", "node_modules/**", "backups/**", "pr/**", "public/**", "audit-screenshots/**", "qa-screenshots/**"] },
+  { ignores: [".next/**", "node_modules/**", "backups/**", "pr/**", "public/**", "audit-screenshots/**", "qa-screenshots/**", "video/**", "instagram-preview/**"] },
 ];
 
 export default config;
