@@ -4,7 +4,8 @@ import { Reel } from "./Reel.jsx";
 import { Calendario } from "./Calendario.jsx";
 import { buildTimeline, buildCalendarTimeline, totalFrames } from "./timeline.js";
 import { W, H, FPS } from "./theme.js";
-import ejemplo from "../../instagram/reels/r102-carbohidratos-en-carrera.json";
+// Reel de ejemplo para el editor (Remotion Studio): uno ya listo, con clips revisados
+import ejemplo from "../../instagram/reels/r103-tu-primer-hyrox.json";
 
 export const Root = () => (
   <>
