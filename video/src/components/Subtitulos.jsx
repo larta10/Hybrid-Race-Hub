@@ -72,8 +72,10 @@ export function Subtitulos({ palabras, posicionY }) {
           textAlign: "center",
         }}
       >
-        {l.map((p) => {
-          const activa = t >= p.desde - 0.02 && t < Math.max(p.hasta, p.desde + 0.12);
+        {l.map((p, k) => {
+          // Solo una palabra activa: la última que ha empezado a sonar (y hasta poco después de acabar)
+          const ultima = l.reduce((acc, x, j) => (t >= x.desde - 0.02 ? j : acc), -1);
+          const activa = k === ultima && t < Math.max(p.hasta + 0.15, p.desde + 0.12);
           return (
             <span key={p.i} style={{ display: "inline-block", position: "relative", transform: `scale(${activa ? 1.08 : 1})`, transition: "none" }}>
               {p.w.replace(/[¿¡]/g, (m) => m)}
