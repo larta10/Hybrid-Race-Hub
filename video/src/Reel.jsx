@@ -71,6 +71,10 @@ function Escena({ s, assets, reel, conVoz }) {
             <TextoCinetico texto={it.texto} duracion={it.hasta - it.desde} posicion={e.texto_posicion} />
           </Sequence>
         ))}
+      {/* Con voz y sin metraje, la frase clave queda arriba como titular para que la escena no quede vacía */}
+      {conVoz && !src && !e.grafica && s.tipo !== "gancho" && (e.texto || []).length > 0 && (
+        <TextoCinetico texto={e.texto[0]} duracion={dur} posicion="arriba" />
+      )}
       {e.fuente && !e.grafica && <FuenteChip texto={e.fuente} top={SAFE.top + 48} />}
     </AbsoluteFill>
   );
@@ -84,6 +88,7 @@ function alturaSubtitulos(segs, reel, assets) {
     if (!s) return 0.65;
     if (s.tipo === "grafica") return 0.77; // debajo de la tarjeta
     if (s.tipo === "aplicacion") return 0.77; // debajo de las tarjetas de "qué hacer"
+    if (s.tipo === "conclusion") return 0.77; // debajo del bloque de conclusión
     const ms = (s.escena?.musculo || []).filter((m) => typeof m.x === "number" && assets?.clips?.[String(s.i)]);
     if (ms.length) {
       const ys = ms.flatMap((m) => [m.y, ...(m.keyframes || []).map((k) => k.y)]);

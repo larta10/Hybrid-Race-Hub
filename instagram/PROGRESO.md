@@ -28,11 +28,25 @@ Notas de metraje:
 
 Vistas previas: `instagram-preview/reels/` (r103, r104, r105, r109 y `calendario-prueba`). Los archivos están en `D:\hrh-video\preview-reels`.
 
+### Narración y subtítulos (desde el 7 de noviembre de 2026)
+
+- Voz en off local y gratuita con Piper; tiempos por palabra con faster-whisper (modelo small). Sin servicios de pago, cuentas ni claves.
+- Voz por defecto: **es_ES-davefx-medium** (datos CC0). Ajustes en `instagram/reels/voz.json`; licencias de todas las voces es_ES en `instagram/reels/VOCES.md`.
+- **Publicación con voz desactivada** (`"activa": false`): las voces medium en castellano parten de un modelo inglés (lessac) cuyos datos solo permiten investigación. En las pruebas y vistas previas sí se usa. Para publicar con voz: `"activa": true` en `voz.json`.
+- Cambiar de voz: edita `"modelo"` en `voz.json` (y `"atribucion"` si la licencia la pide) y ejecuta `python video/scripts/narrar.py <reel_id>…`. Muestras para comparar en `instagram-preview/voces/` (voz-1 davefx, voz-2 sharvard, voz-3 carlfm).
+- Guion hablado: campo `"narracion"` de cada guion (una frase por escena + conclusión, qué hacer y cierre; 75-100 palabras, números escritos como se dicen). Hecho en r103, r104, r105 y r109; pendiente en los demás (añádelo al revisar sus clips).
+- Audio y tiempos en `instagram/reels/audio/<id>.mp3` y `<id>.words.json`, con hash del texto y la voz: el workflow solo los regenera si cambian.
+- Pronunciación: `instagram/reels/pronunciacion.json` (comprobado con Whisper). "sled" no se entiende con ninguna grafía: en la narración se dice "trineo".
+- El caption añade "Voz generada con IA." cuando el reel lleva voz. La API de Instagram no permite marcar contenido generado con IA.
+- Respaldo: sin narración válida, el reel sale con texto y música; si falla el render, sale el carrusel.
+
+Dependencias locales en este equipo (todo en D:): Python 3.12 en `D:\hrh-video\py` (creado con `D:\hrh-video\uv\uv.exe`), voces en `D:\hrh-video\voces`, Whisper en `D:\hrh-video\whisper`. Para generar: `PIPER_VOICES_DIR=D:\hrh-video\voces WHISPER_MODELS_DIR=D:\hrh-video\whisper D:\hrh-video\py\Scripts\python.exe video\scripts\narrar.py r1NN-slug`.
+
 ### Cómo continuar (instrucciones para la siguiente sesión)
 
 Pega esto en Claude Code dentro del repo:
 
-> Continúa los Reels siguiendo instagram/PROGRESO.md: elige y revisa los clips de Pixabay de los próximos reels pendientes, coloca los músculos, renderiza, haz el control de calidad y marca qa_ok.
+> Continúa los Reels siguiendo instagram/PROGRESO.md: elige y revisa los clips de Pixabay de los próximos reels pendientes, coloca los músculos, escribe su narración y genera la voz, renderiza, haz el control de calidad y marca qa_ok.
 
 Pasos por reel (empieza por los que tocan antes en el calendario), desde `video/`:
 
@@ -41,7 +55,8 @@ Pasos por reel (empieza por los que tocan antes en el calendario), desde `video/
 3. Músculos: en las escenas con `musculo`, pon `clip` ("pixabay-ID"), `x`, `y` (0-1 sobre el fotograma vertical) y `keyframes: [{t, x, y}]`. Verifica renderizando y sacando un fotograma cada 0,25 s de la escena.
 4. `node scripts/fetch-clips.mjs aprobar r1NN-slug todos` (recorta y sube a nuestro bucket).
 5. `node scripts/render.mjs r1NN-slug --out=../instagram-preview/reels --solo-revisados` y `node scripts/frames.mjs video ../instagram-preview/reels/r1NN-slug.mp4`. Revisa la hoja de contactos.
-6. Si todo está bien, `"qa_ok": true` en el guion, `npm run ig:validate` y commit.
+6. Narración: añade `"narracion"` al guion (mira r103 como modelo) y genera la voz con `narrar.py` (ver arriba).
+7. Si todo está bien, `"qa_ok": true` en el guion, `npm run ig:validate` y commit.
 
 En este equipo el disco C: va justo: todo lo pesado está en `D:\hrh-video` (dependencias de vídeo, navegador de Remotion, caché de clips, renders, vistas previas y un Node portátil en `D:\hrh-video\node`). Renderiza con `TEMP` y `TMP` apuntando a `D:\hrh-video\tmp`.
 

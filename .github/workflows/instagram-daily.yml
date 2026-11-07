@@ -25,7 +25,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 
@@ -65,6 +65,38 @@ jobs:
           path: video/cache
           key: video-clips-${{ hashFiles('instagram/reels/*.json') }}
           restore-keys: video-clips-
+
+      # Narración: Piper (voz local) y faster-whisper (tiempos por palabra), gratis y sin claves
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: video/requirements-voz.txt
+
+      - name: Instalar Piper y faster-whisper
+        run: pip install -q -r video/requirements-voz.txt
+
+      - name: Caché de voces y modelo de Whisper
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/hrh-voces
+            ~/.cache/hrh-whisper
+          key: voz-modelos-${{ hashFiles('instagram/reels/voz.json') }}
+          restore-keys: voz-modelos-
+
+      # Solo genera el audio si falta o si cambió el texto o la voz (el hash está en words.json).
+      # Si falla, el reel sale sin voz: el paso no bloquea la publicación.
+      - name: Narración de los reels
+        continue-on-error: true
+        env:
+          PIPER_VOICES_DIR: ~/.cache/hrh-voces
+          WHISPER_MODELS_DIR: ~/.cache/hrh-whisper
+          FFMPEG_PATH: /usr/bin/ffmpeg
+        run: |
+          export PIPER_VOICES_DIR="$HOME/.cache/hrh-voces" WHISPER_MODELS_DIR="$HOME/.cache/hrh-whisper"
+          ids=$(grep -l '"narracion"' instagram/reels/r[0-9]*.json | xargs -n1 basename | sed 's/\.json$//')
+          [ -n "$ids" ] && python video/scripts/narrar.py $ids
 
       - name: Publicar reel o carrusel
         env:
