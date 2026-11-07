@@ -30,17 +30,19 @@ Vistas previas: `instagram-preview/reels/` (r103, r104, r105, r109 y `calendario
 
 ### Narración y subtítulos (desde el 7 de noviembre de 2026)
 
-- Voz en off local y gratuita con Piper; tiempos por palabra con faster-whisper (modelo small). Sin servicios de pago, cuentas ni claves.
-- Voz por defecto: **es_ES-davefx-medium** (datos CC0). Ajustes en `instagram/reels/voz.json`; licencias de todas las voces es_ES en `instagram/reels/VOCES.md`.
-- **Publicación con voz desactivada** (`"activa": false`): las voces medium en castellano parten de un modelo inglés (lessac) cuyos datos solo permiten investigación. En las pruebas y vistas previas sí se usa. Para publicar con voz: `"activa": true` en `voz.json`.
-- Cambiar de voz: edita `"modelo"` en `voz.json` (y `"atribucion"` si la licencia la pide) y ejecuta `python video/scripts/narrar.py <reel_id>…`. Muestras para comparar en `instagram-preview/voces/` (voz-1 davefx, voz-2 sharvard, voz-3 carlfm).
+- **Voz activada: Kokoro-82M, voz `em_alex`** (`"activa": true` en `instagram/reels/voz.json`). Local y gratuita, sin cuentas, sin claves y sin servicios online. Tiempos por palabra con faster-whisper (modelo small).
+- Licencia: pesos Apache-2.0, modelo base StyleTTS2-LJSpeech (MIT, datos de dominio público) y datos de entrenamiento permisivos según su ficha. Revisión completa, candidatas descartadas (Chatterbox: datos y modelo base sin licencia clara; Piper davefx/sharvard/mls: bases de "solo investigación" o no comerciales) y puntuaciones en `instagram/reels/VOCES.md`.
+- Elegida por puntuación automática (`video/scripts/probar_voces.py`): inteligibilidad con Whisper, distinción castellana /s/-/θ/, naturalidad y términos en inglés. Muestras en `instagram-preview/voces/`.
+- Ajustes: velocidad 0,9, pausas de 220 ms entre frases. Posproceso con ffmpeg (ecualización suave, compresión ligera, ~-14,7 LUFS).
+- Cambiar de voz: `"voz"` (`em_alex`, `ef_dora`) o `"motor": "piper"` + `"modelo"` en `voz.json`, y `python video/scripts/narrar.py <reel_id>…`. El render rechaza un audio que no sea de la voz configurada.
 - Guion hablado: campo `"narracion"` de cada guion (una frase por escena + conclusión, qué hacer y cierre; 75-100 palabras, números escritos como se dicen). Hecho en r103, r104, r105 y r109; pendiente en los demás (añádelo al revisar sus clips).
-- Audio y tiempos en `instagram/reels/audio/<id>.mp3` y `<id>.words.json`, con hash del texto y la voz: el workflow solo los regenera si cambian.
-- Pronunciación: `instagram/reels/pronunciacion.json` (comprobado con Whisper). "sled" no se entiende con ninguna grafía: en la narración se dice "trineo".
-- El caption añade "Voz generada con IA." cuando el reel lleva voz. La API de Instagram no permite marcar contenido generado con IA.
+- Audio y tiempos en `instagram/reels/audio/<id>.mp3` y `<id>.words.json`, con hash del texto y la voz: el workflow solo los regenera si cambian (instala Kokoro con caché; en los dry runs hace además una prueba rápida de la voz).
+- Alineación de subtítulos: transcribe cada escena con y sin pista y se queda con la que casa con el guion (`coincidencia` en words.json; avisa si baja del 70 %).
+- Pronunciación: `instagram/reels/pronunciacion.json` (común) y `pronunciacion.kokoro.json` (HYROX = "Jai rox"). "sled" se dice "trineo".
+- El caption añade "Voz generada con IA." cuando el reel lleva voz (Kokoro no exige más atribución). La API de Instagram no permite marcar contenido generado con IA.
 - Respaldo: sin narración válida, el reel sale con texto y música; si falla el render, sale el carrusel.
 
-Dependencias locales en este equipo (todo en D:): Python 3.12 en `D:\hrh-video\py` (creado con `D:\hrh-video\uv\uv.exe`), voces en `D:\hrh-video\voces`, Whisper en `D:\hrh-video\whisper`. Para generar: `PIPER_VOICES_DIR=D:\hrh-video\voces WHISPER_MODELS_DIR=D:\hrh-video\whisper D:\hrh-video\py\Scripts\python.exe video\scripts\narrar.py r1NN-slug`.
+Dependencias locales en este equipo (todo en D:): Python 3.12 en `D:\hrh-video\py` (creado con `D:\hrh-video\uv\uv.exe`), modelo de Kokoro en `D:\hrh-video\models\kokoro`, voces de Piper en `D:\hrh-video\voces`, Whisper en `D:\hrh-video\whisper`. Para generar: `WHISPER_MODELS_DIR=D:\hrh-video\whisper D:\hrh-video\py\Scripts\python.exe video\scripts\narrar.py r1NN-slug`.
 
 ### Cómo continuar (instrucciones para la siguiente sesión)
 
