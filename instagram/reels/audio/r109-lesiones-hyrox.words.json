@@ -1,0 +1,678 @@
+{
+ "hash": "005c4038c8f92a6c",
+ "voz": "es_ES-davefx-medium",
+ "duracion": 35.095,
+ "segmentos": [
+  {
+   "tipo": "gancho",
+   "i": 0,
+   "voz_desde": 0.0,
+   "voz_hasta": 2.298,
+   "desde": 0.0,
+   "hasta": 2.548,
+   "transcripcion": "¿Te duele algo? No eres el único."
+  },
+  {
+   "tipo": "texto",
+   "i": 1,
+   "voz_desde": 2.548,
+   "voz_hasta": 7.03,
+   "desde": 2.548,
+   "hasta": 7.28,
+   "transcripcion": "Un estudio siguió a ochenta y nueve atletas de HYROX durante doce semanas."
+  },
+  {
+   "tipo": "grafica",
+   "i": 2,
+   "voz_desde": 7.28,
+   "voz_hasta": 11.088,
+   "desde": 7.28,
+   "hasta": 11.338,
+   "transcripcion": "De media, cada semana, tres de cada diez tenían algún problema de salud."
+  },
+  {
+   "tipo": "grafica",
+   "i": 3,
+   "voz_desde": 11.338,
+   "voz_hasta": 17.352,
+   "desde": 11.338,
+   "hasta": 17.602,
+   "transcripcion": "Y el setenta y tres por ciento de las lesiones fueron por sobrecarga se acumularon con el entreno."
+  },
+  {
+   "tipo": "texto",
+   "i": 4,
+   "voz_desde": 17.602,
+   "voz_hasta": 22.013,
+   "desde": 17.602,
+   "hasta": 22.263,
+   "transcripcion": "La zona más afectada fue la rodilla, con el veintidós por ciento de los episodios."
+  },
+  {
+   "tipo": "conclusion",
+   "voz_desde": 22.263,
+   "voz_hasta": 23.61,
+   "desde": 22.263,
+   "hasta": 24.463,
+   "transcripcion": "Lo que duele, se acumula."
+  },
+  {
+   "tipo": "aplicacion",
+   "voz_desde": 24.463,
+   "voz_hasta": 31.279,
+   "desde": 24.463,
+   "hasta": 31.529,
+   "transcripcion": "Sube la carrera poco a poco, apunta cada semana lo que te molesta y, si arrastras una lesión, que la vea un fisio."
+  },
+  {
+   "tipo": "cierre",
+   "voz_desde": 31.529,
+   "voz_hasta": 33.595,
+   "desde": 31.529,
+   "hasta": 35.095,
+   "transcripcion": "Guárdalo y compártelo con tu grupo."
+  }
+ ],
+ "palabras": [
+  {
+   "w": "¿Te",
+   "desde": 0.0,
+   "hasta": 0.1,
+   "seg": 0
+  },
+  {
+   "w": "duele",
+   "desde": 0.1,
+   "hasta": 0.44,
+   "seg": 0
+  },
+  {
+   "w": "algo?",
+   "desde": 0.44,
+   "hasta": 0.74,
+   "seg": 0
+  },
+  {
+   "w": "No",
+   "desde": 1.16,
+   "hasta": 1.38,
+   "seg": 0
+  },
+  {
+   "w": "eres",
+   "desde": 1.38,
+   "hasta": 1.58,
+   "seg": 0
+  },
+  {
+   "w": "el",
+   "desde": 1.58,
+   "hasta": 1.76,
+   "seg": 0
+  },
+  {
+   "w": "único.",
+   "desde": 1.76,
+   "hasta": 1.98,
+   "seg": 0
+  },
+  {
+   "w": "Un",
+   "desde": 2.548,
+   "hasta": 2.728,
+   "seg": 1
+  },
+  {
+   "w": "estudio",
+   "desde": 2.728,
+   "hasta": 3.048,
+   "seg": 1
+  },
+  {
+   "w": "siguió",
+   "desde": 3.048,
+   "hasta": 3.528,
+   "seg": 1
+  },
+  {
+   "w": "a",
+   "desde": 3.528,
+   "hasta": 3.608,
+   "seg": 1
+  },
+  {
+   "w": "ochenta",
+   "desde": 3.608,
+   "hasta": 4.088,
+   "seg": 1
+  },
+  {
+   "w": "y",
+   "desde": 4.088,
+   "hasta": 4.328,
+   "seg": 1
+  },
+  {
+   "w": "nueve",
+   "desde": 4.328,
+   "hasta": 4.648,
+   "seg": 1
+  },
+  {
+   "w": "atletas",
+   "desde": 4.648,
+   "hasta": 5.148,
+   "seg": 1
+  },
+  {
+   "w": "de",
+   "desde": 5.148,
+   "hasta": 5.248,
+   "seg": 1
+  },
+  {
+   "w": "HYROX",
+   "desde": 5.248,
+   "hasta": 5.668,
+   "seg": 1
+  },
+  {
+   "w": "durante",
+   "desde": 5.668,
+   "hasta": 5.928,
+   "seg": 1
+  },
+  {
+   "w": "doce",
+   "desde": 5.928,
+   "hasta": 6.268,
+   "seg": 1
+  },
+  {
+   "w": "semanas.",
+   "desde": 6.268,
+   "hasta": 6.488,
+   "seg": 1
+  },
+  {
+   "w": "De",
+   "desde": 7.28,
+   "hasta": 7.38,
+   "seg": 2
+  },
+  {
+   "w": "media,",
+   "desde": 7.38,
+   "hasta": 7.64,
+   "seg": 2
+  },
+  {
+   "w": "cada",
+   "desde": 7.74,
+   "hasta": 7.88,
+   "seg": 2
+  },
+  {
+   "w": "semana,",
+   "desde": 7.88,
+   "hasta": 8.18,
+   "seg": 2
+  },
+  {
+   "w": "tres",
+   "desde": 8.18,
+   "hasta": 8.72,
+   "seg": 2
+  },
+  {
+   "w": "de",
+   "desde": 8.72,
+   "hasta": 8.86,
+   "seg": 2
+  },
+  {
+   "w": "cada",
+   "desde": 8.86,
+   "hasta": 9.02,
+   "seg": 2
+  },
+  {
+   "w": "diez",
+   "desde": 9.02,
+   "hasta": 9.26,
+   "seg": 2
+  },
+  {
+   "w": "tenían",
+   "desde": 9.26,
+   "hasta": 9.7,
+   "seg": 2
+  },
+  {
+   "w": "algún",
+   "desde": 9.7,
+   "hasta": 9.92,
+   "seg": 2
+  },
+  {
+   "w": "problema",
+   "desde": 9.92,
+   "hasta": 10.32,
+   "seg": 2
+  },
+  {
+   "w": "de",
+   "desde": 10.32,
+   "hasta": 10.5,
+   "seg": 2
+  },
+  {
+   "w": "salud.",
+   "desde": 10.5,
+   "hasta": 10.72,
+   "seg": 2
+  },
+  {
+   "w": "Y",
+   "desde": 11.338,
+   "hasta": 11.458,
+   "seg": 3
+  },
+  {
+   "w": "el",
+   "desde": 11.458,
+   "hasta": 11.578,
+   "seg": 3
+  },
+  {
+   "w": "setenta",
+   "desde": 11.578,
+   "hasta": 12.158,
+   "seg": 3
+  },
+  {
+   "w": "y",
+   "desde": 12.158,
+   "hasta": 12.638,
+   "seg": 3
+  },
+  {
+   "w": "tres",
+   "desde": 12.638,
+   "hasta": 12.878,
+   "seg": 3
+  },
+  {
+   "w": "por",
+   "desde": 12.878,
+   "hasta": 13.078,
+   "seg": 3
+  },
+  {
+   "w": "ciento",
+   "desde": 13.078,
+   "hasta": 13.358,
+   "seg": 3
+  },
+  {
+   "w": "de",
+   "desde": 13.358,
+   "hasta": 13.558,
+   "seg": 3
+  },
+  {
+   "w": "las",
+   "desde": 13.558,
+   "hasta": 13.658,
+   "seg": 3
+  },
+  {
+   "w": "lesiones",
+   "desde": 13.658,
+   "hasta": 14.078,
+   "seg": 3
+  },
+  {
+   "w": "fueron",
+   "desde": 14.078,
+   "hasta": 14.378,
+   "seg": 3
+  },
+  {
+   "w": "por",
+   "desde": 14.378,
+   "hasta": 14.638,
+   "seg": 3
+  },
+  {
+   "w": "sobrecarga:",
+   "desde": 14.638,
+   "hasta": 15.318,
+   "seg": 3
+  },
+  {
+   "w": "se",
+   "desde": 15.318,
+   "hasta": 15.798,
+   "seg": 3
+  },
+  {
+   "w": "acumularon",
+   "desde": 15.798,
+   "hasta": 16.478,
+   "seg": 3
+  },
+  {
+   "w": "con",
+   "desde": 16.478,
+   "hasta": 16.618,
+   "seg": 3
+  },
+  {
+   "w": "el",
+   "desde": 16.618,
+   "hasta": 16.758,
+   "seg": 3
+  },
+  {
+   "w": "entreno.",
+   "desde": 16.758,
+   "hasta": 17.178,
+   "seg": 3
+  },
+  {
+   "w": "La",
+   "desde": 17.602,
+   "hasta": 17.742,
+   "seg": 4
+  },
+  {
+   "w": "zona",
+   "desde": 17.742,
+   "hasta": 17.742,
+   "seg": 4
+  },
+  {
+   "w": "más",
+   "desde": 17.742,
+   "hasta": 18.002,
+   "seg": 4
+  },
+  {
+   "w": "afectada",
+   "desde": 18.002,
+   "hasta": 18.582,
+   "seg": 4
+  },
+  {
+   "w": "fue",
+   "desde": 18.582,
+   "hasta": 18.782,
+   "seg": 4
+  },
+  {
+   "w": "la",
+   "desde": 18.782,
+   "hasta": 18.942,
+   "seg": 4
+  },
+  {
+   "w": "rodilla,",
+   "desde": 18.942,
+   "hasta": 19.382,
+   "seg": 4
+  },
+  {
+   "w": "con",
+   "desde": 19.522,
+   "hasta": 19.682,
+   "seg": 4
+  },
+  {
+   "w": "el",
+   "desde": 19.682,
+   "hasta": 19.822,
+   "seg": 4
+  },
+  {
+   "w": "veintidós",
+   "desde": 19.822,
+   "hasta": 20.242,
+   "seg": 4
+  },
+  {
+   "w": "por",
+   "desde": 20.242,
+   "hasta": 20.422,
+   "seg": 4
+  },
+  {
+   "w": "ciento",
+   "desde": 20.422,
+   "hasta": 20.662,
+   "seg": 4
+  },
+  {
+   "w": "de",
+   "desde": 20.662,
+   "hasta": 20.902,
+   "seg": 4
+  },
+  {
+   "w": "los",
+   "desde": 20.902,
+   "hasta": 21.022,
+   "seg": 4
+  },
+  {
+   "w": "episodios.",
+   "desde": 21.022,
+   "hasta": 21.642,
+   "seg": 4
+  },
+  {
+   "w": "Lo",
+   "desde": 22.263,
+   "hasta": 22.363,
+   "seg": 5
+  },
+  {
+   "w": "que",
+   "desde": 22.363,
+   "hasta": 22.483,
+   "seg": 5
+  },
+  {
+   "w": "duele,",
+   "desde": 22.483,
+   "hasta": 22.863,
+   "seg": 5
+  },
+  {
+   "w": "se",
+   "desde": 22.863,
+   "hasta": 22.963,
+   "seg": 5
+  },
+  {
+   "w": "acumula.",
+   "desde": 22.963,
+   "hasta": 23.383,
+   "seg": 5
+  },
+  {
+   "w": "Sube",
+   "desde": 24.463,
+   "hasta": 24.703,
+   "seg": 6
+  },
+  {
+   "w": "la",
+   "desde": 24.703,
+   "hasta": 24.843,
+   "seg": 6
+  },
+  {
+   "w": "carrera",
+   "desde": 24.843,
+   "hasta": 25.223,
+   "seg": 6
+  },
+  {
+   "w": "poco",
+   "desde": 25.223,
+   "hasta": 25.443,
+   "seg": 6
+  },
+  {
+   "w": "a",
+   "desde": 25.443,
+   "hasta": 25.603,
+   "seg": 6
+  },
+  {
+   "w": "poco,",
+   "desde": 25.603,
+   "hasta": 25.823,
+   "seg": 6
+  },
+  {
+   "w": "apunta",
+   "desde": 26.223,
+   "hasta": 26.623,
+   "seg": 6
+  },
+  {
+   "w": "cada",
+   "desde": 26.623,
+   "hasta": 26.803,
+   "seg": 6
+  },
+  {
+   "w": "semana",
+   "desde": 26.803,
+   "hasta": 27.203,
+   "seg": 6
+  },
+  {
+   "w": "lo",
+   "desde": 27.203,
+   "hasta": 27.463,
+   "seg": 6
+  },
+  {
+   "w": "que",
+   "desde": 27.463,
+   "hasta": 27.563,
+   "seg": 6
+  },
+  {
+   "w": "te",
+   "desde": 27.563,
+   "hasta": 27.683,
+   "seg": 6
+  },
+  {
+   "w": "molesta",
+   "desde": 27.683,
+   "hasta": 28.143,
+   "seg": 6
+  },
+  {
+   "w": "y,",
+   "desde": 28.143,
+   "hasta": 28.343,
+   "seg": 6
+  },
+  {
+   "w": "si",
+   "desde": 28.443,
+   "hasta": 28.483,
+   "seg": 6
+  },
+  {
+   "w": "arrastras",
+   "desde": 28.483,
+   "hasta": 28.943,
+   "seg": 6
+  },
+  {
+   "w": "una",
+   "desde": 28.943,
+   "hasta": 29.163,
+   "seg": 6
+  },
+  {
+   "w": "lesión,",
+   "desde": 29.163,
+   "hasta": 29.583,
+   "seg": 6
+  },
+  {
+   "w": "que",
+   "desde": 30.003,
+   "hasta": 30.083,
+   "seg": 6
+  },
+  {
+   "w": "la",
+   "desde": 30.083,
+   "hasta": 30.203,
+   "seg": 6
+  },
+  {
+   "w": "vea",
+   "desde": 30.203,
+   "hasta": 30.443,
+   "seg": 6
+  },
+  {
+   "w": "un",
+   "desde": 30.443,
+   "hasta": 30.583,
+   "seg": 6
+  },
+  {
+   "w": "fisio.",
+   "desde": 30.583,
+   "hasta": 31.003,
+   "seg": 6
+  },
+  {
+   "w": "Guárdalo",
+   "desde": 31.529,
+   "hasta": 31.929,
+   "seg": 7
+  },
+  {
+   "w": "y",
+   "desde": 31.929,
+   "hasta": 32.069,
+   "seg": 7
+  },
+  {
+   "w": "compártelo",
+   "desde": 32.069,
+   "hasta": 32.669,
+   "seg": 7
+  },
+  {
+   "w": "con",
+   "desde": 32.669,
+   "hasta": 32.849,
+   "seg": 7
+  },
+  {
+   "w": "tu",
+   "desde": 32.849,
+   "hasta": 33.049,
+   "seg": 7
+  },
+  {
+   "w": "grupo.",
+   "desde": 33.049,
+   "hasta": 33.249,
+   "seg": 7
+  }
+ ]
+}

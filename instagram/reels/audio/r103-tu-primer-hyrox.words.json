@@ -1,0 +1,666 @@
+{
+ "hash": "ea3b4fdd3e26c611",
+ "voz": "es_ES-davefx-medium",
+ "duracion": 34.723,
+ "segmentos": [
+  {
+   "tipo": "gancho",
+   "i": 0,
+   "voz_desde": 0.0,
+   "voz_hasta": 2.472,
+   "desde": 0.0,
+   "hasta": 2.722,
+   "transcripcion": "Tu primer HYROX. Esto te espera."
+  },
+  {
+   "tipo": "texto",
+   "i": 1,
+   "voz_desde": 2.722,
+   "voz_hasta": 5.857,
+   "desde": 2.722,
+   "hasta": 6.107,
+   "transcripcion": "Ocho kilómetros de carrera y, tras cada uno, una estación."
+  },
+  {
+   "tipo": "grafica",
+   "i": 2,
+   "voz_desde": 6.107,
+   "voz_hasta": 11.889,
+   "desde": 6.107,
+   "hasta": 12.139,
+   "transcripcion": "En una simulación con once atletas populares, el tiempo mediano fue de ochenta y seis minutos y medio."
+  },
+  {
+   "tipo": "grafica",
+   "i": 3,
+   "voz_desde": 12.139,
+   "voz_hasta": 17.014,
+   "desde": 12.139,
+   "hasta": 17.264,
+   "transcripcion": "Unos cincuenta y un minutos, corriendo. En las estaciones, unos treinta y tres."
+  },
+  {
+   "tipo": "texto",
+   "i": 4,
+   "voz_desde": 17.264,
+   "voz_hasta": 20.829,
+   "desde": 17.264,
+   "hasta": 21.079,
+   "transcripcion": "El pulso y el lactato tocaron techo al final, en los wall balls."
+  },
+  {
+   "tipo": "conclusion",
+   "voz_desde": 21.079,
+   "voz_hasta": 22.762,
+   "desde": 21.079,
+   "hasta": 23.279,
+   "transcripcion": "Vas a correr más de lo que crees."
+  },
+  {
+   "tipo": "aplicacion",
+   "voz_desde": 23.279,
+   "voz_hasta": 30.616,
+   "desde": 23.279,
+   "hasta": 30.866,
+   "transcripcion": "Dale a la carrera un sitio fijo en tu semana, haz una simulación completa antes de debutar y guarda algo para el final."
+  },
+  {
+   "tipo": "cierre",
+   "voz_desde": 30.866,
+   "voz_hasta": 33.223,
+   "desde": 30.866,
+   "hasta": 34.723,
+   "transcripcion": "Guárdalo y pruébalo en tu próximo entreno."
+  }
+ ],
+ "palabras": [
+  {
+   "w": "¿Tu",
+   "desde": 0.0,
+   "hasta": 0.1,
+   "seg": 0
+  },
+  {
+   "w": "primer",
+   "desde": 0.1,
+   "hasta": 0.36,
+   "seg": 0
+  },
+  {
+   "w": "HYROX?",
+   "desde": 0.36,
+   "hasta": 0.96,
+   "seg": 0
+  },
+  {
+   "w": "Esto",
+   "desde": 1.4,
+   "hasta": 1.66,
+   "seg": 0
+  },
+  {
+   "w": "te",
+   "desde": 1.66,
+   "hasta": 1.84,
+   "seg": 0
+  },
+  {
+   "w": "espera.",
+   "desde": 1.84,
+   "hasta": 2.14,
+   "seg": 0
+  },
+  {
+   "w": "Ocho",
+   "desde": 2.722,
+   "hasta": 2.942,
+   "seg": 1
+  },
+  {
+   "w": "kilómetros",
+   "desde": 2.942,
+   "hasta": 3.482,
+   "seg": 1
+  },
+  {
+   "w": "de",
+   "desde": 3.482,
+   "hasta": 3.602,
+   "seg": 1
+  },
+  {
+   "w": "carrera",
+   "desde": 3.602,
+   "hasta": 4.022,
+   "seg": 1
+  },
+  {
+   "w": "y,",
+   "desde": 4.022,
+   "hasta": 4.162,
+   "seg": 1
+  },
+  {
+   "w": "tras",
+   "desde": 4.222,
+   "hasta": 4.402,
+   "seg": 1
+  },
+  {
+   "w": "cada",
+   "desde": 4.402,
+   "hasta": 4.622,
+   "seg": 1
+  },
+  {
+   "w": "uno,",
+   "desde": 4.622,
+   "hasta": 4.822,
+   "seg": 1
+  },
+  {
+   "w": "una",
+   "desde": 5.002,
+   "hasta": 5.122,
+   "seg": 1
+  },
+  {
+   "w": "estación.",
+   "desde": 5.122,
+   "hasta": 5.502,
+   "seg": 1
+  },
+  {
+   "w": "En",
+   "desde": 6.107,
+   "hasta": 6.267,
+   "seg": 2
+  },
+  {
+   "w": "una",
+   "desde": 6.267,
+   "hasta": 6.427,
+   "seg": 2
+  },
+  {
+   "w": "simulación",
+   "desde": 6.427,
+   "hasta": 7.007,
+   "seg": 2
+  },
+  {
+   "w": "con",
+   "desde": 7.007,
+   "hasta": 7.247,
+   "seg": 2
+  },
+  {
+   "w": "once",
+   "desde": 7.247,
+   "hasta": 7.467,
+   "seg": 2
+  },
+  {
+   "w": "atletas",
+   "desde": 7.467,
+   "hasta": 7.907,
+   "seg": 2
+  },
+  {
+   "w": "populares,",
+   "desde": 7.907,
+   "hasta": 8.547,
+   "seg": 2
+  },
+  {
+   "w": "el",
+   "desde": 8.867,
+   "hasta": 8.967,
+   "seg": 2
+  },
+  {
+   "w": "tiempo",
+   "desde": 8.967,
+   "hasta": 9.227,
+   "seg": 2
+  },
+  {
+   "w": "mediano",
+   "desde": 9.227,
+   "hasta": 9.607,
+   "seg": 2
+  },
+  {
+   "w": "fue",
+   "desde": 9.607,
+   "hasta": 9.827,
+   "seg": 2
+  },
+  {
+   "w": "de",
+   "desde": 9.827,
+   "hasta": 9.967,
+   "seg": 2
+  },
+  {
+   "w": "ochenta",
+   "desde": 9.967,
+   "hasta": 10.347,
+   "seg": 2
+  },
+  {
+   "w": "y",
+   "desde": 10.347,
+   "hasta": 10.547,
+   "seg": 2
+  },
+  {
+   "w": "seis",
+   "desde": 10.547,
+   "hasta": 10.727,
+   "seg": 2
+  },
+  {
+   "w": "minutos",
+   "desde": 10.727,
+   "hasta": 11.087,
+   "seg": 2
+  },
+  {
+   "w": "y",
+   "desde": 11.087,
+   "hasta": 11.367,
+   "seg": 2
+  },
+  {
+   "w": "medio.",
+   "desde": 11.367,
+   "hasta": 11.507,
+   "seg": 2
+  },
+  {
+   "w": "Unos",
+   "desde": 12.139,
+   "hasta": 12.419,
+   "seg": 3
+  },
+  {
+   "w": "cincuenta",
+   "desde": 12.419,
+   "hasta": 12.839,
+   "seg": 3
+  },
+  {
+   "w": "y",
+   "desde": 12.839,
+   "hasta": 12.939,
+   "seg": 3
+  },
+  {
+   "w": "un",
+   "desde": 12.939,
+   "hasta": 13.019,
+   "seg": 3
+  },
+  {
+   "w": "minutos,",
+   "desde": 13.019,
+   "hasta": 13.379,
+   "seg": 3
+  },
+  {
+   "w": "corriendo.",
+   "desde": 13.639,
+   "hasta": 14.139,
+   "seg": 3
+  },
+  {
+   "w": "En",
+   "desde": 14.539,
+   "hasta": 14.739,
+   "seg": 3
+  },
+  {
+   "w": "las",
+   "desde": 14.739,
+   "hasta": 14.859,
+   "seg": 3
+  },
+  {
+   "w": "estaciones,",
+   "desde": 14.859,
+   "hasta": 15.419,
+   "seg": 3
+  },
+  {
+   "w": "unos",
+   "desde": 15.659,
+   "hasta": 15.819,
+   "seg": 3
+  },
+  {
+   "w": "treinta",
+   "desde": 15.819,
+   "hasta": 16.219,
+   "seg": 3
+  },
+  {
+   "w": "y",
+   "desde": 16.219,
+   "hasta": 16.359,
+   "seg": 3
+  },
+  {
+   "w": "tres.",
+   "desde": 16.359,
+   "hasta": 16.579,
+   "seg": 3
+  },
+  {
+   "w": "El",
+   "desde": 17.264,
+   "hasta": 17.444,
+   "seg": 4
+  },
+  {
+   "w": "pulso",
+   "desde": 17.444,
+   "hasta": 17.784,
+   "seg": 4
+  },
+  {
+   "w": "y",
+   "desde": 17.784,
+   "hasta": 17.964,
+   "seg": 4
+  },
+  {
+   "w": "el",
+   "desde": 17.964,
+   "hasta": 18.084,
+   "seg": 4
+  },
+  {
+   "w": "lactato",
+   "desde": 18.084,
+   "hasta": 18.464,
+   "seg": 4
+  },
+  {
+   "w": "tocaron",
+   "desde": 18.464,
+   "hasta": 18.904,
+   "seg": 4
+  },
+  {
+   "w": "techo",
+   "desde": 18.904,
+   "hasta": 19.264,
+   "seg": 4
+  },
+  {
+   "w": "al",
+   "desde": 19.264,
+   "hasta": 19.384,
+   "seg": 4
+  },
+  {
+   "w": "final,",
+   "desde": 19.384,
+   "hasta": 19.624,
+   "seg": 4
+  },
+  {
+   "w": "en",
+   "desde": 19.824,
+   "hasta": 19.904,
+   "seg": 4
+  },
+  {
+   "w": "los",
+   "desde": 19.904,
+   "hasta": 20.024,
+   "seg": 4
+  },
+  {
+   "w": "wall",
+   "desde": 20.024,
+   "hasta": 20.264,
+   "seg": 4
+  },
+  {
+   "w": "balls.",
+   "desde": 20.264,
+   "hasta": 20.444,
+   "seg": 4
+  },
+  {
+   "w": "Vas",
+   "desde": 21.079,
+   "hasta": 21.199,
+   "seg": 5
+  },
+  {
+   "w": "a",
+   "desde": 21.199,
+   "hasta": 21.279,
+   "seg": 5
+  },
+  {
+   "w": "correr",
+   "desde": 21.279,
+   "hasta": 21.459,
+   "seg": 5
+  },
+  {
+   "w": "más",
+   "desde": 21.459,
+   "hasta": 21.699,
+   "seg": 5
+  },
+  {
+   "w": "de",
+   "desde": 21.699,
+   "hasta": 21.859,
+   "seg": 5
+  },
+  {
+   "w": "lo",
+   "desde": 21.859,
+   "hasta": 21.959,
+   "seg": 5
+  },
+  {
+   "w": "que",
+   "desde": 21.959,
+   "hasta": 22.079,
+   "seg": 5
+  },
+  {
+   "w": "crees.",
+   "desde": 22.079,
+   "hasta": 22.459,
+   "seg": 5
+  },
+  {
+   "w": "Dale",
+   "desde": 23.279,
+   "hasta": 23.439,
+   "seg": 6
+  },
+  {
+   "w": "a",
+   "desde": 23.439,
+   "hasta": 23.559,
+   "seg": 6
+  },
+  {
+   "w": "la",
+   "desde": 23.559,
+   "hasta": 23.639,
+   "seg": 6
+  },
+  {
+   "w": "carrera",
+   "desde": 23.639,
+   "hasta": 24.039,
+   "seg": 6
+  },
+  {
+   "w": "un",
+   "desde": 24.039,
+   "hasta": 24.219,
+   "seg": 6
+  },
+  {
+   "w": "sitio",
+   "desde": 24.219,
+   "hasta": 24.519,
+   "seg": 6
+  },
+  {
+   "w": "fijo",
+   "desde": 24.519,
+   "hasta": 24.939,
+   "seg": 6
+  },
+  {
+   "w": "en",
+   "desde": 24.939,
+   "hasta": 25.059,
+   "seg": 6
+  },
+  {
+   "w": "tu",
+   "desde": 25.059,
+   "hasta": 25.199,
+   "seg": 6
+  },
+  {
+   "w": "semana,",
+   "desde": 25.199,
+   "hasta": 25.539,
+   "seg": 6
+  },
+  {
+   "w": "haz",
+   "desde": 25.959,
+   "hasta": 26.139,
+   "seg": 6
+  },
+  {
+   "w": "una",
+   "desde": 26.139,
+   "hasta": 26.279,
+   "seg": 6
+  },
+  {
+   "w": "simulación",
+   "desde": 26.279,
+   "hasta": 26.899,
+   "seg": 6
+  },
+  {
+   "w": "completa",
+   "desde": 26.899,
+   "hasta": 27.479,
+   "seg": 6
+  },
+  {
+   "w": "antes",
+   "desde": 27.479,
+   "hasta": 28.159,
+   "seg": 6
+  },
+  {
+   "w": "de",
+   "desde": 28.159,
+   "hasta": 28.379,
+   "seg": 6
+  },
+  {
+   "w": "debutar",
+   "desde": 28.379,
+   "hasta": 28.859,
+   "seg": 6
+  },
+  {
+   "w": "y",
+   "desde": 28.859,
+   "hasta": 28.979,
+   "seg": 6
+  },
+  {
+   "w": "guarda",
+   "desde": 28.979,
+   "hasta": 29.359,
+   "seg": 6
+  },
+  {
+   "w": "algo",
+   "desde": 29.359,
+   "hasta": 29.639,
+   "seg": 6
+  },
+  {
+   "w": "para",
+   "desde": 29.639,
+   "hasta": 29.879,
+   "seg": 6
+  },
+  {
+   "w": "el",
+   "desde": 29.879,
+   "hasta": 30.019,
+   "seg": 6
+  },
+  {
+   "w": "final.",
+   "desde": 30.019,
+   "hasta": 30.239,
+   "seg": 6
+  },
+  {
+   "w": "Guárdalo",
+   "desde": 30.866,
+   "hasta": 31.286,
+   "seg": 7
+  },
+  {
+   "w": "y",
+   "desde": 31.286,
+   "hasta": 31.426,
+   "seg": 7
+  },
+  {
+   "w": "pruébalo",
+   "desde": 31.426,
+   "hasta": 31.886,
+   "seg": 7
+  },
+  {
+   "w": "en",
+   "desde": 31.886,
+   "hasta": 31.966,
+   "seg": 7
+  },
+  {
+   "w": "tu",
+   "desde": 31.966,
+   "hasta": 32.146,
+   "seg": 7
+  },
+  {
+   "w": "próximo",
+   "desde": 32.146,
+   "hasta": 32.426,
+   "seg": 7
+  },
+  {
+   "w": "entreno.",
+   "desde": 32.426,
+   "hasta": 33.026,
+   "seg": 7
+  }
+ ]
+}

@@ -1,0 +1,630 @@
+{
+ "hash": "41addabc7ebe9f41",
+ "voz": "es_ES-davefx-medium",
+ "duracion": 38.345,
+ "segmentos": [
+  {
+   "tipo": "gancho",
+   "i": 0,
+   "voz_desde": 0.0,
+   "voz_hasta": 2.322,
+   "desde": 0.0,
+   "hasta": 2.572,
+   "transcripcion": "El trineo no se empuja con la espalda."
+  },
+  {
+   "tipo": "texto",
+   "i": 1,
+   "voz_desde": 2.572,
+   "voz_hasta": 7.704,
+   "desde": 2.572,
+   "hasta": 7.954,
+   "transcripcion": "Tronco inclinado, espalda neutra, brazos largos y pasos cortos y rápidos."
+  },
+  {
+   "tipo": "texto",
+   "i": 2,
+   "voz_desde": 7.954,
+   "voz_hasta": 12.632,
+   "desde": 7.954,
+   "hasta": 12.882,
+   "transcripcion": "El error típico, cadera alta y espalda redonda. Así la fuerza se pierde."
+  },
+  {
+   "tipo": "texto",
+   "i": 3,
+   "voz_desde": 12.882,
+   "voz_hasta": 18.466,
+   "desde": 12.882,
+   "hasta": 18.716,
+   "transcripcion": "Empujan los glúteos, los cuádriceps y los gemelos. Los brazos solo transmiten."
+  },
+  {
+   "tipo": "grafica",
+   "i": 4,
+   "voz_desde": 18.716,
+   "voz_hasta": 27.214,
+   "desde": 18.716,
+   "hasta": 27.464,
+   "transcripcion": "En una simulación con atletas populares, empujar el trineo llevó una mediana de ciento veintiocho segundos. Arrastrarlo, ciento cincuenta y cinco."
+  },
+  {
+   "tipo": "conclusion",
+   "voz_desde": 27.464,
+   "voz_hasta": 29.507,
+   "desde": 27.464,
+   "hasta": 29.757,
+   "transcripcion": "Primero el ángulo, después la fuerza."
+  },
+  {
+   "tipo": "aplicacion",
+   "voz_desde": 29.757,
+   "voz_hasta": 34.192,
+   "desde": 29.757,
+   "hasta": 34.442,
+   "transcripcion": "Grábate de lado, no pares el trineo y mete empujes cortos después de correr."
+  },
+  {
+   "tipo": "cierre",
+   "voz_desde": 34.442,
+   "voz_hasta": 36.845,
+   "desde": 34.442,
+   "hasta": 38.345,
+   "transcripcion": "Guárdalo y pruébalo en tu próximo entreno."
+  }
+ ],
+ "palabras": [
+  {
+   "w": "El",
+   "desde": 0.0,
+   "hasta": 0.18,
+   "seg": 0
+  },
+  {
+   "w": "trineo",
+   "desde": 0.18,
+   "hasta": 0.66,
+   "seg": 0
+  },
+  {
+   "w": "no",
+   "desde": 0.66,
+   "hasta": 0.8,
+   "seg": 0
+  },
+  {
+   "w": "se",
+   "desde": 0.8,
+   "hasta": 0.92,
+   "seg": 0
+  },
+  {
+   "w": "empuja",
+   "desde": 0.92,
+   "hasta": 1.32,
+   "seg": 0
+  },
+  {
+   "w": "con",
+   "desde": 1.32,
+   "hasta": 1.5,
+   "seg": 0
+  },
+  {
+   "w": "la",
+   "desde": 1.5,
+   "hasta": 1.6,
+   "seg": 0
+  },
+  {
+   "w": "espalda.",
+   "desde": 1.6,
+   "hasta": 2.06,
+   "seg": 0
+  },
+  {
+   "w": "Tronco",
+   "desde": 2.572,
+   "hasta": 2.872,
+   "seg": 1
+  },
+  {
+   "w": "inclinado,",
+   "desde": 2.872,
+   "hasta": 3.492,
+   "seg": 1
+  },
+  {
+   "w": "espalda",
+   "desde": 3.632,
+   "hasta": 4.092,
+   "seg": 1
+  },
+  {
+   "w": "neutra,",
+   "desde": 4.092,
+   "hasta": 4.512,
+   "seg": 1
+  },
+  {
+   "w": "brazos",
+   "desde": 4.632,
+   "hasta": 4.972,
+   "seg": 1
+  },
+  {
+   "w": "largos",
+   "desde": 4.972,
+   "hasta": 5.592,
+   "seg": 1
+  },
+  {
+   "w": "y",
+   "desde": 5.592,
+   "hasta": 5.732,
+   "seg": 1
+  },
+  {
+   "w": "pasos",
+   "desde": 5.732,
+   "hasta": 6.112,
+   "seg": 1
+  },
+  {
+   "w": "cortos",
+   "desde": 6.112,
+   "hasta": 6.712,
+   "seg": 1
+  },
+  {
+   "w": "y",
+   "desde": 6.712,
+   "hasta": 6.872,
+   "seg": 1
+  },
+  {
+   "w": "rápidos.",
+   "desde": 6.872,
+   "hasta": 7.372,
+   "seg": 1
+  },
+  {
+   "w": "El",
+   "desde": 7.954,
+   "hasta": 8.094,
+   "seg": 2
+  },
+  {
+   "w": "error",
+   "desde": 8.094,
+   "hasta": 8.274,
+   "seg": 2
+  },
+  {
+   "w": "típico:",
+   "desde": 8.274,
+   "hasta": 8.874,
+   "seg": 2
+  },
+  {
+   "w": "cadera",
+   "desde": 9.074,
+   "hasta": 9.434,
+   "seg": 2
+  },
+  {
+   "w": "alta",
+   "desde": 9.434,
+   "hasta": 9.714,
+   "seg": 2
+  },
+  {
+   "w": "y",
+   "desde": 9.714,
+   "hasta": 9.914,
+   "seg": 2
+  },
+  {
+   "w": "espalda",
+   "desde": 9.914,
+   "hasta": 10.414,
+   "seg": 2
+  },
+  {
+   "w": "redonda.",
+   "desde": 10.414,
+   "hasta": 10.874,
+   "seg": 2
+  },
+  {
+   "w": "Así",
+   "desde": 11.194,
+   "hasta": 11.394,
+   "seg": 2
+  },
+  {
+   "w": "la",
+   "desde": 11.394,
+   "hasta": 11.534,
+   "seg": 2
+  },
+  {
+   "w": "fuerza",
+   "desde": 11.534,
+   "hasta": 11.754,
+   "seg": 2
+  },
+  {
+   "w": "se",
+   "desde": 11.754,
+   "hasta": 11.994,
+   "seg": 2
+  },
+  {
+   "w": "pierde.",
+   "desde": 11.994,
+   "hasta": 12.394,
+   "seg": 2
+  },
+  {
+   "w": "Empujan",
+   "desde": 12.882,
+   "hasta": 13.402,
+   "seg": 3
+  },
+  {
+   "w": "los",
+   "desde": 13.402,
+   "hasta": 13.502,
+   "seg": 3
+  },
+  {
+   "w": "glúteos,",
+   "desde": 13.502,
+   "hasta": 14.042,
+   "seg": 3
+  },
+  {
+   "w": "los",
+   "desde": 14.262,
+   "hasta": 14.342,
+   "seg": 3
+  },
+  {
+   "w": "cuádriceps",
+   "desde": 14.342,
+   "hasta": 14.942,
+   "seg": 3
+  },
+  {
+   "w": "y",
+   "desde": 14.942,
+   "hasta": 15.282,
+   "seg": 3
+  },
+  {
+   "w": "los",
+   "desde": 15.282,
+   "hasta": 15.402,
+   "seg": 3
+  },
+  {
+   "w": "gemelos.",
+   "desde": 15.402,
+   "hasta": 15.982,
+   "seg": 3
+  },
+  {
+   "w": "Los",
+   "desde": 16.522,
+   "hasta": 16.662,
+   "seg": 3
+  },
+  {
+   "w": "brazos",
+   "desde": 16.662,
+   "hasta": 17.162,
+   "seg": 3
+  },
+  {
+   "w": "solo",
+   "desde": 17.162,
+   "hasta": 17.402,
+   "seg": 3
+  },
+  {
+   "w": "transmiten.",
+   "desde": 17.402,
+   "hasta": 18.182,
+   "seg": 3
+  },
+  {
+   "w": "En",
+   "desde": 18.716,
+   "hasta": 18.876,
+   "seg": 4
+  },
+  {
+   "w": "una",
+   "desde": 18.876,
+   "hasta": 19.036,
+   "seg": 4
+  },
+  {
+   "w": "simulación",
+   "desde": 19.036,
+   "hasta": 19.576,
+   "seg": 4
+  },
+  {
+   "w": "con",
+   "desde": 19.576,
+   "hasta": 19.796,
+   "seg": 4
+  },
+  {
+   "w": "atletas",
+   "desde": 19.796,
+   "hasta": 20.296,
+   "seg": 4
+  },
+  {
+   "w": "populares,",
+   "desde": 20.296,
+   "hasta": 20.956,
+   "seg": 4
+  },
+  {
+   "w": "empujar",
+   "desde": 21.276,
+   "hasta": 21.796,
+   "seg": 4
+  },
+  {
+   "w": "el",
+   "desde": 21.796,
+   "hasta": 21.916,
+   "seg": 4
+  },
+  {
+   "w": "trineo",
+   "desde": 21.916,
+   "hasta": 22.276,
+   "seg": 4
+  },
+  {
+   "w": "llevó",
+   "desde": 22.276,
+   "hasta": 22.516,
+   "seg": 4
+  },
+  {
+   "w": "una",
+   "desde": 22.516,
+   "hasta": 22.656,
+   "seg": 4
+  },
+  {
+   "w": "mediana",
+   "desde": 22.656,
+   "hasta": 23.016,
+   "seg": 4
+  },
+  {
+   "w": "de",
+   "desde": 23.016,
+   "hasta": 23.196,
+   "seg": 4
+  },
+  {
+   "w": "ciento",
+   "desde": 23.196,
+   "hasta": 23.456,
+   "seg": 4
+  },
+  {
+   "w": "veintiocho",
+   "desde": 23.456,
+   "hasta": 24.036,
+   "seg": 4
+  },
+  {
+   "w": "segundos.",
+   "desde": 24.036,
+   "hasta": 24.496,
+   "seg": 4
+  },
+  {
+   "w": "Arrastrarlo,",
+   "desde": 25.076,
+   "hasta": 25.636,
+   "seg": 4
+  },
+  {
+   "w": "ciento",
+   "desde": 25.676,
+   "hasta": 25.896,
+   "seg": 4
+  },
+  {
+   "w": "cincuenta",
+   "desde": 25.896,
+   "hasta": 26.476,
+   "seg": 4
+  },
+  {
+   "w": "y",
+   "desde": 26.476,
+   "hasta": 26.576,
+   "seg": 4
+  },
+  {
+   "w": "cinco.",
+   "desde": 26.576,
+   "hasta": 26.836,
+   "seg": 4
+  },
+  {
+   "w": "Primero",
+   "desde": 27.464,
+   "hasta": 27.844,
+   "seg": 5
+  },
+  {
+   "w": "el",
+   "desde": 27.844,
+   "hasta": 27.964,
+   "seg": 5
+  },
+  {
+   "w": "ángulo,",
+   "desde": 27.964,
+   "hasta": 28.264,
+   "seg": 5
+  },
+  {
+   "w": "después",
+   "desde": 28.404,
+   "hasta": 28.624,
+   "seg": 5
+  },
+  {
+   "w": "la",
+   "desde": 28.624,
+   "hasta": 28.884,
+   "seg": 5
+  },
+  {
+   "w": "fuerza.",
+   "desde": 28.884,
+   "hasta": 29.084,
+   "seg": 5
+  },
+  {
+   "w": "Grábate",
+   "desde": 29.757,
+   "hasta": 30.157,
+   "seg": 6
+  },
+  {
+   "w": "de",
+   "desde": 30.157,
+   "hasta": 30.297,
+   "seg": 6
+  },
+  {
+   "w": "lado,",
+   "desde": 30.297,
+   "hasta": 30.537,
+   "seg": 6
+  },
+  {
+   "w": "no",
+   "desde": 30.857,
+   "hasta": 30.957,
+   "seg": 6
+  },
+  {
+   "w": "pares",
+   "desde": 30.957,
+   "hasta": 31.317,
+   "seg": 6
+  },
+  {
+   "w": "el",
+   "desde": 31.317,
+   "hasta": 31.477,
+   "seg": 6
+  },
+  {
+   "w": "trineo",
+   "desde": 31.477,
+   "hasta": 31.957,
+   "seg": 6
+  },
+  {
+   "w": "y",
+   "desde": 31.957,
+   "hasta": 32.077,
+   "seg": 6
+  },
+  {
+   "w": "mete",
+   "desde": 32.077,
+   "hasta": 32.297,
+   "seg": 6
+  },
+  {
+   "w": "empujes",
+   "desde": 32.297,
+   "hasta": 32.817,
+   "seg": 6
+  },
+  {
+   "w": "cortos",
+   "desde": 32.817,
+   "hasta": 33.237,
+   "seg": 6
+  },
+  {
+   "w": "después",
+   "desde": 33.237,
+   "hasta": 33.417,
+   "seg": 6
+  },
+  {
+   "w": "de",
+   "desde": 33.417,
+   "hasta": 33.617,
+   "seg": 6
+  },
+  {
+   "w": "correr.",
+   "desde": 33.617,
+   "hasta": 33.857,
+   "seg": 6
+  },
+  {
+   "w": "Guárdalo",
+   "desde": 34.442,
+   "hasta": 34.842,
+   "seg": 7
+  },
+  {
+   "w": "y",
+   "desde": 34.842,
+   "hasta": 34.982,
+   "seg": 7
+  },
+  {
+   "w": "pruébalo",
+   "desde": 34.982,
+   "hasta": 35.482,
+   "seg": 7
+  },
+  {
+   "w": "en",
+   "desde": 35.482,
+   "hasta": 35.582,
+   "seg": 7
+  },
+  {
+   "w": "tu",
+   "desde": 35.582,
+   "hasta": 35.762,
+   "seg": 7
+  },
+  {
+   "w": "próximo",
+   "desde": 35.762,
+   "hasta": 36.022,
+   "seg": 7
+  },
+  {
+   "w": "entreno.",
+   "desde": 36.022,
+   "hasta": 36.662,
+   "seg": 7
+  }
+ ]
+}
