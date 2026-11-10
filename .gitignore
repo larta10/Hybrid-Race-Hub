@@ -44,3 +44,6 @@ video/public/fonts/
 
 # Caché de Python
 __pycache__/
+
+# Ajustes locales de Claude Code
+.claude/settings.local.json
