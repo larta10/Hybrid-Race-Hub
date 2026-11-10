@@ -1,6 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Audio, Sequence, staticFile, interpolate, useCurrentFrame } from "remotion";
-import { Fondo } from "./components/Fondo.jsx";
+import { Fondo, Planos } from "./components/Fondo.jsx";
+import { Monigote } from "./components/Monigote.jsx";
 import { Gancho, TextoCinetico, FuenteChip, Marca } from "./components/Texto.jsx";
 import { GraficaAnimada } from "./components/GraficaAnimada.jsx";
 import { SenalarMusculo } from "./components/SenalarMusculo.jsx";
@@ -51,6 +52,12 @@ export function Musica({ music, total, palabras }) {
   );
 }
 
+/** Clips de una escena (principal + planos extra) con sus segundos útiles */
+function srcsEscena(i, e, assets) {
+  const claves = [String(i), ...(e.cortes || []).map((_, k) => `${i}-c${k + 1}`)];
+  return claves.filter((k) => assets?.clips?.[k]).map((k) => ({ src: assets.clips[k], seg: assets?.clipSeg?.[k] }));
+}
+
 function Escena({ s, assets, reel, conVoz }) {
   const dur = s.hasta - s.desde;
   const e = s.escena;
@@ -60,8 +67,12 @@ function Escena({ s, assets, reel, conVoz }) {
   const musculos = (e.musculo || []).filter((m) => src && m.clip && m.clip === clave && typeof m.x === "number");
   return (
     <AbsoluteFill>
-      <Fondo src={src} clipSeg={assets?.clipSeg?.[String(s.i)]} duracion={dur} semilla={s.i} oscuro={s.tipo === "grafica" ? 0.5 : 0.4} desenfoque={s.tipo === "grafica" ? 6 : 0} />
-      {musculos.length > 0 && <SenalarMusculo musculos={musculos} ritmo={assets?.clipSeg?.[String(s.i)] ? Math.min(1, assets.clipSeg[String(s.i)] / (dur / 30)) : 1} />}
+      {e.tecnica ? (
+        <Monigote tecnica={e.tecnica} />
+      ) : (
+        <Planos srcs={srcsEscena(s.i, e, assets)} duracion={dur} semilla={s.i} oscuro={s.tipo === "grafica" ? 0.5 : s.tipo === "gancho" ? 0.3 : 0.4} desenfoque={s.tipo === "grafica" ? 6 : 0} sinCortes={musculos.length > 0} />
+      )}
+      {musculos.length > 0 && !e.cortes?.length && <SenalarMusculo musculos={musculos} ritmo={assets?.clipSeg?.[String(s.i)] ? Math.min(1, assets.clipSeg[String(s.i)] / (dur / 30)) : 1} />}
       {s.tipo === "gancho" && <Gancho texto={reel.gancho} duracion={dur} />}
       {s.tipo === "grafica" && <GraficaAnimada grafica={e.grafica} duracion={dur} />}
       {/* Con voz, los textos que repetirían la narración se quitan: quedan datos, gráficas y fuentes */}
@@ -72,7 +83,7 @@ function Escena({ s, assets, reel, conVoz }) {
           </Sequence>
         ))}
       {/* Con voz y sin metraje, la frase clave queda arriba como titular para que la escena no quede vacía */}
-      {conVoz && !src && !e.grafica && s.tipo !== "gancho" && (e.texto || []).length > 0 && (
+      {conVoz && !src && !e.grafica && !e.tecnica && s.tipo !== "gancho" && (e.texto || []).length > 0 && (
         <TextoCinetico texto={e.texto[0]} duracion={dur} posicion="arriba" />
       )}
       {e.fuente && !e.grafica && <FuenteChip texto={e.fuente} top={SAFE.top + 48} />}
@@ -86,7 +97,9 @@ function alturaSubtitulos(segs, reel, assets) {
     const f = t * FPS;
     const s = segs.find((x) => f >= x.desde && f < x.hasta);
     if (!s) return 0.65;
+    if (s.tipo === "gancho") return null; // el texto grande del gancho ya ocupa la pantalla: sin subtítulos
     if (s.tipo === "grafica") return 0.77; // debajo de la tarjeta
+    if (s.escena?.tecnica) return 0.79; // debajo del monigote
     if (s.tipo === "aplicacion") return 0.77; // debajo de las tarjetas de "qué hacer"
     if (s.tipo === "conclusion") return 0.77; // debajo del bloque de conclusión
     const ms = (s.escena?.musculo || []).filter((m) => typeof m.x === "number" && assets?.clips?.[String(s.i)]);
@@ -96,6 +109,26 @@ function alturaSubtitulos(segs, reel, assets) {
     }
     return 0.65;
   };
+}
+
+/** Efectos: golpe al empezar el gancho, whoosh en cada cambio de escena y click al entrar "qué hacer" */
+function Efectos({ segs }) {
+  return (
+    <>
+      <Sequence from={0} durationInFrames={24} layout="none">
+        <Audio src={staticFile("sfx/impacto.wav")} volume={0.5} />
+      </Sequence>
+      {segs.slice(1).map((s, k) => {
+        const click = s.tipo === "aplicacion";
+        // El whoosh llega a su máximo (~0,3 s) justo en el corte
+        return (
+          <Sequence key={k} from={Math.max(0, s.desde - (click ? 0 : 9))} durationInFrames={20} layout="none">
+            <Audio src={staticFile(click ? "sfx/click.wav" : "sfx/whoosh.wav")} volume={click ? 0.45 : 0.2} />
+          </Sequence>
+        );
+      })}
+    </>
+  );
 }
 
 export function Reel({ reel, assets }) {
@@ -121,10 +154,12 @@ export function Reel({ reel, assets }) {
           )}
         </Sequence>
       ))}
-      <Marca progreso={frame / Math.max(1, total - 1)} mostrarMarca={frame < cierre.desde} />
-      {narr && <Subtitulos palabras={narr.palabras} posicionY={posY} />}
+      {/* Sin logo en el gancho: solo la barra de progreso */}
+      <Marca progreso={frame / Math.max(1, total - 1)} mostrarMarca={frame >= (segs[0]?.hasta ?? 0) && frame < cierre.desde} />
+      {narr && <Subtitulos palabras={narr.palabras} frases={narr.frases} posicionY={posY} />}
       {narr && <Audio src={staticFile(assets.voz.file)} volume={1} />}
-      <Musica music={assets?.music} total={total} palabras={narr?.palabras} />
+      {!assets?.mezclaExterna && <Musica music={assets?.music} total={total} palabras={narr?.palabras} />}
+      {assets?.clips && <Efectos segs={segs} />}
     </AbsoluteFill>
   );
 }

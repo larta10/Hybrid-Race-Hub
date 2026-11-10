@@ -40,6 +40,8 @@ export function Gancho({ texto, duracion }) {
   const size = tamano(texto, 168, 0.52);
   const paso = Math.max(2, Math.min(5, Math.floor(20 / ws.length)));
   const salida = interpolate(frame, [duracion - 5, duracion], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  // Entrada de golpe: el bloque cae desde el 118 % al 100 % en 6 fotogramas (coincide con el sonido de impacto)
+  const golpe = interpolate(frame, [0, 6], [1.18, 1], { extrapolateRight: "clamp", easing: (t) => 1 - Math.pow(1 - t, 3) });
   return (
     <AbsoluteFill style={{ justifyContent: "center" }}>
       <div
@@ -47,7 +49,9 @@ export function Gancho({ texto, duracion }) {
           position: "absolute",
           left: SAFE.left,
           width: SAFE.width,
-          top: SAFE.top + 260,
+          top: SAFE.top + 200,
+          transform: `scale(${golpe})`,
+          transformOrigin: "left top",
           fontFamily: F.titular,
           fontSize: size,
           lineHeight: 0.92,

@@ -189,3 +189,26 @@ Reglas que hay que mantener:
 - `publish.mjs` ignora los ids `x…` al comprobar si ya se publicó hoy.
 - Novedades del motor usadas por estos guiones: `aplicacion_titulo`, `tarjeta_final {titulo, lineas}` y `pronunciacion` propia del guion (no cambia la huella de los demás reels).
 - x01-colab-buscarpareja (Buscar Pareja Híbrida): publicado el 10/11/2026, https://www.instagram.com/reel/DfklcKpjfEz/ · invitación de colaboración a @buscarparejahibrida pendiente de aceptar.
+
+## Reels con aspecto profesional (10 de noviembre de 2026)
+
+Detalle técnico en `video/README.md` (variedad, monigote, ritmo y sonido) e `instagram/reels/VOCES.md` (casting).
+
+| Reel | Clips | Técnica (monigote) | Narración | Estado |
+|---|---|---|---|---|
+| r105 | 5 escenas + fondo, revisados | — | Regenerada (alineación por frase) | Listo (qa_ok), revisado con el render nuevo |
+| r107 muro, r113 cuerda | Sin metraje de OCR en Pixabay | — | Falta | En preparación: necesita Pexels |
+| r108, r111, r112, r114, r115, r121 | Revisados y subidos | — | Falta | Falta narración y QA |
+| r109 | Revisados (ya estaban) | — | Regenerada | Listo (qa_ok) |
+| r110 wall balls | Revisados | Escena 4 comparada | Falta | Falta narración y QA |
+| r116 farmers carry | Revisados + plano extra | Escenas 3 y 4 | Falta | Falta narración y QA |
+| r117 | Revisados | Escena 5 (carrera) | Falta | Falta narración y QA |
+| r118 calentamiento | Elegidos, sin aprobar (gancho y escena 3 sin persona) | Escena 4 (carrera) | Falta | Necesita mejor metraje |
+| r119 tapering, r120 ritmo medio | Pixabay sin metraje adecuado | — | Falta | En preparación: necesita Pexels |
+
+Pendiente para la siguiente sesión:
+1. **Añadir `PEXELS_API_KEY` a `.env.local`** (no estaba; solo existe la de Pixabay) y repetir
+   `node scripts/fetch-clips.mjs buscar <reel>` en r107, r113, r118, r119 y r120. Los guiones ya tienen sus búsquedas.
+2. Escribir la `narracion` de los reels que no la tienen (r108 y r110-r121), generar la voz y renderizar con
+   `--solo-revisados` para el control de calidad; después `"qa_ok": true`.
+3. Pablo elige la voz escuchando `instagram/reels/casting-voz/` (recomendadas ef_dora y em_santa) y cambia `voz.json`.

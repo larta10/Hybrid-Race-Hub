@@ -303,7 +303,7 @@ export function Monigote({ tecnica }) {
   // Zona de dibujo: dentro de la zona segura y por encima de los subtítulos (que van al 78 %)
   const x = SAFE.left;
   const w = SAFE.width;
-  const top = SAFE.top + 20;
+  const top = SAFE.top + 60; // por debajo de la marca "HYBRID RACE HUB"
   const bottom = Math.round(H * 0.72);
   return (
     <AbsoluteFill style={{ backgroundColor: FONDO }}>

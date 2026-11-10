@@ -9,7 +9,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { bundle } from "@remotion/bundler";
 import { renderMedia, renderStill, selectComposition, ensureBrowser } from "@remotion/renderer";
-import { VIDEO, PUBLIC, OUT, FONTS_DIR, REELS_DIR, mkdirp, ffmpeg, mediaDuration, loadReel, clipSlots, clipListo } from "./lib/common.mjs";
+import { VIDEO, ROOT, PUBLIC, OUT, FONTS_DIR, REELS_DIR, mkdirp, ffmpeg, mediaDuration, loadReel, clipSlots, clipListo } from "./lib/common.mjs";
 import { localClip, prepareVertical, clipKey } from "./lib/clips.mjs";
 import { pickTrack } from "./lib/music.mjs";
 
@@ -20,6 +20,12 @@ const MAX_MB = 50;
 export function preparePublic({ clipFiles = {}, musicFile = null, voz = null, clipSeg = {} } = {}) {
   const fonts = mkdirp(path.join(PUBLIC, "fonts"));
   for (const f of readdirSync(FONTS_DIR).filter((x) => x.endsWith(".ttf"))) copyFileSync(path.join(FONTS_DIR, f), path.join(fonts, f));
+  // Efectos de sonido (instagram/sfx, generados con scripts/make-sfx.mjs)
+  const sfxDir = path.join(ROOT, "instagram", "sfx");
+  if (existsSync(sfxDir)) {
+    const sfx = mkdirp(path.join(PUBLIC, "sfx"));
+    for (const f of readdirSync(sfxDir).filter((x) => x.endsWith(".wav"))) copyFileSync(path.join(sfxDir, f), path.join(sfx, f));
+  }
   rmSync(RUNTIME, { recursive: true, force: true });
   mkdirp(path.join(RUNTIME, "clips"));
   const clips = {};
@@ -111,7 +117,30 @@ async function renderComposition(opts) {
   }
 }
 
-async function renderCompositionIn({ compId, inputProps, outBase, coverSecond }) {
+/**
+ * Mezcla final: la música entra por debajo de lo que ha renderizado Remotion (voz + efectos) con ducking real
+ * (sidechaincompress con la voz como cadena lateral), fundidos de entrada y salida, y todo a -14 LUFS / -1 dBTP
+ * (medida + ganancia fija + limitador, como la voz).
+ */
+function mezclar(entrada, musica, salida) {
+  const dur = mediaDuration(entrada);
+  const ini = musica.inicio || 0;
+  const filtro = [
+    `[1:a]atrim=start=${ini},asetpts=PTS-STARTPTS,aformat=channel_layouts=stereo,afade=t=in:d=0.5,afade=t=out:st=${Math.max(0, dur - 1.2).toFixed(2)}:d=1.2,volume=0.32[m]`,
+    "[0:a]aformat=channel_layouts=stereo,asplit=2[v][sc]",
+    "[m][sc]sidechaincompress=threshold=0.02:ratio=10:attack=15:release=350:makeup=1[md]",
+    "[v][md]amix=inputs=2:duration=first:normalize=0[mx]",
+  ].join(";");
+  const wav = `${salida}.mezcla.wav`;
+  ffmpeg(["-i", entrada, "-i", musica.path, "-filter_complex", `${filtro};[mx]loudnorm=I=-14:TP=-1:LRA=11[out]`, "-map", "[out]", "-ar", "48000", wav]);
+  const log = ffmpeg(["-i", wav, "-af", "loudnorm=I=-14:TP=-1:print_format=json", "-f", "null", "-"]);
+  const med = JSON.parse(log.slice(log.lastIndexOf("{"), log.lastIndexOf("}") + 1));
+  const gan = Math.max(-6, Math.min(6, -14 - Number(med.input_i)));
+  ffmpeg(["-i", entrada, "-i", wav, "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-af", `volume=${gan.toFixed(2)}dB,alimiter=limit=0.86:attack=2:release=50:level=false`, "-c:a", "aac", "-b:a", "128k", "-shortest", salida]);
+  rmSync(wav, { force: true });
+}
+
+async function renderCompositionIn({ compId, inputProps, outBase, coverSecond, mezcla = null }) {
   await ensureBrowser();
   const serveUrl = await getBundle();
   const composition = await selectComposition({ serveUrl, id: compId, inputProps });
@@ -141,9 +170,17 @@ async function renderCompositionIn({ compId, inputProps, outBase, coverSecond })
     },
   });
   process.stdout.write("\n");
-  // faststart: el índice (moov) al principio para que Instagram empiece a leer sin descargar todo
-  ffmpeg(["-i", tmp, "-c", "copy", "-movflags", "+faststart", mp4]);
-  rmSync(tmp, { force: true });
+  if (mezcla) {
+    const mix = `${outBase}.mix.mp4`;
+    mezclar(tmp, mezcla, mix);
+    rmSync(tmp, { force: true });
+    ffmpeg(["-i", mix, "-c", "copy", "-movflags", "+faststart", mp4]);
+    rmSync(mix, { force: true });
+  } else {
+    // faststart: el índice (moov) al principio para que Instagram empiece a leer sin descargar todo
+    ffmpeg(["-i", tmp, "-c", "copy", "-movflags", "+faststart", mp4]);
+    rmSync(tmp, { force: true });
+  }
   await renderStill({ serveUrl, composition, inputProps, output: jpg, frame: Math.min(composition.durationInFrames - 1, Math.round(coverSecond * composition.fps)), imageFormat: "jpeg", jpegQuality: 90 });
 
   const dur = mediaDuration(mp4);
@@ -177,8 +214,11 @@ export async function renderReel(reelOrId, { outDir = OUT, fecha, soloRevisados 
   // Segundos útiles de cada clip recortado (duración de la escena en el guion + 0,5 s)
   const clipSeg = Object.fromEntries(clipSlots(reel).map((s) => [s.clave, s.clip.tramo ?? s.duracion + 0.5]));
   const assets = preparePublic({ clipFiles, musicFile: track, voz, clipSeg });
+  // Con voz, la música se mezcla fuera de Remotion con ducking real (ver mezclar)
+  const mezcla = voz && track ? { path: track.path, inicio: track.inicio || 0 } : null;
+  if (mezcla) assets.mezclaExterna = true;
   mkdirp(outDir);
-  const res = await renderComposition({ compId: "Reel", inputProps: { reel, assets }, outBase: path.join(outDir, reel.id), coverSecond: reel.portada_segundo ?? 1.2 });
+  const res = await renderComposition({ compId: "Reel", inputProps: { reel, assets }, outBase: path.join(outDir, reel.id), coverSecond: reel.portada_segundo ?? 1.2, mezcla });
   return { ...res, faltan, musica: track?.titulo || null, pista: track, conVoz: Boolean(voz) };
 }
 

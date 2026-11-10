@@ -41,6 +41,7 @@ video/out/
 video/cache/
 video/public/runtime/
 video/public/fonts/
+video/public/sfx/
 
 # Caché de Python
 __pycache__/
