@@ -17,6 +17,8 @@ jobs:
         run: npm ci
       - name: Lint & Build
         run: npm run build --silent
+      - name: Validar guiones de Instagram (esquema, variedad del metraje)
+        run: npm run ig:validate
       - name: Run tests (optional)
         run: npm run test:haversine || true
       - name: SEO report

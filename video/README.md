@@ -17,8 +17,10 @@ la escena pasa a texto y gráfica sobre un fondo neutro sin personas.
 
 ```bash
 npm ci
-node scripts/fetch-clips.mjs buscar r102-carbohidratos-en-carrera   # candidatos de Pixabay (PIXABAY_API_KEY)
+node scripts/fetch-clips.mjs buscar r102-carbohidratos-en-carrera   # candidatos de Pixabay (+ Pexels si hay PEXELS_API_KEY)
 node scripts/fetch-clips.mjs elegir/aprobar/sinclip …          # ver instagram/PROGRESO.md
+node scripts/fetch-clips.mjs elegir r1NN-slug p3=pixabay-123:0.5   # plano extra en la escena 3 (escena.cortes)
+node scripts/poses-hoja.mjs wall_ball --comparar               # hoja de control de una pose del monigote
 node scripts/render.mjs r102-carbohidratos-en-carrera         # MP4 + portada JPG en video/out/
 node scripts/frames.mjs video out/r102-carbohidratos-en-carrera.mp4   # 1 fotograma por segundo (control de calidad)
 npm run studio                                                # editor visual de Remotion
@@ -34,6 +36,24 @@ npm run studio                                                # editor visual de
   atribución obligatoria (https://pixabay.com/service/license-summary/). Normas de la API: búsquedas
   cacheadas 24 h y nada de enlazar a sus URLs: cada clip aprobado se descarga, se recorta y se sube a
   nuestro bucket (`clips/`). El caption lleva "Vídeo: Pixabay" y nunca se insinúa que las personas que
-  salen recomiendan Hybrid Race Hub. Pexels sigue soportado si algún día hay `PEXELS_API_KEY`.
+  salen recomiendan Hybrid Race Hub.
+- **Pexels** (vídeo, si hay `PEXELS_API_KEY`): licencia de Pexels (https://www.pexels.com/license/), uso comercial y
+  modificación permitidos sin atribución obligatoria; no se puede revender el clip tal cual ni dar a entender que las
+  personas que salen respaldan la marca. Mismo tratamiento que Pixabay: se descarga, se recorta y se sube a nuestro
+  bucket. El caption termina en "Vídeo: Pixabay", "Vídeo: Pexels" o "Vídeo: Pixabay / Pexels" según las fuentes de los
+  clips del reel (lo exige `npm run ig:validate`).
+
+## Variedad del metraje
+
+Reglas en `scripts/instagram/lib/variedad.mjs`, comprobadas por `npm run ig:validate` (también en CI) y por el
+publicador (un reel que no las cumple no está listo y sale el carrusel):
+- Al menos el 80 % de las escenas con vídeo real o con el monigote de técnica; nunca dos escenas seguidas de solo texto.
+- Ningún clip (fuente + id) repetido dentro de un reel ni en los 30 reels siguientes de la cola (orden r###; los
+  publicados, `"publicado"`, y los descartados, `"descartado"`, no cuentan; `_calendario` y `x##` van aparte).
+- Al menos 5 clips distintos por reel (escenas, planos extra y fondo final).
+- Las búsquedas (`clip.queries`, 3-4 en inglés) describen lo que se VE, no lo que se dice, y `buscar` ya excluye los
+  clips que usa otro reel de la cola. La relevancia exige que las palabras de la búsqueda estén en las etiquetas y
+  penaliza estudio, retratos, logos, animales y vehículos. Cada clip se recorta con un tramo de al menos 7 s
+  (`tramo`) para no tener que ir a cámara lenta si la voz alarga la escena.
 - **Música**: ver `instagram/music/LICENCIAS.md`.
 - **Fuentes**: Barlow y Barlow Condensed (SIL Open Font License), copiadas de `instagram/fonts/`.

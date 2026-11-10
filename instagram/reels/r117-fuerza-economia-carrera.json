@@ -9,17 +9,30 @@
       "duracion": 2,
       "clip": {
         "query": "runner track",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "fuente": "pixabay",
+        "id": "80550",
+        "url_pagina": "https://pixabay.com/videos/id-80550/",
+        "autor": "PADtext",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "box jump",
+          "sprint start",
+          "jump training",
+          "man road jump"
+        ],
+        "autor_url": "https://pixabay.com/users/PADtext-22064666/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2021/07/07/80550-572349576_large.mp4",
+        "ancho": 2562,
+        "alto": 1440,
+        "duracion_clip": 13,
+        "archivo": "clips/pixabay-80550-968741c7.mp4",
+        "tramo": 7
       },
       "texto": []
     },
@@ -27,17 +40,29 @@
       "duracion": 3,
       "clip": {
         "query": "runner breathing",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "fuente": "pixabay",
+        "id": "119552",
+        "url_pagina": "https://pixabay.com/videos/id-119552/",
+        "autor": "GIUSEPPE-DE-BERGOLIS",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "runner breathing",
+          "running legs closeup",
+          "runner road"
+        ],
+        "autor_url": "https://pixabay.com/users/GIUSEPPE-DE-BERGOLIS-20666828/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2022/06/07/119552-718118271_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 16,
+        "tramo": 7,
+        "archivo": "clips/pixabay-119552-3a4365a4.mp4"
       },
       "texto": [
         "Economía de carrera:",
@@ -47,18 +72,30 @@
     {
       "duracion": 4,
       "clip": {
-        "query": "barbell squat gym",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "barbell squat",
+        "fuente": "pixabay",
+        "id": "135157",
+        "url_pagina": "https://pixabay.com/videos/id-135157/",
+        "autor": "blackmarketmusic",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "barbell squat",
+          "squat rack gym",
+          "strength training legs"
+        ],
+        "autor_url": "https://pixabay.com/users/blackmarketmusic-2976878/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2022/10/16/135157-761273549_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 12,
+        "tramo": 7,
+        "archivo": "clips/pixabay-135157-3d729bd0.mp4"
       },
       "texto": [],
       "grafica": {
@@ -73,18 +110,30 @@
     {
       "duracion": 4.5,
       "clip": {
-        "query": "squat jump training",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "deadlift",
+        "fuente": "pixabay",
+        "id": "18688",
+        "url_pagina": "https://pixabay.com/videos/id-18688/",
+        "autor": "tacofleur",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "deadlift",
+          "weight training",
+          "barbell lift"
+        ],
+        "autor_url": "https://pixabay.com/users/tacofleur-2688180/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2018/10/13/18688-295718305_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 28,
+        "tramo": 7,
+        "archivo": "clips/pixabay-18688-3554ef36.mp4"
       },
       "texto": [
         "2-3 sesiones por semana",
@@ -96,23 +145,29 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "sprint start athlete",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
-        "recorte": {
-          "centro_x": 0.5,
-          "centro_y": 0.5,
-          "zoom": 1
-        },
-        "revisado": false
+        "query": "box jump",
+        "queries": [
+          "box jump",
+          "sprint start",
+          "jump training"
+        ],
+        "sin_clip": true,
+        "revisado": true
       },
       "texto": [
         "Con saltos y sprints cortos",
         "No hace falta ser halterófilo"
-      ]
+      ],
+      "tecnica": {
+        "pose": "carrera",
+        "comparar": false,
+        "marcas": [
+          {
+            "tipo": "angulo",
+            "articulacion": "tronco"
+          }
+        ]
+      }
     }
   ],
   "conclusion": [
@@ -125,18 +180,29 @@
     "Lejos de tus sesiones clave de carrera"
   ],
   "clip_final": {
-    "query": "runner road",
-    "fuente": null,
-    "id": null,
-    "url_pagina": null,
-    "autor": null,
+    "query": "running track",
+    "fuente": "pixabay",
+    "id": "135156",
+    "url_pagina": "https://pixabay.com/videos/id-135156/",
+    "autor": "blackmarketmusic",
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": true,
+    "queries": [
+      "running track",
+      "runners group"
+    ],
+    "autor_url": "https://pixabay.com/users/blackmarketmusic-2976878/",
+    "archivo_origen": "https://cdn.pixabay.com/video/2022/10/16/135156-761273546_large.mp4",
+    "ancho": 3840,
+    "alto": 2160,
+    "duracion_clip": 15,
+    "tramo": 10,
+    "archivo": "clips/pixabay-135156-fec6d925.mp4"
   },
   "musica": "auto",
   "portada_segundo": 1.2,

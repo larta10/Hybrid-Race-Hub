@@ -9,17 +9,29 @@
       "duracion": 2,
       "clip": {
         "query": "weightlifting gym",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "fuente": "pixabay",
+        "id": "135160",
+        "url_pagina": "https://pixabay.com/videos/id-135160/",
+        "autor": "blackmarketmusic",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "weightlifting gym",
+          "barbell training",
+          "strength training"
+        ],
+        "autor_url": "https://pixabay.com/users/blackmarketmusic-2976878/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2022/10/16/135160-761273559_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 19,
+        "archivo": "clips/pixabay-135160-754bab75.mp4",
+        "tramo": 7
       },
       "texto": []
     },
@@ -27,17 +39,29 @@
       "duracion": 4,
       "clip": {
         "query": "healthy meal",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "fuente": "pixabay",
+        "id": "11643",
+        "url_pagina": "https://pixabay.com/videos/id-11643/",
+        "autor": "XiaosKitchen",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "healthy meal",
+          "chicken rice meal",
+          "eating healthy"
+        ],
+        "autor_url": "https://pixabay.com/users/XiaosKitchen-1319509/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2017/08/29/11643-231758720_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 74,
+        "archivo": "clips/pixabay-11643-85ae959a.mp4",
+        "tramo": 7
       },
       "texto": [],
       "grafica": {
@@ -53,18 +77,30 @@
     {
       "duracion": 4.5,
       "clip": {
-        "query": "barbell training",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "cooking kitchen",
+        "fuente": "pixabay",
+        "id": "213748",
+        "url_pagina": "https://pixabay.com/videos/id-213748/",
+        "autor": "KunalKapoor7",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "cooking kitchen",
+          "meal prep",
+          "eggs breakfast"
+        ],
+        "autor_url": "https://pixabay.com/users/KunalKapoor7-44025076/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2024/05/26/213748_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 10,
+        "archivo": "clips/pixabay-213748-044fc733.mp4",
+        "tramo": 7
       },
       "texto": [],
       "grafica": {
@@ -114,18 +150,30 @@
     {
       "duracion": 4.5,
       "clip": {
-        "query": "cooking meal kitchen",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "protein shake",
+        "fuente": "pixabay",
+        "id": "26918",
+        "url_pagina": "https://pixabay.com/videos/id-26918/",
+        "autor": "SamuelFJohanns",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "protein shake",
+          "yogurt breakfast",
+          "legumes food"
+        ],
+        "autor_url": "https://pixabay.com/users/SamuelFJohanns-1207793/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2019/09/16/26918-361107872_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 7,
+        "archivo": "clips/pixabay-26918-0cf4b5ff.mp4",
+        "tramo": 5.8
       },
       "texto": [],
       "grafica": {
@@ -160,18 +208,29 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "healthy food",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "gym workout",
+        "fuente": "pixabay",
+        "id": "157175",
+        "url_pagina": "https://pixabay.com/videos/id-157175/",
+        "autor": "u_hn5mz4f4bc",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "gym workout",
+          "dumbbell training"
+        ],
+        "autor_url": "https://pixabay.com/users/u_hn5mz4f4bc-35000500/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2023/04/02/157175-814061615_large.mp4",
+        "ancho": 1440,
+        "alto": 2560,
+        "duracion_clip": 10,
+        "archivo": "clips/pixabay-157175-42e758bb.mp4",
+        "tramo": 7
       },
       "texto": [
         "Con comida normal suele bastar",
@@ -189,18 +248,29 @@
     "¿Llegas comiendo? Sin suplementos"
   ],
   "clip_final": {
-    "query": "gym crossfit training",
-    "fuente": null,
-    "id": null,
-    "url_pagina": null,
-    "autor": null,
+    "query": "healthy food",
+    "fuente": "pixabay",
+    "id": "143420",
+    "url_pagina": "https://pixabay.com/videos/id-143420/",
+    "autor": "32141219",
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": true,
+    "queries": [
+      "healthy food",
+      "cooking vegetables"
+    ],
+    "autor_url": "https://pixabay.com/users/32141219-32141219/",
+    "archivo_origen": "https://cdn.pixabay.com/video/2022/12/18/143420-782373959_large.mp4",
+    "ancho": 3840,
+    "alto": 2160,
+    "duracion_clip": 27,
+    "archivo": "clips/pixabay-143420-065640fe.mp4",
+    "tramo": 10
   },
   "musica": "auto",
   "portada_segundo": 1.2,

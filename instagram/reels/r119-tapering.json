@@ -19,14 +19,105 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "runner",
+          "running road",
+          "marathon runner"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "138644",
+            "url_pagina": "https://pixabay.com/videos/id-138644/",
+            "autor": "Natures_Embrace",
+            "autor_url": "https://pixabay.com/users/Natures_Embrace-30639570/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/11/11/138644-770315621_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 30,
+            "preview": "https://cdn.pixabay.com/video/2022/11/11/138644-770315621_tiny.mp4",
+            "etiquetas": "man, surf, waves, beach, runner, sea, ocean, nature, movement, dusk, sunset, meditation, rest, relaxing, sport",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "109801",
+            "url_pagina": "https://pixabay.com/videos/id-109801/",
+            "autor": "21698102",
+            "autor_url": "https://pixabay.com/users/21698102-21698102/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/03/06/109801-685694722_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 13,
+            "preview": "https://cdn.pixabay.com/video/2022/03/06/109801-685694722_tiny.mp4",
+            "etiquetas": "city, urban, day, buildings, streets, roads, cars, moody, dark, cinematic, monochrome, black and white, traffic, people, walking, running, Glasgow, United Kingdom, Scotland",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "15748",
+            "url_pagina": "https://pixabay.com/videos/id-15748/",
+            "autor": "anncapictures",
+            "autor_url": "https://pixabay.com/users/anncapictures-1564471/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2018/04/22/15748-266043652_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 29,
+            "preview": "https://cdn.pixabay.com/video/2018/04/22/15748-266043652_tiny.mp4",
+            "etiquetas": "running, marathon, zurich, run, sports, runner, athletic, sportiness, competition, fit, sport event, sports event, running shoes",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "189730",
+            "url_pagina": "https://pixabay.com/videos/id-189730/",
+            "autor": "Amorn_mimi",
+            "autor_url": "https://pixabay.com/users/Amorn_mimi-27759397/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2023/11/19/189730-886596151_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 15,
+            "preview": "https://cdn.pixabay.com/video/2023/11/19/189730-886596151_tiny.mp4",
+            "etiquetas": "workout, athlete, sports training, active lifestyle, close-up, foot, leisure, close up, training, sport, healthy, fitness, exercise, lifestyle, fit, runner, athletic, active, sportswear, female, activity",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "126434",
+            "url_pagina": "https://pixabay.com/videos/id-126434/",
+            "autor": "apkafriendseducation",
+            "autor_url": "https://pixabay.com/users/apkafriendseducation-5360019/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/08/02/126434-735976920_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 26,
+            "preview": "https://cdn.pixabay.com/video/2022/08/02/126434-735976920_tiny.mp4",
+            "etiquetas": "city road, vehicle, indian road, delhi, running vehicles",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "138443",
+            "url_pagina": "https://pixabay.com/videos/id-138443/",
+            "autor": "aerofotografialincoln",
+            "autor_url": "https://pixabay.com/users/aerofotografialincoln-30880543/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/11/10/138443-769724615_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 12,
+            "preview": "https://cdn.pixabay.com/video/2022/11/10/138443-769724615_tiny.mp4",
+            "etiquetas": "running, run, exercise, family, sport, marathon, endurance, fitness, training, long distance, athlete, race, runner, finish line, stamina, health, wellness, sports, active lifestyle, persistence, motivation, dedication, goal setting",
+            "relevancia": 1
+          }
+        ]
       },
       "texto": []
     },
     {
       "duracion": 3,
       "clip": {
-        "query": "athlete tired",
+        "query": "tired runner",
         "fuente": null,
         "id": null,
         "url_pagina": null,
@@ -37,7 +128,13 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "tired runner",
+          "exhausted athlete",
+          "athlete fatigue"
+        ],
+        "candidatos": []
       },
       "texto": [
         "Un último bloque duro",
@@ -47,7 +144,7 @@
     {
       "duracion": 5,
       "clip": {
-        "query": "runner road",
+        "query": "running track",
         "fuente": null,
         "id": null,
         "url_pagina": null,
@@ -58,7 +155,97 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "running track",
+          "interval training track"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "33783",
+            "url_pagina": "https://pixabay.com/videos/id-33783/",
+            "autor": "ninosouza",
+            "autor_url": "https://pixabay.com/users/ninosouza-8385382/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2020/03/16/33783-400217188_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 58,
+            "preview": "https://cdn.pixabay.com/video/2020/03/16/33783-400217188_tiny.mp4",
+            "etiquetas": "running, race, athletics, fitness, sport, athlete, action, athletes, velocity, effort, hall, track, health, challenge, activity",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "13134",
+            "url_pagina": "https://pixabay.com/videos/id-13134/",
+            "autor": "tacofleur",
+            "autor_url": "https://pixabay.com/users/tacofleur-2688180/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2017/12/01/13134-245530646_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 51,
+            "preview": "https://cdn.pixabay.com/video/2017/12/01/13134-245530646_tiny.mp4",
+            "etiquetas": "push ups, pushup, press up, interval training, taco fleur, cavemantraining, beach, fitness, workout, exercise, person, training, fit, body, strength, athlete, push-up, push, strong, muscular, bodyweight, men",
+            "relevancia": 0.7666666666666666
+          },
+          {
+            "fuente": "pixabay",
+            "id": "119552",
+            "url_pagina": "https://pixabay.com/videos/id-119552/",
+            "autor": "GIUSEPPE-DE-BERGOLIS",
+            "autor_url": "https://pixabay.com/users/GIUSEPPE-DE-BERGOLIS-20666828/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/06/07/119552-718118271_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 16,
+            "preview": "https://cdn.pixabay.com/video/2022/06/07/119552-718118271_tiny.mp4",
+            "etiquetas": "person, man, running, wooden track, lake, cloudy, nature, boat, raindrop",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "143740",
+            "url_pagina": "https://pixabay.com/videos/id-143740/",
+            "autor": "traindroner",
+            "autor_url": "https://pixabay.com/users/traindroner-32233976/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/12/21/143740-784138166_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 29,
+            "preview": "https://cdn.pixabay.com/video/2022/12/21/143740-784138166_tiny.mp4",
+            "etiquetas": "train, rail bridge, track, infrastructure, birds eye view",
+            "relevancia": 0.6666666666666666
+          },
+          {
+            "fuente": "pixabay",
+            "id": "262334",
+            "url_pagina": "https://pixabay.com/videos/id-262334/",
+            "autor": "City_at_Night",
+            "autor_url": "https://pixabay.com/users/City_at_Night-47825823/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2025/03/04/262334_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 22,
+            "preview": "https://cdn.pixabay.com/video/2025/03/04/262334_tiny.mp4",
+            "etiquetas": "train, railway, travel, metro, transport, subway, nature, station, winter, urban, landscape, scotland, track, nostalgia",
+            "relevancia": 0.6666666666666666
+          },
+          {
+            "fuente": "pixabay",
+            "id": "32000",
+            "url_pagina": "https://pixabay.com/videos/id-32000/",
+            "autor": "MEISTERvideo",
+            "autor_url": "https://pixabay.com/users/MEISTERvideo-2252986/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2020/02/06/32000-389724774_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 34,
+            "preview": "https://cdn.pixabay.com/video/2020/02/06/32000-389724774_tiny.mp4",
+            "etiquetas": "western railway, west railway station, railroad, station, train, traffic, architecture, to travel, platform, rails, route, track, railroad tracks, railway tracks, railroad track, track bed, railway line, empty, lonely",
+            "relevancia": 0.6666666666666666
+          }
+        ]
       },
       "texto": [],
       "grafica": {
@@ -92,7 +279,7 @@
     {
       "duracion": 4.5,
       "clip": {
-        "query": "running track",
+        "query": "athlete resting",
         "fuente": null,
         "id": null,
         "url_pagina": null,
@@ -103,7 +290,56 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "athlete resting",
+          "recovery stretching",
+          "runner rest"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "40910",
+            "url_pagina": "https://pixabay.com/videos/id-40910/",
+            "autor": "Peggy_Marco",
+            "autor_url": "https://pixabay.com/users/Peggy_Marco-1553824/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2020/06/02/40910-426939628_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 24,
+            "preview": "https://cdn.pixabay.com/video/2020/06/02/40910-426939628_tiny.mp4",
+            "etiquetas": "yoga, yoga hour, meditation, yoga class, teaching, yoga mat, sport, rest, stretching, nature, recovery, release, harmony, relax, relaxation, wellness, peaceful, zen, spirituality, balance",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "138644",
+            "url_pagina": "https://pixabay.com/videos/id-138644/",
+            "autor": "Natures_Embrace",
+            "autor_url": "https://pixabay.com/users/Natures_Embrace-30639570/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/11/11/138644-770315621_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 30,
+            "preview": "https://cdn.pixabay.com/video/2022/11/11/138644-770315621_tiny.mp4",
+            "etiquetas": "man, surf, waves, beach, runner, sea, ocean, nature, movement, dusk, sunset, meditation, rest, relaxing, sport",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "293082",
+            "url_pagina": "https://pixabay.com/videos/id-293082/",
+            "autor": "RainMeditateHub",
+            "autor_url": "https://pixabay.com/users/RainMeditateHub-51172146/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2025/07/23/293082_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 20,
+            "preview": "https://cdn.pixabay.com/video/2025/07/23/293082_tiny.mp4",
+            "etiquetas": "asian woman, post workout, stretching, home workout, yoga mat, online fitness, cool down, fitness blogger, home exercise, digital wellness, fitness at home, sportswear, stretching routine, flexibility, workout recovery, indoor training, healthy lifestyle, virtual trainer, calm workout, wellness habit, active woman, solo workout, online class, athletic female, daily fitness",
+            "relevancia": 1
+          }
+        ]
       },
       "texto": [],
       "grafica": {
@@ -163,7 +399,13 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "running intervals",
+          "sprint training",
+          "race start"
+        ],
+        "candidatos": []
       },
       "texto": [
         "Mantén intensidad y días",
@@ -181,7 +423,7 @@
     "Los mismos días de siempre"
   ],
   "clip_final": {
-    "query": "runner road",
+    "query": "runner sunset",
     "fuente": null,
     "id": null,
     "url_pagina": null,
@@ -192,7 +434,83 @@
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": false,
+    "queries": [
+      "runner sunset",
+      "running trail"
+    ],
+    "candidatos": [
+      {
+        "fuente": "pixabay",
+        "id": "138644",
+        "url_pagina": "https://pixabay.com/videos/id-138644/",
+        "autor": "Natures_Embrace",
+        "autor_url": "https://pixabay.com/users/Natures_Embrace-30639570/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2022/11/11/138644-770315621_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 30,
+        "preview": "https://cdn.pixabay.com/video/2022/11/11/138644-770315621_tiny.mp4",
+        "etiquetas": "man, surf, waves, beach, runner, sea, ocean, nature, movement, dusk, sunset, meditation, rest, relaxing, sport",
+        "relevancia": 1
+      },
+      {
+        "fuente": "pixabay",
+        "id": "345986",
+        "url_pagina": "https://pixabay.com/videos/id-345986/",
+        "autor": "PWLPL",
+        "autor_url": "https://pixabay.com/users/PWLPL-16464651/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2026/04/12/345986_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 13,
+        "preview": "https://cdn.pixabay.com/video/2026/04/12/345986_tiny.mp4",
+        "etiquetas": "ground, path, walking, forest, leaves, dirt, sand, running, movement, shadows, hiking, outdoor, nature, pov, steps, adventure, woods, spring, autumn, trail, sunlight, travel",
+        "relevancia": 1
+      },
+      {
+        "fuente": "pixabay",
+        "id": "305239",
+        "url_pagina": "https://pixabay.com/videos/id-305239/",
+        "autor": "AirSurveyors",
+        "autor_url": "https://pixabay.com/users/AirSurveyors-52342844/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2025/09/19/305239_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 27,
+        "preview": "https://cdn.pixabay.com/video/2025/09/19/305239_tiny.mp4",
+        "etiquetas": "trail, path, nature, trees, running, jogging",
+        "relevancia": 1
+      },
+      {
+        "fuente": "pixabay",
+        "id": "30338",
+        "url_pagina": "https://pixabay.com/videos/id-30338/",
+        "autor": "DtheDelinquent",
+        "autor_url": "https://pixabay.com/users/DtheDelinquent-14439364/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2019/12/18/30338-380728994_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 20,
+        "preview": "https://cdn.pixabay.com/video/2019/12/18/30338-380728994_tiny.mp4",
+        "etiquetas": "health day, hiking, alone time, mountains, mountain top, cliff, hike, woman hiking, landscape, summer, nice day, desert, arizona, california, outskirts, trail, running, run, place to hide",
+        "relevancia": 1
+      },
+      {
+        "fuente": "pixabay",
+        "id": "30343",
+        "url_pagina": "https://pixabay.com/videos/id-30343/",
+        "autor": "DtheDelinquent",
+        "autor_url": "https://pixabay.com/users/DtheDelinquent-14439364/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2019/12/18/30343-380729017_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 40,
+        "preview": "https://cdn.pixabay.com/video/2019/12/18/30343-380729017_tiny.mp4",
+        "etiquetas": "hiking, trail, stream, water, flowing, river, hike, walking, running, biking, mountains, arizona, nevada, texas, canyons, landscape, valley, desert, sonora, rocks, nature, sandstone, scenic, outdoors",
+        "relevancia": 1
+      }
+    ]
   },
   "musica": "auto",
   "portada_segundo": 1.2,

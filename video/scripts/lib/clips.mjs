@@ -54,19 +54,24 @@ export function cropBox(c) {
 /** Huella del recorte: si cambian el clip, el inicio, la duración o el encuadre, se regenera */
 export const prepHash = (c, dur) => createHash("sha1").update(JSON.stringify([clipKey(c), c.inicio, dur, c.recorte])).digest("hex").slice(0, 8);
 
+/** Segundos que se recortan: c.tramo si ya está fijado; si no, al menos 7 s (o lo que quede del clip) para
+ *  que una escena alargada por la voz o dividida en planos no tenga que ir a cámara lenta */
+export const tramoDe = (c, dur) => c.tramo ?? Math.max(dur + 0.5, Math.min(7, (c.duracion_clip || 99) - (c.inicio || 0) - 0.2));
+
 /**
- * Versión vertical 1080x1920 del tramo [inicio, inicio + dur + 0,5 s], sin audio.
- * Devuelve la ruta local (video/cache/v/...).
+ * Versión vertical 1080x1920 del tramo [inicio, inicio + tramo], sin audio.
+ * Devuelve la ruta local (video/cache/v/...) y el tramo usado.
  */
 export async function prepareVertical(c, dur) {
   await downloadOrigen(c);
-  const name = `${clipKey(c)}-${prepHash(c, dur)}.mp4`;
+  const tramo = Math.round(tramoDe(c, dur) * 10) / 10;
+  const name = `${clipKey(c)}-${c.tramo == null && c.archivo ? prepHash(c, dur) : prepHash(c, tramo)}.mp4`;
   const out = path.join(mkdirp(path.join(CACHE, "v")), name);
   if (!existsSync(out)) {
     const { cw, ch, x, y } = cropBox(c);
-    ffmpeg(["-ss", String(c.inicio || 0), "-t", String(dur + 0.5), "-i", origenPath(c), "-an", "-vf", `crop=${cw}:${ch}:${x}:${y},scale=${W}:${H}:flags=lanczos,fps=30,format=yuv420p`, "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-movflags", "+faststart", out]);
+    ffmpeg(["-ss", String(c.inicio || 0), "-t", String(c.tramo == null && c.archivo ? dur + 0.5 : tramo), "-i", origenPath(c), "-an", "-vf", `crop=${cw}:${ch}:${x}:${y},scale=${W}:${H}:flags=lanczos,fps=30,format=yuv420p`, "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-movflags", "+faststart", out]);
   }
-  return { file: out, archivo: `clips/${name}` };
+  return { file: out, archivo: `clips/${name}`, tramo };
 }
 
 /** Sube la versión vertical a nuestro bucket (necesita la service role key) */

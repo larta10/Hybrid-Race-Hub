@@ -19,14 +19,105 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "runner",
+          "jogging",
+          "running city"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "138644",
+            "url_pagina": "https://pixabay.com/videos/id-138644/",
+            "autor": "Natures_Embrace",
+            "autor_url": "https://pixabay.com/users/Natures_Embrace-30639570/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/11/11/138644-770315621_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 30,
+            "preview": "https://cdn.pixabay.com/video/2022/11/11/138644-770315621_tiny.mp4",
+            "etiquetas": "man, surf, waves, beach, runner, sea, ocean, nature, movement, dusk, sunset, meditation, rest, relaxing, sport",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "23014",
+            "url_pagina": "https://pixabay.com/videos/id-23014/",
+            "autor": "Nassau_Yacht_Haven_Marina",
+            "autor_url": "https://pixabay.com/users/Nassau_Yacht_Haven_Marina-12276457/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2019/04/23/23014-332483130_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 9,
+            "preview": "https://cdn.pixabay.com/video/2019/04/23/23014-332483130_tiny.mp4",
+            "etiquetas": "exercise, run, running, jog, beach, sunrise, paradise, bahamas, runner, fitness, training, athlete, jogging, active, lifestyle, outdoor, fit, athletic, health, workout, sport, caribbean, sand",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "109801",
+            "url_pagina": "https://pixabay.com/videos/id-109801/",
+            "autor": "21698102",
+            "autor_url": "https://pixabay.com/users/21698102-21698102/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/03/06/109801-685694722_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 13,
+            "preview": "https://cdn.pixabay.com/video/2022/03/06/109801-685694722_tiny.mp4",
+            "etiquetas": "city, urban, day, buildings, streets, roads, cars, moody, dark, cinematic, monochrome, black and white, traffic, people, walking, running, Glasgow, United Kingdom, Scotland",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "189730",
+            "url_pagina": "https://pixabay.com/videos/id-189730/",
+            "autor": "Amorn_mimi",
+            "autor_url": "https://pixabay.com/users/Amorn_mimi-27759397/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2023/11/19/189730-886596151_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 15,
+            "preview": "https://cdn.pixabay.com/video/2023/11/19/189730-886596151_tiny.mp4",
+            "etiquetas": "workout, athlete, sports training, active lifestyle, close-up, foot, leisure, close up, training, sport, healthy, fitness, exercise, lifestyle, fit, runner, athletic, active, sportswear, female, activity",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "87911",
+            "url_pagina": "https://pixabay.com/videos/id-87911/",
+            "autor": "21778395",
+            "autor_url": "https://pixabay.com/users/21778395-21778395/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2021/09/09/87911-602894749_medium.mp4",
+            "ancho": 2732,
+            "alto": 1440,
+            "duracion_clip": 7,
+            "preview": "https://cdn.pixabay.com/video/2021/09/09/87911-602894749_tiny.mp4",
+            "etiquetas": "woman, pathway, jogger, jogging, exercise, female, running, countryside, sidewalk, fit, fitness, runner, run, jog, sport, leisure",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "126434",
+            "url_pagina": "https://pixabay.com/videos/id-126434/",
+            "autor": "apkafriendseducation",
+            "autor_url": "https://pixabay.com/users/apkafriendseducation-5360019/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/08/02/126434-735976920_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 26,
+            "preview": "https://cdn.pixabay.com/video/2022/08/02/126434-735976920_tiny.mp4",
+            "etiquetas": "city road, vehicle, indian road, delhi, running vehicles",
+            "relevancia": 1
+          }
+        ]
       },
       "texto": []
     },
     {
       "duracion": 3,
       "clip": {
-        "query": "jogging",
+        "query": "jogging park",
         "fuente": null,
         "id": null,
         "url_pagina": null,
@@ -37,7 +128,97 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "jogging park",
+          "runner road"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "210728",
+            "url_pagina": "https://pixabay.com/videos/id-210728/",
+            "autor": "LynX_BGW",
+            "autor_url": "https://pixabay.com/users/LynX_BGW-38804944/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2024/05/05/210728_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 5,
+            "preview": "https://cdn.pixabay.com/video/2024/05/05/210728_tiny.mp4",
+            "etiquetas": "woman, jogging, runner, nature, exercise, trees, fitness, training, park, outdoor, sports, grass, athletic, vest, female, spring",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "41869",
+            "url_pagina": "https://pixabay.com/videos/id-41869/",
+            "autor": "waterlettuce",
+            "autor_url": "https://pixabay.com/users/waterlettuce-5080221/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2020/06/13/41869-431407027_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 10,
+            "preview": "https://cdn.pixabay.com/video/2020/06/13/41869-431407027_tiny.mp4",
+            "etiquetas": "trash, rubbish, garbage, waste, throwing away, paper, plastic, black bin bag, plastic bottles, plastic bag, event, pollution, disposal, overflow, environmental, foam, road, people, thailand, runners",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "49530",
+            "url_pagina": "https://pixabay.com/videos/id-49530/",
+            "autor": "SooYeongBeh",
+            "autor_url": "https://pixabay.com/users/SooYeongBeh-7014400/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2020/09/10/49530-459622759_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 21,
+            "preview": "https://cdn.pixabay.com/video/2020/09/10/49530-459622759_tiny.mp4",
+            "etiquetas": "park, jogging, running, outdoors, lifestyle",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "8153",
+            "url_pagina": "https://pixabay.com/videos/id-8153/",
+            "autor": "glorydays2012pro",
+            "autor_url": "https://pixabay.com/users/glorydays2012pro-3791746/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2017/03/04/8153-207209119_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 12,
+            "preview": "https://cdn.pixabay.com/video/2017/03/04/8153-207209119_tiny.mp4",
+            "etiquetas": "runner, jog, jogger, jogging, running, large garden, sports, winter, dresden, saxony, germany, snow, snowy, training, park",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "34586",
+            "url_pagina": "https://pixabay.com/videos/id-34586/",
+            "autor": "Ambient_Nature_Atmosphere",
+            "autor_url": "https://pixabay.com/users/Ambient_Nature_Atmosphere-12967658/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2020/03/30/34586-402634180_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 14,
+            "preview": "https://cdn.pixabay.com/video/2020/03/30/34586-402634180_tiny.mp4",
+            "etiquetas": "walk, man, sport, walking, plant, landscape, holidays, national park, action, exercise, nature, adventure, trekking, jogging, running, fitness",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "37450",
+            "url_pagina": "https://pixabay.com/videos/id-37450/",
+            "autor": "Ambient_Nature_Atmosphere",
+            "autor_url": "https://pixabay.com/users/Ambient_Nature_Atmosphere-12967658/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2020/04/28/37450-414024686_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 30,
+            "preview": "https://cdn.pixabay.com/video/2020/04/28/37450-414024686_tiny.mp4",
+            "etiquetas": "water, lake, national park, sun, wind, sky, clouds, nature, landscape, dolomiti, alpi, mountains, plant, flowers, atmosphere, sport, trekking, jogging",
+            "relevancia": 1
+          }
+        ]
       },
       "texto": [
         "Ni suave ni duro",
@@ -58,7 +239,12 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "runner track",
+          "interval sprint"
+        ],
+        "candidatos": []
       },
       "texto": [],
       "grafica": {
@@ -104,7 +290,7 @@
     {
       "duracion": 4,
       "clip": {
-        "query": "interval sprint track",
+        "query": "easy run",
         "fuente": null,
         "id": null,
         "url_pagina": null,
@@ -115,7 +301,98 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "easy run",
+          "trail running",
+          "running slow"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "345986",
+            "url_pagina": "https://pixabay.com/videos/id-345986/",
+            "autor": "PWLPL",
+            "autor_url": "https://pixabay.com/users/PWLPL-16464651/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2026/04/12/345986_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 13,
+            "preview": "https://cdn.pixabay.com/video/2026/04/12/345986_tiny.mp4",
+            "etiquetas": "ground, path, walking, forest, leaves, dirt, sand, running, movement, shadows, hiking, outdoor, nature, pov, steps, adventure, woods, spring, autumn, trail, sunlight, travel",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "119140",
+            "url_pagina": "https://pixabay.com/videos/id-119140/",
+            "autor": "NickyPe",
+            "autor_url": "https://pixabay.com/users/NickyPe-10327513/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/06/03/119140-716960472_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 31,
+            "preview": "https://cdn.pixabay.com/video/2022/06/03/119140-716960472_tiny.mp4",
+            "etiquetas": "jog, woman, fitness, sports, running, forest, healthy, move, leisure time, recreational sports, nature, slow motion",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "305239",
+            "url_pagina": "https://pixabay.com/videos/id-305239/",
+            "autor": "AirSurveyors",
+            "autor_url": "https://pixabay.com/users/AirSurveyors-52342844/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2025/09/19/305239_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 27,
+            "preview": "https://cdn.pixabay.com/video/2025/09/19/305239_tiny.mp4",
+            "etiquetas": "trail, path, nature, trees, running, jogging",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "290906",
+            "url_pagina": "https://pixabay.com/videos/id-290906/",
+            "autor": "RainMeditateHub",
+            "autor_url": "https://pixabay.com/users/RainMeditateHub-51172146/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2025/07/12/290906_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 17,
+            "preview": "https://cdn.pixabay.com/video/2025/07/12/290906_tiny.mp4",
+            "etiquetas": "fountain water, running water, nature sounds, peaceful fountain, natural spring, outdoor relaxation, flowing water, green scenery, calm ambiance, water feature, stone fountain, garden fountain, slow motion water, spa ambience, tranquil vibes, forest fountain, meditative sound, peaceful stream, fountain flow, soft nature, fresh water, waterfall sound, ambient nature, healing water, fountain scene",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "30338",
+            "url_pagina": "https://pixabay.com/videos/id-30338/",
+            "autor": "DtheDelinquent",
+            "autor_url": "https://pixabay.com/users/DtheDelinquent-14439364/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2019/12/18/30338-380728994_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 20,
+            "preview": "https://cdn.pixabay.com/video/2019/12/18/30338-380728994_tiny.mp4",
+            "etiquetas": "health day, hiking, alone time, mountains, mountain top, cliff, hike, woman hiking, landscape, summer, nice day, desert, arizona, california, outskirts, trail, running, run, place to hide",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "373706",
+            "url_pagina": "https://pixabay.com/videos/id-373706/",
+            "autor": "NúriaCasademont",
+            "autor_url": "https://pixabay.com/users/NúriaCasademont-25632969/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2026/08/31/373706_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 17,
+            "preview": "https://cdn.pixabay.com/video/2026/08/31/373706_tiny.mp4",
+            "etiquetas": "brook, river, water, stones, rocks, nature, forest, running water, slow motion, relaxation, meditation, peace, calm down, mindfulness, stream",
+            "relevancia": 1
+          }
+        ]
       },
       "texto": [],
       "grafica": {
@@ -134,7 +411,7 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "runner road",
+        "query": "sprint track",
         "fuente": null,
         "id": null,
         "url_pagina": null,
@@ -145,7 +422,69 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "sprint track",
+          "running fast"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "201770",
+            "url_pagina": "https://pixabay.com/videos/id-201770/",
+            "autor": "MountainDweller",
+            "autor_url": "https://pixabay.com/users/MountainDweller-16471232/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2024/02/24/201770-916357976_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 7,
+            "preview": "https://cdn.pixabay.com/video/2024/02/24/201770-916357976_tiny.mp4",
+            "etiquetas": "river, creek, water, bubbles, running, fast, 4k",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "143603",
+            "url_pagina": "https://pixabay.com/videos/id-143603/",
+            "autor": "JoshuaBoman",
+            "autor_url": "https://pixabay.com/users/JoshuaBoman-18390889/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/12/20/143603-782770815_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 33,
+            "preview": "https://cdn.pixabay.com/video/2022/12/20/143603-782770815_tiny.mp4",
+            "etiquetas": "stream, boulders, brook, brush, creek, fast, flowing, landscape, mountain, nature, plant, rapids, river, rocks, rocky, rocky mountains, running, water, fall, waterfall, background",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "112977",
+            "url_pagina": "https://pixabay.com/videos/id-112977/",
+            "autor": "Prasenjit2022",
+            "autor_url": "https://pixabay.com/users/Prasenjit2022-26259456/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/04/05/112977-696349147_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 11,
+            "preview": "https://cdn.pixabay.com/video/2022/04/05/112977-696349147_tiny.mp4",
+            "etiquetas": "running train, speed, train scene, fast moving train",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "382",
+            "url_pagina": "https://pixabay.com/videos/id-382/",
+            "autor": "FlickrVideos",
+            "autor_url": "https://pixabay.com/users/FlickrVideos-1283682/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2015/08/12/382-136121738_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 14,
+            "preview": "https://cdn.pixabay.com/video/2015/08/12/382-136121738_tiny.mp4",
+            "etiquetas": "spiders, crawling, insects, small, many, tiny, yellow, lice, fast, running, busy",
+            "relevancia": 1
+          }
+        ]
       },
       "texto": [
         "Mucho fácil, algo muy duro",
@@ -163,7 +502,7 @@
     "Revisa tus zonas en el reloj"
   ],
   "clip_final": {
-    "query": "runner road",
+    "query": "running group",
     "fuente": null,
     "id": null,
     "url_pagina": null,
@@ -174,7 +513,40 @@
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": false,
+    "queries": [
+      "running group"
+    ],
+    "candidatos": [
+      {
+        "fuente": "pixabay",
+        "id": "113763",
+        "url_pagina": "https://pixabay.com/videos/id-113763/",
+        "autor": "viarami",
+        "autor_url": "https://pixabay.com/users/viarami-13458823/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2022/04/13/113763-699653732_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 41,
+        "preview": "https://cdn.pixabay.com/video/2022/04/13/113763-699653732_tiny.mp4",
+        "etiquetas": "asia, thailand, bangkok, thai, siam, metropolis, big city, background, 4k, people, style, pedestrian, running, career path, asians, lifestyle, groups, cars, vehicles, transport, traffic, bus",
+        "relevancia": 1
+      },
+      {
+        "fuente": "pixabay",
+        "id": "15741",
+        "url_pagina": "https://pixabay.com/videos/id-15741/",
+        "autor": "needvid",
+        "autor_url": "https://pixabay.com/users/needvid-2939519/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2018/04/22/15741-266043634_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 21,
+        "preview": "https://cdn.pixabay.com/video/2018/04/22/15741-266043634_tiny.mp4",
+        "etiquetas": "marathon, marathon runners, running, sport, runner, run, exercise, athlete, fitness, race, people, competition, jog, group, outdoor, endurance",
+        "relevancia": 1
+      }
+    ]
   },
   "musica": "auto",
   "portada_segundo": 1.2,

@@ -1,6 +1,7 @@
 {
   "id": "r101-ocr-monkey-bars",
   "pilar": "ocr",
+  "descartado": "salió como carrusel",
   "post_carrusel_id": "101-ocr-monkey-bars",
   "duracion_objetivo": 25,
   "gancho": "Monkey bars: no vayas a *pulso*",

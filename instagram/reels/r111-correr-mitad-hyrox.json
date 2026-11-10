@@ -9,35 +9,59 @@
       "duracion": 2,
       "clip": {
         "query": "running race",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "fuente": "pixabay",
+        "id": "188159",
+        "url_pagina": "https://pixabay.com/videos/id-188159/",
+        "autor": "rocky_lonse",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "running race",
+          "marathon start crowd",
+          "runners race"
+        ],
+        "autor_url": "https://pixabay.com/users/rocky_lonse-30236590/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2023/11/06/188159-881853420_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 13,
+        "tramo": 7,
+        "archivo": "clips/pixabay-188159-592605e0.mp4"
       },
       "texto": []
     },
     {
       "duracion": 3,
       "clip": {
-        "query": "sled push gym",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "crossfit competition",
+        "fuente": "pixabay",
+        "id": "189731",
+        "url_pagina": "https://pixabay.com/videos/id-189731/",
+        "autor": "Amorn_mimi",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.45,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "crossfit competition",
+          "functional fitness competition",
+          "sled push"
+        ],
+        "autor_url": "https://pixabay.com/users/Amorn_mimi-27759397/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2023/11/19/189731-886596163_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 14,
+        "tramo": 7,
+        "archivo": "clips/pixabay-189731-19a32e37.mp4"
       },
       "texto": [
         "Las estaciones son lo vistoso",
@@ -47,18 +71,30 @@
     {
       "duracion": 4,
       "clip": {
-        "query": "runner road",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "runners road race",
+        "fuente": "pixabay",
+        "id": "19822",
+        "url_pagina": "https://pixabay.com/videos/id-19822/",
+        "autor": "julianmolina",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "runners road race",
+          "running legs",
+          "city marathon"
+        ],
+        "autor_url": "https://pixabay.com/users/julianmolina-10887607/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2018/12/07/19822-305283574_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 13,
+        "tramo": 7,
+        "archivo": "clips/pixabay-19822-ca3db372.mp4"
       },
       "texto": [],
       "grafica": {
@@ -74,18 +110,30 @@
     {
       "duracion": 5,
       "clip": {
-        "query": "runner track",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "treadmill running",
+        "fuente": "pixabay",
+        "id": "8153",
+        "url_pagina": "https://pixabay.com/videos/id-8153/",
+        "autor": "glorydays2012pro",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.2,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "treadmill running",
+          "runner track training",
+          "running intervals"
+        ],
+        "autor_url": "https://pixabay.com/users/glorydays2012pro-3791746/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2017/03/04/8153-207209119_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 12,
+        "tramo": 7,
+        "archivo": "clips/pixabay-8153-3ef75718.mp4"
       },
       "texto": [],
       "grafica": {
@@ -124,18 +172,30 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "runner athlete",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "runner finish line",
+        "fuente": "pixabay",
+        "id": "33783",
+        "url_pagina": "https://pixabay.com/videos/id-33783/",
+        "autor": "ninosouza",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "runner finish line",
+          "marathon finish",
+          "runner crossing finish"
+        ],
+        "autor_url": "https://pixabay.com/users/ninosouza-8385382/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2020/03/16/33783-400217188_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 58,
+        "tramo": 7,
+        "archivo": "clips/pixabay-33783-77d2f713.mp4"
       },
       "texto": [
         "La mayor parte de la mejora",
@@ -153,18 +213,29 @@
     "Mide tus 8 km en cada simulación"
   ],
   "clip_final": {
-    "query": "runner road",
-    "fuente": null,
-    "id": null,
-    "url_pagina": null,
-    "autor": null,
+    "query": "running group training",
+    "fuente": "pixabay",
+    "id": "8025",
+    "url_pagina": "https://pixabay.com/videos/id-8025/",
+    "autor": "glorydays2012pro",
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": true,
+    "queries": [
+      "running group training",
+      "trail running"
+    ],
+    "autor_url": "https://pixabay.com/users/glorydays2012pro-3791746/",
+    "archivo_origen": "https://cdn.pixabay.com/video/2017/03/01/8025-206210289_large.mp4",
+    "ancho": 1920,
+    "alto": 1080,
+    "duracion_clip": 26,
+    "tramo": 10,
+    "archivo": "clips/pixabay-8025-3f566b7b.mp4"
   },
   "musica": "auto",
   "portada_segundo": 1.2,

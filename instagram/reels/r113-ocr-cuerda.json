@@ -19,14 +19,35 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "rope climb",
+          "crossfit rope climb",
+          "rope climbing gym"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "11987",
+            "url_pagina": "https://pixabay.com/videos/id-11987/",
+            "autor": "chayka1270",
+            "autor_url": "https://pixabay.com/users/chayka1270-5469348/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2017/09/14/11987-234530469_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 7,
+            "preview": "https://cdn.pixabay.com/video/2017/09/14/11987-234530469_tiny.mp4",
+            "etiquetas": "tap, box, move, mirror, glass, blue nebo, unloading, transfer, moving, transportation, arrow, tower, sling, hitch, chain, industry, building, cargo, heavy, machine, business, equipment, hook, transport, climb, delivery, technique, container, steel, metal, logistics, truck, rope, loading, weight, engineer, storage, structure, up, import",
+            "relevancia": 1
+          }
+        ]
       },
       "texto": []
     },
     {
       "duracion": 3,
       "clip": {
-        "query": "rope climb gym",
+        "query": "climbing rope hands",
         "fuente": null,
         "id": null,
         "url_pagina": null,
@@ -37,7 +58,28 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "climbing rope hands",
+          "gripping rope",
+          "rope climb crossfit"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "43630",
+            "url_pagina": "https://pixabay.com/videos/id-43630/",
+            "autor": "GreenCardShow",
+            "autor_url": "https://pixabay.com/users/GreenCardShow-3867243/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2020/07/02/43630-436237633_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 7,
+            "preview": "https://cdn.pixabay.com/video/2020/07/02/43630-436237633_tiny.mp4",
+            "etiquetas": "kite, rope, hand, female, girl, nails, hold, nature, happiness, sky",
+            "relevancia": 0.6666666666666666
+          }
+        ]
       },
       "texto": [
         "Subir a pulso funde el agarre",
@@ -47,7 +89,7 @@
     {
       "duracion": 4.5,
       "clip": {
-        "query": "rope climb crossfit",
+        "query": "rope climb legs",
         "fuente": null,
         "id": null,
         "url_pagina": null,
@@ -58,7 +100,27 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "rope climb legs",
+          "rope climb technique"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "11987",
+            "url_pagina": "https://pixabay.com/videos/id-11987/",
+            "autor": "chayka1270",
+            "autor_url": "https://pixabay.com/users/chayka1270-5469348/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2017/09/14/11987-234530469_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 7,
+            "preview": "https://cdn.pixabay.com/video/2017/09/14/11987-234530469_tiny.mp4",
+            "etiquetas": "tap, box, move, mirror, glass, blue nebo, unloading, transfer, moving, transportation, arrow, tower, sling, hitch, chain, industry, building, cargo, heavy, machine, business, equipment, hook, transport, climb, delivery, technique, container, steel, metal, logistics, truck, rope, loading, weight, engineer, storage, structure, up, import",
+            "relevancia": 1
+          }
+        ]
       },
       "texto": [
         "1. Agarre alto, brazos largos",
@@ -89,7 +151,28 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "climbing rope",
+          "rope climb",
+          "rope workout"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "11987",
+            "url_pagina": "https://pixabay.com/videos/id-11987/",
+            "autor": "chayka1270",
+            "autor_url": "https://pixabay.com/users/chayka1270-5469348/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2017/09/14/11987-234530469_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 7,
+            "preview": "https://cdn.pixabay.com/video/2017/09/14/11987-234530469_tiny.mp4",
+            "etiquetas": "tap, box, move, mirror, glass, blue nebo, unloading, transfer, moving, transportation, arrow, tower, sling, hitch, chain, industry, building, cargo, heavy, machine, business, equipment, hook, transport, climb, delivery, technique, container, steel, metal, logistics, truck, rope, loading, weight, engineer, storage, structure, up, import",
+            "relevancia": 1
+          }
+        ]
       },
       "texto": [
         "Al estirar las piernas, *subes*",
@@ -110,7 +193,13 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "obstacle course race",
+          "mud run obstacle",
+          "rope obstacle"
+        ],
+        "candidatos": []
       },
       "texto": [
         "Para bajar, el mismo bloqueo",
@@ -128,7 +217,7 @@
     "Colgados en cuerda para el agarre"
   ],
   "clip_final": {
-    "query": "obstacle course race mud",
+    "query": "mud run",
     "fuente": null,
     "id": null,
     "url_pagina": null,
@@ -139,7 +228,12 @@
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": false,
+    "queries": [
+      "mud run",
+      "obstacle course race"
+    ],
+    "candidatos": []
   },
   "musica": "auto",
   "portada_segundo": 1.2,

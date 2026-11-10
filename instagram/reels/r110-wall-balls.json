@@ -8,36 +8,60 @@
     {
       "duracion": 2,
       "clip": {
-        "query": "wall ball squat",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "wall ball crossfit",
+        "fuente": "pixabay",
+        "id": "57502",
+        "url_pagina": "https://pixabay.com/videos/id-57502/",
+        "autor": "Ambient_Nature_Atmosphere",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.35,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "wall ball crossfit",
+          "medicine ball squat throw",
+          "crossfit competition"
+        ],
+        "autor_url": "https://pixabay.com/users/Ambient_Nature_Atmosphere-12967658/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2020/11/27/57502-484931117_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 22,
+        "tramo": 7,
+        "archivo": "clips/pixabay-57502-4cbd6dba.mp4"
       },
       "texto": []
     },
     {
       "duracion": 4.5,
       "clip": {
-        "query": "wall ball crossfit",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "crossfit workout gym",
+        "fuente": "pixabay",
+        "id": "13360",
+        "url_pagina": "https://pixabay.com/videos/id-13360/",
+        "autor": "tacofleur",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "crossfit workout gym",
+          "functional training gym",
+          "athlete exhausted gym"
+        ],
+        "autor_url": "https://pixabay.com/users/tacofleur-2688180/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2017/12/13/13360-247515785_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 57,
+        "tramo": 7,
+        "archivo": "clips/pixabay-13360-394c0a10.mp4"
       },
       "texto": [],
       "grafica": {
@@ -62,18 +86,29 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "wall ball exercise",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "wall ball squat",
+        "fuente": "pixabay",
+        "id": "13361",
+        "url_pagina": "https://pixabay.com/videos/id-13361/",
+        "autor": "tacofleur",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "wall ball squat",
+          "medicine ball squat"
+        ],
+        "autor_url": "https://pixabay.com/users/tacofleur-2688180/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2017/12/13/13361-247515787_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 55,
+        "tramo": 7,
+        "archivo": "clips/pixabay-13361-487c17b0.mp4"
       },
       "texto": [
         "Pecho arriba, balón pegado",
@@ -99,39 +134,59 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "medicine ball throw squat",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
-        "recorte": {
-          "centro_x": 0.5,
-          "centro_y": 0.5,
-          "zoom": 1
-        },
-        "revisado": false
+        "query": "medicine ball throw",
+        "queries": [
+          "medicine ball throw",
+          "wall ball exercise"
+        ],
+        "sin_clip": true,
+        "revisado": true
       },
       "texto": [
         "Error: talones arriba, balón lejos",
         "Lanzas con hombros y te fundes"
-      ]
+      ],
+      "tecnica": {
+        "pose": "wall_ball",
+        "comparar": true,
+        "marcas": [
+          {
+            "tipo": "angulo",
+            "articulacion": "rodilla"
+          },
+          {
+            "tipo": "trayectoria"
+          }
+        ]
+      }
     },
     {
       "duracion": 3,
       "clip": {
-        "query": "athlete breathing tired",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "athlete breathing heavily",
+        "fuente": "pixabay",
+        "id": "30417",
+        "url_pagina": "https://pixabay.com/videos/id-30417/",
+        "autor": "tixonov_valentin",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.55,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "athlete breathing heavily",
+          "tired athlete gym",
+          "crossfit athlete resting"
+        ],
+        "autor_url": "https://pixabay.com/users/tixonov_valentin-10389207/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2019/12/20/30417-381526052_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 15,
+        "tramo": 7,
+        "archivo": "clips/pixabay-30417-bd2fa99b.mp4"
       },
       "texto": [
         "Coge aire mientras baja",
@@ -149,18 +204,29 @@
     "Graba una serie de lado"
   ],
   "clip_final": {
-    "query": "gym crossfit training",
-    "fuente": null,
-    "id": null,
-    "url_pagina": null,
-    "autor": null,
+    "query": "crossfit gym training",
+    "fuente": "pixabay",
+    "id": "30415",
+    "url_pagina": "https://pixabay.com/videos/id-30415/",
+    "autor": "tixonov_valentin",
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": true,
+    "queries": [
+      "crossfit gym training",
+      "functional fitness workout"
+    ],
+    "autor_url": "https://pixabay.com/users/tixonov_valentin-10389207/",
+    "archivo_origen": "https://cdn.pixabay.com/video/2019/12/20/30415-381526044_large.mp4",
+    "ancho": 1920,
+    "alto": 1080,
+    "duracion_clip": 11,
+    "tramo": 10,
+    "archivo": "clips/pixabay-30415-d2d2a195.mp4"
   },
   "musica": "auto",
   "portada_segundo": 1.2,

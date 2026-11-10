@@ -175,7 +175,7 @@ export async function renderReel(reelOrId, { outDir = OUT, fecha, soloRevisados 
   if (conVoz && reel.narracion && !voz) console.warn("  Aviso: falta la narración o no coincide con el guion. Sale sin voz.");
   if (voz) console.log(`  voz: ${voz.words.voz}, ${voz.words.duracion} s`);
   // Segundos útiles de cada clip recortado (duración de la escena en el guion + 0,5 s)
-  const clipSeg = Object.fromEntries(clipSlots(reel).map((s) => [s.clave, s.duracion + 0.5]));
+  const clipSeg = Object.fromEntries(clipSlots(reel).map((s) => [s.clave, s.clip.tramo ?? s.duracion + 0.5]));
   const assets = preparePublic({ clipFiles, musicFile: track, voz, clipSeg });
   mkdirp(outDir);
   const res = await renderComposition({ compId: "Reel", inputProps: { reel, assets }, outBase: path.join(outDir, reel.id), coverSecond: reel.portada_segundo ?? 1.2 });

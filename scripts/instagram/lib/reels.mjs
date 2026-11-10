@@ -5,6 +5,8 @@ import path from "node:path";
 import { ROOT } from "./config.mjs";
 import { PILARES, fullCaption } from "./posts.mjs";
 import { scriptSeconds } from "../../../video/src/timeline.js";
+import { claveClip, variedadCola } from "./variedad.mjs";
+import { POSES } from "../../../video/src/poses.js";
 
 export const REELS_DIR = path.join(ROOT, "instagram/reels");
 const GRAFICAS = ["barras", "agrupadas", "linea", "area", "contador", "comparativa", "donut"];
@@ -27,17 +29,27 @@ export const loadCalendarClips = () => {
 };
 
 const clipOk = (c) => Boolean(c?.sin_clip || (c?.fuente && c?.id && c?.archivo && c?.revisado === true));
-const slots = (r) => [...(r.escenas || []).map((e) => e.clip), ...(r.clip_final ? [r.clip_final] : [])];
+const slots = (r) => [...(r.escenas || []).flatMap((e) => [e.clip, ...(e.cortes || [])]), ...(r.clip_final ? [r.clip_final] : [])];
 
 /**
  * Un reel se publica solo si todos sus clips están revisados a ojo y el control de calidad
  * del vídeo final está hecho (qa_ok). Si no, ese día sale el carrusel del mismo tema.
  */
+/** Crédito del vídeo según las fuentes de los clips: "Vídeo: Pixabay", "Vídeo: Pexels" o "Vídeo: Pixabay / Pexels" */
+export function creditoVideo(r) {
+  const f = new Set(slots(r).map((c) => claveClip(c)?.split("-")[0]).filter(Boolean));
+  const nombres = ["pixabay", "pexels"].filter((x) => f.has(x)).map((x) => x[0].toUpperCase() + x.slice(1));
+  return `Vídeo: ${nombres.length ? nombres.join(" / ") : "Pixabay"}`;
+}
+
 export function reelReady(r) {
   const pendientes = slots(r).filter((c) => !clipOk(c)).length;
   const motivos = [];
   if (pendientes) motivos.push(`${pendientes} clip(s) sin elegir o sin revisar`);
   if (r.qa_ok !== true) motivos.push("control de calidad del vídeo pendiente (qa_ok)");
+  // Variedad del metraje (dentro del reel y frente a los 30 siguientes de la cola)
+  const v = variedadCola(loadReels()).get(r.id) || [];
+  if (v.length) motivos.push(...v);
   return { listo: motivos.length === 0, motivos };
 }
 
@@ -109,6 +121,15 @@ export function validateReel(r, post) {
       req(s.duracion >= 2.5, `${n}: la fuente debe verse al menos 2,5 s`);
       checkFuente(s.fuente, n);
     }
+    if (s.tecnica) {
+      const t = s.tecnica;
+      req(i > 0, `${n}: el gancho nunca es el monigote (siempre vídeo real)`);
+      req(POSES[t.pose], `${n}: pose desconocida "${t.pose}" (ver video/src/poses.js)`);
+      req(s.clip?.sin_clip === true, `${n}: una escena de técnica no lleva clip (sin_clip: true)`);
+      req(typeof t.comparar === "boolean", `${n}: tecnica.comparar debe ser true o false`);
+      req(!t.comparar || POSES[t.pose]?.error, `${n}: la pose "${t.pose}" no tiene versión de error para comparar`);
+      req(!s.grafica, `${n}: una escena de técnica no lleva gráfica`);
+    }
     for (const m of s.musculo || []) {
       req(m.nombre, `${n}: músculo sin nombre`);
       if (m.clip) {
@@ -144,7 +165,8 @@ export function validateReel(r, post) {
     req((cap.match(EMOJI) || []).length <= 2, "máximo 2 emojis en el caption");
     req(cap.includes("Más en hybridracehub.com (enlace en la bio)"), 'falta "Más en hybridracehub.com (enlace en la bio)"');
     req(/\?/.test(cap), "el caption debe incluir una pregunta");
-    req(/\nVídeo: Pixabay\s*$/.test(cap), 'el caption debe terminar con "Vídeo: Pixabay" (la música CC BY se añade al publicar)');
+    const credito = creditoVideo(r);
+    req(cap.trimEnd().endsWith(`\n${credito}`), `el caption debe terminar con "${credito}" según las fuentes de los clips (la música CC BY se añade al publicar)`);
     req(!/carrusel|desliza/i.test(cap), "el caption habla de carrusel o de deslizar");
     if (fuentes.length) {
       req(/\nFuentes?:/.test(cap), 'falta el bloque "Fuentes:"');

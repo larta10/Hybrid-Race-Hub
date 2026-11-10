@@ -8,18 +8,30 @@
     {
       "duracion": 2,
       "clip": {
-        "query": "athlete tired",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "tired athlete",
+        "fuente": "pixabay",
+        "id": "224421",
+        "url_pagina": "https://pixabay.com/videos/id-224421/",
+        "autor": "Engin_Akyurt",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.42,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "tired athlete",
+          "exhausted runner",
+          "athlete fatigue"
+        ],
+        "autor_url": "https://pixabay.com/users/Engin_Akyurt-3656355/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2024/08/02/224421_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 59,
+        "tramo": 7,
+        "archivo": "clips/pixabay-224421-97a80597.mp4"
       },
       "texto": []
     },
@@ -27,17 +39,29 @@
       "duracion": 4,
       "clip": {
         "query": "man sleeping bed",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "fuente": "pixabay",
+        "id": "16346",
+        "url_pagina": "https://pixabay.com/videos/id-16346/",
+        "autor": "StefWithAnF",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.55,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "man sleeping bed",
+          "sleeping night bedroom",
+          "woman sleeping"
+        ],
+        "autor_url": "https://pixabay.com/users/StefWithAnF-795875/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2018/05/22/16346-271607288_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 30,
+        "tramo": 7,
+        "archivo": "clips/pixabay-16346-2fd21898.mp4"
       },
       "texto": [],
       "grafica": {
@@ -53,18 +77,31 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "athlete training gym",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "sprint training",
+        "fuente": "pixabay",
+        "id": "317739",
+        "url_pagina": "https://pixabay.com/videos/id-317739/",
+        "autor": "jullianworkout",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "sprinter",
+          "weightlifting athlete",
+          "athlete training",
+          "cinematic gym"
+        ],
+        "autor_url": "https://pixabay.com/users/jullianworkout-48398052/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2025/11/24/317739_large.mp4",
+        "ancho": 1440,
+        "alto": 2560,
+        "duracion_clip": 17,
+        "tramo": 7,
+        "archivo": "clips/pixabay-317739-2087ff91.mp4"
       },
       "texto": [
         "Fuerza, resistencia, sprints y habilidad",
@@ -75,18 +112,30 @@
     {
       "duracion": 4.5,
       "clip": {
-        "query": "basketball sprint",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "alarm clock morning",
+        "fuente": "pixabay",
+        "id": "139365",
+        "url_pagina": "https://pixabay.com/videos/id-139365/",
+        "autor": "Matthias_Groeneveld",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.62,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "alarm clock morning",
+          "waking up bed",
+          "insomnia night"
+        ],
+        "autor_url": "https://pixabay.com/users/Matthias_Groeneveld-4535957/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2022/11/16/139365-772278357_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 17,
+        "tramo": 7,
+        "archivo": "clips/pixabay-139365-2034e4b0.mp4"
       },
       "texto": [],
       "grafica": {
@@ -112,18 +161,30 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "alarm clock bed morning",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "morning run",
+        "fuente": "pixabay",
+        "id": "242193",
+        "url_pagina": "https://pixabay.com/videos/id-242193/",
+        "autor": "47169006",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "morning run",
+          "running sunrise",
+          "athlete training gym"
+        ],
+        "autor_url": "https://pixabay.com/users/47169006-47169006/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2024/11/19/242193_large.mp4",
+        "ancho": 2160,
+        "alto": 3840,
+        "duracion_clip": 8,
+        "tramo": 6.8,
+        "archivo": "clips/pixabay-242193-39d770db.mp4"
       },
       "texto": [
         "Solo 11 y sin grupo control",
@@ -141,18 +202,29 @@
     "Carrera temprano: acuéstate antes"
   ],
   "clip_final": {
-    "query": "night city runner",
-    "fuente": null,
-    "id": null,
-    "url_pagina": null,
-    "autor": null,
+    "query": "night runner city",
+    "fuente": "pixabay",
+    "id": "131195",
+    "url_pagina": "https://pixabay.com/videos/id-131195/",
+    "autor": "tvchrist",
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": true,
+    "queries": [
+      "night runner city",
+      "bedroom night"
+    ],
+    "autor_url": "https://pixabay.com/users/tvchrist-12260747/",
+    "archivo_origen": "https://cdn.pixabay.com/video/2022/09/13/131195-749706805_large.mp4",
+    "ancho": 3840,
+    "alto": 2160,
+    "duracion_clip": 64,
+    "tramo": 10,
+    "archivo": "clips/pixabay-131195-0a6796a9.mp4"
   },
   "musica": "auto",
   "portada_segundo": 1.2,

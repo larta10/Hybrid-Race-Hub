@@ -8,7 +8,7 @@
     {
       "duracion": 2,
       "clip": {
-        "query": "obstacle course wall climb",
+        "query": "obstacle course race",
         "fuente": null,
         "id": null,
         "url_pagina": null,
@@ -19,14 +19,20 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "obstacle course race",
+          "mud run obstacle",
+          "obstacle race wall"
+        ],
+        "candidatos": []
       },
       "texto": []
     },
     {
       "duracion": 3,
       "clip": {
-        "query": "obstacle race wall",
+        "query": "climbing over wall obstacle",
         "fuente": null,
         "id": null,
         "url_pagina": null,
@@ -37,7 +43,28 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "climbing over wall obstacle",
+          "obstacle wall climb",
+          "wall climb training"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "238392",
+            "url_pagina": "https://pixabay.com/videos/id-238392/",
+            "autor": "Engin_Akyurt",
+            "autor_url": "https://pixabay.com/users/Engin_Akyurt-3656355/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2024/10/27/238392_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 59,
+            "preview": "https://cdn.pixabay.com/video/2024/10/27/238392_tiny.mp4",
+            "etiquetas": "fence, thorny, razor blade, sharp, barrier, anger, metal, security, protection, obstacle, wall, sky, prison, prisoner, captivity",
+            "relevancia": 0.7666666666666666
+          }
+        ]
       },
       "texto": [
         "Llegas parado y subes a pulso",
@@ -47,7 +74,7 @@
     {
       "duracion": 4.5,
       "clip": {
-        "query": "climbing wall obstacle",
+        "query": "parkour wall run",
         "fuente": null,
         "id": null,
         "url_pagina": null,
@@ -58,7 +85,28 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "parkour wall run",
+          "obstacle wall climb",
+          "wall climb jump"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "238392",
+            "url_pagina": "https://pixabay.com/videos/id-238392/",
+            "autor": "Engin_Akyurt",
+            "autor_url": "https://pixabay.com/users/Engin_Akyurt-3656355/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2024/10/27/238392_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 59,
+            "preview": "https://cdn.pixabay.com/video/2024/10/27/238392_tiny.mp4",
+            "etiquetas": "fence, thorny, razor blade, sharp, barrier, anger, metal, security, protection, obstacle, wall, sky, prison, prisoner, captivity",
+            "relevancia": 0.7666666666666666
+          }
+        ]
       },
       "texto": [
         "1. Aproximación rápida",
@@ -78,7 +126,7 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "obstacle course race",
+        "query": "parkour wall climb",
         "fuente": null,
         "id": null,
         "url_pagina": null,
@@ -89,7 +137,13 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "parkour wall climb",
+          "climbing over fence",
+          "wall jump parkour"
+        ],
+        "candidatos": []
       },
       "texto": [
         "La velocidad es altura *gratis*",
@@ -99,7 +153,7 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "obstacle course race mud",
+        "query": "mud run runners",
         "fuente": null,
         "id": null,
         "url_pagina": null,
@@ -110,7 +164,98 @@
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "mud run runners",
+          "obstacle course race finish",
+          "muddy runners"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "23014",
+            "url_pagina": "https://pixabay.com/videos/id-23014/",
+            "autor": "Nassau_Yacht_Haven_Marina",
+            "autor_url": "https://pixabay.com/users/Nassau_Yacht_Haven_Marina-12276457/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2019/04/23/23014-332483130_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 9,
+            "preview": "https://cdn.pixabay.com/video/2019/04/23/23014-332483130_tiny.mp4",
+            "etiquetas": "exercise, run, running, jog, beach, sunrise, paradise, bahamas, runner, fitness, training, athlete, jogging, active, lifestyle, outdoor, fit, athletic, health, workout, sport, caribbean, sand",
+            "relevancia": 0.7666666666666666
+          },
+          {
+            "fuente": "pixabay",
+            "id": "10809",
+            "url_pagina": "https://pixabay.com/videos/id-10809/",
+            "autor": "Coverr-Free-Footage",
+            "autor_url": "https://pixabay.com/users/Coverr-Free-Footage-1281706/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2017/07/23/10809-226624946_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 12,
+            "preview": "https://cdn.pixabay.com/video/2017/07/23/10809-226624946_tiny.mp4",
+            "etiquetas": "runner, shore, coast, coastline, jogging, run, sports, active, freedom, beach, healthy, lifestyle, person, training, sport, jogger, fitness, sea, exercise, workout, morning, athlete",
+            "relevancia": 0.7666666666666666
+          },
+          {
+            "fuente": "pixabay",
+            "id": "15748",
+            "url_pagina": "https://pixabay.com/videos/id-15748/",
+            "autor": "anncapictures",
+            "autor_url": "https://pixabay.com/users/anncapictures-1564471/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2018/04/22/15748-266043652_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 29,
+            "preview": "https://cdn.pixabay.com/video/2018/04/22/15748-266043652_tiny.mp4",
+            "etiquetas": "running, marathon, zurich, run, sports, runner, athletic, sportiness, competition, fit, sport event, sports event, running shoes",
+            "relevancia": 0.7666666666666666
+          },
+          {
+            "fuente": "pixabay",
+            "id": "26562",
+            "url_pagina": "https://pixabay.com/videos/id-26562/",
+            "autor": "Matthias_Groeneveld",
+            "autor_url": "https://pixabay.com/users/Matthias_Groeneveld-4535957/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2019/09/04/26562-358041209_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 20,
+            "preview": "https://cdn.pixabay.com/video/2019/09/04/26562-358041209_tiny.mp4",
+            "etiquetas": "sea, running, water, ocean, jogging, run, runner, fitness",
+            "relevancia": 0.7666666666666666
+          },
+          {
+            "fuente": "pixabay",
+            "id": "34972",
+            "url_pagina": "https://pixabay.com/videos/id-34972/",
+            "autor": "maksoy",
+            "autor_url": "https://pixabay.com/users/maksoy-15113309/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2020/04/04/34972-407130582_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 10,
+            "preview": "https://cdn.pixabay.com/video/2020/04/04/34972-407130582_tiny.mp4",
+            "etiquetas": "run, jogging, running, exercise, fitness, sport, health, motivation, athlete, healthy, runner, person, training, street, city, man, tree, spring",
+            "relevancia": 0.7666666666666666
+          },
+          {
+            "fuente": "pixabay",
+            "id": "138443",
+            "url_pagina": "https://pixabay.com/videos/id-138443/",
+            "autor": "aerofotografialincoln",
+            "autor_url": "https://pixabay.com/users/aerofotografialincoln-30880543/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/11/10/138443-769724615_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 12,
+            "preview": "https://cdn.pixabay.com/video/2022/11/10/138443-769724615_tiny.mp4",
+            "etiquetas": "running, run, exercise, family, sport, marathon, endurance, fitness, training, long distance, athlete, race, runner, finish line, stamina, health, wellness, sports, active lifestyle, persistence, motivation, dedication, goal setting",
+            "relevancia": 0.7666666666666666
+          }
+        ]
       },
       "texto": [
         "Menos tiempo colgado",
@@ -139,7 +284,13 @@
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": false,
+    "queries": [
+      "obstacle course race",
+      "mud run",
+      "trail running group"
+    ],
+    "candidatos": []
   },
   "musica": "auto",
   "portada_segundo": 1.2,

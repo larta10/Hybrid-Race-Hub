@@ -9,17 +9,29 @@
       "duracion": 2,
       "clip": {
         "query": "athlete stretching",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "fuente": "pixabay",
+        "id": "50883",
+        "url_pagina": "https://pixabay.com/videos/id-50883/",
+        "autor": "thenickmurphy",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.68,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "athlete stretching",
+          "runner stretching",
+          "stretching legs park"
+        ],
+        "autor_url": "https://pixabay.com/users/thenickmurphy-11766946/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2020/09/26/50883-462182244_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 10,
+        "tramo": 7,
+        "archivo": "clips/pixabay-50883-01084a64.mp4"
       },
       "texto": []
     },
@@ -27,17 +39,19 @@
       "duracion": 3,
       "clip": {
         "query": "stretching before running",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "stretching before running",
+          "hamstring stretch",
+          "static stretching"
+        ],
+        "sin_clip": true
       },
       "texto": [
         "Diez minutos estirando «para no lesionarte»",
@@ -47,18 +61,30 @@
     {
       "duracion": 5,
       "clip": {
-        "query": "athlete stretching legs",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "barbell squat",
+        "fuente": "pixabay",
+        "id": "148204",
+        "url_pagina": "https://pixabay.com/videos/id-148204/",
+        "autor": "blackmarketmusic",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "barbell squat",
+          "weight training gym",
+          "strength training"
+        ],
+        "autor_url": "https://pixabay.com/users/blackmarketmusic-2976878/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2023/01/27/148204-793717940_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 8,
+        "tramo": 6.8,
+        "archivo": "clips/pixabay-148204-1dd49cd5.mp4"
       },
       "texto": [],
       "grafica": {
@@ -93,18 +119,30 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "barbell squat gym",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "deadlift gym",
+        "fuente": "pixabay",
+        "id": "135159",
+        "url_pagina": "https://pixabay.com/videos/id-135159/",
+        "autor": "blackmarketmusic",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.55,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "deadlift gym",
+          "lunges dumbbells",
+          "strength training legs"
+        ],
+        "autor_url": "https://pixabay.com/users/blackmarketmusic-2976878/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2022/10/16/135159-761273555_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 18,
+        "tramo": 7,
+        "archivo": "clips/pixabay-135159-da5809e0.mp4"
       },
       "texto": [
         "Fuerza: lesiones a menos de un *tercio*",
@@ -115,18 +153,30 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "deadlift gym",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "runners training group",
+        "fuente": "pixabay",
+        "id": "18692",
+        "url_pagina": "https://pixabay.com/videos/id-18692/",
+        "autor": "tacofleur",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.55,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "runners training group",
+          "trail running",
+          "running park"
+        ],
+        "autor_url": "https://pixabay.com/users/tacofleur-2688180/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2018/10/13/18692-295718344_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 41,
+        "tramo": 7,
+        "archivo": "clips/pixabay-18692-aa4e08de.mp4"
       },
       "texto": [
         "Ningún ensayo era de HYROX u OCR",
@@ -144,18 +194,29 @@
     "¿Te gusta estirar? Sigue, y suma fuerza"
   ],
   "clip_final": {
-    "query": "gym crossfit training",
-    "fuente": null,
-    "id": null,
-    "url_pagina": null,
-    "autor": null,
+    "query": "gym workout",
+    "fuente": "pixabay",
+    "id": "12742",
+    "url_pagina": "https://pixabay.com/videos/id-12742/",
+    "autor": "tacofleur",
     "inicio": 1,
     "recorte": {
-      "centro_x": 0.5,
+      "centro_x": 0.55,
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": true,
+    "queries": [
+      "gym workout",
+      "kettlebell swing"
+    ],
+    "autor_url": "https://pixabay.com/users/tacofleur-2688180/",
+    "archivo_origen": "https://cdn.pixabay.com/video/2017/11/03/12742-241674218_large.mp4",
+    "ancho": 1920,
+    "alto": 1080,
+    "duracion_clip": 59,
+    "tramo": 10,
+    "archivo": "clips/pixabay-12742-09700bf6.mp4"
   },
   "musica": "auto",
   "portada_segundo": 1.2,

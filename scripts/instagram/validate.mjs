@@ -3,6 +3,7 @@
 import { loadPosts, validatePost, fullCaption } from "./lib/posts.mjs";
 import { layoutIssues } from "./render.mjs";
 import { loadReels, validateReel, reelReady } from "./lib/reels.mjs";
+import { variedadCola, enCola } from "./lib/variedad.mjs";
 
 const posts = loadPosts();
 let errors = 0;
@@ -28,8 +29,15 @@ console.log(`Caption más largo: ${Math.max(0, ...posts.map((p) => (p.caption ? 
 const reels = loadReels();
 const byId = new Map(posts.map((p) => [p.id, p]));
 let listos = 0;
+// Variedad del metraje: solo los reels que siguen en cola (los publicados y descartados no cuentan)
+const variedad = variedadCola(reels);
+const avisos = [];
 for (const r of reels) {
   const errs = validateReel(r, byId.get(r.post_carrusel_id));
+  // Error si el reel ya está marcado como listo (qa_ok); aviso mientras se prepara (sale el carrusel)
+  const v = enCola(r) ? variedad.get(r.id) || [] : [];
+  if (r.qa_ok) errs.push(...v);
+  else if (v.length) avisos.push(`${r.id}: ${v.length} regla(s) de variedad sin cumplir (en preparación: hasta cumplirlas sale el carrusel)`);
   if (reelReady(r).listo) listos++;
   if (errs.length) {
     errors += errs.length;
@@ -37,6 +45,7 @@ for (const r of reels) {
     for (const e of errs) console.log(`    - ${e}`);
   }
 }
+for (const a of avisos) console.log(`  aviso ${a}`);
 console.log(`${reels.length} guiones de Reel · ${listos} listos para publicar (clips revisados y control de calidad hecho)`);
 
 if (errors) {

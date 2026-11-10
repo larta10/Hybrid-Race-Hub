@@ -1,7 +1,9 @@
 // Metraje de stock para los guiones. Fuente por defecto: Pixabay (Pexels solo si hay PEXELS_API_KEY).
 //
-//   node scripts/fetch-clips.mjs buscar  <reel_id|_calendario|--all> [--n=4] [--fuente=pixabay] [--rehacer=3]
-//        Busca candidatos para cada hueco sin clip, descarga vistas previas y crea una hoja de contactos
+//   node scripts/fetch-clips.mjs buscar  <reel_id|_calendario|--all> [--n=6] [--fuente=pixabay|pexels] [--rehacer=3] [--q="a|b|c"]
+//        Busca candidatos para cada hueco sin clip con sus consultas (clip.queries: 3-4 búsquedas en inglés de lo
+//        que se VE) en Pixabay y, si hay PEXELS_API_KEY, también en Pexels. Excluye los clips que ya usa otro reel
+//        de la cola (regla de variedad). Descarga vistas previas y crea una hoja de contactos
 //        (out/frames/candidatos/<reel>.jpg): una fila por hueco, una columna por candidato.
 //   node scripts/fetch-clips.mjs elegir  <reel_id> <hueco>=<candidato>[:centro_x[:inicio[:zoom]]] …
 //        Fija el candidato, descarga el original, genera la versión vertical y una hoja con 3 fotogramas
@@ -12,10 +14,11 @@
 //        La escena pasa a texto y gráfica sobre fondo neutro (no hay clip adecuado).
 //
 // Los huecos se numeran desde 1 en el orden de las escenas; el último es el fondo final.
-import { rmSync, writeFileSync } from "node:fs";
+import { rmSync, writeFileSync, existsSync, readFileSync } from "node:fs";
 import path from "node:path";
-import { loadReel, saveReel, reelIds, clipSlots, ffmpeg, OUT, mkdirp } from "./lib/common.mjs";
-import { buscar } from "./lib/sources.mjs";
+import { loadReel, saveReel, reelIds, clipSlots, ffmpeg, OUT, mkdirp, REELS_DIR } from "./lib/common.mjs";
+import { buscarVarias, fuentesActivas } from "./lib/sources.mjs";
+import { clipsOcupados } from "../../scripts/instagram/lib/variedad.mjs";
 import { clipKey, downloadPreview, prepareVertical, uploadClip } from "./lib/clips.mjs";
 
 const [cmd, objetivo, ...resto] = process.argv.slice(2);
@@ -34,10 +37,21 @@ function sheet(dir, cols, rows, out) {
   ffmpeg(["-framerate", "1", "-i", path.join(dir, "c%03d.jpg"), "-vf", `tile=${cols}x${rows}:padding=10:margin=10:color=white`, "-frames:v", "1", "-q:v", "3", out]);
 }
 
+/** Duración de cada escena según la narración guardada (words.json), si existe */
+function duracionesNarradas(reel) {
+  const f = path.join(REELS_DIR, "audio", `${reel.id}.words.json`);
+  if (!existsSync(f)) return {};
+  const out = {};
+  for (const s of JSON.parse(readFileSync(f, "utf8")).segmentos || []) if (s.i !== undefined) out[String(s.i)] = s.hasta - s.desde;
+  return out;
+}
+
 async function cmdBuscar(id) {
   const reel = loadReel(id);
-  const n = Number(opt("n", 4));
-  const fuente = opt("fuente", "pixabay");
+  const n = Number(opt("n", 6));
+  const fuentes = opt("fuente") ? [opt("fuente")] : fuentesActivas();
+  const ocupados = clipsOcupados(reelIds().map(loadReel), reel.id);
+  const durVoz = duracionesNarradas(reel);
   const rehacer = opt("rehacer");
   const slots = clipSlots(reel);
   const usados = new Set(slots.map((s) => clipKey(s.clip)).filter(Boolean));
@@ -52,13 +66,16 @@ async function cmdBuscar(id) {
       for (let j = 0; j < n; j++) blank(path.join(dir, `c${String(k++).padStart(3, "0")}.jpg`), CELL_W, CELL_H);
       continue;
     }
-    if (rehacer && opt("q")) c.query = opt("q");
+    if (rehacer && opt("q")) c.queries = opt("q").split("|");
     if (!c.sin_clip && (!c.id || rehacer)) {
-      const minDur = Math.ceil((c.inicio ?? 1) + s.duracion + 0.5);
-      const excluir = new Set([...usados, ...(c.descartados || [])]);
-      const cands = (await buscar(c.query, minDur, { fuente, excluir })).slice(0, n);
+      // Duración real de la escena: la narrada si es más larga que la del guion, + 1 s de margen
+      const dur = Math.max(s.duracion, durVoz[s.clave] || 0);
+      const minDur = Math.ceil((c.inicio ?? 1) + dur + 1);
+      const excluir = new Set([...usados, ...ocupados, ...(c.descartados || [])]);
+      const queries = c.queries?.length ? c.queries : [c.query];
+      const cands = await buscarVarias(queries, minDur, { fuentes, excluir, n });
       c.candidatos = cands.map(({ preview, etiquetas, relevancia, ...m }) => ({ ...m, preview, etiquetas, relevancia }));
-      console.log(`  hueco ${i + 1} (${s.donde}) "${c.query}": ${cands.length} candidatos`);
+      console.log(`  hueco ${i + 1} (${s.donde}) "${queries.join(" | ")}": ${cands.length} candidatos`);
       cands.forEach((v, j) => console.log(`     ${j + 1}. ${v.fuente}-${v.id} ${v.ancho}x${v.alto} ${v.duracion_clip}s rel ${v.relevancia.toFixed(2)} · ${v.etiquetas}`));
     }
     const cands = c.candidatos || [];
@@ -85,7 +102,15 @@ async function cmdElegir(id, picks) {
   for (const p of picks) {
     const [h, spec] = p.split("=");
     const [cand, cx, ini, zoom] = spec.split(":");
-    const s = slots[Number(h) - 1];
+    // "p<escena>=<id>" añade un plano extra a esa escena (escena.cortes), para cortar cada 1,5-2,5 s
+    let s = slots[Number(h) - 1];
+    if (/^p\d+$/.test(h)) {
+      const e = reel.escenas[Number(h.slice(1)) - 1];
+      if (!e) throw new Error(`No existe la escena ${h.slice(1)}`);
+      const nuevo = { query: "plano extra", inicio: 1, recorte: { centro_x: 0.5, centro_y: 0.5, zoom: 1 } };
+      (e.cortes ||= []).push(nuevo);
+      s = { clip: nuevo };
+    }
     if (!s) throw new Error(`No existe el hueco ${h}`);
     const c = s.clip;
     // <candidato> es su número en ese hueco o un id "pixabay-123" de cualquier hueco del guion
@@ -98,6 +123,7 @@ async function cmdElegir(id, picks) {
     if (ini !== undefined && ini !== "") c.inicio = Number(ini);
     c.revisado = false;
     delete c.archivo;
+    delete c.tramo;
     delete c.sin_clip;
     console.log(`  hueco ${h}: ${clipKey(c)} centro_x ${c.recorte.centro_x} inicio ${c.inicio} zoom ${c.recorte.zoom}`);
   }
@@ -141,9 +167,11 @@ async function cmdAprobar(id, huecos) {
     const c = s.clip;
     if (c.sin_clip) continue;
     if (!clipKey(c)) throw new Error(`Hueco ${h}: sin clip elegido`);
-    const { file, archivo } = await prepareVertical(c, s.duracion);
+    delete c.archivo;
+    const { file, archivo, tramo } = await prepareVertical(c, s.duracion);
     await uploadClip(file, archivo);
     c.archivo = archivo;
+    c.tramo = tramo;
     c.revisado = true;
     delete c.candidatos;
     console.log(`  hueco ${h}: ${clipKey(c)} aprobado → ${archivo}`);
@@ -156,7 +184,7 @@ function cmdSinClip(id, huecos) {
   const slots = clipSlots(reel);
   for (const h of huecos.map(Number)) {
     const c = slots[h - 1].clip;
-    for (const k of [...META, "archivo", "candidatos"]) delete c[k];
+    for (const k of [...META, "archivo", "tramo", "candidatos"]) delete c[k];
     c.sin_clip = true;
     c.revisado = true;
     console.log(`  hueco ${h}: sin clip (fondo neutro)`);

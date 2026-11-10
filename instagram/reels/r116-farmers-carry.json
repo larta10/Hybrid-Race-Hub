@@ -8,36 +8,60 @@
     {
       "duracion": 2,
       "clip": {
-        "query": "kettlebell farmers carry",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "farmers walk",
+        "fuente": "pixabay",
+        "id": "13139",
+        "url_pagina": "https://pixabay.com/videos/id-13139/",
+        "autor": "tacofleur",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "farmers walk",
+          "kettlebell carry",
+          "dumbbells walking gym"
+        ],
+        "autor_url": "https://pixabay.com/users/tacofleur-2688180/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2017/12/01/13139-245530647_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 43,
+        "tramo": 7,
+        "archivo": "clips/pixabay-13139-59c7fed7.mp4"
       },
       "texto": []
     },
     {
       "duracion": 3,
       "clip": {
-        "query": "farmers walk dumbbells",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "grip strength hands",
+        "fuente": "pixabay",
+        "id": "148211",
+        "url_pagina": "https://pixabay.com/videos/id-148211/",
+        "autor": "blackmarketmusic",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.55,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "grip strength hands",
+          "hands chalk",
+          "kettlebell grip"
+        ],
+        "autor_url": "https://pixabay.com/users/blackmarketmusic-2976878/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2023/01/27/148211-793717955_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 16,
+        "tramo": 7,
+        "archivo": "clips/pixabay-148211-646e1c3f.mp4"
       },
       "texto": [
         "Las piernas aguantan",
@@ -51,65 +75,112 @@
           "y": null,
           "keyframes": []
         }
+      ],
+      "cortes": [
+        {
+          "query": "plano extra",
+          "inicio": 1,
+          "recorte": {
+            "centro_x": 0.5,
+            "centro_y": 0.5,
+            "zoom": 1
+          },
+          "fuente": "pixabay",
+          "id": "148196",
+          "url_pagina": "https://pixabay.com/videos/id-148196/",
+          "autor": "blackmarketmusic",
+          "autor_url": "https://pixabay.com/users/blackmarketmusic-2976878/",
+          "archivo_origen": "https://cdn.pixabay.com/video/2023/01/27/148196-793717922_large.mp4",
+          "ancho": 3840,
+          "alto": 2160,
+          "duracion_clip": 13,
+          "revisado": true,
+          "tramo": 7,
+          "archivo": "clips/pixabay-148196-0ebe9afc.mp4"
+        }
       ]
     },
     {
       "duracion": 3,
       "clip": {
-        "query": "farmers carry gym",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
-        "recorte": {
-          "centro_x": 0.5,
-          "centro_y": 0.5,
-          "zoom": 1
-        },
-        "revisado": false
+        "query": "farmers walk",
+        "queries": [
+          "farmers walk",
+          "carrying kettlebells"
+        ],
+        "sin_clip": true,
+        "revisado": true
       },
       "texto": [
         "Erguido, hombros atrás y abajo",
         "Pasos cortos y rápidos"
-      ]
+      ],
+      "tecnica": {
+        "pose": "farmers_carry",
+        "comparar": false,
+        "marcas": [
+          {
+            "tipo": "espalda"
+          },
+          {
+            "tipo": "texto",
+            "texto": "Erguido, pasos cortos"
+          }
+        ]
+      }
     },
     {
       "duracion": 3,
       "clip": {
-        "query": "carrying kettlebells",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
-        "recorte": {
-          "centro_x": 0.5,
-          "centro_y": 0.5,
-          "zoom": 1
-        },
-        "revisado": false
+        "query": "walking with dumbbells",
+        "queries": [
+          "walking with dumbbells",
+          "kettlebell carry"
+        ],
+        "sin_clip": true,
+        "revisado": true
       },
       "texto": [
         "Error: encorvado, hombros delante",
         "El agarre dura menos"
-      ]
+      ],
+      "tecnica": {
+        "pose": "farmers_carry",
+        "comparar": true,
+        "marcas": [
+          {
+            "tipo": "espalda"
+          }
+        ]
+      }
     },
     {
       "duracion": 3,
       "clip": {
-        "query": "kettlebell carry",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "kettlebell gym",
+        "fuente": "pixabay",
+        "id": "148212",
+        "url_pagina": "https://pixabay.com/videos/id-148212/",
+        "autor": "blackmarketmusic",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "kettlebell gym",
+          "dropping dumbbells",
+          "weights floor gym"
+        ],
+        "autor_url": "https://pixabay.com/users/blackmarketmusic-2976878/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2023/01/27/148212-793717957_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 13,
+        "tramo": 7,
+        "archivo": "clips/pixabay-148212-0f62ccb0.mp4"
       },
       "texto": [
         "Suelta cuando lo notes",
@@ -127,18 +198,29 @@
     "Hazlo también después de correr"
   ],
   "clip_final": {
-    "query": "gym crossfit training",
-    "fuente": null,
-    "id": null,
-    "url_pagina": null,
-    "autor": null,
+    "query": "gym training weights",
+    "fuente": "pixabay",
+    "id": "135162",
+    "url_pagina": "https://pixabay.com/videos/id-135162/",
+    "autor": "blackmarketmusic",
     "inicio": 1,
     "recorte": {
-      "centro_x": 0.5,
+      "centro_x": 0.55,
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": true,
+    "queries": [
+      "gym training weights",
+      "functional training"
+    ],
+    "autor_url": "https://pixabay.com/users/blackmarketmusic-2976878/",
+    "archivo_origen": "https://cdn.pixabay.com/video/2022/10/16/135162-761273567_large.mp4",
+    "ancho": 3840,
+    "alto": 2160,
+    "duracion_clip": 10,
+    "tramo": 10,
+    "archivo": "clips/pixabay-135162-4b4d8f1d.mp4"
   },
   "musica": "auto",
   "portada_segundo": 1.2,

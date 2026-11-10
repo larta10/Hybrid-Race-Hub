@@ -8,36 +8,64 @@
     {
       "duracion": 2,
       "clip": {
-        "query": "runners race start",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "marathon start",
+        "fuente": "pixabay",
+        "id": "34586",
+        "url_pagina": "https://pixabay.com/videos/id-34586/",
+        "autor": "Ambient_Nature_Atmosphere",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "marathon start",
+          "runners race start",
+          "running race crowd"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "138443",
+            "url_pagina": "https://pixabay.com/videos/id-138443/",
+            "autor": "aerofotografialincoln",
+            "autor_url": "https://pixabay.com/users/aerofotografialincoln-30880543/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/11/10/138443-769724615_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 12,
+            "preview": "https://cdn.pixabay.com/video/2022/11/10/138443-769724615_tiny.mp4",
+            "etiquetas": "running, run, exercise, family, sport, marathon, endurance, fitness, training, long distance, athlete, race, runner, finish line, stamina, health, wellness, sports, active lifestyle, persistence, motivation, dedication, goal setting",
+            "relevancia": 0.7666666666666666
+          }
+        ],
+        "autor_url": "https://pixabay.com/users/Ambient_Nature_Atmosphere-12967658/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2020/03/30/34586-402634180_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 14
       },
       "texto": []
     },
     {
       "duracion": 3,
       "clip": {
-        "query": "athlete stretching",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "runner stretching standing",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "runner stretching standing",
+          "stretching legs",
+          "athletes waiting start"
+        ],
+        "sin_clip": true
       },
       "texto": [
         "Dos saltitos y a la salida",
@@ -48,17 +76,113 @@
       "duracion": 4.5,
       "clip": {
         "query": "jogging warm up",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "fuente": "pixabay",
+        "id": "48134",
+        "url_pagina": "https://pixabay.com/videos/id-48134/",
+        "autor": "azadazahari",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.6,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "jogging warm up",
+          "jogging park",
+          "easy run"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "49530",
+            "url_pagina": "https://pixabay.com/videos/id-49530/",
+            "autor": "SooYeongBeh",
+            "autor_url": "https://pixabay.com/users/SooYeongBeh-7014400/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2020/09/10/49530-459622759_large.mp4",
+            "ancho": 3840,
+            "alto": 2160,
+            "duracion_clip": 21,
+            "preview": "https://cdn.pixabay.com/video/2020/09/10/49530-459622759_tiny.mp4",
+            "etiquetas": "park, jogging, running, outdoors, lifestyle",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "8153",
+            "url_pagina": "https://pixabay.com/videos/id-8153/",
+            "autor": "glorydays2012pro",
+            "autor_url": "https://pixabay.com/users/glorydays2012pro-3791746/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2017/03/04/8153-207209119_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 12,
+            "preview": "https://cdn.pixabay.com/video/2017/03/04/8153-207209119_tiny.mp4",
+            "etiquetas": "runner, jog, jogger, jogging, running, large garden, sports, winter, dresden, saxony, germany, snow, snowy, training, park",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "34586",
+            "url_pagina": "https://pixabay.com/videos/id-34586/",
+            "autor": "Ambient_Nature_Atmosphere",
+            "autor_url": "https://pixabay.com/users/Ambient_Nature_Atmosphere-12967658/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2020/03/30/34586-402634180_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 14,
+            "preview": "https://cdn.pixabay.com/video/2020/03/30/34586-402634180_tiny.mp4",
+            "etiquetas": "walk, man, sport, walking, plant, landscape, holidays, national park, action, exercise, nature, adventure, trekking, jogging, running, fitness",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "37450",
+            "url_pagina": "https://pixabay.com/videos/id-37450/",
+            "autor": "Ambient_Nature_Atmosphere",
+            "autor_url": "https://pixabay.com/users/Ambient_Nature_Atmosphere-12967658/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2020/04/28/37450-414024686_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 30,
+            "preview": "https://cdn.pixabay.com/video/2020/04/28/37450-414024686_tiny.mp4",
+            "etiquetas": "water, lake, national park, sun, wind, sky, clouds, nature, landscape, dolomiti, alpi, mountains, plant, flowers, atmosphere, sport, trekking, jogging",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "36627",
+            "url_pagina": "https://pixabay.com/videos/id-36627/",
+            "autor": "Ambient_Nature_Atmosphere",
+            "autor_url": "https://pixabay.com/users/Ambient_Nature_Atmosphere-12967658/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2020/04/20/36627-411363880_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 27,
+            "preview": "https://cdn.pixabay.com/video/2020/04/20/36627-411363880_tiny.mp4",
+            "etiquetas": "nature, water, boot, beach, blue, relax, lake, green, wind, sun, sky, cloud, sunset, national park, dolomiti, alpi, italy, landscape, sport, jogging",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "48134",
+            "url_pagina": "https://pixabay.com/videos/id-48134/",
+            "autor": "azadazahari",
+            "autor_url": "https://pixabay.com/users/azadazahari-11697778/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2020/08/25/48134-453650620_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 17,
+            "preview": "https://cdn.pixabay.com/video/2020/08/25/48134-453650620_tiny.mp4",
+            "etiquetas": "grass, road, park, jogging, exercise, running",
+            "relevancia": 1
+          }
+        ],
+        "autor_url": "https://pixabay.com/users/azadazahari-11697778/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2020/08/25/48134-453650620_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 17
       },
       "texto": [],
       "grafica": {
@@ -74,45 +198,167 @@
     {
       "duracion": 4.5,
       "clip": {
-        "query": "jogging warm up",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
-        "inicio": 1,
-        "recorte": {
-          "centro_x": 0.5,
-          "centro_y": 0.5,
-          "zoom": 1
-        },
-        "revisado": false
+        "query": "dynamic warm up",
+        "queries": [
+          "dynamic warm up",
+          "high knees",
+          "running drills"
+        ],
+        "sin_clip": true,
+        "revisado": true
       },
       "texto": [
         "−30 min: trote suave",
         "−20 min: movilidad dinámica",
         "−8 min: dos o tres aceleraciones"
-      ]
+      ],
+      "tecnica": {
+        "pose": "carrera",
+        "comparar": false,
+        "marcas": [
+          {
+            "tipo": "texto",
+            "texto": "Aceleraciones cortas"
+          }
+        ]
+      }
     },
     {
       "duracion": 3,
       "clip": {
-        "query": "runner track",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "running race",
+        "fuente": "pixabay",
+        "id": "129483",
+        "url_pagina": "https://pixabay.com/videos/id-129483/",
+        "autor": "blackmarketmusic",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": false,
+        "queries": [
+          "running race",
+          "runners city race"
+        ],
+        "candidatos": [
+          {
+            "fuente": "pixabay",
+            "id": "138443",
+            "url_pagina": "https://pixabay.com/videos/id-138443/",
+            "autor": "aerofotografialincoln",
+            "autor_url": "https://pixabay.com/users/aerofotografialincoln-30880543/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/11/10/138443-769724615_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 12,
+            "preview": "https://cdn.pixabay.com/video/2022/11/10/138443-769724615_tiny.mp4",
+            "etiquetas": "running, run, exercise, family, sport, marathon, endurance, fitness, training, long distance, athlete, race, runner, finish line, stamina, health, wellness, sports, active lifestyle, persistence, motivation, dedication, goal setting",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "129482",
+            "url_pagina": "https://pixabay.com/videos/id-129482/",
+            "autor": "blackmarketmusic",
+            "autor_url": "https://pixabay.com/users/blackmarketmusic-2976878/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/08/29/129482-744385511_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 6,
+            "preview": "https://cdn.pixabay.com/video/2022/08/29/129482-744385511_tiny.mp4",
+            "etiquetas": "runner, city, sport, jogging, street, marathon, outdoor, run, training, exercise, fitness, workout, healthy, athlete, person, lifestyle, man, activity, race, urban, active",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "188159",
+            "url_pagina": "https://pixabay.com/videos/id-188159/",
+            "autor": "rocky_lonse",
+            "autor_url": "https://pixabay.com/users/rocky_lonse-30236590/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2023/11/06/188159-881853420_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 13,
+            "preview": "https://cdn.pixabay.com/video/2023/11/06/188159-881853420_tiny.mp4",
+            "etiquetas": "woman, race, racing, running, exercise, fitness, run, health, jogging, gym",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "129484",
+            "url_pagina": "https://pixabay.com/videos/id-129484/",
+            "autor": "blackmarketmusic",
+            "autor_url": "https://pixabay.com/users/blackmarketmusic-2976878/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/08/29/129484-744385518_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 8,
+            "preview": "https://cdn.pixabay.com/video/2022/08/29/129484-744385518_tiny.mp4",
+            "etiquetas": "runner, city, sport, jogging, street, marathon, outdoor, run, training, exercise, fitness, workout, healthy, athlete, person, lifestyle, man, activity, race, urban, active",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "15741",
+            "url_pagina": "https://pixabay.com/videos/id-15741/",
+            "autor": "needvid",
+            "autor_url": "https://pixabay.com/users/needvid-2939519/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2018/04/22/15741-266043634_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 21,
+            "preview": "https://cdn.pixabay.com/video/2018/04/22/15741-266043634_tiny.mp4",
+            "etiquetas": "marathon, marathon runners, running, sport, runner, run, exercise, athlete, fitness, race, people, competition, jog, group, outdoor, endurance",
+            "relevancia": 1
+          },
+          {
+            "fuente": "pixabay",
+            "id": "129483",
+            "url_pagina": "https://pixabay.com/videos/id-129483/",
+            "autor": "blackmarketmusic",
+            "autor_url": "https://pixabay.com/users/blackmarketmusic-2976878/",
+            "archivo_origen": "https://cdn.pixabay.com/video/2022/08/29/129483-744385510_large.mp4",
+            "ancho": 1920,
+            "alto": 1080,
+            "duracion_clip": 7,
+            "preview": "https://cdn.pixabay.com/video/2022/08/29/129483-744385510_tiny.mp4",
+            "etiquetas": "man, runner, city, sport, jogging, street, marathon, outdoor, run, training, exercise, fitness, workout, healthy, athlete, person, lifestyle, activity, race, urban, active",
+            "relevancia": 1
+          }
+        ],
+        "autor_url": "https://pixabay.com/users/blackmarketmusic-2976878/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2022/08/29/129483-744385510_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 7
       },
       "texto": [
         "Apenas hubo pruebas de que *perjudique*"
       ],
-      "fuente": "Fradkin et al., 2010, J Strength Cond Res"
+      "fuente": "Fradkin et al., 2010, J Strength Cond Res",
+      "cortes": [
+        {
+          "query": "plano extra",
+          "inicio": 1,
+          "recorte": {
+            "centro_x": 0.5,
+            "centro_y": 0.5,
+            "zoom": 1
+          },
+          "fuente": "pixabay",
+          "id": "129484",
+          "url_pagina": "https://pixabay.com/videos/id-129484/",
+          "autor": "blackmarketmusic",
+          "autor_url": "https://pixabay.com/users/blackmarketmusic-2976878/",
+          "archivo_origen": "https://cdn.pixabay.com/video/2022/08/29/129484-744385518_large.mp4",
+          "ancho": 1920,
+          "alto": 1080,
+          "duracion_clip": 8,
+          "revisado": false
+        }
+      ]
     }
   ],
   "conclusion": [
@@ -125,18 +371,99 @@
     "Termina con dos aceleraciones"
   ],
   "clip_final": {
-    "query": "runner road",
-    "fuente": null,
-    "id": null,
-    "url_pagina": null,
-    "autor": null,
+    "query": "runners crowd",
+    "fuente": "pixabay",
+    "id": "37450",
+    "url_pagina": "https://pixabay.com/videos/id-37450/",
+    "autor": "Ambient_Nature_Atmosphere",
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": false,
+    "queries": [
+      "runners crowd",
+      "running race"
+    ],
+    "candidatos": [
+      {
+        "fuente": "pixabay",
+        "id": "138443",
+        "url_pagina": "https://pixabay.com/videos/id-138443/",
+        "autor": "aerofotografialincoln",
+        "autor_url": "https://pixabay.com/users/aerofotografialincoln-30880543/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2022/11/10/138443-769724615_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 12,
+        "preview": "https://cdn.pixabay.com/video/2022/11/10/138443-769724615_tiny.mp4",
+        "etiquetas": "running, run, exercise, family, sport, marathon, endurance, fitness, training, long distance, athlete, race, runner, finish line, stamina, health, wellness, sports, active lifestyle, persistence, motivation, dedication, goal setting",
+        "relevancia": 1
+      },
+      {
+        "fuente": "pixabay",
+        "id": "188159",
+        "url_pagina": "https://pixabay.com/videos/id-188159/",
+        "autor": "rocky_lonse",
+        "autor_url": "https://pixabay.com/users/rocky_lonse-30236590/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2023/11/06/188159-881853420_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 13,
+        "preview": "https://cdn.pixabay.com/video/2023/11/06/188159-881853420_tiny.mp4",
+        "etiquetas": "woman, race, racing, running, exercise, fitness, run, health, jogging, gym",
+        "relevancia": 1
+      },
+      {
+        "fuente": "pixabay",
+        "id": "15741",
+        "url_pagina": "https://pixabay.com/videos/id-15741/",
+        "autor": "needvid",
+        "autor_url": "https://pixabay.com/users/needvid-2939519/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2018/04/22/15741-266043634_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 21,
+        "preview": "https://cdn.pixabay.com/video/2018/04/22/15741-266043634_tiny.mp4",
+        "etiquetas": "marathon, marathon runners, running, sport, runner, run, exercise, athlete, fitness, race, people, competition, jog, group, outdoor, endurance",
+        "relevancia": 1
+      },
+      {
+        "fuente": "pixabay",
+        "id": "33783",
+        "url_pagina": "https://pixabay.com/videos/id-33783/",
+        "autor": "ninosouza",
+        "autor_url": "https://pixabay.com/users/ninosouza-8385382/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2020/03/16/33783-400217188_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 58,
+        "preview": "https://cdn.pixabay.com/video/2020/03/16/33783-400217188_tiny.mp4",
+        "etiquetas": "running, race, athletics, fitness, sport, athlete, action, athletes, velocity, effort, hall, track, health, challenge, activity",
+        "relevancia": 1
+      },
+      {
+        "fuente": "pixabay",
+        "id": "8025",
+        "url_pagina": "https://pixabay.com/videos/id-8025/",
+        "autor": "glorydays2012pro",
+        "autor_url": "https://pixabay.com/users/glorydays2012pro-3791746/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2017/03/01/8025-206210289_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 26,
+        "preview": "https://cdn.pixabay.com/video/2017/03/01/8025-206210289_tiny.mp4",
+        "etiquetas": "race, marathon, running event, dresden, terrace bank, runner, run, sporting event, elbe, saxony, germany",
+        "relevancia": 1
+      }
+    ],
+    "autor_url": "https://pixabay.com/users/Ambient_Nature_Atmosphere-12967658/",
+    "archivo_origen": "https://cdn.pixabay.com/video/2020/04/28/37450-414024686_large.mp4",
+    "ancho": 1920,
+    "alto": 1080,
+    "duracion_clip": 30
   },
   "musica": "auto",
   "portada_segundo": 1.2,

@@ -106,15 +106,33 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "box jump athlete",
+        "query": "box jump",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.52,
           "centro_y": 0.5,
           "zoom": 1
         },
         "revisado": true,
-        "sin_clip": true
+        "queries": [
+          "box jump",
+          "jump squat",
+          "jumping exercise",
+          "athlete jumping",
+          "sprint start athlete",
+          "plyometric"
+        ],
+        "fuente": "pixabay",
+        "id": "122440",
+        "url_pagina": "https://pixabay.com/videos/id-122440/",
+        "autor": "Engin_Akyurt",
+        "autor_url": "https://pixabay.com/users/Engin_Akyurt-3656355/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2022/06/29/122440-725502740_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 14,
+        "archivo": "clips/pixabay-122440-5b87b142.mp4",
+        "tramo": 7
       },
       "texto": [
         "La fuerza explosiva sí pierde *algo*",

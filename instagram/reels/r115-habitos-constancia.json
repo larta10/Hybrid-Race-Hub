@@ -9,35 +9,59 @@
       "duracion": 2,
       "clip": {
         "query": "morning run",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "fuente": "pixabay",
+        "id": "22913",
+        "url_pagina": "https://pixabay.com/videos/id-22913/",
+        "autor": "conolan",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.55,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "morning run",
+          "runner city morning",
+          "running sunrise"
+        ],
+        "autor_url": "https://pixabay.com/users/conolan-4525104/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2019/04/20/22913-336128301_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 20,
+        "tramo": 7,
+        "archivo": "clips/pixabay-22913-74a52797.mp4"
       },
       "texto": []
     },
     {
       "duracion": 3,
       "clip": {
-        "query": "gym training alone",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "rainy window",
+        "fuente": "pixabay",
+        "id": "94680",
+        "url_pagina": "https://pixabay.com/videos/id-94680/",
+        "autor": "NickyPe",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "rainy window",
+          "man sitting couch",
+          "lazy morning"
+        ],
+        "autor_url": "https://pixabay.com/users/NickyPe-10327513/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2021/11/05/94680-643084362_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 25,
+        "tramo": 7,
+        "archivo": "clips/pixabay-94680-6e1efe56.mp4"
       },
       "texto": [
         "Fallas un día y lo dejas todo",
@@ -47,18 +71,30 @@
     {
       "duracion": 4.5,
       "clip": {
-        "query": "runner city",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "gym training alone",
+        "fuente": "pixabay",
+        "id": "35009",
+        "url_pagina": "https://pixabay.com/videos/id-35009/",
+        "autor": "gcova",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "gym training alone",
+          "workout home",
+          "fitness training"
+        ],
+        "autor_url": "https://pixabay.com/users/gcova-15772091/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2020/04/04/35009-405620783_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 17,
+        "tramo": 7,
+        "archivo": "clips/pixabay-35009-1c2c730a.mp4"
       },
       "texto": [],
       "grafica": {
@@ -105,18 +141,30 @@
     {
       "duracion": 4.5,
       "clip": {
-        "query": "gym training",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "tying running shoes",
+        "fuente": "pixabay",
+        "id": "8257",
+        "url_pagina": "https://pixabay.com/videos/id-8257/",
+        "autor": "Coverr-Free-Footage",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.45,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "tying running shoes",
+          "runner tying shoelaces",
+          "preparing workout"
+        ],
+        "autor_url": "https://pixabay.com/users/Coverr-Free-Footage-1281706/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2017/03/08/8257-207598619_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 13,
+        "tramo": 7,
+        "archivo": "clips/pixabay-8257-285e50a4.mp4"
       },
       "texto": [],
       "grafica": {
@@ -143,18 +191,30 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "runner city morning",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "runner city",
+        "fuente": "pixabay",
+        "id": "210728",
+        "url_pagina": "https://pixabay.com/videos/id-210728/",
+        "autor": "LynX_BGW",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "runner city",
+          "jogging park",
+          "running stairs"
+        ],
+        "autor_url": "https://pixabay.com/users/LynX_BGW-38804944/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2024/05/05/210728_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 5,
+        "tramo": 3.8,
+        "archivo": "clips/pixabay-210728-96f6e280.mp4"
       },
       "texto": [
         "Saltarse un día no lo *estropeó*",
@@ -173,18 +233,29 @@
     "Cuenta semanas, no días perfectos"
   ],
   "clip_final": {
-    "query": "runner road",
-    "fuente": null,
-    "id": null,
-    "url_pagina": null,
-    "autor": null,
+    "query": "sunrise running",
+    "fuente": "pixabay",
+    "id": "199000",
+    "url_pagina": "https://pixabay.com/videos/id-199000/",
+    "autor": "Matthias_Groeneveld",
     "inicio": 1,
     "recorte": {
-      "centro_x": 0.5,
+      "centro_x": 0.72,
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": true,
+    "queries": [
+      "sunrise running",
+      "running group"
+    ],
+    "autor_url": "https://pixabay.com/users/Matthias_Groeneveld-4535957/",
+    "archivo_origen": "https://cdn.pixabay.com/video/2024/02/02/199000-909564579_medium.mp4",
+    "ancho": 2730,
+    "alto": 1439,
+    "duracion_clip": 44,
+    "tramo": 10,
+    "archivo": "clips/pixabay-199000-0a5f1b15.mp4"
   },
   "musica": "auto",
   "portada_segundo": 1.2,

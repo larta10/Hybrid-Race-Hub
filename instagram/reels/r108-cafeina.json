@@ -8,36 +8,60 @@
     {
       "duracion": 2,
       "clip": {
-        "query": "runner intense training",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "runner sprint race",
+        "fuente": "pixabay",
+        "id": "15741",
+        "url_pagina": "https://pixabay.com/videos/id-15741/",
+        "autor": "needvid",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "runner sprint race",
+          "intense running training",
+          "athlete sprint track"
+        ],
+        "autor_url": "https://pixabay.com/users/needvid-2939519/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2018/04/22/15741-266043634_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 21,
+        "archivo": "clips/pixabay-15741-aab4a52a.mp4",
+        "tramo": 7
       },
       "texto": []
     },
     {
       "duracion": 3,
       "clip": {
-        "query": "espresso coffee cup",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "espresso coffee",
+        "fuente": "pixabay",
+        "id": "262184",
+        "url_pagina": "https://pixabay.com/videos/id-262184/",
+        "autor": "Kost9n4",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.6,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "espresso coffee",
+          "pouring coffee cup",
+          "barista espresso machine"
+        ],
+        "autor_url": "https://pixabay.com/users/Kost9n4-2105326/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2025/03/03/262184_medium.mp4",
+        "ancho": 2730,
+        "alto": 1439,
+        "duracion_clip": 18,
+        "archivo": "clips/pixabay-262184-cebf5fe9.mp4",
+        "tramo": 7
       },
       "texto": [
         "De las ayudas más estudiadas",
@@ -48,18 +72,30 @@
     {
       "duracion": 4,
       "clip": {
-        "query": "coffee beans",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "cyclist training intense",
+        "fuente": "pixabay",
+        "id": "189730",
+        "url_pagina": "https://pixabay.com/videos/id-189730/",
+        "autor": "Amorn_mimi",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "cyclist training intense",
+          "endurance cycling road",
+          "runner road training"
+        ],
+        "autor_url": "https://pixabay.com/users/Amorn_mimi-27759397/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2023/11/19/189730-886596151_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 15,
+        "archivo": "clips/pixabay-189730-ae2fc1ef.mp4",
+        "tramo": 7
       },
       "texto": [],
       "grafica": {
@@ -75,18 +111,30 @@
     {
       "duracion": 4.5,
       "clip": {
-        "query": "gym training",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "drinking coffee morning",
+        "fuente": "pixabay",
+        "id": "80138",
+        "url_pagina": "https://pixabay.com/videos/id-80138/",
+        "autor": "TPMotion",
         "inicio": 1,
         "recorte": {
           "centro_x": 0.5,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "drinking coffee morning",
+          "coffee beans",
+          "coffee cup table"
+        ],
+        "autor_url": "https://pixabay.com/users/TPMotion-10915387/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2021/07/04/80138-572367430_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 60,
+        "archivo": "clips/pixabay-80138-4b599d9d.mp4",
+        "tramo": 7
       },
       "texto": [],
       "grafica": {
@@ -121,18 +169,30 @@
     {
       "duracion": 3,
       "clip": {
-        "query": "runner warm up",
-        "fuente": null,
-        "id": null,
-        "url_pagina": null,
-        "autor": null,
+        "query": "runner warming up",
+        "fuente": "pixabay",
+        "id": "138443",
+        "url_pagina": "https://pixabay.com/videos/id-138443/",
+        "autor": "aerofotografialincoln",
         "inicio": 1,
         "recorte": {
-          "centro_x": 0.5,
+          "centro_x": 0.55,
           "centro_y": 0.5,
           "zoom": 1
         },
-        "revisado": false
+        "revisado": true,
+        "queries": [
+          "runner warming up",
+          "athletes race start line",
+          "checking sports watch"
+        ],
+        "autor_url": "https://pixabay.com/users/aerofotografialincoln-30880543/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2022/11/10/138443-769724615_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 12,
+        "archivo": "clips/pixabay-138443-6236c18c.mp4",
+        "tramo": 7
       },
       "texto": [
         "Lo más usado: 60 min antes",
@@ -150,18 +210,30 @@
     "¿Corazón, ansiedad, medicación? Al médico"
   ],
   "clip_final": {
-    "query": "runner road",
-    "fuente": null,
-    "id": null,
-    "url_pagina": null,
-    "autor": null,
+    "query": "marathon runners",
+    "fuente": "pixabay",
+    "id": "15748",
+    "url_pagina": "https://pixabay.com/videos/id-15748/",
+    "autor": "anncapictures",
     "inicio": 1,
     "recorte": {
       "centro_x": 0.5,
       "centro_y": 0.5,
       "zoom": 1
     },
-    "revisado": false
+    "revisado": true,
+    "queries": [
+      "marathon runners",
+      "running race crowd",
+      "runners city"
+    ],
+    "autor_url": "https://pixabay.com/users/anncapictures-1564471/",
+    "archivo_origen": "https://cdn.pixabay.com/video/2018/04/22/15748-266043652_large.mp4",
+    "ancho": 1920,
+    "alto": 1080,
+    "duracion_clip": 29,
+    "archivo": "clips/pixabay-15748-50092851.mp4",
+    "tramo": 10
   },
   "musica": "auto",
   "portada_segundo": 1.2,

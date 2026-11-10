@@ -51,10 +51,14 @@ export const reelIds = () =>
     .map((f) => f.replace(/\.json$/, ""))
     .sort();
 
-/** Todos los clips de un guion (escenas + fondo final), con la duración que necesita cada uno */
+/**
+ * Todos los clips de un guion con la duración que necesita cada uno: escenas, fondo final y, al final
+ * (para no mover la numeración de los huecos), los planos extra de cada escena (escena.cortes).
+ */
 export function clipSlots(reel) {
   const slots = (reel.escenas || []).map((e, i) => ({ clip: e.clip, duracion: e.duracion, donde: `escena ${i + 1}`, clave: String(i) }));
   if (reel.clip_final) slots.push({ clip: reel.clip_final, duracion: 9.5, donde: "fondo final", clave: "final" });
+  (reel.escenas || []).forEach((e, i) => (e.cortes || []).forEach((c, k) => slots.push({ clip: c, duracion: e.duracion, donde: `escena ${i + 1}, plano ${k + 2}`, clave: `${i}-c${k + 1}` })));
   return slots.filter((s) => s.clip);
 }
 
