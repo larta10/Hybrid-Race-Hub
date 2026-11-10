@@ -5,6 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { SITE_URL, SITE_EMAIL, SITE_INSTAGRAM, ROBOTS_INDEX } from "../lib/site";
 import RaceList from "../components/RaceList";
+import PartnerBuscarPareja from "../components/PartnerBuscarPareja";
 import { fetchUpcomingRaces, seasonLabel, raceEventSchema, todayISO } from "../lib/races-server";
 import { CENTER_CITIES } from "../lib/center-cities";
 import { hubModalities } from "../lib/modalities";
@@ -385,6 +386,7 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
             <a href="/calendario" className="btn-solid">Ver todo el calendario</a>
             <a href="/que-es-una-carrera-hibrida" className="btn-line">Qué es una carrera híbrida</a>
           </div>
+          <PartnerBuscarPareja variant="destacada" placement="home" />
         </div>
       </section>
 

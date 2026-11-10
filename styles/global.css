@@ -2113,3 +2113,26 @@ input, select, textarea { font-size: 16px; }
 /* Información básica de protección de datos junto a los formularios (capa 1) */
 .form-privacy { font-size: 13px; line-height: 1.5; color: var(--muted2); margin-top: 12px; max-width: 70ch; }
 .form-privacy a { color: var(--muted); text-decoration: underline; }
+
+/* ══ PROYECTOS AMIGOS (components/PartnerBuscarPareja.jsx) ══
+   Sobrio: borde fino, sin color de marca de relleno. Pensado primero para 375 px. */
+.partner { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.partner--compacta { padding: var(--s3); margin: var(--s4) 0; }
+.partner--destacada { max-width: 1100px; margin: var(--s6) auto; padding: var(--s5) var(--s4); background: transparent; border-left: 0; border-right: 0; border-radius: 0; }
+.guide-body .partner h2, .partner .partner-title-sm {
+  font-family: var(--font-display); font-size: 22px; font-weight: 800; line-height: 1.1; color: var(--text);
+  margin: 0 0 var(--s1); padding: 0; border: 0;
+}
+.partner-title { font-family: var(--font-display); font-size: clamp(28px, 6vw, 36px); font-weight: 800; line-height: 1.05; color: var(--text); margin: 0 0 var(--s1); }
+.partner-sub { font-size: 17px; color: var(--text); margin: 0 0 var(--s3); max-width: 60ch; }
+.partner-card { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); padding: var(--s3); max-width: 720px; }
+.partner-name { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--text); margin: 0 0 var(--s1); }
+.partner-text { font-size: 16px; line-height: 1.6; color: var(--text-muted); margin: 0 0 var(--s2) !important; }
+.partner-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2) var(--s3); }
+.partner-btn { min-height: 44px; padding: 10px 20px; }
+.guide-body a.partner-btn { text-decoration: none; }
+.partner-ig { font-family: var(--font-mono); font-size: 14px; color: var(--text); text-decoration: underline; text-underline-offset: 3px; min-height: 44px; display: inline-flex; align-items: center; }
+@media (max-width: 480px) {
+  .partner--destacada { padding: var(--s4) 16px; }
+  .partner-btn { width: 100%; }
+}

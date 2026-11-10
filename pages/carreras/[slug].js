@@ -12,6 +12,8 @@ import { modalityOf, hubModalities } from "../../lib/modalities";
 import { HYBRID_CITIES, raceMatchesCity } from "../../lib/hybrid-cities";
 import { CENTER_CITIES, CENTER_CITY_BY_SLUG } from "../../lib/center-cities";
 import { downloadIcs, onOrganizerClick } from "../../lib/race-actions";
+import PartnerBuscarPareja from "../../components/PartnerBuscarPareja";
+import { isTeamRace } from "../../lib/partners";
 import { relatedForRace } from "../../lib/related";
 
 const NOINDEX_AFTER_DAYS = 60;
@@ -64,6 +66,7 @@ export async function getStaticProps({ params }) {
     props: {
       race: { ...lite(race), url: race.url || null, formato: race.formato || null, distancia: race.distancia || null, notas: race.notas || null, fecha_fin_iso: end },
       past,
+      teamRace: isTeamRace(race),
       noindex: addDays(end, NOINDEX_AFTER_DAYS) < today,
       schema: past ? null : raceEventSchema(race, SITE_URL),
       organizer: raceOrganizer(race),
@@ -115,7 +118,7 @@ function Actions({ race, url, pending }) {
   );
 }
 
-export default function Ficha({ race, past, noindex, schema, organizer, mod, regions, sameMod, sameRegion, nextEdition, centerCities, centers, updated, related }) {
+export default function Ficha({ race, past, teamRace, noindex, schema, organizer, mod, regions, sameMod, sameRegion, nextEdition, centerCities, centers, updated, related }) {
   const path = `/carreras/${race.slug}`;
   const url = `${SITE_URL}${path}`;
   const h1 = raceDisplayName(race);
@@ -201,6 +204,7 @@ export default function Ficha({ race, past, noindex, schema, organizer, mod, reg
           )}
           {!past && <Actions race={race} url={url} pending={status.key === "por_confirmar"} />}
           {race.notas && <p className="race-notes">{race.notas}</p>}
+          {!past && teamRace && <PartnerBuscarPareja variant="compacta" placement="ficha_carrera" />}
           <p className="guide-note">Fecha, precio y plazas los publica el organizador y pueden cambiar: confírmalos en su web antes de pagar.</p>
 
           <h2 id="modalidad">Qué es {mod.slug ? mod.name : "esta prueba"}</h2>

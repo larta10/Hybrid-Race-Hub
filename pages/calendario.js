@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import SiteHeader from "../components/SiteHeader";
 import RaceList from "../components/RaceList";
+import PartnerBuscarPareja from "../components/PartnerBuscarPareja";
 import { Breadcrumbs } from "../components/PageShell";
 import { trackSearch } from "../lib/track";
 import { SITE_URL, breadcrumbLd, pageTitle, ROBOTS_INDEX } from "../lib/site";
@@ -167,6 +168,8 @@ export default function Calendario({ races = [], season, today, recent = [], mon
               <button type="button" className="btn-solid" onClick={clear}>Ver todas las carreras</button>
             </div>
           )}
+
+        <PartnerBuscarPareja variant="destacada" placement="calendario" />
 
         <section className="cal-more" aria-labelledby="por-mes">
           <h2 id="por-mes">Carreras por mes</h2>
