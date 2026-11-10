@@ -1,6 +1,7 @@
 """Compara voces candidatas para la narración y las puntúa sin intervención humana.
 
     python video/scripts/probar_voces.py [--salida=instagram-preview/voces]
+    python video/scripts/probar_voces.py --casting   # casting en instagram/reels/casting-voz/ (MP3 + indice.md)
 
 Para cada voz genera la misma muestra (~20 s: gancho y primeras escenas de r103) y una frase con los
 términos en inglés, y mide:
@@ -242,5 +243,155 @@ def main():
     (SALIDA / "resultados.json").write_text(json.dumps(resultados, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
+
+# =====================================================================================================
+# Casting de voces en castellano de España (--casting): un MP3 por voz válida en instagram/reels/casting-voz/
+# =====================================================================================================
+CASTING_TEXTO = (
+    "¿Sabes cuánto tiempo pierdes en la Roxzone? En tu primer HYROX, unos ocho minutos entre estaciones. "
+    "Entra en los wall balls con calma, respira por la nariz y sal corriendo sin pararte."
+)
+LIC_KOKORO = "Apache-2.0 (pesos); base StyleTTS2-LJSpeech MIT + dominio público; datos permisivos según la ficha"
+# Voces que cumplen todas las reglas de VOCES.md, con la rejilla de parámetros que se prueba en cada una
+CASTING = [
+    {"id": "kokoro-em_alex", "nombre": "Kokoro em_alex (hombre)", "base": {"motor": "kokoro", "voz": "em_alex"}, "rejilla": [{"velocidad": v} for v in (0.9, 0.95, 1.0)], "licencia": LIC_KOKORO},
+    {"id": "kokoro-ef_dora", "nombre": "Kokoro ef_dora (mujer)", "base": {"motor": "kokoro", "voz": "ef_dora"}, "rejilla": [{"velocidad": v} for v in (0.9, 0.95, 1.0)], "licencia": LIC_KOKORO},
+    {"id": "kokoro-em_santa", "nombre": "Kokoro em_santa (hombre)", "base": {"motor": "kokoro", "voz": "em_santa"}, "rejilla": [{"velocidad": v} for v in (0.9, 0.95, 1.0)], "licencia": LIC_KOKORO},
+    {
+        "id": "piper-carlfm",
+        "nombre": "Piper es_ES-carlfm-x_low (hombre)",
+        "base": {"motor": "piper", "modelo": "es_ES-carlfm-x_low"},
+        "rejilla": [{"length_scale": a, "noise_scale": b, "noise_w": c} for a in (0.95, 1.0, 1.05) for b in (0.6, 0.667, 0.75) for c in (0.7, 0.8, 0.9)],
+        "licencia": "Pesos MIT; datos de dominio público; entrenada desde cero (sin modelo base); piper-tts GPL-3.0 (solo se ejecuta)",
+    },
+]
+# Revisadas y descartadas (no se generan): motivo de licencia, ver VOCES.md
+DESCARTADAS = [
+    ("Piper es_ES-davefx-medium", "Afinada desde lessac (Blizzard 2013, solo investigación)"),
+    ("Piper es_ES-sharvard-medium (hablantes F y M)", "Afinada desde lessac (solo investigación)"),
+    ("Piper es_ES-mls_10246-low", "Afinada desde ryan (CC BY-NC-SA 4.0, no comercial)"),
+    ("Piper es_ES-mls_9972-low", "Afinada desde ryan (CC BY-NC-SA 4.0, no comercial)"),
+    ("MeloTTS Spanish (myshell-ai/MeloTTS-Spanish)", "Código y pesos MIT, pero la ficha no dice con qué datos se entrenó ni con qué licencia"),
+    ("Chatterbox Multilingual", "Datos y modelo base sin licencia clara (ver VOCES.md)"),
+    ("XTTS-v2 (Coqui)", "Coqui Public Model License: no comercial"),
+    ("MMS-TTS spa (Meta)", "CC BY-NC 4.0: no comercial"),
+]
+
+
+def _sintetizar_casting(motor, cfg: dict, dic: dict, wav: Path):
+    sr, pcm = None, b""
+    for f, pausa in motores.trozos(CASTING_TEXTO, cfg):
+        sr, data = motores.sintetizar_frase(motor, cfg, narrar.fonetica(f, dic))
+        pcm += data + b"\x00" * int(sr * pausa) * 2
+    with wave.open(str(wav), "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(sr)
+        w.writeframes(pcm)
+    return sr
+
+
+def _medir(whisper, wav: Path) -> dict:
+    sr, x = leer(wav)
+    segs, _ = whisper.transcribe(narrar.audio_16k(wav), language="es", word_timestamps=True, beam_size=5, vad_filter=False)
+    segs = list(segs)
+    hyp = " ".join(s.text.strip() for s in segs)
+    pal = [{"w": w.word.strip(), "desde": w.start, "hasta": w.end} for s in segs for w in (s.words or [])]
+    n = naturalidad(x, sr, pal, 3)
+    return {"wer": round(wer(CASTING_TEXTO, hyp), 3), "transcripcion": hyp, **n, "duracion_s": round(len(x) / sr, 1)}
+
+
+def _nota(m: dict) -> float:
+    """Para elegir la mejor combinación de cada voz: inteligibilidad primero, después naturalidad."""
+    n = max(0.0, 10 - 60 * m["wer"])
+    n += min(3.0, m["variacion_tono_st"]) - 0.5 * min(4, m["clics"]) - 1.5 * len(m["silencios_raros"])
+    n -= 0 if 2.2 <= m["palabras_por_segundo"] <= 2.9 else 1
+    n -= 2 if m["saturacion_pct"] > 0.05 else 0
+    return round(n, 2)
+
+
+def casting():
+    from faster_whisper import WhisperModel
+
+    out = ROOT / "instagram" / "reels" / "casting-voz"
+    tmp = out / "_tmp"
+    tmp.mkdir(parents=True, exist_ok=True)
+    base_dic = narrar.cargar(narrar.REELS / "pronunciacion.json")
+    modelo_w = os.environ.get("CASTING_WHISPER", "small")
+    whisper = WhisperModel(modelo_w, device="cpu", compute_type="int8", download_root=str(narrar.WHISPER_DIR))
+    filas = []
+    for v in CASTING:
+        motor = motores.cargar_motor(v["base"])
+        dic = motores.diccionario(base_dic, v["base"])
+        pruebas = []
+        for k, p in enumerate(v["rejilla"]):
+            cfg = {**v["base"], **p}
+            crudo = tmp / f"{v['id']}-{k}.wav"
+            sr = _sintetizar_casting(motor, cfg, dic, crudo)
+            final = tmp / f"{v['id']}-{k}-post.wav"
+            motores.postproceso(narrar.FFMPEG, crudo, final, mp3=False)
+            m = _medir(whisper, final)
+            m["nota"] = _nota(m)
+            pruebas.append((m["nota"], k, p, m, sr))
+            print(f"  {v['id']} {p}: WER {m['wer']*100:.1f} % · tono {m['variacion_tono_st']} st · {m['palabras_por_segundo']} pal/s · clics {m['clics']} -> {m['nota']}", flush=True)
+        nota, k, p, m, sr = max(pruebas, key=lambda t: (t[0], -t[1]))
+        mp3 = out / f"{v['id']}.mp3"
+        motores.postproceso(narrar.FFMPEG, tmp / f"{v['id']}-{k}.wav", mp3)
+        lou = motores.medir_loudness(narrar.FFMPEG, mp3)
+        obs = [f"{m['duracion_s']} s; {m['palabras_por_segundo']} pal/s; entonación {m['variacion_tono_st']} st"]
+        if sr < 22050:
+            obs.append(f"modelo a {sr // 1000} kHz: suena más apagada")
+        if m["clics"]:
+            obs.append(f"{m['clics']} clics")
+        if m["silencios_raros"]:
+            obs.append(f"silencios raros {m['silencios_raros']}")
+        obs.append(f"{lou['lufs']:.1f} LUFS / {lou['tp']:.1f} dBTP")
+        filas.append({"id": v["id"], "nombre": v["nombre"], "licencia": v["licencia"], "parametros": p, "wer": m["wer"], "nota": nota, "transcripcion": m["transcripcion"], "obs": "; ".join(obs), "sr": sr})
+    for f in tmp.iterdir():
+        f.unlink()
+    tmp.rmdir()
+    filas.sort(key=lambda r: -r["nota"])
+    reco = [r for r in filas if r["sr"] >= 22050][:2]
+    md = [
+        "# Casting de voces (castellano de España)",
+        "",
+        f"Generado con `python video/scripts/probar_voces.py --casting` (Whisper `{modelo_w}` para medir el WER). "
+        "Mismo texto para todas (~15 s, con una pregunta, una cifra y términos en inglés), con las pausas por puntuación "
+        "(coma 0,12 s, punto 0,28 s, pregunta 0,32 s) y la cadena de voz de la narración (corte de 80 Hz, de-esser, +2 dB en "
+        "3 kHz, compresión suave, -14 LUFS / -1 dBTP). Para cada voz se probó una rejilla de parámetros y queda la combinación "
+        "con menos errores de Whisper y más entonación, sin clics ni silencios raros.",
+        "",
+        f"> {CASTING_TEXTO}",
+        "",
+        "| Voz | Archivo | Licencia | Parámetros elegidos | Inteligibilidad (WER) | Observaciones |",
+        "|---|---|---|---|---|---|",
+    ]
+    for r in filas:
+        par = ", ".join(f"{k} {v}" for k, v in r["parametros"].items())
+        md.append(f"| {r['nombre']} | [{r['id']}.mp3]({r['id']}.mp3) | {r['licencia']} | {par} | {r['wer']*100:.1f} % | {r['obs']} |")
+    md += ["", "## Recomendadas", ""]
+    for i, r in enumerate(reco, 1):
+        md.append(f"{i}. **{r['nombre']}** (`{r['id']}.mp3`): {r['wer']*100:.1f} % de WER; {r['obs']}.")
+    md += [
+        "",
+        "La decisión es de Pablo escuchando los MP3. Para cambiar: edita `instagram/reels/voz.json` (motor, voz o modelo y los "
+        "parámetros de la tabla). La huella de cada narración incluye la configuración de la voz, así que el workflow regenera "
+        "las narraciones afectadas en la siguiente ejecución (y el render rechaza un audio de otra voz).",
+        "",
+        "## Revisadas y descartadas por licencia (no se generan)",
+        "",
+        "| Voz | Motivo |",
+        "|---|---|",
+        *[f"| {a} | {b} |" for a, b in DESCARTADAS],
+        "",
+        "## Transcripciones de Whisper",
+        "",
+        *[f"- {r['id']}: \"{r['transcripcion']}\"" for r in filas],
+        "",
+    ]
+    (out / "indice.md").write_text("\n".join(md), encoding="utf-8")
+    print("\n".join(md))
+
+
 if __name__ == "__main__":
-    main()
+    casting() if "--casting" in sys.argv else main()

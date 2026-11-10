@@ -118,3 +118,46 @@ En `voz.json`: `"voz"` (`em_alex`, `ef_dora`) y `"velocidad"`. Para volver a Pip
 `"modelo": "es_ES-carlfm-x_low"` y `length_scale`, `noise_scale`, `noise_w`. Después:
 `python video/scripts/narrar.py <reel_id>…` (el workflow también lo hace solo si cambia el texto o la voz). El
 render comprueba que el audio guardado sea de la voz configurada; si no, el reel sale sin voz.
+
+## 8. Casting del 10 de noviembre de 2026
+
+`python video/scripts/probar_voces.py --casting` genera `instagram/reels/casting-voz/` (un MP3 por voz válida con el
+mismo texto de ~12 s, con pregunta, cifra y términos en inglés) e `indice.md` con la tabla (voz, licencia,
+parámetros, WER con Whisper y observaciones). **`voz.json` no se ha cambiado**: la elección es de Pablo escuchando.
+
+Voces revisadas eslabón a eslabón:
+
+| Voz | Código | Pesos | Modelo base | Datos | ¿Válida? |
+|---|---|---|---|---|---|
+| Kokoro em_alex, ef_dora, em_santa | kokoro-onnx MIT, onnxruntime MIT, espeak-ng/phonemizer GPL-3.0 | Apache-2.0 | StyleTTS2-LJSpeech (MIT, dominio público) | Permisivos o sin copyright según la ficha | **Sí** (em_santa es nueva: mismo modelo y licencia que las otras dos) |
+| Piper es_ES-carlfm-x_low | piper-tts GPL-3.0 | MIT | Ninguno (desde cero) | Dominio público | **Sí** |
+| Piper es_ES-davefx-medium | GPL-3.0 | — | lessac (Blizzard 2013: solo investigación) | CC0 | No |
+| Piper es_ES-sharvard-medium (F y M) | GPL-3.0 | — | lessac (solo investigación) | CC BY 3.0 | No |
+| Piper es_ES-mls_10246-low / mls_9972-low | GPL-3.0 | — | ryan (CC BY-NC-SA 4.0) | MLS CC BY 4.0 | No |
+| MeloTTS Spanish | MIT | MIT | — | La ficha no dice qué datos ni con qué licencia | No (dudosa) |
+| XTTS-v2 (Coqui) | MPL-2.0 | Coqui Public Model License (no comercial) | — | — | No |
+| MMS-TTS spa (Meta) | — | CC BY-NC 4.0 | — | — | No |
+
+Resultados (detalle en `casting-voz/indice.md`): ef_dora 0 % de WER; em_alex y em_santa 3,1 %; carlfm 9,4 % y apagada
+(16 kHz). em_santa es la más expresiva (4,6 semitonos) y la de distinción /s/-/θ/ más clara (4,4 dB).
+**Recomendadas: ef_dora y em_santa.**
+
+### Naturalidad (vale para cualquier motor, en `video/scripts/motores.py`)
+
+- Pausas según la puntuación: coma 0,12 s, punto 0,28 s, interrogación/exclamación 0,32 s (`motores.trozos`). En
+  Kokoro las comas no se cortan (hace bien la entonación dentro de la frase); en Piper sí (`dividir_comas`).
+- Piper: rejilla length_scale 0,95-1,05 × noise_scale 0,6-0,75 × noise_w 0,7-0,9; para carlfm gana 0,95 / 0,6 / 0,9.
+  Kokoro: velocidad 0,9 en las tres voces (0,95 y 1,0 se entienden igual o peor).
+- Cadena de voz (`motores.CADENA_VOZ` + `motores.postproceso`): highpass 80 Hz, de-esser suave, +2 dB en 3 kHz,
+  compresión 2,5:1 y normalización a -14 LUFS / -1 dBTP (medida y ganancia fija + limitador). Sustituye a la cadena
+  anterior (ya no lleva reverberación).
+- Diccionario por motor: `pronunciacion.kokoro.json` y `pronunciacion.piper.json` con HYROX, wall balls, SkiErg,
+  Roxzone, burpee broad jump y farmers carry ("sled push" se dice "empuje de trineo" en todos, desde el común).
+
+### Cambiar de voz regenera solo lo necesario
+
+La huella de cada narración (`narrar.huella`) incluye todo `voz.json` salvo licencia, atribución, activa y whisper, el
+diccionario, el texto y la versión del proceso. Cambiar `voz.json` cambia la huella de todos los reels con
+narración, y el paso "Narración" del workflow los regenera en la siguiente ejecución; el render rechaza un audio de
+otra voz. Comprobado el 10/11/2026: con `--voz=` apuntando a una copia con `"voz": "em_santa"` la huella de r105
+cambia y con el `voz.json` actual no.

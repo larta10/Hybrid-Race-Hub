@@ -115,3 +115,59 @@ def sintetizar_texto(motor, cfg: dict, frases: list[str], pausa: float, wav_path
         w.setsampwidth(2)
         w.setframerate(sr)
         w.writeframes((b"\x00" * int(sr * pausa) * 2).join(trozos))
+
+
+# ---------- Pausas según la puntuación y postproceso (comunes a todos los motores) ----------
+import re as _re
+import subprocess as _sp
+import json as _json
+
+PAUSAS = {"coma": 0.12, "punto": 0.28, "pregunta": 0.32}
+
+
+def trozos(texto: str, cfg: dict) -> list[tuple[str, float]]:
+    """Divide el texto en trozos que se sintetizan por separado, cada uno con la pausa que va detrás según su
+    puntuación final: punto 0,28 s; interrogación o exclamación 0,32 s; coma 0,12 s. Kokoro hace bien las comas
+    dentro de la frase (entonación continua), así que solo se cortan en comas si cfg["dividir_comas"] (Piper: sí)."""
+    p = {**PAUSAS, **cfg.get("pausas", {})}
+    comas = cfg.get("dividir_comas", cfg.get("motor") == "piper")
+    patron = r"(?<=[.!?…,;:])\s+" if comas else r"(?<=[.!?…])\s+"
+    out = []
+    for f in [x.strip() for x in _re.split(patron, texto.strip()) if x.strip()]:
+        fin = f[-1]
+        pausa = p["pregunta"] if fin in "?!" else p["coma"] if fin in ",;:" else p["punto"]
+        out.append((f, pausa))
+    return out
+
+
+# highpass 80 Hz · de-esser suave · presencia +2 dB en 3 kHz · compresión suave · -14 LUFS / -1 dBTP
+CADENA_VOZ = "highpass=f=80,deesser=i=0.35:m=0.5:f=0.5:s=o,equalizer=f=3000:width_type=o:width=1.2:g=2,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2"
+
+
+def postproceso(ffmpeg: str, entrada, salida, lufs: float = -14.0, tp: float = -1.0, mp3: bool = True):
+    """Cadena de voz y normalización a lufs/tp. loudnorm sola se queda ~1 LU corta con muchas pausas: se mide el
+    resultado y se corrige con una ganancia fija y un limitador en el techo de pico."""
+    def run(*a):
+        r = _sp.run([ffmpeg, "-hide_banner", "-y", *a], capture_output=True, text=True)
+        if r.returncode != 0:
+            raise RuntimeError(r.stderr[-800:])
+        return r.stderr
+
+    pre = str(salida) + ".pre.wav"
+    run("-i", str(entrada), "-af", f"{CADENA_VOZ},loudnorm=I={lufs}:TP={tp}:LRA=11", "-ar", "44100", "-ac", "1", pre)
+    log = run("-i", pre, "-af", f"loudnorm=I={lufs}:TP={tp}:print_format=json", "-f", "null", "-")
+    med = _json.loads(log[log.rindex("{") : log.rindex("}") + 1])
+    gan = max(-6.0, min(6.0, lufs - float(med["input_i"])))
+    techo = 10 ** ((tp - 0.3) / 20)
+    fin = f"volume={gan:.2f}dB,alimiter=limit={techo:.3f}:attack=2:release=50:level=false"
+    cod = ["-c:a", "libmp3lame", "-b:a", "128k"] if mp3 else []
+    run("-i", pre, "-af", fin, "-ar", "44100", "-ac", "1", *cod, str(salida))
+    import os as _os
+
+    _os.remove(pre)
+
+
+def medir_loudness(ffmpeg: str, f) -> dict:
+    r = _sp.run([ffmpeg, "-hide_banner", "-i", str(f), "-af", "loudnorm=print_format=json", "-f", "null", "-"], capture_output=True, text=True)
+    m = _json.loads(r.stderr[r.stderr.rindex("{") : r.stderr.rindex("}") + 1])
+    return {"lufs": float(m["input_i"]), "tp": float(m["input_tp"])}
