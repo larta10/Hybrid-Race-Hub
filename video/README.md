@@ -9,9 +9,36 @@ Proyecto aparte de la web: tiene su propio `package.json` y no entra en el build
 
 ## Regla de oro
 
-El humano **siempre** es vídeo real de stock con licencia (Pixabay). Está prohibido dibujar o animar
-personas con código (SVG, siluetas, muñecos, avatares). Si no hay un clip bueno para un movimiento,
-la escena pasa a texto y gráfica sobre un fondo neutro sin personas.
+El humano principal **siempre** es vídeo real de stock con licencia (Pixabay o Pexels). Desde el 10 de noviembre
+de 2026 Pablo autoriza una única excepción: el **monigote de técnica** (`src/components/Monigote.jsx`), una figura
+articulada estilo diagrama de biomecánica (líneas blancas, articulaciones en círculos, cabeza sin cara, fondo oscuro
+con rejilla) que solo se usa en escenas de técnica (postura, error frente a correcto, ángulos, trayectorias):
+
+- Solo en escenas `"tecnica": { "pose", "comparar", "marcas" }` (con `clip.sin_clip: true`).
+- Nunca en el gancho (el validador lo impide) ni como protagonista del reel: el resto de escenas son vídeo real.
+- Se usa cuando no hay un clip real que enseñe bien el gesto. Si tampoco es una escena de técnica, la escena pasa a
+  texto y gráfica sobre fondo neutro (como mucho el 20 % de las escenas, nunca dos seguidas).
+- Prohibido cualquier otro dibujo o animación de personas (siluetas, avatares, muñecos de estilo infantil).
+
+Poses en `src/poses.js` (ángulos articulares de cadera, rodilla, tobillo, hombro, codo y tronco, con keyframes e
+interpolación suave): wall_ball, sled_push (tronco a ~45°), sled_pull, sandbag_lunge, farmers_carry, remo
+(catch/drive/finish), ski_erg, burpee_broad_jump, carrera y cuerda. Cada una tiene su "así no" para la comparativa
+(`"comparar": true`: "✗ Así no" en rojo apagado arriba y "✓ Así sí" en verde apagado abajo). Marcas: `angulo`
+(rodilla, cadera, codo o tronco, con grados), `espalda` (línea de alineación), `trayectoria` (balón o mano) y
+`texto`. Revisión: `node scripts/poses-hoja.mjs <pose> [--comparar]` → `out/frames/poses/`.
+
+## Ritmo, gancho y sonido
+
+- Gancho (0-1,5 s): el clip más potente desde el primer fotograma, texto grande con entrada de golpe y un golpe de
+  sonido; sin logo (la marca aparece después del gancho). Abre una pregunta, un error o una cifra.
+- Cortes cada 1,5-2,5 s: cada escena se divide en planos de ~2,1 s que alternan sus clips (`escena.cortes`) o, con
+  un solo clip, hacen punch-in del 10 %; cada corte entra con un zoom de 5 fotogramas. Barra de progreso fina arriba.
+  Las escenas con anillos de músculo no se cortan (los anillos van colocados sobre el clip).
+- Efectos (`instagram/sfx/`, generados con `node scripts/make-sfx.mjs`, CC0): impacto en el gancho, whoosh en
+  cada cambio de escena y click al entrar "qué hacer".
+- Mezcla: con voz, la música se mezcla fuera de Remotion con ducking real (`sidechaincompress` con la voz como
+  cadena lateral) y todo sale a -14 LUFS / -1 dBTP (`mezclar` en `scripts/render.mjs`).
+- Imagen: el mismo tratamiento de color en todos los clips (`FILTRO` en `src/components/Fondo.jsx`).
 
 ## Comandos (desde `video/`)
 

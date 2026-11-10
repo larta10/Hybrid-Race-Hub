@@ -2,6 +2,7 @@ import React from "react";
 import { Composition } from "remotion";
 import { Reel } from "./Reel.jsx";
 import { Calendario } from "./Calendario.jsx";
+import { Monigote } from "./components/Monigote.jsx";
 import { buildTimeline, buildCalendarTimeline, totalFrames } from "./timeline.js";
 import { W, H, FPS } from "./theme.js";
 // Reel de ejemplo para el editor (Remotion Studio): uno ya listo, con clips revisados
@@ -19,6 +20,8 @@ export const Root = () => (
       defaultProps={{ reel: ejemplo, assets: {} }}
       calculateMetadata={({ props }) => ({ durationInFrames: totalFrames(buildTimeline(props.reel, props.assets?.music, props.assets?.voz?.words)) })}
     />
+    {/* Monigote de técnica suelto, para revisar poses (scripts/poses-hoja.mjs) */}
+    <Composition id="Tecnica" component={Monigote} width={W} height={H} fps={FPS} durationInFrames={150} defaultProps={{ tecnica: { pose: "wall_ball", comparar: true } }} />
     <Composition
       id="Calendario"
       component={Calendario}
