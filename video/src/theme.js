@@ -7,6 +7,7 @@ export const C = {
   hueso: "#F2F0EB",
   acero: "#6B8CAE",
   naranja: "#FB923C", // solo para el dato clave
+  acento: "#A9C4E0", // acento sobrio (acero claro): palabra que suena en los subtítulos
   tinta: "#0B0C0F",
   tarjeta: "rgba(11, 12, 15, 0.85)",
   linea: "rgba(242, 240, 235, 0.18)",

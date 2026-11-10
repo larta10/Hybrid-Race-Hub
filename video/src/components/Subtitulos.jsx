@@ -1,52 +1,72 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate } from "remotion";
+import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring } from "remotion";
 import { C, F, SAFE, H } from "../theme.js";
 
 /**
- * Subtítulos palabra a palabra a partir de words.json (tiempos de Whisper alineados con el texto
- * original). Líneas de 2-4 palabras en Barlow Condensed ExtraBold; la palabra que suena se resalta
- * (escala 1,08 y subrayado naranja: el naranja solo aquí).
+ * Subtítulos palabra a palabra a partir de words.json (alineación por frase, ver video/scripts/narrar.py).
+ * - Bloques de 1-3 palabras (máx. 16 caracteres) que nunca cruzan de una frase a otra.
+ * - El bloque cambia exactamente cuando empieza a sonar la primera palabra del siguiente; ninguno sigue en
+ *   pantalla después de que acabe su frase.
+ * - La palabra que suena pasa de blanco hueso al acento sobrio (C.acento) con un pequeño "pop" (spring de 4
+ *   fotogramas); las demás quedan al 85 % de opacidad. Las *palabras clave* del guion salen más grandes.
  */
-const MAX_PALABRAS = 4;
-const MAX_CARACTERES = 20;
+export const MAX_PALABRAS = 3;
+export const MAX_CARACTERES = 16;
+const limpia = (w) => w.replace(/\*/g, "");
+const clave = (w) => /\*/.test(w);
 
-/** Agrupa las palabras en líneas cortas sin cruzar de una escena a otra y cortando en la puntuación */
-export function lineas(palabras) {
+/** Agrupa las palabras en bloques cortos, sin cruzar frases y cortando en la puntuación */
+export function bloques(palabras) {
   const out = [];
   let cur = [];
+  const grupo = (p) => (p.frase !== undefined ? `f${p.frase}` : `s${p.seg}`);
   const cerrar = () => cur.length && (out.push(cur), (cur = []));
   palabras.forEach((p, i) => {
-    if (cur.length && cur[0].seg !== p.seg) cerrar();
-    const largo = cur.reduce((a, x) => a + x.w.length + 1, 0) + p.w.length;
-    if (cur.length >= MAX_PALABRAS || (cur.length >= 2 && largo > MAX_CARACTERES)) cerrar();
+    if (cur.length && grupo(cur[0]) !== grupo(p)) cerrar();
+    const largo = cur.reduce((a, x) => a + limpia(x.w).length + 1, 0) + limpia(p.w).length;
+    if (cur.length >= MAX_PALABRAS || (cur.length && largo > MAX_CARACTERES)) cerrar();
     cur.push({ ...p, i });
-    if (/[.,;:?!…]$/.test(p.w) && cur.length >= 2) cerrar();
+    if (/[.,;:?!…]\*?$/.test(p.w)) cerrar();
   });
   cerrar();
-  // Una línea de una sola palabra se une a la anterior si caben
-  return out.reduce((acc, l) => {
-    const prev = acc[acc.length - 1];
-    if (l.length === 1 && prev && prev[0].seg === l[0].seg && prev.length < MAX_PALABRAS) prev.push(...l);
-    else acc.push(l);
-    return acc;
-  }, []);
+  return out;
+}
+
+/** Fin de cada frase (para no dejar un bloque en pantalla cuando la frase ya ha terminado) */
+function finesDeFrase(palabras, frases) {
+  const fin = {};
+  if (frases?.length) frases.forEach((f, k) => (fin[`f${k}`] = f.hasta));
+  for (const p of palabras) {
+    const g = p.frase !== undefined ? `f${p.frase}` : `s${p.seg}`;
+    if (fin[g] === undefined || (!frases?.length && p.hasta > fin[g])) fin[g] = Math.max(fin[g] ?? 0, p.hasta);
+  }
+  return fin;
 }
 
 /**
  * posicionY(t) decide la altura (fracción de la pantalla) en cada momento para no tapar gráficas,
- * tarjetas ni anillos de músculo. Por defecto, entre el 58 % y el 72 % (centro en el 65 %).
+ * tarjetas, monigote ni anillos de músculo. Por defecto, al 65 %.
  */
-export function Subtitulos({ palabras, posicionY }) {
+export function Subtitulos({ palabras, frases, posicionY }) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
-  const ls = React.useMemo(() => lineas(palabras), [palabras]);
-  const idx = ls.findIndex((l, k) => t >= l[0].desde - 0.05 && t < (ls[k + 1] ? Math.min(ls[k + 1][0].desde - 0.05, l[l.length - 1].hasta + 0.6) : l[l.length - 1].hasta + 0.6));
+  const bs = React.useMemo(() => bloques(palabras), [palabras]);
+  const fin = React.useMemo(() => finesDeFrase(palabras, frases), [palabras, frases]);
+  const idx = bs.findIndex((b, k) => {
+    const g = b[0].frase !== undefined ? `f${b[0].frase}` : `s${b[0].seg}`;
+    const hasta = Math.min(bs[k + 1] ? bs[k + 1][0].desde : Infinity, fin[g] ?? b[b.length - 1].hasta);
+    return t >= b[0].desde && t < hasta;
+  });
   if (idx < 0) return null;
-  const l = ls[idx];
-  const entra = interpolate(t, [l[0].desde - 0.05, l[0].desde + 0.08], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const y = (posicionY ? posicionY(t) : 0.65) * H;
-  const size = l.reduce((a, x) => a + x.w.length + 1, 0) > 16 ? 74 : 82;
+  const b = bs[idx];
+  const fy = posicionY ? posicionY(t) : 0.65;
+  if (fy == null) return null;
+  const y = fy * H;
+  const largo = b.reduce((a, x) => a + limpia(x.w).length + 1, 0);
+  const size = largo > 13 ? 76 : 86;
+  // Palabra activa: la última que ha empezado a sonar dentro del bloque
+  const activa = b.reduce((acc, x, j) => (t >= x.desde ? j : acc), 0);
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
       <div
@@ -55,42 +75,39 @@ export function Subtitulos({ palabras, posicionY }) {
           left: SAFE.left,
           width: SAFE.width,
           top: y,
-          transform: `translateY(-50%) translateY(${(1 - entra) * 10}px)`,
-          opacity: entra,
+          transform: "translateY(-50%)",
           display: "flex",
           flexWrap: "wrap",
+          alignItems: "baseline",
           justifyContent: "center",
-          columnGap: size * 0.36,
+          columnGap: size * 0.32,
           fontFamily: F.titular,
           fontWeight: 800,
-          fontSize: size,
           lineHeight: 1.05,
           textTransform: "uppercase",
-          color: C.hueso,
           textShadow: "0 0 3px rgba(0,0,0,0.9), 0 3px 14px rgba(0,0,0,0.75)",
           WebkitTextStroke: "1.5px rgba(11,12,15,0.55)",
           textAlign: "center",
         }}
       >
-        {l.map((p, k) => {
-          // Solo una palabra activa: la última que ha empezado a sonar (y hasta poco después de acabar)
-          const ultima = l.reduce((acc, x, j) => (t >= x.desde - 0.02 ? j : acc), -1);
-          const activa = k === ultima && t < Math.max(p.hasta + 0.15, p.desde + 0.12);
+        {b.map((p, k) => {
+          const on = k === activa;
+          const f0 = Math.round(p.desde * fps);
+          // Pop: entra al 114 % y se asienta en el 104 % en 4 fotogramas
+          const pop = on ? spring({ frame: frame - f0, fps, durationInFrames: 4, config: { damping: 14, stiffness: 320, mass: 0.5 } }) : 1;
+          const escala = on ? 1.14 - 0.1 * pop : 1;
           return (
-            <span key={p.i} style={{ display: "inline-block", position: "relative", transform: `scale(${activa ? 1.08 : 1})`, transition: "none" }}>
-              {p.w.replace(/[¿¡]/g, (m) => m)}
-              <span
-                style={{
-                  position: "absolute",
-                  left: "4%",
-                  right: "4%",
-                  bottom: -6,
-                  height: 7,
-                  borderRadius: 4,
-                  background: C.naranja,
-                  opacity: activa ? 1 : 0,
-                }}
-              />
+            <span
+              key={p.i}
+              style={{
+                display: "inline-block",
+                fontSize: clave(p.w) ? size * 1.22 : size,
+                color: on ? C.acento : C.hueso,
+                opacity: on ? 1 : 0.85,
+                transform: `scale(${escala})`,
+              }}
+            >
+              {limpia(p.w)}
             </span>
           );
         })}
