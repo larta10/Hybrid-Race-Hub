@@ -115,8 +115,8 @@ export function Reel({ reel, assets }) {
             <AbsoluteFill>
               <Fondo src={assets?.clips?.final} clipSeg={assets?.clipSeg?.final} duracion={s.hasta - s.desde} semilla={k} oscuro={0.5} desenfoque={8} />
               {s.tipo === "conclusion" && <Conclusion lineas={reel.conclusion} duracion={s.hasta - s.desde} />}
-              {s.tipo === "aplicacion" && <Aplicacion puntos={reel.aplicacion} duracion={s.hasta - s.desde} />}
-              {s.tipo === "cierre" && <TarjetaFinal duracion={s.hasta - s.desde} />}
+              {s.tipo === "aplicacion" && <Aplicacion puntos={reel.aplicacion} titulo={reel.aplicacion_titulo} duracion={s.hasta - s.desde} />}
+              {s.tipo === "cierre" && <TarjetaFinal titulo={reel.tarjeta_final?.titulo} lineas={reel.tarjeta_final?.lineas} duracion={s.hasta - s.desde} />}
             </AbsoluteFill>
           )}
         </Sequence>

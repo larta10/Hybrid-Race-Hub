@@ -1,0 +1,496 @@
+{
+ "hash": "ad39036328b22bf3",
+ "voz": "kokoro-em_alex",
+ "duracion": 29.375,
+ "segmentos": [
+  {
+   "tipo": "gancho",
+   "i": 0,
+   "voz_desde": 0.0,
+   "voz_hasta": 3.379,
+   "desde": 0.0,
+   "hasta": 3.629,
+   "coincidencia": 1.0,
+   "transcripcion": "¿Te has apuntado a un HYROX de dobles y no tienes pareja?"
+  },
+  {
+   "tipo": "texto",
+   "i": 1,
+   "voz_desde": 3.629,
+   "voz_hasta": 5.215,
+   "desde": 3.629,
+   "hasta": 5.465,
+   "coincidencia": 1.0,
+   "transcripcion": "pasa más de lo que crees."
+  },
+  {
+   "tipo": "texto",
+   "i": 2,
+   "voz_desde": 5.465,
+   "voz_hasta": 13.845,
+   "desde": 5.465,
+   "hasta": 14.095,
+   "coincidencia": 1.0,
+   "transcripcion": "Por eso queremos presentarte buscar pareja híbrida, eliges tu competición y tu categoría y ves quién busca pareja con su ritmo y su nivel."
+  },
+  {
+   "tipo": "texto",
+   "i": 3,
+   "voz_desde": 14.095,
+   "voz_hasta": 15.063,
+   "desde": 14.095,
+   "hasta": 15.895,
+   "coincidencia": 1.0,
+   "transcripcion": "y es gratis"
+  },
+  {
+   "tipo": "conclusion",
+   "voz_desde": 15.895,
+   "voz_hasta": 20.316,
+   "desde": 15.895,
+   "hasta": 20.566,
+   "coincidencia": 1.0,
+   "transcripcion": "Nosotros te ayudamos a encontrar la carrera, ellos con quien correrla."
+  },
+  {
+   "tipo": "aplicacion",
+   "voz_desde": 20.566,
+   "voz_hasta": 23.221,
+   "desde": 20.566,
+   "hasta": 24.066,
+   "coincidencia": 1.0,
+   "transcripcion": "Búscalos en arroba buscarparejahibrida."
+  },
+  {
+   "tipo": "cierre",
+   "voz_desde": 24.066,
+   "voz_hasta": 27.875,
+   "desde": 24.066,
+   "hasta": 29.375,
+   "coincidencia": 1.0,
+   "transcripcion": "y el calendario completo lo tienes en hybridracehub punto com."
+  }
+ ],
+ "palabras": [
+  {
+   "w": "¿Te",
+   "desde": 0.0,
+   "hasta": 0.1,
+   "seg": 0
+  },
+  {
+   "w": "has",
+   "desde": 0.1,
+   "hasta": 0.28,
+   "seg": 0
+  },
+  {
+   "w": "apuntado",
+   "desde": 0.28,
+   "hasta": 0.8,
+   "seg": 0
+  },
+  {
+   "w": "a",
+   "desde": 0.8,
+   "hasta": 0.98,
+   "seg": 0
+  },
+  {
+   "w": "un",
+   "desde": 0.98,
+   "hasta": 1.06,
+   "seg": 0
+  },
+  {
+   "w": "HYROX",
+   "desde": 1.06,
+   "hasta": 1.68,
+   "seg": 0
+  },
+  {
+   "w": "de",
+   "desde": 1.68,
+   "hasta": 1.82,
+   "seg": 0
+  },
+  {
+   "w": "dobles",
+   "desde": 1.82,
+   "hasta": 2.2,
+   "seg": 0
+  },
+  {
+   "w": "y",
+   "desde": 2.2,
+   "hasta": 2.4,
+   "seg": 0
+  },
+  {
+   "w": "no",
+   "desde": 2.4,
+   "hasta": 2.52,
+   "seg": 0
+  },
+  {
+   "w": "tienes",
+   "desde": 2.52,
+   "hasta": 2.88,
+   "seg": 0
+  },
+  {
+   "w": "pareja?",
+   "desde": 2.88,
+   "hasta": 3.28,
+   "seg": 0
+  },
+  {
+   "w": "Pasa",
+   "desde": 3.629,
+   "hasta": 3.929,
+   "seg": 1
+  },
+  {
+   "w": "más",
+   "desde": 3.929,
+   "hasta": 4.249,
+   "seg": 1
+  },
+  {
+   "w": "de",
+   "desde": 4.249,
+   "hasta": 4.449,
+   "seg": 1
+  },
+  {
+   "w": "lo",
+   "desde": 4.449,
+   "hasta": 4.549,
+   "seg": 1
+  },
+  {
+   "w": "que",
+   "desde": 4.549,
+   "hasta": 4.689,
+   "seg": 1
+  },
+  {
+   "w": "crees.",
+   "desde": 4.689,
+   "hasta": 5.149,
+   "seg": 1
+  },
+  {
+   "w": "Por",
+   "desde": 5.465,
+   "hasta": 5.565,
+   "seg": 2
+  },
+  {
+   "w": "eso",
+   "desde": 5.565,
+   "hasta": 5.765,
+   "seg": 2
+  },
+  {
+   "w": "queremos",
+   "desde": 5.765,
+   "hasta": 6.125,
+   "seg": 2
+  },
+  {
+   "w": "presentarte",
+   "desde": 6.125,
+   "hasta": 6.865,
+   "seg": 2
+  },
+  {
+   "w": "Buscar",
+   "desde": 6.865,
+   "hasta": 7.105,
+   "seg": 2
+  },
+  {
+   "w": "Pareja",
+   "desde": 7.105,
+   "hasta": 7.685,
+   "seg": 2
+  },
+  {
+   "w": "Híbrida:",
+   "desde": 7.685,
+   "hasta": 8.145,
+   "seg": 2
+  },
+  {
+   "w": "eliges",
+   "desde": 8.645,
+   "hasta": 8.905,
+   "seg": 2
+  },
+  {
+   "w": "tu",
+   "desde": 8.905,
+   "hasta": 9.105,
+   "seg": 2
+  },
+  {
+   "w": "competición",
+   "desde": 9.105,
+   "hasta": 9.745,
+   "seg": 2
+  },
+  {
+   "w": "y",
+   "desde": 9.745,
+   "hasta": 9.885,
+   "seg": 2
+  },
+  {
+   "w": "tu",
+   "desde": 9.885,
+   "hasta": 9.985,
+   "seg": 2
+  },
+  {
+   "w": "categoría,",
+   "desde": 9.985,
+   "hasta": 10.665,
+   "seg": 2
+  },
+  {
+   "w": "y",
+   "desde": 10.665,
+   "hasta": 11.065,
+   "seg": 2
+  },
+  {
+   "w": "ves",
+   "desde": 11.065,
+   "hasta": 11.205,
+   "seg": 2
+  },
+  {
+   "w": "quién",
+   "desde": 11.205,
+   "hasta": 11.445,
+   "seg": 2
+  },
+  {
+   "w": "busca",
+   "desde": 11.445,
+   "hasta": 11.785,
+   "seg": 2
+  },
+  {
+   "w": "pareja,",
+   "desde": 11.785,
+   "hasta": 12.345,
+   "seg": 2
+  },
+  {
+   "w": "con",
+   "desde": 12.345,
+   "hasta": 12.585,
+   "seg": 2
+  },
+  {
+   "w": "su",
+   "desde": 12.585,
+   "hasta": 12.785,
+   "seg": 2
+  },
+  {
+   "w": "ritmo",
+   "desde": 12.785,
+   "hasta": 13.205,
+   "seg": 2
+  },
+  {
+   "w": "y",
+   "desde": 13.205,
+   "hasta": 13.345,
+   "seg": 2
+  },
+  {
+   "w": "su",
+   "desde": 13.345,
+   "hasta": 13.425,
+   "seg": 2
+  },
+  {
+   "w": "nivel.",
+   "desde": 13.425,
+   "hasta": 13.645,
+   "seg": 2
+  },
+  {
+   "w": "Y",
+   "desde": 14.095,
+   "hasta": 14.255,
+   "seg": 3
+  },
+  {
+   "w": "es",
+   "desde": 14.255,
+   "hasta": 14.415,
+   "seg": 3
+  },
+  {
+   "w": "gratis.",
+   "desde": 14.415,
+   "hasta": 14.975,
+   "seg": 3
+  },
+  {
+   "w": "Nosotros",
+   "desde": 15.895,
+   "hasta": 16.355,
+   "seg": 4
+  },
+  {
+   "w": "te",
+   "desde": 16.355,
+   "hasta": 16.595,
+   "seg": 4
+  },
+  {
+   "w": "ayudamos",
+   "desde": 16.595,
+   "hasta": 17.175,
+   "seg": 4
+  },
+  {
+   "w": "a",
+   "desde": 17.175,
+   "hasta": 17.415,
+   "seg": 4
+  },
+  {
+   "w": "encontrar",
+   "desde": 17.415,
+   "hasta": 17.775,
+   "seg": 4
+  },
+  {
+   "w": "la",
+   "desde": 17.775,
+   "hasta": 18.055,
+   "seg": 4
+  },
+  {
+   "w": "carrera.",
+   "desde": 18.055,
+   "hasta": 18.575,
+   "seg": 4
+  },
+  {
+   "w": "Ellos,",
+   "desde": 18.815,
+   "hasta": 19.075,
+   "seg": 4
+  },
+  {
+   "w": "con",
+   "desde": 19.075,
+   "hasta": 19.395,
+   "seg": 4
+  },
+  {
+   "w": "quién",
+   "desde": 19.395,
+   "hasta": 19.635,
+   "seg": 4
+  },
+  {
+   "w": "correrla.",
+   "desde": 19.635,
+   "hasta": 20.215,
+   "seg": 4
+  },
+  {
+   "w": "Búscalos",
+   "desde": 20.566,
+   "hasta": 21.166,
+   "seg": 5
+  },
+  {
+   "w": "en",
+   "desde": 21.166,
+   "hasta": 21.306,
+   "seg": 5
+  },
+  {
+   "w": "arroba",
+   "desde": 21.306,
+   "hasta": 21.666,
+   "seg": 5
+  },
+  {
+   "w": "buscarparejahibrida,",
+   "desde": 21.666,
+   "hasta": 23.106,
+   "seg": 5
+  },
+  {
+   "w": "y",
+   "desde": 24.066,
+   "hasta": 24.146,
+   "seg": 6
+  },
+  {
+   "w": "el",
+   "desde": 24.146,
+   "hasta": 24.246,
+   "seg": 6
+  },
+  {
+   "w": "calendario",
+   "desde": 24.246,
+   "hasta": 24.806,
+   "seg": 6
+  },
+  {
+   "w": "completo",
+   "desde": 24.806,
+   "hasta": 25.166,
+   "seg": 6
+  },
+  {
+   "w": "lo",
+   "desde": 25.166,
+   "hasta": 25.446,
+   "seg": 6
+  },
+  {
+   "w": "tienes",
+   "desde": 25.446,
+   "hasta": 25.886,
+   "seg": 6
+  },
+  {
+   "w": "en",
+   "desde": 25.886,
+   "hasta": 26.006,
+   "seg": 6
+  },
+  {
+   "w": "hybridracehub",
+   "desde": 26.006,
+   "hasta": 27.146,
+   "seg": 6
+  },
+  {
+   "w": "punto",
+   "desde": 27.146,
+   "hasta": 27.406,
+   "seg": 6
+  },
+  {
+   "w": "com.",
+   "desde": 27.406,
+   "hasta": 27.806,
+   "seg": 6
+  }
+ ]
+}

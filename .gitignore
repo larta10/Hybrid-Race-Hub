@@ -47,3 +47,6 @@ __pycache__/
 
 # Ajustes locales de Claude Code
 .claude/settings.local.json
+
+# Renders sueltos (reels especiales)
+output/

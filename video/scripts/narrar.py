@@ -219,6 +219,8 @@ def narrar(reel_id: str, forzar=False, voz_path: Path | None = None):
 
     voz_cfg = cargar(voz_path or REELS / "voz.json")
     dic = motores.diccionario(cargar(REELS / "pronunciacion.json"), voz_cfg)
+    # Pronunciación propia del guion (solo cambia la huella de los reels que la usan)
+    dic = {**dic, **reel.get("pronunciacion", {})}
     h = huella(reel, {k: voz_cfg[k] for k in CLAVES_VOZ if k in voz_cfg}, dic)
     AUDIO.mkdir(parents=True, exist_ok=True)
     mp3 = AUDIO / f"{reel_id}.mp3"

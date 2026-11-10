@@ -59,7 +59,7 @@ export function Conclusion({ lineas, duracion }) {
 }
 
 /** "Qué hacer": 3 puntos rápidos que entran uno detrás de otro */
-export function Aplicacion({ puntos, duracion }) {
+export function Aplicacion({ puntos, duracion, titulo = "QUÉ HACER" }) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const paso = Math.floor((duracion - 20) / 3);
@@ -67,7 +67,7 @@ export function Aplicacion({ puntos, duracion }) {
   return (
     <AbsoluteFill style={{ opacity: salida }}>
       <div style={{ position: "absolute", left: SAFE.left, width: SAFE.width, top: 520 }}>
-        <div style={{ fontFamily: F.titular, fontWeight: 700, fontSize: 56, letterSpacing: 8, color: C.acero, marginBottom: 34, opacity: clamp01(frame / 8) }}>QUÉ HACER</div>
+        <div style={{ fontFamily: F.titular, fontWeight: 700, fontSize: 56, letterSpacing: 8, color: C.acero, marginBottom: 34, opacity: clamp01(frame / 8) }}>{titulo}</div>
         {puntos.map((t, i) => {
           const p = spring({ frame: frame - 4 - i * paso, fps, config: SPRING, durationInFrames: 16 });
           return (
@@ -98,20 +98,27 @@ export function Aplicacion({ puntos, duracion }) {
 }
 
 /** Tarjeta final de 2 s */
-export function TarjetaFinal({ titulo = "Guárdalo", duracion }) {
+export function TarjetaFinal({ titulo = "Guárdalo", duracion, lineas = null }) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const p = spring({ frame, fps, config: SPRING, durationInFrames: 18 });
   const p2 = spring({ frame: frame - 6, fps, config: SPRING, durationInFrames: 18 });
+  // Títulos largos (p. ej. un @usuario) sin mayúsculas y con el tamaño ajustado al ancho seguro
+  const largo = titulo.length > 12;
+  const size = largo ? Math.min(110, Math.floor(SAFE.width / (titulo.length * 0.5))) : 150;
   return (
     <AbsoluteFill style={{ background: `rgba(11,12,15,${0.55 + 0.35 * p})` }}>
       <div style={{ position: "absolute", left: SAFE.left, width: SAFE.width, top: 720 }}>
-        <div style={{ fontFamily: F.titular, fontWeight: 800, fontSize: 150, lineHeight: 0.95, color: C.hueso, textTransform: "uppercase", opacity: p, transform: `translateY(${(1 - p) * 30}px)` }}>{titulo}</div>
+        <div style={{ fontFamily: F.titular, fontWeight: 800, fontSize: size, lineHeight: 0.95, color: C.hueso, textTransform: largo ? "none" : "uppercase", opacity: p, transform: `translateY(${(1 - p) * 30}px)` }}>{titulo}</div>
         <div style={{ width: 120 * p2, height: 6, background: C.acero, margin: "36px 0" }} />
         <div style={{ fontFamily: F.texto, fontWeight: 500, fontSize: 46, lineHeight: 1.3, color: C.hueso, opacity: p2 }}>
-          Más en <span style={{ fontWeight: 600 }}>hybridracehub.com</span>
-          <br />
-          <span style={{ color: C.suave }}>(enlace en la bio)</span>
+          {lineas ? lineas.map((l, i) => <div key={i} style={{ fontWeight: i === 0 ? 600 : 500, color: i === 0 ? C.hueso : C.suave }}>{l}</div>) : (
+            <>
+              Más en <span style={{ fontWeight: 600 }}>hybridracehub.com</span>
+              <br />
+              <span style={{ color: C.suave }}>(enlace en la bio)</span>
+            </>
+          )}
         </div>
       </div>
     </AbsoluteFill>

@@ -1,0 +1,164 @@
+{
+  "id": "x01-colab-buscarpareja",
+  "pilar": "comunidad",
+  "nota": "Reel especial de colaboración (no entra en la cola diaria: loadReels solo carga r###-*.json). Se publica con scripts/instagram/publish-extra.mjs.",
+  "duracion_objetivo": 26,
+  "gancho": "¿HYROX de *dobles* y sin pareja?",
+  "escenas": [
+    {
+      "duracion": 3,
+      "clip": {
+        "query": "jogging",
+        "fuente": "pixabay",
+        "id": "32934",
+        "url_pagina": "https://pixabay.com/videos/id-32934/",
+        "autor": "Stuck1",
+        "autor_url": "https://pixabay.com/users/Stuck1-15406262/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2020/02/27/32934-395456365_large.mp4",
+        "ancho": 3840,
+        "alto": 2160,
+        "duracion_clip": 13,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "inicio": 1,
+        "revisado": true,
+        "archivo": "clips/pixabay-32934-51721722.mp4"
+      },
+      "texto": [
+        "¿HYROX de dobles",
+        "y sin pareja?"
+      ]
+    },
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "running race people",
+        "fuente": "pixabay",
+        "id": "120683",
+        "url_pagina": "https://pixabay.com/videos/id-120683/",
+        "autor": "Matthias_Groeneveld",
+        "autor_url": "https://pixabay.com/users/Matthias_Groeneveld-4535957/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2022/06/18/120683-721759770_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 59,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "inicio": 2,
+        "revisado": true,
+        "archivo": "clips/pixabay-120683-7a758aea.mp4"
+      },
+      "texto": [
+        "Pasa más de lo que crees"
+      ]
+    },
+    {
+      "duracion": 8,
+      "clip": {
+        "query": "fitness competition athlete",
+        "fuente": "pixabay",
+        "id": "15741",
+        "url_pagina": "https://pixabay.com/videos/id-15741/",
+        "autor": "needvid",
+        "autor_url": "https://pixabay.com/users/needvid-2939519/",
+        "archivo_origen": "https://cdn.pixabay.com/video/2018/04/22/15741-266043634_large.mp4",
+        "ancho": 1920,
+        "alto": 1080,
+        "duracion_clip": 21,
+        "recorte": {
+          "centro_x": 0.5,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "inicio": 1,
+        "revisado": true,
+        "archivo": "clips/pixabay-15741-1b90d517.mp4"
+      },
+      "texto": [
+        "Eliges competición y categoría",
+        "y ves quién busca pareja"
+      ]
+    },
+    {
+      "duracion": 2,
+      "clip": {
+        "query": "gym woman",
+        "recorte": {
+          "centro_x": 0.42,
+          "centro_y": 0.5,
+          "zoom": 1
+        },
+        "inicio": 6,
+        "revisado": true,
+        "sin_clip": true
+      },
+      "texto": [
+        "Y es gratis"
+      ]
+    }
+  ],
+  "conclusion": [
+    "Nosotros, la *carrera*",
+    "Ellos, con quién"
+  ],
+  "aplicacion_titulo": "BÚSCALOS EN",
+  "aplicacion": [
+    "*@buscarparejahibrida*",
+    "buscarparejahibrida.es",
+    "Gratis, sin trucos"
+  ],
+  "clip_final": {
+    "query": "battle rope",
+    "fuente": "pixabay",
+    "id": "200657",
+    "url_pagina": "https://pixabay.com/videos/id-200657/",
+    "autor": "MULTIPLECONTENTHERE",
+    "autor_url": "https://pixabay.com/users/MULTIPLECONTENTHERE-30762907/",
+    "archivo_origen": "https://cdn.pixabay.com/video/2024/02/15/200657-913478674_large.mp4",
+    "ancho": 3840,
+    "alto": 2160,
+    "duracion_clip": 10,
+    "recorte": {
+      "centro_x": 0.68,
+      "centro_y": 0.5,
+      "zoom": 1
+    },
+    "inicio": 2,
+    "revisado": true,
+    "archivo": "clips/pixabay-200657-3bb500f0.mp4"
+  },
+  "tarjeta_final": {
+    "titulo": "@buscarparejahibrida",
+    "lineas": [
+      "hybridracehub.com",
+      "Calendario en la bio"
+    ]
+  },
+  "musica": "cc0-free-uplifting-music.m4a",
+  "portada_segundo": 1.2,
+  "collaborators": [
+    "buscarparejahibrida"
+  ],
+  "caption": "¿Carrera de dobles y sin pareja? 👀\n\nTe presentamos @buscarparejahibrida, una web gratuita que nació porque su creadora se quedó sin pareja para competir.\n\nEliges tu competición (HYROX, DEKA y otras híbridas) y tu categoría, y ves quién busca compañero o compañera, con su ritmo y su nivel.\n\nNosotros te ayudamos a encontrar la carrera. Ellos, con quién correrla 🤝\n\n📅 Calendario de carreras híbridas en España: enlace en la bio\n🔗 Pareja o equipo: buscarparejahibrida.es\n\nEtiqueta a quien necesite pareja para su próxima carrera 👇\n\n#hyrox #hyroxspain #hyroxdoubles #deka #carrerashibridas #hybridrace #hyroxespaña #entrenamientofuncional",
+  "pronunciacion": {
+    "buscarparejahibrida": "buscar pareja híbrida",
+    "hybridracehub": "jáibrid reis jab"
+  },
+  "narracion": {
+    "escenas": [
+      "¿Te has apuntado a un HYROX de dobles y no tienes pareja?",
+      "Pasa más de lo que crees.",
+      "Por eso queremos presentarte Buscar Pareja Híbrida: eliges tu competición y tu categoría, y ves quién busca pareja, con su ritmo y su nivel.",
+      "Y es gratis."
+    ],
+    "conclusion": "Nosotros te ayudamos a encontrar la carrera. Ellos, con quién correrla.",
+    "aplicacion": "Búscalos en arroba buscarparejahibrida,",
+    "cierre": "y el calendario completo lo tienes en hybridracehub punto com."
+  }
+}

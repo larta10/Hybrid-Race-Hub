@@ -277,7 +277,8 @@ async function main() {
   if (!DRY_RUN) console.log(`Token ${mask(process.env.IG_ACCESS_TOKEN)} · cuenta ${process.env.IG_USER_ID || "(sin IG_USER_ID)"}`);
 
   const published = await publishedIds();
-  if (published.some((r) => r.fecha === TODAY)) {
+  // Los reels especiales (ids "x…", scripts/instagram/publish-extra.mjs) no cuentan como publicación del día
+  if (published.some((r) => r.fecha === TODAY && !/^x\d/.test(r.post_id))) {
     console.log("Ya hay una publicación registrada hoy. Nada que hacer.");
     return;
   }

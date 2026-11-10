@@ -181,3 +181,11 @@ Reglas que hay que mantener:
    - `npm run ig:sources` (segunda verificación automática contra PubMed, Crossref y doi.org)
    - `npm run ig:preview` y abrir las imágenes de `instagram-preview/` para revisar solapamientos, textos cortados y gráficas.
 7. Commit cada 7 posts, push al final y actualiza este archivo (tabla de terminados y lista de pendientes).
+
+## Reels especiales fuera de la cola (desde el 10 de noviembre de 2026)
+
+- Guiones `instagram/reels/x##-*.json`: no los carga `loadReels` (solo `r###-*`), así que nunca entran en la publicación diaria.
+- Se publican a mano: `node video/scripts/render.mjs <id> --out=../output --solo-revisados` y `node scripts/instagram/publish-extra.mjs <id> output/<id>.mp4 output/<id>.jpg`. Caption exacto del guion, sin añadidos.
+- `publish.mjs` ignora los ids `x…` al comprobar si ya se publicó hoy.
+- Novedades del motor usadas por estos guiones: `aplicacion_titulo`, `tarjeta_final {titulo, lineas}` y `pronunciacion` propia del guion (no cambia la huella de los demás reels).
+- x01-colab-buscarpareja (Buscar Pareja Híbrida): publicado el 10/11/2026, https://www.instagram.com/reel/DfklcKpjfEz/ · invitación de colaboración a @buscarparejahibrida pendiente de aceptar.
