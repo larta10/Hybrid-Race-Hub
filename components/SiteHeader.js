@@ -7,7 +7,7 @@ const MAIN = [
   { href: "/centros-entrenamiento", label: "Centros" },
   { href: "/que-es-una-carrera-hibrida", label: "Guía" },
   { href: "/blog", label: "Blog" },
-  { href: "/productos", label: "Rankings" },
+  { href: "/productos", label: "Material" },
 ];
 const REGIONS = [
   ["madrid", "Madrid"], ["cataluna", "Cataluña"], ["andalucia", "Andalucía"], ["comunidad-valenciana", "C. Valenciana"],

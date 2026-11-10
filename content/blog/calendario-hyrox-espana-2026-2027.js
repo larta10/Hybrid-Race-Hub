@@ -81,7 +81,7 @@ export default {
   <li><strong>Practica las transiciones</strong>: el tiempo que pasas entre carrera y estación también cuenta.</li>
   <li><strong>Descarga la última semana</strong>: menos volumen, algo de intensidad corta y dormir bien.</li>
 </ol>
-<p>Y para el material, empieza por las zapatillas: tienes el <a href="/productos/zapatillas-hyrox">ranking de zapatillas para HYROX</a> con lo que mejor funciona sobre moqueta y en el trineo.</p>
+<p>Y para el material, empieza por las zapatillas: tienes la <a href="/productos/zapatillas-hyrox">guía de zapatillas para HYROX</a> con lo que tiene que tener una zapatilla para funcionar sobre moqueta y en el trineo.</p>
 
 <p>Si ya tienes dorsal, quedan dos cosas por resolver: las zapatillas, que comparamos en <a href="/productos/zapatillas-hyrox">mejores zapatillas para HYROX 2026</a>, y la ropa con la que vas a sudar una hora en pabellón (<a href="/productos/ropa">mallas y shorts para competir</a>).</p>
 

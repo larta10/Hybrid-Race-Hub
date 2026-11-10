@@ -12,11 +12,12 @@ const events = async () => page.evaluate(() => (window.dataLayer || []).filter(e
 const results = [];
 const check = (name, list, ev) => { const hit = list.filter(e => e.event === ev).pop(); results.push([name, ev, hit ? JSON.stringify(Object.fromEntries(Object.entries(hit).filter(([k]) => k !== "gtm.uniqueEventId"))) : "NO LLEGA"]); };
 
-// affiliate_click en un ranking
-await page.goto(`${BASE}/productos/relojes`, { waitUntil: "domcontentloaded" });
-await page.locator("a[data-aff]").first().click({ modifiers: [], noWaitAfter: true }).catch(() => {});
+// partner_outbound_click en el bloque "Proyectos amigos" del calendario
+await ctx.route(/buscarparejahibrida\.es/, r => r.abort());
+await page.goto(`${BASE}/calendario`, { waitUntil: "domcontentloaded" });
+await page.locator("a[data-partner]").first().click({ noWaitAfter: true }).catch(() => {});
 await page.waitForTimeout(500);
-check("Ranking relojes", await events(), "affiliate_click");
+check("Calendario (partner)", await events(), "partner_outbound_click");
 
 // race_outbound_click + region_view en una región
 await page.goto(`${BASE}/carreras-hibridas/madrid`, { waitUntil: "networkidle" });

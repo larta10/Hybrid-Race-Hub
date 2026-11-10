@@ -5,7 +5,7 @@ import { SITE_URL, SITE_EMAIL, pageTitle, breadcrumbLd, ROBOTS_INDEX } from "../
 import { openConsentSettings } from "../lib/consent";
 import { fechaLarga } from "../lib/dates";
 
-const UPDATED = "2026-11-03";
+const UPDATED = "2026-11-10";
 
 export default function Privacidad() {
   const url = `${SITE_URL}/privacidad`;
@@ -76,9 +76,6 @@ export default function Privacidad() {
             Lo tienes explicado en la <a href="/politica-cookies">política de cookies</a> y puedes cambiar tu elección cuando quieras:{" "}
             <button type="button" className="sf-consent-link" onClick={openConsentSettings}>configurar cookies</button>.
           </p>
-
-          <h2 id="afiliacion">Enlaces de afiliado</h2>
-          <p>Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. Al pulsar un enlace a Amazon sales de esta web y se aplica la política de privacidad de Amazon.</p>
         </div>
       </article>
     </PageShell>

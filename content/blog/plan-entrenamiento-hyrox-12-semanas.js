@@ -103,7 +103,7 @@ export default {
 <p>Si te pones enfermo o el trabajo te come una semana, no intentes recuperarla haciendo doble. Repite la semana anterior y sigue desde ahí; si pierdes dos semanas, quita una de las semanas de construcción (la 6 o la 7). Llegar algo menos preparado pero sano es mucho mejor que llegar lesionado.</p>
 
 <h2>Material mínimo para seguir el plan</h2>
-<p>Con unas zapatillas que sirvan para correr y estén estables en el trineo tienes casi todo. Mira el <a href="/productos/zapatillas-hyrox">ranking de zapatillas para HYROX</a> y, si quieres controlar que el rodaje largo es de verdad suave, una banda de pecho del <a href="/productos/pulsometros">ranking de pulsómetros</a>. Si entrenas en casa, en nuestra guía de <a href="/blog/material-hyrox-carreras-obstaculos">material para HYROX y OCR</a> tienes lo justo para sustituir las estaciones.</p>
+<p>Con unas zapatillas que sirvan para correr y estén estables en el trineo tienes casi todo. Mira la <a href="/productos/zapatillas-hyrox">guía de zapatillas para HYROX</a> y, si quieres controlar que el rodaje largo es de verdad suave, una banda de pecho dla <a href="/productos/pulsometros">guía de pulsómetros</a>. Si entrenas en casa, en nuestra guía de <a href="/blog/material-hyrox-carreras-obstaculos">material para HYROX y OCR</a> tienes lo justo para sustituir las estaciones.</p>
 
 <h2>Dónde entrenar si tu gimnasio no tiene material HYROX</h2>
 <p>Cada vez más centros tienen trineo, SkiErg y balones de wall ball. Busca uno cerca de ti en el <a href="/centros-entrenamiento">directorio de centros de entrenamiento</a> y, si quieres un plan personalizado con tus días disponibles, prueba nuestro <a href="/plan-entrenamiento">generador de planes de entrenamiento</a>.</p>

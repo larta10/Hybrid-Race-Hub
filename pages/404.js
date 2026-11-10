@@ -50,7 +50,7 @@ export default function Custom404() {
         </p>
         <div className="links">
           <Link href="/calendario" className="link-primary">Ver calendario →</Link>
-          <Link href="/productos" className="link-ghost">Rankings</Link>
+          <Link href="/productos" className="link-ghost">Guías de material</Link>
           <Link href="/blog" className="link-ghost">Blog</Link>
           <Link href="/centros-entrenamiento" className="link-ghost">Centros</Link>
         </div>

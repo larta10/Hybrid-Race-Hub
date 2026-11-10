@@ -4,7 +4,7 @@ import PageShell, { Breadcrumbs } from "../components/PageShell";
 import { SITE_URL, SITE_EMAIL, pageTitle, breadcrumbLd, ROBOTS_INDEX } from "../lib/site";
 import { fechaLarga } from "../lib/dates";
 
-const UPDATED = "2026-11-03";
+const UPDATED = "2026-11-10";
 
 export default function AvisoLegal() {
   const url = `${SITE_URL}/aviso-legal`;
@@ -45,10 +45,10 @@ export default function AvisoLegal() {
             precios y plazas los decide el organizador y pueden cambiar. Confírmalos en su web antes de pagar.
           </p>
 
-          <h2 id="enlaces">Enlaces externos y afiliación</h2>
+          <h2 id="enlaces">Enlaces externos</h2>
           <p>
-            Enlazamos a webs de organizadores, centros y tiendas que no controlamos. Algunos enlaces a Amazon son de afiliado: como Afiliado de Amazon,
-            obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.
+            Enlazamos a webs de organizadores, centros y proyectos que no controlamos. No tenemos enlaces de afiliado ni cobramos por recomendar productos:
+            cuando citamos un modelo es porque nos parece útil, no porque nos paguen por ello.
           </p>
 
           <h2 id="propiedad">Propiedad intelectual</h2>

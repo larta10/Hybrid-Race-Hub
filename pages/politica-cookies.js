@@ -5,7 +5,7 @@ import { fechaLarga } from "../lib/dates";
 import { openConsentSettings } from "../lib/consent";
 
 const PATH = "/politica-cookies";
-const UPDATED = "2026-10-27";
+const UPDATED = "2026-11-10";
 
 const COOKIES = [
   { name: "hrh_consent", who: "Hybrid Race Hub (propia)", type: "Técnica", purpose: "Guardar si aceptas o rechazas la analítica y la publicidad, para no volver a preguntarte.", duration: "12 meses (cookie y almacenamiento local del navegador)" },
@@ -62,8 +62,7 @@ export default function PoliticaCookies() {
             </table>
           </div>
           <p>
-            No usamos el píxel de Meta (Facebook o Instagram) ni otras cookies publicitarias. Los enlaces a Amazon son enlaces normales:
-            Amazon solo instala sus cookies si entras en su web, con su propia política.
+            No usamos el píxel de Meta (Facebook o Instagram) ni otras cookies publicitarias. Si pulsas un enlace a otra web, esa web aplica su propia política de cookies.
           </p>
           <p>
             En los artículos de podcasts, el reproductor de Spotify no se carga hasta que pulsas «Escuchar aquí». A partir de ese momento,

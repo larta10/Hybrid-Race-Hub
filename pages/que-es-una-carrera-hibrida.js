@@ -82,7 +82,7 @@ function faqData({ madrid, priced, total }) {
     },
     {
       q: "¿Qué zapatillas uso para una carrera híbrida?",
-      a: "Para HYROX, una zapatilla estable con algo de amortiguación, que agarre bien en moqueta y no se hunda en el sled push. Para OCR, zapatilla de trail con tacos profundos que drene el agua. Tienes las dos comparativas en nuestros rankings de zapatillas HYROX y de zapatillas de trail para OCR.",
+      a: "Para HYROX, una zapatilla estable con algo de amortiguación, que agarre bien en moqueta y no se hunda en el sled push. Para OCR, zapatilla de trail con tacos profundos que drene el agua. Tienes qué mirar en nuestras guías de zapatillas para HYROX y de zapatillas de trail para OCR.",
     },
   );
   return faqs.slice(0, 10);
@@ -266,7 +266,7 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season, 
           </p>
           <ul>
             <li>Cómo elegirla según tu perfil: <a href="/blog/carreras-hibridas-principiantes-primera-prueba">carreras híbridas para principiantes</a>.</li>
-            <li>Qué comprar primero, sin gastar de más: <a href="/blog/material-hyrox-carreras-obstaculos">material para HYROX y OCR</a> y, si vas a pista o pabellón, el <a href="/productos/zapatillas-hyrox">ranking de zapatillas para HYROX</a>.</li>
+            <li>Qué comprar primero, sin gastar de más: <a href="/blog/material-hyrox-carreras-obstaculos">material para HYROX y OCR</a> y, si vas a pista o pabellón, la <a href="/productos/zapatillas-hyrox">guía de zapatillas para HYROX</a>.</li>
             <li>Si te tira el monte: las <a href="/productos/zapatillas-trail">zapatillas de trail con tacos para OCR</a> que elegiríamos.</li>
             <li>Elegir fecha: el <a href="/calendario">calendario completo</a> o las de <a href="/carreras-hibridas/madrid">Madrid</a>, <a href="/carreras-hibridas/cataluna">Cataluña</a> y <a href="/carreras-hibridas/andalucia">Andalucía</a>.</li>
           </ul>
@@ -346,10 +346,10 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season, 
           <h2 id="material">Material recomendado</h2>
           <p>No hace falta gastar mucho para la primera. Por orden de importancia:</p>
           <ul>
-            <li><strong>Zapatillas</strong>: estables para HYROX (<a href="/productos/zapatillas-hyrox">ranking de zapatillas HYROX</a>) o de trail con tacos para OCR (<a href="/productos/zapatillas-trail">ranking de zapatillas trail para OCR</a>).</li>
-            <li><strong>Reloj GPS</strong> para controlar ritmos y la carga semanal (<a href="/productos/relojes">ranking de relojes</a>).</li>
-            <li><strong>Pulsómetro de pecho</strong> si quieres datos fiables en las estaciones (<a href="/productos/pulsometros">ranking de pulsómetros</a>).</li>
-            <li><strong>Ropa</strong> que no roce con barro ni sudor (<a href="/productos/ropa">ranking de ropa técnica</a>).</li>
+            <li><strong>Zapatillas</strong>: estables para HYROX (<a href="/productos/zapatillas-hyrox">guía de zapatillas HYROX</a>) o de trail con tacos para OCR (<a href="/productos/zapatillas-trail">guía de zapatillas trail para OCR</a>).</li>
+            <li><strong>Reloj GPS</strong> para controlar ritmos y la carga semanal (<a href="/productos/relojes">guía de relojes</a>).</li>
+            <li><strong>Pulsómetro de pecho</strong> si quieres datos fiables en las estaciones (<a href="/productos/pulsometros">guía de pulsómetros</a>).</li>
+            <li><strong>Ropa</strong> que no roce con barro ni sudor (<a href="/productos/ropa">guía de ropa técnica</a>).</li>
           </ul>
           <p>Lo tienes todo ordenado por necesidad, con pros y contras, en la guía de <a href="/blog/material-hyrox-carreras-obstaculos">material para HYROX y carreras de obstáculos</a>. Y si todavía dudas qué carrera hacer, lee cómo <a href="/blog/carreras-hibridas-principiantes-primera-prueba">elegir tu primera prueba</a>.</p>
 

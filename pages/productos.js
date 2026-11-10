@@ -1,349 +1,93 @@
-﻿import Head from "next/head";
-import SiteHeader from "../components/SiteHeader";
-import { Breadcrumbs } from "../components/PageShell";
+﻿/* Índice de guías de material (URL histórica /productos). Sin enlaces de compra ni precios. */
+import Head from "next/head";
+import PageShell, { Breadcrumbs } from "../components/PageShell";
 import GuideCallout from "../components/GuideCallout";
-import Link from "next/link";
-import Image from "next/image";
-import { RANKINGS as RAW_RANKINGS, RANKINGS_UPDATED, resolveRanking } from "../lib/rankings";
-import AffiliateLink from "../components/AffiliateLink";
+import Related from "../components/Related";
+import { GUIAS, GUIAS_UPDATED } from "../lib/guias-material";
+import { SITE_URL, SITE_NAME, ROBOTS_INDEX, breadcrumbLd } from "../lib/site";
+import { fechaLarga } from "../lib/dates";
 
-const RANKINGS = RAW_RANKINGS.map(resolveRanking);
-
-
-import { SITE_URL, breadcrumbLd, ROBOTS_INDEX } from "../lib/site";
-/* ─── COMPONENT ─────────────────────────────────────────────────────────────── */
+const TITLE = "Guías de material para HYROX y OCR: cómo elegir";
+const DESC = "Qué mirar al elegir zapatillas, reloj GPS, pulsómetro y ropa para HYROX, OCR y carreras híbridas: criterios, errores comunes y qué conviene según tu perfil.";
 
 export default function Productos() {
+  const url = `${SITE_URL}/productos`;
+  const crumbs = [{ name: "Inicio", href: "/" }, { name: "Guías de material" }];
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: TITLE,
+    description: DESC,
+    url,
+    mainEntityOfPage: url,
+    dateModified: GUIAS_UPDATED,
+    inLanguage: "es-ES",
+    author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+    publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL, logo: { "@type": "ImageObject", url: `${SITE_URL}/og-image.png` } },
+    image: `${SITE_URL}/og-image.png`,
+  };
   return (
-    <>
+    <PageShell activePath="/productos">
       <Head>
-        <title>{`Rankings de material OCR y HYROX ${RANKINGS_UPDATED.slice(0, 4)} | Hybrid Race Hub`}</title>
-        <meta name="description" content="Rankings de relojes GPS, zapatillas de trail y de HYROX, pulsómetros y ropa para carreras híbridas, con pros y contras de cada modelo y enlace a Amazon." />
+        <title>{TITLE}</title>
+        <meta name="description" content={DESC} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content={ROBOTS_INDEX} />
-        <link rel="canonical" href={`${SITE_URL}/productos`} />
+        <link rel="canonical" href={url} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`${SITE_URL}/productos`} />
-        <meta property="og:title" content={`Rankings de Equipamiento OCR y HYROX ${RANKINGS_UPDATED.slice(0, 4)} | Hybrid Race Hub`} />
-        <meta property="og:description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX. Con precios y enlaces a Amazon España." />
-        <meta property="og:site_name" content="Hybrid Race Hub" />
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={DESC} />
+        <meta property="og:site_name" content={SITE_NAME} />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`Rankings de Equipamiento OCR y HYROX ${RANKINGS_UPDATED.slice(0, 4)} | Hybrid Race Hub`} />
-        <meta name="twitter:description" content="Rankings honestos de relojes GPS, zapatillas trail, pulsómetros y ropa deportiva para OCR e HYROX." />
-        <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{__html: JSON.stringify(
-            RANKINGS.map(ranking => ({
-              "@context": "https://schema.org",
-              "@type": "ItemList",
-              "name": ranking.title,
-              "url": `${SITE_URL}/productos/${ranking.slug}`,
-              "numberOfItems": ranking.products.length,
-              "itemListElement": ranking.products.map(product => ({
-                "@type": "ListItem",
-                "position": product.rank,
-                "item": { "@type": "Product", "name": product.name, "brand": { "@type": "Brand", "name": product.brand || product.name.split(" ")[0] } },
-              })),
-            }))
-          )}}
-        />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd([{ name: "Inicio", href: "/" }, { name: "Productos" }], `${SITE_URL}/productos`)) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd(crumbs, url)) }} />
       </Head>
 
-      <style>{`
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: var(--bg); color: var(--text); font-family: var(--font-body); }
-        a { color: inherit; text-decoration: none; }
-
-        /* NAV */
-        .topbar {
-          background: var(--bg); border-bottom: 1px solid var(--border);
-          height: 64px; display: flex; align-items: center;
-          justify-content: space-between; padding: 0 2rem;
-        }
-        .brand { display: flex; align-items: center; gap: 14px; }
-        .brand-logo-img { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; display: block; }
-        .brand-name {
-          font-family: var(--font-display); font-size: 17px; font-weight: 800;
-          letter-spacing: -0.01em; color: var(--text);
-        }
-        .brand-sub {
-          font-family: var(--font-mono); font-size:14px; font-weight: 500;
-          letter-spacing:0.01em; color: var(--muted);
-        }
-        .topbar-nav { display: flex; gap: 4px; }
-        .topbar-nav a {
-          font-family: var(--font-mono); font-size:14px; font-weight: 500;
-          letter-spacing:0.01em; color: var(--muted);
-          padding: 6px 12px; border-radius: var(--radius-sm);
-          border: 0.5px solid transparent; transition: color .15s, border-color .15s;
-        }
-        .topbar-nav a:hover { color: var(--text); border-color: var(--border2); }
-        .topbar-nav a.active { color: var(--text); border-color: transparent; border-radius: 0; box-shadow: inset 0 -2px 0 var(--accent); }
-
-        /* HERO */
-        .page-hero { background: var(--bg); border-bottom: 1px solid var(--border); padding: 3rem 2rem 2.5rem; }
-        .page-hero-inner { max-width: 1100px; margin: 0 auto; }
-        .page-eyebrow {
-          font-family: var(--font-mono); font-size:14px; font-weight: 600;
-          letter-spacing:0.01em; color: var(--text-muted); margin-bottom: 10px;
-        }
-        .page-title {
-          font-family: var(--font-display); font-size: clamp(40px, 6vw, 72px);
-          font-weight: 800; letter-spacing: -0.01em;
-          line-height: 0.95; color: var(--text); margin-bottom: 14px;
-        }
-        .page-sub { font-family: var(--font-body); font-size: 15px; color: var(--muted); max-width: 580px; line-height: 1.65; }
-        .affiliate-notice {
-          margin-top: 1.25rem; font-family: var(--font-mono); font-size:14px; font-weight: 500;
-          letter-spacing:0.01em; color: var(--muted2);
-          background: var(--surface); border: 0.5px solid var(--border);
-          border-radius: var(--radius-sm); padding: 8px 14px; display: inline-block;
-        }
-
-        /* NAV INTERNA RANKINGS */
-        .rankings-nav {
-          background: var(--surface); border-bottom: 1px solid var(--border);
-          padding: 0 2rem; display: flex; gap: 0; overflow-x: auto;
-        }
-        .rankings-nav a {
-          font-family: var(--font-mono); font-size:14px; font-weight: 600;
-          letter-spacing:0.01em; color: var(--muted);
-          padding: 12px 16px; border-bottom: 2px solid transparent;
-          white-space: nowrap; transition: color .15s, border-color .15s;
-        }
-        .rankings-nav a:hover { color: var(--text); border-bottom-color: var(--border2); }
-
-        /* CONTENT */
-        .page-body { max-width: 1100px; margin: 0 auto; padding: 0 2rem 4rem; }
-
-        /* RANKING SECTION */
-        .ranking-section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
-        .ranking-section:last-child { border-bottom: none; }
-        .ranking-header { margin-bottom: 1.5rem; }
-        .ranking-letter {
-          display: inline-block; font-family: var(--font-display); font-size:14px; font-weight: 800;
-          letter-spacing:0.01em;
-          background: var(--surface2); color: var(--text);
-          padding: 3px 10px; border-radius: 2px; margin-bottom: 8px;
-        }
-        .ranking-eyebrow {
-          font-family: var(--font-mono); font-size:14px; font-weight: 600;
-          letter-spacing:0.01em; color: var(--muted2); margin-bottom: 6px;
-        }
-        .ranking-title {
-          font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px);
-          font-weight: 800; letter-spacing: -0.01em;
-          color: var(--text); line-height: 1.05;
-        }
-        .ranking-intro { margin: 1.25rem 0; }
-        .ranking-intro p {
-          font-family: var(--font-body); font-size: 14px; color: var(--muted);
-          line-height: 1.7; margin-bottom: 0.75rem;
-        }
-
-        /* LEGAL FOOTER */
-        .legal-footer {
-          border-top: 0.5px solid var(--border); padding: 2rem;
-          max-width: 1100px; margin: 0 auto;
-        }
-        .legal-text {
-          font-family: var(--font-mono); font-size:14px; font-weight: 500;
-          letter-spacing:0.01em; color: var(--muted2); line-height: 1.6;
-        }
-
-        @media (max-width: 720px) {
-          .topbar { padding: 0 1rem; }
-          .page-hero { padding: 2rem 1rem 1.5rem; }
-          .page-body { padding: 0 1rem 3rem; }
-          .rankings-nav { padding: 0 1rem; }
-        }
-      `}</style>
-
-      <SiteHeader activePath="/productos" />
-
-      {/* Hero */}
-      <div className="page-hero">
-        <div className="page-hero-inner">
-          <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Productos" }]} />
-          <h1 className="page-title">Rankings{" "}<br/>de material</h1>
-          <p className="page-sub">
-            Relojes GPS, zapatillas, pulsómetros y ropa para OCR y HYROX. Solo lo que
-            usaríamos nosotros, con el precio de Amazon España al lado.
-          </p>
-          <span className="affiliate-notice">
-            Como afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables.
-          </span>
-        </div>
-      </div>
-
-      {/* Intro editorial */}
-      <div className="page-body" style={{ paddingTop: "2rem" }}>
-        <div style={{ maxWidth: 780, marginBottom: "2rem" }}>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "var(--muted)", lineHeight: 1.75, marginBottom: "1rem" }}>
-            En Hybrid Race Hub probamos y comparamos el equipamiento clave para OCR, HYROX
-            y CrossFit en España: zapatillas de trail y de sala, relojes GPS multideporte,
-            pulsómetros de brazo, ropa técnica y accesorios de entrenamiento funcional. Cada
-            ranking está pensado para atletas híbridos españoles: precios en euros, disponibilidad
-            en Amazon España y comparativas contra los modelos más vendidos del año.
-          </p>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "var(--muted)", lineHeight: 1.75 }}>
-            Estos rankings se actualizan al menos una vez por temporada (spring / autumn drops)
-            para reflejar lanzamientos nuevos y bajadas de precio reales, no artificiales.
-          </p>
+      <article className="guide">
+        <div className="guide-head">
+          <Breadcrumbs items={crumbs} />
+          <p className="section-label">Material</p>
+          <h1 className="guide-title">Guías de material para HYROX y OCR</h1>
+          <p className="guide-updated">Actualizado: <time dateTime={GUIAS_UPDATED}>{fechaLarga(GUIAS_UPDATED)}</time></p>
         </div>
 
-        <div style={{ background: "var(--surface)", border: "0.5px solid var(--border)", borderRadius: "var(--radius-lg)", padding: "1.5rem 1.75rem", marginBottom: "2rem" }}>
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: 14, fontWeight: 600, letterSpacing: "0.01em", color: "var(--text-muted)", marginBottom: "0.75rem" }}>
-            Por qué confiar en nuestros rankings
+        <div className="guide-body">
+          <p className="guide-lead">
+            Para tu primera carrera híbrida casi todo lo que necesitas ya lo tienes. Lo que sí conviene es saber qué pide cada prueba
+            antes de gastar: una HYROX se corre sobre moqueta y te hace empujar un trineo; una OCR te mete en barro y agua.
           </p>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 800, letterSpacing: "-0.01em", color: "var(--text)", marginBottom: "1rem" }}>
-            Criterios de selección
-          </h2>
-          <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-            <li style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--muted)", lineHeight: 1.65, paddingLeft: "1.25rem", position: "relative" }}>
-              <span style={{ position: "absolute", left: 0, color: "var(--text)", fontWeight: 700 }}>·</span>
-              <strong style={{ color: "var(--text)", fontWeight: 600 }}>Uso real en carrera:</strong> priorizamos modelos que hemos probado
-              (o han probado atletas colaboradores) en competición OCR/HYROX, no solo
-              en gimnasio.
-            </li>
-            <li style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--muted)", lineHeight: 1.65, paddingLeft: "1.25rem", position: "relative" }}>
-              <span style={{ position: "absolute", left: 0, color: "var(--text)", fontWeight: 700 }}>·</span>
-              <strong style={{ color: "var(--text)", fontWeight: 600 }}>Relación precio/prestaciones:</strong> cada ranking incluye modelos
-              en tres franjas (entry, mid-range y top) para que compares según tu presupuesto.
-            </li>
-            <li style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--muted)", lineHeight: 1.65, paddingLeft: "1.25rem", position: "relative" }}>
-              <span style={{ position: "absolute", left: 0, color: "var(--text)", fontWeight: 700 }}>·</span>
-              <strong style={{ color: "var(--text)", fontWeight: 600 }}>Datos técnicos, no marketing:</strong> analizamos drop, peso,
-              autonomía GPS, sensores, materiales y compatibilidad con Zwift/Strava/Garmin
-              Connect, no las descripciones de la marca.
-            </li>
-            <li style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--muted)", lineHeight: 1.65, paddingLeft: "1.25rem", position: "relative" }}>
-              <span style={{ position: "absolute", left: 0, color: "var(--text)", fontWeight: 700 }}>·</span>
-              <strong style={{ color: "var(--text)", fontWeight: 600 }}>Transparencia de afiliación:</strong> ganamos una pequeña comisión
-              si compras desde nuestros enlaces (sin coste extra para ti). Eso no cambia
-              el orden del ranking: si un producto no vale la pena, no aparece.
-            </li>
-            <li style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--muted)", lineHeight: 1.65, paddingLeft: "1.25rem", position: "relative" }}>
-              <span style={{ position: "absolute", left: 0, color: "var(--text)", fontWeight: 700 }}>·</span>
-              <strong style={{ color: "var(--text)", fontWeight: 600 }}>Actualización estacional:</strong> revisamos precios y
-              disponibilidad cada trimestre y actualizamos los modelos cuando salen
-              versiones nuevas relevantes.
-            </li>
+          <p>
+            Estas guías no son rankings ni tienen enlaces de compra. Explican qué mirar, los errores que más vemos y qué tipo de
+            producto encaja según cómo entrenas y qué carrera vas a hacer.
+          </p>
+
+          <h2 id="guias">Elige la guía</h2>
+          <ul>
+            {GUIAS.map(g => (
+              <li key={g.slug}>
+                <a href={`/productos/${g.slug}`}><strong>{g.h1}</strong></a>. {g.criteria.map(c => c[0].toLowerCase()).join(", ")}.
+              </li>
+            ))}
           </ul>
+
+          <h2 id="por-donde-empezar">Por dónde empezar</h2>
+          <ol>
+            <li><strong>Zapatillas.</strong> Es lo único que de verdad cambia la carrera. Estables para HYROX, con taco para OCR.</li>
+            <li><strong>Ropa técnica.</strong> Nada de algodón. Lo que ya uses para entrenar suele valer.</li>
+            <li><strong>Reloj y pulsómetro.</strong> Útiles para entrenar mejor, no imprescindibles para competir.</li>
+          </ol>
+
+          <GuideCallout context="ranking" />
+          <Related title="Para preparar la carrera" links={[
+            { href: "/calendario", label: "Calendario de carreras híbridas en España" },
+            { href: "/blog/material-hyrox-carreras-obstaculos", label: "Material para HYROX y OCR, por prioridad" },
+            { href: "/blog/plan-entrenamiento-hyrox-12-semanas", label: "Plan de entrenamiento HYROX de 12 semanas" },
+            { href: "/centros-entrenamiento", label: "Dónde entrenar: centros por ciudad" },
+          ]} />
         </div>
-      </div>
-
-      <div className="page-body"><GuideCallout context="ranking" /></div>
-
-      {/* Nav interna */}
-      <nav className="rankings-nav">
-        {RANKINGS.map(r => (
-          <a key={r.id} href={`#${r.id}`}>{r.letter}. {r.title.split("—")[0].trim()}</a>
-        ))}
-      </nav>
-
-      {/* Rankings */}
-      <div className="page-body">
-        {RANKINGS.map(ranking => (
-          <section key={ranking.id} id={ranking.id} className="ranking-section">
-            <div className="ranking-header">
-              <div className="ranking-letter">Ranking {ranking.letter}</div>
-              <div className="ranking-eyebrow">{ranking.eyebrow}</div>
-              <h2 className="ranking-title">{ranking.title}</h2>
-            </div>
-
-            <div className="ranking-intro">
-              {ranking.intro.map((p, i) => <p key={i}>{p}</p>)}
-            </div>
-
-            {/* Tabla comparativa */}
-            <div className="comp-table-wrap">
-              <table className="comp-table">
-                <thead>
-                  <tr>{ranking.table.headers.map(h => <th key={h}>{h}</th>)}</tr>
-                </thead>
-                <tbody>
-                  {ranking.table.rows.map((row, i) => (
-                    <tr key={i}>{row.map((cell, j) => <td key={j}>{cell}</td>)}</tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {/* Fichas */}
-            <ol className="products-list">
-              {ranking.products.map(product => (
-                <li key={product.rank} className={`product-row${product.rank === 1 ? " product-row--top" : ""}${product.img ? "" : " product-row--noimg"}`}>
-                  <div className="product-rank" aria-label={`Puesto ${product.rank}`}>{String(product.rank).padStart(2, "0")}</div>
-                  <div className="product-main">
-                    {product.brand && <p className="product-brand">{product.brand}</p>}
-                    <h3 className="product-name">{product.name}</h3>
-                    <p className="product-desc">{product.desc}</p>
-                    <div className="product-pcs">
-                      <div className="product-pc pros">
-                        <div className="product-pc-label">A favor</div>
-                        <div className="product-pc-list">
-                          {product.pros.map((p, i) => (
-                            <div key={i} className="product-pc-item">{p}</div>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="product-pc cons">
-                        <div className="product-pc-label">En contra</div>
-                        <div className="product-pc-list">
-                          {product.cons.map((c, i) => (
-                            <div key={i} className="product-pc-item">{c}</div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="product-side">
-                    {product.img && (
-                      <div className="product-img-wrap">
-                        <Image src={product.img} alt={product.name} width={220} height={220} className="product-img" />
-                      </div>
-                    )}
-                    <AffiliateLink product={product.product} position={product.rank} className="product-cta">
-                      Ver precio en Amazon
-                    </AffiliateLink>
-                  </div>
-                </li>
-              ))}
-            </ol>
-
-            {/* Conclusión */}
-            <div className="ranking-conclusion">
-              <div className="ranking-conclusion-label">Recomendación según perfil</div>
-              <p>{ranking.conclusion}</p>
-            </div>
-
-            {/* Enlazado interno */}
-            <div style={{ marginTop: "1.25rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-              <Link href="/calendario" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 14, fontWeight: 600, letterSpacing: "0.01em", color: "var(--text-muted)", border: "0.5px solid rgba(20,22,26,0.1)", borderRadius: 2, padding: "5px 12px" }}>
-                Ver carreras →
-              </Link>
-              <Link href="/blog" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-mono)", fontSize: 14, fontWeight: 600, letterSpacing: "0.01em", color: "var(--muted)", border: "0.5px solid rgba(20,22,26,0.08)", borderRadius: 2, padding: "5px 12px" }}>
-                Leer artículos del blog →
-              </Link>
-            </div>
-          </section>
-        ))}
-
-        <div className="legal-footer">
-          <p className="legal-text">
-            Como afiliado de Amazon, Hybrid Race Hub obtiene ingresos por las compras adscritas que cumplen los
-            requisitos aplicables. Los precios indicados son orientativos y pueden variar. Los enlaces llevan a
-            Amazon.es donde podrás ver el precio actualizado, disponibilidad y opiniones de otros compradores.
-            Los ASINs pueden cambiar — si un enlace no funciona, busca el producto directamente en Amazon.es.
-          </p>
-        </div>
-      </div>
-    </>
+      </article>
+    </PageShell>
   );
 }

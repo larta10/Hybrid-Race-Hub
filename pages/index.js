@@ -182,9 +182,9 @@ function HomeSections() {
     },
     {
       href: "/productos",
-      title: "Productos",
-      desc: "Rankings de zapatillas, relojes GPS, pulsómetros y ropa, probados en barro y en estaciones.",
-      cta: "Ver rankings",
+      title: "Material",
+      desc: "Qué mirar en zapatillas, relojes GPS, pulsómetros y ropa antes de gastar, según la carrera que vas a hacer.",
+      cta: "Ver guías",
     },
     {
       href: "/calculadora-hyrox",
@@ -404,7 +404,7 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
         </div>
       </section>
 
-      {/* Accesos por ciudad + guía + rankings */}
+      {/* Accesos por ciudad + guía + guías de material */}
       <section className="home-cities" aria-labelledby="por-ciudad">
         <div className="home-cities-inner">
           <div>
@@ -443,9 +443,9 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
               <li><a href="/blog/carreras-hibridas-principiantes-primera-prueba">Cómo elegir tu primera carrera híbrida</a></li>
               <li><a href="/blog/plan-entrenamiento-hyrox-12-semanas">Plan de entrenamiento HYROX de 12 semanas</a></li>
               <li><a href="/blog/material-hyrox-carreras-obstaculos">Material para HYROX y carreras de obstáculos</a></li>
-              <li><a href="/productos/zapatillas-hyrox">Ranking de zapatillas para HYROX</a></li>
-              <li><a href="/productos/zapatillas-trail">Ranking de zapatillas de trail para OCR</a></li>
-              <li><a href="/productos/relojes">Ranking de relojes GPS</a></li>
+              <li><a href="/productos/zapatillas-hyrox">guía de zapatillas para HYROX</a></li>
+              <li><a href="/productos/zapatillas-trail">guía de zapatillas de trail para OCR</a></li>
+              <li><a href="/productos/relojes">guía de relojes GPS</a></li>
               <li><a href="/calculadora-hyrox">Calculadora de tiempos HYROX</a></li>
             </ul>
           </div>
@@ -515,7 +515,7 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
         imgAlt="Atletas compitiendo en evento HYROX Grand Palais París"
         eyebrow="Quiénes somos"
         title="Lo hacemos atletas"
-        body="Corremos OCR, competimos en HYROX y entrenamos en box. Montamos esto porque estábamos hartos de buscar fechas en veinte webs distintas. Los rankings dicen qué compraríamos nosotros y por qué. Si un enlace es de afiliado, lo pone."
+        body="Corremos OCR, competimos en HYROX y entrenamos en box. Montamos esto porque estábamos hartos de buscar fechas en veinte webs distintas. Las guías de material explican qué mirar antes de gastar, sin enlaces de compra."
         cta="Síguenos en Instagram →"
         ctaHref="https://www.instagram.com/hybridracehub_spain"
         reverse

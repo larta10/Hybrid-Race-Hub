@@ -1,29 +1,21 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import { SUPABASE_URL, ANON_KEY } from "../lib/shared";
-import { normalizeAmazonUrl, AFFILIATE_REL } from "../lib/affiliate";
 
 import { SITE_URL, breadcrumbLd } from "../lib/site";
-const CATEGORIES = ["Todos", "Rankings", "Guías OCR", "Equipamiento", "Noticias"];
+const CATEGORIES = ["Todos", "Guías OCR", "Equipamiento", "Noticias"];
 
 export default function Comunidad() {
   const [articles, setArticles] = useState([]);
-  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [category, setCategory] = useState("Todos");
 
   useEffect(() => {
-    Promise.all([
-      fetch(`${SUPABASE_URL}/rest/v1/articles?select=*&order=published_at.desc`, {
+    fetch(`${SUPABASE_URL}/rest/v1/articles?select=*&order=published_at.desc`, {
         headers: { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}` }
-      }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
-      fetch(`${SUPABASE_URL}/rest/v1/recommended_products?select=*&active=eq.true&order=created_at.desc`, {
-        headers: { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}` }
-      }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-    ]).then(([arts, prods]) => {
+      }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(arts => {
       setArticles(Array.isArray(arts) ? arts : []);
-      setProducts(Array.isArray(prods) ? prods : []);
     }).catch(() => setError(true)).finally(() => setLoading(false));
   }, []);
 
@@ -142,57 +134,11 @@ export default function Comunidad() {
           color: var(--muted);
         }
 
-        .products-section { padding: 2rem 0; }
-        .products-title {
-          font-family: var(--font-display); font-size: 28px; font-weight: 700;
-          letter-spacing: 0.04em;
-          margin-bottom: 2rem; text-align: center;
-        }
-        .products-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-          gap: 1rem;
-        }
-        .product-card {
-          background: var(--surface); border: 1px solid var(--border);
-          border-radius: var(--radius); padding: 1rem;
-          transition: border-color 0.15s;
-        }
-        .product-card:hover { border-color: var(--border2); }
-        .product-image {
-          width: 100%; height: 140px;
-          background: var(--surface2); border-radius: 4px;
-          margin-bottom: 1rem; object-fit: cover;
-        }
-        .product-name {
-          font-family: var(--font-display); font-size: 16px; font-weight: 700;
-          margin-bottom: 4px;
-        }
-        .product-desc {
-          font-size:14px; color: var(--muted); line-height: 1.5;
-          margin-bottom: 8px;
-        }
-        .product-footer {
-          display: flex; align-items: center; justify-content: space-between;
-        }
-        .product-price {
-          font-family: var(--font-display); font-size: 18px; font-weight: 700;
-          color: var(--text);
-        }
-        .product-btn {
-          padding: 8px 14px; background: var(--text); color: var(--bg);
-          font-family: var(--font-display); font-size:14px; font-weight: 700;
-          border: none; border-radius: 4px;
-          cursor: pointer; transition: border-color .15s, background-color .15s, color .15s;
-        }
-        .product-btn:hover { }
-
         .empty { text-align: center; padding: 4rem; color: var(--muted); }
 
         @media (max-width: 640px) {
           .comunidad-page { padding: 1rem; }
           .articles-grid { grid-template-columns: 1fr; }
-          .products-grid { grid-template-columns: 1fr; }
         }
       `}</style>
 
@@ -244,27 +190,6 @@ export default function Comunidad() {
           </div>
         )}
 
-        {products.length > 0 && (
-          <section className="products-section">
-            <h2 className="products-title">Productos recomendados</h2>
-            <div className="products-grid">
-              {products.map(prod => (
-                <div key={prod.id} className="product-card">
-                  {prod.image_url && (
-                    <img src={prod.image_url} alt={prod.name} className="product-image" loading="lazy" />
-                  )}
-                  <h4 className="product-name">{prod.name}</h4>
-                  <p className="product-desc">{prod.description}</p>
-                  <div className="product-footer">
-                    <a href={normalizeAmazonUrl(prod.product_url)} target="_blank" rel={AFFILIATE_REL} className="product-btn" data-aff-name={prod.name}>
-                      {/amazon\./i.test(prod.product_url || "") ? "Ver precio en Amazon" : "Ver producto"}
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
       </div>
     </>
   );

@@ -226,7 +226,7 @@ export default function Ficha({ race, past, noindex, schema, organizer, mod, reg
 
           <h2 id="material">Material para esta carrera</h2>
           <p>
-            Lo primero que conviene tener resuelto son las zapatillas. Para esta modalidad, mira el ranking de{" "}
+            Lo primero que conviene tener resuelto son las zapatillas. Para esta modalidad, mira la guía de{" "}
             <a href={mod.ranking.href}>{mod.ranking.label.toLowerCase()}</a>; y si es tu primera, la guía de{" "}
             <a href="/blog/material-hyrox-carreras-obstaculos">material para HYROX y carreras de obstáculos</a> ordena por prioridad lo que hace falta y lo que no.
           </p>

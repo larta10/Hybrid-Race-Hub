@@ -22,7 +22,7 @@ let n = 1;
 
 variables.push({ ...base, variableId: String(n++), name: "GA4 Measurement ID", type: "c", parameter: [T("value", MEASUREMENT_ID)] });
 variables.push({ ...base, variableId: String(n++), name: "Meta Pixel ID", type: "c", parameter: [T("value", META_PIXEL_ID)] });
-const DLV = ["product", "ranking", "position", "race_name", "region", "term", "search_location", "form", "center", "city", "link_type"];
+const DLV = ["partner", "placement", "race_name", "region", "term", "search_location", "form", "center", "city", "link_type"];
 for (const k of DLV) {
   variables.push({ ...base, variableId: String(n++), name: `DLV - ${k}`, type: "v", parameter: [
     { type: "INTEGER", key: "dataLayerVersion", value: "2" },
@@ -32,7 +32,7 @@ for (const k of DLV) {
 }
 
 const EVENTS = {
-  affiliate_click: ["product", "ranking", "position"],
+  partner_outbound_click: ["partner", "placement"],
   race_outbound_click: ["race_name", "region"],
   contact_form_submit: ["form"],
   search_used: ["term", "search_location"],
@@ -75,7 +75,6 @@ tags.push({ ...base, tagId: String(n++), name: "Meta Pixel - base (PageView)", t
 const META_EVENTS = {
   contact_form_submit: "fbq('track','Lead',{content_name:'{{DLV - form}}'});",
   race_outbound_click: "fbq('trackCustom','RaceOutboundClick',{race_name:'{{DLV - race_name}}',region:'{{DLV - region}}'});",
-  affiliate_click: "fbq('trackCustom','AffiliateClick',{product:'{{DLV - product}}',ranking:'{{DLV - ranking}}'});",
 };
 for (const [ev, code] of Object.entries(META_EVENTS)) {
   const trig = triggers.find(t => t.name === `CE - ${ev}`);

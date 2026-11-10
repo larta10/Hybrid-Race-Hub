@@ -61,10 +61,10 @@ export default {
 <h3>Auriculares para escuchar mientras entrenas</h3>
 <p>No hace falta gastar mucho, pero sí elegir el tipo adecuado para cada sitio:</p>
 <ul>
-  <li><strong>Para correr por la calle:</strong> conducción ósea. El sonido llega por el hueso del pómulo y el oído queda libre, así que oyes coches, bicis y a tu compañero. Se oyen peor en un gimnasio con música alta. <a data-product="auriculares-deportivos-conduccion-osea">Ver auriculares de conducción ósea en Amazon</a></li>
-  <li><strong>Para el box o el gimnasio:</strong> intrauditivos con gancho. Aíslan mejor y no se caen en burpees, remo ni saltos. Por la calle te aíslan demasiado del tráfico. <a data-product="auriculares-deportivos-gancho">Ver auriculares deportivos con gancho en Amazon</a></li>
+  <li><strong>Para correr por la calle:</strong> conducción ósea. El sonido llega por el hueso del pómulo y el oído queda libre, así que oyes coches, bicis y a tu compañero. Se oyen peor en un gimnasio con música alta.</li>
+  <li><strong>Para el box o el gimnasio:</strong> intrauditivos con gancho. Aíslan mejor y no se caen en burpees, remo ni saltos. Por la calle te aíslan demasiado del tráfico.</li>
 </ul>
-<p>Si además quieres medir bien tus rodajes suaves mientras escuchas, mira nuestro <a href="/productos/pulsometros">ranking de pulsómetros</a>: una banda de pecho es lo que mejor separa una tirada en zona 2 de una que no lo es.</p>
+<p>Si además quieres medir bien tus rodajes suaves mientras escuchas, mira nuestra <a href="/productos/pulsometros">guía de pulsómetros</a>: una banda de pecho es lo que mejor separa una tirada en zona 2 de una que no lo es.</p>
 
 <h2>Y ahora, a por tu carrera</h2>
 <p>Escuchar está bien; competir está mejor. Si todavía no tienes claro qué es una carrera híbrida o en qué se diferencia HYROX de una OCR, empieza por la <a href="/que-es-una-carrera-hibrida">guía de carreras híbridas</a>. Si ya lo tienes claro, busca fecha en el <a href="/calendario">calendario de carreras híbridas en España</a> o mira directamente las <a href="/carreras-hibridas/madrid">carreras híbridas en Madrid</a>.</p>

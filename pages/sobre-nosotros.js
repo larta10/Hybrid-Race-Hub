@@ -1,10 +1,9 @@
 import Head from "next/head";
 import PageShell, { Breadcrumbs } from "../components/PageShell";
 import { SITE_URL, SITE_NAME, SITE_EMAIL, SITE_INSTAGRAM, ROBOTS_INDEX } from "../lib/site";
-import { TAG } from "../lib/rankings";
 
 const PATH = "/sobre-nosotros";
-const UPDATED = "2026-10-14";
+const UPDATED = "2026-11-10";
 
 export default function SobreNosotros() {
   const url = `${SITE_URL}${PATH}`;
@@ -63,7 +62,7 @@ export default function SobreNosotros() {
           <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Sobre nosotros" }]} />
           <p className="section-label">Quiénes somos</p>
           <h1 className="guide-title">Sobre Hybrid Race Hub</h1>
-          <p className="guide-updated">Última actualización: <time dateTime={UPDATED}>14 de octubre de 2026</time></p>
+          <p className="guide-updated">Última actualización: <time dateTime={UPDATED}>10 de noviembre de 2026</time></p>
         </div>
 
         <div className="guide-body">
@@ -100,22 +99,18 @@ export default function SobreNosotros() {
             <li>¿Organizas una prueba o has visto un error? Escríbenos a <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a> o usa el <a href="/contacto-organizadores">formulario para organizadores</a>.</li>
           </ul>
 
-          <h2>¿Cómo elegimos los productos de los rankings?</h2>
+          <h2>¿Cómo escribimos las guías de material?</h2>
           <ol>
-            <li><strong>Uso real en carrera</strong>: priorizamos modelos usados en competición de OCR o HYROX, por nosotros o por atletas de nuestro entorno.</li>
-            <li><strong>Tres franjas de precio</strong>: en cada ranking intentamos que haya una opción económica, una intermedia y una de gama alta.</li>
+            <li><strong>Primero el uso</strong>: explicamos qué pide cada prueba (moqueta y trineo en HYROX, barro y agua en OCR) y qué tiene que tener el material para eso.</li>
+            <li><strong>Criterios antes que modelos</strong>: si citamos un modelo es como ejemplo de un tipo de producto, no como lista de la compra.</li>
             <li><strong>Datos técnicos</strong>: comparamos peso, drop, autonomía, sensores y agarre, no las descripciones de marketing.</li>
-            <li><strong>Revisión periódica</strong>: cuando sale un modelo nuevo relevante o cambia mucho el precio, actualizamos el ranking y su fecha de revisión.</li>
+            <li><strong>Revisión periódica</strong>: cuando cambia algo relevante, actualizamos la guía y su fecha de revisión.</li>
           </ol>
-          <p>[COMPLETAR PABLO: qué productos de los rankings has usado tú personalmente y en qué pruebas.]</p>
 
-          <h2>Política de afiliación</h2>
+          <h2>Independencia</h2>
           <p>
-            Algunos enlaces de los rankings llevan a Amazon con nuestro código de afiliado (<code>{TAG}</code>). Si compras a través de ellos,
-            Amazon nos paga una pequeña comisión y a ti no te cuesta nada más. Esos enlaces van marcados como patrocinados para los buscadores.
-          </p>
-          <p>
-            La comisión no decide el orden del ranking: si un producto no lo recomendaríamos, no aparece. Como Afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables.
+            No tenemos enlaces de afiliado ni cobramos a marcas por aparecer en las guías. Si recomendamos algo, es porque lo usaríamos.
+            Cuando enlazamos a otro proyecto, como Buscar Pareja Híbrida, es porque creemos que te sirve.
           </p>
 
           <h2>Contacto</h2>

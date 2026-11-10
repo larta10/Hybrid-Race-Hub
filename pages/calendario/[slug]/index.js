@@ -107,7 +107,7 @@ export default function Hub({ mod, races, regions, season, months, others, gener
           <h2 id="preparar">Cómo prepararla</h2>
           <p>
             Antes de inscribirte, lee <a href={mod.guide.href}>{mod.guide.label.charAt(0).toLowerCase() + mod.guide.label.slice(1)}</a>.
-            Para el calzado, el ranking de <a href={mod.ranking.href}>{mod.ranking.label.toLowerCase()}</a>, y para encontrar box con material,
+            Para el calzado, la guía de <a href={mod.ranking.href}>{mod.ranking.label.toLowerCase()}</a>, y para encontrar box con material,
             el <a href="/centros-entrenamiento">directorio de centros por ciudad</a>.
           </p>
 

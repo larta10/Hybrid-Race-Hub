@@ -100,7 +100,7 @@ export default {
   <li><strong>Practica las wall balls y las zancadas</strong> en volumen, porque llegan al final y es donde más tiempo se pierde.</li>
   <li><strong>Ensaya el trineo</strong> si tu gimnasio tiene uno. Si no, sustitúyelo por empujes de carga pesada y sentadillas.</li>
 </ul>
-<p>Si quieres un plan concreto semana a semana, tienes nuestro <a href="/blog/plan-entrenamiento-hyrox-12-semanas">plan de entrenamiento HYROX de 12 semanas</a>. Y para el calzado, el <a href="/productos/zapatillas-hyrox">ranking de zapatillas para HYROX</a> compara modelos que agarran en el trineo y sirven para correr.</p>
+<p>Si quieres un plan concreto semana a semana, tienes nuestro <a href="/blog/plan-entrenamiento-hyrox-12-semanas">plan de entrenamiento HYROX de 12 semanas</a>. Y para el calzado, la <a href="/productos/zapatillas-hyrox">guía de zapatillas para HYROX</a> explica qué tiene que tener una zapatilla para agarrar en el trineo y sirven para correr.</p>
 
 <h2>Estrategia estación por estación</h2>
 <p>Lo que sigue son las claves que más tiempo ahorran en cada estación. No hay atajos: hay que entrenarlas, pero saber qué buscar ayuda.</p>

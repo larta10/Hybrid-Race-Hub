@@ -101,7 +101,7 @@ export default {
   <li><strong>Wall balls, zancadas y farmers carry</strong> en volumen, que son las estaciones de fuerza resistente.</li>
   <li><strong>Si vas en parejas o equipos,</strong> ensayad juntos cómo os repartís el trabajo.</li>
 </ol>
-<p>Para una estructura semana a semana, adapta el <a href="/blog/plan-entrenamiento-hyrox-12-semanas">plan de 12 semanas</a> reduciendo el volumen de carrera, y para el calzado mira el <a href="/productos/zapatillas-hyrox">ranking de zapatillas para HYROX</a>: lo que sirve para HYROX sirve para HURBAX.</p>
+<p>Para una estructura semana a semana, adapta el <a href="/blog/plan-entrenamiento-hyrox-12-semanas">plan de 12 semanas</a> reduciendo el volumen de carrera, y para el calzado mira la <a href="/productos/zapatillas-hyrox">guía de zapatillas para HYROX</a>: lo que sirve para HYROX sirve para HURBAX.</p>
 
 <h2>Preguntas frecuentes</h2>
 <div data-block="faq"></div>

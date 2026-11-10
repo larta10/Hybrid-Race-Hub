@@ -1,5 +1,4 @@
 ﻿import { useEffect } from "react";
-import { trackAffiliateClick } from "../lib/track";
 import Script from "next/script";
 import Head from "next/head";
 import dynamic from "next/dynamic";
@@ -22,34 +21,6 @@ const ConsentBanner = dynamic(() => import("../components/ConsentBanner"), { ssr
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  // amazon_click: un único listener delegado cubre rankings, artículos y comunidad
-  useEffect(() => {
-    function onClick(e) {
-      const a = e.target.closest && e.target.closest("a[href]");
-      if (!a || !/(^|\.)amazon\.[a-z.]+\//i.test(a.href.replace(/^https?:\/\//, ""))) return;
-      // Los enlaces de AffiliateLink / renderAffiliateHtml traen producto, categoría y posición en data-aff-*
-      const card = a.closest("li, .product-row, .product-card, article");
-      const name = a.dataset.affName || card?.querySelector(".product-name, h2, h3")?.textContent?.trim() || a.textContent.trim();
-      const all = [...document.querySelectorAll("a[data-aff]")];
-      const position = Number(a.dataset.affPos) || (all.indexOf(a) + 1) || undefined;
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "amazon_click",
-        product_name: name.slice(0, 100),
-        product_id: a.dataset.aff || undefined,
-        product_category: a.dataset.affCat || undefined,
-        position,
-        link_url: a.href,
-        page_path: window.location.pathname,
-      });
-      // Conversión principal (ver docs/sem/GTM-CONFIG.md)
-      const rankingFromPath = (window.location.pathname.match(/^\/productos\/([^/]+)/) || [])[1];
-      trackAffiliateClick({ product: name, ranking: rankingFromPath || a.dataset.affCat || "articulo", position });
-    }
-    document.addEventListener("click", onClick, true);
-    return () => document.removeEventListener("click", onClick, true);
-  }, []);
-
   // Tablas escritas en JSX: mismo data-label que las del blog para apilarlas en móvil
   useEffect(() => {
     const label = () => document.querySelectorAll("table").forEach(t => {

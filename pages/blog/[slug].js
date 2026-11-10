@@ -145,11 +145,6 @@ export default function BlogPost({ post, toc, related, races, relatedLinks = [] 
         <div className="art-layout">
           <div className="art-main">
             <Toc toc={toc} variant="inline" />
-            {post.hasAffiliate && (
-              <p className="aff-disclosure">
-                Este artículo contiene enlaces de afiliado: si compras a través de ellos, Hybrid Race Hub recibe una pequeña comisión sin coste extra para ti.
-              </p>
-            )}
             <ArticleBody html={post.content} faq={post.faq} races={races} pageUrl={url} className="art-body" />
             <ShareButtons url={url} title={post.h1} />
             <ArticleCta category={post.category} />

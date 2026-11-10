@@ -1,5 +1,4 @@
-// Artículo: material para HYROX y OCR. Productos desde data/products.js (enlaces con buildAmazonUrl).
-// Sin precios: Amazon no permite mostrarlos escritos a mano.
+// Artículo: material para HYROX y OCR. Recomendaciones editoriales, sin enlaces de compra ni precios.
 export default {
   slug: "material-hyrox-carreras-obstaculos",
   title: "Material para HYROX y carreras de obstáculos: lo que de verdad necesitas",
@@ -19,7 +18,7 @@ export default {
   content: `
 <p><strong>Para tu primera HYROX solo necesitas unas zapatillas estables que sirvan para correr y ropa cómoda; para una carrera de obstáculos (OCR), unas zapatillas de trail con tacos que drenen el agua y ropa técnica que no se empape.</strong> Guantes, reloj, pulsómetro y material de recuperación ayudan, pero pueden esperar a que sepas que te engancha. Abajo lo tienes ordenado por necesidad, con lo bueno y lo malo de cada producto.</p>
 
-<p>Una aclaración antes de empezar: algunos enlaces son de afiliado de Amazon. Si compras a través de ellos, nos llevamos una pequeña comisión y a ti te cuesta lo mismo. No ponemos precios porque cambian cada semana y Amazon no permite mostrarlos copiados a mano; el botón te lleva a la ficha con el precio actualizado. Si quieres ir más a fondo en una categoría, tenemos rankings de <a href="/productos/zapatillas-hyrox">zapatillas para HYROX</a>, <a href="/productos/zapatillas-trail">zapatillas trail para OCR</a>, <a href="/productos/relojes">relojes GPS</a> y <a href="/productos/pulsometros">pulsómetros</a>.</p>
+<p>No hay enlaces de compra ni precios: los modelos que citamos son ejemplos de lo que funciona, no una lista de la compra. Si quieres ir más a fondo en una categoría, tenemos guías para elegir <a href="/productos/zapatillas-hyrox">zapatillas para HYROX</a>, <a href="/productos/zapatillas-trail">zapatillas trail para OCR</a>, <a href="/productos/relojes">relojes GPS</a> y <a href="/productos/pulsometros">pulsómetros</a>.</p>
 
 <h2>¿Qué es imprescindible y qué puede esperar?</h2>
 <div class="table-wrap"><table>
@@ -44,7 +43,6 @@ export default {
   <li><strong>A favor:</strong> estabilidad en estaciones de fuerza; refuerzo lateral que aguanta la cuerda y el roce.</li>
   <li><strong>En contra:</strong> para 8 km se queda corta de amortiguación si pesas mucho o corres con mala técnica.</li>
 </ul>
-<p><a data-product="nike-metcon-9">Ver precio de las Nike Metcon 9 en Amazon</a></p>
 
 <h3>Reebok Nano X4</h3>
 <p>La alternativa directa a las Metcon, con una sensación algo más cómoda para los tramos de carrera.</p>
@@ -52,7 +50,6 @@ export default {
   <li><strong>A favor:</strong> versátil para correr y levantar; horma más amplia, buena si tienes el pie ancho.</li>
   <li><strong>En contra:</strong> algo más pesada que una zapatilla de running.</li>
 </ul>
-<p><a data-product="reebok-nano-x4">Ver precio de las Reebok Nano X4 en Amazon</a></p>
 
 <h3>Si priorizas la carrera: ASICS Gel-Kayano 31</h3>
 <p>Si vienes del running y la carrera es tu punto fuerte, puedes competir con una zapatilla de running estable. La Kayano es el modelo de estabilidad de ASICS.</p>
@@ -60,7 +57,6 @@ export default {
   <li><strong>A favor:</strong> mucha comodidad en los 8 km y estabilidad para una zapatilla de correr.</li>
   <li><strong>En contra:</strong> en el trineo y en las zancadas notarás que se hunde más que una de entrenamiento.</li>
 </ul>
-<p><a data-product="asics-gel-kayano-31">Ver precio de las ASICS Gel-Kayano 31 en Amazon</a></p>
 
 <h2>Zapatillas para carreras de obstáculos: agarre y drenaje</h2>
 <p>En una OCR el problema es el terreno: barro, piedras, agua y cuestas. Necesitas tacos profundos, un ajuste que no se mueva cuando la zapatilla está empapada y que drene rápido. La impermeabilidad (Gore-Tex) no ayuda en una OCR: el agua entra por arriba y luego no sale.</p>
@@ -71,7 +67,6 @@ export default {
   <li><strong>A favor:</strong> agarre en barro y hierba mojada; drena rápido y pesa poco.</li>
   <li><strong>En contra:</strong> poca amortiguación para tramos largos de pista o asfalto; horma estrecha.</li>
 </ul>
-<p><a data-product="inov-8-x-talon-212-v2">Ver precio de las Inov-8 X-Talon 212 v2 en Amazon</a></p>
 
 <h3>Salomon Speedcross 6</h3>
 <p>Un clásico del trail con suela agresiva y más amortiguación que la X-Talon. Buena opción si tu OCR tiene mucho tramo corriendo por montaña.</p>
@@ -79,7 +74,6 @@ export default {
   <li><strong>A favor:</strong> cómoda en distancias largas; sistema de cordones rápido que no se afloja con el barro.</li>
   <li><strong>En contra:</strong> menos precisa en obstáculos técnicos; en terreno duro los tacos se notan.</li>
 </ul>
-<p><a data-product="salomon-speedcross-6">Ver precio de las Salomon Speedcross 6 en Amazon</a></p>
 
 <h3>Para debutar: New Balance Fresh Foam X Hierro v8</h3>
 <p>Zapatilla de trail cómoda y amortiguada, más polivalente que las anteriores. Si no sabes si vas a repetir, es una compra que también te servirá para correr por montaña.</p>
@@ -87,7 +81,6 @@ export default {
   <li><strong>A favor:</strong> comodidad; sirve para entrenar en caminos durante todo el año.</li>
   <li><strong>En contra:</strong> en barro profundo agarra menos que una zapatilla específica de OCR.</li>
 </ul>
-<p><a data-product="new-balance-fresh-foam-x-hierro-v8">Ver precio de las New Balance Hierro v8 en Amazon</a></p>
 
 <h2>Guantes y calleras: protege las manos</h2>
 <p>En una OCR, las cuerdas, los muros y las barras con barro destrozan las palmas. En HYROX son opcionales, aunque en el sled pull ayudan.</p>
@@ -96,54 +89,49 @@ export default {
   <li><strong>A favor:</strong> finos, se ajustan rápido y mantienen el tacto en barras y cuerdas.</li>
   <li><strong>En contra:</strong> con barro muy líquido pierden agarre; se desgastan si los usas para entrenar a diario.</li>
 </ul>
-<p><a data-product="mechanix-wear-fastfit">Ver precio de los Mechanix Wear FastFit en Amazon</a></p>
 <h3>Unbroken Grips 2.0</h3>
 <ul>
   <li><strong>A favor:</strong> protegen la palma en barra, anillas y cuerda sin cubrir toda la mano.</li>
   <li><strong>En contra:</strong> hay que acostumbrarse a ellas; no sirven para el farmers carry.</li>
 </ul>
-<p><a data-product="unbroken-grips-2-0">Ver precio de las Unbroken Grips 2.0 en Amazon</a></p>
 
 <h2>Ropa: nada de algodón</h2>
 <p>El algodón absorbe agua y sudor, pesa y roza. En HYROX te vale cualquier ropa técnica cómoda; en una OCR, protege las piernas de arañazos en alambradas y arrastres.</p>
 <ul>
-  <li><strong>Mallas de compresión largas:</strong> protegen de arañazos y no se enganchan. <a data-product="2xu-core-compression-tights">Ver las 2XU Core Compression Tights en Amazon</a></li>
-  <li><strong>Calcetines altos de compresión:</strong> protegen la tibia en arrastres y saltos. <a data-product="cep-the-run-compression-socks">Ver los CEP The Run Compression Socks en Amazon</a></li>
+  <li><strong>Mallas de compresión largas:</strong> protegen de arañazos y no se enganchan.</li>
+  <li><strong>Calcetines altos de compresión:</strong> protegen la tibia en arrastres y saltos.</li>
 </ul>
 
 <h2>Reloj y pulsómetro: para entrenar mejor, no para presumir</h2>
 <p>No hacen falta para competir, pero sí para entrenar con cabeza: controlar el ritmo de las series y que los rodajes largos sean de verdad suaves.</p>
 <h3>COROS PACE 3</h3>
 <ul>
-  <li><strong>A favor:</strong> ligero, con mucha batería y GPS fiable; la mejor relación calidad precio de nuestro <a href="/productos/relojes">ranking de relojes</a>.</li>
+  <li><strong>A favor:</strong> ligero, con mucha batería y GPS fiable; la mejor relación calidad precio de nuestra <a href="/productos/relojes">guía de relojes</a>.</li>
   <li><strong>En contra:</strong> la app y las métricas de recuperación son más simples que las de Garmin.</li>
 </ul>
-<p><a data-product="coros-pace-3">Ver precio del COROS PACE 3 en Amazon</a></p>
 <h3>Garmin Forerunner 265</h3>
 <ul>
   <li><strong>A favor:</strong> pantalla AMOLED muy legible y el ecosistema de Garmin (planes, estado de entrenamiento, compatibilidad con todo).</li>
   <li><strong>En contra:</strong> más caro que el COROS por prestaciones parecidas para entrenar HYROX.</li>
 </ul>
-<p><a data-product="garmin-forerunner-265">Ver precio del Garmin Forerunner 265 en Amazon</a></p>
 <h3>Garmin HRM-Pro Plus (banda de pecho)</h3>
 <ul>
   <li><strong>A favor:</strong> la frecuencia cardiaca de pecho es mucho más precisa que la de muñeca en series y estaciones con movimiento de brazos.</li>
   <li><strong>En contra:</strong> a mucha gente le molesta la banda; solo merece la pena si vas a entrenar por pulsaciones.</li>
 </ul>
-<p><a data-product="garmin-hrm-pro-plus">Ver precio del Garmin HRM-Pro Plus en Amazon</a></p>
 
 <h2>Si entrenas en casa: lo justo para las estaciones</h2>
 <p>Si tu gimnasio no tiene material de HYROX o entrenas en casa, con cuatro cosas puedes practicar casi todas las estaciones:</p>
 <ul>
-  <li><strong>Kettlebell de 16 kg:</strong> farmers carry, swings y zancadas con carga. Si progresas, te pedirá una segunda más pesada. <a data-product="kettlebell-16-kg">Ver kettlebells de 16 kg en Amazon</a></li>
-  <li><strong>Balón de wall ball:</strong> la estación donde más tiempo se pierde. 4 kg para Open mujeres, 6 kg para Open hombres. Necesitas una pared alta y resistente. <a data-product="balon-medicinal-wall-ball">Ver balones de wall ball en Amazon</a></li>
-  <li><strong>Chaleco lastrado:</strong> para zancadas y para correr con carga. Molesta si no se ajusta bien. <a data-product="chaleco-lastrado">Ver chalecos lastrados en Amazon</a></li>
-  <li><strong>Comba de velocidad:</strong> barata y útil para calentar y para intervalos. <a data-product="cuerda-para-saltar-speed-rope">Ver combas de velocidad en Amazon</a></li>
+  <li><strong>Kettlebell de 16 kg:</strong> farmers carry, swings y zancadas con carga. Si progresas, te pedirá una segunda más pesada.</li>
+  <li><strong>Balón de wall ball:</strong> la estación donde más tiempo se pierde. 4 kg para Open mujeres, 6 kg para Open hombres. Necesitas una pared alta y resistente.</li>
+  <li><strong>Chaleco lastrado:</strong> para zancadas y para correr con carga. Molesta si no se ajusta bien.</li>
+  <li><strong>Comba de velocidad:</strong> barata y útil para calentar y para intervalos.</li>
 </ul>
 <p>Lo que no se puede sustituir del todo es el trineo. Busca un centro con trineo y SkiErg en el <a href="/centros-entrenamiento">directorio de centros</a> y ve al menos dos o tres veces antes de la carrera.</p>
 
 <h2>Recuperación: un rodillo antes que una pistola de masaje</h2>
-<p>Antes de gastar en una pistola de masaje, prueba un rodillo de espuma firme. Es barato, no tiene batería y cubre lo básico después de las sesiones de fuerza y de los rodajes largos. <a data-product="triggerpoint-grid-foam-roller">Ver el TriggerPoint GRID en Amazon</a></p>
+<p>Antes de gastar en una pistola de masaje, prueba un rodillo de espuma firme. Es barato, no tiene batería y cubre lo básico después de las sesiones de fuerza y de los rodajes largos.</p>
 
 <h2>Cómo cuidar el material después de una OCR</h2>
 <p>El barro y el agua estropean las zapatillas y los guantes mucho antes de tiempo si los guardas sucios en la bolsa. Lo que funciona:</p>

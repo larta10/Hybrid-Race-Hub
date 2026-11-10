@@ -70,7 +70,7 @@ export function AuthorBox() {
 }
 
 const CTAS = {
-  Material: { title: "Compara antes de comprar", text: "Nuestros rankings comparan zapatillas, relojes, pulsómetros y ropa para HYROX y OCR, con pros y contras de cada modelo.", href: "/productos", cta: "Ver los rankings de material" },
+  Material: { title: "Antes de gastar", text: "Nuestras guías explican qué mirar en zapatillas, relojes, pulsómetros y ropa para HYROX y OCR, y qué conviene según tu perfil.", href: "/productos", cta: "Ver las guías de material" },
   Entrenamiento: { title: "Calcula tu tiempo de HYROX", text: "Mete tus tiempos de carrera y estaciones y mira dónde estás perdiendo minutos.", href: "/calculadora-hyrox", cta: "Abrir la calculadora HYROX" },
   Carreras: { title: "Elige fecha y ciudad", text: "Todas las carreras híbridas en España con fecha confirmada y enlace a la web oficial.", href: "/calendario", cta: "Ver el calendario" },
   Guías: { title: "¿Lista tu primera carrera?", text: "Busca una HYROX, DEKA, Spartan u OCR cerca de ti en el calendario de carreras híbridas.", href: "/calendario", cta: "Ver el calendario" },
@@ -105,13 +105,13 @@ export function RelatedPosts({ related }) {
 
 /* Enlazado fijo al final de cada artículo: calendario, zonas con más carreras y un ranking del tema. */
 const RANKING_BY_CATEGORY = {
-  Material: { href: "/productos/zapatillas-hyrox", label: "Ranking de zapatillas para HYROX" },
-  Entrenamiento: { href: "/productos/relojes", label: "Ranking de relojes GPS para entrenar" },
-  Carreras: { href: "/productos/zapatillas-trail", label: "Ranking de zapatillas de trail para OCR" },
-  Podcasts: { href: "/productos/pulsometros", label: "Ranking de pulsómetros" },
+  Material: { href: "/productos/zapatillas-hyrox", label: "Guía de zapatillas para HYROX" },
+  Entrenamiento: { href: "/productos/relojes", label: "Guía de relojes GPS para entrenar" },
+  Carreras: { href: "/productos/zapatillas-trail", label: "Guía de zapatillas de trail para OCR" },
+  Podcasts: { href: "/productos/pulsometros", label: "Guía de pulsómetros" },
 };
 export function ArticleNextSteps({ category }) {
-  const ranking = RANKING_BY_CATEGORY[category] || { href: "/productos/zapatillas-hyrox", label: "Ranking de zapatillas para HYROX" };
+  const ranking = RANKING_BY_CATEGORY[category] || { href: "/productos/zapatillas-hyrox", label: "Guía de zapatillas para HYROX" };
   return (
     <nav className="art-next" aria-label="Siguientes pasos">
       <p className="art-next-title">Busca tu carrera y prepárala</p>

@@ -19,7 +19,7 @@ const STATIC_LASTMOD = {
   "/centros-entrenamiento": "2026-11-03",
   "/calculadora-hyrox": "2026-10-27",
   "/race-hub": "2026-10-27",
-  "/productos": "2026-10-27",
+  "/productos": "2026-11-10",
   "/sobre-nosotros": "2026-10-27",
   "/contacto-organizadores": "2026-10-27",
   "/politica-cookies": "2026-10-27",
@@ -29,7 +29,7 @@ const STATIC_LASTMOD = {
   "/privacidad": "2026-11-03",
   "/aviso-legal": "2026-11-03",
 };
-const RANKINGS_LASTMOD = "2026-11-03";
+const RANKINGS_LASTMOD = "2026-11-10"; // guías de material (antes rankings)
 // Fecha del último cambio de las plantillas de home, calendario y regiones
 const TEMPLATE_LASTMOD = "2026-11-03";
 

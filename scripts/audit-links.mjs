@@ -6,7 +6,7 @@
 //   node scripts/audit-links.mjs http://localhost:3000 --no-external
 //
 // Deja el resultado en audit-report-<host>.json (ignorado en git) y un resumen por consola.
-// Amazon responde 503 a los bots: no se comprueba su estado, solo tag, rel y target.
+// La web ya no tiene afiliación: cualquier enlace a Amazon se reporta como problema.
 import { writeFileSync } from "node:fs";
 
 const args = process.argv.slice(2);
@@ -14,7 +14,6 @@ const BASE = (args.find(a => /^https?:\/\//.test(a)) || "http://localhost:3000")
 const CHECK_EXTERNAL = !args.includes("--no-external");
 const ORIGIN = new URL(BASE).origin;
 const SITE_HOSTS = new Set([new URL(BASE).host, "hybridracehub.com", "www.hybridracehub.com"]);
-const AMAZON_TAG = "hybridracehub-21";
 const UA = "Mozilla/5.0 (compatible; HRH-audit/1.0; +https://hybridracehub.com)";
 const MAX_PAGES = 600;
 
@@ -74,12 +73,8 @@ async function crawlPage(path) {
     let abs;
     try { abs = new URL(href, ORIGIN + path); } catch { continue; }
     if (/(^|\.)amazon\.[a-z.]+$|(^|\.)amzn\.to$/i.test(abs.host)) {
-      const rel = (attr(tag, "rel") || "").split(/\s+/);
-      const problems = [];
-      if (abs.host !== "amzn.to" && abs.searchParams.get("tag") !== AMAZON_TAG) problems.push("tag");
-      for (const need of ["sponsored", "nofollow", "noopener"]) if (!rel.includes(need)) problems.push("rel:" + need);
-      if (attr(tag, "target") !== "_blank") problems.push("target");
-      if (problems.length) amazonIssues.push({ page: path, href: abs.href, problems });
+      // Ya no hay afiliación: cualquier enlace a Amazon es un resto que hay que quitar
+      amazonIssues.push({ page: path, href: abs.href, problems: ["enlace a Amazon"] });
       continue;
     }
     const p = normInternal(href, path);
