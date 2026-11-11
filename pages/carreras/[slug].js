@@ -15,6 +15,8 @@ import { downloadIcs, onOrganizerClick } from "../../lib/race-actions";
 import PartnerBuscarPareja from "../../components/PartnerBuscarPareja";
 import { isTeamRace } from "../../lib/partners";
 import { relatedForRace } from "../../lib/related";
+import { planHrefForRace } from "../../lib/plan/from-race.js";
+import { weeksUntil } from "../../lib/plan/dates.js";
 
 const NOINDEX_AFTER_DAYS = 60;
 const addDays = (iso, n) => { const d = new Date(`${iso}T12:00:00Z`); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
@@ -80,6 +82,8 @@ export async function getStaticProps({ params }) {
       updated,
       related: relatedForRace({ race, mod, regions, centerCities, todayIso: today }),
       generated: today,
+      // Semanas completas hasta la carrera, para el botón del plan
+      weeksLeft: past ? null : weeksUntil(race.fecha_iso, today),
     },
     revalidate: 3600,
   };
@@ -118,7 +122,7 @@ function Actions({ race, url, pending }) {
   );
 }
 
-export default function Ficha({ race, past, teamRace, noindex, schema, organizer, mod, regions, sameMod, sameRegion, nextEdition, centerCities, centers, updated, related }) {
+export default function Ficha({ race, past, teamRace, noindex, schema, organizer, mod, regions, sameMod, sameRegion, nextEdition, centerCities, centers, updated, related, weeksLeft }) {
   const path = `/carreras/${race.slug}`;
   const url = `${SITE_URL}${path}`;
   const h1 = raceDisplayName(race);
@@ -203,6 +207,12 @@ export default function Ficha({ race, past, teamRace, noindex, schema, organizer
             </p>
           )}
           {!past && <Actions race={race} url={url} pending={status.key === "por_confirmar"} />}
+          {!past && weeksLeft != null && weeksLeft >= 0 && (
+            <p className="race-plan">
+              <a className="btn-line" href={planHrefForRace(race)}>Prepárala: plan gratis</a>
+              <span>{weeksLeft >= 4 ? `Faltan ${weeksLeft} semanas. Te damos el plan semana a semana hasta el día de la carrera.` : "Queda poco: te damos una puesta a punto para llegar descansado y con las estaciones ensayadas."}</span>
+            </p>
+          )}
           {race.notas && <p className="race-notes">{race.notas}</p>}
           {!past && teamRace && <PartnerBuscarPareja variant="compacta" placement="ficha_carrera" />}
           <p className="guide-note">Fecha, precio y plazas los publica el organizador y pueden cambiar: confírmalos en su web antes de pagar.</p>

@@ -160,7 +160,7 @@ export default function Calendario({ races = [], season, today, recent = [], mon
         </div>
 
         {filtered.length
-          ? <RaceList races={filtered} pageUrl={`${SITE_URL}/calendario`} groupByYear />
+          ? <RaceList races={filtered} pageUrl={`${SITE_URL}/calendario`} groupByYear today={today} />
           : (
             <div className="cal-empty">
               <p className="cal-empty-title">Ninguna carrera con esos filtros</p>

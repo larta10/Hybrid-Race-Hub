@@ -47,6 +47,13 @@ const nextConfig = {
           { key: "X-Robots-Tag", value: "noindex, nofollow" },
         ],
       },
+      // Landings del plan abiertas con respuestas en la URL (desde el calendario o "Cambiar respuestas"):
+      // noindex; el canonical de la página ya apunta a la landing limpia.
+      ...["/plan-entrenamiento-hyrox", "/plan-entrenamiento-hyrox/:variante", "/plan-entrenamiento-ocr"].map(source => ({
+        source,
+        has: [{ type: "query", key: "prueba" }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }],
+      })),
       {
         /* API routes — never indexed */
         source: "/api/(.*)",
