@@ -14,11 +14,15 @@ const nextConfig = {
   // Las antiguas páginas /calendario/<ciudad> pasan a /carreras-hibridas/<ciudad> (301).
   // Solo redirecciones de ruta: el dominio no se toca desde el código.
   async redirects() {
-    return ["bilbao", "barcelona", "madrid", "valencia", "malaga", "sevilla", "zaragoza", "murcia"].map(slug => ({
-      source: `/calendario/${slug}`,
-      destination: `/carreras-hibridas/${slug}`,
-      permanent: true,
-    }));
+    return [
+      ...["bilbao", "barcelona", "madrid", "valencia", "malaga", "sevilla", "zaragoza", "murcia"].map(slug => ({
+        source: `/calendario/${slug}`,
+        destination: `/carreras-hibridas/${slug}`,
+        permanent: true,
+      })),
+      // El generador de planes se mudó a la página pilar (11/2026). 301 para no perder los enlaces ni el tráfico.
+      { source: "/plan-entrenamiento", destination: "/plan-entrenamiento-hyrox", statusCode: 301 },
+    ];
   },
 
   // Imágenes Open Graph del blog: URL pública /og (fuera de /api, que está bloqueado en robots.txt)

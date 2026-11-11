@@ -16,6 +16,7 @@
     "seo-report": "node scripts/seo-accessibility-report.js",
     "qa:layout": "node scripts/qa-layout.mjs",
     "lint": "eslint .",
+    "test": "node --test lib/plan/",
     "ig:preview": "node scripts/instagram/preview.mjs",
     "ig:validate": "node scripts/instagram/validate.mjs",
     "ig:publish": "node scripts/instagram/publish.mjs",
