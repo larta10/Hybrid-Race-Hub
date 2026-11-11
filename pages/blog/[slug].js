@@ -137,9 +137,14 @@ export default function BlogPost({ post, toc, related, races, relatedLinks = [] 
 
         {/* Foto de cabecera solo si es una foto real; la imagen generada (título sobre fondo de marca) se usa para redes y tarjetas */}
         {!post.generatedImage && (
-          <div className="art-cover">
-            <Image src={post.image} alt={post.imageAlt} fill priority quality={55} sizes="(min-width: 1280px) 1040px, 100vw" style={{ objectFit: "cover" }} />
-          </div>
+          <figure className="art-cover-fig">
+            <div className="art-cover">
+              <Image src={post.image} alt={post.imageAlt} fill priority quality={55} sizes="(min-width: 1280px) 1040px, 100vw" style={{ objectFit: "cover" }} />
+            </div>
+            {post.imageCredit && (
+              <figcaption className="art-credit"><a href={post.imageCredit.href} target="_blank" rel="noopener noreferrer">{post.imageCredit.text}</a></figcaption>
+            )}
+          </figure>
         )}
 
         <div className="art-layout">

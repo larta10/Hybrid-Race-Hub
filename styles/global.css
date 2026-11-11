@@ -2148,3 +2148,11 @@ input, select, textarea { font-size: 16px; }
 .race-plan .btn-line { justify-self: start; min-height: 48px; padding: 0 18px; font-size: 16px; text-decoration: none; color: var(--ink); }
 .race-plan span { font-size: 15px; line-height: 1.45; color: var(--text-muted); }
 @media (min-width: 720px) { .race-plan { grid-template-columns: auto 1fr; align-items: center; column-gap: var(--s2); } }
+
+/* ── Crédito de las fotos del blog (autor y licencia) ── */
+.art-cover-fig { max-width: 1040px; margin: 0 auto var(--s4); }
+.art-cover-fig .art-cover { margin-bottom: 0; }
+.art-credit { margin-top: 6px; font-size: 14px; line-height: 1.4; color: var(--muted2); }
+.art-credit a { color: inherit; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--border2); }
+.art-credit a:hover { color: var(--text); }
+@media (max-width: 720px) { .art-cover-fig { margin-bottom: var(--s3); } }

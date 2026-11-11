@@ -43,6 +43,8 @@ export default {
 </table></div>
 <p>Si trabajas a turnos, mueve los días como quieras, pero respeta dos reglas: no pongas las series y el combinado en días seguidos, y deja al menos un día libre después del combinado.</p>
 
+<div data-block="img" data-src="/blog/hyrox-trineo-empuje-lateral.webp" data-alt="Un participante empuja el trineo con el cuerpo inclinado y los brazos estirados" data-credit="Foto: U.S. Army, 3d U.S. Infantry Regiment (The Old Guard). Dominio público, vía Wikimedia Commons."></div>
+
 <h2>El plan semana a semana</h2>
 <p>Los ritmos se describen por sensación para que valgan para cualquier nivel: <strong>suave</strong> es un ritmo al que puedes hablar en frases completas, <strong>ritmo de carrera</strong> es el que crees que podrías mantener en los 8 km de una HYROX y <strong>fuerte</strong> es algo más rápido que eso.</p>
 

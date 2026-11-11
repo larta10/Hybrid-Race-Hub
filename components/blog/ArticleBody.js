@@ -95,8 +95,9 @@ export default function ArticleBody({ html, faq, races = null, pageUrl, classNam
           case "img": return (
             <figure key={i} className="art-figure">
               <div className="art-figure-img">
-                <Image src={attrs.src} alt={attrs.alt || ""} fill sizes="(min-width: 760px) 720px, 100vw" style={{ objectFit: "cover" }} />
+                <Image src={attrs.src} alt={attrs.alt || ""} fill quality={60} sizes="(min-width: 760px) 720px, 100vw" style={{ objectFit: "cover" }} />
               </div>
+              {attrs.credit && <figcaption className="art-credit">{attrs.credit}</figcaption>}
             </figure>
           );
           default: return null;

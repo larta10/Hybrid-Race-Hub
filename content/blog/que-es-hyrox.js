@@ -42,6 +42,8 @@ export default {
 
 <p>En la modalidad por parejas (Doubles) los dos corréis juntos los 8 km y os repartís las repeticiones de cada estación como queráis. En relevos (Relay), cada uno de los cuatro miembros del equipo hace 2 km de carrera y 2 estaciones.</p>
 
+<div data-block="img" data-src="/blog/hyrox-trineo-empuje.webp" data-alt="Un participante empuja el trineo cargado de discos mientras otros esperan su turno" data-credit="Foto: U.S. Army, 3d U.S. Infantry Regiment (The Old Guard). Dominio público, vía Wikimedia Commons."></div>
+
 <h2>¿Qué pesos se usan en cada categoría?</h2>
 <p>El SkiErg, los burpees y el remo son iguales para todos. Lo que cambia según la categoría es el peso del trineo (incluye el propio trineo), las kettlebells del farmer carry (el peso es por mano), el saco de las zancadas y el balón de las wall balls. Estos son los pesos que publica HYROX en su web oficial:</p>
 
@@ -101,6 +103,8 @@ export default {
   <li><strong>Ensaya el trineo</strong> si tu gimnasio tiene uno. Si no, sustitúyelo por empujes de carga pesada y sentadillas.</li>
 </ul>
 <p>Si quieres un plan concreto semana a semana, tienes nuestro <a href="/blog/plan-entrenamiento-hyrox-12-semanas">plan de entrenamiento HYROX de 12 semanas</a>, y si ya tienes fecha, el <a href="/plan-entrenamiento-hyrox">plan gratis que se ajusta a tu carrera</a>. Y para el calzado, la <a href="/productos/zapatillas-hyrox">guía de zapatillas para HYROX</a> explica qué tiene que tener una zapatilla para agarrar en el trineo y sirven para correr.</p>
+
+<div data-block="img" data-src="/blog/hyrox-trineo-arrastre.webp" data-alt="Un participante tira de la cuerda para arrastrar el trineo en la estación de sled pull" data-credit="Foto: U.S. Army, 3d U.S. Infantry Regiment (The Old Guard). Dominio público, vía Wikimedia Commons."></div>
 
 <h2>Estrategia estación por estación</h2>
 <p>Lo que sigue son las claves que más tiempo ahorran en cada estación. No hay atajos: hay que entrenarlas, pero saber qué buscar ayuda.</p>
