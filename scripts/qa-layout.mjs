@@ -38,7 +38,9 @@ const ROUTES = [
   "/carreras-hibridas/madrid",
   "/que-es-una-carrera-hibrida",
   "/sobre-nosotros",
-  "/plan-entrenamiento",
+  "/plan-entrenamiento-hyrox",
+  "/plan-entrenamiento-hyrox/principiantes",
+  "/plan-entrenamiento-ocr",
   "/esta-pagina-no-existe-qa",
 ];
 const SHOTS = "qa-screenshots";

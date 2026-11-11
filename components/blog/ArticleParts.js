@@ -71,7 +71,7 @@ export function AuthorBox() {
 
 const CTAS = {
   Material: { title: "Antes de gastar", text: "Nuestras guías explican qué mirar en zapatillas, relojes, pulsómetros y ropa para HYROX y OCR, y qué conviene según tu perfil.", href: "/productos", cta: "Ver las guías de material" },
-  Entrenamiento: { title: "Calcula tu tiempo de HYROX", text: "Mete tus tiempos de carrera y estaciones y mira dónde estás perdiendo minutos.", href: "/calculadora-hyrox", cta: "Abrir la calculadora HYROX" },
+  Entrenamiento: { title: "Llévate el plan hecho a tu fecha", text: "Pon el día de tu carrera, tu nivel y tu material y te damos las semanas que faltan, sesión a sesión. Gratis y sin registro.", href: "/plan-entrenamiento-hyrox", cta: "Crear mi plan gratis" },
   Carreras: { title: "Elige fecha y ciudad", text: "Todas las carreras híbridas en España con fecha confirmada y enlace a la web oficial.", href: "/calendario", cta: "Ver el calendario" },
   Guías: { title: "¿Lista tu primera carrera?", text: "Busca una HYROX, DEKA, Spartan u OCR cerca de ti en el calendario de carreras híbridas.", href: "/calendario", cta: "Ver el calendario" },
   Podcasts: { title: "De los auriculares a la línea de salida", text: "Cuando tengas claro qué carrera quieres, búscala en el calendario con fecha y ciudad.", href: "/calendario", cta: "Ver el calendario" },
@@ -117,6 +117,7 @@ export function ArticleNextSteps({ category }) {
       <p className="art-next-title">Busca tu carrera y prepárala</p>
       <ul>
         <li><Link href="/calendario">Calendario de carreras híbridas en España</Link></li>
+        <li><Link href="/plan-entrenamiento-hyrox">Plan de entrenamiento gratis, a tu fecha</Link></li>
         <li><Link href="/carreras-hibridas/madrid">Carreras híbridas en Madrid</Link></li>
         <li><Link href="/carreras-hibridas/cataluna">Carreras híbridas en Cataluña</Link></li>
         <li><Link href="/carreras-hibridas/andalucia">Carreras híbridas en Andalucía</Link></li>

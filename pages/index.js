@@ -5,6 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { SITE_URL, SITE_EMAIL, SITE_INSTAGRAM, ROBOTS_INDEX } from "../lib/site";
 import RaceList from "../components/RaceList";
+import PlanCta from "../components/plan/PlanCta";
 import PartnerBuscarPareja from "../components/PartnerBuscarPareja";
 import { fetchUpcomingRaces, seasonLabel, raceEventSchema, todayISO } from "../lib/races-server";
 import { CENTER_CITIES } from "../lib/center-cities";
@@ -170,9 +171,9 @@ function HomeSections() {
       cta: "Ver carreras",
     },
     {
-      href: "/plan-entrenamiento",
-      title: "Plan de entrenamiento",
-      desc: "Cinco preguntas y tienes un plan por semanas para una Spartan Sprint, una HYROX o el Open. Gratis, en Excel o PDF.",
+      href: "/plan-entrenamiento-hyrox",
+      title: "Plan de entrenamiento gratis",
+      desc: "Pon la fecha de tu HYROX, tu OCR o tu DEKA y te damos las semanas que faltan, sesión a sesión, con tus ritmos. En PDF o Excel.",
       cta: "Crear plan",
     },
     {
@@ -353,7 +354,7 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
             </p>
             <div className="hero-actions">
               <a href="/calendario" className="btn-solid">Ver el calendario</a>
-              <a href="/plan-entrenamiento" className="btn-line">Crear plan gratis</a>
+              <a href="/plan-entrenamiento-hyrox" className="btn-line">Crear plan gratis</a>
             </div>
           </div>
         </div>
@@ -369,6 +370,7 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
           {nextRaces.length
             ? <RaceList races={nextRaces} pageUrl={`${SITE_URL}/`} />
             : <p className="home-next-sub">Ahora mismo no podemos cargar las próximas fechas. Las tienes en el <a href="/calendario">calendario</a>.</p>}
+          <PlanCta title="¿Ya tienes carrera? Prepárala con un plan gratis" text="Elige la prueba y la fecha y te damos las semanas que faltan, sesión a sesión: carrera, estaciones y fuerza, con tus ritmos y tu material. Sin registro." />
           {upcomingCount > 0 && (
             <p className="home-next-sub">
               Hay {upcomingCount} carreras programadas en el calendario. Fechas y precios los publica cada organizador.
@@ -443,6 +445,8 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
               <li><a href="/que-es-una-carrera-hibrida">Qué es una carrera híbrida y qué tipos hay</a></li>
               <li><a href="/blog/que-es-hyrox">Qué es HYROX: estaciones, pesos y cómo inscribirte</a></li>
               <li><a href="/blog/carreras-hibridas-principiantes-primera-prueba">Cómo elegir tu primera carrera híbrida</a></li>
+              <li><a href="/plan-entrenamiento-hyrox">Plan de entrenamiento HYROX gratis, a tu fecha</a></li>
+              <li><a href="/plan-entrenamiento-ocr">Plan para carreras de obstáculos</a></li>
               <li><a href="/blog/plan-entrenamiento-hyrox-12-semanas">Plan de entrenamiento HYROX de 12 semanas</a></li>
               <li><a href="/blog/material-hyrox-carreras-obstaculos">Material para HYROX y carreras de obstáculos</a></li>
               <li><a href="/productos/zapatillas-hyrox">guía de zapatillas para HYROX</a></li>
@@ -471,9 +475,9 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
             <li className="step">
               <span className="step-num">02</span>
               <h3 className="step-title">Prepárala con un plan</h3>
-              <p className="step-text">Respondes cinco preguntas y te damos las semanas que faltan hasta la carrera, con cargas y días de descarga. Sin registro. Lo bajas en Excel o PDF.</p>
+              <p className="step-text">Pones la fecha y tu nivel y te damos las semanas que faltan hasta la carrera, con tus ritmos, descargas y taper. Sin registro. Lo bajas en PDF o Excel.</p>
               <p className="step-text step-text--small">¿Prefieres que te lleve un entrenador? Escríbenos a <a href="mailto:hola@hybridracehub.com">hola@hybridracehub.com</a></p>
-              <a href="/plan-entrenamiento" className="step-link">Crear mi plan →</a>
+              <a href="/plan-entrenamiento-hyrox" className="step-link">Crear mi plan →</a>
             </li>
             <li className="step">
               <span className="step-num">03</span>

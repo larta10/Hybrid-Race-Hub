@@ -2,7 +2,9 @@
 
 /* ── Cabecera de las landings: compacta para que el generador se vea sin hacer scroll ── */
 .hero { max-width: 760px; margin: 0 auto; padding: 16px 16px 0; }
-.hero :global(.crumbs) { margin-bottom: 10px; }
+.hero :global(.crumbs) { margin-bottom: 4px; }
+.hero :global(.crumbs), .plan :global(.crumbs) { align-items: center; }
+.hero :global(.crumbs) > span, .plan :global(.crumbs) > span { display: inline-flex; align-items: center; }
 .h1 { font-family: var(--font-display); font-size: clamp(26px, 7vw, 40px); font-weight: 800; line-height: 1.05; letter-spacing: -0.01em; color: var(--text); margin-bottom: 8px; }
 .lead { font-size: 16px; line-height: 1.45; color: var(--text-muted); margin-bottom: 14px; max-width: 60ch; }
 
@@ -56,7 +58,7 @@
 .free { margin-top: 10px; font-size: 14px; color: var(--text-muted); text-align: center; }
 
 @media (min-width: 600px) {
-  .hero { padding: 32px 24px 0; }
+  .hero { max-width: 808px; padding: 24px 24px 0; }
   .lead { font-size: 18px; margin-bottom: 20px; }
   .wizard { padding: 24px; }
   .grid4 { grid-template-columns: repeat(4, 1fr); }
@@ -169,7 +171,7 @@
 .foot :global(.btn-line), .foot :global(.btn-solid) { min-height: 48px; text-align: center; }
 
 @media (min-width: 600px) {
-  .plan { padding: 32px 24px 96px; }
+  .plan { max-width: 808px; padding: 24px 24px 96px; }
   .actions { grid-template-columns: repeat(4, auto); justify-content: start; }
   .stats { grid-template-columns: repeat(4, 1fr); }
   .stats div:nth-child(n+3) { border-top: 0; }

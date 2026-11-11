@@ -15,7 +15,11 @@ const BASE = `${SITE_URL}`;
 // Actualiza la fecha cuando cambies el texto visible o el title/description de la página.
 const STATIC_LASTMOD = {
   "/que-es-una-carrera-hibrida": "2026-11-03",
-  "/plan-entrenamiento": "2026-11-03",
+  "/plan-entrenamiento-hyrox": "2026-11-11",
+  "/plan-entrenamiento-hyrox/principiantes": "2026-11-11",
+  "/plan-entrenamiento-hyrox/12-semanas": "2026-11-11",
+  "/plan-entrenamiento-hyrox/dobles": "2026-11-11",
+  "/plan-entrenamiento-ocr": "2026-11-11",
   "/centros-entrenamiento": "2026-11-03",
   "/calculadora-hyrox": "2026-10-27",
   "/race-hub": "2026-10-27",
@@ -95,7 +99,10 @@ export async function getServerSideProps({ res }) {
     { loc: `${BASE}/que-es-una-carrera-hibrida`, lastmod: STATIC_LASTMOD["/que-es-una-carrera-hibrida"], changefreq: "weekly",  priority: "0.9" },
     { loc: `${BASE}/calendario`,                lastmod: racesLastmod, changefreq: "daily",   priority: "0.9" },
     { loc: `${BASE}/blog`,                      lastmod: newest, changefreq: "weekly",  priority: "0.8" },
-    ...["/plan-entrenamiento", "/centros-entrenamiento", "/calculadora-hyrox", "/race-hub", "/productos", "/sobre-nosotros", "/contacto-organizadores", "/politica-cookies", "/como-verificamos-las-carreras", "/organizadores", "/carreras-hibridas", "/privacidad", "/aviso-legal"]
+    // Plan de entrenamiento: página pilar y variantes (/mi-plan no va: lleva noindex)
+    ...["/plan-entrenamiento-hyrox", "/plan-entrenamiento-hyrox/principiantes", "/plan-entrenamiento-hyrox/12-semanas", "/plan-entrenamiento-hyrox/dobles", "/plan-entrenamiento-ocr"]
+      .map((p) => ({ loc: `${BASE}${p}`, lastmod: STATIC_LASTMOD[p], changefreq: "monthly", priority: p === "/plan-entrenamiento-hyrox" ? "0.9" : "0.8" })),
+    ...["/centros-entrenamiento", "/calculadora-hyrox", "/race-hub", "/productos", "/sobre-nosotros", "/contacto-organizadores", "/politica-cookies", "/como-verificamos-las-carreras", "/organizadores", "/carreras-hibridas", "/privacidad", "/aviso-legal"]
       .map((p) => ({ loc: `${BASE}${p}`, lastmod: STATIC_LASTMOD[p], changefreq: "monthly", priority: p === "/centros-entrenamiento" ? "0.8" : "0.6" })),
 
     ...PRODUCT_SLUGS.map((slug) => ({

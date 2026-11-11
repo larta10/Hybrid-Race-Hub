@@ -6,7 +6,7 @@ export default {
   h1: "Plan de entrenamiento HYROX de 12 semanas para tu primera carrera",
   category: "Entrenamiento",
   date: "2026-10-15",
-  updated: "2026-10-15",
+  updated: "2026-11-11",
   excerpt: "Doce semanas, cuatro días de entrenamiento y una tabla clara para llegar a tu primera HYROX corriendo con piernas y sin quedarte atascado en las wall balls. Con adaptaciones si empiezas de cero o si ya corres.",
   description: "Plan de entrenamiento HYROX de 12 semanas para principiantes: 4 días por semana, tabla semana a semana, sesiones tipo y adaptaciones si empiezas de cero o ya corres.",
   faq: [
@@ -18,7 +18,7 @@ export default {
   content: `
 <p><strong>Para preparar tu primera HYROX en 12 semanas necesitas entrenar cuatro días por semana: dos días de carrera (uno de series y otro de rodaje largo), uno de fuerza y uno de entrenamiento combinado en el que encadenas 1 km corriendo con estaciones.</strong> El plan va en tres bloques de cuatro semanas: base, construcción y puesta a punto, con la última semana muy suave para llegar fresco.</p>
 
-<p>Está pensado para alguien que puede correr 5 km seguidos aunque sea despacio y que va a competir en categoría Open (individual) o Doubles. Si te estás planteando si HYROX es para ti, empieza por <a href="/blog/que-es-hyrox">qué es HYROX y cómo funciona</a>. Si ya tienes fecha, apúntala en el <a href="/calendario">calendario</a> y cuenta 12 semanas hacia atrás.</p>
+<p>Está pensado para alguien que puede correr 5 km seguidos aunque sea despacio y que va a competir en categoría Open (individual) o Doubles. Si te estás planteando si HYROX es para ti, empieza por <a href="/blog/que-es-hyrox">qué es HYROX y cómo funciona</a>. Si ya tienes fecha, el <a href="/plan-entrenamiento-hyrox">plan de entrenamiento HYROX gratis</a> cuenta las semanas hacia atrás por ti y te da cada sesión con su día.</p>
 
 <h2>¿Qué exige HYROX y por qué el plan es así?</h2>
 <p>Una HYROX son 8 km de carrera partidos en 8 tramos de 1 km, con una estación después de cada uno: SkiErg (1.000 m), sled push (50 m), sled pull (50 m), burpee broad jumps (80 m), remo (1.000 m), farmers carry (200 m), zancadas con saco (100 m) y 100 wall balls. Eso significa tres cosas para tu entrenamiento:</p>
@@ -106,7 +106,7 @@ export default {
 <p>Con unas zapatillas que sirvan para correr y estén estables en el trineo tienes casi todo. Mira la <a href="/productos/zapatillas-hyrox">guía de zapatillas para HYROX</a> y, si quieres controlar que el rodaje largo es de verdad suave, una banda de pecho dla <a href="/productos/pulsometros">guía de pulsómetros</a>. Si entrenas en casa, en nuestra guía de <a href="/blog/material-hyrox-carreras-obstaculos">material para HYROX y OCR</a> tienes lo justo para sustituir las estaciones.</p>
 
 <h2>Dónde entrenar si tu gimnasio no tiene material HYROX</h2>
-<p>Cada vez más centros tienen trineo, SkiErg y balones de wall ball. Busca uno cerca de ti en el <a href="/centros-entrenamiento">directorio de centros de entrenamiento</a> y, si quieres un plan personalizado con tus días disponibles, prueba nuestro <a href="/plan-entrenamiento">generador de planes de entrenamiento</a>.</p>
+<p>Cada vez más centros tienen trineo, SkiErg y balones de wall ball. Busca uno cerca de ti en el <a href="/centros-entrenamiento">directorio de centros de entrenamiento</a> y, si quieres este mismo recorrido con tus días, tus ritmos y la fecha exacta de tu carrera, usa el <a href="/plan-entrenamiento-hyrox/12-semanas">plan HYROX de 12 semanas a tu medida</a>: es gratis y lo bajas en PDF o Excel.</p>
 
 <h2>Preguntas frecuentes</h2>
 <div data-block="faq"></div>

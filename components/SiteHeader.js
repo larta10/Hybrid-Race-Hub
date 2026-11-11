@@ -4,6 +4,7 @@ import Image from "next/image";
 
 const MAIN = [
   { href: "/calendario", label: "Calendario" },
+  { href: "/plan-entrenamiento-hyrox", label: "Plan gratis" },
   { href: "/centros-entrenamiento", label: "Centros" },
   { href: "/que-es-una-carrera-hibrida", label: "Guía" },
   { href: "/blog", label: "Blog" },
@@ -14,7 +15,7 @@ const REGIONS = [
   ["canarias", "Canarias"], ["galicia", "Galicia"], ["baleares", "Baleares"], ["bilbao", "Bilbao"],
 ];
 const MORE = [
-  { href: "/plan-entrenamiento", label: "Plan de entrenamiento" },
+  { href: "/plan-entrenamiento-ocr", label: "Plan para carreras de obstáculos" },
   { href: "/calculadora-hyrox", label: "Calculadora HYROX" },
   { href: "/contacto-organizadores", label: "Publicar una carrera" },
 ];

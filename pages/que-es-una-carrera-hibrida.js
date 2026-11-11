@@ -338,7 +338,7 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season, 
             <li><strong>Descarga la última semana</strong>: menos volumen, algo de intensidad corta y dormir bien.</li>
           </ol>
           <p>
-            Si no quieres pensar la planificación, el <a href="/plan-entrenamiento">generador de planes</a> te prepara las semanas que faltan hasta tu carrera, con cargas y descargas,
+            Si no quieres pensar la planificación, el <a href="/plan-entrenamiento-hyrox">plan de entrenamiento gratis</a> te prepara las semanas que faltan hasta tu carrera, con cargas y descargas,
             y lo puedes bajar en Excel o PDF. Si prefieres una tabla fija, sigue nuestro <a href="/blog/plan-entrenamiento-hyrox-12-semanas">plan HYROX de 12 semanas</a>.
             Para encontrar dónde entrenar con sled y SkiErg, mira el <a href="/centros-entrenamiento">directorio de centros</a>.
           </p>

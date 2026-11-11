@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import SiteHeader from "../components/SiteHeader";
 import RaceList from "../components/RaceList";
 import PartnerBuscarPareja from "../components/PartnerBuscarPareja";
+import PlanCta from "../components/plan/PlanCta";
 import { Breadcrumbs } from "../components/PageShell";
 import { trackSearch } from "../lib/track";
 import { SITE_URL, breadcrumbLd, pageTitle, ROBOTS_INDEX } from "../lib/site";
@@ -168,6 +169,8 @@ export default function Calendario({ races = [], season, today, recent = [], mon
               <button type="button" className="btn-solid" onClick={clear}>Ver todas las carreras</button>
             </div>
           )}
+
+        <PlanCta title="Elige carrera y llévate el plan" text="En cada carrera tienes el enlace «Prepárala: plan gratis»: abre el plan con su fecha ya puesta y las semanas que faltan." cta="Ver cómo es el plan" />
 
         <PartnerBuscarPareja variant="destacada" placement="calendario" />
 
