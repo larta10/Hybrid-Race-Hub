@@ -6,6 +6,7 @@ import { useMemo } from "react";
 import PageShell, { Breadcrumbs } from "../components/PageShell";
 import PlanView from "../components/plan/PlanView";
 import ShareButton from "../components/plan/ShareButton";
+import { DownloadLinks, EmailPlan } from "../components/plan/PlanDownloads";
 import { buildPlan, parseParams, isComplete, toQueryString, landingFor, pruebaFromRace, familyOf, daysBetween } from "../lib/plan/index.js";
 import { todayISO, fetchAllRaces, modalityLabel } from "../lib/races-server";
 import { fechaLarga } from "../lib/dates";
@@ -21,7 +22,8 @@ export async function getServerSideProps({ query, res }) {
   res.setHeader("Cache-Control", "public, s-maxage=900, stale-while-revalidate=3600");
   const today = todayISO();
   const { race, others } = await racesFor(input, today);
-  return { props: { input, qs, today, race, others } };
+  // El envío por correo solo se ofrece si Resend está configurado
+  return { props: { input, qs, today, race, others, emailEnabled: !!process.env.RESEND_API_KEY } };
 }
 
 const lite = r => ({ slug: r.slug, nombre: r.nombre, fecha_iso: r.fecha_iso, municipio: r.municipio || null, comunidad: r.comunidad || null, modalidad: modalityLabel(r) });
@@ -44,7 +46,7 @@ async function racesFor(input, today) {
   return { race: race ? lite(race) : null, others: others.map(lite) };
 }
 
-export default function MiPlan({ input, qs, today, race, others }) {
+export default function MiPlan({ input, qs, today, race, others, emailEnabled }) {
   // El motor es determinista: con las mismas respuestas y el mismo día sale el mismo plan en servidor y navegador
   const plan = useMemo(() => buildPlan(input, { today }), [input, today]);
   const landing = landingFor(input.prueba);
@@ -73,6 +75,7 @@ export default function MiPlan({ input, qs, today, race, others }) {
         <p className={s.planSub}>{plan.meta.subtitle}</p>
 
         <div className={s.actions}>
+          <DownloadLinks qs={qs} prueba={input.prueba} />
           <ShareButton title={plan.meta.title} />
           <a className="btn-line" href={`${landing}?${qs}`}>Cambiar respuestas</a>
         </div>
@@ -92,6 +95,16 @@ export default function MiPlan({ input, qs, today, race, others }) {
         {plan.notices.map((n, i) => <p key={i} className={s.notice} role="note">{n}</p>)}
 
         <PlanView plan={plan} today={today} />
+
+        <section aria-labelledby="descargar">
+          <h2 className={s.h2} id="descargar">Llévatelo</h2>
+          <p className={s.p}>El PDF trae una semana por página para imprimir. El Excel tiene una hoja por semana con columnas para apuntar el peso real, el RPE y notas, y una hoja de progreso. Gratis y sin registro.</p>
+          <div className={s.actions}>
+            <DownloadLinks qs={qs} prueba={input.prueba} solid={false} />
+          </div>
+        </section>
+
+        {emailEnabled && <EmailPlan qs={qs} prueba={input.prueba} />}
 
         {others.length > 0 && (
           <section aria-labelledby="otras-carreras">
