@@ -6,38 +6,50 @@
 // Hyatlón: hyatlon.org (27-10-2026). Hybrid Day: hybrid-day.com/eventos (27-10-2026).
 export default {
   slug: "calendario-hyrox-espana-2026-2027",
-  title: "Calendario HYROX España 2026-2027: sedes, fechas y alternativas",
-  metaTitle: "Calendario HYROX España 2026-2027: sedes y fechas",
-  h1: "Calendario HYROX España 2026-2027: sedes, fechas y alternativas",
+  title: "Calendario HYROX España 2027: Barcelona, Bilbao, Madrid y Málaga",
+  metaTitle: "Calendario HYROX España 2027: Barcelona, Bilbao, Madrid y Málaga",
+  h1: "Calendario HYROX España 2027: Barcelona, Bilbao, Madrid y Málaga",
   category: "Carreras",
   date: "2026-10-27",
-  updated: "2026-11-03",
+  updated: "2026-11-12",
   racesFilter: { modalidadId: "solo-por-nombre", name: "^HYROX" },
   cover: "https://images.unsplash.com/photo-1757147517580-90c214fc28f3?w=1200&q=80",
   imageAlt: "Público tras las vallas viendo pasar a una atleta durante una competición HYROX en un gran pabellón de hierro y cristal",
   excerpt: "Las sedes de HYROX en España para la temporada 2026-2027 con sus fechas, cómo elegir sede y categoría, y qué otras carreras con el mismo formato (Hybrid Day, Hyatlón, DEKA) tienes si no te cuadra ninguna.",
-  description: "Sedes y fechas de HYROX en España en la temporada 2026-2027: Barcelona, Bilbao, Madrid y Málaga. Cómo elegir sede y qué alternativas tienes con fechas.",
+  description: "HYROX España 2027: Bilbao (6-7 feb), Madrid (17-21 mar) y Málaga (15-18 abr), con recinto y ficha de cada sede. Barcelona se corre en noviembre de 2026.",
   faq: [
-    { q: "¿Cuántas HYROX hay en España en la temporada 2026-2027?", a: "A 27 de octubre de 2026 hay cuatro sedes con fecha en nuestro calendario: Barcelona (L'Hospitalet de Llobregat), Bilbao (Barakaldo), Madrid y Málaga. La lista de arriba se actualiza sola si HYROX añade o cambia fechas." },
+    { q: "¿Cuántas HYROX hay en España en la temporada 2026-2027?", a: "Cinco. Valencia (octubre de 2026) ya se corrió y Barcelona es del 11 al 15 de noviembre de 2026. Quedan Bilbao (6-7 de febrero de 2027), Madrid (17-21 de marzo) y Málaga (15-18 de abril). La tabla de arriba se actualiza sola si HYROX añade o cambia fechas." },
     { q: "¿Dónde me inscribo en una HYROX?", a: "En la web oficial, hyrox.es, que enlaza a la tienda de entradas. Evita reventas de terceros. Cada carrera de nuestro calendario lleva el enlace directo a su ficha oficial." },
     { q: "¿Hay Hybrid Day en 2027?", a: "A 27 de octubre de 2026, la web oficial de Hybrid Day no ha publicado sedes para 2027. La próxima prueba anunciada es Vigo, en el IFEVI, el 12 y 13 de diciembre de 2026. Cuando salgan las fechas de 2027 las añadiremos al calendario." },
     { q: "¿Qué alternativas hay a HYROX con el mismo formato?", a: "Hybrid Day usa el mismo esquema de 8 km y 8 estaciones, y el Hyatlón H8 de la Federación Española de Triatlón también repite las ocho estaciones. Si prefieres algo más corto, tienes el Hyatlón H6 y los DEKA FIT." },
     { q: "¿Qué categoría elijo si es mi primera HYROX?", a: "Open si vas solo, o Doubles si vas con alguien: en parejas corréis juntos los 8 km y os repartís las estaciones, y es la forma más llevadera de debutar." },
   ],
   content: `
-<p><strong>HYROX tiene cuatro sedes pendientes en España en la temporada 2026-2027: Barcelona (L'Hospitalet de Llobregat) del 11 al 15 de noviembre de 2026, Bilbao (Barakaldo) en febrero de 2027, Madrid en marzo de 2027 y Málaga en abril de 2027.</strong> La quinta, Valencia, ya se celebró del 15 al 18 de octubre. Abajo tienes la lista con fechas, que se actualiza sola desde nuestro calendario, y las carreras con un formato parecido por si ninguna sede te cuadra.</p>
+<p><strong>En 2027 HYROX tiene tres sedes con fecha en España: Bilbao (Barakaldo) el 6 y 7 de febrero, Madrid del 17 al 21 de marzo y Málaga del 15 al 18 de abril.</strong> Barcelona, la otra gran sede de la temporada 2026-2027, se corre del 11 al 15 de noviembre de 2026 en L'Hospitalet de Llobregat, y Valencia ya se celebró en octubre. Esta es la tabla con las que quedan, sacada de nuestro calendario:</p>
+<div data-block="race-table"></div>
+<p>Más abajo tienes cada sede por separado y las carreras con un formato parecido, por si ninguna te cuadra.</p>
 
 <p>Si todavía no tienes claro qué es exactamente una HYROX, lee primero <a href="/blog/que-es-hyrox">qué es HYROX</a>: 8 tramos de 1 km de carrera con una estación después de cada uno, siempre en el mismo orden. Y si te preguntas si HYROX y "carrera híbrida" son lo mismo, lo explicamos en <a href="/blog/hyrox-vs-carrera-hibrida-diferencias">HYROX vs carrera híbrida</a>.</p>
 
 <h2>Sedes y fechas de HYROX en España</h2>
-<p>Estas son las HYROX con fecha confirmada en nuestro calendario, ordenadas por fecha, con el estado de la inscripción. Cada sede tiene su ficha con el recinto, el formato, cómo llegar preparado y el botón a la inscripción oficial en hyrox.es, que es donde se compra el dorsal y se consulta el horario de cada categoría:</p>
-<div data-block="race-table"></div>
-<p>Las grandes sedes de HYROX duran varios días y cada categoría compite en una jornada y una franja concretas. El horario provisional lo publica la organización en la ficha de cada evento en hyrox.es. Si una fecha cambia o se añade una sede nueva, la lista de arriba se actualiza en menos de una hora.</p>
+<p>Cada sede tiene su ficha con el recinto, el formato, cómo llegar preparado y el botón a la inscripción oficial en hyrox.es, que es donde se compra el dorsal y se consulta el horario de cada categoría. Las grandes sedes duran varios días y cada categoría compite en una jornada y una franja concretas; el horario provisional lo publica la organización en la ficha de cada evento.</p>
+
+<h2>HYROX Barcelona 2027</h2>
+<p>La HYROX de Barcelona de esta temporada se corre del 11 al 15 de noviembre de 2026 en Fira Barcelona Gran Via, en L'Hospitalet de Llobregat. Para 2027 HYROX todavía no ha publicado fecha: en cuanto salga aparecerá en la tabla de arriba. Mientras tanto, la <a href="/carreras/hyrox-barcelona-2026">ficha de HYROX Barcelona</a> tiene el recinto y las categorías de esta edición, y en <a href="/carreras-hibridas/cataluna">carreras híbridas en Cataluña</a> están los DEKA de Barcelona de marzo y septiembre de 2027.</p>
+
+<h2>HYROX Bilbao 2027</h2>
+<p>6 y 7 de febrero de 2027 en el Bilbao Exhibition Centre (BEC), en Barakaldo. Hay categorías individual, Pro, Doubles y relevos, y la web oficial tiene lista de espera en varias de ellas. Recinto, formato e inscripción en la <a href="/carreras/hyrox-bilbao-barakaldo-2027">ficha de HYROX Bilbao 2027</a>.</p>
+
+<h2>HYROX Madrid 2027</h2>
+<p>Del 17 al 21 de marzo de 2027 en IFEMA Madrid: cinco días, la sede más larga de la temporada en España, con individual, Pro, Doubles, Pro Doubles y relevos. Todo el detalle en la <a href="/carreras/hyrox-madrid-2027">ficha de HYROX Madrid 2027</a>.</p>
+
+<h2>HYROX Málaga 2027</h2>
+<p>Del 15 al 18 de abril de 2027 en el Palacio de Ferias y Congresos de Málaga (FYCMA), con plazas de clasificación para el Campeonato del Mundo. Es la última sede de la temporada en España. Mira la <a href="/carreras/hyrox-malaga-2027">ficha de HYROX Málaga 2027</a>.</p>
 
 <h2>Cómo elegir sede</h2>
-<p>Con cuatro sedes repartidas entre noviembre y abril, la elección suele ser más logística que deportiva. Lo que conviene mirar:</p>
+<p>Con las sedes repartidas entre noviembre y abril, la elección suele ser más logística que deportiva. Lo que conviene mirar:</p>
 <ul>
-  <li><strong>Semanas de preparación que te quedan.</strong> Si empiezas de cero, cuenta con unas 12 semanas. Desde finales de octubre, Barcelona en noviembre llega pronto para un debutante; Madrid en marzo o Málaga en abril dan margen de sobra para seguir el <a href="/blog/plan-entrenamiento-hyrox-12-semanas">plan HYROX de 12 semanas</a>.</li>
+  <li><strong>Semanas de preparación que te quedan.</strong> Si empiezas de cero, cuenta con unas 12 semanas. Si empiezas en noviembre, Bilbao en febrero llega justo; Madrid en marzo o Málaga en abril dan margen de sobra para seguir el <a href="/blog/plan-entrenamiento-hyrox-12-semanas">plan HYROX de 12 semanas</a>.</li>
   <li><strong>Desplazamiento.</strong> Una HYROX se compite en una franja de pocas horas, pero si hay que viajar, súmale hotel y el cansancio del trayecto. Correr cerca de casa tiene ventaja.</li>
   <li><strong>Con quién vas.</strong> Si vais en pareja o en grupo de box, poneos de acuerdo pronto: en Doubles y Relay necesitáis cuadrar fecha y categoría entre todos.</li>
   <li><strong>Tu objetivo.</strong> Para buscar marca, elige la sede que te deje llegar con un bloque de entrenamiento completo, sin pillar las semanas de más trabajo o de vacaciones.</li>

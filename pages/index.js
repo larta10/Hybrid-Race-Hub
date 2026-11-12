@@ -246,6 +246,8 @@ function EditorialBlock({ imgSrc, imgAlt, eyebrow, title, body, cta, ctaHref, re
 }
 
 /* ─── Home ─────────────────────────────────────────────────────────────────── */
+const TOP_TRAIN_CITIES = ["madrid", "vigo", "barcelona", "palma", "zaragoza", "sevilla"];
+
 export async function getStaticProps() {
   const races = await fetchUpcomingRaces();
   const madridRaces = races.filter(r => raceMatchesCity(r, CITY_BY_SLUG.madrid)).slice(0, 3)
@@ -259,14 +261,18 @@ export async function getStaticProps() {
       generated: todayISO(),
       regions: HYBRID_CITIES.map(c => ({ slug: c.slug, label: c.en || `en ${c.name}`, count: races.filter(r => raceMatchesCity(r, c)).length })),
       modalities: hubModalities(races).map(m => ({ slug: m.slug, name: m.name, hub: m.hub, count: m.count })),
-      trainCities: CENTER_CITIES.slice(0, 8).map(c => ({ slug: c.slug, name: c.name, count: c.count })),
+      // Primero las seis ciudades con más impresiones en Search Console; después, las de más centros
+      trainCities: [...TOP_TRAIN_CITIES.map(slug => CENTER_CITIES.find(c => c.slug === slug)).filter(Boolean),
+        ...CENTER_CITIES.filter(c => !TOP_TRAIN_CITIES.includes(c.slug))].slice(0, 8).map(c => ({ slug: c.slug, name: c.name, count: c.count })),
+      // Enlaces de texto a las seis fichas más próximas (reparten autoridad desde la home)
+      nextLinks: races.filter(r => r.slug).slice(0, 6).map(r => ({ slug: r.slug, nombre: r.nombre, fecha_iso: r.fecha_iso, municipio: r.municipio || null })),
       months: monthsWithCounts(races, todayISO()).slice(0, 2),
     },
     revalidate: 3600,
   };
 }
 
-export default function Home({ nextRaces = [], upcomingCount = 0, season, madridRaces = [], races2027 = [], count2027 = 0, generated, regions = [], modalities = [], trainCities = [], months = [] }) {
+export default function Home({ nextRaces = [], upcomingCount = 0, season, madridRaces = [], races2027 = [], count2027 = 0, generated, regions = [], modalities = [], trainCities = [], months = [], nextLinks = [] }) {
   const faqs = buildHomeFaqs({ madridRaces, races2027, count2027 });
   return (
     <>
@@ -430,6 +436,16 @@ export default function Home({ nextRaces = [], upcomingCount = 0, season, madrid
               <li><a href="/blog/que-es-el-hyatlon">Qué es el Hyatlón y sus fechas</a></li>
             </ul>
           </div>
+          {nextLinks.length > 0 && (
+            <div className="home-guides">
+              <p className="section-label">Las más próximas</p>
+              <ul>
+                {nextLinks.map(r => (
+                  <li key={r.slug}><a href={`/carreras/${r.slug}`}>{r.nombre}</a> · {fechaLarga(r.fecha_iso)}{r.municipio ? ` · ${r.municipio}` : ""}</li>
+                ))}
+              </ul>
+            </div>
+          )}
           <div className="home-guides">
             <p className="section-label">Dónde entrenar</p>
             <ul>

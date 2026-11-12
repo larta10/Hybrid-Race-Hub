@@ -13,6 +13,10 @@ import { fetchUpcomingRaces, todayISO } from "../../lib/races-server";
 import Related from "../../components/Related";
 import { relatedForPost } from "../../lib/related";
 import { HYBRID_CITIES, raceMatchesCity } from "../../lib/hybrid-cities";
+import { hubModalities } from "../../lib/modalities";
+
+// Artículos-guía de una modalidad: su bloque "Próximas pruebas" enlaza al hub de fechas
+const HUB_BY_POST = { "que-es-el-hyatlon": "hyatlon", "que-es-hurbax": "hurbax" };
 
 export async function getStaticPaths() {
   return { paths: getAllSlugs(), fallback: false };
@@ -28,15 +32,19 @@ export async function getStaticProps({ params }) {
   const regions = HYBRID_CITIES.map(c => ({ slug: c.slug, en: c.en || `en ${c.name}`, count: upcoming.filter(r => raceMatchesCity(r, c)).length }))
     .sort((a, b) => b.count - a.count);
   const relatedLinks = relatedForPost(data.post, regions, todayISO());
+  // El hub /calendario/<modalidad> solo existe con carreras suficientes; si no, al calendario general
+  const hm = hubModalities(upcoming).find(m => m.slug === HUB_BY_POST[params.slug]);
+  const hub = !HUB_BY_POST[params.slug] ? null
+    : hm ? { href: hm.hub, label: hm.hubLabel } : { href: "/calendario", label: "calendario de carreras híbridas" };
   if (f) {
     const re = new RegExp(f.name, "i");
     const races = upcoming.filter(r => r.modalidad_id === f.modalidadId || re.test(r.nombre || ""));
-    return { props: { ...data, races, relatedLinks }, revalidate: 3600 };
+    return { props: { ...data, races, relatedLinks, hub }, revalidate: 3600 };
   }
-  return { props: { ...data, races: null, relatedLinks }, revalidate: 86400 };
+  return { props: { ...data, races: null, relatedLinks, hub }, revalidate: 86400 };
 }
 
-export default function BlogPost({ post, toc, related, races, relatedLinks = [] }) {
+export default function BlogPost({ post, toc, related, races, relatedLinks = [], hub = null }) {
   const url = `${SITE_URL}/blog/${post.slug}`;
   const crumbs = [
     { name: "Inicio", href: "/" },
@@ -150,7 +158,7 @@ export default function BlogPost({ post, toc, related, races, relatedLinks = [] 
         <div className="art-layout">
           <div className="art-main">
             <Toc toc={toc} variant="inline" />
-            <ArticleBody html={post.content} faq={post.faq} races={races} pageUrl={url} className="art-body" />
+            <ArticleBody html={post.content} faq={post.faq} races={races} hub={hub} pageUrl={url} className="art-body" />
             <ShareButtons url={url} title={post.h1} />
             <ArticleCta category={post.category} />
             <ArticleNextSteps category={post.category} />

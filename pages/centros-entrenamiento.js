@@ -200,22 +200,22 @@ export default function CentrosEntrenamiento() {
   return (
     <>
       <Head>
-        <title>Dónde entrenar HYROX y OCR en España | Hybrid Race Hub</title>
+        <title>Centros para entrenar HYROX y carreras híbridas en España</title>
         <meta
           name="description"
-          content="Directorio de boxes y gimnasios para entrenar HYROX, OCR y fitness híbrido en España, con sled, SkiErg y remo. Busca por ciudad o código postal y llama."
+          content={`${TOTAL} boxes y gimnasios para entrenar HYROX y carreras híbridas en ${CENTER_CITIES.length} ciudades de España, con trineo, SkiErg y remo. Busca el tuyo por ciudad.`}
         />
         <meta name="robots" content={ROBOTS_INDEX} />
         <link rel="canonical" href={`${SITE_URL}/centros-entrenamiento`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/centros-entrenamiento`} />
-        <meta property="og:title" content="Dónde entrenar HYROX y OCR en España" />
+        <meta property="og:title" content="Centros para entrenar HYROX y carreras híbridas en España" />
         <meta property="og:description" content={`Directorio de ${TOTAL}+ centros de entrenamiento funcional, HYROX, OCR y CrossFit en España.`} />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Dónde entrenar HYROX y OCR en España" />
+        <meta name="twitter:title" content="Centros para entrenar HYROX y carreras híbridas en España" />
         <meta name="twitter:description" content={`Directorio de ${TOTAL}+ centros de entrenamiento funcional en España.`} />
         <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
@@ -339,7 +339,7 @@ export default function CentrosEntrenamiento() {
         <div className="page-hero-inner">
           <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Centros de entrenamiento" }]} />
           <h1 className="page-title">
-            Dónde entrenar HYROX y OCR en España: boxes y gimnasios por ciudad
+            Centros para entrenar HYROX y carreras híbridas en España
           </h1>
           <p className="page-sub">
             {TOTAL} boxes de CrossFit y gimnasios funcionales con material para preparar una HYROX, un DEKA o una carrera de obstáculos:

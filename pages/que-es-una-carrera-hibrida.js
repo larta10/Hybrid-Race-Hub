@@ -6,7 +6,7 @@ import { fetchUpcomingRaces, seasonLabel, modalityLabel, priceNumber, dateParts,
 import { CITY_BY_SLUG, raceMatchesCity } from "../lib/hybrid-cities";
 
 // Fecha de la última revisión del texto (no del calendario, que se actualiza a diario)
-const CONTENT_UPDATED = "2026-11-03";
+const CONTENT_UPDATED = "2026-11-12";
 import { hubModalities } from "../lib/modalities";
 
 const PATH = "/que-es-una-carrera-hibrida";
@@ -98,8 +98,8 @@ function Dates({ hubs, slug, label }) {
 export default function Guia({ upcoming, total, madrid, counts, priced, season, hubs = {} }) {
   const url = `${SITE_URL}${PATH}`;
   const faqs = faqData({ madrid, priced, total });
-  const title = "Qué es una carrera híbrida (hybrid race) y cómo funciona";
-  const desc = "Una carrera híbrida mezcla tramos de carrera con ejercicios de fuerza o con obstáculos. Te explicamos HYROX, OCR, Spartan, DEKA e Hyatlón y sus fechas.";
+  const title = "Qué es una carrera híbrida: formato, estaciones y cómo empezar";
+  const desc = "Correr y hacer fuerza en la misma prueba: eso es una carrera híbrida. Formatos (HYROX, DEKA, OCR), las 8 estaciones y cómo preparar la primera.";
   const updated = dateParts(CONTENT_UPDATED);
   const otherMods = Object.entries(counts).filter(([k]) => !["HYROX", "OCR", "Spartan", "DEKA", "DEKA FIT", "Hyatlón", "HURBAX"].includes(k));
 
@@ -107,7 +107,7 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season, 
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Qué es una carrera híbrida: HYROX, OCR y Spartan explicados",
+      "headline": title,
       "description": desc,
       "datePublished": "2026-10-14",
       "dateModified": CONTENT_UPDATED,
@@ -148,7 +148,7 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season, 
         <link rel="canonical" href={url} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={url} />
-        <meta property="og:title" content="Qué es una carrera híbrida (hybrid race) y cómo funciona" />
+        <meta property="og:title" content={title} />
         <meta property="og:description" content={desc} />
         <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta property="article:modified_time" content={CONTENT_UPDATED} />
@@ -160,17 +160,23 @@ export default function Guia({ upcoming, total, madrid, counts, priced, season, 
         <div className="guide-head">
           <Breadcrumbs items={[{ name: "Inicio", href: "/" }, { name: "Qué es una carrera híbrida" }]} />
           <p className="section-label">Guía · Carreras híbridas</p>
-          <h1 className="guide-title">Qué es una carrera híbrida (hybrid race) y cómo funciona</h1>
+          <h1 className="guide-title">Qué es una carrera híbrida: formato, estaciones y cómo empezar</h1>
+          {/* Definición directa bajo el H1 (40-60 palabras): es la respuesta que Google puede citar */}
+          <p className="guide-lead guide-def">
+            <strong>Una carrera híbrida (<em>hybrid race</em>) es una competición que alterna tramos de carrera a pie con estaciones de fuerza u obstáculos dentro de la misma prueba.</strong>{" "}
+            El formato más conocido es HYROX: 8 km en tramos de 1 km y, tras cada uno, una estación (SkiErg, trineos, remo, wall balls). También lo son DEKA, Hyatlón, HURBAX y las carreras de obstáculos.
+          </p>
+          <p className="guide-start">
+            Para empezar: <a href="/calendario">calendario con las {total} carreras con fecha</a> · <a href="/plan-entrenamiento-hyrox">plan de entrenamiento gratis</a> · carreras en{" "}
+            <a href="/carreras-hibridas/madrid">Madrid</a>, <a href="/carreras-hibridas/cataluna">Cataluña</a>, <a href="/carreras-hibridas/andalucia">Andalucía</a>,{" "}
+            <a href="/carreras-hibridas/comunidad-valenciana">Comunidad Valenciana</a>, <a href="/carreras-hibridas/galicia">Galicia</a> y <a href="/carreras-hibridas/canarias">Canarias</a>.
+          </p>
           <p className="guide-updated">Última actualización: <time dateTime={CONTENT_UPDATED}>{updated.long}</time> · El calendario de abajo se actualiza cada día</p>
         </div>
 
         <div className="guide-body">
-          <p className="guide-lead">
-            <strong>Una carrera híbrida (en inglés, <em>hybrid race</em>) es una competición que alterna tramos de carrera a pie con ejercicios de fuerza u obstáculos dentro de la misma prueba.</strong>{" "}
-            Gana quien mejor aguanta las dos cosas a la vez. En España las más conocidas son HYROX, DEKA, el Hyatlón, HURBAX y las carreras de obstáculos como Spartan Race.
-          </p>
           <p>
-            La clave está en seguir corriendo con las piernas cargadas después de un trineo o de cien wall balls, no en ser el más rápido ni el más fuerte.
+            Gana quien mejor aguanta las dos cosas a la vez. La clave está en seguir corriendo con las piernas cargadas después de un trineo o de cien wall balls, no en ser el más rápido ni el más fuerte.
           </p>
           <p>
             Hace unos años era un nicho de gente que venía del CrossFit o del trail. Hoy en nuestro calendario hay {total} carreras de este tipo programadas en España

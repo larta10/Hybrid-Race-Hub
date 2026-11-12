@@ -61,6 +61,8 @@ export async function getStaticProps({ params }) {
   const region =
     HYBRID_CITIES.find(h => h.kind === "ciudad" && (h.match.provincias || []).includes(city.province)) ||
     HYBRID_CITIES.find(h => h.cp.includes(city.cp)) || null;
+  // Página de la comunidad (si existe): es la que enlaza el bloque de próximas carreras
+  const ccaaRegion = HYBRID_CITIES.find(h => h.kind === "comunidad" && h.cp.includes(city.cp)) || region;
   const pick = r => ({ nombre: r.nombre, fecha_iso: r.fecha_iso, municipio: r.municipio || null, url: r.url || null, modalidad: r.modalidad || null, slug: r.slug || null });
   const centers = city.centers.map(c => ({
     nombre: c.nombre, tipo: c.tipo || null, direccion: c.direccion || null, cp: c.codigo_postal || null,
@@ -79,6 +81,9 @@ export async function getStaticProps({ params }) {
       byCp: centers.length >= 10 ? Object.entries(centers.reduce((m, c) => { if (c.cp) m[c.cp] = (m[c.cp] || 0) + 1; return m; }, {})).sort((a, b) => a[0].localeCompare(b[0])) : [],
       provinceCount: inProvince.length,
       ccaaRaces: inProvince.length ? [] : inCcaa.slice(0, 3).map(pick),
+      // "Próximas carreras cerca de…": primero las de la provincia y luego el resto de la comunidad, 4 como mucho
+      nearRaces: [...inProvince, ...inCcaa].slice(0, 4).map(pick),
+      ccaaRegion: ccaaRegion ? { slug: ccaaRegion.slug, name: ccaaRegion.name } : null,
       region: region ? { slug: region.slug, name: region.name } : null,
       others,
       generated: today,
@@ -87,9 +92,10 @@ export async function getStaticProps({ params }) {
   };
 }
 
-function cityTitle(name) {
-  const base = `Dónde entrenar HYROX en ${name}`;
-  return [`${base}: gimnasios y boxes | ${SITE_NAME}`, `${base}: gimnasios y boxes`, `${base} | ${SITE_NAME}`, base].find(t => t.length <= 60);
+// "HYROX en {Ciudad}: {N} centros para entrenar | Hybrid Race Hub"; sin la marca si pasa de 60 caracteres
+function cityTitle(name, n) {
+  const base = `HYROX en ${name}: ${n} ${n === 1 ? "centro" : "centros"} para entrenar`;
+  return [`${base} | ${SITE_NAME}`, base, `HYROX en ${name}: dónde entrenar`].find(t => t.length <= 60) || base;
 }
 
 const joinEs = arr => (arr.length > 1 ? `${arr.slice(0, -1).join(", ")} y ${arr[arr.length - 1]}` : arr.join(""));
@@ -111,22 +117,25 @@ function intro({ city, centers, types, provinceRaces, provinceCount, ccaaRaces }
 }
 
 export default function CentrosCiudad(props) {
-  const { city, centers, provinceRaces, ccaaRaces, region, others, generated, byCp = [] } = props;
+  const { city, centers, provinceRaces, region, others, generated, byCp = [], nearRaces = [], ccaaRegion = null } = props;
   const path = `/centros-entrenamiento/${city.slug}`;
   const url = `${SITE_URL}${path}`;
-  const title = cityTitle(city.name);
-  const h1 = `Dónde entrenar HYROX en ${city.name}: gimnasios y boxes`;
+  const title = cityTitle(city.name, centers.length);
+  const h1 = `Dónde entrenar HYROX en ${city.name}`;
+  const next = nearRaces[0];
+  const zona = ccaaRegion?.name || city.ccaa || city.province || city.name;
   const lead = intro(props);
-  const desc = fitDesc([
-    `${centers.length} gimnasios y boxes para entrenar HYROX y OCR en ${city.fullName}, con dirección, web y teléfono.${provinceRaces[0] ? ` Próxima carrera cerca: ${provinceRaces[0].nombre}.` : ""}`,
-    `${centers.length} gimnasios y boxes para entrenar HYROX y carreras de obstáculos en ${city.fullName}, con dirección, web y teléfono, y las próximas carreras cerca.`,
-    `${centers.length} gimnasios y boxes para entrenar HYROX y carreras de obstáculos en ${city.fullName}, con dirección, web, teléfono y las carreras híbridas más cercanas.`,
-    `${centers.length} gimnasios y boxes para entrenar HYROX y OCR en ${city.fullName}, con dirección, web, teléfono y las carreras híbridas más cercanas en el calendario.`,
-    `${centers.length} gimnasios y boxes para entrenar HYROX y carreras de obstáculos en ${city.fullName}, con dirección, web y teléfono, y las carreras más cercanas.`,
-    `${centers.length} gimnasios y boxes para entrenar HYROX y OCR en ${city.fullName}, con dirección, web y teléfono, y las carreras híbridas más cercanas.`,
-    `Dónde entrenar HYROX y OCR en ${city.fullName}: ${centers.length} gimnasios y boxes con dirección, web y teléfono, y las próximas carreras cerca de ti.`,
-    `Dónde entrenar HYROX y OCR en ${city.fullName}: ${centers.length} gimnasios y boxes con dirección, web y teléfono, y las próximas carreras.`,
-    `Gimnasios y boxes para entrenar HYROX y OCR en ${city.fullName}, con dirección, web y teléfono.`,
+  // Meta: número de centros + la próxima carrera de su comunidad (dato que cambia y da motivo para el clic)
+  const n = centers.length;
+  const desc = fitDesc(next ? [
+    `${n} centros para entrenar HYROX en ${city.name}, con dirección, web y teléfono. Próxima carrera en ${zona}: ${next.nombre}, el ${fechaLarga(next.fecha_iso)}.`,
+    `${n} centros para entrenar HYROX en ${city.name}, con dirección y teléfono. Próxima carrera en ${zona}: ${next.nombre}, el ${fechaLarga(next.fecha_iso)}.`,
+    `${n} centros para entrenar HYROX en ${city.name}, con dirección y teléfono. Próxima carrera cerca: ${next.nombre}, el ${fechaLarga(next.fecha_iso)}.`,
+    `${n} centros para entrenar HYROX en ${city.name}. Próxima carrera cerca: ${next.nombre}, el ${fechaLarga(next.fecha_iso)}.`,
+    `${n} centros para entrenar HYROX en ${city.name}, con dirección, web y teléfono. Próxima carrera cerca: ${next.nombre}.`,
+  ] : [
+    `${n} centros para entrenar HYROX y carreras de obstáculos en ${city.name}, con dirección, web y teléfono, y las carreras híbridas con fecha más cercanas.`,
+    `${n} centros para entrenar HYROX en ${city.name}, con dirección, web y teléfono.`,
   ]);
   const crumbs = [{ name: "Inicio", href: "/" }, { name: "Centros de entrenamiento", href: "/centros-entrenamiento" }, { name: city.name }];
 
@@ -224,16 +233,10 @@ export default function CentrosCiudad(props) {
           )}
           <p>¿Falta tu centro o hay un dato mal? <a href="/contacto-organizadores">Escríbenos</a> y lo corregimos.</p>
 
-          <h2 id="carreras">Carreras híbridas cerca de {city.name}</h2>
-          {provinceRaces.length > 0 ? (
+          <h2 id="carreras">Próximas carreras cerca de {city.name}</h2>
+          {nearRaces.length > 0 ? (
             <ul className="plain-list">
-              {provinceRaces.map((r, i) => (
-                <li key={i}>{r.slug ? <a href={`/carreras/${r.slug}`}><strong>{r.nombre}</strong></a> : <strong>{r.nombre}</strong>} · {dateParts(r.fecha_iso)?.long}{r.municipio ? ` · ${r.municipio}` : ""}</li>
-              ))}
-            </ul>
-          ) : ccaaRaces.length > 0 ? (
-            <ul className="plain-list">
-              {ccaaRaces.map((r, i) => (
+              {nearRaces.map((r, i) => (
                 <li key={i}>{r.slug ? <a href={`/carreras/${r.slug}`}><strong>{r.nombre}</strong></a> : <strong>{r.nombre}</strong>} · {dateParts(r.fecha_iso)?.long}{r.municipio ? ` · ${r.municipio}` : ""}</li>
               ))}
             </ul>
@@ -241,10 +244,10 @@ export default function CentrosCiudad(props) {
             <p>No hay carreras con fecha en la zona ahora mismo.</p>
           )}
           <p>
-            {region
-              ? <>Fechas, precios e inscripción en <a href={`/carreras-hibridas/${region.slug}`}>carreras híbridas en {region.name}</a> y en el <a href="/calendario">calendario de España</a>.</>
+            {ccaaRegion
+              ? <>Todas las fechas de la zona, con precio e inscripción, en <a href={`/carreras-hibridas/${ccaaRegion.slug}`}>carreras híbridas en {ccaaRegion.name}</a>{region && region.slug !== ccaaRegion.slug ? <> y en <a href={`/carreras-hibridas/${region.slug}`}>carreras híbridas en {region.name}</a></> : null}. El resto de España, en el <a href="/calendario">calendario</a>.</>
               : <>Fechas, precios e inscripción en el <a href="/calendario">calendario de carreras híbridas de España</a>.</>}
-            {" "}Para preparar la primera, mira el <a href="/blog/plan-entrenamiento-hyrox-12-semanas">plan HYROX de 12 semanas</a>.
+            {" "}Para preparar la primera, hazte el <a href="/plan-entrenamiento-hyrox">plan de entrenamiento HYROX gratis</a>.
           </p>
 
           {others.length > 0 && (

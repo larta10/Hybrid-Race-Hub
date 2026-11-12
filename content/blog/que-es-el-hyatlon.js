@@ -3,11 +3,11 @@
 export default {
   slug: "que-es-el-hyatlon",
   title: "Qué es el Hyatlón: formatos H6 y H8, estaciones y calendario",
-  metaTitle: "Qué es el Hyatlón: formatos H6 y H8, estaciones, diferencias con HYROX y calendario",
+  metaTitle: "Hyatlón: qué es, formatos H6 y H8 y próximas pruebas",
   h1: "Qué es el Hyatlón: formatos H6 y H8, estaciones y próximas pruebas",
   category: "Carreras",
   date: "2026-10-15",
-  updated: "2026-11-03",
+  updated: "2026-11-12",
   // Bloque dinámico de próximas pruebas (Supabase)
   racesFilter: { modalidadId: "func-hyatlon", name: "hyatl[oó]n" },
   excerpt: "El Hyatlón es la carrera híbrida oficial de la Federación Española de Triatlón: tramos de 1 km de carrera alternados con estaciones funcionales, en dos formatos, H6 y H8. Te explicamos estaciones, modalidades, diferencias con HYROX y próximas pruebas.",
@@ -83,10 +83,11 @@ export default {
     <tr><td>Zaragoza</td><td>28 y 29 de noviembre de 2026</td><td>H8</td><td>Pabellón 4, Feria de Zaragoza</td></tr>
   </tbody>
 </table></div>
-<p>Zaragoza cierra la temporada 2026 con el formato completo H8. Cuando se anuncie el calendario de 2027 lo añadiremos al <a href="/calendario?modalidad=func-hyatlon">calendario filtrado por Hyatlón</a>. Mientras tanto, tienes carreras híbridas cerca de algunas sedes en <a href="/carreras-hibridas/madrid">Madrid</a>, <a href="/carreras-hibridas/comunidad-valenciana">la Comunitat Valenciana</a> y <a href="/carreras-hibridas/canarias">Canarias</a>.</p>
+<p>Zaragoza cierra la temporada 2026 con el formato completo H8. Cuando se anuncie el calendario de 2027 lo añadiremos al <a href="/calendario">calendario de carreras híbridas</a>. Mientras tanto, tienes carreras híbridas cerca de algunas sedes en <a href="/carreras-hibridas/madrid">Madrid</a>, <a href="/carreras-hibridas/comunidad-valenciana">la Comunitat Valenciana</a> y <a href="/carreras-hibridas/canarias">Canarias</a>.</p>
 
 <h2>Próximas pruebas de Hyatlón</h2>
 <div data-block="races"></div>
+<div data-block="hub-link"></div>
 
 <h2>¿Cómo preparar un Hyatlón?</h2>
 <p>Como el H8 replica las estaciones de HYROX, la preparación es la misma; el H6 pide algo menos de volumen. Lo básico:</p>

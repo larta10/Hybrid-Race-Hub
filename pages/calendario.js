@@ -229,7 +229,7 @@ export default function Calendario({ races = [], season, today, recent = [], mon
           {recent.length > 0 && (
             <>
               <h2 id="celebradas">Celebradas en los últimos 60 días</h2>
-              <p>Cada ficha tiene el aviso de edición finalizada y, si ya hay fecha, el enlace a la próxima edición.</p>
+              <p>Cada ficha tiene el aviso de que la edición ya se celebró y, si ya hay fecha, el enlace a la próxima edición.</p>
               <ul className="plain-list">
                 {recent.map(r => <li key={r.slug}><a href={`/carreras/${r.slug}`}>{r.nombre}</a> · {fechaLarga(r.fecha_iso)}{r.municipio ? ` · ${r.municipio}` : ""}</li>)}
               </ul>

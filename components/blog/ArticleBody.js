@@ -39,16 +39,16 @@ function RaceTable({ races }) {
   return (
     <div className="table-wrap" tabIndex={0} role="region" aria-label="Sedes y fechas">
       <table>
-        <thead><tr><th>Fechas</th><th>Ciudad</th><th>Inscripción</th><th>Ficha</th></tr></thead>
+        <thead><tr><th>Sede</th><th>Fechas</th><th>Recinto</th><th>Inscripción</th></tr></thead>
         <tbody>
           {races.map(r => {
             const st = raceStatus(r);
             return (
               <tr key={r.slug || r.id}>
-                <td><time dateTime={r.fecha_iso}>{rangoFechas(r.fecha_iso, raceEndDate(r))}</time></td>
-                <td>{r.municipio || r.ubicacion}{r.provincia && r.provincia !== r.municipio ? ` (${r.provincia})` : ""}</td>
-                <td><span className={`st st--${st.kind}`}>{st.label}</span></td>
                 <td>{r.slug ? <a href={`/carreras/${r.slug}`}>{r.nombre}</a> : r.nombre}</td>
+                <td><time dateTime={r.fecha_iso}>{rangoFechas(r.fecha_iso, raceEndDate(r))}</time></td>
+                <td>{r.ubicacion || r.municipio}</td>
+                <td><span className={`st st--${st.kind}`}>{st.label}</span></td>
               </tr>
             );
           })}
@@ -76,7 +76,7 @@ function Faq({ faq }) {
  * Pinta el HTML del artículo y sustituye los marcadores <div data-block="..."></div>
  * por componentes React (tabla y fichas de podcasts, FAQ…).
  */
-export default function ArticleBody({ html, faq, races = null, pageUrl, className = "art-content" }) {
+export default function ArticleBody({ html, faq, races = null, hub = null, pageUrl, className = "art-content" }) {
   const parts = html.split(/(<div data-block="[a-z-]+"(?: data-[a-z]+="[^"]*")*><\/div>)/);
   return (
     <article className={className}>
@@ -89,6 +89,8 @@ export default function ArticleBody({ html, faq, races = null, pageUrl, classNam
           case "podcasts": return <PodcastList key={i} lang={attrs.lang} />;
           case "faq": return <Faq key={i} faq={faq} />;
           case "race-table": return <RaceTable key={i} races={races} />;
+          // Enlace al hub de fechas de la modalidad (o al calendario general si el hub aún no está publicado)
+          case "hub-link": return hub ? <p key={i} className="art-hub">Todas las fechas, con recinto e inscripción: <a href={hub.href}>{hub.label}</a>.</p> : null;
           case "races": return races?.length
             ? <RaceList key={i} races={races} pageUrl={pageUrl} compact />
             : <p key={i} className="races-empty">Ahora mismo no hay pruebas con fecha confirmada en nuestro calendario. En cuanto el organizador publique las nuevas fechas, aparecerán aquí.</p>;

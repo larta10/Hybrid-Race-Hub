@@ -56,11 +56,17 @@ export async function getStaticProps({ params }) {
   const sameMod = upcoming.filter(r => modalityOf(r).slug === mod.slug).slice(0, 4);
   const regionCity = regions[0] ? HYBRID_CITIES.find(c => c.slug === regions[0].slug) : null;
   const sameRegion = regionCity ? upcoming.filter(r => raceMatchesCity(r, regionCity) && !sameMod.includes(r)).slice(0, 4) : [];
+  // "Otras carreras en {comunidad}": mismas siglas de comunidad en la tabla, sin repetir las de la misma modalidad
+  const sameCcaa = race.comunidad ? upcoming.filter(r => r.comunidad === race.comunidad && !sameMod.includes(r)).slice(0, 4) : [];
+  const ccaaPage = regions.find(c => HYBRID_CITIES.find(h => h.slug === c.slug)?.kind === "comunidad") || regions[0] || null;
   // Próxima edición: misma modalidad y mismo municipio, o mismo nombre sin el año
   const base = s => String(s || "").replace(/\b20\d\d\b|\([^)]*\)/g, "").replace(/\s+/g, " ").trim().toLowerCase();
   const nextEdition = past ? upcoming.find(r => base(r.nombre) === base(race.nombre) || (modalityOf(r).slug === mod.slug && r.municipio && r.municipio === race.municipio)) : null;
   // Centros para prepararla: ciudades de la misma provincia
-  const centerCities = CENTER_CITIES.filter(c => race.provincia && c.province === race.provincia).slice(0, 4);
+  // (primero la ciudad de la propia carrera, si tiene página de centros)
+  const sameCity = c => !!race.municipio && [c.name, c.fullName].includes(race.municipio);
+  const centerCities = CENTER_CITIES.filter(c => race.provincia && c.province === race.provincia)
+    .sort((a, b) => sameCity(b) - sameCity(a)).slice(0, 4);
   const topCity = centerCities[0] ? CENTER_CITY_BY_SLUG[centerCities[0].slug] : null;
   const centers = topCity ? topCity.centers.slice(0, 5).map(c => ({ nombre: c.nombre, tipo: c.tipo || null })) : [];
   const updated = String(race.updated_at || race.created_at || "").slice(0, 10) || null;
@@ -76,6 +82,8 @@ export async function getStaticProps({ params }) {
       regions,
       sameMod: sameMod.map(lite),
       sameRegion: sameRegion.map(lite),
+      sameCcaa: sameCcaa.map(lite),
+      ccaaPage,
       nextEdition: nextEdition ? lite(nextEdition) : null,
       centerCities: centerCities.map(c => ({ slug: c.slug, name: c.name, count: c.count })),
       centers,
@@ -122,7 +130,16 @@ function Actions({ race, url, pending }) {
   );
 }
 
-export default function Ficha({ race, past, teamRace, noindex, schema, organizer, mod, regions, sameMod, sameRegion, nextEdition, centerCities, centers, updated, related, weeksLeft }) {
+const MES_CORTO = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+/** Fechas cortas para el title: "12-13 dic", "28 nov", "30 oct-1 nov". */
+function shortDates(a, b) {
+  if (!a) return "";
+  const d = iso => Number(iso.slice(8, 10)), m = iso => MES_CORTO[Number(iso.slice(5, 7)) - 1];
+  if (!b || b === a) return `${d(a)} ${m(a)}`;
+  return a.slice(0, 7) === b.slice(0, 7) ? `${d(a)}-${d(b)} ${m(a)}` : `${d(a)} ${m(a)}-${d(b)} ${m(b)}`;
+}
+
+export default function Ficha({ race, past, teamRace, noindex, schema, organizer, mod, regions, sameMod, sameRegion, sameCcaa = [], ccaaPage = null, nextEdition, centerCities, centers, updated, related, weeksLeft }) {
   const path = `/carreras/${race.slug}`;
   const url = `${SITE_URL}${path}`;
   const h1 = raceDisplayName(race);
@@ -152,7 +169,11 @@ export default function Ficha({ race, past, teamRace, noindex, schema, organizer
   return (
     <PageShell activePath="/calendario">
       <Head>
-        <title>{pageTitle([`${h1}: fecha e inscripción`, `${h1}: inscripción`, h1].find(t => t.length <= 60) || h1)}</title>
+        {/* Title con las fechas ("12-13 dic") y lo que busca la gente: inscripción y categorías */}
+        <title>{pageTitle([
+          ...(past ? [] : [`${h1}: ${shortDates(race.fecha_iso, race.fecha_fin_iso)}, inscripción y categorías`, `${h1}: ${shortDates(race.fecha_iso, race.fecha_fin_iso)} e inscripción`]),
+          `${h1}: fecha e inscripción`, `${h1}: inscripción`, h1,
+        ].find(t => t.length <= 60) || h1)}</title>
         <meta name="description" content={desc} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content={noindex ? ROBOTS_NOINDEX : ROBOTS_INDEX} />
@@ -182,7 +203,7 @@ export default function Ficha({ race, past, teamRace, noindex, schema, organizer
         <div className="guide-body">
           {past && (
             <p className="race-past" role="status">
-              <strong>Edición finalizada.</strong> Esta carrera se celebró {when}.{" "}
+              <strong>Esta edición ya se celebró</strong> ({when}).{" "}
               {nextEdition
                 ? <>La próxima edición con fecha es <a href={`/carreras/${nextEdition.slug}`}>{nextEdition.nombre}</a>, el {fechaLarga(nextEdition.fecha_iso)}.</>
                 : <>Aún no hay fecha de la próxima edición; mira el <a href={mod.hub}>{mod.hubLabel.toLowerCase()}</a>.</>}
@@ -223,7 +244,7 @@ export default function Ficha({ race, past, teamRace, noindex, schema, organizer
 
           {(centerCities.length > 0 || centers.length > 0) && (
             <>
-              <h2 id="entrenar">Dónde prepararla{race.provincia ? ` en ${race.provincia}` : ""}</h2>
+              <h2 id="entrenar">Dónde entrenar en {centerCities[0]?.name || race.provincia}</h2>
               {centers.length > 0 && (
                 <p>
                   En {centerCities[0].name} tienes, entre otros, {centers.map(c => c.nombre).join(", ")}.
@@ -252,7 +273,13 @@ export default function Ficha({ race, past, teamRace, noindex, schema, organizer
               <p><a href={mod.hub}>{mod.hubLabel} →</a></p>
             </>
           )}
-          {sameRegion.length > 0 && region && (
+          {sameCcaa.length > 0 ? (
+            <>
+              <h2 id="misma-zona">Otras carreras en {race.comunidad}</h2>
+              <MiniList races={sameCcaa} />
+              <p><a href={ccaaPage ? `/carreras-hibridas/${ccaaPage.slug}` : "/calendario"}>{ccaaPage ? `Carreras híbridas ${ccaaPage.en}` : "Calendario de carreras híbridas"} →</a></p>
+            </>
+          ) : sameRegion.length > 0 && region && (
             <>
               <h2 id="misma-zona">Más carreras híbridas {region.en}</h2>
               <MiniList races={sameRegion} />

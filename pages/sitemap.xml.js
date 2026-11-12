@@ -14,13 +14,13 @@ const BASE = `${SITE_URL}`;
 // Última modificación real del contenido o de las metas de cada plantilla estática.
 // Actualiza la fecha cuando cambies el texto visible o el title/description de la página.
 const STATIC_LASTMOD = {
-  "/que-es-una-carrera-hibrida": "2026-11-03",
+  "/que-es-una-carrera-hibrida": "2026-11-12",
   "/plan-entrenamiento-hyrox": "2026-11-11",
   "/plan-entrenamiento-hyrox/principiantes": "2026-11-11",
   "/plan-entrenamiento-hyrox/12-semanas": "2026-11-11",
   "/plan-entrenamiento-hyrox/dobles": "2026-11-11",
   "/plan-entrenamiento-ocr": "2026-11-11",
-  "/centros-entrenamiento": "2026-11-03",
+  "/centros-entrenamiento": "2026-11-12",
   "/calculadora-hyrox": "2026-10-27",
   "/race-hub": "2026-10-27",
   "/productos": "2026-11-10",
@@ -35,7 +35,7 @@ const STATIC_LASTMOD = {
 };
 const RANKINGS_LASTMOD = "2026-11-10"; // guías de material (antes rankings)
 // Fecha del último cambio de las plantillas de home, calendario y regiones
-const TEMPLATE_LASTMOD = "2026-11-03";
+const TEMPLATE_LASTMOD = "2026-11-12";
 
 const PRODUCT_SLUGS = [
   "relojes",

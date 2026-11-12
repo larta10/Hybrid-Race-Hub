@@ -4,11 +4,11 @@
 export default {
   slug: "que-es-hurbax",
   title: "Qué es HURBAX: formato, campeonato y temporada 2027",
-  metaTitle: "Qué es HURBAX y HURBAX 2027: formato, sedes y fechas",
+  metaTitle: "HURBAX: qué es, formato y fechas de HURBAX 2027",
   h1: "Qué es HURBAX: formato, campeonato y temporada 2027",
   category: "Carreras",
   date: "2026-10-15",
-  updated: "2026-11-03",
+  updated: "2026-11-12",
   racesFilter: { modalidadId: "func-hurbax", name: "hurbax" },
   excerpt: "HURBAX es un circuito español de carreras híbridas al aire libre: 5 km de carrera alternados con 5 estaciones funcionales, en individual, parejas o equipos de cuatro, con ranking nacional y final. La temporada 2026 terminó el 24 de octubre; las sedes de HURBAX 2027 aún no están anunciadas.",
   description: "Qué es HURBAX: circuito de carreras híbridas al aire libre con 5 km de carrera y 5 estaciones. Modalidades, campeonato con ranking y clasificación de clubes, sedes 2026, diferencias con HYROX e Hyatlón y próximas pruebas.",
@@ -79,6 +79,7 @@ export default {
 
 <h2>Próximas pruebas de HURBAX</h2>
 <div data-block="races"></div>
+<div data-block="hub-link"></div>
 
 <h2>HURBAX frente a HYROX e Hyatlón</h2>
 <div class="table-wrap"><table>

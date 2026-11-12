@@ -1214,6 +1214,9 @@ p { max-width: 70ch; }
 .guide-body ul, .guide-body ol { padding-left: 1.2em; }
 .guide-body li { margin-bottom: var(--s1); }
 .guide-lead { font-size: 19px; color: var(--text); }
+/* Definición directa y enlaces de arranque bajo el H1 de la guía */
+.guide-head .guide-def { margin: 16px 0 12px; }
+.guide-start { font-size: 15px; color: var(--text-muted); margin: 0 0 14px; }
 .guide-toc { border: 1px solid var(--border); border-radius: var(--radius); padding: var(--s3); margin: var(--s4) 0; }
 .guide-toc ol { margin: 0; columns: 2; column-gap: var(--s4); }
 .guide-toc a { text-decoration: none; }
