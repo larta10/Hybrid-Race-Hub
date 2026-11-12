@@ -4,6 +4,10 @@
 const nextConfig = {
   reactStrictMode: true,
 
+  // `next lint` de Next 14 no entiende ESLint 9 ("Invalid Options: useEslintrc, extensions").
+  // El lint va aparte, con `npm run lint` (paso propio en el CI).
+  eslint: { ignoreDuringBuilds: true },
+
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
