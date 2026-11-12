@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useMemo } from "react";
+﻿import { useState, useEffect, useMemo, useRef, useId } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import SiteHeader from "../components/SiteHeader";
@@ -43,18 +43,57 @@ const MES_CORTO = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep"
 const LEGACY_MOD = { "func-hyatlon": /hyatl/i, "func-hurbax": /hurbax/i, "func-hyrox": /hyrox/i, "ocr-spartan": /spartan/i };
 const norm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
-function Chips({ label, options, value, onChange }) {
+// Fila de chips. En móvil es una fila deslizable (con desvanecido a la derecha mientras quede
+// algo por ver); desde 720 px hace wrap. Con `limit`, en escritorio solo salen las primeras
+// opciones y un chip "+N más" despliega el resto. Todo se decide por CSS: el HTML es el mismo.
+function Chips({ label, options, value, onChange, limit = 0 }) {
+  const rowRef = useRef(null);
+  const rowId = useId();
+  const [open, setOpen] = useState(false);
+  const collapsible = limit > 0 && options.length > limit + 1;
+  const hidden = collapsible ? options.slice(limit).filter(o => o.key !== value).length : 0;
+
+  // .has-more: hay chips fuera de la vista · .at-end: ya se ha llegado al último
+  useEffect(() => {
+    const row = rowRef.current;
+    if (!row) return;
+    const update = () => {
+      const more = row.scrollWidth - row.clientWidth > 1;
+      row.classList.toggle("has-more", more);
+      row.classList.toggle("at-end", !more || row.scrollLeft + row.clientWidth >= row.scrollWidth - 2);
+    };
+    update();
+    row.addEventListener("scroll", update, { passive: true });
+    const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(update) : null;
+    if (ro) ro.observe(row);
+    return () => { row.removeEventListener("scroll", update); if (ro) ro.disconnect(); };
+  }, [options.length]);
+
+  // Con un filtro activo (p. ej. al abrir una URL compartida), su chip queda a la vista
+  useEffect(() => {
+    const row = rowRef.current;
+    if (!row || !value || row.scrollWidth - row.clientWidth <= 1) return;
+    const on = row.querySelector(".cchip--on");
+    if (on) on.scrollIntoView({ inline: "nearest", block: "nearest" });
+  }, [value]);
+
   return (
     <div className="cal-chips" role="group" aria-label={label}>
       <span className="cal-chips-label">{label}</span>
-      <div className="cal-chips-row">
+      <div className={`cal-chips-row${open ? " is-open" : ""}`} id={rowId} ref={rowRef}>
         <button type="button" className={`cchip${!value ? " cchip--on" : ""}`} aria-pressed={!value} onClick={() => onChange("")}>Todas</button>
-        {options.map(o => (
-          <button key={o.key} type="button" className={`cchip${value === o.key ? " cchip--on" : ""}`} aria-pressed={value === o.key}
-            onClick={() => onChange(value === o.key ? "" : o.key)}>
+        {options.map((o, i) => (
+          <button key={o.key} type="button"
+            className={`cchip${value === o.key ? " cchip--on" : ""}${collapsible && i >= limit && value !== o.key ? " cchip--extra" : ""}`}
+            aria-pressed={value === o.key} onClick={() => onChange(value === o.key ? "" : o.key)}>
             {o.label}<span className="cchip-n">{o.n}</span>
           </button>
         ))}
+        {collapsible && hidden > 0 && (
+          <button type="button" className="cchip cchip--more" aria-expanded={open} aria-controls={rowId} onClick={() => setOpen(v => !v)}>
+            {open ? "Menos" : `+${hidden} más`}
+          </button>
+        )}
       </div>
     </div>
   );
@@ -150,7 +189,7 @@ export default function Calendario({ races = [], season, today, recent = [], mon
             <input type="search" inputMode="search" enterKeyHint="search" autoComplete="off"
               placeholder="Buscar carrera, ciudad o comunidad" value={q} onChange={e => setQ(e.target.value)} />
           </label>
-          <Chips label="Región" options={regionOpts} value={region} onChange={set(setRegion, "ccaa")} />
+          <Chips label="Región" options={regionOpts} value={region} onChange={set(setRegion, "ccaa")} limit={6} />
           <Chips label="Modalidad" options={modOpts} value={mod} onChange={set(setMod, "tipo")} />
           <Chips label="Mes" options={mesOpts} value={mes} onChange={set(setMes, "mes")} />
         </div>
