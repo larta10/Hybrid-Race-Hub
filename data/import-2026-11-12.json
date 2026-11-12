@@ -1,0 +1,134 @@
+{
+  "generado": "2026-11-12",
+  "descripcion": "Carreras nuevas detectadas en hybridracemap y contrastadas con la web del organizador o su plataforma de inscripción. Solo inserciones nuevas en la tabla races. Lo que no está publicado queda en null.",
+  "estado_insercion": "insertadas el 2026-11-12 con scripts/insert-races-2027.mjs (ids 231-241), verificadas con SELECT",
+  "pendientes_de_confirmar": [
+    "Hybrid Day 2027 en España (Madrid, Valencia, Sevilla): hybrid-day.com solo anuncia Vigo (12-13 dic 2026) y dos citas en Portugal (Aveiro 23 ene 2027, S. M. Feira 26-27 mar 2027)",
+    "Liga Híbrida Andalucía 2027: la web oficial abre inscripciones pero no publica sedes ni fechas; en prensa se habla de Sevilla 23-24 ene y final en La Cartuja 25-26 sep",
+    "Carreras híbridas en A Coruña 2026-2027: no hay ninguna anunciada en fuente oficial",
+    "MFC Hybrid Series Mijas (3 fechas) y Gladiators Arena Games 2027: insertadas como 'Próximamente', falta confirmación en la web del organizador"
+  ],
+  "races": [
+    {
+      "nombre": "Fungo Hybrid Race Jerez 2026",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "28 Nov 2026", "fecha_iso": "2026-11-28",
+      "ubicacion": "Recinto Ferial, Jerez de la Frontera", "municipio": "Jerez de la Frontera", "provincia": "Cádiz", "comunidad": "Andalucía", "pais": "España",
+      "distancia": "8 tramos de carrera + 8 workouts", "distancia_km": null, "precio": null, "estado": "Abierta", "formato": null,
+      "notas": "Ocho tramos de carrera a pie alternados con ocho workouts. Se corre en dos turnos, mañana y tarde.",
+      "url": "https://www.runnink.com/evento/fungo-hybrid-race/129",
+      "source": "runnink.com",
+      "_fuente": "https://www.runnink.com/evento/fungo-hybrid-race/129 (sábado 28 de noviembre de 2026, 09:00, Recinto Ferial de Jerez; 8 tracks y carrera a pie intercalados; dos tramos horarios)"
+    },
+    {
+      "nombre": "Battle Cancer Barcelona 2026",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "12 Dic 2026", "fecha_iso": "2026-12-12",
+      "ubicacion": "Fira de Barcelona, recinto Montjuïc", "municipio": "Barcelona", "provincia": "Barcelona", "comunidad": "Cataluña", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": null, "estado": "Abierta", "formato": "Equipos de 4",
+      "notas": "Evento solidario contra el cáncer por equipos de cuatro (masculinos, femeninos o mixtos). Dos divisiones: Challenge, la estándar, y Compete, la avanzada.",
+      "url": "https://www.battlecancer.com/barcelona",
+      "source": "battlecancer.com",
+      "_fuente": "https://www.battlecancer.com/barcelona (Saturday 12 December 8:00-17:00, Fira de Barcelona Montjuïc; Teams of 4; Challenge / Compete)"
+    },
+    {
+      "nombre": "Echo Hy-Race Santa Cruz 2026",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "12 Dic 2026", "fecha_iso": "2026-12-12",
+      "ubicacion": "Avenida de la Constitución, Santa Cruz de Tenerife", "municipio": "Santa Cruz de Tenerife", "provincia": "Santa Cruz de Tenerife", "comunidad": "Canarias", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": null, "estado": "Abierta", "formato": "Individual, Parejas",
+      "notas": "Sale a las 14:00 (hora canaria). Categorías Pro, Open y Open Adaptive en individual, y Dual Pro y Dual Open en parejas.",
+      "url": "https://inscripciones.chronotrackcanarias.com/inscripcion/echo-hy-race-santa-cruz-2026/",
+      "source": "chronotrackcanarias.com",
+      "_fuente": "https://inscripciones.chronotrackcanarias.com/inscripcion/echo-hy-race-santa-cruz-2026/ (sábado 12 de diciembre de 2026, 14:00; Avenida la Constitución, 38003 Santa Cruz de Tenerife; individual 70 €, parejas 120 €)"
+    },
+    {
+      "nombre": "ATHX Madrid 2027",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "8 May 2027", "fecha_iso": "2027-05-08",
+      "ubicacion": "IFEMA Madrid", "municipio": "Madrid", "provincia": "Madrid", "comunidad": "Madrid", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": null, "estado": "Abierta", "formato": "Individual, Parejas",
+      "notas": "8 y 9 de mayo. Tres bloques: Strength, Engine y Metcon. Categorías ATHX, ATHX Pro y ATHX Lite; parejas masculinas, femeninas y mixtas.",
+      "url": "https://athxgames.com/events/01krwy7hrp6bp8ndj7p1487n0n",
+      "source": "athxgames.com",
+      "_fuente": "https://athxgames.com/events/01krwy7hrp6bp8ndj7p1487n0n (ATHX MADRID 2027, 08 - 09 May 2027, IFEMA Madrid, Av. del Partenón 5; Individual, Pairs; ATHX, ATHX Pro, ATHX Lite)"
+    },
+    {
+      "nombre": "FURA Los Llanos 2027",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "24 Jul 2027", "fecha_iso": "2027-07-24",
+      "ubicacion": "Los Llanos de Aridane, La Palma", "municipio": "Los Llanos de Aridane", "provincia": "Santa Cruz de Tenerife", "comunidad": "Canarias", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": null, "estado": "Abierta", "formato": "Individual, Parejas",
+      "notas": "Carrera con estaciones funcionales en La Palma: remo, SkiErg, trineos, farmer carry y wall balls, entre otras. Categorías Open y Élite.",
+      "url": "https://sportmaniacs.com/es/races/fura-los-llanos-2027",
+      "source": "sportmaniacs.com",
+      "_fuente": "https://sportmaniacs.com/es/races/fura-los-llanos-2027 y https://furaworld.com/ (24 jul 2027, Los Llanos de Aridane, 8:00; individual y parejas, Open y Élite)"
+    },
+    {
+      "nombre": "DEKA Alicante 2027",
+      "modalidad": "DEKA FIT", "modalidad_id": "func-hyrox", "modalidad_parent": "funcional",
+      "fecha": "30 Oct 2027", "fecha_iso": "2027-10-30",
+      "ubicacion": "Alicante", "municipio": "Alicante", "provincia": "Alicante", "comunidad": "Comunidad Valenciana", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": null, "estado": "Abierta", "formato": null,
+      "notas": "30 y 31 de octubre. Sábado, DEKA FIT Teams y DEKA MILE Teams; domingo, DEKA FIT y DEKA MILE. El recinto de 2027 está por anunciar (en 2026 fue Muelle Live).",
+      "url": "https://es.spartan.com/es/races/deka-alicante",
+      "source": "es.spartan.com",
+      "_fuente": "https://tickets-esdk.spartan.com/ (Alicante DEKA FIT TEAMS - Saturday 30th October 2027; DEKA MILE / DEKA FIT - Sunday 31st October 2027). La ficha es.spartan.com/es/races/deka-alicante mostraba aún la edición de 2026 el 12/11/2026."
+    },
+    {
+      "nombre": "MFC Hybrid Series Mijas — Febrero 2027",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "13 Feb 2027", "fecha_iso": "2027-02-13",
+      "ubicacion": "Hipódromo de Mijas", "municipio": "Mijas", "provincia": "Málaga", "comunidad": "Andalucía", "pais": "España",
+      "distancia": "4 km + 10 estaciones", "distancia_km": 4, "precio": null, "estado": "Próximamente", "formato": "Individual, Parejas",
+      "notas": "Primera cita del circuito de Mijas Fitness Challenge: 4 km y 10 estaciones, con categorías Open, Pro y Parejas Mixtas. Aún no hay página de inscripción; la organización informa por Instagram.",
+      "url": "https://www.instagram.com/mijasfitnesschallenge/",
+      "source": "hybridracemap.com",
+      "_fuente": "hybridracemap.com (fechas del circuito). Sin confirmar en fuente oficial el 12/11/2026: mijasfitnesschallenger.com no resolvía y el Instagram del organizador solo anunciaba el evento de octubre de 2026."
+    },
+    {
+      "nombre": "MFC Hybrid Series Mijas — Mayo 2027",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "15 May 2027", "fecha_iso": "2027-05-15",
+      "ubicacion": "Hipódromo de Mijas", "municipio": "Mijas", "provincia": "Málaga", "comunidad": "Andalucía", "pais": "España",
+      "distancia": "4 km + 10 estaciones", "distancia_km": 4, "precio": null, "estado": "Próximamente", "formato": "Individual, Parejas",
+      "notas": "Segunda cita del circuito de Mijas Fitness Challenge: 4 km y 10 estaciones, con categorías Open, Pro y Parejas Mixtas. Aún no hay página de inscripción; la organización informa por Instagram.",
+      "url": "https://www.instagram.com/mijasfitnesschallenge/",
+      "source": "hybridracemap.com",
+      "_fuente": "hybridracemap.com (fechas del circuito). Sin confirmar en fuente oficial el 12/11/2026."
+    },
+    {
+      "nombre": "MFC Hybrid Series Mijas — Noviembre 2027",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "6 Nov 2027", "fecha_iso": "2027-11-06",
+      "ubicacion": "Hipódromo de Mijas", "municipio": "Mijas", "provincia": "Málaga", "comunidad": "Andalucía", "pais": "España",
+      "distancia": "4 km + 10 estaciones", "distancia_km": 4, "precio": null, "estado": "Próximamente", "formato": "Individual, Parejas",
+      "notas": "Tercera cita del circuito de Mijas Fitness Challenge: 4 km y 10 estaciones, con categorías Open, Pro y Parejas Mixtas. Aún no hay página de inscripción; la organización informa por Instagram.",
+      "url": "https://www.instagram.com/mijasfitnesschallenge/",
+      "source": "hybridracemap.com",
+      "_fuente": "hybridracemap.com (fechas del circuito). Sin confirmar en fuente oficial el 12/11/2026."
+    },
+    {
+      "nombre": "ACRON10 Murcia 2027",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "27 Feb 2027", "fecha_iso": "2027-02-27",
+      "ubicacion": "Palacio de los Deportes de Murcia", "municipio": "Murcia", "provincia": "Murcia", "comunidad": "Murcia", "pais": "España",
+      "distancia": "8 carreras + 8 workouts", "distancia_km": null, "precio": null, "estado": "Abierta", "formato": "Individual, Parejas, Equipos",
+      "notas": "Segunda edición, 27 y 28 de febrero. El sábado compiten individual y parejas; el domingo, el sprint por parejas y los equipos de cuatro.",
+      "url": "https://acron10.es/",
+      "source": "acron10.es",
+      "_fuente": "https://acron10.es/ (8 carreras con 8 workouts; inscripciones Individual OPEN, Parejas OPEN, Parejas PRO, TEAM 4 FOR FUN y SPRINT Parejas, estas dos con '28 FEBRERO'; 'Nueva ubicación ACRON10 Murcia'). Recinto y reparto por días: hybridracemap.com."
+    },
+    {
+      "nombre": "Gladiators Arena Games Pamplona 2027",
+      "modalidad": "Functional Fitness", "modalidad_id": "func-fitness", "modalidad_parent": "funcional",
+      "fecha": "27 Feb 2027", "fecha_iso": "2027-02-27",
+      "ubicacion": "Navarra Arena, Pamplona", "municipio": "Pamplona", "provincia": "Navarra", "comunidad": "Navarra", "pais": "España",
+      "distancia": null, "distancia_km": null, "precio": null, "estado": "Próximamente", "formato": "Individual, Parejas",
+      "notas": "Cuarta edición de la competición híbrida del Navarra Arena: estaciones funcionales con tramos de carrera de unos 450 m entre una y otra. La web oficial todavía enseña la edición de 2026.",
+      "url": "https://gladiatorsarenagames.com/",
+      "source": "gladiatorsarenagames.com",
+      "_fuente": "Fecha en ocraragon.es/calendario (27/02/2027, 09:00-17:00) y hybridracemap.com. El 12/11/2026 ni gladiatorsarenagames.com ni la agenda de navarrarena.com tenían aún la edición de 2027."
+    }
+  ]
+}
