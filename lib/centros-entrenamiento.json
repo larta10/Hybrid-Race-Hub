@@ -6096,5 +6096,18 @@
     "web": "https://www.vivagym.es/",
     "lat": null,
     "lng": null
+  },
+  {
+    "id": 472,
+    "tipo": "HYROX",
+    "nombre": "Sport Training",
+    "ciudad": "Murcia",
+    "codigo_postal": "30009",
+    "direccion": "Calle Cisne, 3",
+    "ccaa": "Región de Murcia",
+    "telefono": "+34 622 44 34 95",
+    "web": "https://sporttraining.es",
+    "lat": null,
+    "lng": null
   }
 ]
